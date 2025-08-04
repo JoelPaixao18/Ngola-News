@@ -1,4 +1,4 @@
-@extends('payment.payment.layout.principal')
+@extends('admin.payment.payment.layout.main')
 @section('title', 'Duralux || Payment')
 @section('content-payment')
 

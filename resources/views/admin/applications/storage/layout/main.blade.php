@@ -36,10 +36,10 @@
 
 <body>
 
-    @include('applications.storage.parcial.header')
-    @include('applications.storage.parcial.menu')
-    @include('applications.storage.parcial.theme')
-    @include('applications.storage.parcial.storage-details')
+    @include('admin.applications.storage.parcial.header')
+    @include('admin.applications.storage.parcial.menu')
+    @include('admin.applications.storage.parcial.theme')
+    @include('admin.applications.storage.parcial.storage-details')
 
     <div>
         @yield('content-storage')

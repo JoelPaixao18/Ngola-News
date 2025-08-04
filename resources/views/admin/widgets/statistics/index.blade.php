@@ -1,4 +1,4 @@
-@extends('widgets.statistics.layout.main')
+@extends('admin.widgets.statistics.layout.main')
 
 @section('content-widgets-statistics')
 

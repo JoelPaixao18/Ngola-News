@@ -1,4 +1,4 @@
-@extends('applications.tasks.layout.main')
+@extends('admin.applications.tasks.layout.main')
 
 @section('content-tasks')
     <!--! ================================================================ !-->

@@ -1,4 +1,4 @@
-@extends('payment.invoiceView.layout.principal')
+@extends('admin.payment.invoiceView.layout.main')
 @section('title', 'Duralux || Invoice View')
 @section('content-invoiceView')
 

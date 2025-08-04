@@ -38,11 +38,11 @@
 
 <body>
 
-    @include('applications.tasks.parcial.header')
-    @include('applications.tasks.parcial.menu')
-    @include('applications.tasks.parcial.theme')
-    @include('applications.tasks.parcial.add-task-modal')
-    @include('applications.tasks.parcial.task-details')
+    @include('admin.applications.tasks.parcial.header')
+    @include('admin.applications.tasks.parcial.menu')
+    @include('admin.applications.tasks.parcial.theme')
+    @include('admin.applications.tasks.parcial.add-task-modal')
+    @include('admin.applications.tasks.parcial.task-details')
 
     <div>
         @yield('content-tasks')

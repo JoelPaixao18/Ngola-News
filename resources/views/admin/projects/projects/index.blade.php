@@ -1,4 +1,4 @@
-@extends('projects.projects.layout.principal')
+@extends('admin.projects.projects.layout.main')
 @section('title', 'Projects')
 @section('content-projects')
 

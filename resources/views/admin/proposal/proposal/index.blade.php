@@ -1,4 +1,4 @@
-@extends('proposal.proposal.layout.principal')
+@extends('admin.proposal.proposal.layout.main')
 @section('title', 'Duralux - Proposal')
 @section('content-proposal')
 <div class="nxl-content">
