@@ -1,4 +1,4 @@
-@extends('applications.chat.layout.main')
+@extends('admin.applications.chat.layout.main')
 
 @section('content-chat')
     <!--! ================================================================ !-->

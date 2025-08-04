@@ -31,15 +31,15 @@
 		<![endif]-->
 </head>
 <body>
-    @include('reports.timesheets.parcial.header')
-    @include('reports.timesheets.parcial.menu')
-    @include('reports.timesheets.parcial.theme')
+    @include('admin.reports.timesheets.parcial.header')
+    @include('admin.reports.timesheets.parcial.menu')
+    @include('admin.reports.timesheets.parcial.theme')
 
     <div>
         @yield('container-timesheets')
     </div>
 
-    @include('reports.timesheets.parcial.footer')
+    @include('admin.reports.timesheets.parcial.footer')
     <!--! BEGIN: Vendors JS !-->
     <script src="{{url('assets/vendors/js/vendors.min.js')}}"></script>
     <!-- vendors.min.js {always must need to be top} -->

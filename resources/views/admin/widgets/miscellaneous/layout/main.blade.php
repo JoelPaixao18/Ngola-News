@@ -36,10 +36,10 @@
 </head>
 <body>
 
-    @include('widgets.miscellaneous.parcial.header')
-    @include('widgets.miscellaneous.parcial.menu')
-    @include('widgets.miscellaneous.parcial.themes')
-    @include('widgets.miscellaneous.parcial.footer')
+    @include('admin.widgets.miscellaneous.parcial.header')
+    @include('admin.widgets.miscellaneous.parcial.menu')
+    @include('admin.widgets.miscellaneous.parcial.themes')
+    @include('admin.widgets.miscellaneous.parcial.footer')
 
     <div>
         @yield('content-widgets-miscellaneous')

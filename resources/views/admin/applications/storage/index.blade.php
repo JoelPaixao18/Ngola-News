@@ -1,4 +1,4 @@
-@extends('applications.storage.layout.main')
+@extends('admin.applications.storage.layout.main')
 
 @section('content-storage')
 

@@ -1,4 +1,4 @@
-@extends('proposal.proposalView.layout.principal')
+@extends('admin.proposal.proposalView.layout.main')
 @section('title', 'Proposal - View')
 @section('content-proposalView')
 

@@ -1,4 +1,4 @@
-@extends('reports.leads.layout.main')
+@extends('admin.reports.leads.layout.main')
 @section('container-leads')
     <!--! ================================================================ !-->
     <!--! [Start] Main Content !-->

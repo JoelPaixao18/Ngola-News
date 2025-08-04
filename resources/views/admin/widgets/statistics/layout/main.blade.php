@@ -37,10 +37,10 @@
 
 <body>
     
-    @include('widgets.statistics.parcial.header')
-    @include('widgets.statistics.parcial.menu')
-    @include('widgets.statistics.parcial.themes')
-    @include('widgets.statistics.parcial.footer')
+    @include('admin.widgets.statistics.parcial.header')
+    @include('admin.widgets.statistics.parcial.menu')
+    @include('admin.widgets.statistics.parcial.themes')
+    @include('admin.widgets.statistics.parcial.footer')
 
     <div>
         @yield('content-widgets-statistics')

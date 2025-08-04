@@ -1,4 +1,4 @@
-@extends('applications.notes.layout.main')
+@extends('admin.applications.notes.layout.main')
 
 @section('content-notes')
 
