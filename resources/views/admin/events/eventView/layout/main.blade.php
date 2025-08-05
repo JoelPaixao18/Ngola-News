@@ -33,15 +33,15 @@
 		<![endif]-->
 </head>
 <body>
-@include('admin.reports.leads.parcial.header')
-@include('admin.reports.leads.parcial.menu')
-@include('admin.reports.leads.parcial.theme')
+@include('admin.events.eventView.parcial.header')
+@include('admin.events.eventView.parcial.menu')
+@include('admin.events.eventView.parcial.theme')
 
 <div>
-    @yield('container-leads')
+    @yield('container-eventView')
 </div>
 
-@include('admin.reports.leads.parcial.footer')
+@include('admin.events.eventView.parcial.footer')
     <!--! BEGIN: Vendors JS !-->
     <script src="{{url('assets/vendors/js/vendors.min.js')}}"></script>
     <!-- vendors.min.js {always must need to be top} -->

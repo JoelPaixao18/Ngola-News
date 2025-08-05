@@ -481,7 +481,7 @@
                                         <!--! [Start] v-pills-general !-->
                                         <div class="tab-pane fade show active" id="v-pills-general" role="tabpanel">
                                             <div class="mb-4 rounded-3 border">
-                                                <img src="assets/images/banner/mockup.png" alt="" class="img-fluid rounded-3">
+                                                <img src="{{ url('assets/images/banner/mockup.png')}}" alt="" class="img-fluid rounded-3">
                                             </div>
                                             <h6 class="fw-bolder">Duralux - Admin Dashboard UiKit</h6>
                                             <p class="fs-12 fw-normal text-muted text-truncate-3-line">Get started Duralux with Duralux up and running. Duralux bootstrap template docs helps you to get started with simple html codes.</p>
@@ -520,7 +520,7 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="nxl-mega-menu-image">
-                                                        <img src="assets/images/general/full-avatar.png" alt="" class="img-fluid full-user-avtar">
+                                                        <img src="{{ url('assets/images/general/full-avatar.png')}}" alt="" class="img-fluid full-user-avtar">
                                                     </div>
                                                 </div>
                                             </div>
@@ -551,7 +551,7 @@
                                                 <div class="col-lg-4">
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/app-store.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/app-store.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">App Store</div>
                                                         <div class="menu-item-arrow">
@@ -560,7 +560,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/spotify.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/spotify.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Spotify</div>
                                                         <div class="menu-item-arrow">
@@ -569,7 +569,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/figma.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/figma.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Figma</div>
                                                         <div class="menu-item-arrow">
@@ -578,7 +578,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/shopify.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/shopify.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Shopify</div>
                                                         <div class="menu-item-arrow">
@@ -587,7 +587,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/paypal.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/paypal.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Paypal</div>
                                                         <div class="menu-item-arrow">
@@ -598,7 +598,7 @@
                                                 <div class="col-lg-4">
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/gmail.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/gmail.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Gmail</div>
                                                         <div class="menu-item-arrow">
@@ -607,7 +607,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/dropbox.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/dropbox.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Dropbox</div>
                                                         <div class="menu-item-arrow">
@@ -616,7 +616,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/google-drive.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/google-drive.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Google Drive</div>
                                                         <div class="menu-item-arrow">
@@ -625,7 +625,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/github.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/github.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Github</div>
                                                         <div class="menu-item-arrow">
@@ -634,7 +634,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/gitlab.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/gitlab.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Gitlab</div>
                                                         <div class="menu-item-arrow">
@@ -645,7 +645,7 @@
                                                 <div class="col-lg-4">
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/facebook.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/facebook.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Facebook</div>
                                                         <div class="menu-item-arrow">
@@ -654,7 +654,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/pinterest.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/pinterest.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Pinterest</div>
                                                         <div class="menu-item-arrow">
@@ -663,7 +663,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/instagram.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/instagram.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Instagram</div>
                                                         <div class="menu-item-arrow">
@@ -672,7 +672,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/twitter.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/twitter.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Twitter</div>
                                                         <div class="menu-item-arrow">
@@ -681,7 +681,7 @@
                                                     </a>
                                                     <a href="javascript:void(0);" class="dropdown-item">
                                                         <div class="menu-item-icon">
-                                                            <img src="assets/images/brand/youtube.png" alt="" class="img-fluid">
+                                                            <img src="{{ url('assets/images/brand/youtube.png')}}" alt="" class="img-fluid">
                                                         </div>
                                                         <div class="menu-item-title">Youtube</div>
                                                         <div class="menu-item-arrow">
@@ -730,7 +730,7 @@
                                                 </div>
                                                 <div class="col-xl-4">
                                                     <div class="nxl-mega-menu-image">
-                                                        <img src="assets/images/banner/1.jpg" alt="" class="img-fluid">
+                                                        <img src="{{ url('assets/images/banner/1.jpg')}}')}}" alt="" class="img-fluid">
                                                     </div>
                                                     <div class="mt-4">
                                                         <a href="mailto:wrapcoders@gmail.com" class="fs-13 fw-bold">View all resources on Duralux &rarr;</a>
@@ -840,7 +840,7 @@
                                                         <div class="carousel-inner rounded-3">
                                                             <div class="carousel-item active">
                                                                 <div class="nxl-mega-menu-image">
-                                                                    <img src="assets/images/banner/6.jpg" alt="" class="img-fluid d-block w-100">
+                                                                    <img src="{{ url('assets/images/banner/6.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                 </div>
                                                                 <div class="carousel-caption">
                                                                     <h5 class="carousel-caption-title text-truncate-1-line">Shopify eCommerce Store</h5>
@@ -849,7 +849,7 @@
                                                             </div>
                                                             <div class="carousel-item">
                                                                 <div class="nxl-mega-menu-image">
-                                                                    <img src="assets/images/banner/5.jpg" alt="" class="img-fluid d-block w-100">
+                                                                    <img src="{{ url('assets/images/banner/5.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                 </div>
                                                                 <div class="carousel-caption">
                                                                     <h5 class="carousel-caption-title text-truncate-1-line">iOS Apps Development</h5>
@@ -858,7 +858,7 @@
                                                             </div>
                                                             <div class="carousel-item">
                                                                 <div class="nxl-mega-menu-image">
-                                                                    <img src="assets/images/banner/4.jpg" alt="" class="img-fluid d-block w-100">
+                                                                    <img src="{{ url('assets/images/banner/4.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                 </div>
                                                                 <div class="carousel-caption">
                                                                     <h5 class="carousel-caption-title text-truncate-1-line">Figma Dashboard Design</h5>
@@ -867,7 +867,7 @@
                                                             </div>
                                                             <div class="carousel-item">
                                                                 <div class="nxl-mega-menu-image">
-                                                                    <img src="assets/images/banner/3.jpg" alt="" class="img-fluid d-block w-100">
+                                                                    <img src="{{ url('assets/images/banner/3.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                 </div>
                                                                 <div class="carousel-caption">
                                                                     <h5 class="carousel-caption-title text-truncate-1-line">React Dashboard Design</h5>
@@ -876,7 +876,7 @@
                                                             </div>
                                                             <div class="carousel-item">
                                                                 <div class="nxl-mega-menu-image">
-                                                                    <img src="assets/images/banner/2.jpg" alt="" class="img-fluid d-block w-100">
+                                                                    <img src="{{ url('assets/images/banner/2.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                 </div>
                                                                 <div class="carousel-caption">
                                                                     <h5 class="carousel-caption-title text-truncate-1-line">Standup Team Meeting</h5>
@@ -885,7 +885,7 @@
                                                             </div>
                                                             <div class="carousel-item">
                                                                 <div class="nxl-mega-menu-image">
-                                                                    <img src="assets/images/banner/1.jpg" alt="" class="img-fluid d-block w-100">
+                                                                    <img src="{{ url('assets/images/banner/1.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                 </div>
                                                                 <div class="carousel-caption">
                                                                     <h5 class="carousel-caption-title text-truncate-1-line">Zoom Team Meeting</h5>
@@ -961,7 +961,7 @@
                                                                 <div class="col-xl-6">
                                                                     <div class="d-lg-flex align-items-center gap-3">
                                                                         <div class="wd-150 rounded-3">
-                                                                            <img src="assets/images/banner/1.jpg" alt="" class="img-fluid rounded-3">
+                                                                            <img src="{{ url('assets/images/banner/1.jpg')}}" alt="" class="img-fluid rounded-3">
                                                                         </div>
                                                                         <div class="mt-3 mt-lg-0 ms-lg-3 item-text">
                                                                             <a href="javascript:void(0);">
@@ -970,7 +970,7 @@
                                                                             <p class="fs-12 fw-normal text-muted mb-0 text-truncate-2-line">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?</p>
                                                                             <div class="hstack gap-2 mt-3">
                                                                                 <div class="avatar-image avatar-sm">
-                                                                                    <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
+                                                                                    <img src="{{ url('assets/images/avatar/1.png')}}" alt="" class="img-fluid">
                                                                                 </div>
                                                                                 <a href="javascript:void(0);" class="fs-12">Alexandra Della</a>
                                                                             </div>
@@ -980,7 +980,7 @@
                                                                 <div class="col-xl-6">
                                                                     <div class="d-lg-flex align-items-center gap-3">
                                                                         <div class="wd-150 rounded-3">
-                                                                            <img src="assets/images/banner/2.jpg" alt="" class="img-fluid rounded-3">
+                                                                            <img src="{{ url('assets/images/banner/2.jpg')}}" alt="" class="img-fluid rounded-3">
                                                                         </div>
                                                                         <div class="mt-3 mt-lg-0 ms-lg-3 item-text">
                                                                             <a href="javascript:void(0);">
@@ -989,7 +989,7 @@
                                                                             <p class="fs-12 fw-normal text-muted mb-0 text-truncate-2-line">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?</p>
                                                                             <div class="hstack gap-2 mt-3">
                                                                                 <div class="avatar-image avatar-sm">
-                                                                                    <img src="assets/images/avatar/2.png" alt="" class="img-fluid">
+                                                                                    <img src="{{ url('assets/images/avatar/2.png')}}" alt="" class="img-fluid">
                                                                                 </div>
                                                                                 <a href="javascript:void(0);" class="fs-12">Green Cute</a>
                                                                             </div>
@@ -999,7 +999,7 @@
                                                                 <div class="col-xl-6">
                                                                     <div class="d-lg-flex align-items-center gap-3">
                                                                         <div class="wd-150 rounded-3">
-                                                                            <img src="assets/images/banner/3.jpg" alt="" class="img-fluid rounded-3">
+                                                                            <img src="{{ url('assets/images/banner/3.jpg')}}" alt="" class="img-fluid rounded-3">
                                                                         </div>
                                                                         <div class="mt-3 mt-lg-0 ms-lg-3 item-text">
                                                                             <a href="javascript:void(0);">
@@ -1008,7 +1008,7 @@
                                                                             <p class="fs-12 fw-normal text-muted mb-0 text-truncate-2-line">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?</p>
                                                                             <div class="hstack gap-2 mt-3">
                                                                                 <div class="avatar-image avatar-sm">
-                                                                                    <img src="assets/images/avatar/3.png" alt="" class="img-fluid">
+                                                                                    <img src="{{ url('assets/images/avatar/3.png')}}" alt="" class="img-fluid">
                                                                                 </div>
                                                                                 <a href="javascript:void(0);" class="fs-12">Malanie Hanvey</a>
                                                                             </div>
@@ -1018,7 +1018,7 @@
                                                                 <div class="col-xl-6">
                                                                     <div class="d-lg-flex align-items-center gap-3">
                                                                         <div class="wd-150 rounded-3">
-                                                                            <img src="assets/images/banner/4.jpg" alt="" class="img-fluid rounded-3">
+                                                                            <img src="{{ url('assets/images/banner/4.jpg')}}" alt="" class="img-fluid rounded-3">
                                                                         </div>
                                                                         <div class="mt-3 mt-lg-0 ms-lg-3 item-text">
                                                                             <a href="javascript:void(0);">
@@ -1027,7 +1027,7 @@
                                                                             <p class="fs-12 fw-normal text-muted mb-0 text-truncate-2-line">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nam ullam iure eum sed rerum libero quis doloremque maiores veritatis?</p>
                                                                             <div class="hstack gap-2 mt-3">
                                                                                 <div class="avatar-image avatar-sm">
-                                                                                    <img src="assets/images/avatar/4.png" alt="" class="img-fluid">
+                                                                                    <img src="{{ url('assets/images/avatar/4.png')}}" alt="" class="img-fluid">
                                                                                 </div>
                                                                                 <a href="javascript:void(0);" class="fs-12">Kenneth Hune</a>
                                                                             </div>
@@ -1146,7 +1146,7 @@
                                                                 <div class="carousel-inner rounded-3">
                                                                     <div class="carousel-item active">
                                                                         <div class="nxl-mega-menu-image">
-                                                                            <img src="assets/images/banner/6.jpg" alt="" class="img-fluid d-block w-100">
+                                                                            <img src="{{ url('assets/images/banner/6.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                         </div>
                                                                         <div class="carousel-caption">
                                                                             <h5 class="carousel-caption-title text-truncate-1-line">Shopify eCommerce Store</h5>
@@ -1155,7 +1155,7 @@
                                                                     </div>
                                                                     <div class="carousel-item">
                                                                         <div class="nxl-mega-menu-image">
-                                                                            <img src="assets/images/banner/5.jpg" alt="" class="img-fluid d-block w-100">
+                                                                            <img src="{{ url('assets/images/banner/5.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                         </div>
                                                                         <div class="carousel-caption">
                                                                             <h5 class="carousel-caption-title text-truncate-1-line">iOS Apps Development</h5>
@@ -1164,7 +1164,7 @@
                                                                     </div>
                                                                     <div class="carousel-item">
                                                                         <div class="nxl-mega-menu-image">
-                                                                            <img src="assets/images/banner/4.jpg" alt="" class="img-fluid d-block w-100">
+                                                                            <img src="{{ url('assets/images/banner/4.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                         </div>
                                                                         <div class="carousel-caption">
                                                                             <h5 class="carousel-caption-title text-truncate-1-line">Figma Dashboard Design</h5>
@@ -1173,7 +1173,7 @@
                                                                     </div>
                                                                     <div class="carousel-item">
                                                                         <div class="nxl-mega-menu-image">
-                                                                            <img src="assets/images/banner/3.jpg" alt="" class="img-fluid d-block w-100">
+                                                                            <img src="{{ url('assets/images/banner/3.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                         </div>
                                                                         <div class="carousel-caption">
                                                                             <h5 class="carousel-caption-title text-truncate-1-line">React Dashboard Design</h5>
@@ -1182,7 +1182,7 @@
                                                                     </div>
                                                                     <div class="carousel-item">
                                                                         <div class="nxl-mega-menu-image">
-                                                                            <img src="assets/images/banner/2.jpg" alt="" class="img-fluid d-block w-100">
+                                                                            <img src="{{ url('assets/images/banner/2.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                         </div>
                                                                         <div class="carousel-caption">
                                                                             <h5 class="carousel-caption-title text-truncate-1-line">Standup Team Meeting</h5>
@@ -1191,7 +1191,7 @@
                                                                     </div>
                                                                     <div class="carousel-item">
                                                                         <div class="nxl-mega-menu-image">
-                                                                            <img src="assets/images/banner/1.jpg" alt="" class="img-fluid d-block w-100">
+                                                                            <img src="{{ url('assets/images/banner/1.jpg')}}" alt="" class="img-fluid d-block w-100">
                                                                         </div>
                                                                         <div class="carousel-caption">
                                                                             <h5 class="carousel-caption-title text-truncate-1-line">Zoom Team Meeting</h5>
@@ -1297,7 +1297,7 @@
                                                         </div>
                                                         <div class="col-xxl-3 offset-xxl-1 col-xl-4">
                                                             <div class="nxl-mega-menu-image">
-                                                                <img src="assets/images/banner/1.jpg" alt="" class="img-fluid">
+                                                                <img src="{{ url('assets/images/banner/1.jpg')}}" alt="" class="img-fluid">
                                                             </div>
                                                             <div class="mt-4">
                                                                 <a href="mailto:wrapcoders@gmail.com" class="fs-13 fw-bold">View all features on Duralux &rarr;</a>
@@ -1321,7 +1321,7 @@
                                                                 <div class="col-xxl-4 col-lg-6">
                                                                     <div class="d-flex align-items-center gap-3">
                                                                         <div class="wd-100 rounded-3">
-                                                                            <img src="assets/images/banner/1.jpg" alt="" class="img-fluid rounded-3 border border-3">
+                                                                            <img src="{{ url('assets/images/banner/1.jpg')}}" alt="" class="img-fluid rounded-3 border border-3">
                                                                         </div>
                                                                         <div>
                                                                             <a href="javascript:void(0);">
@@ -1335,7 +1335,7 @@
                                                                 <div class="col-xxl-4 col-lg-6">
                                                                     <div class="d-flex align-items-center gap-3">
                                                                         <div class="wd-100 rounded-3">
-                                                                            <img src="assets/images/banner/2.jpg" alt="" class="img-fluid rounded-3 border border-3">
+                                                                            <img src="{{ url('assets/images/banner/2.jpg')}}" alt="" class="img-fluid rounded-3 border border-3">
                                                                         </div>
                                                                         <div>
                                                                             <a href="javascript:void(0);">
@@ -1349,7 +1349,7 @@
                                                                 <div class="col-xxl-4 col-lg-6">
                                                                     <div class="d-flex align-items-center gap-3">
                                                                         <div class="wd-100 rounded-3">
-                                                                            <img src="assets/images/banner/3.jpg" alt="" class="img-fluid rounded-3 border border-3">
+                                                                            <img src="{{ url('assets/images/banner/3.jpg')}}" alt="" class="img-fluid rounded-3 border border-3">
                                                                         </div>
                                                                         <div>
                                                                             <a href="javascript:void(0);">
@@ -1363,7 +1363,7 @@
                                                                 <div class="col-xxl-4 col-lg-6">
                                                                     <div class="d-flex align-items-center gap-3">
                                                                         <div class="wd-100 rounded-3">
-                                                                            <img src="assets/images/banner/4.jpg" alt="" class="img-fluid rounded-3 border border-3">
+                                                                            <img src="{{ url('assets/images/banner/4.jpg')}}" alt="" class="img-fluid rounded-3 border border-3">
                                                                         </div>
                                                                         <div>
                                                                             <a href="javascript:void(0);">
@@ -1377,7 +1377,7 @@
                                                                 <div class="col-xxl-4 col-lg-6">
                                                                     <div class="d-flex align-items-center gap-3">
                                                                         <div class="wd-100 rounded-3">
-                                                                            <img src="assets/images/banner/5.jpg" alt="" class="img-fluid rounded-3 border border-3">
+                                                                            <img src="{{ url('assets/images/banner/5.jpg')}}" alt="" class="img-fluid rounded-3 border border-3">
                                                                         </div>
                                                                         <div>
                                                                             <a href="javascript:void(0);">
@@ -1391,7 +1391,7 @@
                                                                 <div class="col-xxl-4 col-lg-6">
                                                                     <div class="d-flex align-items-center gap-3">
                                                                         <div class="wd-100 rounded-3">
-                                                                            <img src="assets/images/banner/6.jpg" alt="" class="img-fluid rounded-3 border border-3">
+                                                                            <img src="{{ url('assets/images/banner/6.jpg')}}" alt="" class="img-fluid rounded-3 border border-3">
                                                                         </div>
                                                                         <div>
                                                                             <a href="javascript:void(0);">
@@ -1520,10 +1520,10 @@
                                     <div class="d-flex align-items-center justify-content-between mb-4">
                                         <div class="d-flex align-items-center gap-3">
                                             <div class="avatar-image rounded">
-                                                <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
+                                                <img src="{{ url('assets/images/avatar/1.png')}}" alt="" class="img-fluid">
                                             </div>
                                             <div>
-                                                <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">Alexandra Della</a>
+                                                <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">{{$user->name ?? " Admin"}}</a>
                                                 <p class="fs-11 text-muted mb-0">alex.della@outlook.com</p>
                                             </div>
                                         </div>
@@ -1534,7 +1534,7 @@
                                     <div class="d-flex align-items-center justify-content-between mb-4">
                                         <div class="d-flex align-items-center gap-3">
                                             <div class="avatar-image rounded">
-                                                <img src="assets/images/avatar/2.png" alt="" class="img-fluid">
+                                                <img src="{{ url('assets/images/avatar/2.png')}}" alt="" class="img-fluid">
                                             </div>
                                             <div>
                                                 <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">Green Cute</a>
@@ -1548,7 +1548,7 @@
                                     <div class="d-flex align-items-center justify-content-between mb-4">
                                         <div class="d-flex align-items-center gap-3">
                                             <div class="avatar-image rounded">
-                                                <img src="assets/images/avatar/3.png" alt="" class="img-fluid">
+                                                <img src="{{ url('assets/images/avatar/3.png')}}" alt="" class="img-fluid">
                                             </div>
                                             <div>
                                                 <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">Malanie Hanvey</a>
@@ -1562,7 +1562,7 @@
                                     <div class="d-flex align-items-center justify-content-between mb-4">
                                         <div class="d-flex align-items-center gap-3">
                                             <div class="avatar-image rounded">
-                                                <img src="assets/images/avatar/4.png" alt="" class="img-fluid">
+                                                <img src="{{ url('assets/images/avatar/4.png')}}" alt="" class="img-fluid">
                                             </div>
                                             <div>
                                                 <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">Kenneth Hune</a>
@@ -1576,7 +1576,7 @@
                                     <div class="d-flex align-items-center justify-content-between mb-0">
                                         <div class="d-flex align-items-center gap-3">
                                             <div class="avatar-image rounded">
-                                                <img src="assets/images/avatar/5.png" alt="" class="img-fluid">
+                                                <img src="{{ url('assets/images/avatar/5.png')}}" alt="" class="img-fluid">
                                             </div>
                                             <div>
                                                 <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">Archie Cantones</a>
@@ -1594,7 +1594,7 @@
                                     <div class="d-flex align-items-center justify-content-between mb-4">
                                         <div class="d-flex align-items-center gap-3">
                                             <div class="avatar-image bg-gray-200 rounded">
-                                                <img src="assets/images/file-icons/css.png" alt="" class="img-fluid">
+                                                <img src="{{ url('assets/images/file-icons/css.png')}}" alt="" class="img-fluid">
                                             </div>
                                             <div>
                                                 <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">Project Style CSS</a>
@@ -1608,7 +1608,7 @@
                                     <div class="d-flex align-items-center justify-content-between mb-4">
                                         <div class="d-flex align-items-center gap-3">
                                             <div class="avatar-image bg-gray-200 rounded">
-                                                <img src="assets/images/file-icons/zip.png" alt="" class="img-fluid">
+                                                <img src="{{ url('assets/images/file-icons/zip.png')}}" alt="" class="img-fluid">
                                             </div>
                                             <div>
                                                 <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">Dashboard Project Zip</a>
@@ -1622,7 +1622,7 @@
                                     <div class="d-flex align-items-center justify-content-between mb-0">
                                         <div class="d-flex align-items-center gap-3">
                                             <div class="avatar-image bg-gray-200 rounded">
-                                                <img src="assets/images/file-icons/pdf.png" alt="" class="img-fluid">
+                                                <img src="{{ url('assets/images/file-icons/pdf.png')}}" alt="" class="img-fluid">
                                             </div>
                                             <div>
                                                 <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">Project Document PDF</a>
@@ -1641,7 +1641,7 @@
                     </div>
                     <div class="dropdown nxl-h-item nxl-header-language d-none d-sm-flex">
                         <a href="javascript:void(0);" class="nxl-head-link me-0 nxl-language-link" data-bs-toggle="dropdown" data-bs-auto-close="outside">
-                            <img src="assets/vendors/img/flags/4x3/us.svg" alt="" class="img-fluid wd-20">
+                            <img src="{{ url('assets/vendors/img/flags/4x3/us.svg')}}" alt="" class="img-fluid wd-20">
                         </a>
                         <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-language-dropdown">
                             <div class="dropdown-divider mt-0"></div>
@@ -1659,73 +1659,73 @@
                                 <div class="row px-4 pt-3">
                                     <div class="col-sm-4 col-6 language_select">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/sa.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/sa.svg')}}" alt="" class="img-fluid"></div>
                                             <span>Arabic</span>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-6 language_select">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/bd.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/bd.svg')}}" alt="" class="img-fluid"></div>
                                             <span>Bengali</span>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-6 language_select">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/ch.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/ch.svg')}}" alt="" class="img-fluid"></div>
                                             <span>Chinese</span>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-6 language_select">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/nl.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/nl.svg')}}" alt="" class="img-fluid"></div>
                                             <span>Dutch</span>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-6 language_select active">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/us.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/us.svg')}}" alt="" class="img-fluid"></div>
                                             <span>English</span>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-6 language_select">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/fr.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/fr.svg')}}" alt="" class="img-fluid"></div>
                                             <span>French</span>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-6 language_select">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/de.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/de.svg')}}" alt="" class="img-fluid"></div>
                                             <span>German</span>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-6 language_select">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/in.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/in.svg')}}" alt="" class="img-fluid"></div>
                                             <span>Hindi</span>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-6 language_select">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/ru.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/ru.svg')}}" alt="" class="img-fluid"></div>
                                             <span>Russian</span>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-6 language_select">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/es.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/es.svg')}}" alt="" class="img-fluid"></div>
                                             <span>Spanish</span>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-6 language_select">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/tr.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/tr.svg')}}" alt="" class="img-fluid"></div>
                                             <span>Turkish</span>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-6 language_select">
                                         <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="assets/vendors/img/flags/1x1/pk.svg" alt="" class="img-fluid"></div>
+                                            <div class="avatar-image avatar-sm"><img src="{{ url('assets/vendors/img/flags/1x1/pk.svg')}}" alt="" class="img-fluid"></div>
                                             <span>Urdo</span>
                                         </a>
                                     </div>
@@ -1786,7 +1786,7 @@
                                 </a>
                             </div>
                             <div class="notifications-item">
-                                <img src="assets/images/avatar/2.png" alt="" class="rounded me-3 border">
+                                <img src="{{ url('assets/images/avatar/2.png')}}" alt="" class="rounded me-3 border">
                                 <div class="notifications-desc">
                                     <a href="javascript:void(0);" class="font-body text-truncate-2-line"> <span class="fw-semibold text-dark">Malanie Hanvey</span> We should talk about that at lunch!</a>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -1801,7 +1801,7 @@
                                 </div>
                             </div>
                             <div class="notifications-item">
-                                <img src="assets/images/avatar/3.png" alt="" class="rounded me-3 border">
+                                <img src="{{ url('assets/images/avatar/3.png')}}" alt="" class="rounded me-3 border">
                                 <div class="notifications-desc">
                                     <a href="javascript:void(0);" class="font-body text-truncate-2-line"> <span class="fw-semibold text-dark">Valentine Maton</span> You can download the latest invoices now.</a>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -1816,7 +1816,7 @@
                                 </div>
                             </div>
                             <div class="notifications-item">
-                                <img src="assets/images/avatar/4.png" alt="" class="rounded me-3 border">
+                                <img src="{{ url('assets/images/avatar/4.png')}}" alt="" class="rounded me-3 border">
                                 <div class="notifications-desc">
                                     <a href="javascript:void(0);" class="font-body text-truncate-2-line"> <span class="fw-semibold text-dark">Archie Cantones</span> Don't forget to pickup Jeremy after school!</a>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -1837,15 +1837,15 @@
                     </div>
                     <div class="dropdown nxl-h-item">
                         <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button" data-bs-auto-close="outside">
-                            <img src="assets/images/avatar/1.png" alt="user-image" class="img-fluid user-avtar me-0">
+                            <img src="{{ url('assets/images/avatar/1.png')}}" alt="user-image" class="img-fluid user-avtar me-0">
                         </a>
                         <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-user-dropdown">
                             <div class="dropdown-header">
                                 <div class="d-flex align-items-center">
-                                    <img src="assets/images/avatar/1.png" alt="user-image" class="img-fluid user-avtar">
+                                    <img src="{{ url('assets/images/avatar/1.png')}}" alt="user-image" class="img-fluid user-avtar">
                                     <div>
-                                        <h6 class="text-dark mb-0">Alexandra Della <span class="badge bg-soft-success text-success ms-1">PRO</span></h6>
-                                        <span class="fs-12 fw-medium text-muted">alex.della@outlook.com</span>
+                                        <h6 class="text-dark mb-0">{{$user->name ?? " Admin"}} <span class="badge bg-soft-success text-success ms-1">PRO</span></h6>
+                                        <span class="fs-12 fw-medium text-muted">{{$user->email ?? " admin@hotmail.com"}}</span>
                                     </div>
                                 </div>
                             </div>

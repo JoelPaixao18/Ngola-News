@@ -166,7 +166,6 @@ Route::get('admin/widgets/statistics', function () {
 /* -----------------------------------------------
              Event-Route
 --------------------------------------------------*/
-Route::resource('/events', [EventController::class, 'index']);
-Route::resource('/events/eventCreate', [EventController::class, 'index']);
-Route::resource('/events/eventView', [EventController::class, 'index']);
-Route::resource('/events/eventEdit', [EventController::class, 'index']);
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/events/eventView', [EventController::class, 'index']);
+Route::get('/events/eventEdit', [EventController::class, 'index']);
