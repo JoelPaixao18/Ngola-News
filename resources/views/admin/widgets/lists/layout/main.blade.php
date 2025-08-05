@@ -37,10 +37,10 @@
 
 <body>
 
-@include('widgets.lists.parcial.header')
-@include('widgets.lists.parcial.menu')
-@include('widgets.lists.parcial.themes')
-@include('widgets.lists.parcial.footer')
+@include('admin.widgets.lists.parcial.header')
+@include('admin.widgets.lists.parcial.menu')
+@include('admin.widgets.lists.parcial.themes')
+@include('admin.widgets.lists.parcial.footer')
 
     <div>
         @yield('content-widgets-lists')

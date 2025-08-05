@@ -1,4 +1,4 @@
-@extends('reports.project.layout.main')
+@extends('admin.reports.project.layout.main')
 @section('container-project')
     <!--! ================================================================ !-->
     <!--! [Start] Main Content !-->

@@ -1,4 +1,4 @@
-@extends('dashboard.Analytics.layout.principal')
+@extends('admin.dashboard.Analytics.layout.main')
 @section('title', 'Analytics - Dashboard')
 @section('content-Analytics')
  <div class="nxl-content">

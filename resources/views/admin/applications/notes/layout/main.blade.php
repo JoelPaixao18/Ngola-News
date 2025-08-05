@@ -34,10 +34,10 @@
 
 <body>
 
-    @include('applications.notes.parcial.header')
-    @include('applications.notes.parcial.menu')
-    @include('applications.notes.parcial.theme')
-    @include('applications.notes.parcial.add-notes-modal')
+    @include('admin.applications.notes.parcial.header')
+    @include('admin.applications.notes.parcial.menu')
+    @include('admin.applications.notes.parcial.theme')
+    @include('admin.applications.notes.parcial.add-notes-modal')
 
     <div>
         @yield('content-notes')

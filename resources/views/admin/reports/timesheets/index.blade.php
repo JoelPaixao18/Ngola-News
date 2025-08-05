@@ -1,4 +1,4 @@
-@extends('reports.timesheets.layout.main')
+@extends('admin.reports.timesheets.layout.main')
 @section('container-timesheets')
     <!--! ================================================================ !-->
     <!--! [Start] Main Content !-->
@@ -26,39 +26,46 @@
                         </div>
                         <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
                             <div class="dropdown filter-dropdown">
-                                <a class="btn btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10" data-bs-auto-close="outside">
+                                <a class="btn btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10"
+                                    data-bs-auto-close="outside">
                                     <i class="feather-filter me-2"></i>
                                     <span>Filter</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <div class="dropdown-item">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Role" checked="checked">
+                                            <input type="checkbox" class="custom-control-input" id="Role"
+                                                checked="checked">
                                             <label class="custom-control-label c-pointer" for="Role">Role</label>
                                         </div>
                                     </div>
                                     <div class="dropdown-item">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Team" checked="checked">
+                                            <input type="checkbox" class="custom-control-input" id="Team"
+                                                checked="checked">
                                             <label class="custom-control-label c-pointer" for="Team">Team</label>
                                         </div>
                                     </div>
                                     <div class="dropdown-item">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Email" checked="checked">
+                                            <input type="checkbox" class="custom-control-input" id="Email"
+                                                checked="checked">
                                             <label class="custom-control-label c-pointer" for="Email">Email</label>
                                         </div>
                                     </div>
                                     <div class="dropdown-item">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Member" checked="checked">
+                                            <input type="checkbox" class="custom-control-input" id="Member"
+                                                checked="checked">
                                             <label class="custom-control-label c-pointer" for="Member">Member</label>
                                         </div>
                                     </div>
                                     <div class="dropdown-item">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Recommendation" checked="checked">
-                                            <label class="custom-control-label c-pointer" for="Recommendation">Recommendation</label>
+                                            <input type="checkbox" class="custom-control-input" id="Recommendation"
+                                                checked="checked">
+                                            <label class="custom-control-label c-pointer"
+                                                for="Recommendation">Recommendation</label>
                                         </div>
                                     </div>
                                     <div class="dropdown-divider"></div>
@@ -159,29 +166,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -200,29 +217,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -244,7 +271,8 @@
                                     <div class="hstack gap-3">
                                         <div class="wd-7 ht-7 bg-primary rounded-circle"></div>
                                         <div class="ps-3 border-start border-3 border-primary rounded">
-                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">React Apps</a>
+                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">React
+                                                Apps</a>
                                             <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">3/5 Tasks</a>
                                         </div>
                                     </div>
@@ -255,7 +283,8 @@
                                     <div class="hstack gap-3">
                                         <div class="wd-7 ht-7 bg-success rounded-circle"></div>
                                         <div class="ps-3 border-start border-3 border-success rounded">
-                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">Vuejs Apps</a>
+                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">Vuejs
+                                                Apps</a>
                                             <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">4/8 Tasks</a>
                                         </div>
                                     </div>
@@ -266,8 +295,10 @@
                                     <div class="hstack gap-3">
                                         <div class="wd-7 ht-7 bg-danger rounded-circle"></div>
                                         <div class="ps-3 border-start border-3 border-danger rounded">
-                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">CRM Admin</a>
-                                            <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">13/15 Tasks</a>
+                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">CRM
+                                                Admin</a>
+                                            <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">13/15
+                                                Tasks</a>
                                         </div>
                                     </div>
                                     <a href="javascript:void(0);" class="fw-bold">01/h: 33/m : 42/s</a>
@@ -298,8 +329,10 @@
                                     <div class="hstack gap-3">
                                         <div class="wd-7 ht-7 bg-danger rounded-circle"></div>
                                         <div class="ps-3 border-start border-3 border-danger rounded">
-                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">CRM Admin</a>
-                                            <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">13/15 Tasks</a>
+                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">CRM
+                                                Admin</a>
+                                            <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">13/15
+                                                Tasks</a>
                                         </div>
                                     </div>
                                     <a href="javascript:void(0);" class="fw-bold">01/h: 33/m : 42/s</a>
@@ -309,7 +342,8 @@
                                     <div class="hstack gap-3">
                                         <div class="wd-7 ht-7 bg-primary rounded-circle"></div>
                                         <div class="ps-3 border-start border-3 border-primary rounded">
-                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">React Apps</a>
+                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">React
+                                                Apps</a>
                                             <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">3/5 Tasks</a>
                                         </div>
                                     </div>
@@ -320,7 +354,8 @@
                                     <div class="hstack gap-3">
                                         <div class="wd-7 ht-7 bg-success rounded-circle"></div>
                                         <div class="ps-3 border-start border-3 border-success rounded">
-                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">Vuejs Apps</a>
+                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">Vuejs
+                                                Apps</a>
                                             <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">4/8 Tasks</a>
                                         </div>
                                     </div>
@@ -352,8 +387,10 @@
                                     <div class="hstack gap-3">
                                         <div class="wd-7 ht-7 bg-danger rounded-circle"></div>
                                         <div class="ps-3 border-start border-3 border-danger rounded">
-                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">CRM Admin</a>
-                                            <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">13/15 Tasks</a>
+                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">CRM
+                                                Admin</a>
+                                            <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">13/15
+                                                Tasks</a>
                                         </div>
                                     </div>
                                     <a href="javascript:void(0);" class="fw-bold">01/h: 33/m : 42/s</a>
@@ -363,7 +400,8 @@
                                     <div class="hstack gap-3">
                                         <div class="wd-7 ht-7 bg-success rounded-circle"></div>
                                         <div class="ps-3 border-start border-3 border-success rounded">
-                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">Vuejs Apps</a>
+                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">Vuejs
+                                                Apps</a>
                                             <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">4/8 Tasks</a>
                                         </div>
                                     </div>
@@ -374,7 +412,8 @@
                                     <div class="hstack gap-3">
                                         <div class="wd-7 ht-7 bg-primary rounded-circle"></div>
                                         <div class="ps-3 border-start border-3 border-primary rounded">
-                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">React Apps</a>
+                                            <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">React
+                                                Apps</a>
                                             <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">3/5 Tasks</a>
                                         </div>
                                     </div>
@@ -403,29 +442,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -450,13 +499,17 @@
                                                             <i class="feather-clock"></i>
                                                         </div>
                                                         <div>
-                                                            <a href="javascript:void(0);" class="fw-bold d-block mb-1">Search inspiration for project</a>
+                                                            <a href="javascript:void(0);"
+                                                                class="fw-bold d-block mb-1">Search inspiration for
+                                                                project</a>
                                                             <div class="d-flex gap-3">
-                                                                <a href="javascript:void(0);" class="hstack gap-1 fs-11 fw-normal text-muted">
+                                                                <a href="javascript:void(0);"
+                                                                    class="hstack gap-1 fs-11 fw-normal text-muted">
                                                                     <i class="feather-clock fs-10"></i>
                                                                     <span>04:00 PM</span>
                                                                 </a>
-                                                                <a href="javascript:void(0);" class="hstack gap-1 fs-11 fw-normal text-muted">
+                                                                <a href="javascript:void(0);"
+                                                                    class="hstack gap-1 fs-11 fw-normal text-muted">
                                                                     <i class="feather-message-square fs-10"></i>
                                                                     <span>32 comments</span>
                                                                 </a>
@@ -467,7 +520,9 @@
                                                 <td>
                                                     <div class="fs-12 fw-medium mb-2">86% Completed</div>
                                                     <div class="progress ht-3">
-                                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%"></div>
+                                                        <div class="progress-bar bg-success" role="progressbar"
+                                                            aria-valuenow="86" aria-valuemin="0" aria-valuemax="100"
+                                                            style="width: 86%"></div>
                                                     </div>
                                                 </td>
                                                 <td>08:30 - 09:30</td>
@@ -493,13 +548,17 @@
                                                             <i class="feather-clock"></i>
                                                         </div>
                                                         <div>
-                                                            <a href="javascript:void(0);" class="fw-bold d-block mb-1">React admnin dashboard design</a>
+                                                            <a href="javascript:void(0);"
+                                                                class="fw-bold d-block mb-1">React admnin dashboard
+                                                                design</a>
                                                             <div class="d-flex gap-3">
-                                                                <a href="javascript:void(0);" class="hstack gap-1 fs-11 fw-normal text-muted">
+                                                                <a href="javascript:void(0);"
+                                                                    class="hstack gap-1 fs-11 fw-normal text-muted">
                                                                     <i class="feather-clock fs-10"></i>
                                                                     <span>05:00 PM</span>
                                                                 </a>
-                                                                <a href="javascript:void(0);" class="hstack gap-1 fs-11 fw-normal text-muted">
+                                                                <a href="javascript:void(0);"
+                                                                    class="hstack gap-1 fs-11 fw-normal text-muted">
                                                                     <i class="feather-message-square fs-10"></i>
                                                                     <span>45 comments</span>
                                                                 </a>
@@ -510,7 +569,9 @@
                                                 <td>
                                                     <div class="fs-12 fw-medium mb-2">46% Completed</div>
                                                     <div class="progress ht-3">
-                                                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="46" aria-valuemin="0" aria-valuemax="100" style="width: 46%"></div>
+                                                        <div class="progress-bar bg-danger" role="progressbar"
+                                                            aria-valuenow="46" aria-valuemin="0" aria-valuemax="100"
+                                                            style="width: 46%"></div>
                                                     </div>
                                                 </td>
                                                 <td>09:30 - 10:30</td>
@@ -536,13 +597,17 @@
                                                             <i class="feather-clock"></i>
                                                         </div>
                                                         <div>
-                                                            <a href="javascript:void(0);" class="fw-bold d-block mb-1">Laravel ecommerce project tasks</a>
+                                                            <a href="javascript:void(0);"
+                                                                class="fw-bold d-block mb-1">Laravel ecommerce project
+                                                                tasks</a>
                                                             <div class="d-flex gap-3">
-                                                                <a href="javascript:void(0);" class="hstack gap-1 fs-11 fw-normal text-muted">
+                                                                <a href="javascript:void(0);"
+                                                                    class="hstack gap-1 fs-11 fw-normal text-muted">
                                                                     <i class="feather-clock fs-10"></i>
                                                                     <span>06:00 PM</span>
                                                                 </a>
-                                                                <a href="javascript:void(0);" class="hstack gap-1 fs-11 fw-normal text-muted">
+                                                                <a href="javascript:void(0);"
+                                                                    class="hstack gap-1 fs-11 fw-normal text-muted">
                                                                     <i class="feather-message-square fs-10"></i>
                                                                     <span>22 comments</span>
                                                                 </a>
@@ -553,7 +618,9 @@
                                                 <td>
                                                     <div class="fs-12 fw-medium mb-2">65% Completed</div>
                                                     <div class="progress ht-3">
-                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%"></div>
+                                                        <div class="progress-bar bg-primary" role="progressbar"
+                                                            aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
+                                                            style="width: 65%"></div>
                                                     </div>
                                                 </td>
                                                 <td>11:00 - 12:30</td>
@@ -579,13 +646,17 @@
                                                             <i class="feather-clock"></i>
                                                         </div>
                                                         <div>
-                                                            <a href="javascript:void(0);" class="fw-bold d-block mb-1">Search inspiration for project</a>
+                                                            <a href="javascript:void(0);"
+                                                                class="fw-bold d-block mb-1">Search inspiration for
+                                                                project</a>
                                                             <div class="d-flex gap-3">
-                                                                <a href="javascript:void(0);" class="hstack gap-1 fs-11 fw-normal text-muted">
+                                                                <a href="javascript:void(0);"
+                                                                    class="hstack gap-1 fs-11 fw-normal text-muted">
                                                                     <i class="feather-clock fs-10"></i>
                                                                     <span>07:00 PM</span>
                                                                 </a>
-                                                                <a href="javascript:void(0);" class="hstack gap-1 fs-11 fw-normal text-muted">
+                                                                <a href="javascript:void(0);"
+                                                                    class="hstack gap-1 fs-11 fw-normal text-muted">
                                                                     <i class="feather-message-square fs-10"></i>
                                                                     <span>36 comments</span>
                                                                 </a>
@@ -596,7 +667,9 @@
                                                 <td>
                                                     <div class="fs-12 fw-medium mb-2">75% Completed</div>
                                                     <div class="progress ht-3">
-                                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                                        <div class="progress-bar bg-warning" role="progressbar"
+                                                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                                            style="width: 75%"></div>
                                                     </div>
                                                 </td>
                                                 <td>12:30 - 14:30</td>
@@ -622,13 +695,17 @@
                                                             <i class="feather-clock"></i>
                                                         </div>
                                                         <div>
-                                                            <a href="javascript:void(0);" class="fw-bold d-block mb-1">Digital marketing for react project</a>
+                                                            <a href="javascript:void(0);"
+                                                                class="fw-bold d-block mb-1">Digital marketing for react
+                                                                project</a>
                                                             <div class="d-flex gap-3">
-                                                                <a href="javascript:void(0);" class="hstack gap-1 fs-11 fw-normal text-muted">
+                                                                <a href="javascript:void(0);"
+                                                                    class="hstack gap-1 fs-11 fw-normal text-muted">
                                                                     <i class="feather-clock fs-10"></i>
                                                                     <span>08:30 PM</span>
                                                                 </a>
-                                                                <a href="javascript:void(0);" class="hstack gap-1 fs-11 fw-normal text-muted">
+                                                                <a href="javascript:void(0);"
+                                                                    class="hstack gap-1 fs-11 fw-normal text-muted">
                                                                     <i class="feather-message-square fs-10"></i>
                                                                     <span>42 comments</span>
                                                                 </a>
@@ -639,7 +716,9 @@
                                                 <td>
                                                     <div class="fs-12 fw-medium mb-2">80% Completed</div>
                                                     <div class="progress ht-3">
-                                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                                                            style="width: 80%"></div>
                                                     </div>
                                                 </td>
                                                 <td>11:00 - 12:30</td>

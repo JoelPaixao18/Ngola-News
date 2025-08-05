@@ -37,10 +37,10 @@
 
 <body>
     
-    @include('widgets.charts.parcial.header')
-    @include('widgets.charts.parcial.menu')
-    @include('widgets.charts.parcial.themes')
-    @include('widgets.charts.parcial.footer')
+    @include('admin.widgets.charts.parcial.header')
+    @include('admin.widgets.charts.parcial.menu')
+    @include('admin.widgets.charts.parcial.themes')
+    @include('admin.widgets.charts.parcial.footer')
 
     <div>
         @yield('content-widgets-charts')

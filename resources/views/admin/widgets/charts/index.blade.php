@@ -1,7 +1,6 @@
-@extends('widgets.charts.layout.main')
+@extends('admin.widgets.charts.layout.main')
 
 @section('content-widgets-charts')
-
     <!--! [Start] Main Content !-->
     <!--! ================================================================ !-->
     <main class="nxl-container">
@@ -27,39 +26,46 @@
                         </div>
                         <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
                             <div class="dropdown filter-dropdown">
-                                <a class="btn btn-md btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10" data-bs-auto-close="outside">
+                                <a class="btn btn-md btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10"
+                                    data-bs-auto-close="outside">
                                     <i class="feather-filter me-2"></i>
                                     <span>Filter</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <div class="dropdown-item">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Role" checked="checked">
+                                            <input type="checkbox" class="custom-control-input" id="Role"
+                                                checked="checked">
                                             <label class="custom-control-label c-pointer" for="Role">Role</label>
                                         </div>
                                     </div>
                                     <div class="dropdown-item">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Team" checked="checked">
+                                            <input type="checkbox" class="custom-control-input" id="Team"
+                                                checked="checked">
                                             <label class="custom-control-label c-pointer" for="Team">Team</label>
                                         </div>
                                     </div>
                                     <div class="dropdown-item">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Email" checked="checked">
+                                            <input type="checkbox" class="custom-control-input" id="Email"
+                                                checked="checked">
                                             <label class="custom-control-label c-pointer" for="Email">Email</label>
                                         </div>
                                     </div>
                                     <div class="dropdown-item">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Member" checked="checked">
+                                            <input type="checkbox" class="custom-control-input" id="Member"
+                                                checked="checked">
                                             <label class="custom-control-label c-pointer" for="Member">Member</label>
                                         </div>
                                     </div>
                                     <div class="dropdown-item">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Recommendation" checked="checked">
-                                            <label class="custom-control-label c-pointer" for="Recommendation">Recommendation</label>
+                                            <input type="checkbox" class="custom-control-input" id="Recommendation"
+                                                checked="checked">
+                                            <label class="custom-control-label c-pointer"
+                                                for="Recommendation">Recommendation</label>
                                         </div>
                                     </div>
                                     <div class="dropdown-divider"></div>
@@ -134,7 +140,8 @@
                                         <div class="fs-11 text-muted">VS 43.67% (Prev)</div>
                                     </div>
                                     <div class="tx-right">
-                                        <div class="fs-24 fw-bold mb-2 text-dark"><span class="counter">67.53</span>%</div>
+                                        <div class="fs-24 fw-bold mb-2 text-dark"><span class="counter">67.53</span>%
+                                        </div>
                                         <div class="fs-11 text-success">(+ 42.72%)</div>
                                     </div>
                                 </div>
@@ -151,7 +158,8 @@
                                         <div class="fs-11 text-muted">VS 22.34% (Prev)</div>
                                     </div>
                                     <div class="tx-right">
-                                        <div class="fs-24 fw-bold mb-2 text-dark"><span class="counter">32.53</span>%</div>
+                                        <div class="fs-24 fw-bold mb-2 text-dark"><span class="counter">32.53</span>%
+                                        </div>
                                         <div class="fs-11 text-success">(+ 35.47%)</div>
                                     </div>
                                 </div>
@@ -165,7 +173,8 @@
                         <div class="card stretch stretch-full">
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div class="avatar-text avatar-lg bg-soft-primary text-primary border-soft-primary rounded">
+                                    <div
+                                        class="avatar-text avatar-lg bg-soft-primary text-primary border-soft-primary rounded">
                                         <i class="feather-airplay"></i>
                                     </div>
                                     <div class="text-end">
@@ -181,7 +190,8 @@
                         <div class="card stretch stretch-full">
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div class="avatar-text avatar-lg bg-soft-danger text-danger border-soft-danger rounded">
+                                    <div
+                                        class="avatar-text avatar-lg bg-soft-danger text-danger border-soft-danger rounded">
                                         <i class="feather-shopping-cart"></i>
                                     </div>
                                     <div class="text-end">
@@ -197,7 +207,8 @@
                         <div class="card stretch stretch-full">
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div class="avatar-text avatar-lg bg-soft-success text-success border-soft-success rounded">
+                                    <div
+                                        class="avatar-text avatar-lg bg-soft-success text-success border-soft-success rounded">
                                         <i class="feather-bluetooth"></i>
                                     </div>
                                     <div class="text-end">
@@ -213,7 +224,8 @@
                         <div class="card stretch stretch-full">
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div class="avatar-text avatar-lg bg-soft-warning text-warning border-soft-warning rounded">
+                                    <div
+                                        class="avatar-text avatar-lg bg-soft-warning text-warning border-soft-warning rounded">
                                         <i class="feather-briefcase"></i>
                                     </div>
                                     <div class="text-end">
@@ -284,10 +296,12 @@
                                     <div>
                                         <div class="fs-12 text-success fw-semibold mb-2">Earnings</div>
                                         <h4 class="text-success mb-2">(+) $55,236 USD</h4>
-                                        <div class="fs-12 text-muted text-truncate-1-line">Earnings is 69% more than last month.</div>
+                                        <div class="fs-12 text-muted text-truncate-1-line">Earnings is 69% more than last
+                                            month.</div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="btn btn-sm btn-light-brand dropdown-toggle" data-bs-toggle="dropdown">2023</a>
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-light-brand dropdown-toggle"
+                                            data-bs-toggle="dropdown">2023</a>
                                         <div class="dropdown-menu dropdown-menu-end">
                                             <a href="javascript:void(0);" class="dropdown-item active">2023</a>
                                             <a href="javascript:void(0);" class="dropdown-item">2022</a>
@@ -310,10 +324,12 @@
                                     <div>
                                         <div class="fs-12 text-danger fw-semibold mb-2">Expenses</div>
                                         <h4 class="text-danger mb-2">(-) $16,845 USD</h4>
-                                        <div class="fs-12 text-muted text-truncate-1-line">Expenses is 47% more than last month.</div>
+                                        <div class="fs-12 text-muted text-truncate-1-line">Expenses is 47% more than last
+                                            month.</div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="btn btn-sm btn-light-brand dropdown-toggle" data-bs-toggle="dropdown">2023</a>
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-light-brand dropdown-toggle"
+                                            data-bs-toggle="dropdown">2023</a>
                                         <div class="dropdown-menu dropdown-menu-end">
                                             <a href="javascript:void(0);" class="dropdown-item active">2023</a>
                                             <a href="javascript:void(0);" class="dropdown-item">2022</a>
@@ -336,10 +352,12 @@
                                     <div>
                                         <div class="fs-12 text-primary fw-semibold mb-2">Revenue</div>
                                         <h4 class="text-primary mb-2">(+) $96,753 USD</h4>
-                                        <div class="fs-12 text-muted text-truncate-1-line">Earnings is 74% more than last month.</div>
+                                        <div class="fs-12 text-muted text-truncate-1-line">Earnings is 74% more than last
+                                            month.</div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="btn btn-sm btn-light-brand dropdown-toggle" data-bs-toggle="dropdown">2023</a>
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-light-brand dropdown-toggle"
+                                            data-bs-toggle="dropdown">2023</a>
                                         <div class="dropdown-menu dropdown-menu-end">
                                             <a href="javascript:void(0);" class="dropdown-item active">2023</a>
                                             <a href="javascript:void(0);" class="dropdown-item">2022</a>
@@ -435,29 +453,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -476,29 +504,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -517,29 +555,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -558,29 +606,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -599,29 +657,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -656,29 +724,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -687,62 +765,81 @@
                                 <div id="leads-overview-donut"></div>
                                 <div class="row g-2">
                                     <div class="col-4">
-                                        <a href="javascript:void(0);" class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
-                                            <span class="wd-7 ht-7 rounded-circle d-inline-block" style="background-color: #3454d1"></span>
+                                        <a href="javascript:void(0);"
+                                            class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
+                                            <span class="wd-7 ht-7 rounded-circle d-inline-block"
+                                                style="background-color: #3454d1"></span>
                                             <span>New<span class="fs-10 text-muted ms-1">(20K)</span></span>
                                         </a>
                                     </div>
                                     <div class="col-4">
-                                        <a href="javascript:void(0);" class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
-                                            <span class="wd-7 ht-7 rounded-circle d-inline-block" style="background-color: #0d519e"></span>
+                                        <a href="javascript:void(0);"
+                                            class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
+                                            <span class="wd-7 ht-7 rounded-circle d-inline-block"
+                                                style="background-color: #0d519e"></span>
                                             <span>Contacted<span class="fs-10 text-muted ms-1">(15K)</span></span>
                                         </a>
                                     </div>
                                     <div class="col-4">
-                                        <a href="javascript:void(0);" class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
-                                            <span class="wd-7 ht-7 rounded-circle d-inline-block" style="background-color: #1976d2"></span>
+                                        <a href="javascript:void(0);"
+                                            class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
+                                            <span class="wd-7 ht-7 rounded-circle d-inline-block"
+                                                style="background-color: #1976d2"></span>
                                             <span>Qualified<span class="fs-10 text-muted ms-1">(10K)</span></span>
                                         </a>
                                     </div>
                                     <div class="col-4">
-                                        <a href="javascript:void(0);" class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
-                                            <span class="wd-7 ht-7 rounded-circle d-inline-block" style="background-color: #1e88e5"></span>
+                                        <a href="javascript:void(0);"
+                                            class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
+                                            <span class="wd-7 ht-7 rounded-circle d-inline-block"
+                                                style="background-color: #1e88e5"></span>
                                             <span>Working<span class="fs-10 text-muted ms-1">(18K)</span></span>
                                         </a>
                                     </div>
                                     <div class="col-4">
-                                        <a href="javascript:void(0);" class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
-                                            <span class="wd-7 ht-7 rounded-circle d-inline-block" style="background-color: #2196f3"></span>
+                                        <a href="javascript:void(0);"
+                                            class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
+                                            <span class="wd-7 ht-7 rounded-circle d-inline-block"
+                                                style="background-color: #2196f3"></span>
                                             <span>Customer<span class="fs-10 text-muted ms-1">(10K)</span></span>
                                         </a>
                                     </div>
                                     <div class="col-4">
-                                        <a href="javascript:void(0);" class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
-                                            <span class="wd-7 ht-7 rounded-circle d-inline-block" style="background-color: #42a5f5"></span>
+                                        <a href="javascript:void(0);"
+                                            class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
+                                            <span class="wd-7 ht-7 rounded-circle d-inline-block"
+                                                style="background-color: #42a5f5"></span>
                                             <span>Proposal<span class="fs-10 text-muted ms-1">(15K)</span></span>
                                         </a>
                                     </div>
                                     <div class="col-4">
-                                        <a href="javascript:void(0);" class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
-                                            <span class="wd-7 ht-7 rounded-circle d-inline-block" style="background-color: #64b5f6"></span>
+                                        <a href="javascript:void(0);"
+                                            class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
+                                            <span class="wd-7 ht-7 rounded-circle d-inline-block"
+                                                style="background-color: #64b5f6"></span>
                                             <span>Leads<span class="fs-10 text-muted ms-1">(16K)</span></span>
                                         </a>
                                     </div>
                                     <div class="col-4">
-                                        <a href="javascript:void(0);" class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
-                                            <span class="wd-7 ht-7 rounded-circle d-inline-block" style="background-color: #90caf9"></span>
+                                        <a href="javascript:void(0);"
+                                            class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
+                                            <span class="wd-7 ht-7 rounded-circle d-inline-block"
+                                                style="background-color: #90caf9"></span>
                                             <span>Progress<span class="fs-10 text-muted ms-1">(14K)</span></span>
                                         </a>
                                     </div>
                                     <div class="col-4">
-                                        <a href="javascript:void(0);" class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
-                                            <span class="wd-7 ht-7 rounded-circle d-inline-block" style="background-color: #aad6fa"></span>
+                                        <a href="javascript:void(0);"
+                                            class="p-2 hstack gap-2 rounded border border-dashed border-gray-5">
+                                            <span class="wd-7 ht-7 rounded-circle d-inline-block"
+                                                style="background-color: #aad6fa"></span>
                                             <span>Others<span class="fs-10 text-muted ms-1">(10K)</span></span>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <a href="javascript:void(0);" class="card-footer fs-11 fw-bold text-uppercase text-center">Update: 50 Min Ago</a>
+                            <a href="javascript:void(0);"
+                                class="card-footer fs-11 fw-bold text-uppercase text-center">Update: 50 Min Ago</a>
                         </div>
                     </div>
                     <!-- [Leads Overview] end -->
@@ -754,29 +851,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -795,35 +902,46 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div id="click-by-country-donut" class="d-flex align-items-center justify-content-center"></div>
+                                <div id="click-by-country-donut" class="d-flex align-items-center justify-content-center">
+                                </div>
                                 <hr class="border-dashed mt-1 mb-3">
                                 <div class="hstack justify-content-between">
                                     <div class="hstack">
@@ -875,29 +993,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -916,29 +1044,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -967,29 +1105,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -997,28 +1145,32 @@
                             <div class="card-body custom-card-action">
                                 <ul class="nav mb-4 gap-4 sales-pipeline-tabs" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link text-start active" data-bs-toggle="tab" data-bs-target="#leadsTab" role="tab">
+                                        <a href="javascript:void(0);" class="nav-link text-start active"
+                                            data-bs-toggle="tab" data-bs-target="#leadsTab" role="tab">
                                             <span class="fw-semibold text-dark d-block">Leads</span>
                                             <span class="amount fs-18 fw-bold my-1 d-block">$47,569</span>
                                             <span class="deals fs-12 text-muted d-block">57 Deals</span>
                                         </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link text-start" data-bs-toggle="tab" data-bs-target="#proposalTab" role="tab">
+                                        <a href="javascript:void(0);" class="nav-link text-start" data-bs-toggle="tab"
+                                            data-bs-target="#proposalTab" role="tab">
                                             <span class="fw-semibold text-dark d-block">Proposal</span>
                                             <span class="amount fs-18 fw-bold my-1 d-block">$35,258</span>
                                             <span class="deals fs-12 text-muted d-block">46 Deals</span>
                                         </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link text-start" data-bs-toggle="tab" data-bs-target="#contractTab" role="tab">
+                                        <a href="javascript:void(0);" class="nav-link text-start" data-bs-toggle="tab"
+                                            data-bs-target="#contractTab" role="tab">
                                             <span class="fw-semibold text-dark d-block">Contract</span>
                                             <span class="amount fs-18 fw-bold my-1 d-block">$24,569</span>
                                             <span class="deals fs-12 text-muted d-block">34 Deals</span>
                                         </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link text-start" data-bs-toggle="tab" data-bs-target="#projectTab" role="tab">
+                                        <a href="javascript:void(0);" class="nav-link text-start" data-bs-toggle="tab"
+                                            data-bs-target="#projectTab" role="tab">
                                             <span class="fw-semibold text-dark d-block">Project</span>
                                             <span class="amount fs-18 fw-bold my-1 d-block">$53,853</span>
                                             <span class="deals fs-12 text-muted d-block">42 Deals</span>
@@ -1051,29 +1203,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1130,29 +1292,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1171,29 +1343,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1223,29 +1405,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1264,29 +1456,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1305,29 +1507,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1343,22 +1555,31 @@
                                                 <div class="p-4">
                                                     <div class="d-flex align-items-start justify-content-between">
                                                         <div>
-                                                            <div class="fs-11 fw-medium text-muted text-uppercase">Earnings</div>
+                                                            <div class="fs-11 fw-medium text-muted text-uppercase">
+                                                                Earnings</div>
                                                             <div class="fs-20 fw-bolder text-primary">$55,236 USD</div>
                                                         </div>
                                                         <div class="dropdown">
-                                                            <a href="javascript:void(0);" class="btn btn-sm btn-light-brand dropdown-toggle" data-bs-toggle="dropdown">2023</a>
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-sm btn-light-brand dropdown-toggle"
+                                                                data-bs-toggle="dropdown">2023</a>
                                                             <div class="dropdown-menu dropdown-menu-end">
-                                                                <a href="javascript:void(0);" class="dropdown-item">2023</a>
-                                                                <a href="javascript:void(0);" class="dropdown-item">2022</a>
-                                                                <a href="javascript:void(0);" class="dropdown-item">2021</a>
-                                                                <a href="javascript:void(0);" class="dropdown-item">2020</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item">2023</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item">2022</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item">2021</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item">2020</a>
                                                                 <div class="dropdown-dividar"></div>
-                                                                <a href="javascript:void(0);" class="dropdown-item">All Times</a>
+                                                                <a href="javascript:void(0);" class="dropdown-item">All
+                                                                    Times</a>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="fs-12 text-muted">Earnings is 69% more than last month.</div>
+                                                    <div class="fs-12 text-muted">Earnings is 69% more than last month.
+                                                    </div>
                                                     <div>
                                                         <div id="earnings-area-chart"></div>
                                                     </div>
@@ -1368,22 +1589,31 @@
                                                 <div class="p-4">
                                                     <div class="d-flex align-items-start justify-content-between">
                                                         <div>
-                                                            <div class="fs-11 fw-medium text-muted text-uppercase">Expenses</div>
+                                                            <div class="fs-11 fw-medium text-muted text-uppercase">
+                                                                Expenses</div>
                                                             <div class="fs-20 fw-bolder text-warning">$16,845 USD</div>
                                                         </div>
                                                         <div class="dropdown">
-                                                            <a href="javascript:void(0);" class="btn btn-sm btn-light-brand dropdown-toggle" data-bs-toggle="dropdown">2023</a>
+                                                            <a href="javascript:void(0);"
+                                                                class="btn btn-sm btn-light-brand dropdown-toggle"
+                                                                data-bs-toggle="dropdown">2023</a>
                                                             <div class="dropdown-menu dropdown-menu-end">
-                                                                <a href="javascript:void(0);" class="dropdown-item">2023</a>
-                                                                <a href="javascript:void(0);" class="dropdown-item">2022</a>
-                                                                <a href="javascript:void(0);" class="dropdown-item">2021</a>
-                                                                <a href="javascript:void(0);" class="dropdown-item">2020</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item">2023</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item">2022</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item">2021</a>
+                                                                <a href="javascript:void(0);"
+                                                                    class="dropdown-item">2020</a>
                                                                 <div class="dropdown-dividar"></div>
-                                                                <a href="javascript:void(0);" class="dropdown-item">All Times</a>
+                                                                <a href="javascript:void(0);" class="dropdown-item">All
+                                                                    Times</a>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="fs-12 text-muted">Expenses is 47% more than last month.</div>
+                                                    <div class="fs-12 text-muted">Expenses is 47% more than last month.
+                                                    </div>
                                                     <div>
                                                         <div id="expense-area-chart"></div>
                                                     </div>
@@ -1404,29 +1634,39 @@
                                 <div class="card-header-action">
                                     <div class="card-header-btn">
                                         <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger"
+                                                data-bs-toggle="remove"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning"
+                                                data-bs-toggle="refresh"> </a>
                                         </div>
                                         <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
+                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success"
+                                                data-bs-toggle="expand"> </a>
                                         </div>
                                     </div>
                                     <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                        <a href="javascript:void(0);" class="avatar-text avatar-sm"
+                                            data-bs-toggle="dropdown" data-bs-offset="25, 25">
                                             <div data-bs-toggle="tooltip" title="Options">
                                                 <i class="feather-more-vertical"></i>
                                             </div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-at-sign"></i>New</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-calendar"></i>Event</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-bell"></i>Snoozed</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-trash-2"></i>Deleted</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-settings"></i>Settings</a>
+                                            <a href="javascript:void(0);" class="dropdown-item"><i
+                                                    class="feather-life-buoy"></i>Tips & Tricks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1459,5 +1699,4 @@
     </main>
     <!--! ================================================================ !-->
     <!--! [End] Main Content !-->
-
 @endsection

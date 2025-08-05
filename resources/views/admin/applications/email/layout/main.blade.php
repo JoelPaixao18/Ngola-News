@@ -39,10 +39,10 @@
 
 <body>
 
-    @include('applications.email.parcial.header')
-    @include('applications.email.parcial.menu')
-    @include('applications.email.parcial.theme')
-    @include('applications.email.parcial.compose-email-modal')
+    @include('admin.applications.email.parcial.header')
+    @include('admin.applications.email.parcial.menu')
+    @include('admin.applications.email.parcial.theme')
+    @include('admin.applications.email.parcial.compose-email-modal')
 
     <div>
         @yield('content-email')
