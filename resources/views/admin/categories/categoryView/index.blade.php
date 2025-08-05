@@ -1,13 +1,13 @@
 @extends('admin.proposal.proposalView.layout.main')
-@section('title', 'Proposal - View')
-@section('content-proposalView')
+@section('title', 'Ngola News - Category View')
+@section('content-categoryView')
 
 <div class="nxl-content">
     <!-- [ page-header ] start -->
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
-                <h5 class="m-b-10">Proposal</h5>
+                <h5 class="m-b-10">Category</h5>
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>

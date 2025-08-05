@@ -2,8 +2,7 @@
 <html lang="zxx">
 
 
-<!-- Mirrored from bestwpware.com/html/tf/duralux-demo/proposal-edit.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jul 2025 12:20:33 GMT -->
-
+<!-- Mirrored from bestwpware.com/html/tf/duralux-demo/proposal-view.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jul 2025 12:20:33 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
@@ -28,7 +27,6 @@
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/quill.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2-theme.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/datepicker.min.css')}}">
     <!--! END: Vendors CSS-->
     <!--! BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/theme.min.css')}}">
@@ -42,16 +40,16 @@
 </head>
 
 <body>
-
-    @include('admin.proposal.proposalEdit.parcial.header')
-    @include('admin.proposal.proposalEdit.parcial.menu')
+    @include('admin.categories.categoryView.parcial.header')
+    @include('admin.categories.categoryView.parcial.menu')
     <main class="nxl-container">
-        @yield('content-proposalEdit')
-        @include('admin.proposal.proposalEdit.parcial.footer')
+    @yield('admin.content-categoryView')
+    @include('admin.categories.categoryView.parcial.footer')
     </main>
-    @include('admin.proposal.proposalEdit.parcial.thema')
+    @include('admin.categories.categoryView.parcial.thema')
+    
 
-    <!--! BEGIN: Vendors JS !-->
+<!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js')}}"></script>
     <!-- vendors.min.js {always must need to be top} -->
     <script src="{{ url('assets/vendors/js/tagify.min.js')}}"></script>
@@ -59,70 +57,77 @@
     <script src="{{ url('assets/vendors/js/quill.min.js')}}"></script>
     <script src="{{ url('assets/vendors/js/select2.min.js')}}"></script>
     <script src="{{ url('assets/vendors/js/select2-active.min.js')}}"></script>
-    <script src="{{ url('assets/vendors/js/datepicker.min.js')}}"></script>
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
     <script src="{{ url('assets/js/common-init.min.js')}}"></script>
-    <script src="{{ url('assets/js/proposal-edit-init.min.js')}}"></script>
+    <script src="{{ url('assets/js/proposal-view-init.min.js')}}"></script>
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
     <script src="{{ url('assets/js/theme-customizer-init.min.js')}}"></script>
     <!--! END: Theme Customizer !-->
     <script>
-        $(document).ready(function() {
-            var i = 1;
-            $("#add_row").click(function() {
-                b = i - 1;
-                $("#addr" + i)
-                    .html($("#addr" + b).html())
-                    .find("td:first-child")
-                    .html(i + 1);
-                $("#tab_logic").append('<tr id="addr' + (i + 1) + '"></tr>');
-                i++;
-            });
-            $("#delete_row").click(function() {
-                if (i > 1) {
-                    $("#addr" + (i - 1)).html("");
-                    i--;
-                }
-                calc();
-            });
-            $("#tab_logic tbody").on("keyup change", function() {
-                calc();
-            });
-            $("#tax").on("keyup change", function() {
-                calc_total();
-            });
-        });
-
-        function calc() {
-            $("#tab_logic tbody tr").each(function(i, element) {
-                var html = $(this).html();
-                if (html != "") {
-                    var qty = $(this).find(".qty").val();
-                    var price = $(this).find(".price").val();
-                    $(this)
-                        .find(".total")
-                        .val(qty * price);
-                    calc_total();
-                }
-            });
+        // Create a "close" button and append it to each list item
+        var myNodelist = document.querySelectorAll("#checklist> li");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
         }
 
-        function calc_total() {
-            total = 0;
-            $(".total").each(function() {
-                total += parseInt($(this).val());
-            });
-            $("#sub_total").val(total.toFixed(2));
-            tax_sum = (total / 100) * $("#tax").val();
-            $("#tax_amount").val(tax_sum.toFixed(2));
-            $("#total_amount").val((tax_sum + total).toFixed(2));
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+            };
+        }
+
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.getElementById("checklist");
+        list.addEventListener(
+            "click",
+            function(ev) {
+                if (ev.target.tagName === "LI") {
+                    ev.target.classList.toggle("checked");
+                }
+            },
+            false
+        );
+
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("checklistInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === "") {
+                alert("You must write something!");
+            } else {
+                document.getElementById("checklist").appendChild(li);
+            }
+            document.getElementById("checklistInput").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                };
+            }
         }
     </script>
 </body>
 
 
-<!-- Mirrored from bestwpware.com/html/tf/duralux-demo/proposal-edit.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jul 2025 12:20:34 GMT -->
-
+<!-- Mirrored from bestwpware.com/html/tf/duralux-demo/proposal-view.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jul 2025 12:20:33 GMT -->
 </html>
