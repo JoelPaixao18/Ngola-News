@@ -21,6 +21,8 @@ class CreateEventsTable extends Migration
             $table->string('city', 100);
             $table->boolean('visibility');
             $table->date('date');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });
