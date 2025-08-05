@@ -483,8 +483,8 @@
                                             <div class="mb-4 rounded-3 border">
                                                 <img src="{{ url('assets/images/banner/mockup.png')}}" alt="" class="img-fluid rounded-3">
                                             </div>
-                                            <h6 class="fw-bolder">Duralux - Admin Dashboard UiKit</h6>
-                                            <p class="fs-12 fw-normal text-muted text-truncate-3-line">Get started Duralux with Duralux up and running. Duralux bootstrap template docs helps you to get started with simple html codes.</p>
+                                            <h6 class="fw-bolder">Ngola News - Admin Dashboard UiKit</h6>
+                                            <p class="fs-12 fw-normal text-muted text-truncate-3-line">Get started Ngola News with Ngola News up and running. Ngola News bootstrap template docs helps you to get started with simple html codes.</p>
                                             <a href="javascript:void(0);" class="fs-13 fw-bold text-primary">Get Started &rarr;</a>
                                         </div>
                                         <!--! [End] v-pills-general !-->
@@ -733,7 +733,7 @@
                                                         <img src="{{ url('assets/images/banner/1.jpg')}}')}}" alt="" class="img-fluid">
                                                     </div>
                                                     <div class="mt-4">
-                                                        <a href="mailto:wrapcoders@gmail.com" class="fs-13 fw-bold">View all resources on Duralux &rarr;</a>
+                                                        <a href="mailto:wrapcoders@gmail.com" class="fs-13 fw-bold">View all resources on Ngola News &rarr;</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1124,7 +1124,7 @@
                                                                     <div class="p-3 bg-soft-dark text-dark rounded d-lg-flex align-items-center justify-content-between">
                                                                         <div class="fs-13">
                                                                             <i class="feather-star me-2"></i>
-                                                                            <span>View all services on Duralux.</span>
+                                                                            <span>View all services on Ngola News.</span>
                                                                         </div>
                                                                         <div class="mt-2 mt-lg-0">
                                                                             <a href="javascript:void(0);" class="fs-13 text-primary">Learn More &rarr;</a>
@@ -1300,7 +1300,7 @@
                                                                 <img src="{{ url('assets/images/banner/1.jpg')}}" alt="" class="img-fluid">
                                                             </div>
                                                             <div class="mt-4">
-                                                                <a href="mailto:wrapcoders@gmail.com" class="fs-13 fw-bold">View all features on Duralux &rarr;</a>
+                                                                <a href="mailto:wrapcoders@gmail.com" class="fs-13 fw-bold">View all features on Ngola News &rarr;</a>
                                                             </div>
                                                         </div>
                                                     </div>

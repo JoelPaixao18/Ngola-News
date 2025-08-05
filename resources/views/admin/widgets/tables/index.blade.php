@@ -1,4 +1,4 @@
-@extends('widgets.tables.layout.main')
+@extends('admin.widgets.tables.layout.main')
 
 @section('content-widgets-tables')
         <!--! [Start] Main Content !-->

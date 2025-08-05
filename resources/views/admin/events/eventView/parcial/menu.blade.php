@@ -6,8 +6,8 @@
         <div class="m-header">
             <a href="/" class="b-brand">
                 <!-- ========   change your logo hear   ============ -->
-                <img src="{{ url('assets/images/logo-full.png')}}" alt="" class="logo logo-lg">
-                <img src="{{ url('assets/images/logo-abbr.png')}}" alt="" class="logo logo-sm">
+                <img src="{{ url('assets/images/logoNgolaLong.png')}}" alt="SOS" class="logo logo-lg">
+                <img src="{{ url('assets/images/logoNgola.png')}}" alt="" class="logo logo-sm">
             </a>
         </div>
         <div class="navbar-content">
@@ -31,8 +31,8 @@
                         <span class="nxl-mtext">Events</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="/events/eventsCreate">Event Create</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/events/eventsEdit">Evente Edit</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/events/eventCreate">Event Create</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/events/eventEdit">Evente Edit</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/events/">Event View</a></li>
                         <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                     </ul>

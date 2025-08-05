@@ -9,10 +9,10 @@
     <meta name="author" content="WRAPCODERS">
     <!--! The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags !-->
     <!--! BEGIN: Apps Title-->
-    <title>Duralux || Leads Report</title>
+    <title>@yield('title')</title>
     <!--! END:  Apps Title-->
     <!--! BEGIN: Favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="{{url('assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{url('assets/images/favicon.png')}}">
     <!--! END: Favicon-->
     <!--! BEGIN: Bootstrap CSS-->
     <link rel="stylesheet" type="text/css" href="{{url('assets/css/bootstrap.min.css')}}">
