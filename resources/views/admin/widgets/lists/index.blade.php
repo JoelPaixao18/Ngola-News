@@ -1,4 +1,4 @@
-@extends('widgets.lists.layout.main')
+@extends('admin.widgets.lists.layout.main')
 
 @section('content-widgets-lists')
 
