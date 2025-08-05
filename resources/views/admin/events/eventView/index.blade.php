@@ -1,4 +1,5 @@
 @extends('admin.events.eventView.layout.main')
+@section('title', 'Ngola News - Event View')
 @section('container-eventView')
     <!--! ================================================================ !-->
     <!--! [Start] Main Content !-->
