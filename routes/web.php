@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 
 /*-------------------------------------------------------
                     Dashboard routes
@@ -47,7 +48,7 @@ Route::get('admin/proposal/proposalCreate', function () {
                     reports routes
 -------------------------------------------------------*/
 
-Route::get('admin/Reports/reportsSales', function () {
+/* Route::get('admin/Reports/reportsSales', function () {
 
 
     return view('admin.reports.sales.index');
@@ -67,7 +68,7 @@ Route::get('admin/Reports/reportsTimesheets', function () {
 
     return view('admin.reports.timesheets.index');
 });
-
+ */
 /*-------------------------------------------------------
                     aplications routes
 -------------------------------------------------------*/
@@ -161,3 +162,10 @@ Route::get('admin/widgets/miscellaneous', function () {
 Route::get('admin/widgets/statistics', function () {
     return view('admin.widgets.statistics.index');
 });
+
+/* -----------------------------------------------
+             Event-Route
+--------------------------------------------------*/
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/events/eventView', [EventController::class, 'index']);
+Route::get('/events/eventEdit', [EventController::class, 'index']);

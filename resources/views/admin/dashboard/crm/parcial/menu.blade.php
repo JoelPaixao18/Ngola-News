@@ -1,4 +1,7 @@
-<nav class="nxl-navigation">
+    <!--! ================================================================ !-->
+    <!--! [Start] Navigation Manu !-->
+    <!--! ================================================================ !-->
+    <nav class="nxl-navigation">
     <div class="navbar-wrapper">
         <div class="m-header">
             <a href="/" class="b-brand">
@@ -25,13 +28,13 @@
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-cast"></i></span>
-                        <span class="nxl-mtext">Reports</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+                        <span class="nxl-mtext">Events</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="/Reports/reportsSales">Sales Report</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/Reports/reportsLeads">Leads Report</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/Reports/reportsProject">Project Report</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/Reports/reportsTimesheets">Timesheets Report</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/events/eventsCreate">Event Create</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/events/eventsEdit">Evente Edit</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/events/">Event View</a></li>
+                        <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                     </ul>
                 </li>
                 <li class="nxl-item nxl-hasmenu">
@@ -229,3 +232,6 @@
         </div>
     </div>
 </nav>
+    <!--! ================================================================ !-->
+    <!--! [End]  Navigation Manu !-->
+    <!--! ================================================================ !-->
