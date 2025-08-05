@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\UserController;
+
 
 /*-------------------------------------------------------
                     Dashboard routes
@@ -71,51 +73,40 @@ Route::get('admin/Reports/reportsTimesheets', function () {
                     aplications routes
 -------------------------------------------------------*/
 
+Route::resource('news', NewsController::class);
+
+
+/*
 Route::get('admin/Applications/appsChat', function () {
-
-
     return view('admin.applications.chat.index');
 });
 Route::get('admin/Applications/appsEmail', function () {
-
-
     return view('admin.applications.email.index');
 });
 Route::get('admin/Applications/appsTasks', function () {
-
-
     return view('admin.applications.tasks.index');
 });
 Route::get('admin/Applications/appsNotes', function () {
-
-
     return view('admin.applications.notes.index');
 });
 Route::get('admin/Applications/appsStorage', function () {
-
-
     return view('admin.applications.storage.index');
 });
 Route::get('admin/Applications/appsCalendar', function () {
-
-
     return view('admin.applications.calendar.index');
 });
-
+*/
 /*-------------------------------------------------------
                     customers routes
 -------------------------------------------------------*/
 
 Route::get('admin/customers', function () {
-
     return view('admin.customers.customers.index');
 });
 Route::get('admin/customers/customersView', function () {
-
     return view('admin.customers.customersView.index');
 });
 Route::get('admin/customers/customersCreate', function () {
-
     return view('admin.customers.customersCreate.index');
 });
 
