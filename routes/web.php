@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\NewsController;
 
 
 /*-------------------------------------------------------
@@ -70,10 +71,12 @@ Route::get('admin/Reports/reportsTimesheets', function () {
 });
  */
 /*-------------------------------------------------------
-                    aplications routes
+                    News routes
 -------------------------------------------------------*/
 
 Route::resource('news', NewsController::class);
+
+Route::prefix('admin.news');
 
 
 /*
