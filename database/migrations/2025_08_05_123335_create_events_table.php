@@ -21,6 +21,7 @@ class CreateEventsTable extends Migration
             $table->string('city', 100);
             $table->boolean('visibility');
             $table->date('date');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

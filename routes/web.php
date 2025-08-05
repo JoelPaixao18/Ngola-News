@@ -16,17 +16,15 @@ Route::get('admin/dashboard', function () {
 Route::get('admin/analytics', function () {
     return view('admin.dashboard.Analytics.index');
 });
+
 /*-------------------------------------------------------
                     Proposal routes
 -------------------------------------------------------*/
 Route::get('admin/proposal', function () {
-
     return view('admin.proposal.proposal.index');
 });
 
-
 Route::get('admin/proposal/proposalView', function () {
-
     return view('admin.proposal.proposalView.index');
 });
 
@@ -169,3 +167,5 @@ Route::get('admin/widgets/statistics', function () {
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/events/eventEdit', [EventController::class, 'edit']);
 Route::get('/events/eventCreate', [EventController::class, 'create']);
+
+
