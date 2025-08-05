@@ -27,6 +27,7 @@ class EventController extends Controller
     public function create()
     {
         //
+        return view('admin.events.eventCreate.index');
     }
 
     /**
@@ -60,6 +61,7 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         //
+        return view('admin.events.eventEdit.index');
     }
 
     /**
