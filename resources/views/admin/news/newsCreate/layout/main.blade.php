@@ -38,9 +38,9 @@
 
 <body>
 
-    @include('admin.applications.calendar.parcial.header')
-    @include('admin.applications.calendar.parcial.menu')
-    @include('admin.applications.calendar.parcial.theme')
+    @include('admin.news.newsCreate.parcial.header')
+    @include('admin.news.newsCreate.parcial.menu')
+    @include('admin.news.newsCreate.parcial.theme')
 
     <div>
         @yield('content-calendar')
