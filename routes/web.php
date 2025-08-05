@@ -76,7 +76,9 @@ Route::get('admin/Reports/reportsTimesheets', function () {
 
 Route::resource('news', NewsController::class);
 
-Route::prefix('admin.news');
+Route::prefix('admin.news')->name('admin.')->group(function(){
+    Route::get('newsCreate',[NewsController::class,'index'])->name('create');
+});
 
 
 /*

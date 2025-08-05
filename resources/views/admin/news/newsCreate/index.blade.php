@@ -1,4 +1,4 @@
-@extends('admin.applications.calendar.layout.main')
+@extends('admin.news.newsCreate.layout.main')
 
 @section('content-calendar')
 

@@ -12,7 +12,7 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::with('category')->latest()->paginate(10);
-        return view('news.index', compact('news'));
+        return view('admin.news.newsCreate.index', compact('news'));
     }
 
     // Mostrar o formulário de criação
