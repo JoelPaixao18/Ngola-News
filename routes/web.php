@@ -28,7 +28,7 @@ Route::get('admin/analytics', function () {
 Route::prefix('admin.categories')->name('admin.')->group(function () {
     Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::get('categoryCreate', [CategoryController::class, 'create'])->name('category.create');
-    //Route::post('categoryStore', [CategoryController::class, 'store'])->name('category.store');
+    Route::post('categories', [CategoryController::class, 'store'])->name('categories.store');
     //Route::get('categoryEdit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
     //Route::put('categoryUpdate/{id}', [CategoryController::class, 'update'])->name('category.update');
     //Route::get('categoryView/{id}', [CategoryController::class, 'show'])->name('category.view');
@@ -64,12 +64,12 @@ Route::get('admin/Reports/reportsTimesheets', function () {
 /*-------------------------------------------------------
                     News routes
 -------------------------------------------------------*/
-
+/* 
 Route::resource('news', NewsController::class);
 
 Route::prefix('admin.news')->name('admin.')->group(function () {
     Route::get('newsCreate', [NewsController::class, 'index'])->name('create');
-});
+}); */
 
 
 /*

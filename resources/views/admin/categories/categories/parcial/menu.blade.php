@@ -25,6 +25,22 @@
                 </li>
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-at-sign"></i></span>
+                        <span class="nxl-mtext">Categories</span><span class="nxl-arrow"><i
+                                class="feather-chevron-right"></i></span>
+                    </a>
+                    <ul class="nxl-submenu">
+                        <li class="nxl-item"><a class="nxl-link"
+                                href="{{ route('admin.categories.index') }}">Category</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="#">Category
+                                View</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/proposal/proposalEdit">Category Edit</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Category Create</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-cast"></i></span>
                         <span class="nxl-mtext">Events</span><span class="nxl-arrow"><i
                                 class="feather-chevron-right"></i></span>
@@ -37,7 +53,7 @@
                         <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                     </ul>
                 </li>
-                <li class="nxl-item nxl-hasmenu">
+                {{-- <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-send"></i></span>
                         <span class="nxl-mtext">News</span><span class="nxl-arrow"><i
@@ -51,23 +67,7 @@
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsStorage">Storage</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsCalendar">Calendar</a></li>
                     </ul>
-                </li>
-                <li class="nxl-item nxl-hasmenu">
-                    <a href="javascript:void(0);" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-at-sign"></i></span>
-                        <span class="nxl-mtext">Categories</span><span class="nxl-arrow"><i
-                                class="feather-chevron-right"></i></span>
-                    </a>
-                    <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link"
-                                href="{{ route('admin.categories.index') }}">Category</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Category
-                                View</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/proposal/proposalEdit">Category Edit</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/proposal/proposalCreate">Category Create</a>
-                        </li>
-                    </ul>
-                </li>
+                </li> --}}
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-dollar-sign"></i></span>
