@@ -1,10 +1,10 @@
-@extends('admin.proposal.proposalView.layout.main')
+@extends('admin.categories.categoryCreate.layout.main')
 @section('title', 'Ngola News - Category Create')
 @section('content-categoryCreate')
 
 
 <div class="nxl-content">
-    
+
 <!-- [ page-header ] start -->
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">

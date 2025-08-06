@@ -561,11 +561,9 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="row mb-4 align-items-center">
+                                        <div class="row mb-12 align-items-center">
                                             <div class="col-lg-4">
                                                 <label class="fw-semibold">State: </label>
-                                            </div>
-                                            <div class="col-lg-8">
                                                 <select class="form-control" data-select2-selector="state">
                                                     <option data-state="al">Alabama</option>
                                                     <option data-state="ak" selected>Alaska</option>
@@ -637,10 +635,8 @@
                                             </div>
                                         </div>
                                         <div class="row mb-4 align-items-center">
-                                            <div class="col-lg-4">
+                                            <div class="col-lg-12">
                                                 <label class="fw-semibold">City: </label>
-                                            </div>
-                                            <div class="col-lg-8">
                                                 <select class="form-control" data-select2-selector="city">
                                                     <option data-city="bg-primary">Akutan</option>
                                                     <option data-city="bg-secondary">Aleutians East Borough</option>
