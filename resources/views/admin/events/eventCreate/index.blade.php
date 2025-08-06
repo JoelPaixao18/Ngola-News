@@ -148,11 +148,9 @@
                                             <div class="col-lg-6 mb-4">
                                                 <label class="form-label">Category</label>
                                                 <select class="form-select form-control" data-select2-selector="status">
-                                                    <option value="primary" data-bg="bg-primary">New</option>
-                                                    <option value="primary" data-bg="bg-primary">New</option>
-                                                    <option value="primary" data-bg="bg-primary">New</option>
-                                                    <option value="primary" data-bg="bg-primary">New</option>
-                                                    <option value="primary" data-bg="bg-primary">New</option>
+                                                    @foreach($categories as $category)
+                                                    <option value="{{$category->id}}" data-bg="bg-primary">{{$category->name}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="col-lg-6 mb-4">
@@ -229,7 +227,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row mb-4 align-items-center">
+                                        <!-- <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
                                                 <label for="phoneInput" class="fw-semibold">Phone: </label>
                                                 <div class="input-group">
@@ -237,7 +235,7 @@
                                                     <input type="text" class="form-control" id="phoneInput" placeholder="Phone">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <!-- <div class="row mb-4 align-items-center">
                                         <div class="col-lg-4">
                                             <label for="companyInput" class="fw-semibold">Company: </label>
