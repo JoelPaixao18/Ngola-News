@@ -16,112 +16,51 @@
     <title>@yield('title')</title>
     <!--! END:  Apps Title-->
     <!--! BEGIN: Favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/images/favicon.ico') }}">
     <!--! END: Favicon-->
     <!--! BEGIN: Bootstrap CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap.min.css') }}">
     <!--! END: Bootstrap CSS-->
     <!--! BEGIN: Vendors CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/vendors.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/tagify.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/tagify-data.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/quill.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2-theme.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/datepicker.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/vendors.min.css') }}">">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2.min.css') }}">">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2-theme.min.css') }}">">
     <!--! END: Vendors CSS-->
     <!--! BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/theme.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/theme.min.css') }}">
     <!--! END: Custom CSS-->
     <!--! HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries !-->
     <!--! WARNING: Respond.js doesn"t work if you view the page via file: !-->
     <!--[if lt IE 9]>
-			<script src="https:oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https:oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+   <script src="https:oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+   <script src="https:oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
 <body>
 
-    @include('admin.categories.categoryCreatet.parcial.header')
-    @include('admin.categories.categoryCreatet.parcial.menu')
+    @include('admin.categories.categoryCreate.parcial.header')
+    @include('admin.categories.categoryCreate.parcial.menu')
     <main class="nxl-container">
-        @yield('content-categoryCreatet')
-        @include('admin.categories.categoryCreatet.parcial.footer')
+        @yield('content-categoryCreate')
+        @include('admin.categories.categoryCreate.parcial.footer')
     </main>
-    @include('admin.categories.categoryCreatet.parcial.thema')
+    @include('admin.categories.categoryCreate.parcial.thema')
 
     <!--! Footer Script !-->
     <!--! ================================================================ !-->
     <!--! BEGIN: Vendors JS !-->
-    <script src="{{ url('assets/vendors/js/vendors.min.js')}}"></script>
+    <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>
     <!-- vendors.min.js {always must need to be top} -->
-    <script src="{{ url('assets/vendors/js/tagify.min.js')}}"></script>
-    <script src="{{ url('assets/vendors/js/tagify-data.min.js')}}"></script>
-    <script src="{{ url('assets/vendors/js/quill.min.js')}}"></script>
-    <script src="{{ url('assets/vendors/js/select2.min.js')}}"></script>
-    <script src="{{ url('assets/vendors/js/select2-active.min.js')}}"></script>
-    <script src="{{ url('assets/vendors/js/datepicker.min.js')}}"></script>
+    <script src="{{ url('assets/vendors/js/select2.min.js') }}"></script>
+    <script src="{{ url('assets/vendors/js/select2-active.min.js') }}"></script>
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
-    <script src="{{ url('assets/js/common-init.min.js')}}"></script>
-    <script src="{{ url('assets/js/proposal-create-init.min.js')}}"></script>
+    <script src="{{ url('assets/js/common-init.min.js') }}"></script>
+    <script src="{{ url('assets/js/leads-view-init.min.js') }}"></script>
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
-    <script src="{{ url('assets/js/theme-customizer-init.min.js')}}"></script>
-    <!--! END: Theme Customizer !-->
-    <script>
-        $(document).ready(function() {
-            var i = 1;
-            $("#add_row").click(function() {
-                b = i - 1;
-                $("#addr" + i)
-                    .html($("#addr" + b).html())
-                    .find("td:first-child")
-                    .html(i + 1);
-                $("#tab_logic").append('<tr id="addr' + (i + 1) + '"></tr>');
-                i++;
-            });
-            $("#delete_row").click(function() {
-                if (i > 1) {
-                    $("#addr" + (i - 1)).html("");
-                    i--;
-                }
-                calc();
-            });
-            $("#tab_logic tbody").on("keyup change", function() {
-                calc();
-            });
-            $("#tax").on("keyup change", function() {
-                calc_total();
-            });
-        });
-
-        function calc() {
-            $("#tab_logic tbody tr").each(function(i, element) {
-                var html = $(this).html();
-                if (html != "") {
-                    var qty = $(this).find(".qty").val();
-                    var price = $(this).find(".price").val();
-                    $(this)
-                        .find(".total")
-                        .val(qty * price);
-                    calc_total();
-                }
-            });
-        }
-
-        function calc_total() {
-            total = 0;
-            $(".total").each(function() {
-                total += parseInt($(this).val());
-            });
-            $("#sub_total").val(total.toFixed(2));
-            tax_sum = (total / 100) * $("#tax").val();
-            $("#tax_amount").val(tax_sum.toFixed(2));
-            $("#total_amount").val((tax_sum + total).toFixed(2));
-        }
-    </script>
+    <script src="{{ url('assets/js/theme-customizer-init.min.js') }}"></script>
 </body>
 
 

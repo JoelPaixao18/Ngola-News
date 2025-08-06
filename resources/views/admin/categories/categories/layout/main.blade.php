@@ -47,9 +47,9 @@
 
     <main class="nxl-container">
         @yield('content-categories')
-       
+       @include('admin.categories.categories.parcial.footer')
     </main>
-    @include('admin.categories.categories.parcial.footer')
+    
     @include('admin.categories.categories.parcial.thema')
     
 
