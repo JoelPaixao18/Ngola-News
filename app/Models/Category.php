@@ -11,10 +11,6 @@ class Category extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = [
-        'name',
-    ];
-
     public function news()
     {
         return $this->hasMany(News::class);

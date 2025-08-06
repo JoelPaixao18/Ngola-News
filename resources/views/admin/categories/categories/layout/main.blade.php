@@ -47,10 +47,11 @@
 
     <main class="nxl-container">
         @yield('content-categories')
+        @include('admin.categories.categories.parcial.footer')
     </main>
 
     @include('admin.categories.categories.parcial.thema')
-    @include('admin.categories.categories.parcial.footer')
+    
 
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>
     <!-- vendors.min.js {always must need to be top} -->

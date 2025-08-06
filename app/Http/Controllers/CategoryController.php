@@ -12,9 +12,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        $categories = Category::all(); // Fetch categories from the database or any other source
-        return view('admin.categories.index', compact('categories'));
+    public function index()
+    {
+        $categories = Category::all();
+        return view('admin.categories.categories.index', compact('categories'));
     }
 
     /**
@@ -24,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.categories.index');
+        return view('admin.categories.categoryCreate.index');
     }
 
     /**

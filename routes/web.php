@@ -28,11 +28,11 @@ Route::get('admin/analytics', function () {
 Route::prefix('admin.categories')->name('admin.')->group(function () {
     Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::get('categoryCreate', [CategoryController::class, 'create'])->name('category.create');
-    Route::post('categoryStore', [CategoryController::class, 'store'])->name('category.store');
-    Route::get('categoryEdit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
-    Route::put('categoryUpdate/{id}', [CategoryController::class, 'update'])->name('category.update');
-    Route::get('categoryView/{id}', [CategoryController::class, 'show'])->name('category.view');
-    Route::delete('categoryDelete/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
+    //Route::post('categoryStore', [CategoryController::class, 'store'])->name('category.store');
+    //Route::get('categoryEdit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+    //Route::put('categoryUpdate/{id}', [CategoryController::class, 'update'])->name('category.update');
+    //Route::get('categoryView/{id}', [CategoryController::class, 'show'])->name('category.view');
+    //Route::delete('categoryDelete/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
 });
 
 
