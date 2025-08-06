@@ -42,6 +42,37 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
+
+        $event = new Event;
+
+        $event->title = $request->title;
+        $event->subtitle = $request->title;
+        $event->city = $request->city;
+        $event->category = $request->category;
+        $event->state = $request->state;
+        $event->status = $request->status;
+        $event->description = $request->description;
+        $event->country = $request->country;
+        $event->event_date = $request->event_date;
+        $event->last_modifyed_date = $request->last_modifyed_date;
+
+        // upload image
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+
+            $requestImage->move(public_path('img/events'), $imageName);
+
+            $event->image = $imageName;
+        } else {
+            return redirect('admin/events/eventCreate')->with('msg', 'Imagem inválida!');
+        }
+
+        $event->save();
+
+        return redirect('admin/events/eventCreate')->with('msg', 'Evento criado com sucesso!');
     }
 
     /**
@@ -50,9 +81,10 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show(Request $request)
     {
         //
+        
         return view('admin.events.eventView.index');
     }
 

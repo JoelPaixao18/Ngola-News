@@ -132,7 +132,8 @@
                 <!-- [ page-header ] end -->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
-                    <form id="eventForm" action="/admin/event" method="post">
+                    <form id="eventForm" action="{{ route('admin.event.store') }}" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card stretch stretch-full">
@@ -155,7 +156,7 @@
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label class="form-label">Status:</label>
-                                                <select class="form-select form-control" name="visibility" data-select2-selector="visibility">
+                                                <select class="form-select form-control" name="status" data-select2-selector="visibility">
                                                     <option value="Published" data-icon="feather-circle">Published</option>
                                                     <option value="Draft" data-icon="feather-circle">Draft</option>
                                                     <option value="Scheduled" data-icon="feather-circle">Scheduled</option>
@@ -174,11 +175,11 @@
                                         </div> -->
                                             <div class="col-lg-6 mb-4">
                                                 <label class="form-label">Event date</label>
-                                                <input type="date" class="form-control" name="date" id="date">
+                                                <input type="date" class="form-control" name="event_date" id="date">
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label class="form-label">Last modified date</label>
-                                                <input type="date" class="form-control" name="date" id="date">
+                                                <input type="date" class="form-control" name="last_modifyed_date" id="date">
                                             </div>
                                         </div>
                                     </div>
@@ -196,7 +197,7 @@
                                                 <label for="fullnameInput" class="fw-semibold">Title: </label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-type"></i></div>
-                                                    <input type="text" class="form-control" id="fullnameInput" placeholder="Title... ">
+                                                    <input type="text" class="form-control" name="title" id="fullnameInput" placeholder="Title... ">
                                                 </div>
                                             </div>
                                         </div>
@@ -205,7 +206,7 @@
                                                 <label for="fullnameInput" class="fw-semibold">Subtitle: </label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-type"></i></div>
-                                                    <input type="text" class="form-control" id="fullnameInput" placeholder="Title... ">
+                                                    <input type="text" class="form-control" name="subtitle" id="fullnameInput" placeholder="Title... ">
                                                 </div>
                                             </div>
                                         </div>
@@ -214,7 +215,7 @@
                                                 <label for="mailInput" class="fw-semibold">Cover image: </label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-image"></i></div>
-                                                    <input type="file" class="form-control" id="mailInput" placeholder="Upload image...">
+                                                    <input type="file" class="form-control" name="image" id="mailInput" placeholder="Upload image...">
                                                 </div>
                                             </div>
                                         </div>
@@ -223,7 +224,7 @@
                                                 <label for="autorInput" class="fw-semibold">Author: </label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-user"></i></div>
-                                                    <input type="url" class="form-control" id="autorInput" placeholder="autor">
+                                                    <input type="text" class="form-control" name="author" id="autorInput" placeholder="autor">
                                                 </div>
                                             </div>
                                         </div>
@@ -296,14 +297,14 @@
                                                 <label for="descriptionInput" class="fw-semibold">Description: </label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-type"></i></div>
-                                                    <textarea class="form-control" id="descriptionInput" cols="30" rows="5" placeholder="Description"></textarea>
+                                                    <textarea class="form-control" id="descriptionInput" name="description" cols="30" rows="5" placeholder="Description"></textarea>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
                                                 <label class="fw-semibold">Country: </label>
-                                                <select class="form-control" data-select2-selector="country">
+                                                <select class="form-control" name="country" data-select2-selector="country">
                                                     <option data-country="af">Afghanistan</option>
                                                     <option data-country="ax">Åland Islands</option>
                                                     <option data-country="al">Albania</option>
@@ -562,7 +563,7 @@
                                         <div class="row mb-12 align-items-center">
                                             <div class="col-lg-4">
                                                 <label class="fw-semibold">State: </label>
-                                                <select class="form-control" data-select2-selector="state">
+                                                <select class="form-control" name="state" data-select2-selector="state">
                                                     <option data-state="al">Alabama</option>
                                                     <option data-state="ak" selected>Alaska</option>
                                                     <option data-state="as">American Samoa</option>
@@ -635,7 +636,7 @@
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
                                                 <label class="fw-semibold">City: </label>
-                                                <select class="form-control" data-select2-selector="city">
+                                                <select class="form-control" name="city" data-select2-selector="city">
                                                     <option data-city="bg-primary">Akutan</option>
                                                     <option data-city="bg-secondary">Aleutians East Borough</option>
                                                     <option data-city="bg-success">Aleutians West Census Area</option>
@@ -1070,11 +1071,11 @@
                                     </div>  -->
                                     </div>
                                 </div>
+                                <input type="submit" value="Create event">
                             </div>
-                            <div class="form-control">
-                                 <input type="submit" form="eventForm" href="javascript:void(0);" class="btn btn-primary successAlertMessage" value="Create event">
-                            </div>
+                            
                         </div>
+
 
                     </form>
 
