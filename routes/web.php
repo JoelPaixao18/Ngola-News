@@ -152,11 +152,11 @@ Route::get('admin/widgets/statistics', function () {
              Event-Route
 --------------------------------------------------*/
 Route::prefix('admin/events')->name('admin.')->group(function () {
-    Route::get('event', [EventController::class, 'index'])->name('event.index');
+    // Route::get('eventCreat', [EventController::class, 'index'])->name('event.index');
     Route::get('eventCreate', [EventController::class, 'create'])->name('event.create');
-    /* Route::post('eventStore', [EventController::class, 'store'])->name('event.store');
-    Route::get('eventEdit/{id}', [EventController::class, 'edit'])->name('event.edit');
-    Route::put('eventUpdate/{id}', [EventController::class, 'update'])->name('event.update');
-    Route::get('eventView/{id}', [EventController::class, 'show'])->name('event.view');
-    Route::delete('eventDelete/{id}', [EventController::class, 'destroy'])->name('event.delete'); */
+    Route::post('eventStore', [EventController::class, 'store'])->name('event.store');
+    Route::get('eventEdit', [EventController::class, 'edit'])->name('event.edit');
+    Route::put('eventUpdate', [EventController::class, 'update'])->name('event.update');
+    Route::get('eventView', [EventController::class, 'show'])->name('event.view');
+    Route::delete('eventDelete/{id}', [EventController::class, 'destroy'])->name('event.delete');
 });

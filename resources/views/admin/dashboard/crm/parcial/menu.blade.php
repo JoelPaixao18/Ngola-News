@@ -34,8 +34,8 @@
                         </a>
                         <ul class="nxl-submenu">
                             <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.event.create') }}">Event Create</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="/events/eventsEdit">Evente Edit</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="/events/">Event View</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.event.edit')}}">Evente Edit</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.event.view')}}">Event View</a></li>
                             <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                         </ul>
                     </li>
