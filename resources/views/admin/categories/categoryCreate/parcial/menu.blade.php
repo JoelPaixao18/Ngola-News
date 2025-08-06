@@ -3,8 +3,8 @@
         <div class="m-header">
             <a href="/" class="b-brand">
                 <!-- ========   change your logo hear   ============ -->
-                <img src="{{ url('assets/images/logo-full.png') }}" alt="" class="logo logo-lg">
-                <img src="{{ url('assets/images/logo-abbr.png') }}" alt="" class="logo logo-sm">
+                <img src="{{ url('assets/images/logoNgolaLong.png') }}" alt="SOS" class="logo logo-lg">
+                <img src="{{ url('assets/images/logoNgola.png') }}" alt="" class="logo logo-sm">
             </a>
         </div>
         <div class="navbar-content">
@@ -61,10 +61,11 @@
                     <ul class="nxl-submenu">
                         <li class="nxl-item"><a class="nxl-link"
                                 href="{{ route('admin.categories.index') }}">Category</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Category
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.categories.index') }}">Category
                                 View</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/proposal/proposalEdit">Category Edit</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/proposal/proposalCreate">Category Create</a>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Category
+                                Create</a>
                         </li>
                     </ul>
                 </li>
