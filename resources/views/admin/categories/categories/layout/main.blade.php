@@ -16,10 +16,10 @@
     <title> @yield('title')</title>
     <!--! END:  Apps Title-->
     <!--! BEGIN: Favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url ('assets/images/favicon.ico') }}">
     <!--! END: Favicon-->
     <!--! BEGIN: Bootstrap CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap.min.css')}}">
     <!--! END: Bootstrap CSS-->
     <!--! BEGIN: Vendors CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/vendors.min.css') }}">
@@ -47,9 +47,9 @@
 
     <main class="nxl-container">
         @yield('content-categories')
-        @include('admin.categories.categories.parcial.footer')
+       
     </main>
-
+    @include('admin.categories.categories.parcial.footer')
     @include('admin.categories.categories.parcial.thema')
     
 
