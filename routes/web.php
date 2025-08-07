@@ -149,8 +149,15 @@ Route::get('admin/widgets/statistics', function () {
 });
 
 /* -----------------------------------------------
-             Event-Route
+                    Event-Route
 --------------------------------------------------*/
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/events/eventEdit', [EventController::class, 'edit']);
+Route::get('/events/eventCreate', [EventController::class, 'create']);
+
+
+Route::get('/events/eventEdit', [EventController::class, 'index']);
+Route::get('/events/eventCreate', [EventController::class, 'index']);
 Route::prefix('admin/events')->name('admin.')->group(function () {
     Route::get('event', [EventController::class, 'index'])->name('event.index');
     Route::get('eventCreate', [EventController::class, 'create'])->name('event.create');
