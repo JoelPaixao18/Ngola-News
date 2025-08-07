@@ -10,17 +10,14 @@ use App\Http\Controllers\NewsController;
 /*-------------------------------------------------------
                     Dashboard routes
 -------------------------------------------------------*/
-
 Route::redirect('/', 'admin/dashboard');
 
 Route::get('admin/dashboard', function () {
     return view('admin.dashboard.crm.index');
 });
-
 Route::get('admin/analytics', function () {
     return view('admin.dashboard.Analytics.index');
 });
-
 /*-------------------------------------------------------
                     Category routes
 -------------------------------------------------------*/
@@ -149,8 +146,13 @@ Route::get('admin/widgets/statistics', function () {
 });
 
 /* -----------------------------------------------
-                    Event-Route
+                    Event Routes
 --------------------------------------------------*/
+/*
+Route::prefix('admin.events')->name('admin.')->group(function () {
+    Route::get('events', [EventController::class, 'index'])->name('categories.index');
+});
+*/
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/events/eventEdit', [EventController::class, 'edit']);
 Route::get('/events/eventCreate', [EventController::class, 'create']);
