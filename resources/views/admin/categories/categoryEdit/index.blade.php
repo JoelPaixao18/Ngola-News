@@ -54,10 +54,11 @@
                                     <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to
                                         adding a new potential customer or sales prospect</span>
                                 </h5>
-                                <a href="" class="btn btn-sm btn-light-brand">Create
+                                <a href="{{ route('admin.category.create') }}" class="btn btn-sm btn-light-brand">Create
                                     Category</a>
                             </div>
-                            <form action="" method="POST">
+                            <form action="{{ route('admin.category.update', ['category' => $category->id]) }}"
+                                method="POST">
                                 @csrf
                                 @method('PUT')
 
@@ -76,19 +77,21 @@
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Nome da Categoria</label>
                                         <input type="text" name="name" class="form-control"
-                                            value="{{ old('nome') }}" placeholder="Ex: Política, Desporto...">
+                                            value="{{ old('nome', $category->name ?? '') }}"
+                                            placeholder="Ex: Política, Desporto...">
                                     </div>
 
                                     {{-- Slug --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Slug</label>
                                         <input type="text" name="slug" class="form-control"
-                                            value="{{ old('slug') }}" placeholder="ex: politica, desporto...">
+                                            value="{{ old('slug', $category->slug ?? '') }}"
+                                            placeholder="ex: politica, desporto...">
                                     </div>
 
                                     {{-- Tipo --}}
                                     <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Nome da Categoria</label>
+                                        <label class="form-label">Tipo de Categoria</label>
                                         <input type="text" name="type" class="form-control"
                                             value="{{ old('type', $category->type ?? '') }}"
                                             placeholder="Ex: Notícia, Eventos...">
@@ -98,6 +101,10 @@
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Status</label>
                                         <select class="form-control" name="status" data-select2-selector="status">
+                                            <option value="" disabled selected>Selecione o status</option>
+                                            <option value="draft" data-bg="bg-warning"> Rascunho</option>
+                                            <option value="published" data-bg="bg-success"> Publicado</option>
+                                            <option value="archived" data-bg="bg-secondary"> Arquivado</option>
                                             <option value="active" data-bg="bg-success"> Ativo</option>
                                             <option value="inactive" data-bg="bg-danger"> Inativo</option>
                                         </select>
@@ -111,7 +118,8 @@
 
                                     {{-- Botão de Enviar --}}
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-primary"> Categoria
+                                        <button type="submit" class="btn btn-primary"> Salvar Categoria
+                                            <i class="feather-save ms-2"></i>
                                         </button>
                                     </div>
                                 </div>

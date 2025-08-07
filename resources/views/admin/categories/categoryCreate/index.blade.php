@@ -54,7 +54,7 @@
                                     <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to
                                         adding a new potential customer or sales prospect</span>
                                 </h5>
-                                <a href="javascript:void(0);" class="btn btn-sm btn-light-brand">Create Invoice</a>
+                                <a href="#" class="btn btn-sm btn-light-brand">View Category</a>
                             </div>
                             <form action="{{ route('admin.categories.store') }}" method="POST">
                                 @csrf
@@ -97,6 +97,10 @@
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Status</label>
                                         <select class="form-control" name="status" data-select2-selector="status">
+                                            <option value="" disabled selected>Selecione o status</option>
+                                            <option value="draft" data-bg="bg-warning"> Rascunho</option>
+                                            <option value="published" data-bg="bg-success"> Publicado</option>
+                                            <option value="archived" data-bg="bg-secondary"> Arquivado</option>
                                             <option value="active" data-bg="bg-success"> Ativo</option>
                                             <option value="inactive" data-bg="bg-danger"> Inativo</option>
                                         </select>
@@ -105,12 +109,12 @@
                                     {{-- Descrição --}}
                                     <div class="col-12 mb-4">
                                         <label class="form-label">Descrição</label>
-                                        <textarea name="description" class="form-control" rows="4" placeholder="Escreve uma descrição...">{{ old('description', $category->description ?? '') }}</textarea>
+                                        <textarea name="description" class="form-control" rows="4" placeholder="Escreve uma descrição..." value="{{ old('description') }}"></textarea>
                                     </div>
 
                                     {{-- Botão de Enviar --}}
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-primary"> Categoria
+                                        <button type="submit" class="btn btn-primary"> Criar Categoria
                                         </button>
                                     </div>
                                 </div>
