@@ -16,7 +16,7 @@
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-airplay"></i></span>
                         <span class="nxl-mtext">Dashboards</span><span class="nxl-arrow"><i
-                                class="feather-chevron-right"></i></span>
+                            class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
                         <li class="nxl-item"><a class="nxl-link" href="/">CRM</a></li>
@@ -33,8 +33,13 @@
                         <li class="nxl-item"><a class="nxl-link"
                                 href="{{ route('admin.categories.index') }}">Category</a></li>
                         <li class="nxl-item"><a class="nxl-link"
-                                href="#">Category
+<<<<<<< HEAD
+                                href="#">Category View</a>
+                        </li>
+=======
+                                href="">Category
                                 View</a></li>
+>>>>>>> 52326da03cbed2d8efc9e0b45d1019b6ca4d5932
                         <li class="nxl-item"><a class="nxl-link"
                                 href="#">Category Edit</a>
                         </li>
@@ -50,10 +55,12 @@
                                 class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
+                        <li class="nxl-item"><a class="nxl-link"
+                                href="#">Event</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/events/">Event View</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/events/eventEdit">Evente Edit</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.event.index') }}">Event
                                 Create</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/events/eventEdit">Evente Edit</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/events/">Event View</a></li>
                         <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                     </ul>
                 </li>
@@ -64,15 +71,17 @@
                                 class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="">News Create</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/Applications/appsEmail">Email</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/Applications/appsTasks">Tasks</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/Applications/appsNotes">Notes</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="#">News</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="#">News Views</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="#">News Edit</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="#">News Create</a></li>
+                        {{--
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsStorage">Storage</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsCalendar">Calendar</a></li>
+                        --}}
                     </ul>
                 </li>
-
+                {{--
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-dollar-sign"></i></span>
@@ -86,6 +95,8 @@
                         </li>
                     </ul>
                 </li>
+                --}}
+                {{--
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-users"></i></span>
@@ -100,6 +111,8 @@
                                 Create</a></li>
                     </ul>
                 </li>
+                --}}
+                {{--
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-alert-circle"></i></span>
@@ -112,6 +125,8 @@
                         <li class="nxl-item"><a class="nxl-link" href="/leads/leadsCreate">Leads Create</a></li>
                     </ul>
                 </li>
+                --}}
+                {{--
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-briefcase"></i></span>
@@ -125,6 +140,8 @@
                         </li>
                     </ul>
                 </li>
+                --}}
+                {{--
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-layout"></i></span>
@@ -141,6 +158,8 @@
                                 href="/Widgets/widgetsMiscellaneous">Miscellaneous</a></li>
                     </ul>
                 </li>
+                --}}
+                {{--
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-settings"></i></span>
@@ -167,6 +186,8 @@
                                 href="/Settings/settingsMiscellaneous">Miscellaneous</a></li>
                     </ul>
                 </li>
+                --}}
+                {{--
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-power"></i></span>
@@ -257,6 +278,8 @@
                         </li>
                     </ul>
                 </li>
+                --}}
+                {{--
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-life-buoy"></i></span>
@@ -270,6 +293,8 @@
                         <li class="nxl-item"><a class="nxl-link" href=".docs/documentations">Documentations</a></li>
                     </ul>
                 </li>
+                --}}
+                {{--
             </ul>
             <div class="card text-center">
                 <div class="card-body">
@@ -280,6 +305,7 @@
                     <a href="javascript:void(0);" class="btn btn-primary text-dark w-100">Download Now</a>
                 </div>
             </div>
+            --}}
         </div>
     </div>
 </nav>

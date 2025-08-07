@@ -10,17 +10,14 @@ use App\Http\Controllers\NewsController;
 /*-------------------------------------------------------
                     Dashboard routes
 -------------------------------------------------------*/
-
 Route::redirect('/', 'admin/dashboard');
 
 Route::get('admin/dashboard', function () {
     return view('admin.dashboard.crm.index');
 });
-
 Route::get('admin/analytics', function () {
     return view('admin.dashboard.Analytics.index');
 });
-
 /*-------------------------------------------------------
                     Category routes
 -------------------------------------------------------*/
@@ -31,7 +28,7 @@ Route::prefix('admin.categories')->name('admin.')->group(function () {
     Route::post('categories', [CategoryController::class, 'store'])->name('categories.store');
     Route::get('categoryView/{category}', [CategoryController::class, 'show'])->name('category.show');
     Route::get('categoryEdit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
-    //Route::put('categoryUpdate/{id}', [CategoryController::class, 'update'])->name('category.update');
+    Route::put('categoryUpdate/{category}', [CategoryController::class, 'update'])->name('category.update');
     Route::get('categoryDelete/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
 });
 
@@ -149,8 +146,20 @@ Route::get('admin/widgets/statistics', function () {
 });
 
 /* -----------------------------------------------
-             Event-Route
+                    Event Routes
 --------------------------------------------------*/
+/*
+Route::prefix('admin.events')->name('admin.')->group(function () {
+    Route::get('events', [EventController::class, 'index'])->name('categories.index');
+});
+*/
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/events/eventEdit', [EventController::class, 'edit']);
+Route::get('/events/eventCreate', [EventController::class, 'create']);
+
+
+Route::get('/events/eventEdit', [EventController::class, 'index']);
+Route::get('/events/eventCreate', [EventController::class, 'index']);
 Route::prefix('admin/events')->name('admin.')->group(function () {
     Route::get('event', [EventController::class, 'index'])->name('event.index');
     Route::get('eventCreate', [EventController::class, 'create'])->name('event.create');
