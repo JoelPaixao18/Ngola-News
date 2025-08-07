@@ -85,7 +85,7 @@
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Slug</label>
                                         <input type="text" name="slug" class="form-control"
-                                            value="{{ old('slug', $category->slug ?? '') }}"
+                                            value="{{ old('slug', $category->slug) }}"
                                             placeholder="ex: politica, desporto...">
                                     </div>
 
