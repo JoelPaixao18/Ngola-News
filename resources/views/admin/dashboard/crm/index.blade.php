@@ -1,4 +1,4 @@
-@extends('dashboard.crm.layout.principal')
+@extends('admin.dashboard.crm.layout.main')
 @section('title', 'CRM - Dashboard')
 @section('content-crm')
 

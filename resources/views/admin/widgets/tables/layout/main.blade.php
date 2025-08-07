@@ -36,10 +36,10 @@
 </head>
 
 <body>
-    @include('widgets.tables.parcial.header')
-    @include('widgets.tables.parcial.menu')
-    @include('widgets.tables.parcial.themes')
-    @include('widgets.tables.parcial.footer')
+    @include('admin.widgets.tables.parcial.header')
+    @include('admin.widgets.tables.parcial.menu')
+    @include('admin.widgets.tables.parcial.themes')
+    @include('admin.widgets.tables.parcial.footer')
 
     <div>
         @yield('content-widgets-tables')

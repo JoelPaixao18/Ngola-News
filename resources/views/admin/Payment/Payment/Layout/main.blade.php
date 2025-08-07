@@ -39,14 +39,14 @@
 
      <!--! [Start] Header !-->
     <!--! ================================================================ !-->
-    @include('Payment.Payment.Parcial.header')
+    @include('admin.Payment.Payment.Parcial.header')
     <!--! ================================================================ !-->
     <!--! [Start] Menu !-->
-    @include('Payment.Payment.Parcial.menu')
+    @include('admin.Payment.Payment.Parcial.menu')
     <!--! ================================================================ !-->
     <!--! [Start] Theme !-->
     <!--! ================================================================ !-->
-    @include('Payment.Payment.Parcial.theme')
+    @include('admin.Payment.Payment.Parcial.theme')
     <!--! ================================================================ !-->
 
     <div>
@@ -54,7 +54,7 @@
     </div>
 
            <!-- [ Footer ] start -->
-   @include('Payment.Payment.parcial.footer')
+   @include('admin.Payment.Payment.parcial.footer')
         <!-- [ Footer ] end --> 
     <!--! Footer Script !-->
     <!--! ================================================================ !-->

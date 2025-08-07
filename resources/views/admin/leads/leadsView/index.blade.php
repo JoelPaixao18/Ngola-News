@@ -1,4 +1,4 @@
-@extends('leads.leads.layout.principal')
+@extends('admin.leads.leadsView.layout.main')
 @section('title', 'leads')
 @section('content-leads')
 <div class="nxl-content">

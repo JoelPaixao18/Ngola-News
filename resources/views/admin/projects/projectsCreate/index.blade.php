@@ -1,4 +1,4 @@
-@extends('projects.projectsCreate.layout.principal')
+@extends('admin.projects.projectsCreate.layout.main')
 @section('title', 'Duralux || Projects Create')
 @section('content-projectsCreate')
 <div class="nxl-content">

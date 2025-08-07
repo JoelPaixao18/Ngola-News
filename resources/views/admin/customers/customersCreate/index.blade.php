@@ -1,4 +1,4 @@
-@extends('customers.customers.layout.principal')
+@extends('admin.customers.customers.layout.main')
 @section('title', 'customers')
 @section('content-customers')
 <div class="nxl-content">

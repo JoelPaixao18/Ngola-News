@@ -1,153 +1,126 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\NewsController;
 
 
 /*-------------------------------------------------------
                     Dashboard routes
 -------------------------------------------------------*/
 
-Route::get('/dashboard', function () {
-    return view('dashboard.crm.index');
+Route::redirect('/', 'admin/dashboard');
+
+Route::get('admin/dashboard', function () {
+    return view('admin.dashboard.crm.index');
 });
 
-
-Route::get('/analytics', function () {
-    return view('dashboard.Analytics.index');
+Route::get('admin/analytics', function () {
+    return view('admin.dashboard.Analytics.index');
 });
+
 /*-------------------------------------------------------
-                    Proposal routes
+                    Category routes
 -------------------------------------------------------*/
-Route::get('/proposal', function () {
 
-    return view('proposal.proposal.index');
+Route::prefix('admin.categories')->name('admin.')->group(function () {
+    Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
+    Route::get('categoryCreate', [CategoryController::class, 'create'])->name('category.create');
+    //Route::post('categoryStore', [CategoryController::class, 'store'])->name('category.store');
+    //Route::get('categoryEdit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+    //Route::put('categoryUpdate/{id}', [CategoryController::class, 'update'])->name('category.update');
+    //Route::get('categoryView/{id}', [CategoryController::class, 'show'])->name('category.view');
+    //Route::delete('categoryDelete/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
 });
 
-
-Route::get('/proposal/proposalView', function () {
-
-    return view('proposal.proposalView.index');
-});
-
-
-Route::get('/proposal/proposalEdit', function () {
-
-
-    return view('proposal.proposalEdit.index');
-});
-
-
-Route::get('/proposal/proposalCreate', function () {
-
-
-    return view('proposal.proposalCreate.index');
-});
 
 /*-------------------------------------------------------
                     reports routes
 -------------------------------------------------------*/
 
-Route::get('/Reports/reportsSales', function () {
+/* Route::get('admin/Reports/reportsSales', function () {
 
 
-    return view('reports.sales.index');
+    return view('admin.reports.sales.index');
 });
-Route::get('/Reports/reportsLeads', function () {
+Route::get('admin/Reports/reportsLeads', function () {
 
 
-    return view('reports.leads.index');
+    return view('admin.reports.leads.index');
 });
-Route::get('/Reports/reportsProject', function () {
+Route::get('admin/Reports/reportsProject', function () {
 
 
-    return view('reports.project.index');
+    return view('admin.reports.project.index');
 });
-Route::get('/Reports/reportsTimesheets', function () {
+Route::get('admin/Reports/reportsTimesheets', function () {
 
 
-    return view('reports.timesheets.index');
+    return view('admin.reports.timesheets.index');
 });
-
+ */
 /*-------------------------------------------------------
-                    aplications routes
+                    News routes
 -------------------------------------------------------*/
 
-Route::get('/Applications/appsChat', function () {
+Route::resource('news', NewsController::class);
 
-
-    return view('applications.chat.index');
-});
-Route::get('/Applications/appsEmail', function () {
-
-
-    return view('applications.email.index');
-});
-Route::get('/Applications/appsTasks', function () {
-
-
-    return view('applications.tasks.index');
-});
-Route::get('/Applications/appsNotes', function () {
-
-
-    return view('applications.notes.index');
-});
-Route::get('/Applications/appsStorage', function () {
-
-
-    return view('applications.storage.index');
-});
-Route::get('/Applications/appsCalendar', function () {
-
-
-    return view('applications.calendar.index');
+Route::prefix('admin.news')->name('admin.')->group(function () {
+    Route::get('newsCreate', [NewsController::class, 'index'])->name('create');
 });
 
+
+/*
+Route::get('admin/Applications/appsChat', function () {
+    return view('admin.applications.chat.index');
+});
+Route::get('admin/Applications/appsEmail', function () {
+    return view('admin.applications.email.index');
+});
+Route::get('admin/Applications/appsTasks', function () {
+    return view('admin.applications.tasks.index');
+});
+Route::get('admin/Applications/appsNotes', function () {
+    return view('admin.applications.notes.index');
+});
+Route::get('admin/Applications/appsStorage', function () {
+    return view('admin.applications.storage.index');
+});
+Route::get('admin/Applications/appsCalendar', function () {
+    return view('admin.applications.calendar.index');
+});
+*/
 /*-------------------------------------------------------
                     customers routes
 -------------------------------------------------------*/
 
-Route::get('/customers', function () {
-
-    return view('customers.customers.index');
+Route::get('admin/customers', function () {
+    return view('admin.customers.customers.index');
 });
-Route::get('/customers/customersView', function () {
-
-    return view('customers.customersView.index');
+Route::get('admin/customers/customersView', function () {
+    return view('admin.customers.customersView.index');
 });
-Route::get('/customers/customersCreate', function () {
-
-    return view('customers.customersCreate.index');
+Route::get('admin/customers/customersCreate', function () {
+    return view('admin.customers.customersCreate.index');
 });
 
 /*-------------------------------------------------------
                     payment routes
 -------------------------------------------------------*/
 
-Route::get('/payment', function () {
+Route::get('admin/payment', function () {
 
-    return view('payment.payment.index');
+    return view('admin.payment.payment.index');
 });
-Route::get('/payment/invoiceView', function () {
+Route::get('admin/payment/invoiceView', function () {
 
-    return view('payment.invoiceView.index');
+    return view('admin.payment.invoiceView.index');
 });
-Route::get('/payment/invoiceCreate', function () {
+Route::get('admin/payment/invoiceCreate', function () {
 
-    return view('payment.invoiceCreate.index');
+    return view('admin.payment.invoiceCreate.index');
 });
 
 
@@ -155,26 +128,35 @@ Route::get('/payment/invoiceCreate', function () {
                     widgets routes
 -------------------------------------------------------*/
 
-Route::get('/widgets/lists', function () {
-    return view('widgets.lists.index');
+Route::get('admin/widgets/lists', function () {
+    return view('admin.widgets.lists.index');
 });
 
-Route::get('/widgets/tables', function () {
-    return view('widgets.tables.index');
+Route::get('admin/widgets/tables', function () {
+    return view('admin.widgets.tables.index');
 });
 
-Route::get('/widgets/charts', function () {
-    return view('widgets.charts.index');
+Route::get('admin/widgets/charts', function () {
+    return view('admin.widgets.charts.index');
 });
 
-Route::get('/widgets/miscellaneous', function () {
-    return view('widgets.miscellaneous.index');
+Route::get('admin/widgets/miscellaneous', function () {
+    return view('admin.widgets.miscellaneous.index');
 });
 
-Route::get('/widgets/statistics', function () {
-    return view('widgets.statistics.index');
+Route::get('admin/widgets/statistics', function () {
+    return view('admin.widgets.statistics.index');
 });
 
-Route::get('/', function () {
-    return view('home.main');
+/* -----------------------------------------------
+             Event-Route
+--------------------------------------------------*/
+Route::prefix('admin/events')->name('admin.')->group(function () {
+    // Route::get('eventCreat', [EventController::class, 'index'])->name('event.index');
+    Route::get('eventCreate', [EventController::class, 'create'])->name('event.create');
+    Route::post('eventStore', [EventController::class, 'store'])->name('event.store');
+    Route::get('eventEdit', [EventController::class, 'edit'])->name('event.edit');
+    Route::put('eventUpdate', [EventController::class, 'update'])->name('event.update');
+    Route::get('eventView', [EventController::class, 'show'])->name('event.view');
+    Route::delete('eventDelete/{id}', [EventController::class, 'destroy'])->name('event.delete');
 });
