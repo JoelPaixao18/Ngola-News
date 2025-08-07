@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
@@ -21,29 +22,19 @@ Route::get('admin/analytics', function () {
 });
 
 /*-------------------------------------------------------
-                    Proposal routes
+                    Category routes
 -------------------------------------------------------*/
-Route::get('admin/proposal', function () {
-    return view('admin.proposal.proposal.index');
+
+Route::prefix('admin.categories')->name('admin.')->group(function () {
+    Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
+    Route::get('categoryCreate', [CategoryController::class, 'create'])->name('category.create');
+    Route::post('categories', [CategoryController::class, 'store'])->name('categories.store');
+    Route::get('categoryView/{category}', [CategoryController::class, 'show'])->name('category.show');
+    Route::get('categoryEdit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
+    //Route::put('categoryUpdate/{id}', [CategoryController::class, 'update'])->name('category.update');
+    Route::get('categoryDelete/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
 });
 
-Route::get('admin/proposal/proposalView', function () {
-    return view('admin.proposal.proposalView.index');
-});
-
-
-Route::get('admin/proposal/proposalEdit', function () {
-
-
-    return view('admin.proposal.proposalEdit.index');
-});
-
-
-Route::get('admin/proposal/proposalCreate', function () {
-
-
-    return view('admin.proposal.proposalCreate.index');
-});
 
 /*-------------------------------------------------------
                     reports routes
@@ -73,12 +64,12 @@ Route::get('admin/Reports/reportsTimesheets', function () {
 /*-------------------------------------------------------
                     News routes
 -------------------------------------------------------*/
-
+/*
 Route::resource('news', NewsController::class);
 
-Route::prefix('admin.news')->name('admin.')->group(function(){
-    Route::get('newsCreate',[NewsController::class,'index'])->name('create');
-});
+Route::prefix('admin.news')->name('admin.')->group(function () {
+    Route::get('newsCreate', [NewsController::class, 'index'])->name('create');
+}); */
 
 
 /*
@@ -158,7 +149,7 @@ Route::get('admin/widgets/statistics', function () {
 });
 
 /* -----------------------------------------------
-             Event-Route
+                    Event-Route
 --------------------------------------------------*/
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/events/eventEdit', [EventController::class, 'edit']);
@@ -167,3 +158,12 @@ Route::get('/events/eventCreate', [EventController::class, 'create']);
 
 Route::get('/events/eventEdit', [EventController::class, 'index']);
 Route::get('/events/eventCreate', [EventController::class, 'index']);
+Route::prefix('admin/events')->name('admin.')->group(function () {
+    Route::get('event', [EventController::class, 'index'])->name('event.index');
+    Route::get('eventCreate', [EventController::class, 'create'])->name('event.create');
+    /* Route::post('eventStore', [EventController::class, 'store'])->name('event.store');
+    Route::get('eventEdit/{id}', [EventController::class, 'edit'])->name('event.edit');
+    Route::put('eventUpdate/{id}', [EventController::class, 'update'])->name('event.update');
+    Route::get('eventView/{id}', [EventController::class, 'show'])->name('event.view');
+    Route::delete('eventDelete/{id}', [EventController::class, 'destroy'])->name('event.delete'); */
+});

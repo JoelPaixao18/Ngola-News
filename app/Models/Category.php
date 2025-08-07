@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\News;
+use App\Models\Event;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
@@ -13,10 +14,9 @@ class Category extends Model
 
     protected $fillable = [
         'name',
+        'slug',
+        'description',
+        'type',
+        'status',
     ];
-
-    public function news()
-    {
-        return $this->hasMany(News::class);
-    }
 }

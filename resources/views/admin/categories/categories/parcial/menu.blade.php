@@ -32,10 +32,14 @@
                     <ul class="nxl-submenu">
                         <li class="nxl-item"><a class="nxl-link"
                                 href="{{ route('admin.categories.index') }}">Category</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="#">Category
-                                View</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.edit') }}">Category Edit</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Category Create</a>
+                        <li class="nxl-item"><a class="nxl-link"
+                                href="{{ route('admin.category.show', ['category' => $category]) }}">Category View</a>
+                        </li>
+                        <li class="nxl-item"><a class="nxl-link"
+                                href="{{ route('admin.category.edit', ['category' => $category]) }}">Category Edit</a>
+                        </li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Category
+                                Create</a>
                         </li>
                     </ul>
                 </li>
@@ -60,8 +64,10 @@
                                 class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="">News Create</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="/Applications/appsEmail">Email</a></li>
+                        <li class="nxl-item"><a class="nxl-link"
+                                href="News Create</a></li>
+                        <li class="nxl-item"><a
+                                    class="nxl-link" href="/Applications/appsEmail">Email</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsTasks">Tasks</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsNotes">Notes</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsStorage">Storage</a></li>
