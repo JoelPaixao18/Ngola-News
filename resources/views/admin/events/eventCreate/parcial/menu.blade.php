@@ -65,7 +65,7 @@
                                     class="feather-chevron-right"></i></span>
                         </a>
                         <ul class="nxl-submenu">
-                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.create') }}">News Create</a>
+                            <li class="nxl-item"><a class="nxl-link" href="#">News Create</a>
                             </li>
                             <li class="nxl-item"><a class="nxl-link" href="/Applications/appsEmail">Email</a></li>
                             <li class="nxl-item"><a class="nxl-link" href="/Applications/appsTasks">Tasks</a></li>

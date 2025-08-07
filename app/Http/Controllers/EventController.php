@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class EventController extends Controller
 {
@@ -15,8 +16,8 @@ class EventController extends Controller
     public function index()
     {
         //
-        $events = Event::all();
-        return view('admin.events.eventCreate.index', compact('events'));
+        $categories = Category::all();
+        return view('admin.events.eventCreate.index', compact('categories'));
     }
 
     /**
@@ -27,7 +28,8 @@ class EventController extends Controller
     public function create()
     {
         //
-        return view('admin.events.eventCreate.index');
+        $categories = Category::where('type', 'evento')->get();
+        return view('admin.events.eventCreate.index', compact('categories'));
     }
 
     /**
@@ -38,7 +40,46 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validação básica
+        $request->validate([
+            'title' => 'required|string|max:100',
+            'subtitle' => 'required|string|max:100',
+            'description' => 'required|string',
+            'country' => 'required|string|max:100',
+            'state' => 'required|string|max:100',
+            'city' => 'required|string|max:100',
+            'status' => 'required|boolean',
+            'event_date' => 'required|date|after_or_equal:today',
+            'last_modifyed_date' => 'required|date|after_or_equal:event_date',
+            'category_id' => 'required|exists:categories,id',
+            'image' => 'required|image|mimes:jpg,jpeg,png',
+        ]);
+
+        // Upload da imagem
+        $imageName = null;
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $image = $request->file('image');
+            $extension = $image->extension();
+            $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+            $image->move(public_path('img/events'), $imageName);
+        }
+
+        // Criação do evento
+        Event::create([
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'image' => $imageName,
+            'description' => $request->description,
+            'country' => $request->country,
+            'state' => $request->state,
+            'city' => $request->city,
+            'status' => $request->status,
+            'event_date' => $request->event_date,
+            'last_modifyed_date' => $request->last_modifyed_date,
+            'category_id' => $request->category_id,
+        ]);
+
+        return redirect()->route('admin.event.index')->with('msg', 'Evento criado com sucesso!');
     }
 
     /**
