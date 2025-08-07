@@ -33,7 +33,7 @@
                         <li class="nxl-item"><a class="nxl-link"
                                 href="{{ route('admin.categories.index') }}">Category</a></li>
                         <li class="nxl-item"><a class="nxl-link"
-                                href="#">Category
+                                href="">Category
                                 View</a></li>
                         <li class="nxl-item"><a class="nxl-link"
                                 href="#">Category Edit</a>

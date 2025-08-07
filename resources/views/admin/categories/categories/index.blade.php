@@ -108,9 +108,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="proposal-create.html" class="btn btn-primary">
+                        <a href="{{ route('admin.category.create') }}" class="btn btn-primary">
                             <i class="feather-plus me-2"></i>
-                            <span>New Proposal</span>
+                            <span>New Category</span>
                         </a>
                     </div>
                 </div>
