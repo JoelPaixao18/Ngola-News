@@ -29,10 +29,10 @@ Route::prefix('admin.categories')->name('admin.')->group(function () {
     Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::get('categoryCreate', [CategoryController::class, 'create'])->name('category.create');
     Route::post('categories', [CategoryController::class, 'store'])->name('categories.store');
-    //Route::get('categoryEdit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::get('categoryView/{category}', [CategoryController::class, 'show'])->name('category.show');
+    Route::get('categoryEdit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
     //Route::put('categoryUpdate/{id}', [CategoryController::class, 'update'])->name('category.update');
-    //Route::get('categoryView/{id}', [CategoryController::class, 'show'])->name('category.view');
-    //Route::delete('categoryDelete/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
+    Route::get('categoryDelete/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
 });
 
 
@@ -64,7 +64,7 @@ Route::get('admin/Reports/reportsTimesheets', function () {
 /*-------------------------------------------------------
                     News routes
 -------------------------------------------------------*/
-/* 
+/*
 Route::resource('news', NewsController::class);
 
 Route::prefix('admin.news')->name('admin.')->group(function () {

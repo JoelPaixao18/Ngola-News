@@ -243,17 +243,10 @@
                                                 </td>
                                                 <td>{{ $category->slug }}</td>
                                                 <td class="fw-bold text-dark">{{ $category->type }}</td>
-                                                <td>{{$category->status}}</td>
-                                                <td>{{$category->description}}</td>
+                                                <td>{{ $category->status }}</td>
+                                                <td>{{ $category->description }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
-                                                        <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                            data-bs-toggle="offcanvas" data-bs-target="#proposalSent">
-                                                            <i class="feather feather-send"></i>
-                                                        </a>
-                                                        <a href="proposal-view.html" class="avatar-text avatar-md">
-                                                            <i class="feather feather-eye"></i>
-                                                        </a>
                                                         <div class="dropdown">
                                                             <a href="javascript:void(0)" class="avatar-text avatar-md"
                                                                 data-bs-toggle="dropdown" data-bs-offset="0,21">
@@ -261,40 +254,22 @@
                                                             </a>
                                                             <ul class="dropdown-menu">
                                                                 <li>
-                                                                    <a class="dropdown-item" href="proposal-edit.html">
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ route('admin.category.show', ['category' => $category]) }}">
+                                                                        <i class="feather feather-eye me-3"></i>
+                                                                        <span>View</span>
+                                                                    </a>
+                                                                <li>
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ route('admin.category.edit', ['category' => $category]) }}">
                                                                         <i class="feather feather-edit-3 me-3"></i>
                                                                         <span>Edit</span>
                                                                     </a>
                                                                 </li>
-                                                                <li>
-                                                                    <a class="dropdown-item printBTN"
-                                                                        href="javascript:void(0)">
-                                                                        <i class="feather feather-printer me-3"></i>
-                                                                        <span>Print</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0)">
-                                                                        <i class="feather feather-clock me-3"></i>
-                                                                        <span>Remind</span>
-                                                                    </a>
-                                                                </li>
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0)">
-                                                                        <i class="feather feather-archive me-3"></i>
-                                                                        <span>Archive</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0)">
-                                                                        <i class="feather feather-alert-octagon me-3"></i>
-                                                                        <span>Report Spam</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="javascript:void(0)">
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ route('admin.category.delete', ['category' => $category]) }}">
                                                                         <i class="feather feather-trash-2 me-3"></i>
                                                                         <span>Delete</span>
                                                                     </a>

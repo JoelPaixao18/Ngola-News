@@ -87,7 +87,7 @@
 
                                     {{-- Tipo --}}
                                     <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Nome da Categoria</label>
+                                        <label class="form-label">Tipo de Categoria</label>
                                         <input type="text" name="type" class="form-control"
                                             value="{{ old('type', $category->type ?? '') }}" value="{{ old('type') }}"
                                             placeholder="Ex: Notícia, Eventos...">
