@@ -130,7 +130,6 @@
                 </div>
             </div>
             <!-- [ page-header ] end -->
-
             @if ($errors->any())
             <div class="alert alert-danger">
                 <strong>Erros encontrados:</strong>
@@ -159,7 +158,7 @@
                                     <div class="row">
                                         <div class="col-lg-6 mb-4">
                                             <label class="form-label">Category</label>
-                                            <select class="form-select form-control" name="category_id" data-select2-selector="status">
+                                            <select class="form-select form-control" name="categoryId" data-select2-selector="status">
                                                 @foreach($categories as $category)
                                                 <option value="{{$category->id}}" data-bg="bg-primary">{{$category->name}}</option>
                                                 @endforeach
@@ -185,11 +184,11 @@
                                         </div> -->
                                         <div class="col-lg-6 mb-4">
                                             <label class="form-label">Event date</label>
-                                            <input type="date" class="form-control" name="event_date" id="date">
+                                            <input type="date" class="form-control" name="eventDate" id="date">
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <label class="form-label">Last modified date</label>
-                                            <input type="date" class="form-control" name="last_modifyed_date" id="date">
+                                            <input type="date" class="form-control" name="lastModifyedDate" id="date">
                                         </div>
                                     </div>
                                 </div>

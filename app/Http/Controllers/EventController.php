@@ -16,8 +16,8 @@ class EventController extends Controller
     public function index()
     {
         //
-        $categories = Category::all();
-        return view('admin.events.eventCreate.index', compact('categories'));
+        $events = Event::all();
+        return view('admin.events.event.index', compact('events'));
     }
 
     /**
@@ -28,7 +28,7 @@ class EventController extends Controller
     public function create()
     {
         //
-        $categories = Category::where('type', 'evento')->get();
+        $categories = Category::all();
         return view('admin.events.eventCreate.index', compact('categories'));
     }
 
@@ -49,9 +49,9 @@ class EventController extends Controller
             'state' => 'required|string|max:100',
             'city' => 'required|string|max:100',
             'status' => 'required|boolean',
-            'event_date' => 'required|date|after_or_equal:today',
-            'last_modifyed_date' => 'required|date|after_or_equal:event_date',
-            'category_id' => 'required|exists:categories,id',
+            'eventDate' => 'required|date|after_or_equal:today',
+            'lastModifyedDate' => 'required|date|after_or_equal:eventDate',
+            'categoryId' => 'required|exists:categories,id',
             'image' => 'required|image|mimes:jpg,jpeg,png',
         ]);
 
@@ -74,9 +74,9 @@ class EventController extends Controller
             'state' => $request->state,
             'city' => $request->city,
             'status' => $request->status,
-            'event_date' => $request->event_date,
-            'last_modifyed_date' => $request->last_modifyed_date,
-            'category_id' => $request->category_id,
+            'eventDate' => $request->eventDate,
+            'lastModifyedDate' => $request->lastModifyedDate,
+            'categoryId' => $request->categoryId,
         ]);
 
         return redirect()->route('admin.event.index')->with('msg', 'Evento criado com sucesso!');

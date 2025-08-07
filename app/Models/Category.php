@@ -24,9 +24,4 @@ class Category extends Model
         'type',
         'status',
     ];
-
-    public function events()
-    {
-        return $this->hasMany(Event::class);
-    }
 }

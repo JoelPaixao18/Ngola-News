@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Category;
 
 class Event extends Model
 {
@@ -23,8 +24,8 @@ class Event extends Model
         'state',
         'city',
         'status',
-        'event_date',
-        'last_modifyed_date',
-        'category_id',
+        'eventDate',
+        'lastModifyedDate',
+        'categoryId',
     ];
 }

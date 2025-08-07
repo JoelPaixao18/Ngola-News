@@ -75,7 +75,7 @@
                             <li class="nxl-item"><a class="nxl-link" href="/Applications/appsCalendar">Calendar</a></li>
                         </ul>
                     </li>
-                    <li class="nxl-item nxl-hasmenu">
+                    {{-- <li class="nxl-item nxl-hasmenu">
                         <a href="javascript:void(0);" class="nxl-link">
                             <span class="nxl-micon"><i class="feather-dollar-sign"></i></span>
                             <span class="nxl-mtext">Payment</span><span class="nxl-arrow"><i
@@ -281,7 +281,7 @@
                             <li class="nxl-item"><a class="nxl-link" href=".docs/documentations">Documentations</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul>
                 <div class="card text-center">
                     <div class="card-body">
@@ -294,7 +294,6 @@
 
                 </div>
             </div>
-            --}}
         </div>
     </div>
 </nav>
