@@ -1411,7 +1411,8 @@
                                 <span class="fs-12 fw-normal text-muted d-block">General information for your
                                     Category</span>
                             </h5>
-                            <a href="{{ route('admin.category.edit', ['category' => $category]) }}" class="btn btn-sm btn-light-brand">Edit Category</a>
+                            <a href="{{ route('admin.categories.index') }}"
+                                class="btn btn-sm btn-light-brand">List Category</a>
                         </div>
                         <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">ID</div>

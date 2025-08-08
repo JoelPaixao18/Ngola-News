@@ -2,24 +2,43 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+
 
 class News extends Model
 {
-    use SoftDeletes;
+    use softDeletes;
 
-    protected $fillables = [
-        "title",
-        "slug",
-        "content",
-        "category_id",
-        "imagem"
+    protected $fillable = [
+        'image',
+        'title',
+        'slug',
+        'subtitle',
+        'detach',
+        'status',
+        'date',
+        'category_id',
+        'description',
     ];
 
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($news) {
+            $news->slug = Str::slug($news->title);
+        });
+
+        static::updating(function ($news) {
+            $news->slug = Str::slug($news->title);
+        });
     }
 }

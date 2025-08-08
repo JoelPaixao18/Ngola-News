@@ -1,421 +1,179 @@
 @extends('admin.news.newsCreate.layout.main')
 
-@section('content-calendar')
+@section('title', 'Ngola News - Create News ')
 
-@endsection
-{{--
-@section('content-calendar')
-    <!--! ================================================================ !-->
-    <!--! [Start] Main Content !-->
-    <!--! ================================================================ !-->
-    <main class="nxl-container apps-container apps-calendar">
-        <div class="nxl-content without-header nxl-full-content">
-            <!-- [ Main Content ] start -->
-            <div class="main-content d-flex">
-                <!-- [ Content Sidebar ] start -->
-                <div class="content-sidebar content-sidebar-xl" data-scrollbar-target="#psScrollbarInit">
-                    <div class="content-sidebar-header bg-white sticky-top hstack justify-content-between">
-                        <h4 class="fw-bolder mb-0">Calendar</h4>
-                        <a href="javascript:void(0);" class="app-sidebar-close-trigger d-flex">
-                            <i class="feather-x"></i>
-                        </a>
-                    </div>
-                    <div class="content-sidebar-header">
-                        <a href="javascript:void(0);" id="btn-new-schedule" class="btn btn-primary w-100"
-                            data-toggle="modal">
-                            <i class="feather-calendar me-2"></i>
-                            <span>New Event</span>
-                        </a>
-                    </div>
-                    <div class="content-sidebar-body">
-                        <div id="lnb-calendars" class="lnb-calendars">
-                            <div class="lnb-calendars-item">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="viewAllSchedules" value="all"
-                                        checked="checked">
-                                    <label class="custom-control-label c-pointer" for="viewAllSchedules">
-                                        <span class="fs-13 fw-semibold lh-lg" style="margin-top: -2px">View All
-                                            Schedules</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div id="calendarList" class="lnb-calendars-d1">
-                                <div class="lnb-calendars-item">
-                                    <label><input type="checkbox" class="tui-full-calendar-checkbox-round" value="1"
-                                            checked=""><span
-                                            style="border-color: #5485e4; background-color: #5485e4"></span><span>Office</span></label>
-                                </div>
-                                <div class="lnb-calendars-item">
-                                    <label><input type="checkbox" class="tui-full-calendar-checkbox-round" value="2"
-                                            checked=""><span
-                                            style="border-color: #25b865; background-color: #25b865"></span><span>Family</span></label>
-                                </div>
-                                <div class="lnb-calendars-item">
-                                    <label><input type="checkbox" class="tui-full-calendar-checkbox-round" value="3"
-                                            checked=""><span
-                                            style="border-color: rgb(209, 59, 76); background-color: rgb(209, 59, 76)"></span><span>Friend</span></label>
-                                </div>
-                                <div class="lnb-calendars-item">
-                                    <label><input type="checkbox" class="tui-full-calendar-checkbox-round" value="4"
-                                            checked=""><span
-                                            style="border-color: #17a2b8; background-color: #17a2b8"></span><span>Travel</span></label>
-                                </div>
-                                <div class="lnb-calendars-item">
-                                    <label><input type="checkbox" class="tui-full-calendar-checkbox-round" value="5"
-                                            checked=""><span
-                                            style="border-color: #e49e3d; background-color: #e49e3d"></span><span>Privete</span></label>
-                                </div>
-                                <div class="lnb-calendars-item">
-                                    <label><input type="checkbox" class="tui-full-calendar-checkbox-round" value="6"
-                                            checked=""><span
-                                            style="border-color: #5856d6; background-color: #5856d6"></span><span>Holidays</span></label>
-                                </div>
-                                <div class="lnb-calendars-item">
-                                    <label><input type="checkbox" class="tui-full-calendar-checkbox-round" value="7"
-                                            checked=""><span
-                                            style="border-color: #3dc7be; background-color: #3dc7be"></span><span>Company</span></label>
-                                </div>
-                                <div class="lnb-calendars-item">
-                                    <label><input type="checkbox" class="tui-full-calendar-checkbox-round" value="8"
-                                            checked=""><span
-                                            style="border-color: #475e77; background-color: #475e77"></span><span>Birthdays</span></label>
-                                </div>
-                            </div>
-                        </div>
-                        <h2 class="px-4 fs-10 fw-bold text-uppercase my-4 text-muted text-spacing-1 text-truncate-1-line">
-                            Events &amp; Schedules</h2>
-                        <!--! BEGIN: [Events] !-->
-                        <div class="p-4 border-top c-pointer single-item schedule-item">
-                            <div class="d-flex align-items-start">
-                                <div
-                                    class="wd-50 ht-50 bg-soft-success text-success lh-1 d-flex align-items-center justify-content-center flex-column rounded-2 schedule-date">
-                                    <span class="fs-18 fw-bold mb-1 d-block">17</span>
-                                    <span class="fs-10 text-semibold text-uppercase d-block">Dec</span>
-                                </div>
-                                <div class="ms-3 schedule-body">
-                                    <div class="text-dark">
-                                        <h6 class="fw-bold my-1 text-truncate-1-line">Company Standup Meeting</h6>
-                                        <span class="fs-11 fw-normal text-muted">8:00am - 9:00am, Engineering Room</span>
-                                        <p class="fs-12 fw-normal text-muted my-3 text-truncate-2-line">Lorem ipsum quia
-                                            dolor sit amet, consectetur, adipisci velit, abore et dolore magnam aliquam
-                                            quaerat voluptatem.</p>
-                                    </div>
-                                    <div class="img-group lh-0 ms-3 justify-content-start">
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm" data-bs-toggle="tooltip"
-                                            data-bs-trigger="hover" title="Janette Dalton">
-                                            <img src="assets/images/avatar/2.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                            <img src="assets/images/avatar/3.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                            <img src="assets/images/avatar/4.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/5.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/6.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-text avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More">
-                                            <i class="feather-more-horizontal"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--! BEGIN: [Events] !-->
-                        <div class="p-4 border-top c-pointer single-item schedule-item">
-                            <div class="d-flex align-items-start">
-                                <div
-                                    class="wd-50 ht-50 bg-soft-warning text-warning lh-1 d-flex align-items-center justify-content-center flex-column rounded-2 schedule-date">
-                                    <span class="fs-18 fw-bold mb-1 d-block">30</span>
-                                    <span class="fs-10 text-semibold text-uppercase d-block">Dec</span>
-                                </div>
-                                <div class="ms-3 schedule-body">
-                                    <div class="text-dark">
-                                        <h6 class="fw-bold my-1 text-truncate-1-line">Web Design Presentation</h6>
-                                        <span class="fs-11 fw-normal text-muted">2:00pm - 5:00pm, Virtual Platform</span>
-                                        <p class="fs-12 fw-normal text-muted my-3 text-truncate-2-line">Lorem ipsum quia
-                                            dolor sit amet, consectetur, adipisci velit, abore et dolore magnam aliquam
-                                            quaerat voluptatem.</p>
-                                    </div>
-                                    <div class="img-group lh-0 ms-3 justify-content-start">
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                            <img src="assets/images/avatar/2.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                            <img src="assets/images/avatar/3.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                            <img src="assets/images/avatar/4.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/5.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/6.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-text avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More">
-                                            <i class="feather-more-horizontal"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--! BEGIN: [Events] !-->
-                        <div class="p-4 border-top c-pointer single-item schedule-item">
-                            <div class="d-flex align-items-start">
-                                <div
-                                    class="wd-50 ht-50 bg-soft-primary text-primary lh-1 d-flex align-items-center justify-content-center flex-column rounded-2 schedule-date">
-                                    <span class="fs-18 fw-bold mb-1 d-block">21</span>
-                                    <span class="fs-10 text-semibold text-uppercase d-block">Dec</span>
-                                </div>
-                                <div class="ms-3 schedule-body">
-                                    <div class="text-dark">
-                                        <h6 class="fw-bold my-1 text-truncate-1-line">Standup Design Presentation</h6>
-                                        <span class="fs-11 fw-normal text-muted">2:00pm - 5:00pm, Virtual Platform</span>
-                                        <p class="fs-12 fw-normal text-muted my-3 text-truncate-2-line">Lorem ipsum quia
-                                            dolor sit amet, consectetur, adipisci velit, abore et dolore magnam aliquam
-                                            quaerat voluptatem.</p>
-                                    </div>
-                                    <div class="img-group lh-0 ms-3 justify-content-start">
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                            <img src="assets/images/avatar/2.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                            <img src="assets/images/avatar/3.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                            <img src="assets/images/avatar/4.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/5.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/6.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-text avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More">
-                                            <i class="feather-more-horizontal"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--! BEGIN: [Events] !-->
-                        <div class="p-4 border-top c-pointer single-item schedule-item">
-                            <div class="d-flex align-items-start">
-                                <div
-                                    class="wd-50 ht-50 bg-soft-danger text-danger lh-1 d-flex align-items-center justify-content-center flex-column rounded-2 schedule-date">
-                                    <span class="fs-18 fw-bold mb-1 d-block">14</span>
-                                    <span class="fs-10 text-semibold text-uppercase d-block">Dec</span>
-                                </div>
-                                <div class="ms-3 schedule-body">
-                                    <div class="text-dark">
-                                        <h6 class="fw-bold my-1 text-truncate-1-line">Company Start Concept</h6>
-                                        <span class="fs-11 fw-normal text-muted">8:00am - 9:00am, Engineering Room</span>
-                                        <p class="fs-12 fw-normal text-muted my-3 text-truncate-2-line">Lorem ipsum quia
-                                            dolor sit amet, consectetur, adipisci velit, abore et dolore magnam aliquam
-                                            quaerat voluptatem.</p>
-                                    </div>
-                                    <div class="img-group lh-0 ms-3 justify-content-start">
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                            <img src="assets/images/avatar/2.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                            <img src="assets/images/avatar/3.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                            <img src="assets/images/avatar/4.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/5.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-image avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/6.png" class="img-fluid" alt="image">
-                                        </a>
-                                        <a href="javascript:void(0)" class="avatar-text avatar-sm"
-                                            data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More">
-                                            <i class="feather-more-horizontal"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+@section('content-news')
+    <!-- [ Craete Form ] -->
+    <div class="nxl-content">
+        <!-- [ page-header ] start -->
+        <div class="page-header">
+            <div class="page-header-left d-flex align-items-center">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">News</h5>
                 </div>
-                <!-- [ Content Sidebar  ] end -->
-                <!-- [ Main Area  ] start -->
-                <div class="content-area" data-scrollbar-target="#psScrollbarInit">
-                    <div class="content-area-header sticky-top">
-                        <div class="page-header-left d-flex align-items-center gap-2">
-                            <a href="javascript:void(0);" class="app-sidebar-open-trigger me-2">
-                                <i class="feather-align-left fs-20"></i>
-                            </a>
-                            <div id="menu" class="d-flex align-items-center justify-content-between">
-                                <div class="d-flex calendar-action-btn">
-                                    <div class="dropdown me-1">
-                                        <button id="dropdownMenu-calendarType"
-                                            class="dropdown-toggle calendar-dropdown-btn" type="button"
-                                            data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-offset="0,17">
-                                            <i id="calendarTypeIcon" class="feather-grid calendar-icon fs-12 me-1"></i>
-                                            <span id="calendarTypeName">Dropdown</span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu"
-                                            aria-labelledby="dropdownMenu-calendarType">
-                                            <li role="presentation">
-                                                <div class="dropdown-item c-pointer" role="menuitem"
-                                                    data-action="toggle-daily">
-                                                    <i class="feather-list calendar-icon me-3"></i>
-                                                    <span>Daily</span>
-                                                </div>
-                                            </li>
-                                            <li role="presentation">
-                                                <div class="dropdown-item c-pointer" role="menuitem"
-                                                    data-action="toggle-weekly">
-                                                    <i class="feather-umbrella calendar-icon me-3"></i>
-                                                    <span>Weekly</span>
-                                                </div>
-                                            </li>
-                                            <li role="presentation">
-                                                <div class="dropdown-item c-pointer" role="menuitem"
-                                                    data-action="toggle-weeks2">
-                                                    <i class="feather-sliders calendar-icon me-3"></i>
-                                                    <span>Weeks (2)</span>
-                                                </div>
-                                            </li>
-                                            <li role="presentation">
-                                                <div class="dropdown-item" role="menuitem" data-action="toggle-weeks3">
-                                                    <i class="feather-framer calendar-icon me-3"></i>
-                                                    <span>Weeks (3)</span>
-                                                </div>
-                                            </li>
-                                            <li role="presentation">
-                                                <div class="dropdown-item c-pointer" role="menuitem"
-                                                    data-action="toggle-monthly">
-                                                    <i class="feather-grid calendar-icon me-3"></i>
-                                                    <span>Monthly</span>
-                                                </div>
-                                            </li>
-                                            <li role="presentation" class="dropdown-divider"></li>
-                                            <li role="presentation">
-                                                <div class="dropdown-item" role="menuitem" data-action="toggle-workweek">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox"
-                                                            class="custom-control-input chalendar-checkbox"
-                                                            id="viewWeekendsSchedules" value="toggle-workweek"
-                                                            checked="checked">
-                                                        <label class="custom-control-label c-pointer"
-                                                            for="viewWeekendsSchedules">
-                                                            <span class="fs-12 fw-bold">Show Weekends</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li role="presentation">
-                                                <div class="dropdown-item" role="menuitem"
-                                                    data-action="toggle-start-day-1">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox"
-                                                            class="custom-control-input chalendar-checkbox"
-                                                            id="viewStartSchedules" value="toggle-start-day-1">
-                                                        <label class="custom-control-label c-pointer"
-                                                            for="viewStartSchedules">
-                                                            <span class="fs-12 fw-bold">Start Week on Monday</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li role="presentation">
-                                                <div class="dropdown-item" role="menuitem"
-                                                    data-action="toggle-narrow-weekend">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox"
-                                                            class="custom-control-input chalendar-checkbox"
-                                                            id="viewNarrowerSchedules" value="toggle-narrow-weekend">
-                                                        <label class="custom-control-label c-pointer"
-                                                            for="viewNarrowerSchedules">
-                                                            <span class="fs-12 fw-bold">Narrower than weekdays</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="menu-navi d-none d-sm-flex">
-                                        <button type="button" class="move-today" data-action="move-today">
-                                            <i class="feather-clock calendar-icon me-1 fs-12"
-                                                data-action="move-today"></i>
-                                            <span>Today</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="page-header-right ms-auto">
-                            <div class="hstack gap-2">
-                                <div id="renderRange" class="render-range d-none d-sm-flex"></div>
-                                <div class="btn-group gap-1 menu-navi" role="group">
-                                    <button type="button" class="avatar-text avatar-md move-day"
-                                        data-action="move-prev">
-                                        <i class="feather-chevron-left fs-12" data-action="move-prev"></i>
-                                    </button>
-                                    <button type="button" class="avatar-text avatar-md move-day"
-                                        data-action="move-next">
-                                        <i class="feather-chevron-right fs-12" data-action="move-next"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-area-body p-0">
-                        <div id="tui-calendar-init"></div>
-                    </div>
-                    <!-- [ Footer ] start -->
-                    <footer class="footer">
-                        <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
-                            <span>Copyright ©</span>
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>
-                        </p>
-                        <div class="d-flex align-items-center gap-4">
-                            <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
-                            <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
-                            <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
-                        </div>
-                    </footer>
-                    <!-- [ Footer ] end -->
-                </div>
-                <!-- [ Content Area ] end -->
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Create</li>
+                </ul>
             </div>
-            <!-- [ Main Content ] end -->
+            <div class="page-header-right ms-auto">
+                <div class="page-header-right-items">
+                    <div class="d-flex d-md-none">
+                        <a href="javascript:void(0)" class="page-header-right-close-toggle">
+                            <i class="feather-arrow-left me-2"></i>
+                            <span>Back</span>
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+                        <a href="javascript:void(0);" class="btn btn-light-brand successAlertMessage">
+                            <i class="feather-layers me-2"></i>
+                            <span>Save as Draft</span>
+                        </a>
+                        <a href="javascript:void(0);" class="btn btn-primary successAlertMessage">
+                            <i class="feather-user-plus me-2"></i>
+                            <span>Create Lead</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="d-md-none d-flex align-items-center">
+                    <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                        <i class="feather-align-right fs-20"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-    </main>
-    <!--! ================================================================ !-->
-    <!--! [End] Main Content !-->
-    <!--! ================================================================ !-->
+        <!-- [ page-header ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="main-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card stretch stretch-full">
+                        <div class="card-body lead-status">
+                            <div class="mb-5 d-flex align-items-center justify-content-between">
+                                <h5 class="fw-bold mb-0 me-4">
+                                    <span class="d-block mb-2">News Status :</span>
+                                    <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to
+                                        adding a new potential customer or sales prospect</span>
+                                </h5>
+                                <a href="{{ route('admin.news.index') }}" class="btn btn-sm btn-light-brand">List News</a>
+                            </div>
+                            <form action="{{ route('admin.news.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                @method('POST')
+
+                                @if ($errors->any())
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Erro de Validação',
+                                                html: `@foreach ($errors->all() as $error)
+                                                    <div>{{ $error }}</div>
+                                                @endforeach`,
+                                                confirmButtonText: 'OK'
+                                            });
+                                        });
+                                    </script>
+                                @endif
+
+                                @if (session('alert'))
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            Swal.fire({
+                                                icon: '{{ session('alert')['type'] }}',
+                                                title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                                                text: '{{ session('alert')['message'] }}',
+                                                confirmButtonText: 'OK',
+                                                timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
+                                                timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
+                                            });
+                                        });
+                                    </script>
+                                @endif
+
+                                <div class="row">
+                                    {{-- Categoria --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Categoria da Notícia</label>
+                                        <select class="form-control" name="category_id" data-select2-selector="category">
+                                            <option value="">-- Selecione uma categoria --</option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}"
+                                                    {{ old('category_id', $news->category_id ?? '') == $category->id ? 'selected' : '' }}>
+                                                    {{ $category->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    {{-- Titlo --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Titlo da Notícia</label>
+                                        <input type="text" name="title" class="form-control"
+                                            value="{{ old('title') }}" placeholder="Ex: INFOSI recebe novos estagiarios">
+                                    </div>
+
+                                    {{-- Subtitlo --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Subtitlo da Notícia</label>
+                                        <input type="text" name="subtitle" class="form-control"
+                                            value="{{ old('subtitle', $news->subtitle ?? '') }}"
+                                            placeholder="Ex: Estão a desenvolver um projeto">
+                                    </div>
+
+                                    {{-- Destaque --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Destaque</label>
+                                        <select class="form-control" name="detach">
+                                            <option value="normal">Normal</option>
+                                            <option value="destaque">Destaque</option>
+                                            <option value="urgente">Urgente</option>
+                                        </select>
+                                    </div>
+
+                                    {{-- Status --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Status</label>
+                                        <select class="form-control" name="status" data-select2-selector="status">
+                                            <option value="" disabled selected>Selecione o status</option>
+                                            <option value="draft" data-bg="bg-success"> Rascunho</option>
+                                            <option value="published" data-bg="bg-danger"> Publicado</option>
+                                            <option value="filed" data-bg="bg-warning"> Arquivado</option>
+                                        </select>
+                                    </div>
+
+                                    {{-- Image --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Imagem da Notícia</label>
+                                        <input type="file" name="image" class="form-control">
+                                        <small class="text-muted">Formatos suportados: jpg, jpeg, png, gif</small>
+                                    </div>
+
+                                    {{-- Date --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Data da Notícia</label>
+                                        <input type="date" name="date" class="form-control"
+                                            value="{{ old('date', $news->date ?? date('Y-m-d')) }}">
+                                    </div>
+
+                                    {{-- Descrição --}}
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Descrição</label>
+                                        <textarea name="description" class="form-control" rows="4" placeholder="Escreve o corpo da notícia...">{{ old('description') }}</textarea>
+                                    </div>
+
+                                    {{-- Botão de Enviar --}}
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary"> Criar Notícia
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
 @endsection
---}}

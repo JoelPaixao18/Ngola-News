@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="pt-BR">
 
 
 <!-- Mirrored from bestwpware.com/html/tf/duralux-demo/proposal.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jul 2025 12:20:31 GMT -->
@@ -16,10 +16,10 @@
     <title> @yield('title')</title>
     <!--! END:  Apps Title-->
     <!--! BEGIN: Favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url ('assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/images/favicon.ico') }}">
     <!--! END: Favicon-->
     <!--! BEGIN: Bootstrap CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap.min.css') }}">
     <!--! END: Bootstrap CSS-->
     <!--! BEGIN: Vendors CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/vendors.min.css') }}">
@@ -47,11 +47,11 @@
 
     <main class="nxl-container">
         @yield('content-categories')
-       @include('admin.categories.categories.parcial.footer')
+        @include('admin.categories.categories.parcial.footer')
     </main>
-    
+
     @include('admin.categories.categories.parcial.thema')
-    
+
 
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>
     <!-- vendors.min.js {always must need to be top} -->

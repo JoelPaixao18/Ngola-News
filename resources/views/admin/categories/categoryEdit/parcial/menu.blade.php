@@ -16,7 +16,7 @@
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-airplay"></i></span>
                         <span class="nxl-mtext">Dashboards</span><span class="nxl-arrow"><i
-                            class="feather-chevron-right"></i></span>
+                                class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
                         <li class="nxl-item"><a class="nxl-link" href="/">CRM</a></li>
@@ -33,10 +33,12 @@
                         <li class="nxl-item"><a class="nxl-link"
                                 href="{{ route('admin.categories.index') }}">Category</a></li>
                         <li class="nxl-item"><a class="nxl-link"
-                                href="#">Category View</a>
+                                href="{{ route('admin.category.show', ['category' => $category]) }}">Category
+                                View</a>
                         </li>
                         <li class="nxl-item"><a class="nxl-link"
-                                href="#">Category Edit</a>
+                                href="{{ route('admin.category.edit', ['category' => $category]) }}">Category
+                                Edit</a>
                         </li>
                         <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Category
                                 Create</a>
@@ -50,8 +52,7 @@
                                 class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link"
-                                href="#">Event</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="#">Event</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/events/">Event View</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/events/eventEdit">Evente Edit</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.event.index') }}">Event
@@ -66,10 +67,12 @@
                                 class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="#">News</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="#">News Views</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.news.index') }}">News</a></li>
+                        <li class="nxl-item"><a class="nxl-link"
+                                href="#">News Views</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="#">News Edit</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="#">News Create</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.news.create') }}">News Create</a>
+                        </li>
                         {{--
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsStorage">Storage</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsCalendar">Calendar</a></li>
