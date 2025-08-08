@@ -569,8 +569,8 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="row mb-12 align-items-center">
-                                        <div class="col-lg-4">
+                                    <div class="row mb-4 align-items-center">
+                                        <div class="col-lg-12">
                                             <label class="fw-semibold">State: </label>
                                             <select class="form-control" name="state" data-select2-selector="state">
                                                 <option data-state="al">Alabama</option>
@@ -1078,9 +1078,13 @@
                                             </select>
                                         </div>
                                     </div>  -->
+                                    <div class="row mb-4 align-items-center">
+                                        <div class="col-lg-12">
+                                            <input type="submit" class="btn btn-primary" value="Create event">
+                                        </div>
+                                    </div> 
                                 </div>
-                            </div>
-                            <input type="submit" value="Create event">
+                            </div>                            
                         </div>
 
                     </div>

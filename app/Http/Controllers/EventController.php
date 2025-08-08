@@ -28,7 +28,10 @@ class EventController extends Controller
     public function create()
     {
         //
-        $categories = Category::all();
+        $categories1 = Category::where('type', 'evento')->get();
+        $categories2 = Category::where('type', 'eventos')->get();
+        $categories = $categories1->merge($categories2);
+       
         return view('admin.events.eventCreate.index', compact('categories'));
     }
 
