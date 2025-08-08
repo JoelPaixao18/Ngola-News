@@ -23,10 +23,10 @@ class CreateEventsTable extends Migration
             $table->string('state', 100);
             $table->string('city', 100);
             $table->boolean('status');
-            $table->date('event_date');
-            $table->date('last_modifyed_date');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->date('eventDate');
+            $table->date('lastModifyedDate');
+            $table->unsignedBigInteger('categoryId');
+            $table->foreign('categoryId')->references('id')->on('categories')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -1,8 +1,8 @@
-@extends('admin.proposal.proposalView.layout.main')
+@extends('admin.categories.categoryView.layout.main')
 @section('title', 'Ngola News - Category View')
 @section('content-categoryView')
 
-<div class="nxl-content">
+    {{-- <div class="nxl-content">
     <!-- [ page-header ] start -->
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
@@ -1398,7 +1398,71 @@
         </div>
     </div>
     <!-- [ Main Content ] end -->
-</div>
+</div> --}}
+
+    <div class="nxl-content">
+        <div class="main-content">
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="profileTab" role="tabpanel">
+                    <div class="card card-body general-info">
+                        <div class="mb-4 d-flex align-items-center justify-content-between">
+                            <h5 class="fw-bold mb-0">
+                                <span class="d-block mb-2">General Information :</span>
+                                <span class="fs-12 fw-normal text-muted d-block">General information for your
+                                    Category</span>
+                            </h5>
+                            <a href="{{ route('admin.category.edit', ['category' => $category]) }}" class="btn btn-sm btn-light-brand">Edit Category</a>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-lg-2 fw-medium">ID</div>
+                            <div class="col-lg-10 hstack gap-1">
+                                <a href="javascript:void(0);" class="hstack gap-2">
+                                    <span>{{ $category->id }}</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-lg-2 fw-medium">Nome da Categoria</div>
+                            <div class="col-lg-10 hstack gap-1">
+                                <a href="javascript:void(0);" class="hstack gap-2">
+                                    <span>{{ $category->name }}</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-lg-2 fw-medium">Slug</div>
+                            <div class="col-lg-10 hstack gap-1">
+                                <a href="javascript:void(0);" class="hstack gap-2">
+                                    <span>{{ $category->slug }}</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-lg-2 fw-medium">Tipo de Categoria</div>
+                            <div class="col-lg-10 hstack gap-1">
+                                <a href="javascript:void(0);" class="hstack gap-2">
+                                    <span>{{ $category->type }}</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-lg-2 fw-medium">Status</div>
+                            <div class="col-lg-10 hstack gap-1">
+                                <a href="javascript:void(0);" class="hstack gap-2">
+                                    <span>{{ $category->status }}</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-lg-2 fw-medium">Descrição</div>
+                            <div class="col-lg-10 hstack gap-1">{{ $category->description }}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 @endsection

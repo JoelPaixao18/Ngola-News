@@ -108,9 +108,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="proposal-create.html" class="btn btn-primary">
+                        <a href="{{ route('admin.category.create') }}" class="btn btn-primary">
                             <i class="feather-plus me-2"></i>
-                            <span>New Proposal</span>
+                            <span>New Category</span>
                         </a>
                     </div>
                 </div>
@@ -182,6 +182,13 @@
         <!-- [ page-header ] end -->
         <!-- [ Main Content ] start -->
         <div class="main-content">
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+                    <i class="feather-check-circle me-2 fs-20"></i>
+                    <div>{{ session('success') }}</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card stretch stretch-full">
@@ -200,897 +207,84 @@
                                                     </div>
                                                 </div>
                                             </th>
-                                            <th>Proposal</th>
-                                            <th>Client</th>
-                                            <th>Subject</th>
-                                            <th>Amount</th>
-                                            <th>Date</th>
+                                            <th>ID</th>
+                                            <th>Nome da Categória</th>
+                                            <th>Slug</th>
+                                            <th>Tipo de Categória</th>
                                             <th>Status</th>
+                                            <th>Descrição</th>
                                             <th class="text-end">Actions</th>
                                         </tr>
+
                                     </thead>
+
                                     <tbody>
-                                        <tr class="single-item">
-                                            <td>
-                                                <div class="item-checkbox ms-1">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input checkbox"
-                                                            id="checkBox_1">
-                                                        <label class="custom-control-label" for="checkBox_1"></label>
+                                        @foreach ($categories as $category)
+                                            <tr class="single-item">
+                                                <td>
+                                                    <div class="item-checkbox ms-1">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input checkbox"
+                                                                id="checkBox_1">
+                                                            <label class="custom-control-label" for="checkBox_1"></label>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="fw-bold">#321456</a></td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="hstack gap-3">
-                                                    <div class="avatar-image avatar-md">
-                                                        <img src="assets/images/avatar/1.png" alt=""
-                                                            class="img-fluid">
-                                                    </div>
-                                                    <div>
-                                                        <span class="text-truncate-1-line">Alexandra Della</span>
-                                                        <small
-                                                            class="fs-12 fw-normal text-muted">alex.della@outlook.com</small>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td>A business proposal for a new product or service</td>
-                                            <td class="fw-bold text-dark">$249.99 USD</td>
-                                            <td>2023-04-25, 03:42PM</td>
-                                            <td>
-                                                <div class="badge bg-soft-success text-success">Sent</div>
-                                            </td>
-                                            <td>
-                                                <div class="hstack gap-2 justify-content-end">
-                                                    <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                        data-bs-toggle="offcanvas" data-bs-target="#proposalSent">
-                                                        <i class="feather feather-send"></i>
+                                                </td>
+                                                <td><a href="javascript:void(0);" class="fw-bold">{{ $category->id }}</a>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)" class="hstack gap-3">
+                                                        <div>
+                                                            <span class="text-truncate-1-line">{{ $category->name }}</span>
+                                                            {{-- <small
+                                                                class="fs-12 fw-normal text-muted">alex.della@outlook.com</small> --}}
+                                                        </div>
                                                     </a>
-                                                    <a href="proposal-view.html" class="avatar-text avatar-md">
-                                                        <i class="feather feather-eye"></i>
-                                                    </a>
-                                                    <div class="dropdown">
-                                                        <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                            data-bs-toggle="dropdown" data-bs-offset="0,21">
-                                                            <i class="feather feather-more-horizontal"></i>
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <a class="dropdown-item" href="proposal-edit.html">
-                                                                    <i class="feather feather-edit-3 me-3"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item printBTN"
-                                                                    href="javascript:void(0)">
-                                                                    <i class="feather feather-printer me-3"></i>
-                                                                    <span>Print</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-clock me-3"></i>
-                                                                    <span>Remind</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-archive me-3"></i>
-                                                                    <span>Archive</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-alert-octagon me-3"></i>
-                                                                    <span>Report Spam</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-trash-2 me-3"></i>
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
+                                                </td>
+                                                <td>{{ $category->slug }}</td>
+                                                <td class="fw-bold text-dark">{{ $category->type }}</td>
+                                                <td>{{ $category->status }}</td>
+                                                <td>{{ $category->description }}</td>
+                                                <td>
+                                                    <div class="hstack gap-2 justify-content-end">
+                                                        <div class="dropdown">
+                                                            <a href="javascript:void(0)" class="avatar-text avatar-md"
+                                                                data-bs-toggle="dropdown" data-bs-offset="0,21">
+                                                                <i class="feather feather-more-horizontal"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ route('admin.category.show', ['category' => $category]) }}">
+                                                                        <i class="feather feather-eye me-3"></i>
+                                                                        <span>View</span>
+                                                                    </a>
+                                                                <li>
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ route('admin.category.edit', ['category' => $category]) }}">
+                                                                        <i class="feather feather-edit-3 me-3"></i>
+                                                                        <span>Edit</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="dropdown-divider"></li>
+                                                                <li>
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ route('admin.category.delete', ['category' => $category]) }}">
+                                                                        <i class="feather feather-trash-2 me-3"></i>
+                                                                        <span>Delete</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="single-item">
-                                            <td>
-                                                <div class="item-checkbox ms-1">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input checkbox"
-                                                            id="checkBox_2">
-                                                        <label class="custom-control-label" for="checkBox_2"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="fw-bold">#987456</a></td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="hstack gap-3">
-                                                    <div class="avatar-image avatar-md bg-warning text-white">N</div>
-                                                    <div>
-                                                        <span class="text-truncate-1-line">Nancy Elliot</span>
-                                                        <small
-                                                            class="fs-12 fw-normal text-muted">nancy.elliot@outlook.com</small>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td>A funding proposal for a non-profit organization</td>
-                                            <td class="fw-bold text-dark">$120.50 USD</td>
-                                            <td>2023-05-20, 12:23PM</td>
-                                            <td>
-                                                <div class="badge bg-soft-danger text-danger">Open</div>
-                                            </td>
-                                            <td>
-                                                <div class="hstack gap-2 justify-content-end">
-                                                    <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                        data-bs-toggle="offcanvas" data-bs-target="#proposalSent">
-                                                        <i class="feather feather-send"></i>
-                                                    </a>
-                                                    <a href="proposal-view.html" class="avatar-text avatar-md">
-                                                        <i class="feather feather-eye"></i>
-                                                    </a>
-                                                    <div class="dropdown">
-                                                        <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                            data-bs-toggle="dropdown" data-bs-offset="0,21">
-                                                            <i class="feather feather-more-horizontal"></i>
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <a class="dropdown-item" href="proposal-edit.html">
-                                                                    <i class="feather feather-edit-3 me-3"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item printBTN"
-                                                                    href="javascript:void(0)">
-                                                                    <i class="feather feather-printer me-3"></i>
-                                                                    <span>Print</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-clock me-3"></i>
-                                                                    <span>Remind</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-archive me-3"></i>
-                                                                    <span>Archive</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-alert-octagon me-3"></i>
-                                                                    <span>Report Spam</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-trash-2 me-3"></i>
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="single-item">
-                                            <td>
-                                                <div class="item-checkbox ms-1">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input checkbox"
-                                                            id="checkBox_3">
-                                                        <label class="custom-control-label" for="checkBox_3"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="fw-bold">#741258</a></td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="hstack gap-3">
-                                                    <div class="avatar-image avatar-md">
-                                                        <img src="assets/images/avatar/2.png" alt=""
-                                                            class="img-fluid">
-                                                    </div>
-                                                    <div>
-                                                        <span class="text-truncate-1-line">Green Cute</span>
-                                                        <small
-                                                            class="fs-12 fw-normal text-muted">green.cute@outlook.com</small>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td>A research proposal for a scientific study</td>
-                                            <td class="fw-bold text-dark">$300.00 USD</td>
-                                            <td>2023-01-02, 10:36AM</td>
-                                            <td>
-                                                <div class="badge bg-soft-success text-success">Sent</div>
-                                            </td>
-                                            <td>
-                                                <div class="hstack gap-2 justify-content-end">
-                                                    <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                        data-bs-toggle="offcanvas" data-bs-target="#proposalSent">
-                                                        <i class="feather feather-send"></i>
-                                                    </a>
-                                                    <a href="proposal-view.html" class="avatar-text avatar-md">
-                                                        <i class="feather feather-eye"></i>
-                                                    </a>
-                                                    <div class="dropdown">
-                                                        <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                            data-bs-toggle="dropdown" data-bs-offset="0,21">
-                                                            <i class="feather feather-more-horizontal"></i>
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <a class="dropdown-item" href="proposal-edit.html">
-                                                                    <i class="feather feather-edit-3 me-3"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item printBTN"
-                                                                    href="javascript:void(0)">
-                                                                    <i class="feather feather-printer me-3"></i>
-                                                                    <span>Print</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-clock me-3"></i>
-                                                                    <span>Remind</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-archive me-3"></i>
-                                                                    <span>Archive</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-alert-octagon me-3"></i>
-                                                                    <span>Report Spam</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-trash-2 me-3"></i>
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="single-item">
-                                            <td>
-                                                <div class="item-checkbox ms-1">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input checkbox"
-                                                            id="checkBox_4">
-                                                        <label class="custom-control-label" for="checkBox_4"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="fw-bold">#321456</a></td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="hstack gap-3">
-                                                    <div class="avatar-image avatar-md bg-teal text-white">H</div>
-                                                    <div>
-                                                        <span class="text-truncate-1-line">Henry Leach</span>
-                                                        <small
-                                                            class="fs-12 fw-normal text-muted">henry.leach@outlook.com</small>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td>A marketing proposal for a new marketing campaign</td>
-                                            <td class="fw-bold text-dark">$249.99 USD</td>
-                                            <td>2023-04-25, 04:22PM</td>
-                                            <td>
-                                                <div class="badge bg-gray-200 text-dark">Draft</div>
-                                            </td>
-                                            <td>
-                                                <div class="hstack gap-2 justify-content-end">
-                                                    <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                        data-bs-toggle="offcanvas" data-bs-target="#proposalSent">
-                                                        <i class="feather feather-send"></i>
-                                                    </a>
-                                                    <a href="proposal-view.html" class="avatar-text avatar-md">
-                                                        <i class="feather feather-eye"></i>
-                                                    </a>
-                                                    <div class="dropdown">
-                                                        <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                            data-bs-toggle="dropdown" data-bs-offset="0,21">
-                                                            <i class="feather feather-more-horizontal"></i>
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <a class="dropdown-item" href="proposal-edit.html">
-                                                                    <i class="feather feather-edit-3 me-3"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item printBTN"
-                                                                    href="javascript:void(0)">
-                                                                    <i class="feather feather-printer me-3"></i>
-                                                                    <span>Print</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-clock me-3"></i>
-                                                                    <span>Remind</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-archive me-3"></i>
-                                                                    <span>Archive</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-alert-octagon me-3"></i>
-                                                                    <span>Report Spam</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-trash-2 me-3"></i>
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="single-item">
-                                            <td>
-                                                <div class="item-checkbox ms-1">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input checkbox"
-                                                            id="checkBox_5">
-                                                        <label class="custom-control-label" for="checkBox_5"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="fw-bold">#357895</a></td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="hstack gap-3">
-                                                    <div class="avatar-image avatar-md">
-                                                        <img src="assets/images/avatar/3.png" alt=""
-                                                            class="img-fluid">
-                                                    </div>
-                                                    <div>
-                                                        <span class="text-truncate-1-line">Marianne Audrey</span>
-                                                        <small
-                                                            class="fs-12 fw-normal text-muted">marine.adrey@outlook.com</small>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td>A project proposal for a new construction project</td>
-                                            <td class="fw-bold text-dark">$150.00 USD</td>
-                                            <td>2023-02-15, 05:23PM</td>
-                                            <td>
-                                                <div class="badge bg-soft-success text-success">sent</div>
-                                            </td>
-                                            <td>
-                                                <div class="hstack gap-2 justify-content-end">
-                                                    <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                        data-bs-toggle="offcanvas" data-bs-target="#proposalSent">
-                                                        <i class="feather feather-send"></i>
-                                                    </a>
-                                                    <a href="proposal-view.html" class="avatar-text avatar-md">
-                                                        <i class="feather feather-eye"></i>
-                                                    </a>
-                                                    <div class="dropdown">
-                                                        <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                            data-bs-toggle="dropdown" data-bs-offset="0,21">
-                                                            <i class="feather feather-more-horizontal"></i>
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <a class="dropdown-item" href="proposal-edit.html">
-                                                                    <i class="feather feather-edit-3 me-3"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item printBTN"
-                                                                    href="javascript:void(0)">
-                                                                    <i class="feather feather-printer me-3"></i>
-                                                                    <span>Print</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-clock me-3"></i>
-                                                                    <span>Remind</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-archive me-3"></i>
-                                                                    <span>Archive</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-alert-octagon me-3"></i>
-                                                                    <span>Report Spam</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-trash-2 me-3"></i>
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="single-item">
-                                            <td>
-                                                <div class="item-checkbox ms-1">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input checkbox"
-                                                            id="checkBox_6">
-                                                        <label class="custom-control-label" for="checkBox_6"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="fw-bold">#321456</a></td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="hstack gap-3">
-                                                    <div class="avatar-image avatar-md">
-                                                        <img src="assets/images/avatar/1.png" alt=""
-                                                            class="img-fluid">
-                                                    </div>
-                                                    <div>
-                                                        <span class="text-truncate-1-line">Alexandra Della</span>
-                                                        <small
-                                                            class="fs-12 fw-normal text-muted">alex.della@outlook.com</small>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td>A educational proposal for a new course or program</td>
-                                            <td class="fw-bold text-dark">$249.99 USD</td>
-                                            <td>2023-04-25, 11:43AM</td>
-                                            <td>
-                                                <div class="badge bg-soft-success text-success">Paid</div>
-                                            </td>
-                                            <td>
-                                                <div class="hstack gap-2 justify-content-end">
-                                                    <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                        data-bs-toggle="offcanvas" data-bs-target="#proposalSent">
-                                                        <i class="feather feather-send"></i>
-                                                    </a>
-                                                    <a href="proposal-view.html" class="avatar-text avatar-md">
-                                                        <i class="feather feather-eye"></i>
-                                                    </a>
-                                                    <div class="dropdown">
-                                                        <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                            data-bs-toggle="dropdown" data-bs-offset="0,21">
-                                                            <i class="feather feather-more-horizontal"></i>
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <a class="dropdown-item" href="proposal-edit.html">
-                                                                    <i class="feather feather-edit-3 me-3"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item printBTN"
-                                                                    href="javascript:void(0)">
-                                                                    <i class="feather feather-printer me-3"></i>
-                                                                    <span>Print</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-clock me-3"></i>
-                                                                    <span>Remind</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-archive me-3"></i>
-                                                                    <span>Archive</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-alert-octagon me-3"></i>
-                                                                    <span>Report Spam</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-trash-2 me-3"></i>
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="single-item">
-                                            <td>
-                                                <div class="item-checkbox ms-1">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input checkbox"
-                                                            id="checkBox_7">
-                                                        <label class="custom-control-label" for="checkBox_7"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="fw-bold">#987456</a></td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="hstack gap-3">
-                                                    <div class="avatar-image avatar-md bg-warning text-white">N</div>
-                                                    <div>
-                                                        <span class="text-truncate-1-line">Nancy Elliot</span>
-                                                        <small
-                                                            class="fs-12 fw-normal text-muted">nancy.elliot@outlook.com</small>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td>A event proposal for a conference or workshop</td>
-                                            <td class="fw-bold text-dark">$120.50 USD</td>
-                                            <td>2023-05-20, 03:46PM</td>
-                                            <td>
-                                                <div class="badge bg-soft-danger text-danger">Unpaid</div>
-                                            </td>
-                                            <td>
-                                                <div class="hstack gap-2 justify-content-end">
-                                                    <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                        data-bs-toggle="offcanvas" data-bs-target="#proposalSent">
-                                                        <i class="feather feather-send"></i>
-                                                    </a>
-                                                    <a href="proposal-view.html" class="avatar-text avatar-md">
-                                                        <i class="feather feather-eye"></i>
-                                                    </a>
-                                                    <div class="dropdown">
-                                                        <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                            data-bs-toggle="dropdown" data-bs-offset="0,21">
-                                                            <i class="feather feather-more-horizontal"></i>
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <a class="dropdown-item" href="proposal-edit.html">
-                                                                    <i class="feather feather-edit-3 me-3"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item printBTN"
-                                                                    href="javascript:void(0)">
-                                                                    <i class="feather feather-printer me-3"></i>
-                                                                    <span>Print</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-clock me-3"></i>
-                                                                    <span>Remind</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-archive me-3"></i>
-                                                                    <span>Archive</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-alert-octagon me-3"></i>
-                                                                    <span>Report Spam</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-trash-2 me-3"></i>
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="single-item">
-                                            <td>
-                                                <div class="item-checkbox ms-1">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input checkbox"
-                                                            id="checkBox_8">
-                                                        <label class="custom-control-label" for="checkBox_8"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="fw-bold">#741258</a></td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="hstack gap-3">
-                                                    <div class="avatar-image avatar-md">
-                                                        <img src="assets/images/avatar/2.png" alt=""
-                                                            class="img-fluid">
-                                                    </div>
-                                                    <div>
-                                                        <span class="text-truncate-1-line">Green Cute</span>
-                                                        <small
-                                                            class="fs-12 fw-normal text-muted">green.cute@outlook.com</small>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td>A technology proposal for a new software or hardware solution</td>
-                                            <td class="fw-bold text-dark">$300.00 USD</td>
-                                            <td>2023-01-02, 02:35PM</td>
-                                            <td>
-                                                <div class="badge bg-soft-success text-success">Paid</div>
-                                            </td>
-                                            <td>
-                                                <div class="hstack gap-2 justify-content-end">
-                                                    <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                        data-bs-toggle="offcanvas" data-bs-target="#proposalSent">
-                                                        <i class="feather feather-send"></i>
-                                                    </a>
-                                                    <a href="proposal-view.html" class="avatar-text avatar-md">
-                                                        <i class="feather feather-eye"></i>
-                                                    </a>
-                                                    <div class="dropdown">
-                                                        <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                            data-bs-toggle="dropdown" data-bs-offset="0,21">
-                                                            <i class="feather feather-more-horizontal"></i>
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <a class="dropdown-item" href="proposal-edit.html">
-                                                                    <i class="feather feather-edit-3 me-3"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item printBTN"
-                                                                    href="javascript:void(0)">
-                                                                    <i class="feather feather-printer me-3"></i>
-                                                                    <span>Print</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-clock me-3"></i>
-                                                                    <span>Remind</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-archive me-3"></i>
-                                                                    <span>Archive</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-alert-octagon me-3"></i>
-                                                                    <span>Report Spam</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-trash-2 me-3"></i>
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="single-item">
-                                            <td>
-                                                <div class="item-checkbox ms-1">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input checkbox"
-                                                            id="checkBox_9">
-                                                        <label class="custom-control-label" for="checkBox_9"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="fw-bold">#321456</a></td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="hstack gap-3">
-                                                    <div class="avatar-image avatar-md bg-teal text-white">H</div>
-                                                    <div>
-                                                        <span class="text-truncate-1-line">Henry Leach</span>
-                                                        <small
-                                                            class="fs-12 fw-normal text-muted">henry.leach@outlook.com</small>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td>An investment proposal for a new venture or start-up</td>
-                                            <td class="fw-bold text-dark">$249.99 USD</td>
-                                            <td>2023-04-25,06:35PM</td>
-                                            <td>
-                                                <div class="badge bg-gray-200 text-dark">Draft</div>
-                                            </td>
-                                            <td>
-                                                <div class="hstack gap-2 justify-content-end">
-                                                    <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                        data-bs-toggle="offcanvas" data-bs-target="#proposalSent">
-                                                        <i class="feather feather-send"></i>
-                                                    </a>
-                                                    <a href="proposal-view.html" class="avatar-text avatar-md">
-                                                        <i class="feather feather-eye"></i>
-                                                    </a>
-                                                    <div class="dropdown">
-                                                        <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                            data-bs-toggle="dropdown" data-bs-offset="0,21">
-                                                            <i class="feather feather-more-horizontal"></i>
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <a class="dropdown-item" href="proposal-edit.html">
-                                                                    <i class="feather feather-edit-3 me-3"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item printBTN"
-                                                                    href="javascript:void(0)">
-                                                                    <i class="feather feather-printer me-3"></i>
-                                                                    <span>Print</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-clock me-3"></i>
-                                                                    <span>Remind</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-archive me-3"></i>
-                                                                    <span>Archive</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-alert-octagon me-3"></i>
-                                                                    <span>Report Spam</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-trash-2 me-3"></i>
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="single-item">
-                                            <td>
-                                                <div class="item-checkbox ms-1">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input checkbox"
-                                                            id="checkBox_10">
-                                                        <label class="custom-control-label" for="checkBox_10"></label>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><a href="javascript:void(0);" class="fw-bold">#357895</a></td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="hstack gap-3">
-                                                    <div class="avatar-image avatar-md">
-                                                        <img src="assets/images/avatar/3.png" alt=""
-                                                            class="img-fluid">
-                                                    </div>
-                                                    <div>
-                                                        <span class="text-truncate-1-line">Marianne Audrey</span>
-                                                        <small
-                                                            class="fs-12 fw-normal text-muted">marianne.audrey@outlook.com</small>
-                                                    </div>
-                                                </a>
-                                            </td>
-                                            <td>A policy proposal for a new government initiative or regulation</td>
-                                            <td class="fw-bold text-dark">$150.00 USD</td>
-                                            <td>2023-02-15, 08:36PM</td>
-                                            <td>
-                                                <div class="badge bg-soft-success text-success">Sent</div>
-                                            </td>
-                                            <td>
-                                                <div class="hstack gap-2 justify-content-end">
-                                                    <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                        data-bs-toggle="offcanvas" data-bs-target="#proposalSent">
-                                                        <i class="feather feather-send"></i>
-                                                    </a>
-                                                    <a href="proposal-view.html" class="avatar-text avatar-md">
-                                                        <i class="feather feather-eye"></i>
-                                                    </a>
-                                                    <div class="dropdown">
-                                                        <a href="javascript:void(0)" class="avatar-text avatar-md"
-                                                            data-bs-toggle="dropdown" data-bs-offset="0,21">
-                                                            <i class="feather feather-more-horizontal"></i>
-                                                        </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <a class="dropdown-item" href="proposal-edit.html">
-                                                                    <i class="feather feather-edit-3 me-3"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item printBTN"
-                                                                    href="javascript:void(0)">
-                                                                    <i class="feather feather-printer me-3"></i>
-                                                                    <span>Print</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-clock me-3"></i>
-                                                                    <span>Remind</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-archive me-3"></i>
-                                                                    <span>Archive</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-alert-octagon me-3"></i>
-                                                                    <span>Report Spam</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="dropdown-divider"></li>
-                                                            <li>
-                                                                <a class="dropdown-item" href="javascript:void(0)">
-                                                                    <i class="feather feather-trash-2 me-3"></i>
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
+
                                 </table>
                             </div>
+
                         </div>
                     </div>
                 </div>

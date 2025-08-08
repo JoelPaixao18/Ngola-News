@@ -17,7 +17,7 @@ class EventController extends Controller
     {
         //
         $events = Event::all();
-        return view('admin.events.eventCreate.index', compact('events'));
+        return view('admin.events.event.index', compact('events'));
     }
 
     /**
@@ -29,7 +29,6 @@ class EventController extends Controller
     {
         //
         $categories = Category::all();
-
         return view('admin.events.eventCreate.index', compact('categories'));
     }
 
@@ -41,38 +40,47 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
 
-        $event = new Event;
+        // Validação básica
+        $request->validate([
+            'title' => 'required|string|max:100',
+            'subtitle' => 'required|string|max:100',
+            'description' => 'required|string',
+            'country' => 'required|string|max:100',
+            'state' => 'required|string|max:100',
+            'city' => 'required|string|max:100',
+            'status' => 'required|boolean',
+            'eventDate' => 'required|date|after_or_equal:today',
+            'lastModifyedDate' => 'required|date|after_or_equal:eventDate',
+            'categoryId' => 'required|exists:categories,id',
+            'image' => 'required|image|mimes:jpg,jpeg,png',
+        ]);
 
-        $event->title = $request->title;
-        $event->subtitle = $request->title;
-        $event->city = $request->city;
-        $event->category = $request->category;
-        $event->state = $request->state;
-        $event->status = $request->status;
-        $event->description = $request->description;
-        $event->country = $request->country;
-        $event->event_date = $request->event_date;
-        $event->last_modifyed_date = $request->last_modifyed_date;
-
-        // upload image
-        if($request->hasFile('image') && $request->file('image')->isValid()) {
-            $requestImage = $request->image;
-
-            $extension = $requestImage->extension();
-            $imageName = md5($requestImage->getClientOriginalName() . strtotime('now')) . '.' . $extension;
-
-            $requestImage->move(public_path('img/events'), $imageName);
-
-            $event->image = $imageName;
-        } else {
-            return redirect('admin/events/eventCreate')->with('msg', 'Imagem inválida!');
+        // Upload da imagem
+        $imageName = null;
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $image = $request->file('image');
+            $extension = $image->extension();
+            $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+            $image->move(public_path('img/events'), $imageName);
         }
 
-        $event->save();
+        // Criação do evento
+        Event::create([
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'image' => $imageName,
+            'description' => $request->description,
+            'country' => $request->country,
+            'state' => $request->state,
+            'city' => $request->city,
+            'status' => $request->status,
+            'eventDate' => $request->eventDate,
+            'lastModifyedDate' => $request->lastModifyedDate,
+            'categoryId' => $request->categoryId,
+        ]);
 
-        return redirect('admin/events/eventCreate')->with('msg', 'Evento criado com sucesso!');
+        return redirect()->route('admin.event.index')->with('msg', 'Evento criado com sucesso!');
     }
 
     /**
@@ -120,6 +128,7 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+        return redirect()->route('admin.event.index')->with('msg', 'Envento apagado com sucesso!');
     }
 }

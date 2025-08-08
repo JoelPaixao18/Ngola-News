@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::orderByDesc('id')->get();
+        //$categories = Category::all();
         return view('admin.categories.categories.index', compact('categories'));
     }
 
@@ -37,6 +38,30 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'slug' => 'required|string|max:255|unique:categories,slug',
+            'type' => 'required|string|max:50',
+            'status' => 'required|in:active,inactive',
+            'description' => 'nullable|string|max:1000',
+        ], [
+            'name.required' => 'O nome é obrigátorio.',
+            'slug.required' => 'O Slug é obrigátorio.',
+            'slug.unique' => 'O Slug deve ser unico.',
+            'type.required' => 'O tipo é obrigátorio.',
+            'status.required' => 'Obrigátorio seleciona um status.',
+            'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
+        ]);
+        Category::create([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'type' => $request->type,
+            'status' => $request->status === 'active' ? 'active' : 'inactive',
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('admin.categories.index')->with('success', 'Categoria criada com sucesso!');
     }
 
     /**
@@ -45,9 +70,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
         //
+
+        return view('admin.categories.categoryView.index', ['category' => $category]);
     }
 
     /**
@@ -56,9 +83,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
         //
+        return view('admin.categories.categoryEdit.index', ['category' => $category]);
     }
 
     /**
@@ -68,9 +96,33 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
         //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'slug' => 'required|string|max:255|unique:categories,slug,' . $category->id,
+            'type' => 'required|string|max:50',
+            'status' => 'required|in:active,inactive',
+            'description' => 'nullable|string|max:1000',
+        ], [
+            'name.required' => 'O nome é obrigátorio.',
+            'slug.required' => 'O Slug é obrigátorio.',
+            'slug.unique' => 'O Slug deve ser unico.',
+            'type.required' => 'O tipo é obrigátorio.',
+            'status.required' => 'Obrigátorio seleciona um status.',
+            'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
+        ]);
+
+        $category->update([
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'type' => $request->type,
+            'status' => $request->status === 'active' ? 'active' : 'inactive',
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('admin.categories.index')->with('success', 'Categoria atualizada com sucesso!');
     }
 
     /**
@@ -79,8 +131,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
         //
+        $category->delete();
+        return redirect()->route('admin.categories.index')->with('success', 'Categoria apagado com sucesso!');
     }
 }
