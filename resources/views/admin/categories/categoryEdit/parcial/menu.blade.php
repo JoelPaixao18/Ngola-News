@@ -37,11 +37,11 @@
                             <li class="nxl-item"><a class="nxl-link"
                                     href="{{ route('admin.categories.index') }}">Category</a></li>
                             <li class="nxl-item"><a class="nxl-link"
-                                    href="{{ route('admin.category.create') }}">Category
+                                    href="#">Category
                                     View</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="/proposal/proposalEdit">Category Edit</a>
+                            <li class="nxl-item"><a class="nxl-link" href="#">Category Edit</a>
                             </li>
-                            <li class="nxl-item"><a class="nxl-link" href="/proposal/proposalCreate">Category Create</a>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Category Create</a>
                             </li>
                         </ul>
                     </li>
@@ -291,7 +291,6 @@
                             easily.</p>
                         <a href="javascript:void(0);" class="btn btn-primary text-dark w-100">Download Now</a>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -153,7 +153,6 @@
                                             <span class="d-block mb-2">Event Details :</span>
                                             <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to adding a new potential customer or sales prospect</span>
                                         </h5>
-
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 mb-4">
@@ -1088,7 +1087,6 @@
                         </div>
 
                     </div>
-
 
                 </form>
 
