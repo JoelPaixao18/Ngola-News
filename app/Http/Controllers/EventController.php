@@ -16,8 +16,8 @@ class EventController extends Controller
     public function index()
     {
         //
-        $categories = Category::all();
-        return view('admin.events.eventCreate.index', compact('categories'));
+        $events = Event::orderByDesc('id')->get();
+        return view('admin.events.event.index', compact('events'));
     }
 
     /**
@@ -28,7 +28,10 @@ class EventController extends Controller
     public function create()
     {
         //
-        $categories = Category::where('type', 'evento')->get();
+        $categories1 = Category::where('type', 'evento')->get();
+        $categories2 = Category::where('type', 'eventos')->get();
+        $categories = $categories1->merge($categories2);
+
         return view('admin.events.eventCreate.index', compact('categories'));
     }
 
@@ -40,18 +43,20 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+
         // Validação básica
         $request->validate([
             'title' => 'required|string|max:100',
             'subtitle' => 'required|string|max:100',
+            'author' => 'required|string|max:100',
             'description' => 'required|string',
             'country' => 'required|string|max:100',
             'state' => 'required|string|max:100',
             'city' => 'required|string|max:100',
-            'status' => 'required|boolean',
-            'event_date' => 'required|date|after_or_equal:today',
-            'last_modifyed_date' => 'required|date|after_or_equal:event_date',
-            'category_id' => 'required|exists:categories,id',
+            'status' => 'required|string ',
+            'eventDate' => 'required|date|after_or_equal:today',
+            'lastModifyedDate' => 'required|date|',
+            'categoryId' => 'required|exists:categories,id',
             'image' => 'required|image|mimes:jpg,jpeg,png',
         ]);
 
@@ -68,15 +73,16 @@ class EventController extends Controller
         Event::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
+            'author' => $request->author,
             'image' => $imageName,
             'description' => $request->description,
             'country' => $request->country,
             'state' => $request->state,
             'city' => $request->city,
             'status' => $request->status,
-            'event_date' => $request->event_date,
-            'last_modifyed_date' => $request->last_modifyed_date,
-            'category_id' => $request->category_id,
+            'eventDate' => $request->eventDate,
+            'lastModifyedDate' => $request->lastModifyedDate,
+            'categoryId' => $request->categoryId,
         ]);
 
         return redirect()->route('admin.event.index')->with('msg', 'Evento criado com sucesso!');
@@ -90,7 +96,8 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        //   
+        return view('admin.events.eventView.index', ['event' => $event]);
     }
 
     /**
@@ -102,7 +109,8 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         //
-        return view('admin.events.eventEdit.index');
+        $categories = Category::all();
+        return view('admin.events.eventEdit.index', ['event' => $event], compact('categories'));
     }
 
     /**
@@ -114,7 +122,42 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        // Validação
+        $validated = $request->validate([
+            'title' => 'required|string|max:100',
+            'subtitle' => 'required|string|max:100',
+            'author' => 'required|string|max:100',
+            'description' => 'required|string',
+            'country' => 'required|string|max:100',
+            'state' => 'required|string|max:100',
+            'city' => 'required|string|max:100',
+            'status' => 'required|string',
+            'eventDate' => 'required|date|after_or_equal:today',
+            'categoryId' => 'required|exists:categories,id',
+            'image' => 'sometimes|image|mimes:jpg,jpeg,png', // Alterado para 'sometimes'
+        ]);
+
+        // Processar imagem se for enviada
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            // Remover imagem antiga se existir
+            if ($event->image && file_exists(public_path('img/events/' . $event->image))) {
+                unlink(public_path('img/events/' . $event->image));
+            }
+
+            $image = $request->file('image');
+            $extension = $image->extension();
+            $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+            $image->move(public_path('img/events'), $imageName);
+            $validated['image'] = $imageName;
+        }
+
+        // Atualizar data de modificação
+        $validated['lastModifyedDate'] = now()->format('Y-m-d');
+
+        // Atualizar o evento
+        $event->update($validated);
+
+        return redirect()->route('admin.event.index')->with('msg', 'Evento atualizado com sucesso!');
     }
 
     /**
@@ -125,6 +168,7 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+        return redirect()->route('admin.event.index')->with('msg', 'Envento apagado com sucesso!');
     }
 }

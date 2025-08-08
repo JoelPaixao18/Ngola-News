@@ -39,12 +39,14 @@
 </head>
 
 <body>
-    @include('admin.events.eventCreate.parcial.header')
-    @include('admin.events.eventCreate.parcial.menu')
+    @include('admin.events.event.parcial.header')
+    @include('admin.events.event.parcial.menu')
     <main class="nxl-container">
-        @yield('content-eventCreate')
-        @include('admin.events.eventCreate.parcial.footer')
+        @yield('content-events')
+        @include('admin.events.event.parcial.footer')
     </main>
+    @include('admin.events.event.parcial.theme')
+
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>
     <!-- vendors.min.js {always must need to be top} -->

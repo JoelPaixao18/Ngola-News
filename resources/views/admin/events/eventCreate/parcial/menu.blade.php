@@ -1,4 +1,5 @@
 
+
     <!--! ================================================================ !-->
     <!--! [Start] Navigation Manu !-->
     <!--! ================================================================ !-->
@@ -37,11 +38,11 @@
                             <li class="nxl-item"><a class="nxl-link"
                                     href="{{ route('admin.categories.index') }}">Category</a></li>
                             <li class="nxl-item"><a class="nxl-link"
-                                    href="{{ route('admin.category.create') }}">Category
+                                    href="#">Category
                                     View</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="/proposal/proposalEdit">Category Edit</a>
+                            <li class="nxl-item"><a class="nxl-link" href="#">Category Edit</a>
                             </li>
-                            <li class="nxl-item"><a class="nxl-link" href="/proposal/proposalCreate">Category Create</a>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Category Create</a>
                             </li>
                         </ul>
                     </li>
@@ -52,10 +53,10 @@
                                     class="feather-chevron-right"></i></span>
                         </a>
                         <ul class="nxl-submenu">
-                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.event.index') }}">Event
-                                    Create</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="/events/eventEdit">Evente Edit</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="/events/">Event View</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.event.index') }}">Event </a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.event.create') }}">Event Create</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="#">Evente Edit</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="#">Event View</a></li>
                             <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                         </ul>
                     </li>
@@ -66,7 +67,7 @@
                                     class="feather-chevron-right"></i></span>
                         </a>
                         <ul class="nxl-submenu">
-                            <li class="nxl-item"><a class="nxl-link" href="#">News Create</a>
+                            <li class="nxl-item"><a class="nxl-link" href="">News Create</a>
                             </li>
                             <li class="nxl-item"><a class="nxl-link" href="/Applications/appsEmail">Email</a></li>
                             <li class="nxl-item"><a class="nxl-link" href="/Applications/appsTasks">Tasks</a></li>
@@ -75,7 +76,7 @@
                             <li class="nxl-item"><a class="nxl-link" href="/Applications/appsCalendar">Calendar</a></li>
                         </ul>
                     </li>
-                    <li class="nxl-item nxl-hasmenu">
+                    {{-- <li class="nxl-item nxl-hasmenu">
                         <a href="javascript:void(0);" class="nxl-link">
                             <span class="nxl-micon"><i class="feather-dollar-sign"></i></span>
                             <span class="nxl-mtext">Payment</span><span class="nxl-arrow"><i
@@ -281,7 +282,7 @@
                             <li class="nxl-item"><a class="nxl-link" href=".docs/documentations">Documentations</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul>
                 <div class="card text-center">
                     <div class="card-body">
@@ -293,7 +294,6 @@
                     </div>
                 </div>
             </div>
-            --}}
         </div>
     </div>
 </nav>
