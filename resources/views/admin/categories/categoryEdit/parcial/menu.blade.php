@@ -291,7 +291,6 @@
                             easily.</p>
                         <a href="javascript:void(0);" class="btn btn-primary text-dark w-100">Download Now</a>
                     </div>
-
                 </div>
             </div>
         </div>

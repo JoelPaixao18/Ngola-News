@@ -150,7 +150,7 @@ Route::get('admin/widgets/statistics', function () {
                     Event Routes
 --------------------------------------------------*/
 Route::prefix('admin/events')->name('admin.')->group(function () {
-    Route::get('event', [EventController::class, 'index'])->name('event.index');
+    // Route::get('eventCreat', [EventController::class, 'index'])->name('event.index');
     Route::get('eventCreate', [EventController::class, 'create'])->name('event.create');
     Route::post('eventStore', [EventController::class, 'store'])->name('event.store');
     Route::get('eventEdit/{event}', [EventController::class, 'edit'])->name('event.edit');

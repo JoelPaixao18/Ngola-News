@@ -38,6 +38,9 @@
 @include('admin.events.eventCreate.parcial.theme')
 
 <div>
+    @if(session('msg'))
+        <p class="msg" style="background-color=green; color=red">{{session('msg')}}</p>
+     @endif
     @yield('container-eventCreate')
 </div>
 

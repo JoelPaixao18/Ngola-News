@@ -40,6 +40,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+
         // Validação básica
         $request->validate([
             'title' => 'required|string|max:100',
@@ -88,9 +89,11 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show(Request $request)
     {
         //
+        
+        return view('admin.events.eventView.index');
     }
 
     /**
