@@ -15,6 +15,11 @@ class Category extends Model
 {
     use SoftDeletes;
 
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
     protected $fillable = [
         'name',
         'slug',
@@ -22,6 +27,7 @@ class Category extends Model
         'type',
         'status',
     ];
+<<<<<<< HEAD
 
     public function events()
     {
@@ -45,4 +51,6 @@ class Category extends Model
             $category->slug = Str::slug($category->name);
         });
     }
+=======
+>>>>>>> e46ef9d9cedfc4c8774516ad303db8de1f958586
 }

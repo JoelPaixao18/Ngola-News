@@ -37,9 +37,9 @@
 @include('admin.events.eventEdit.parcial.menu')
 @include('admin.events.eventEdit.parcial.theme')
 
-<div>
-    @yield('container-eventEdit')
-</div>
+<main class="nxl-container">
+    @yield('content-eventEdit')
+</main>
 
 @include('admin.events.eventEdit.parcial.footer')
     <!--! BEGIN: Vendors JS !-->
