@@ -27,12 +27,6 @@ class Category extends Model
         'type',
         'status',
     ];
-<<<<<<< HEAD
-
-    public function events()
-    {
-        return $this->hasMany(Event::class);
-    }
 
     public function news()
     {
@@ -51,6 +45,5 @@ class Category extends Model
             $category->slug = Str::slug($category->name);
         });
     }
-=======
->>>>>>> e46ef9d9cedfc4c8774516ad303db8de1f958586
+
 }

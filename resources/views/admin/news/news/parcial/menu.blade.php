@@ -48,7 +48,7 @@
                                 class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="#">Event</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.event.index') }}">Event</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/events/">Event View</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/events/eventEdit">Evente Edit</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.event.index') }}">Event
