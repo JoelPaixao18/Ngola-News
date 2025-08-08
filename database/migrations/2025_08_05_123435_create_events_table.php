@@ -17,12 +17,13 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('title', 100);
             $table->string('subtitle', 100);
+            $table->string('author', 100);
             $table->string('image');
             $table->text('description');
             $table->string('country', 100);
             $table->string('state', 100);
             $table->string('city', 100);
-            $table->boolean('status');
+            $table->string('status', 100);
             $table->date('eventDate');
             $table->date('lastModifyedDate');
             $table->unsignedBigInteger('categoryId');

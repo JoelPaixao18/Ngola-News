@@ -96,47 +96,9 @@
         <!-- [ Main Content ] start -->
         <div class="main-content">
             <div class="row">
-                <!-- __________________________________________________
-                                             Criando Formulario Event Create
-                                _______________________________________________________________-->
-                <!-- [ page-header ] start -->
-                <div class="page-header">
-                    <div class="page-header-left d-flex align-items-center">
-                        <div class="page-header-title">
-                            <h5 class="m-b-10">Event</h5>
-                        </div>
-                        <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item">Create</li>
-                        </ul>
-                    </div>
-                    <div class="page-header-right ms-auto">
-                        <div class="page-header-right-items">
-                            <div class="d-flex d-md-none">
-                                <a href="javascript:void(0)" class="page-header-right-close-toggle">
-                                    <i class="feather-arrow-left me-2"></i>
-                                    <span>Back</span>
-                                </a>
-                            </div>
-                            <!--  <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
-                                            <a href="javascript:void(0);" class="btn btn-light-brand successAlertMessage">
-                                                <i class="feather-layers me-2"></i>
-                                                <span>Save as Draft</span>
-                                            </a>
-                                            <button type="submit" form="eventForm" href="javascript:void(0);" class="btn btn-primary successAlertMessage">
-                                                <i class="feather-user-plus me-2"></i>
-                                                Create Event
-                                            </button> -->
-                        </div>
-                    </div>
-                    <div class="d-md-none d-flex align-items-center">
-                        <a href="javascript:void(0)" class="page-header-right-open-toggle">
-                            <i class="feather-align-right fs-20"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- [ page-header ] end -->
+            <!-- __________________________________________________
+                         Criando Formulario Event Create
+             _______________________________________________________________-->
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <strong>Erros encontrados:</strong>
@@ -164,7 +126,7 @@
                                         </h5>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-6 mb-4">
+                                        <div class="col-lg- mb-4">
                                             <label class="form-label">Category</label>
                                             <select class="form-select form-control" name="categoryId"
                                                 data-select2-selector="status">
@@ -176,10 +138,10 @@
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <label class="form-label">Status:</label>
-                                            <select class="form-select form-control" name="status"
+                                            <select class="form-select form-control" name="status" 
                                                 data-select2-selector="visibility">
-                                                <option value="1">Published</option>
-                                                <option value="0">Draft</option>
+                                                <option value="Published">Published</option>
+                                                <option value="Draft">Draft</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-6 mb-4">
@@ -188,8 +150,8 @@
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <label class="form-label">Last modified date</label>
-                                            <input type="date" class="form-control" name="lastModifyedDate"
-                                                id="date">
+                                            <input type="date" class="form-control" name="lastModifyedDate" value="{{ \Carbon\Carbon::now()->format('Y-m-d') }}"
+                                                id="date" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -209,7 +171,7 @@
                                             <label for="fullnameInput" class="fw-semibold">Title: </label>
                                             <div class="input-group">
                                                 <div class="input-group-text"><i class="feather-type"></i></div>
-                                                <input type="text" class="form-control" name="title"
+                                                <input type="text" class="form-control" value="{{ old('title') }}" name="title"
                                                     id="fullnameInput" placeholder="Title... ">
                                             </div>
                                         </div>
@@ -219,7 +181,7 @@
                                             <label for="fullnameInput" class="fw-semibold">Subtitle: </label>
                                             <div class="input-group">
                                                 <div class="input-group-text"><i class="feather-type"></i></div>
-                                                <input type="text" class="form-control" name="subtitle"
+                                                <input type="text" class="form-control" name="subtitle" value="{{ old('subtitle') }}"
                                                     id="fullnameInput" placeholder="Title... ">
                                             </div>
                                         </div>
@@ -239,7 +201,7 @@
                                             <label for="autorInput" class="fw-semibold">Author: </label>
                                             <div class="input-group">
                                                 <div class="input-group-text"><i class="feather-user"></i></div>
-                                                <input type="text" class="form-control" name="author"
+                                                <input type="text" class="form-control" name="author" value="{{ old('author') }}"
                                                     id="autorInput" placeholder="autor">
                                             </div>
                                         </div>
@@ -250,7 +212,7 @@
                                             <div class="input-group">
                                                 <div class="input-group-text"><i class="feather-type"></i></div>
                                                 <textarea class="form-control" id="descriptionInput" name="description" cols="30" rows="5"
-                                                    placeholder="Description"></textarea>
+                                                    placeholder="Description"{{ old('description') }}></textarea>
                                             </div>
                                         </div>
                                     </div>

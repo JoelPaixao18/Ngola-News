@@ -235,13 +235,13 @@
                                             </th>
                                             <th>Title</th>
                                             <th>Subtitle</th>
-                                            <th>Description</th>
+                                            {{-- <th>Description</th> --}}
                                             <th>Country</th>
                                             <th>State</th>
                                             <th>City</th>
                                             <th>Status</th>
                                             <th>Event Date</th>
-                                            <th>Last Modified Date</th>                                           
+                                            <th>Last Modified Date</th>
                                             <th class="text-end">Actions</th>
 
                                         </tr>
@@ -261,6 +261,15 @@
                                                 <td>
                                                     <div class="hstack gap-3">
                                                         <div>
+                                                            <div class="avatar-image avatar-md">
+                                                                @if ($event->image)
+                                                                    <img src="{{ asset('img/events/' . $event->image) }}"
+                                                                        alt="event Image" class="img-thumbnail"
+                                                                        style="max-width: 50px; max-height: 50px;">
+                                                                @else
+                                                                    <i class="feather-image"></i>
+                                                                @endif
+                                                            </div>
                                                             <span class="text-truncate-1-line">{{ $event->title }}</span>
                                                         </div>
                                                     </div>
@@ -268,13 +277,13 @@
                                                 <td>
                                                     <div href="apps-mail.html">{{ $event->subtitle }}</div>
                                                 </td>
-                                                <td>
+                                                {{-- <td>
                                                     <div class="hstack gap-2">
 
                                                         {{ $event->description }}
 
                                                     </div>
-                                                </td>
+                                                </td> --}}
                                                 <td>{{ $event->country }}</td>
                                                 <td>{{ $event->state }}</td>
                                                 <td> {{ $event->city }}</td>
@@ -283,24 +292,28 @@
                                                 <td> {{ $event->lastModifyedDate }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
-                                                        <a href="{{ route('admin.event.view', ['event' => $event]) }}" class="avatar-text avatar-md">
+                                                        <a href="{{ route('admin.event.view', ['event' => $event]) }}"
+                                                            class="avatar-text avatar-md">
                                                             <i class="feather feather-eye"></i>
                                                         </a>
                                                         <div class="dropdown">
-                                                            <a href="javascript:void(0)" class="avatar-text avatar-md" data-bs-toggle="dropdown" data-bs-offset="0,21">
+                                                            <a href="javascript:void(0)" class="avatar-text avatar-md"
+                                                                data-bs-toggle="dropdown" data-bs-offset="0,21">
                                                                 <i class="feather feather-more-horizontal"></i>
                                                             </a>
                                                             <ul class="dropdown-menu">
                                                                 <li>
-                                                                    <a class="dropdown-item" href="{{ route('admin.event.edit', ['event' => $event]) }}">
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ route('admin.event.edit', ['event' => $event]) }}">
                                                                         <i class="feather feather-edit-3 me-3"></i>
                                                                         <span>Edit</span>
                                                                     </a>
                                                                 </li>
-                                                                
+
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
-                                                                    <a class="dropdown-item" href="{{ route('admin.event.delete', ['event' => $event]) }}">
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ route('admin.event.delete', ['event' => $event]) }}">
                                                                         <i class="feather feather-trash-2 me-3"></i>
                                                                         <span>Delete</span>
                                                                     </a>
@@ -309,8 +322,8 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                            </tr>                                             
-                                        </tr>
+                                            </tr>
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                 </table>

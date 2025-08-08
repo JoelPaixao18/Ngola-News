@@ -15,9 +15,11 @@ class Event extends Model
         return $this->belongsTo(Category::class);
     }
 
+    protected $guarded = [];
     protected $fillable = [
         'title',
         'subtitle',
+        'author',
         'image',
         'description',
         'country',
