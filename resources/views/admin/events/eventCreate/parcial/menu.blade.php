@@ -1,5 +1,4 @@
 
-
     <!--! ================================================================ !-->
     <!--! [Start] Navigation Manu !-->
     <!--! ================================================================ !-->
@@ -60,20 +59,39 @@
                             <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                         </ul>
                     </li>
-                    <li class="nxl-item nxl-hasmenu">
+                     <li class="nxl-item nxl-hasmenu">
+                    <a href="javascript:void(0);" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-send"></i></span>
+                        <span class="nxl-mtext">News</span><span class="nxl-arrow"><i
+                                class="feather-chevron-right"></i></span>
+                    </a>
+                    <ul class="nxl-submenu">
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.news.index') }}">News</a></li>
+                        <li class="nxl-item"><a class="nxl-link"
+                                href="#">News
+                                Views</a>
+                        </li>
+                        <li class="nxl-item"><a class="nxl-link"
+                                href="#">News Edit</a>
+                        </li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.news.create') }}">News Create</a>
+                        </li>
+                        {{--
+                        <li class="nxl-item"><a class="nxl-link" href="/Applications/appsStorage">Storage</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/Applications/appsCalendar">Calendar</a></li>
+                        --}}
+                    </ul>
+                </li>
+                <li class="nxl-item nxl-hasmenu">
                         <a href="javascript:void(0);" class="nxl-link">
-                            <span class="nxl-micon"><i class="feather-send"></i></span>
-                            <span class="nxl-mtext">News</span><span class="nxl-arrow"><i
+                            <span class="nxl-micon"><i class="feather-dollar-sign"></i></span>
+                            <span class="nxl-mtext">Author</span><span class="nxl-arrow"><i
                                     class="feather-chevron-right"></i></span>
                         </a>
                         <ul class="nxl-submenu">
-                            <li class="nxl-item"><a class="nxl-link" href="">News Create</a>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.author.index') }}">Author List</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.author.create') }}">Author Create</a>
                             </li>
-                            <li class="nxl-item"><a class="nxl-link" href="/Applications/appsEmail">Email</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="/Applications/appsTasks">Tasks</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="/Applications/appsNotes">Notes</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="/Applications/appsStorage">Storage</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="/Applications/appsCalendar">Calendar</a></li>
                         </ul>
                     </li>
                     {{-- <li class="nxl-item nxl-hasmenu">
@@ -284,15 +302,6 @@
                         </ul>
                     </li> --}}
                 </ul>
-                <div class="card text-center">
-                    <div class="card-body">
-                        <i class="feather-sunrise fs-4 text-dark"></i>
-                        <h6 class="mt-4 text-dark fw-bolder">Downloading Center</h6>
-                        <p class="fs-11 my-3 text-dark">Duralux is a production ready CRM to get started up and running
-                            easily.</p>
-                        <a href="javascript:void(0);" class="btn btn-primary text-dark w-100">Download Now</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

@@ -126,7 +126,7 @@
                                         </h5>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg- mb-4">
+                                        <div class="col-lg-6 mb-4">
                                             <label class="form-label">Category</label>
                                             <select class="form-select form-control" name="categoryId"
                                                 data-select2-selector="status">

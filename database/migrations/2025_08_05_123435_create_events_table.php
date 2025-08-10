@@ -17,7 +17,6 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('title', 100);
             $table->string('subtitle', 100);
-            $table->string('author', 100);
             $table->string('image');
             $table->text('description');
             $table->string('country', 100);
@@ -28,6 +27,8 @@ class CreateEventsTable extends Migration
             $table->date('lastModifyedDate');
             $table->unsignedBigInteger('categoryId');
             $table->foreign('categoryId')->references('id')->on('categories')->onDelete('cascade');
+            $table->usingnedBigInteger('authorId');
+            $table->foreign('authorId')->references('id')->on('authors')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

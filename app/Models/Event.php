@@ -14,6 +14,10 @@ class Event extends Model
     {
         return $this->belongsTo(Category::class);
     }
+     public function author()
+    {
+        return $this->belongsTo(author::class);
+    }
 
     protected $guarded = [];
     protected $fillable = [
