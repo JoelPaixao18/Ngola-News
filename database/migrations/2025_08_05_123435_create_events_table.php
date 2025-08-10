@@ -27,7 +27,7 @@ class CreateEventsTable extends Migration
             $table->date('lastModifyedDate');
             $table->unsignedBigInteger('categoryId');
             $table->foreign('categoryId')->references('id')->on('categories')->onDelete('cascade');
-            $table->usingnedBigInteger('authorId');
+            $table->unsignedBigInteger('authorId');
             $table->foreign('authorId')->references('id')->on('authors')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Author;
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -15,8 +15,9 @@ class AuthorController extends Controller
     public function index()
     {
         //
-        return view('admin.authors.author.index');
-        
+        $authors = Author::orderBYDesc('id')->get();
+
+        return view('admin.authors.author.index', compact('authors'));
     }
 
     /**
@@ -28,7 +29,6 @@ class AuthorController extends Controller
     {
         //
         return view('admin.authors.authorCreate.index');
-
     }
 
     /**
@@ -39,24 +39,45 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validação dos campos
+        $validated = $request->validate([
+            'name'      => 'required|string|max:255',
+            'biography' => 'nullable|string',
+            'foto'      => 'nullable|image|mimes:jpg,jpeg,png'
+        ]);
+
+       // Upload da imagem
+        $imageName = null;
+        if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
+            $image = $request->file('foto');
+            $extension = $image->extension();
+            $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+            $image->move(public_path('img/author'), $imageName);
+        }
+
+        // Criação do autor
+        $author = Author::create($validated);
+
+        return redirect()->route('admin.author.index')->with('msg', 'Evento criado com sucesso!');
+    
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Author  $author
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
     public function show(Author $author)
     {
         //
+        return view('admin.authors.authorView.index', ['author' => $author ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Author  $author
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
     public function edit(Author $author)
@@ -68,7 +89,7 @@ class AuthorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Author  $author
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Author $author)
@@ -79,7 +100,7 @@ class AuthorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Author  $author
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
     public function destroy(Author $author)

@@ -16,7 +16,7 @@ class CreateAuthorsTable extends Migration
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-            $table->text('biografia');
+            $table->text('biography');
             $table->string('foto');
             $table->softDeletes();
             $table->timestamps();

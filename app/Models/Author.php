@@ -1,10 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class author extends Model
+class Author extends Model
 {
     //
     use SoftDeletes;
@@ -13,9 +14,9 @@ class author extends Model
     {
         return $this->hasMany(Event::class);
     }
-    protected $fillable = [        
+    protected $fillable = [
         'name',
-        'biografia',
+        'biography',
         'foto'
     ];
 }
