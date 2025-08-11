@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">1
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
@@ -33,15 +33,15 @@
 		<![endif]-->
 </head>
 <body>
-@include('admin.events.eventEdit.parcial.header')
-@include('admin.events.eventEdit.parcial.menu')
-@include('admin.events.eventEdit.parcial.theme')
+@include('admin.authors.authorEdit.parcial.header')
+@include('admin.authors.authorEdit.parcial.menu')
+@include('admin.authors.authorEdit.parcial.theme')
 
 <main class="nxl-container">
-    @yield('content-eventEdit')
+    @yield('content-authorEdit')
 </main>
 
-@include('admin.events.eventEdit.parcial.footer')
+@include('admin.authors.authorEdit.parcial.footer')
     <!--! BEGIN: Vendors JS !-->
     <script src="{{url('assets/vendors/js/vendors.min.js')}}"></script>
     <!-- vendors.min.js {always must need to be top} -->

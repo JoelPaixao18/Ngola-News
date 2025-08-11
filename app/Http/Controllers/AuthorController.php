@@ -15,7 +15,7 @@ class AuthorController extends Controller
     public function index()
     {
         //
-        $authors = Author::orderBYDesc('id')->get();
+        $authors = Author::orderByDesc('id')->get();
 
         return view('admin.authors.author.index', compact('authors'));
     }
@@ -43,22 +43,22 @@ class AuthorController extends Controller
         $validated = $request->validate([
             'name'      => 'required|string|max:255',
             'biography' => 'nullable|string',
-            'foto'      => 'nullable|image|mimes:jpg,jpeg,png'
+            'foto' => 'required|image|mimes:jpg,jpeg,png',
         ]);
 
-       // Upload da imagem
-        $imageName = null;
+       // Upload da fotom
+        $fotoName = null;
         if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
-            $image = $request->file('foto');
-            $extension = $image->extension();
-            $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
-            $image->move(public_path('img/author'), $imageName);
+            $foto = $request->file('foto');
+            $extension = $foto->extension();
+            $fotoName = md5($foto->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+            $foto->move(public_path('img/author'), $fotoName);
         }
 
         // Criação do autor
         $author = Author::create($validated);
 
-        return redirect()->route('admin.author.index')->with('msg', 'Evento criado com sucesso!');
+        return redirect()->route('admin.author.index')->with('msg', 'author criado com sucesso!');
     
     }
 
@@ -83,6 +83,7 @@ class AuthorController extends Controller
     public function edit(Author $author)
     {
         //
+        return view('admin.authors.authorEdit.index', ['author' => $author]);
     }
 
     /**
@@ -95,6 +96,35 @@ class AuthorController extends Controller
     public function update(Request $request, Author $author)
     {
         //
+        // Validação
+         $validated = $request->validate([
+            'name'      => 'required|string|max:255',
+            'biography' => 'nullable|string',
+            'foto' => 'sometimes|image|mimes:jpg,jpeg,png', // Alterado para 'sometimes'
+        ]);
+
+
+        // Processar fotom se for enviada
+        if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
+            // Remover fotom antiga se existir
+            if ($euthor->foto && file_exists(public_path('img/author/' . $author->foto))) {
+                unlink(public_path('img/author/' . $author->foto));
+            }
+
+            $foto = $request->file('author');
+            $extension = $foto->extension();
+            $fotoName = md5($foto->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+            $foto->move(public_path('img/authors'), $fotoName);
+            $validated['foto'] = $fotoName;
+        }
+
+        // Atualizar data de modificação
+        $validated['lastModifyedDate'] = now()->format('Y-m-d');
+
+        // Atualizar o evento
+        $author->update($validated);
+
+        return redirect()->route('admin.author.index')->with('msg', 'Author atualizado com sucesso!');
     }
 
     /**
@@ -106,5 +136,7 @@ class AuthorController extends Controller
     public function destroy(Author $author)
     {
         //
+        $author->delete();
+        return redirect()->route('admin.authors.author.index')->with('msg', 'author editado com sucesso!');
     }
 }
