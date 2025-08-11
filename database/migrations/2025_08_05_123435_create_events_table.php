@@ -22,7 +22,7 @@ class CreateEventsTable extends Migration
             $table->string('country', 100);
             $table->string('state', 100);
             $table->string('city', 100);
-            $table->string('status', 100);
+            $table->boolean('status', 100);
             $table->date('eventDate');
             $table->date('lastModifyedDate');
             $table->unsignedBigInteger('categoryId');

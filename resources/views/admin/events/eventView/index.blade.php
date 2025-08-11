@@ -49,9 +49,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="javascript:void(0);" class="btn btn-primary successAlertMessage">
-                            <i class="feather-plus me-2"></i>
-                            <span>Make as Customer</span>
+                        <a href="{{ route('admin.event.index')}}" class="btn btn-danger ">
+                           <span class="me-3"><<</span>
+                            <span>Voltar</span>
                         </a>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                             <div class="avatar-text avatar-sm">
                                 <i class="feather-airplay"></i>
                             </div>
-                            <span>{{$event->author}}</span>
+                            <span>{{$event->authorId}}</span>
                         </a>
                     </div>
                 </div>
