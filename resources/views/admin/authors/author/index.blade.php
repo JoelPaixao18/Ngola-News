@@ -253,9 +253,9 @@
                                                 </td>
                                                 <td>
                                                     <div class="hstack gap-3">
-                                                        <div>
-                                                            <div class="avatar-image avatar-md">
-                                                                @if ($author->image)
+                                                        <div class="row">
+                                                            <div class=" col avatar-image ">
+                                                                @if ($author->foto)
                                                                     <img src="{{ asset('img/authors/' . $author->foto) }}"
                                                                         alt="author Image" class="img-thumbnail"
                                                                         style="max-width: 50px; max-height: 50px;">
@@ -263,7 +263,7 @@
                                                                     <i class="feather-image"></i>
                                                                 @endif
                                                             </div>
-                                                            <span class="text-truncate-1-line">{{ $author->name }}</span>
+                                                            <span class="col text-truncate-1-line">{{ $author->name }}</span>
                                                         </div>
                                                     </div>
                                                 </td>

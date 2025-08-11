@@ -142,8 +142,8 @@
                                                 <label class="form-label">Status:</label>
                                                 <select class="form-select form-control" ... name="status"
                                                     data-select2-selector="visibility">
-                                                    <option value="Published" {{ $event->status == 'Published' ? 'selected' : '' }}>Published</option>
-                                                    <option value="Draft" {{ $event->status == 'Draft' ? 'selected' : '' }}>Draft</option>
+                                                    <option value="1" {{ $event->status == 'Ativo' ? 'selected' : '' }}>Ativo</option>
+                                                    <option value="0" {{ $event->status == 'Desativo' ? 'selected' : '' }}>Desativo</option>
                                                 </select>
                                             </div>
                                             <div class="col-lg-6 mb-4">
@@ -206,14 +206,18 @@
                                             </div>
 
                                         </div>
-                                        <div class="row mb-4 align-items-center">
+                                       <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
-                                                <label for="autorInput" class="fw-semibold">Author: </label>
+                                                <label for="autorInput" class="fw-semibold">Autor: </label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-user"></i></div>
-                                                    <input type="text" class="form-control" name="author"
-                                                        value="{{ old('author', $event->author ?? '') }}" id="autorInput"
-                                                        placeholder="autor">
+                                                    <select class="form-control" name="authorId"
+                                                        data-select2-selector="country">
+                                                        @foreach ($authors as $author)
+                                                            <option value="{{ $author->id }}" data-bg="bg-primary">
+                                                                {{ $author->name }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>

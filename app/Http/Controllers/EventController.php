@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Author;
 
 class EventController extends Controller
 {
@@ -27,12 +28,14 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        //trazendo as categorias
         $categories1 = Category::where('type', 'evento')->get();
         $categories2 = Category::where('type', 'eventos')->get();
         $categories = $categories1->merge($categories2);
+        //trazendo os autores
+        $authors = Author::all();
 
-        return view('admin.events.eventCreate.index', compact('categories'));
+        return view('admin.events.eventCreate.index', compact('categories', 'authors'));
     }
 
     /**
@@ -48,15 +51,14 @@ class EventController extends Controller
         $request->validate([
             'title' => 'required|string|max:100',
             'subtitle' => 'required|string|max:100',
-            'author' => 'required|string|max:100',
             'description' => 'required|string',
             'country' => 'required|string|max:100',
             'state' => 'required|string|max:100',
             'city' => 'required|string|max:100',
-            'status' => 'required|string ',
+            'status' => 'required|boolean ',
             'eventDate' => 'required|date|after_or_equal:today',
-            'lastModifyedDate' => 'required|date|',
             'categoryId' => 'required|exists:categories,id',
+            'authorId' => 'required|exists:authors,id',
             'image' => 'required|image|mimes:jpg,jpeg,png',
         ]);
 
@@ -73,7 +75,6 @@ class EventController extends Controller
         Event::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
-            'author' => $request->author,
             'image' => $imageName,
             'description' => $request->description,
             'country' => $request->country,
@@ -81,8 +82,9 @@ class EventController extends Controller
             'city' => $request->city,
             'status' => $request->status,
             'eventDate' => $request->eventDate,
-            'lastModifyedDate' => $request->lastModifyedDate,
+            'lastModifyedDate' => now()->format('Y-m-d'),
             'categoryId' => $request->categoryId,
+            'authorId' => $request->authorId,
         ]);
 
         return redirect()->route('admin.event.index')->with('msg', 'Evento criado com sucesso!');
@@ -96,7 +98,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //   
+        // 
         return view('admin.events.eventView.index', ['event' => $event]);
     }
 
@@ -110,7 +112,8 @@ class EventController extends Controller
     {
         //
         $categories = Category::all();
-        return view('admin.events.eventEdit.index', ['event' => $event], compact('categories'));
+         $authors = Author::all();
+        return view('admin.events.eventEdit.index', ['event' => $event], compact('categories','authors'));
     }
 
     /**
@@ -126,7 +129,7 @@ class EventController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:100',
             'subtitle' => 'required|string|max:100',
-            'author' => 'required|string|max:100',
+            'authorId' => 'required|exists:authors,id',
             'description' => 'required|string',
             'country' => 'required|string|max:100',
             'state' => 'required|string|max:100',

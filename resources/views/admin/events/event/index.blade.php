@@ -7,11 +7,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Events</h5>
+                    <h5 class="m-b-10">Eventos</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Events</li>
+                    <li class="breadcrumb-item">Eventos</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -233,15 +233,15 @@
                                                     </div>
                                                 </div>
                                             </th>
-                                            <th>Title</th>
-                                            <th>Subtitle</th>
-                                            {{-- <th>Description</th> --}}
-                                            <th>Country</th>
-                                            <th>State</th>
-                                            <th>City</th>
-                                            <th>Status</th>
-                                            <th>Event Date</th>
-                                            <th>Last Modified Date</th>
+                                            <th>Título</th>
+                                            <th>Subtítulo</th>
+                                           {{--  <th>Autor</th> --}}
+                                            <th>País</th>
+                                            <th>Província</th>
+                                            <th>Distrito</th>
+                                            <th>Estado</th>
+                                            <th>Data do Evento</th>
+                                            <th>Ultima Alteração</th>
                                             <th class="text-end">Actions</th>
 
                                         </tr>
@@ -280,7 +280,7 @@
                                                 {{-- <td>
                                                     <div class="hstack gap-2">
 
-                                                        {{ $event->description }}
+                                                        {{ $event->author }}
 
                                                     </div>
                                                 </td> --}}
