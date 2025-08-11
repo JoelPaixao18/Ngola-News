@@ -83,12 +83,12 @@
                                         <a href="javascript:void(0);" class="fs-14 fw-bold d-block"> {{$author -> name}}</a>
                                     </div>
                                     <div class="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4">
-                                        {{-- <div
-                                            class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                            <h6 class="fs-15 fw-bolder">28.65K</h6>
-                                            <p class="fs-12 text-muted mb-0">Followers</p>
-                                        </div>
                                         <div
+                                            class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
+                                            <h6 class="fs-15 fw-bolder">Biography</h6>
+                                            <p class="fs-12 text-muted mb-0">{{$author -> biography}}</p>
+                                        </div>
+                                       {{--  <div
                                             class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
                                             <h6 class="fs-15 fw-bolder">38.85K</h6>
                                             <p class="fs-12 text-muted mb-0">Following</p>
@@ -122,7 +122,7 @@
                                         <i class="feather-trash-2 me-2"></i>
                                         <span>Delete</span>
                                     </a>
-                                    <a href="javascript:void(0);" class="w-50 btn btn-primary">
+                                    <a href="{{ route('admin.author.edit', ['author' => $author])}}" class="w-50 btn btn-primary">
                                         <i class="feather-edit me-2"></i>
                                         <span>Edit Profile</span>
                                     </a>
