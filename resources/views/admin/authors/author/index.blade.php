@@ -209,13 +209,18 @@
             </div>
         </div>
         <!-- [ page-header ] end -->
-        @if (session('msg'))
-            <div class="alert alert-success">
-                <p class="msg">{{ session('msg') }}</p>
-            </div>
-        @endif
+
         <!-- [ Main Content ] start -->
         <div class="main-content">
+
+            @if (session('success'))
+                <!-- Mantenha este apenas como fallback -->
+                <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+                    <i class="feather-check-circle me-2 fs-20"></i>
+                    <div>{{ session('success') }}</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card stretch stretch-full">
@@ -263,7 +268,8 @@
                                                                     <i class="feather-image"></i>
                                                                 @endif
                                                             </div>
-                                                            <span class="col text-truncate-1-line">{{ $author->name }}</span>
+                                                            <span
+                                                                class="col text-truncate-1-line">{{ $author->name }}</span>
                                                         </div>
                                                     </div>
                                                 </td>
