@@ -56,11 +56,17 @@
                 </li>
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-send"></i></span>
+                        <span class="nxl-micon"><i class="feather-paper"></i></span>
                         <span class="nxl-mtext">Notícias</span><span class="nxl-arrow"><i
                                 class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.news.index') }}">Lista de
+                                Notícias</a></li>
+                </li>
+                <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.news.create') }}">Nova Notícia</a>
+                </li>
+                {{--
                         <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.news.index') }}">Lista de
                                 Notícias</a></li>
                 </li>
@@ -102,7 +108,8 @@
                     <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                 </ul>
             </li>
-            {{-- <li class="nxl-item nxl-hasmenu">
+            {{--
+                    {{-- <li class="nxl-item nxl-hasmenu">
                         <a href="javascript:void(0);" class="nxl-link">
                             <span class="nxl-micon"><i class="feather-dollar-sign"></i></span>
                             <span class="nxl-mtext">Payment</span><span class="nxl-arrow"><i

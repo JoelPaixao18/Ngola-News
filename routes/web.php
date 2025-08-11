@@ -8,8 +8,6 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AuthorController;
 
-
-
 /*-------------------------------------------------------
                     Dashboard routes
 -------------------------------------------------------*/

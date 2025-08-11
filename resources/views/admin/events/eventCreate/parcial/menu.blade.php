@@ -102,7 +102,8 @@
                     <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                 </ul>
             </li>
-            {{-- <li class="nxl-item nxl-hasmenu">
+            {{--
+                    {{-- <li class="nxl-item nxl-hasmenu">
                         <a href="javascript:void(0);" class="nxl-link">
                             <span class="nxl-micon"><i class="feather-dollar-sign"></i></span>
                             <span class="nxl-mtext">Payment</span><span class="nxl-arrow"><i

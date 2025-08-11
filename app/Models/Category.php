@@ -43,6 +43,4 @@ class Category extends Model
             $category->slug = Str::slug($category->name);
         });
     } */
-
-
 }
