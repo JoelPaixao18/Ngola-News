@@ -43,25 +43,25 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
             /* 'slug' => 'required|string|max:255|unique:categories,slug', */
             'type' => 'required|string|max:50',
-            'status' => 'required|in:active,inactive',
+            /* 'status' => 'required|in:active,inactive', */
             'description' => 'nullable|string|max:1000',
         ], [
             'name.required' => 'O nome é obrigátorio.',
             /* 'slug.required' => 'O Slug é obrigátorio.', */
-            'slug.unique' => 'O Slug deve ser unico.',
+            /* 'slug.unique' => 'O Slug deve ser unico.', */
             'type.required' => 'O tipo é obrigátorio.',
-            'status.required' => 'Obrigátorio seleciona um status.',
+            /* 'status.required' => 'Obrigátorio seleciona um status.', */
             'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
-            'category_id' => 'required|exists:categories,id',
+            /* 'category_id' => 'required|exists:categories,id', */
         ]);
         Category::create([
             'name' => $request->name,
             /* 'slug' => $request->slug, */
             'type' => $request->type,
-            'status' => $request->status === 'active' ? 'active' : 'inactive',
+            /* 'status' => $request->status === 'active' ? 'active' : 'inactive', */
             'description' => $request->description,
-            'category_id.required' => 'A categoria é obrigatória.',
-            'category_id.exists' => 'A categoria selecionada é inválida.',
+            /* 'category_id.required' => 'A categoria é obrigatória.',
+            'category_id.exists' => 'A categoria selecionada é inválida.', */
         ]);
 
         return redirect()->route('admin.categories.index')->with('success', 'Categoria criada com sucesso!');
@@ -106,14 +106,14 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
             /* 'slug' => 'required|string|max:255|unique:categories,slug,' . $category->id, */
             'type' => 'required|string|max:50',
-            'status' => 'required|in:active,inactive',
+            /* 'status' => 'required|in:active,inactive', */
             'description' => 'nullable|string|max:1000',
         ], [
             'name.required' => 'O nome é obrigátorio.',
             /* 'slug.required' => 'O Slug é obrigátorio.', */
-            'slug.unique' => 'O Slug deve ser unico.',
+            /* 'slug.unique' => 'O Slug deve ser unico.', */
             'type.required' => 'O tipo é obrigátorio.',
-            'status.required' => 'Obrigátorio seleciona um status.',
+            /* 'status.required' => 'Obrigátorio seleciona um status.', */
             'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
         ]);
 
@@ -121,7 +121,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             /* 'slug' => $request->slug, */
             'type' => $request->type,
-            'status' => $request->status === 'active' ? 'active' : 'inactive',
+            /* 'status' => $request->status === 'active' ? 'active' : 'inactive', */
             'description' => $request->description,
         ]);
 

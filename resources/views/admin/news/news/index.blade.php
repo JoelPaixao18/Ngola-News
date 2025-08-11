@@ -216,7 +216,7 @@
                                             <th>Subtítulo da Notícia</th>
                                             {{-- <th>Destaque</th> --}}
                                             {{-- <th>Status</th> --}}
-                                            <th>Data da Notícia</th>
+                                            <th>Data de Públicação</th>
                                             {{-- <th>Descrição</th> --}}
                                             <th class="text-end">Actions</th>
                                         </tr>
@@ -293,8 +293,7 @@
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
                                                                     <a class="dropdown-item"
-                                                                        href="{{ route('admin.news.delete', ['news' => $news]) }}"
-                                                                        onclick="event.preventDefault(); confirmDelete(event);">
+                                                                        href="{{ route('admin.news.delete', ['news' => $news]) }}">
                                                                         <i class="feather feather-trash-2 me-3"></i>
                                                                         <span>Delete</span>
                                                                     </a>

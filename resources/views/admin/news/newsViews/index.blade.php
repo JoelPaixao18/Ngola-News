@@ -66,7 +66,7 @@
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <div class="col-lg-2 fw-medium">Data de Notícia</div>
+                            <div class="col-lg-2 fw-medium">Data de Publicação</div>
                             <div class="col-lg-10 hstack gap-1">
                                 <a href="javascript:void(0);" class="hstack gap-2">
                                     <span>{{ $news->date }}</span>
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <div class="col-lg-2 fw-medium">Descrição</div>
+                            <div class="col-lg-2 fw-medium">Texto</div>
                             <div class="col-lg-10 hstack gap-1">{{ $news->description }}</div>
                         </div>
                     </div>

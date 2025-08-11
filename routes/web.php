@@ -5,7 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\NewsController;
+<<<<<<< HEAD
+use App\Http\Controllers\CommentController;
+=======
 use App\Http\Controllers\AuthorController;
+>>>>>>> ee5caa2316e01bc1a0d65614a4acd7310780f4c1
 
 
 /*-------------------------------------------------------
@@ -73,4 +77,19 @@ Route::prefix('admin/events')->name('admin.')->group(function () {
     Route::put('eventUpdate/{event}', [EventController::class, 'update'])->name('event.update');
     Route::get('eventView/{event}', [EventController::class, 'show'])->name('event.view');
     Route::get('eventDelete/{event}', [EventController::class, 'destroy'])->name('event.delete');
+});
+
+
+/*-------------------------------------------------------
+                    Comment Routes
+-------------------------------------------------------*/
+
+Route::prefix('admin/comments')->name('admin.')->group(function () {
+    Route::get('comment', [CommentController::class, 'index'])->name('comments.index');
+    Route::get('commentCreate', [CommentController::class, 'create'])->name('comment.create');
+    Route::post('commentStore', [CommentController::class, 'store'])->name('comment.store');
+    Route::get('commentEdit/{comment}', [CommentController::class, 'edit'])->name('comment.edit');
+    Route::put('commentUpdate/{comment}', [CommentController::class, 'update'])->name('comment.update');
+    Route::get('commentView/{comment}', [CommentController::class, 'show'])->name('comment.view');
+    Route::get('commentDelete/{comment}', [CommentController::class, 'destroy'])->name('comment.delete');
 });

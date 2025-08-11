@@ -22,10 +22,8 @@ class Category extends Model
 
     protected $fillable = [
         'name',
-        'slug',
         'description',
         'type',
-        'status',
     ];
 
     public function news()
@@ -33,7 +31,7 @@ class Category extends Model
         return $this->hasMany(News::class);
     }
 
-    protected static function boot()
+    /* protected static function boot()
     {
         parent::boot();
 
@@ -44,5 +42,9 @@ class Category extends Model
         static::updating(function ($category) {
             $category->slug = Str::slug($category->name);
         });
+<<<<<<< HEAD
+    } */
+=======
     }
+>>>>>>> ee5caa2316e01bc1a0d65614a4acd7310780f4c1
 }
