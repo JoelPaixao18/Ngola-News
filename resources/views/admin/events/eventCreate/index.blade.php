@@ -97,23 +97,44 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                             Criando Formulario Event Create
-                 _______________________________________________________________-->
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <strong>Erros encontrados:</strong>
-                        <ul class="mb-0">
-                            @foreach ($errors->all() as $erro)
-                                <li>{{ $erro }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                                 Criando Formulario Event Create
+                     _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="eventForm" action="{{ route('admin.event.store') }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
+
+                        @if ($errors->any())
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Erro de Validação',
+                                        html: `@foreach ($errors->all() as $error)
+                                                    <div>{{ $error }}</div>
+                                                @endforeach`,
+                                        confirmButtonText: 'OK'
+                                    });
+                                });
+                            </script>
+                        @endif
+
+                        @if (session('alert'))
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    Swal.fire({
+                                        icon: '{{ session('alert')['type'] }}',
+                                        title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                                        text: '{{ session('alert')['message'] }}',
+                                        confirmButtonText: 'OK',
+                                        timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
+                                        timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
+                                    });
+                                });
+                            </script>
+                        @endif
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card stretch stretch-full">
@@ -147,7 +168,9 @@
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label class="form-label">Data do Evento</label>
-                                                <input type="date" class="form-control" name="eventDate" value="{{ old('eventDate', \Carbon\Carbon::now()->format('Y-m-d')) }}" id="date">
+                                                <input type="date" class="form-control" name="eventDate"
+                                                    value="{{ old('eventDate', \Carbon\Carbon::now()->format('Y-m-d')) }}"
+                                                    id="date">
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label class="form-label">Ultima Alteração</label>

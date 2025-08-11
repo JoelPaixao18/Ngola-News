@@ -99,22 +99,46 @@
             <!-- __________________________________________________
                          Criando Formulario author Create
              _______________________________________________________________-->
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <strong>Erros encontrados:</strong>
-                    <ul class="mb-0">
-                        @foreach ($errors->all() as $erro)
-                            <li>{{ $erro }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             <!-- [ Main Content ] start -->
             <div class="main-content">
                 <form id="authorForm" action="{{ route('admin.author.update', ['author'=>$author]) }}" method="post"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
+
+                    @if ($errors->any())
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Erro de Validação',
+                                                html: `@foreach ($errors->all() as $error)
+                                                    <div>{{ $error }}</div>
+                                                @endforeach`,
+                                                confirmButtonText: 'OK',
+                                                showConfirmButton: true,
+                                                allowOutsideClick: false,
+                                                allowEscapeKey: false
+                                            });
+                                        });
+                                    </script>
+                                @endif
+
+                                @if (session('alert'))
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            Swal.fire({
+                                                icon: '{{ session('alert')['type'] }}',
+                                                title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                                                text: '{{ session('alert')['message'] }}',
+                                                confirmButtonText: 'OK',
+                                                timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
+                                                timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
+                                            });
+                                        });
+                                    </script>
+                                @endif
+
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card stretch stretch-full">
@@ -131,12 +155,12 @@
                                             <label class="form-label">Category</label>
                                             <select class="form-select form-control" name="categoryId"
                                                 data-select2-selector="status">
-                                                    <option value="" data-bg="bg-primary">  
+                                                    <option value="" data-bg="bg-primary">
                                             </select>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <label class="form-label">Status:</label>
-                                            <select class="form-select form-control" name="status" 
+                                            <select class="form-select form-control" name="status"
                                                 data-select2-selector="visibility">
                                                 <option value="Published">Published</option>
                                                 <option value="Draft">Draft</option>
