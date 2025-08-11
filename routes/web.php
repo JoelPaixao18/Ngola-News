@@ -5,11 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\NewsController;
-<<<<<<< HEAD
 use App\Http\Controllers\CommentController;
-=======
 use App\Http\Controllers\AuthorController;
->>>>>>> ee5caa2316e01bc1a0d65614a4acd7310780f4c1
+
 
 
 /*-------------------------------------------------------
