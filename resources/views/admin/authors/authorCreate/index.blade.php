@@ -1,6 +1,6 @@
-@extends('admin.events.eventCreate.layout.main')
-@section('title', 'Ngola News - Event Create')
-@section('content-eventCreate')
+@extends('admin.authors.authorCreate.layout.main')
+@section('title', 'Ngola News - Author Create')
+@section('content-authorCreate')
     <!--! ================================================================ !-->
     <!--! [Start] Main Content !-->
     <!--! ================================================================ !-->
@@ -9,7 +9,7 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Event</h5>
+                    <h5 class="m-b-10">Author</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -69,20 +69,20 @@
                                     </div>
                                 </div>
                                 <div class="dropdown-divider"></div>
-                                <a href="javascript:void(0);" class="dropdown-item">
+                                {{-- <a href="javascript:void(0);" class="dropdown-item">
                                     <i class="feather-plus me-3"></i>
                                     <span>Create New</span>
-                                </a>
-                                <a href="javascript:void(0);" class="dropdown-item">
+                                </a> --}}
+                                {{-- <a href="javascript:void(0);" class="dropdown-item">
                                     <i class="feather-filter me-3"></i>
                                     <span>Manage Filter</span>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
-                        <a href="javascript:void(0);" class="btn btn-primary">
+                        {{-- <a href="javascript:void(0);" class="btn btn-primary">
                             <i class="feather-plus me-2"></i>
                             <span>Add Widgets</span>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
                 <div class="d-md-none d-flex align-items-center">
@@ -97,7 +97,7 @@
         <div class="main-content">
             <div class="row">
             <!-- __________________________________________________
-                         Criando Formulario Event Create
+                         Criando Formulario author Create
              _______________________________________________________________-->
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -111,16 +111,16 @@
             @endif
             <!-- [ Main Content ] start -->
             <div class="main-content">
-                <form id="eventForm" action="{{ route('admin.event.store') }}" method="post"
+                <form id="authorForm" action="{{ route('admin.author.store') }}" method="post"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card stretch stretch-full">
-                                <div class="card-body lead-status">
+                                {{-- <div class="card-body lead-status">
                                     <div class="mb-5 d-flex align-items-center justify-content-between">
                                         <h5 class="fw-bold mb-0 me-4">
-                                            <span class="d-block mb-2">Event Details :</span>
+                                            <span class="d-block mb-2">author Details :</span>
                                             <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically
                                                 refers to adding a new potential customer or sales prospect</span>
                                         </h5>
@@ -130,10 +130,7 @@
                                             <label class="form-label">Category</label>
                                             <select class="form-select form-control" name="categoryId"
                                                 data-select2-selector="status">
-                                                @foreach ($categories as $category)
-                                                    <option value="{{ $category->id }}" data-bg="bg-primary">
-                                                        {{ $category->name }}</option>
-                                                @endforeach
+                                                    <option value="" data-bg="bg-primary">  
                                             </select>
                                         </div>
                                         <div class="col-lg-6 mb-4">
@@ -145,8 +142,8 @@
                                             </select>
                                         </div>
                                         <div class="col-lg-6 mb-4">
-                                            <label class="form-label">Event date</label>
-                                            <input type="date" class="form-control" name="eventDate" id="date">
+                                            <label class="form-label">author date</label>
+                                            <input type="date" class="form-control" name="authorDate" id="date">
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <label class="form-label">Last modified date</label>
@@ -154,19 +151,19 @@
                                                 id="date" disabled>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <hr class="mt-0">
                                 <div class="card-body general-info">
                                     <div class="mb-5 d-flex align-items-center justify-content-between">
                                         <h5 class="fw-bold mb-0 me-4">
-                                            <span class="d-block mb-2">Event Info :</span>
+                                            <span class="d-block mb-2">author Info :</span>
                                             <span class="fs-12 fw-normal text-muted text-truncate-1-line">General
-                                                information for your event</span>
+                                                information for your author</span>
                                         </h5>
                                         <a href="javascript:void(0);" class="btn btn-sm btn-light-brand">Edit
-                                            event</a>
+                                            author</a>
                                     </div>
-                                    <div class="row mb-4 align-items-center">
+                                    {{-- <div class="row mb-4 align-items-center">
                                         <div class="col-lg-12">
                                             <label for="fullnameInput" class="fw-semibold">Title: </label>
                                             <div class="input-group">
@@ -185,38 +182,39 @@
                                                     id="fullnameInput" placeholder="Title... ">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-12">
-                                            <label for="mailInput" class="fw-semibold">Cover image: </label>
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="feather-image"></i></div>
-                                                <input type="file" class="form-control" name="image" id="mailInput"
-                                                    placeholder="Upload image...">
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div> --}}
+
                                     <div class="row mb-4 align-items-center">
                                         <div class="col-lg-12">
                                             <label for="autorInput" class="fw-semibold">Author: </label>
                                             <div class="input-group">
                                                 <div class="input-group-text"><i class="feather-user"></i></div>
-                                                <input type="text" class="form-control" name="author" value="{{ old('author') }}"
+                                                <input type="text" class="form-control" name="name" value="{{ old('name') }}"
                                                     id="autorInput" placeholder="autor">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row mb-4 align-items-center">
                                         <div class="col-lg-12">
-                                            <label for="descriptionInput" class="fw-semibold">Description: </label>
+                                            <label for="fotoInput" class="fw-semibold">Foto: </label>
                                             <div class="input-group">
-                                                <div class="input-group-text"><i class="feather-type"></i></div>
-                                                <textarea class="form-control" id="descriptionInput" name="description" cols="30" rows="5"
-                                                    placeholder="Description"{{ old('description') }}></textarea>
+                                                <div class="input-group-text"><i class="feather-image"></i></div>
+                                                <input type="file" class="form-control" name="foto" id="fotoInput"
+                                                    placeholder="Upload foto...">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row mb-4 align-items-center">
+                                        <div class="col-lg-12">
+                                            <label for="biographyInput" class="fw-semibold">biography: </label>
+                                            <div class="input-group">
+                                                <div class="input-group-text"><i class="feather-type"></i></div>
+                                                <textarea class="form-control" id="biographyInput" name="biography" cols="30" rows="5"
+                                                    placeholder="biography">{{ old('biography') }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   {{--  <div class="row mb-4 align-items-center">
                                         <div class="col-lg-12">
                                             <label class="fw-semibold">Country: </label>
                                             <select class="form-control" name="country" data-select2-selector="country">
@@ -612,10 +610,10 @@
                                                 <option data-city="bg-darken">Kotzebue</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="row mb-4 align-items-center">
                                         <div class="col-lg-12">
-                                            <input type="submit" class="btn btn-primary" value="Create event">
+                                            <input type="submit" class="btn btn-primary" value="Create author">
                                         </div>
                                     </div>
                                 </div>

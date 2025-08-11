@@ -42,5 +42,9 @@ class Category extends Model
         static::updating(function ($category) {
             $category->slug = Str::slug($category->name);
         });
+<<<<<<< HEAD
     } */
+=======
+    }
+>>>>>>> ee5caa2316e01bc1a0d65614a4acd7310780f4c1
 }

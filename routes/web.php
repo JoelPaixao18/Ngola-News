@@ -5,7 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\NewsController;
+<<<<<<< HEAD
 use App\Http\Controllers\CommentController;
+=======
+use App\Http\Controllers\AuthorController;
+>>>>>>> ee5caa2316e01bc1a0d65614a4acd7310780f4c1
 
 
 /*-------------------------------------------------------
@@ -32,6 +36,19 @@ Route::prefix('admin.categories')->name('admin.')->group(function () {
     Route::get('categoryEdit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
     Route::put('categoryUpdate/{category}', [CategoryController::class, 'update'])->name('category.update');
     Route::get('categoryDelete/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
+});
+/*-------------------------------------------------------
+                    Author routes
+-------------------------------------------------------*/
+
+Route::prefix('admin.authors')->name('admin.')->group(function () {
+    Route::get('author', [AuthorController::class, 'index'])->name('author.index');
+    Route::get('authorCreate', [AuthorController::class, 'create'])->name('author.create');
+    Route::post('authorStore', [AuthorController::class, 'store'])->name('author.store');
+    Route::get('authorView/{author}', [AuthorController::class, 'show'])->name('author.show');
+    Route::get('authorEdit/{author}', [AuthorController::class, 'edit'])->name('author.edit');
+    Route::put('authorUpdate/{author}', [AuthorController::class, 'update'])->name('author.update');
+    Route::get('authorDelete/{author}', [AuthorController::class, 'destroy'])->name('author.delete');
 });
 
 
