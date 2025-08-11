@@ -67,6 +67,12 @@
                 <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.news.create') }}">Nova Notícia</a>
                 </li>
                 {{--
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.news.index') }}">Lista de
+                                Notícias</a></li>
+                </li>
+                <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.news.create') }}">Nova Notícia</a>
+                </li>
+                {{--
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsStorage">Storage</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsCalendar">Calendar</a></li>
                         --}}
