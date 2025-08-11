@@ -56,7 +56,7 @@
                 </li>
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-paper"></i></span>
+                        <span class="nxl-micon"><i class="feather-send"></i></span>
                         <span class="nxl-mtext">Notícias</span><span class="nxl-arrow"><i
                                 class="feather-chevron-right"></i></span>
                     </a>
@@ -70,20 +70,39 @@
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsStorage">Storage</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="/Applications/appsCalendar">Calendar</a></li>
                         --}}
-                    </ul>
-                </li>
-                <li class="nxl-item nxl-hasmenu">
-                        <a href="javascript:void(0);" class="nxl-link">
-                            <span class="nxl-micon"><i class="feather-user"></i></span>
-                            <span class="nxl-mtext">Autor</span><span class="nxl-arrow"><i
-                                    class="feather-chevron-right"></i></span>
-                        </a>
-                        <ul class="nxl-submenu">
-                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.author.index') }}">Listan de Autor</a></li>
-                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.author.create') }}">Novo Autor</a>
-                            </li>
-                        </ul>
+            </ul>
+            </li>
+            <li class="nxl-item nxl-hasmenu">
+                <a href="javascript:void(0);" class="nxl-link">
+                    <span class="nxl-micon"><i class="feather-user"></i></span>
+                    <span class="nxl-mtext">Autor</span><span class="nxl-arrow"><i
+                            class="feather-chevron-right"></i></span>
+                </a>
+                <ul class="nxl-submenu">
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.author.index') }}">Listan de
+                            Autor</a></li>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.author.create') }}">Novo Autor</a>
                     </li>
+                </ul>
+            </li>
+            {{-- Menu Comments --}}
+            <li class="nxl-item nxl-hasmenu">
+                <a href="javascript:void(0);" class="nxl-link">
+                    <span class="nxl-micon"><i class="feather-cast"></i></span>
+                    <span class="nxl-mtext">Comments</span><span class="nxl-arrow"><i
+                            class="feather-chevron-right"></i></span>
+                </a>
+                <ul class="nxl-submenu">
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.comments.index') }}">Comment</a>
+                    </li>
+                    {{-- <li class="nxl-item"><a class="nxl-link" href="#">Comment View</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="#">Comment Edit</a></li> --}}
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.comment.create') }}">Comment
+                            Create</a></li>
+                    <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
+                </ul>
+            </li>
+            {{--
                     {{-- <li class="nxl-item nxl-hasmenu">
                         <a href="javascript:void(0);" class="nxl-link">
                             <span class="nxl-micon"><i class="feather-dollar-sign"></i></span>

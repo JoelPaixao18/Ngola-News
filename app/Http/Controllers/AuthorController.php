@@ -137,6 +137,6 @@ class AuthorController extends Controller
     {
         //
         $author->delete();
-        return redirect()->route('admin.authors.author.index')->with('msg', 'author editado com sucesso!');
+        return redirect()->route('admin.author.index')->with('msg', 'author eliminado com sucesso!');
     }
 }

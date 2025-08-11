@@ -164,11 +164,11 @@
                                                 <label class="form-label">Status:</label>
                                                 <select class="form-select form-control" ... name="status"
                                                     data-select2-selector="visibility">
-                                                    <option value="Published"
-                                                        {{ $event->status == 'Published' ? 'selected' : '' }}>Published
+                                                    <option value="1"
+                                                        {{ $event->status == 'Ativo' ? 'selected' : '' }}>Ativo
                                                     </option>
-                                                    <option value="Draft"
-                                                        {{ $event->status == 'Draft' ? 'selected' : '' }}>Draft</option>
+                                                    <option value="0"
+                                                        {{ $event->status == 'Desativo' ? 'selected' : '' }}>Desativo</option>
                                                 </select>
                                             </div>
                                             <div class="col-lg-6 mb-4">
