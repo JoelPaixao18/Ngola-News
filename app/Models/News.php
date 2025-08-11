@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
@@ -24,9 +25,19 @@ class News extends Model
         'description',
     ];
 
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function getFormattedDateAttribute()
+    {
+        return $this->date->format('d/m/Y');
     }
 
     protected static function boot()

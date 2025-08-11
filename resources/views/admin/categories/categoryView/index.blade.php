@@ -1430,14 +1430,14 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="row mb-4">
+                        {{-- <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">Slug</div>
                             <div class="col-lg-10 hstack gap-1">
                                 <a href="javascript:void(0);" class="hstack gap-2">
                                     <span>{{ $category->slug }}</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">Tipo de Categoria</div>
                             <div class="col-lg-10 hstack gap-1">
@@ -1446,14 +1446,14 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="row mb-4">
+                        {{-- <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">Status</div>
                             <div class="col-lg-10 hstack gap-1">
                                 <a href="javascript:void(0);" class="hstack gap-2">
                                     <span>{{ $category->status }}</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">Descrição</div>
                             <div class="col-lg-10 hstack gap-1">{{ $category->description }}</div>

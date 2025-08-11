@@ -150,14 +150,14 @@
 
                                     {{-- Date --}}
                                     <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Data da Notícia</label>
+                                        <label class="form-label">Data de Publicação</label>
                                         <input type="date" name="date" class="form-control"
                                             value="{{ old('date', $news->date ?? date('Y-m-d')) }}">
                                     </div>
 
                                     {{-- Descrição --}}
                                     <div class="col-12 mb-4">
-                                        <label class="form-label">Descrição</label>
+                                        <label class="form-label">Texto</label>
                                         <textarea name="description" class="form-control" rows="4" placeholder="Escreve o corpo da notícia...">{{ old('description') }}</textarea>
                                     </div>
 

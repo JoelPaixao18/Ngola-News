@@ -43,32 +43,32 @@ class NewsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-{
-    $request->validate([
-        'title' => 'required|string|max:255',
-        'subtitle' => 'required|string|max:255',
-        'status' => 'required|in:draft,published,filed',
-        'description' => 'nullable|string|max:1000',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        'date' => 'required|date|after_or_equal:today',
-        'detach' => 'required|in:normal,destaque,urgente',
-        'category_id' => 'required|exists:categories,id',
-    ], [
-        'title.required' => 'O título é obrigatório.',
-        'subtitle.required' => 'O subtítulo é obrigatório.',
-        'status.required' => 'Obrigatório selecionar um status.',
-        'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
-        'image.image' => 'O arquivo deve ser uma imagem.',
-        'image.mimes' => 'A imagem deve ser do tipo: jpeg, png, jpg ou gif.',
-        'image.max' => 'A imagem não pode ter mais de 2MB.',
-        'date.required' => 'A data é obrigatória.',
-        'date.date' => 'Informe uma data válida.',
-        'date.after_or_equal' => 'A data não pode ser anterior à data atual.',
-        'detach.required' => 'O campo destaque é obrigatório.',
-        'detach.in' => 'O valor do destaque é inválido.',
-        'category_id.required' => 'A categoria é obrigatória.',
-        'category_id.exists' => 'A categoria selecionada é inválida.',
-    ]);
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:255',
+            'status' => 'required|in:draft,published,filed',
+            'description' => 'nullable|string|max:1000',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'date' => 'required|date|after_or_equal:today',
+            'detach' => 'required|in:normal,destaque,urgente',
+            'category_id' => 'required|exists:categories,id',
+        ], [
+            'title.required' => 'O título é obrigatório.',
+            'subtitle.required' => 'O subtítulo é obrigatório.',
+            'status.required' => 'Obrigatório selecionar um status.',
+            'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
+            'image.image' => 'O arquivo deve ser uma imagem.',
+            'image.mimes' => 'A imagem deve ser do tipo: jpeg, png, jpg ou gif.',
+            'image.max' => 'A imagem não pode ter mais de 2MB.',
+            'date.required' => 'A data é obrigatória.',
+            'date.date' => 'Informe uma data válida.',
+            'date.after_or_equal' => 'A data não pode ser anterior à data atual.',
+            'detach.required' => 'O campo destaque é obrigatório.',
+            'detach.in' => 'O valor do destaque é inválido.',
+            'category_id.required' => 'A categoria é obrigatória.',
+            'category_id.exists' => 'A categoria selecionada é inválida.',
+        ]);
 
         $data = $request->except('_token');
 
@@ -80,8 +80,8 @@ class NewsController extends Controller
         News::create($data);
 
         return redirect()->route('admin.news.index')->with('alert', [
-        'type' => 'success',
-        'message' => 'Notícia criada com sucesso!'
+            'type' => 'success',
+            'message' => 'Notícia criada com sucesso!'
         ]);
     }
 
@@ -150,7 +150,7 @@ class NewsController extends Controller
         ]);
 
         $data = $request->except('_token', '_method', 'image');
-        
+
         // Atualiza o slug baseado no título se necessário
         if ($request->has('title') && $request->title !== $news->title) {
             $data['slug'] = Str::slug($request->title);
@@ -162,7 +162,7 @@ class NewsController extends Controller
             if ($news->image) {
                 Storage::disk('public')->delete($news->image);
             }
-            
+
             $imagePath = $request->file('image')->store('news_images', 'public');
             $data['image'] = $imagePath;
         } elseif ($request->has('remove_image')) {
@@ -193,7 +193,7 @@ class NewsController extends Controller
     {
         //
         $news->delete();
-    
+
         return redirect()->route('admin.news.index')
             ->with('alert', [
                 'type' => 'success',

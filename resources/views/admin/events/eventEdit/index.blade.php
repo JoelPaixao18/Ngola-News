@@ -97,22 +97,44 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                Criando Formulario Event Create
-                 _______________________________________________________________-->
+                                    Criando Formulario Event Create
+                     _______________________________________________________________-->
                 <!-- [ page-header ] end -->
                 @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <strong>Erros encontrados:</strong>
-                        <ul class="mb-0">
-                            @foreach ($errors->all() as $erro)
-                                <li>{{ $erro }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Erro de Validação',
+                                html: `@foreach ($errors->all() as $error)
+                                                    <div>{{ $error }}</div>
+                                                @endforeach`,
+                                confirmButtonText: 'OK',
+                                showConfirmButton: true,
+                                allowOutsideClick: false,
+                                allowEscapeKey: false
+                            });
+                        });
+                    </script>
+                @endif
+
+                @if (session('alert'))
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            Swal.fire({
+                                icon: '{{ session('alert')['type'] }}',
+                                title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                                text: '{{ session('alert')['message'] }}',
+                                confirmButtonText: 'OK',
+                                timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
+                                timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
+                            });
+                        });
+                    </script>
                 @endif
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
-                    <form id="eventForm" action="{{ route('admin.event.update',  ['event' => $event]) }}" method="POST"
+                    <form id="eventForm" action="{{ route('admin.event.update', ['event' => $event]) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT') {{-- como o <form> do html não recebe o metodo ptu por padrão, é necessário essa linha para o nosso arquivo routee entenda que udpdate é medtodo PUT --}}
@@ -142,14 +164,17 @@
                                                 <label class="form-label">Status:</label>
                                                 <select class="form-select form-control" ... name="status"
                                                     data-select2-selector="visibility">
-                                                    <option value="Published" {{ $event->status == 'Published' ? 'selected' : '' }}>Published</option>
-                                                    <option value="Draft" {{ $event->status == 'Draft' ? 'selected' : '' }}>Draft</option>
+                                                    <option value="Published"
+                                                        {{ $event->status == 'Published' ? 'selected' : '' }}>Published
+                                                    </option>
+                                                    <option value="Draft"
+                                                        {{ $event->status == 'Draft' ? 'selected' : '' }}>Draft</option>
                                                 </select>
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label class="form-label">Event date</label>
-                                                <input type="date" class="form-control" name="eventDate" value="{{$event->eventDate}}"
-                                                    id="date">
+                                                <input type="date" class="form-control" name="eventDate"
+                                                    value="{{ $event->eventDate }}" id="date">
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label class="form-label">Last modified date</label>
@@ -202,7 +227,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
-                                                <img src="{{ asset('img/events/' . $event->image) }}" alt="" height="60" width="60 ">
+                                                <img src="{{ asset('img/events/' . $event->image) }}" alt=""
+                                                    height="60" width="60 ">
                                             </div>
 
                                         </div>

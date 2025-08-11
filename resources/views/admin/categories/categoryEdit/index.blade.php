@@ -1,5 +1,5 @@
 @extends('admin.categories.categoryEdit.layout.main')
-@section('title', 'Ngola News - Category Create')
+@section('title', 'Ngola News - Category Edit')
 @section('content-categoryEdit')
 
     <!-- [ Craete Form ] -->
@@ -63,13 +63,33 @@
                                 @method('PUT')
 
                                 @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Erro de Validação',
+                                                html: `@foreach ($errors->all() as $error)
+                                                    <div>{{ $error }}</div>
+                                                @endforeach`,
+                                                confirmButtonText: 'OK'
+                                            });
+                                        });
+                                    </script>
+                                @endif
+
+                                @if (session('alert'))
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            Swal.fire({
+                                                icon: '{{ session('alert')['type'] }}',
+                                                title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                                                text: '{{ session('alert')['message'] }}',
+                                                confirmButtonText: 'OK',
+                                                timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
+                                                timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
+                                            });
+                                        });
+                                    </script>
                                 @endif
 
                                 <div class="row">
@@ -98,14 +118,14 @@
                                     </div>
 
                                     {{-- Status --}}
-                                    <div class="col-lg-4 mb-4">
+                                    {{-- <div class="col-lg-4 mb-4">
                                         <label class="form-label">Status</label>
                                         <select class="form-control" name="status" data-select2-selector="status">
                                             <option value="" disabled selected>Selecione o status</option>
                                             <option value="active" data-bg="bg-success"> Ativo</option>
                                             <option value="inactive" data-bg="bg-danger"> Inativo</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
 
                                     {{-- Descrição --}}
                                     <div class="col-12 mb-4">
