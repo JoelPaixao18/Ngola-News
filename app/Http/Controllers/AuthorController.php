@@ -37,7 +37,7 @@ class AuthorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Author $author)
     {
         // Validação dos campos
         $validated = $request->validate([
@@ -46,13 +46,13 @@ class AuthorController extends Controller
             'foto' => 'required|image|mimes:jpg,jpeg,png',
         ]);
 
-       // Upload da fotom
+        // Upload da imagem
         $fotoName = null;
         if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
             $foto = $request->file('foto');
             $extension = $foto->extension();
             $fotoName = md5($foto->getClientOriginalName() . strtotime('now')) . '.' . $extension;
-            $foto->move(public_path('img/author'), $fotoName);
+            $foto->move(public_path('img/authors'), $fotoName);
         }
 
         // Criação do autor
@@ -111,7 +111,7 @@ class AuthorController extends Controller
                 unlink(public_path('img/author/' . $author->foto));
             }
 
-            $foto = $request->file('author');
+            $foto = $request->file('foto');
             $extension = $foto->extension();
             $fotoName = md5($foto->getClientOriginalName() . strtotime('now')) . '.' . $extension;
             $foto->move(public_path('img/authors'), $fotoName);
@@ -121,7 +121,7 @@ class AuthorController extends Controller
         // Atualizar data de modificação
         $validated['lastModifyedDate'] = now()->format('Y-m-d');
 
-        // Atualizar o evento
+        // Atualizar o author
         $author->update($validated);
 
         return redirect()->route('admin.author.index')->with('msg', 'Author atualizado com sucesso!');
