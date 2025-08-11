@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Category;
+use App\Models\Author;
 
 class Event extends Model
 {
@@ -13,6 +14,10 @@ class Event extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+     public function author()
+    {
+        return $this->belongsTo(author::class);
     }
 
     protected $guarded = [];
@@ -29,5 +34,6 @@ class Event extends Model
         'eventDate',
         'lastModifyedDate',
         'categoryId',
+        'authorId'
     ];
 }
