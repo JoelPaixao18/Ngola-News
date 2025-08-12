@@ -123,14 +123,14 @@
                                     </li> --}}
                                 </ul>
                                 <div class="d-flex gap-2 text-center pt-4">
-                                    <a href="javascript:void(0);" class="w-50 btn btn-light-brand">
+                                    <a href="{{ route('admin.author.delete', ['author' => $author]) }}" class="w-50 btn btn-light-brand">
                                         <i class="feather-trash-2 me-2"></i>
-                                        <span>Delete</span>
+                                        <span>Deletar</span>
                                     </a>
                                     <a href="{{ route('admin.author.edit', ['author' => $author]) }}"
                                         class="w-50 btn btn-primary">
                                         <i class="feather-edit me-2"></i>
-                                        <span>Edit Profile</span>
+                                        <span>Editar Perfil</span>
                                     </a>
                                 </div>
                             </div>

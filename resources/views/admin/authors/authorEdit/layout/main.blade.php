@@ -34,15 +34,15 @@
 		<![endif]-->
 </head>
 <body>
-@include('admin.authors.authorEdit.parcial.header')
-@include('admin.authors.authorEdit.parcial.menu')
-@include('admin.authors.authorEdit.parcial.theme')
+@include('admin.layout.header')
+@include('admin.layout.menu')
+@include('admin.layout.theme')
 
 <main class="nxl-container">
     @yield('content-authorEdit')
 </main>
 
-@include('admin.authors.authorEdit.parcial.footer')
+@include('admin.layout.footer')
     <!--! BEGIN: Vendors JS !-->
     <script src="{{url('assets/vendors/js/vendors.min.js')}}"></script>
     <!-- vendors.min.js {always must need to be top} -->

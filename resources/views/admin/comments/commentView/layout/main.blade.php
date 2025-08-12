@@ -38,15 +38,15 @@
 </head>
 
 <body>
-    @include('admin.comments.commentView.parcial.header')
-    @include('admin.comments.commentView.parcial.menu')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
 
     <main class="nxl-container">
         @yield('content-commentView')
-        @include('admin.comments.commentView.parcial.footer')
+        @include('admin.layout.footer')
     </main>
 
-    @include('admin.comments.commentView.parcial.thema')
+    @include('admin.layout.theme')
 
 
     <!--! BEGIN: Vendors JS !-->

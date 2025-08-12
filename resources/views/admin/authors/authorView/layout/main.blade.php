@@ -39,11 +39,11 @@
 </head>
 
 <body>
-    @include('admin.authors.authorView.parcial.header')
-    @include('admin.authors.authorView.parcial.menu')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
     <main class="nxl-container">
         @yield('content-authorView')
-        @include('admin.authors.authorView.parcial.footer')
+        @include('admin.layout.footer')
     </main>
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>

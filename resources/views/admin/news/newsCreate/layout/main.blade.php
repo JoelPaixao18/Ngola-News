@@ -37,9 +37,9 @@
 
 <body>
 
-    @include('admin.news.newsCreate.parcial.header')
-    @include('admin.news.newsCreate.parcial.menu')
-    @include('admin.news.newsCreate.parcial.theme')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
+    @include('admin.layout.theme')
 
     <main class="nxl-container">
         @yield('content-news')

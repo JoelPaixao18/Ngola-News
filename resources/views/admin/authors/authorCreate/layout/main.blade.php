@@ -40,11 +40,11 @@
 </head>
 
 <body>
-    @include('admin.authors.authorCreate.parcial.header')
-    @include('admin.authors.authorCreate.parcial.menu')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
     <main class="nxl-container">
         @yield('content-authorCreate')
-        @include('admin.authors.authorCreate.parcial.footer')
+        @include('admin.layout.footer')
     </main>
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>

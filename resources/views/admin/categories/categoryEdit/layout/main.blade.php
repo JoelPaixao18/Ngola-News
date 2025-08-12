@@ -44,13 +44,13 @@
 
 <body>
 
-    @include('admin.categories.categoryEdit.parcial.header')
-    @include('admin.categories.categoryEdit.parcial.menu')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
     <main class="nxl-container">
         @yield('content-categoryEdit')
-        @include('admin.categories.categoryEdit.parcial.footer')
+        @include('admin.layout.footer')
     </main>
-    @include('admin.categories.categoryEdit.parcial.thema')
+    @include('admin.layout.theme')
 
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>

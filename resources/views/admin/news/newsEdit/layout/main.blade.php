@@ -36,12 +36,10 @@
 
 <body>
 
-    @include('admin.applications.chat.parcial.header')
-    @include('admin.applications.chat.parcial.menu')
-    @include('admin.applications.chat.parcial.theme')
-    @include('admin.applications.chat.parcial.info-profile')
-    @include('admin.applications.chat.parcial.call-voice')
-    @include('admin.applications.chat.parcial.call-video')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
+    @include('admin.layout.theme')
+    
 
     <div>
         @yield('content-chat')
