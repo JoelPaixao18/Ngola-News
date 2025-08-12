@@ -1,5 +1,5 @@
 @extends('admin.dashboard.crm.layout.main')
-@section('title', 'CRM - Dashboard')
+@section('title', 'Ngola News - Visão Geral')
 @section('content-crm')
 
 <div class="nxl-content">
@@ -7,11 +7,11 @@
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
-                <h5 class="m-b-10">Dashboard</h5>
+                <h5 class="m-b-10">Visão Geral</h5>
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item">Dashboard</li>
+                <li class="breadcrumb-item">Visão Geral</li>
             </ul>
         </div>
         <div class="page-header-right ms-auto">

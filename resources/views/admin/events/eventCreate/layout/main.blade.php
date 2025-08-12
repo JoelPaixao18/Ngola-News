@@ -40,11 +40,11 @@
 </head>
 
 <body>
-    @include('admin.events.eventCreate.parcial.header')
-    @include('admin.events.eventCreate.parcial.menu')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
     <main class="nxl-container">
         @yield('content-eventCreate')
-        @include('admin.events.eventCreate.parcial.footer')
+        @include('admin.layout.footer')
     </main>
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>

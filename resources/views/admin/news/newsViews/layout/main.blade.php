@@ -36,10 +36,9 @@
 
 <body>
 
-    @include('admin.news.newsViews.parcial.header')
-    @include('admin.news.newsViews.parcial.menu')
-    @include('admin.news.newsViews.parcial.theme')
-    @include('admin.news.newsViews.parcial.compose-email-modal')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
+    @include('admin.layout.theme')
 
     <main class="nxl-container">
         @yield('content-news')
