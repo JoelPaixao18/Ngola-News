@@ -34,15 +34,15 @@
 		<![endif]-->
 </head>
 <body>
-@include('admin.events.eventEdit.parcial.header')
-@include('admin.events.eventEdit.parcial.menu')
-@include('admin.events.eventEdit.parcial.theme')
+@include('admin.layout.header')
+@include('admin.layout.menu')
+@include('admin.layout.theme')
 
 <main class="nxl-container">
     @yield('content-eventEdit')
 </main>
 
-@include('admin.events.eventEdit.parcial.footer')
+@include('admin.layout.footer')
     <!--! BEGIN: Vendors JS !-->
     <script src="{{url('assets/vendors/js/vendors.min.js')}}"></script>
     <!-- vendors.min.js {always must need to be top} -->

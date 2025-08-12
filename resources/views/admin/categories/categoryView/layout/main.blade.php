@@ -38,15 +38,15 @@
 </head>
 
 <body>
-    @include('admin.categories.categoryView.parcial.header')
-    @include('admin.categories.categoryView.parcial.menu')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
 
     <main class="nxl-container">
         @yield('content-categoryView')
-        @include('admin.categories.categoryView.parcial.footer')
+        @include('admin.layout.footer')
     </main>
 
-    @include('admin.categories.categoryView.parcial.thema')
+    @include('admin.layout.theme')
 
 
     <!--! BEGIN: Vendors JS !-->

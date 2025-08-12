@@ -40,13 +40,13 @@
 
 <body>
 
-    @include('admin.comments.commentCreate.parcial.header')
-    @include('admin.comments.commentCreate.parcial..menu')
+    @include('admin.layout.header')
+    @include('admin.layout..menu')
     <main class="nxl-container">
         @yield('content-commentCreate')
-        @include('admin.comments.commentCreate.parcial..footer')
+        @include('admin.layout..footer')
     </main>
-    @include('admin.comments.commentCreate.parcial..thema')
+    @include('admin.layout..theme')
 
     <!--! Footer Script !-->
     <!--! ================================================================ !-->

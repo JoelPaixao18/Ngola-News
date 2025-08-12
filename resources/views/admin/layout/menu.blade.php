@@ -56,7 +56,7 @@
                 </li>
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-paper"></i></span>
+                        <span class="nxl-micon"><i class="feather-send"></i></span>
                         <span class="nxl-mtext">Notícias</span><span class="nxl-arrow"><i
                                 class="feather-chevron-right"></i></span>
                     </a>
@@ -88,7 +88,7 @@
             {{-- Menu Comments --}}
             <li class="nxl-item nxl-hasmenu">
                 <a href="javascript:void(0);" class="nxl-link">
-                    <span class="nxl-micon"><i class="feather-cast"></i></span>
+                    <span class="nxl-micon"><i class="feather-edit"></i></span>
                     <span class="nxl-mtext">Comments</span><span class="nxl-arrow"><i
                             class="feather-chevron-right"></i></span>
                 </a>

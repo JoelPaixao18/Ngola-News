@@ -7,11 +7,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Authors</h5>
+                    <h5 class="m-b-10">Autores</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Authors</li>
+                    <li class="breadcrumb-item">Autores</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -107,7 +107,7 @@
                         </div>
                         <a href="{{ route('admin.author.create') }}" class="btn btn-primary">
                             <i class="feather-plus me-2"></i>
-                            <span>Create Author</span>
+                            <span>Criar Autor</span>
                         </a>
                     </div>
                 </div>
@@ -239,9 +239,9 @@
                                                     </div>
                                                 </div>
                                             </th>
-                                            <th>Name</th>
-                                            <th>biography</th>
-                                            <th class="text-end">Actions</th>
+                                            <th>Nome</th>
+                                            <th>Biografia</th>
+                                            <th class="text-end">Ações</th>
 
                                         </tr>
                                     </thead>
@@ -292,7 +292,7 @@
                                                                     <a class="dropdown-item"
                                                                         href="{{ route('admin.author.edit', ['author' => $author]) }}">
                                                                         <i class="feather feather-edit-3 me-3"></i>
-                                                                        <span>Edit</span>
+                                                                        <span>Editar</span>
                                                                     </a>
                                                                 </li>
 
@@ -301,7 +301,7 @@
                                                                     <a class="dropdown-item"
                                                                         href="{{ route('admin.author.delete', ['author' => $author]) }}">
                                                                         <i class="feather feather-trash-2 me-3"></i>
-                                                                        <span>Delete</span>
+                                                                        <span>Deletar</span>
                                                                     </a>
                                                                 </li>
                                                             </ul>

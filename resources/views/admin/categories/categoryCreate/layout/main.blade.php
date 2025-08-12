@@ -40,13 +40,13 @@
 
 <body>
 
-    @include('admin.categories.categoryCreate.parcial.header')
-    @include('admin.categories.categoryCreate.parcial.menu')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
     <main class="nxl-container">
         @yield('content-categoryCreate')
-        @include('admin.categories.categoryCreate.parcial.footer')
+        @include('admin.layout.footer')
     </main>
-    @include('admin.categories.categoryCreate.parcial.thema')
+    @include('admin.layout.theme')
 
     <!--! Footer Script !-->
     <!--! ================================================================ !-->

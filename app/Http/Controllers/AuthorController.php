@@ -106,8 +106,8 @@ class AuthorController extends Controller
         // Processar fotom se for enviada
         if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
             // Remover fotom antiga se existir
-            if ($author->foto && file_exists(public_path('img/author/' . $author->foto))) {
-                unlink(public_path('img/author/' . $author->foto));
+            if ($author->foto && file_exists(public_path('img/authors/' . $author->foto))) {
+                unlink(public_path('img/authors/' . $author->foto));
             }
 
             $foto = $request->file('foto');
@@ -136,6 +136,6 @@ class AuthorController extends Controller
     {
         //
         $author->delete();
-        return redirect()->route('admin.authors.author.index')->with('msg', 'author editado com sucesso!');
+        return redirect()->route('admin.author.index')->with('msg', 'author eliminado com sucesso!');
     }
 }
