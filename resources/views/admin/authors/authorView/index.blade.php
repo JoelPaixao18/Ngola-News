@@ -1,4 +1,4 @@
-@extends('admin.authors.layouts.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Author View')
 @section('content-authorView')
     <div class="nxl-content">

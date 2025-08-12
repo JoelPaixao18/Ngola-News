@@ -1,4 +1,4 @@
-@extends('admin.events.eventCreate.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Event Create')
 @section('content-eventCreate')
     <!--! ================================================================ !-->
@@ -105,7 +105,7 @@
                         enctype="multipart/form-data">
                         @csrf
 
-                        @if ($errors->any())
+                        {{-- @if ($errors->any())
                             <script>
                                 document.addEventListener('DOMContentLoaded', function() {
                                     Swal.fire({
@@ -133,7 +133,7 @@
                                     });
                                 });
                             </script>
-                        @endif
+                        @endif --}}
 
                         <div class="row">
                             <div class="col-lg-12">

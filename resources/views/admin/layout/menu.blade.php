@@ -35,12 +35,12 @@
                     <ul class="nxl-submenu">
                         <li class="nxl-item"><a class="nxl-link"
                                 href="{{ route('admin.categories.index') }}">Category</a></li>
-                        <li class="nxl-item"><a class="nxl-link"
+                        {{-- <li class="nxl-item"><a class="nxl-link"
                                 href="#">Category View</a>
                         </li>
                         <li class="nxl-item"><a class="nxl-link"
                                 href="#">Category Edit</a>
-                        </li>
+                        </li> --}}
                         <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Category
                                 Create</a>
                         </li>

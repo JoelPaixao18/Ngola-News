@@ -1,4 +1,4 @@
-@extends('admin.authors.layouts.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Author Create')
 @section('content-authorCreate')
     <!--! ================================================================ !-->
@@ -97,15 +97,15 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                                 Criando Formulario author Create
-                                     _______________________________________________________________-->
+                                                             Criando Formulario author Create
+                                                 _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="authorForm" action="{{ route('admin.author.store') }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
 
-                        @if ($errors->any())
+                        {{-- @if ($errors->any())
                             <script>
                                 document.addEventListener('DOMContentLoaded', function() {
                                     Swal.fire({
@@ -136,7 +136,7 @@
                                     });
                                 });
                             </script>
-                        @endif
+                        @endif --}}
 
                         <div class="row">
                             <div class="col-lg-12">

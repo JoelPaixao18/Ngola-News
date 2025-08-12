@@ -3,10 +3,10 @@
     Swal.fire({
         icon: 'success',
         title: 'Sucesso',
-        text: '{{ session('success') }}',
+        text: @json(session('success')),
         showConfirmButton: false,
         timer: 2500
-    })
+    });
 </script>
 @endif
 
@@ -15,10 +15,10 @@
     Swal.fire({
         icon: 'error',
         title: 'Erro',
-        text: '{{ session('error') }}',
+        text: @json(session('error')),
         showConfirmButton: false,
         timer: 2500
-    })
+    });
 </script>
 @endif
 
@@ -27,9 +27,9 @@
     Swal.fire({
         icon: 'warning',
         title: 'Atenção',
-        text: '{{ session('warning') }}',
+        text: @json(session('warning')),
         showConfirmButton: false,
         timer: 2500
-    })
+    });
 </script>
 @endif

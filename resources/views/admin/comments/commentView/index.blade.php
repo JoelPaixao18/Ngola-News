@@ -1,4 +1,4 @@
-@extends('admin.categories.categoryView.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Category View')
 @section('content-categoryView')
 

@@ -1,4 +1,4 @@
-@extends('admin.categories.categoryEdit.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Category Edit')
 @section('content-categoryEdit')
 
@@ -62,7 +62,7 @@
                                 @csrf
                                 @method('PUT')
 
-                                @if ($errors->any())
+                               {{--  @if ($errors->any())
                                     <script>
                                         document.addEventListener('DOMContentLoaded', function() {
                                             Swal.fire({
@@ -90,7 +90,7 @@
                                             });
                                         });
                                     </script>
-                                @endif
+                                @endif --}}
 
                                 <div class="row">
                                     {{-- Nome --}}
