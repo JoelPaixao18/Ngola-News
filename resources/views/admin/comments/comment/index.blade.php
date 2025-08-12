@@ -6,11 +6,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Comment</h5>
+                    <h5 class="m-b-10">Comentários</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Comments</li>
+                    <li class="breadcrumb-item">Comentárioss</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -108,9 +108,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('admin.comment.create') }}" class="btn btn-primary">
+                        <a href="{{ route('admin.comment.create') }}" class="btn btn-danger">
                             <i class="feather-plus me-2"></i>
-                            <span>New Comment</span>
+                            <span>Novo Comentário</span>
                         </a>
                     </div>
                 </div>
@@ -245,24 +245,21 @@
                                                 <td>{{ $comment->date }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
+                                                        <a class="avatar-text avatar-md"
+                                                            href="{{ route('admin.comment.view', ['comment' => $comment]) }}">
+                                                            <i class="feather feather-eye"></i>
+                                                        </a>
                                                         <div class="dropdown">
                                                             <a href="javascript:void(0)" class="avatar-text avatar-md"
                                                                 data-bs-toggle="dropdown" data-bs-offset="0,21">
                                                                 <i class="feather feather-more-horizontal"></i>
                                                             </a>
                                                             <ul class="dropdown-menu">
-                                                                <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="{{ route('admin.comment.view', ['comment' => $comment]) }}">
-                                                                        <i class="feather feather-eye me-3"></i>
-                                                                        <span>View</span>
-                                                                    </a>
-                                                                <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="{{ route('admin.comment.edit', ['comment' => $comment]) }}">
-                                                                        <i class="feather feather-edit-3 me-3"></i>
-                                                                        <span>Edit</span>
-                                                                    </a>
+                                                                <a class="dropdown-item"
+                                                                    href="{{ route('admin.comment.edit', ['comment' => $comment]) }}">
+                                                                    <i class="feather feather-edit-3 me-3"></i>
+                                                                    <span>Edit</span>
+                                                                </a>
                                                                 </li>
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>

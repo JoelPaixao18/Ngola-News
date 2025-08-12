@@ -51,8 +51,7 @@
                         </div>
 
                         <a href="{{ route('admin.author.index') }}" class="btn btn-danger ">
-                            <span class="me-3">
-                                <<< </span>
+                             <i class="feather-chevron-left me-2"></i>
                                     <span>Voltar</span>
 
                         </a>
@@ -129,7 +128,7 @@
                                         <span>Deletar</span>
                                     </a>
                                     <a href="{{ route('admin.author.edit', ['author' => $author]) }}"
-                                        class="w-50 btn btn-primary">
+                                        class="w-50 btn btn-danger">
                                         <i class="feather-edit me-2"></i>
                                         <span>Editar Perfil</span>
                                     </a>

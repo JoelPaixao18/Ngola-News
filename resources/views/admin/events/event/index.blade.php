@@ -105,9 +105,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('admin.event.create') }}" class="btn btn-primary">
+                        <a href="{{ route('admin.event.create') }}" class="btn btn-danger">
                             <i class="feather-plus me-2"></i>
-                            <span>Create Event</span>
+                            <span>Novo Evento</span>
                         </a>
                     </div>
                 </div>

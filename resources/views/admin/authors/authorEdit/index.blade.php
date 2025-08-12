@@ -79,10 +79,10 @@
                                 </a> --}}
                             </div>
                         </div>
-                        {{-- <a href="javascript:void(0);" class="btn btn-primary">
-                            <i class="feather-plus me-2"></i>
-                            <span>Add Widgets</span>
-                        </a> --}}
+                        <a href="{{ route('admin.author.index')}}" class="btn btn-danger">
+                           <i class="feather-chevron-left me-2"></i>
+                            <span>Voltar</span>
+                        </a>
                     </div>
                 </div>
                 <div class="d-md-none d-flex align-items-center">
@@ -643,10 +643,18 @@
                                             </select>
                                         </div>
                                     </div> --}}
+<<<<<<< HEAD
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
                                                 <input type="submit" class="btn btn-primary" value="Update author">
                                             </div>
+=======
+                                    <div class="row mb-4 align-items-center">
+                                        <div class="col-lg-12">
+                                            <button type="submit" class="btn btn-danger"> Salvar
+                                            <i class="feather-save ms-2"></i>
+                                        </button>
+>>>>>>> 76bc5d424dc0165983f9b036c897f57955cfaa8e
                                         </div>
                                     </div>
                                 </div>
