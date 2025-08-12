@@ -44,13 +44,13 @@
 
 <body>
 
-    @include('admin.comments.commentEdit.parcial.header')
-    @include('admin.comments.commentEdit.parcial.menu')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
     <main class="nxl-container">
         @yield('content-commentEdit')
-        @include('admin.comments.commentEdit.parcial.footer')
+        @include('admin.layout.footer')
     </main>
-    @include('admin.comments.commentEdit.parcial.thema')
+    @include('admin.layout.theme')
 
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>

@@ -43,15 +43,15 @@
 </head>
 
 <body>
-    @include('admin.categories.categories.parcial.header')
-    @include('admin.categories.categories.parcial.menu')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
 
     <main class="nxl-container">
         @yield('content-categories')
-        @include('admin.categories.categories.parcial.footer')
+        @include('admin.layout.footer')
     </main>
 
-    @include('admin.categories.categories.parcial.thema')
+    @include('admin.layout.theme')
 
 
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>

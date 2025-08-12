@@ -41,13 +41,13 @@
 </head>
 
 <body>
-    @include('admin.events.event.parcial.header')
-    @include('admin.events.event.parcial.menu')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
     <main class="nxl-container">
         @yield('content-events')
-        @include('admin.events.event.parcial.footer')
+        @include('admin.layout.footer')
     </main>
-    @include('admin.events.event.parcial.theme')
+    @include('admin.layout.theme')
 
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>

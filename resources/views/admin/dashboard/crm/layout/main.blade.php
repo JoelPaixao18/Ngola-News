@@ -34,14 +34,14 @@
 </head>
 
 <body>
-    @include('admin.dashboard.crm.parcial.header')
-    @include('admin.dashboard.crm.parcial.menu')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
 
     <main class="nxl-container">
         @yield('content-crm')
 
-        @include('admin.dashboard.crm.parcial.thema')
-        @include('admin.dashboard.crm.parcial.footer')
+        @include('admin.layout.theme')
+        @include('admin.layout.footer')
     </main>
 
 

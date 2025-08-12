@@ -41,10 +41,10 @@
 
 <body>
 
-    @include('admin.news.news.parcial.header')
-    @include('admin.news.news.parcial.menu')
-    @include('admin.news.news.parcial.theme')
-    @include('admin.news.news.parcial.add-notes-modal')
+    @include('admin.layout.header')
+    @include('admin.layout.menu')
+    @include('admin.layout.theme')
+
 
     <main class="nxl-container">
         @yield('content-news')
