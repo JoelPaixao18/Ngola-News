@@ -43,7 +43,7 @@
                     <div class="nxl-lavel-mega-menu-wrapper d-flex gap-3">
                         <!--! [Start] nxl-lavel-menu !-->
                         <div class="dropdown nxl-h-item nxl-lavel-menu">
-                            <a href="javascript:void(0);" class="avatar-text avatar-md bg-primary text-white" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                            <a href="javascript:void(0);" class="avatar-text avatar-md bg-danger text-white" data-bs-toggle="dropdown" data-bs-auto-close="outside">
                                 <i class="feather-plus"></i>
                             </a>
                             <div class="dropdown-menu nxl-h-dropdown">
@@ -1044,7 +1044,7 @@
                                                             <div class="row g-4">
                                                                 <div class="col-lg-6">
                                                                     <div class="d-flex align-items-start gap-3">
-                                                                        <div class="avatar-text avatar-lg rounded bg-primary text-white">
+                                                                        <div class="avatar-text avatar-lg rounded bg-danger text-white">
                                                                             <i class="feather-bar-chart-2 mx-auto"></i>
                                                                         </div>
                                                                         <div>
@@ -1891,7 +1891,7 @@
                                     <div class="dropdown-divider"></div>
                                     <a href="javascript:void(0);" class="dropdown-item">
                                         <span class="hstack">
-                                            <i class="wd-10 ht-10 border border-2 border-gray-1 bg-primary rounded-circle me-2"></i>
+                                            <i class="wd-10 ht-10 border border-2 border-gray-1 bg-danger rounded-circle me-2"></i>
                                             <span>Cutomization</span>
                                         </span>
                                     </a>

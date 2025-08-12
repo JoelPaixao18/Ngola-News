@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <a href="{{ route('admin.event.index')}}" class="btn btn-danger ">
-                           <span class="me-3"><<</span>
+                           <i class="feather-chevron-left me-2"></i>
                             <span>Voltar</span>
                         </a>
                     </div>
