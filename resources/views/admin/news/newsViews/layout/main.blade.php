@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <meta name="author" content="WRAPCODERS">
     <!--! The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags !-->
     <!--! BEGIN: Apps Title-->
-    <title>Duralux || Email</title>
+    <title>@yield('title')</title>
     <!--! END:  Apps Title-->
     <!--! BEGIN: Favicon-->
     <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/images/favicon.ico') }}">
@@ -22,9 +22,6 @@
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/vendors.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2-theme.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/tagify.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/tagify-data.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/quill.min.css') }}">
     <!--! END: Vendors CSS-->
     <!--! BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/theme.min.css') }}">
@@ -39,27 +36,24 @@
 
 <body>
 
-    @include('admin.applications.email.parcial.header')
-    @include('admin.applications.email.parcial.menu')
-    @include('admin.applications.email.parcial.theme')
-    @include('admin.applications.email.parcial.compose-email-modal')
+    @include('admin.news.newsViews.parcial.header')
+    @include('admin.news.newsViews.parcial.menu')
+    @include('admin.news.newsViews.parcial.theme')
+    @include('admin.news.newsViews.parcial.compose-email-modal')
 
-    <div>
-        @yield('content-email')
-    </div>
+    <main class="nxl-container">
+        @yield('content-news')
+    </main>
 
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>
     <!-- vendors.min.js {always must need to be top} -->
     <script src="{{ url('assets/vendors/js/select2.min.js') }}"></script>
     <script src="{{ url('assets/vendors/js/select2-active.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/js/tagify.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/js/tagify-data.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/js/quill.min.js') }}"></script>
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
     <script src="{{ url('assets/js/common-init.min.js') }}"></script>
-    <script src="{{ url('assets/js/apps-email-init.min.js') }}"></script>
+    <script src="{{ url('assets/js/leads-view-init.min.js') }}"></script>
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
     <script src="{{ url('assets/js/theme-customizer-init.min.js') }}"></script>

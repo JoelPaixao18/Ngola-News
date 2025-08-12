@@ -12,6 +12,7 @@
     <title>Duralux || Leads Report</title>
     <!--! END:  Apps Title-->
     <!--! BEGIN: Favicon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="{{url('assets/images/favicon.png')}}">
     <!--! END: Favicon-->
     <!--! BEGIN: Bootstrap CSS-->
@@ -37,9 +38,9 @@
 @include('admin.events.eventEdit.parcial.menu')
 @include('admin.events.eventEdit.parcial.theme')
 
-<div>
-    @yield('container-eventEdit')
-</div>
+<main class="nxl-container">
+    @yield('content-eventEdit')
+</main>
 
 @include('admin.events.eventEdit.parcial.footer')
     <!--! BEGIN: Vendors JS !-->
@@ -56,6 +57,22 @@
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
     <script src="{{url('assets/js/theme-customizer-init.min.js')}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        @if(session('alert'))
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: '{{ session('alert')['type'] }}',
+                    title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                    text: '{{ session('alert')['message'] }}',
+                    confirmButtonText: 'OK',
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+            });
+        @endif
+    </script>
     <!--! END: Theme Customizer !-->
 </body>
 </html>

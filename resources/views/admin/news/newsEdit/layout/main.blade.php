@@ -13,6 +13,7 @@
     <title>Duralux || Chat</title>
     <!--! END:  Apps Title-->
     <!--! BEGIN: Favicon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/images/favicon.ico') }}">
     <!--! END: Favicon-->
     <!--! BEGIN: Bootstrap CSS-->
@@ -58,6 +59,24 @@
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
     <script src="{{ url('assets/js/theme-customizer-init.min.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        @if(session('alert'))
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: '{{ session('alert')['type'] }}',
+                    title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                    text: '{{ session('alert')['message'] }}',
+                    confirmButtonText: 'OK',
+                    showConfirmButton: true,
+                    allowOutsideClick: false, // Impede fechar clicando fora
+                    allowEscapeKey: false, // Impede fechar com ESC
+                    timer: undefined // Remove o temporizador
+                });
+            });
+        @endif
+    </script>
     <!--! END: Theme Customizer !-->
 </body>
 

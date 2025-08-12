@@ -1,5 +1,5 @@
 @extends('admin.categories.categoryEdit.layout.main')
-@section('title', 'Ngola News - Category Create')
+@section('title', 'Ngola News - Category Edit')
 @section('content-categoryEdit')
 
     <!-- [ Craete Form ] -->
@@ -54,7 +54,7 @@
                                     <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to
                                         adding a new potential customer or sales prospect</span>
                                 </h5>
-                                <a href="{{ route('admin.category.create') }}" class="btn btn-sm btn-light-brand">Create
+                                <a href="{{ route('admin.categories.index') }}" class="btn btn-sm btn-light-brand">List
                                     Category</a>
                             </div>
                             <form action="{{ route('admin.category.update', ['category' => $category->id]) }}"
@@ -63,13 +63,33 @@
                                 @method('PUT')
 
                                 @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Erro de Validação',
+                                                html: `@foreach ($errors->all() as $error)
+                                                    <div>{{ $error }}</div>
+                                                @endforeach`,
+                                                confirmButtonText: 'OK'
+                                            });
+                                        });
+                                    </script>
+                                @endif
+
+                                @if (session('alert'))
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            Swal.fire({
+                                                icon: '{{ session('alert')['type'] }}',
+                                                title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                                                text: '{{ session('alert')['message'] }}',
+                                                confirmButtonText: 'OK',
+                                                timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
+                                                timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
+                                            });
+                                        });
+                                    </script>
                                 @endif
 
                                 <div class="row">
@@ -82,12 +102,12 @@
                                     </div>
 
                                     {{-- Slug --}}
-                                    <div class="col-lg-4 mb-4">
+                                    {{-- <div class="col-lg-4 mb-4">
                                         <label class="form-label">Slug</label>
                                         <input type="text" name="slug" class="form-control"
                                             value="{{ old('slug', $category->slug) }}"
                                             placeholder="ex: politica, desporto...">
-                                    </div>
+                                    </div> --}}
 
                                     {{-- Tipo --}}
                                     <div class="col-lg-4 mb-4">
@@ -98,17 +118,14 @@
                                     </div>
 
                                     {{-- Status --}}
-                                    <div class="col-lg-4 mb-4">
+                                    {{-- <div class="col-lg-4 mb-4">
                                         <label class="form-label">Status</label>
                                         <select class="form-control" name="status" data-select2-selector="status">
                                             <option value="" disabled selected>Selecione o status</option>
-                                            <option value="draft" data-bg="bg-warning"> Rascunho</option>
-                                            <option value="published" data-bg="bg-success"> Publicado</option>
-                                            <option value="archived" data-bg="bg-secondary"> Arquivado</option>
                                             <option value="active" data-bg="bg-success"> Ativo</option>
                                             <option value="inactive" data-bg="bg-danger"> Inativo</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
 
                                     {{-- Descrição --}}
                                     <div class="col-12 mb-4">

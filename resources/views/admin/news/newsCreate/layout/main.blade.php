@@ -10,20 +10,19 @@
     <meta name="author" content="WRAPCODERS">
     <!--! The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags !-->
     <!--! BEGIN: Apps Title-->
-    <title>Duralux || Calendar</title>
+    <title>@yield('title')</title>
     <!--! END:  Apps Title-->
     <!--! BEGIN: Favicon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/images/favicon.ico') }}">
     <!--! END: Favicon-->
     <!--! BEGIN: Bootstrap CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap.min.css') }}">
     <!--! END: Bootstrap CSS-->
     <!--! BEGIN: Vendors CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/vendors.min.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ url('assets/vendors/css/tui-calendar.min.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ url('assets/vendors/css/tui-theme.min.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ url('assets/vendors/css/tui-time-picker.min.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ url('assets/vendors/css/tui-date-picker.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/vendors.min.css') }}">">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2.min.css') }}">">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2-theme.min.css') }}">">
     <!--! END: Vendors CSS-->
     <!--! BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/theme.min.css') }}">
@@ -42,29 +41,39 @@
     @include('admin.news.newsCreate.parcial.menu')
     @include('admin.news.newsCreate.parcial.theme')
 
-    <div>
-        @yield('content-calendar')
-    </div>
+    <main class="nxl-container">
+        @yield('content-news')
+    </main>
 
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>
     <!-- vendors.min.js {always must need to be top} -->
-    <script src="{{ url('assets/vendors/js/tui-code-snippet.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/js/tui-time-picker.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/js/tui-date-picker.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/js/moment.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/js/chance.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/js/tui-calendar.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/js/tui-calendars.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/js/tui-schedules.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/js/tui-calendar-init.min.js') }}"></script>
+    <script src="{{ url('assets/vendors/js/select2.min.js') }}"></script>
+    <script src="{{ url('assets/vendors/js/select2-active.min.js') }}"></script>
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
     <script src="{{ url('assets/js/common-init.min.js') }}"></script>
-    <script src="{{ url('assets/js/apps-calendar-init.min.js') }}"></script>
+    <script src="{{ url('assets/js/leads-view-init.min.js') }}"></script>
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
     <script src="{{ url('assets/js/theme-customizer-init.min.js') }}"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        @if(session('alert'))
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: '{{ session('alert')['type'] }}',
+                    title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                    text: '{{ session('alert')['message'] }}',
+                    confirmButtonText: 'OK',
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+            });
+        @endif
+    </script>
+
 </body>
 
 </html>

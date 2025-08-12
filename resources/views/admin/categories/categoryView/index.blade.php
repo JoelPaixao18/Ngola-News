@@ -1411,7 +1411,8 @@
                                 <span class="fs-12 fw-normal text-muted d-block">General information for your
                                     Category</span>
                             </h5>
-                            <a href="{{ route('admin.category.edit', ['category' => $category]) }}" class="btn btn-sm btn-light-brand">Edit Category</a>
+                            <a href="{{ route('admin.categories.index') }}"
+                                class="btn btn-sm btn-light-brand">List Category</a>
                         </div>
                         <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">ID</div>
@@ -1429,14 +1430,14 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="row mb-4">
+                        {{-- <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">Slug</div>
                             <div class="col-lg-10 hstack gap-1">
                                 <a href="javascript:void(0);" class="hstack gap-2">
                                     <span>{{ $category->slug }}</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">Tipo de Categoria</div>
                             <div class="col-lg-10 hstack gap-1">
@@ -1445,14 +1446,14 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="row mb-4">
+                        {{-- <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">Status</div>
                             <div class="col-lg-10 hstack gap-1">
                                 <a href="javascript:void(0);" class="hstack gap-2">
                                     <span>{{ $category->status }}</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">Descrição</div>
                             <div class="col-lg-10 hstack gap-1">{{ $category->description }}</div>

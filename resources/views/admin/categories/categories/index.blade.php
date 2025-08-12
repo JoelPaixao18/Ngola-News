@@ -183,6 +183,7 @@
         <!-- [ Main Content ] start -->
         <div class="main-content">
             @if (session('success'))
+                <!-- Mantenha este apenas como fallback -->
                 <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
                     <i class="feather-check-circle me-2 fs-20"></i>
                     <div>{{ session('success') }}</div>
@@ -209,9 +210,7 @@
                                             </th>
                                             <th>ID</th>
                                             <th>Nome da Categória</th>
-                                            <th>Slug</th>
                                             <th>Tipo de Categória</th>
-                                            <th>Status</th>
                                             <th>Descrição</th>
                                             <th class="text-end">Actions</th>
                                         </tr>
@@ -241,9 +240,7 @@
                                                         </div>
                                                     </a>
                                                 </td>
-                                                <td>{{ $category->slug }}</td>
                                                 <td class="fw-bold text-dark">{{ $category->type }}</td>
-                                                <td>{{ $category->status }}</td>
                                                 <td>{{ $category->description }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">

@@ -1,186 +1,182 @@
 @extends('admin.events.eventCreate.layout.main')
-@section('container-eventCreate')
-<!--! ================================================================ !-->
-<!--! [Start] Main Content !-->
-<!--! ================================================================ !-->
-<main class="nxl-container">
+@section('title', 'Ngola News - Event Create')
+@section('content-eventCreate')
+    <!--! ================================================================ !-->
+    <!--! [Start] Main Content !-->
+    <!--! ================================================================ !-->
     <div class="nxl-content">
         <!-- [ page-header ] start -->
-        <!--  <div class="page-header">
-                <div class="page-header-left d-flex align-items-center">
-                    <div class="page-header-title">
-                        <h5 class="m-b-10">Event</h5>
-                    </div>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item">Create</li>
-                    </ul>
+        <div class="page-header">
+            <div class="page-header-left d-flex align-items-center">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Evento</h5>
                 </div>
-                <div class="page-header-right ms-auto">
-                    <div class="page-header-right-items">
-                        <div class="d-flex d-md-none">
-                            <a href="javascript:void(0)" class="page-header-right-close-toggle">
-                                <i class="feather-arrow-left me-2"></i>
-                                <span>Back</span>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
-                            <div class="dropdown filter-dropdown">
-                                <a class="btn btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10" data-bs-auto-close="outside">
-                                    <i class="feather-filter me-2"></i>
-                                    <span>Filter</span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                    <div class="dropdown-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Role" checked="checked">
-                                            <label class="custom-control-label c-pointer" for="Role">Role</label>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Team" checked="checked">
-                                            <label class="custom-control-label c-pointer" for="Team">Team</label>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Email" checked="checked">
-                                            <label class="custom-control-label c-pointer" for="Email">Email</label>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Member" checked="checked">
-                                            <label class="custom-control-label c-pointer" for="Member">Member</label>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-item">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Recommendation" checked="checked">
-                                            <label class="custom-control-label c-pointer" for="Recommendation">Recommendation</label>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="javascript:void(0);" class="dropdown-item">
-                                        <i class="feather-plus me-3"></i>
-                                        <span>Create New</span>
-                                    </a>
-                                    <a href="javascript:void(0);" class="dropdown-item">
-                                        <i class="feather-filter me-3"></i>
-                                        <span>Manage Filter</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <a href="javascript:void(0);" class="btn btn-primary">
-                                <i class="feather-plus me-2"></i>
-                                <span>Add Widgets</span>
-                            </a>
-                        </div>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Novo</li>
+                </ul>
+            </div>
+            <div class="page-header-right ms-auto">
+                <div class="page-header-right-items">
+                    <div class="d-flex d-md-none">
+                        <a href="javascript:void(0)" class="page-header-right-close-toggle">
+                            <i class="feather-arrow-left me-2"></i>
+                            <span>Back</span>
+                        </a>
                     </div>
-                    <div class="d-md-none d-flex align-items-center">
-                        <a href="javascript:void(0)" class="page-header-right-open-toggle">
-                            <i class="feather-align-right fs-20"></i>
+                    <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+                        <div class="dropdown filter-dropdown">
+                            <a class="btn btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10"
+                                data-bs-auto-close="outside">
+                                <i class="feather-filter me-2"></i>
+                                <span>Filter</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Role"
+                                            checked="checked">
+                                        <label class="custom-control-label c-pointer" for="Role">Role</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Team"
+                                            checked="checked">
+                                        <label class="custom-control-label c-pointer" for="Team">Team</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Email"
+                                            checked="checked">
+                                        <label class="custom-control-label c-pointer" for="Email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Member"
+                                            checked="checked">
+                                        <label class="custom-control-label c-pointer" for="Member">Member</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Recommendation"
+                                            checked="checked">
+                                        <label class="custom-control-label c-pointer"
+                                            for="Recommendation">Recommendation</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <a href="javascript:void(0);" class="dropdown-item">
+                                    <i class="feather-plus me-3"></i>
+                                    <span>Create New</span>
+                                </a>
+                                <a href="javascript:void(0);" class="dropdown-item">
+                                    <i class="feather-filter me-3"></i>
+                                    <span>Manage Filter</span>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="javascript:void(0);" class="btn btn-primary">
+                            <i class="feather-plus me-2"></i>
+                            <span>Add Widgets</span>
                         </a>
                     </div>
                 </div>
-            </div> -->
+                <div class="d-md-none d-flex align-items-center">
+                    <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                        <i class="feather-align-right fs-20"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
         <!-- [ page-header ] end -->
         <!-- [ Main Content ] start -->
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
                                  Criando Formulario Event Create
-                    _______________________________________________________________-->
-                <!-- [ page-header ] start -->
-                <div class="page-header">
-                    <div class="page-header-left d-flex align-items-center">
-                        <div class="page-header-title">
-                            <h5 class="m-b-10">Event</h5>
-                        </div>
-                        <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item">Create</li>
-                        </ul>
-                    </div>
-                    <div class="page-header-right ms-auto">
-                        <div class="page-header-right-items">
-                            <div class="d-flex d-md-none">
-                                <a href="javascript:void(0)" class="page-header-right-close-toggle">
-                                    <i class="feather-arrow-left me-2"></i>
-                                    <span>Back</span>
-                                </a>
-                            </div>
-                           <!--  <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
-                                <a href="javascript:void(0);" class="btn btn-light-brand successAlertMessage">
-                                    <i class="feather-layers me-2"></i>
-                                    <span>Save as Draft</span>
-                                </a>
-                                <button type="submit" form="eventForm" href="javascript:void(0);" class="btn btn-primary successAlertMessage">
-                                    <i class="feather-user-plus me-2"></i>
-                                    Create Event
-                                </button> -->
-                            </div>
-                        </div>
-                        <div class="d-md-none d-flex align-items-center">
-                            <a href="javascript:void(0)" class="page-header-right-open-toggle">
-                                <i class="feather-align-right fs-20"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- [ page-header ] end -->
+                     _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
-                    <form id="eventForm" action="/admin/event" method="post">
+                    <form id="eventForm" action="{{ route('admin.event.store') }}" method="post"
+                        enctype="multipart/form-data">
+                        @csrf
+
+                        @if ($errors->any())
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Erro de Validação',
+                                        html: `@foreach ($errors->all() as $error)
+                                                    <div>{{ $error }}</div>
+                                                @endforeach`,
+                                        confirmButtonText: 'OK'
+                                    });
+                                });
+                            </script>
+                        @endif
+
+                        @if (session('alert'))
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    Swal.fire({
+                                        icon: '{{ session('alert')['type'] }}',
+                                        title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                                        text: '{{ session('alert')['message'] }}',
+                                        confirmButtonText: 'OK',
+                                        timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
+                                        timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
+                                    });
+                                });
+                            </script>
+                        @endif
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card stretch stretch-full">
                                     <div class="card-body lead-status">
                                         <div class="mb-5 d-flex align-items-center justify-content-between">
                                             <h5 class="fw-bold mb-0 me-4">
-                                                <span class="d-block mb-2">Event Details :</span>
-                                                <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to adding a new potential customer or sales prospect</span>
+                                                <span class="d-block mb-2">Detalhes do Evento :</span>
+                                                <span class="fs-12 fw-normal text-muted text-truncate-1-line">
+                                                    Insira as informações do seu próximo evento aqui.
+                                                </span>
                                             </h5>
-
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-6 mb-4">
-                                                <label class="form-label">Category</label>
-                                                <select class="form-select form-control" data-select2-selector="status">
-                                                    <option value="primary" data-bg="bg-primary">New</option>
-                                                    <option value="primary" data-bg="bg-primary">New</option>
-                                                    <option value="primary" data-bg="bg-primary">New</option>
-                                                    <option value="primary" data-bg="bg-primary">New</option>
-                                                    <option value="primary" data-bg="bg-primary">New</option>
+                                                <label class="form-label">Categoria</label>
+                                                <select class="form-select form-control" name="categoryId"
+                                                    data-select2-selector="status">
+                                                    @foreach ($categories as $category)
+                                                        <option value="{{ $category->id }}" data-bg="bg-primary">
+                                                            {{ $category->name }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="col-lg-6 mb-4">
-                                                <label class="form-label">Status:</label>
-                                                <select class="form-select form-control" name="visibility" data-select2-selector="visibility">
-                                                    <option value="Published" data-icon="feather-circle">Published</option>
-                                                    <option value="Draft" data-icon="feather-circle">Draft</option>
-                                                    <option value="Scheduled" data-icon="feather-circle">Scheduled</option>
+                                                <label class="form-label">Estado:</label>
+                                                <select class="form-select form-control" name="status"
+                                                    data-select2-selector="visibility">
+                                                    <option value="1">Ativo</option>
+                                                    <option value="0">Desativo</option>
                                                 </select>
                                             </div>
-                                            <!-- <div class="col-lg-4 mb-4">
-                                            <label class="form-label">City</label>
-                                            <select class="form-select form-control" data-select2-selector="city" >
-                                                <option value="Bengo" data-icon="feather-location">Bengo</option>
-                                                <option value="Benguela" data-icon="feather-location">Benguela</option>
-                                                <option value="Cabinda" data-icon="feather-location">Cabinda</option>
-                                                <option value="Cunene" data-icon="feather-location">Cunene</option>
-                                                <option value="Luanda" data-icon="feather-location">Luanda</option>
-                                                <option value="Lubango" data-icon="feather-location">Lubango</option>
-                                            </select>
-                                        </div> -->
                                             <div class="col-lg-6 mb-4">
-                                                <label class="form-label">Event date</label>
-                                                <input type="date" class="form-control" name="date" id="date">
+                                                <label class="form-label">Data do Evento</label>
+                                                <input type="date" class="form-control" name="eventDate"
+                                                    value="{{ old('eventDate', \Carbon\Carbon::now()->format('Y-m-d')) }}"
+                                                    id="date">
                                             </div>
                                             <div class="col-lg-6 mb-4">
-                                                <label class="form-label">Last modified date</label>
-                                                <input type="date" class="form-control" name="date" id="date">
+                                                <label class="form-label">Ultima Alteração</label>
+                                                <input type="date" class="form-control" name="lastModifyedDate"
+                                                    value="{{ \Carbon\Carbon::now()->format('Y-m-d') }}" id="date"
+                                                    disabled>
                                             </div>
                                         </div>
                                     </div>
@@ -188,124 +184,76 @@
                                     <div class="card-body general-info">
                                         <div class="mb-5 d-flex align-items-center justify-content-between">
                                             <h5 class="fw-bold mb-0 me-4">
-                                                <span class="d-block mb-2">Event Info :</span>
-                                                <span class="fs-12 fw-normal text-muted text-truncate-1-line">General information for your event</span>
+                                                <span class="d-block mb-2">Informações do Evento :</span>
+                                                <span class="fs-12 fw-normal text-muted text-truncate-1-line">
+                                                    Informações gerais sobre o seu evento
+                                                </span>
                                             </h5>
-                                            <a href="javascript:void(0);" class="btn btn-sm btn-light-brand">Edit event</a>
+                                            <a href="javascript:void(0);" class="btn btn-sm btn-light-brand">Novo
+                                                Evento</a>
                                         </div>
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
-                                                <label for="fullnameInput" class="fw-semibold">Title: </label>
+                                                <label for="fullnameInput" class="fw-semibold">Título: </label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-type"></i></div>
-                                                    <input type="text" class="form-control" id="fullnameInput" placeholder="Title... ">
+                                                    <input type="text" class="form-control"
+                                                        value="{{ old('title') }}" name="title" id="fullnameInput"
+                                                        placeholder="Título... ">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
-                                                <label for="fullnameInput" class="fw-semibold">Subtitle: </label>
+                                                <label for="fullnameInput" class="fw-semibold">Subtítulo: </label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-type"></i></div>
-                                                    <input type="text" class="form-control" id="fullnameInput" placeholder="Title... ">
+                                                    <input type="text" class="form-control" name="subtitle"
+                                                        value="{{ old('subtitle') }}" id="fullnameInput"
+                                                        placeholder="Subtítulo... ">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
-                                                <label for="mailInput" class="fw-semibold">Cover image: </label>
+                                                <label for="mailInput" class="fw-semibold">Imagem de Capa: </label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-image"></i></div>
-                                                    <input type="file" class="form-control" id="mailInput" placeholder="Upload image...">
+                                                    <input type="file" class="form-control" name="image"
+                                                        id="mailInput" placeholder="Carregue a imagem...">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
-                                                <label for="autorInput" class="fw-semibold">Author: </label>
+                                                <label for="autorInput" class="fw-semibold">Autor: </label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-user"></i></div>
-                                                    <input type="url" class="form-control" id="autorInput" placeholder="autor">
+                                                    <select class="form-control" name="authorId"
+                                                        data-select2-selector="country">
+                                                        @foreach ($authors as $author)
+                                                            <option value="{{ $author->id }}" data-bg="bg-primary">
+                                                                {{ $author->name }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
-                                                <label for="phoneInput" class="fw-semibold">Phone: </label>
-                                                <div class="input-group">
-                                                    <div class="input-group-text"><i class="feather-phone"></i></div>
-                                                    <input type="text" class="form-control" id="phoneInput" placeholder="Phone">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-4">
-                                            <label for="companyInput" class="fw-semibold">Company: </label>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="feather-compass"></i></div>
-                                                <input type="text" class="form-control" id="companyInput" placeholder="Company">
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                        <!-- <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-4">
-                                            <label for="designationInput" class="fw-semibold">Designation: </label>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="feather-briefcase"></i></div>
-                                                <input type="text" class="form-control" id="designationInput" placeholder="Designation">
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                        <!--  <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-4">
-                                            <label for="websiteInput" class="fw-semibold">Website: </label>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="feather-link"></i></div>
-                                                <input type="text" class="form-control" id="websiteInput" placeholder="Website">
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                        <!-- <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-4">
-                                            <label for="VATInput" class="fw-semibold">VAT: </label>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="feather-dollar-sign"></i></div>
-                                                <input type="text" class="form-control" id="VATInput" placeholder="VAT">
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                        <!--  <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-4">
-                                            <label for="addressInput" class="fw-semibold">City: </label>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="feather-map-pin"></i></div>
-                                                <input type="text" class="form-control" id="addressInput" cols="30" rows="3" placeholder="Address"></input>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                        <div class="row mb-4 align-items-center">
-                                            <div class="col-lg-12">
-                                                <label for="descriptionInput" class="fw-semibold">Description: </label>
+                                                <label for="descriptionInput" class="fw-semibold">Descrição: </label>
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="feather-type"></i></div>
-                                                    <textarea class="form-control" id="descriptionInput" cols="30" rows="5" placeholder="Description"></textarea>
+                                                    <textarea class="form-control" id="descriptionInput" name="description" cols="30" rows="5"
+                                                        placeholder="Description">{{ old('description') }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
-                                                <label class="fw-semibold">Country: </label>
-                                                <select class="form-control" data-select2-selector="country">
+                                                <label class="fw-semibold">País: </label>
+                                                <select class="form-control" name="country"
+                                                    data-select2-selector="country">
                                                     <option data-country="af">Afghanistan</option>
                                                     <option data-country="ax">Åland Islands</option>
                                                     <option data-country="al">Albania</option>
@@ -515,7 +463,8 @@
                                                     <option data-country="sb">Solomon Islands</option>
                                                     <option data-country="so">Somalia</option>
                                                     <option data-country="za">South Africa</option>
-                                                    <option data-country="gs">South Georgia & South Sandwich Islands</option>
+                                                    <option data-country="gs">South Georgia & South Sandwich Islands
+                                                    </option>
                                                     <option data-country="ss">South Sudan</option>
                                                     <option data-country="es">Spain</option>
                                                     <option data-country="lk">Sri Lanka</option>
@@ -561,10 +510,11 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="row mb-12 align-items-center">
-                                            <div class="col-lg-4">
-                                                <label class="fw-semibold">State: </label>
-                                                <select class="form-control" data-select2-selector="state">
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-12">
+                                                <label class="fw-semibold">Província: </label>
+                                                <select class="form-control" name="state"
+                                                    data-select2-selector="state">
                                                     <option data-state="al">Alabama</option>
                                                     <option data-state="ak" selected>Alaska</option>
                                                     <option data-state="as">American Samoa</option>
@@ -636,8 +586,8 @@
                                         </div>
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
-                                                <label class="fw-semibold">City: </label>
-                                                <select class="form-control" data-select2-selector="city">
+                                                <label class="fw-semibold">Distrito: </label>
+                                                <select class="form-control" name="city" data-select2-selector="city">
                                                     <option data-city="bg-primary">Akutan</option>
                                                     <option data-city="bg-secondary">Aleutians East Borough</option>
                                                     <option data-city="bg-success">Aleutians West Census Area</option>
@@ -698,1212 +648,23 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <!--  <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-4">
-                                            <label class="fw-semibold">Time Zone: </label>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-12">
+                                                <input type="submit" class="btn btn-primary" value="Create event">
+                                            </div>
                                         </div>
-                                        <div class="col-lg-8">
-                                            <select class="form-control" data-select2-selector="tzone">
-                                                <option data-tzone="feather-moon">(GMT -12:00) Eniwetok, Kwajalein</option>
-                                                <option data-tzone="feather-moon">(GMT -11:00) Midway Island, Samoa</option>
-                                                <option data-tzone="feather-moon">(GMT -10:00) Hawaii</option>
-                                                <option data-tzone="feather-moon">(GMT -9:30) Taiohae</option>
-                                                <option data-tzone="feather-moon">(GMT -9:00) Alaska</option>
-                                                <option data-tzone="feather-moon">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
-                                                <option data-tzone="feather-moon">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
-                                                <option data-tzone="feather-moon">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
-                                                <option data-tzone="feather-moon">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
-                                                <option data-tzone="feather-moon">(GMT -4:30) Caracas</option>
-                                                <option data-tzone="feather-moon">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
-                                                <option data-tzone="feather-moon">(GMT -3:30) Newfoundland</option>
-                                                <option data-tzone="feather-moon">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
-                                                <option data-tzone="feather-moon">(GMT -2:00) Mid-Atlantic</option>
-                                                <option data-tzone="feather-moon">(GMT -1:00) Azores, Cape Verde Islands</option>
-                                                <option data-tzone="feather-sunrise" selected>(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
-                                                <option data-tzone="feather-sun">(GMT +1:00) Brussels, Copenhagen, Madrid, Paris</option>
-                                                <option data-tzone="feather-sun">(GMT +2:00) Kaliningrad, South Africa</option>
-                                                <option data-tzone="feather-sun">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
-                                                <option data-tzone="feather-sun">(GMT +3:30) Tehran</option>
-                                                <option data-tzone="feather-sun">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
-                                                <option data-tzone="feather-sun">(GMT +4:30) Kabul</option>
-                                                <option data-tzone="feather-sun">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
-                                                <option data-tzone="feather-sun">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
-                                                <option data-tzone="feather-sun">(GMT +5:45) Kathmandu, Pokhara</option>
-                                                <option data-tzone="feather-sun">(GMT +6:00) Almaty, Dhaka, Colombo</option>
-                                                <option data-tzone="feather-sun">(GMT +6:30) Yangon, Mandalay</option>
-                                                <option data-tzone="feather-sun">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
-                                                <option data-tzone="feather-sun">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
-                                                <option data-tzone="feather-sun">(GMT +8:45) Eucla</option>
-                                                <option data-tzone="feather-sun">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
-                                                <option data-tzone="feather-sun">(GMT +9:30) Adelaide, Darwin</option>
-                                                <option data-tzone="feather-sun">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
-                                                <option data-tzone="feather-sun">(GMT +10:30) Lord Howe Island</option>
-                                                <option data-tzone="feather-sun">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
-                                                <option data-tzone="feather-sun">(GMT +11:30) Norfolk Island</option>
-                                                <option data-tzone="feather-sun">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
-                                                <option data-tzone="feather-sun">(GMT +12:45) Chatham Islands</option>
-                                                <option data-tzone="feather-sun">(GMT +13:00) Apia, Nukualofa</option>
-                                                <option data-tzone="feather-sun">(GMT +14:00) Line Islands, Tokelau</option>
-                                            </select>
-                                        </div>
-                                    </div> -->
-                                        <!--  <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-4">
-                                            <label class="fw-semibold">Languages: </label>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <select class="form-control" data-select2-selector="language" multiple>
-                                                <option data-language="bg-primary">Afrikaans</option>
-                                                <option data-language="bg-warning">Albanian - shqip</option>
-                                                <option data-language="bg-cyan">Amharic - አማርኛ</option>
-                                                <option data-language="bg-green">Arabic - العربية</option>
-                                                <option data-language="bg-black">Aragonese - aragonés</option>
-                                                <option data-language="bg-teal">Armenian - հայերեն</option>
-                                                <option data-language="bg-success">Asturian - asturianu</option>
-                                                <option data-language="bg-cyan">Azerbaijani - azərbaycan dili</option>
-                                                <option data-language="bg-indigo">Basque - euskara</option>
-                                                <option data-language="bg-teal">Belarusian - беларуская</option>
-                                                <option data-language="bg-black">Bengali - বাংলা</option>
-                                                <option data-language="bg-green">Bosnian - bosanski</option>
-                                                <option data-language="bg-primary">Breton - brezhoneg</option>
-                                                <option data-language="bg-warning">Bulgarian - български</option>
-                                                <option data-language="bg-teal">Catalan - català</option>
-                                                <option data-language="bg-black">Central Kurdish - کوردی (دەستنوسی عەرەبی)</option>
-                                                <option data-language="bg-green">Chinese - 中文</option>
-                                                <option data-language="bg-cyan">Chinese (Hong Kong) - 中文（香港）</option>
-                                                <option data-language="bg-primary">Chinese (Simplified) - 中文（简体）</option>
-                                                <option data-language="bg-danger">Chinese (Traditional) - 中文（繁體）</option>
-                                                <option data-language="bg-cyan">Corsican</option>
-                                                <option data-language="bg-black">Croatian - hrvatski</option>
-                                                <option data-language="bg-warning">Czech - čeština</option>
-                                                <option data-language="bg-primary">Danish - dansk</option>
-                                                <option data-language="bg-teal">Dutch - Nederlands</option>
-                                                <option data-language="bg-danger" selected>English</option>
-                                                <option data-language="bg-green">English (Australia)</option>
-                                                <option data-language="bg-black">English (Canada)</option>
-                                                <option data-language="bg-cyan">English (India)</option>
-                                                <option data-language="bg-primary">English (New Zealand)</option>
-                                                <option data-language="bg-indigo">English (South Africa)</option>
-                                                <option data-language="bg-black">English (United Kingdom)</option>
-                                                <option data-language="bg-teal">English (United States)</option>
-                                                <option data-language="bg-green">Esperanto - esperanto</option>
-                                                <option data-language="bg-cyan">Estonian - eesti</option>
-                                                <option data-language="bg-primary">Faroese - føroyskt</option>
-                                                <option data-language="bg-black">Filipino</option>
-                                                <option data-language="bg-cyan">Finnish - suomi</option>
-                                                <option data-language="bg-primary">French - français</option>
-                                                <option data-language="bg-success">French (Canada) - français (Canada)</option>
-                                                <option data-language="bg-warning">French (France) - français (France)</option>
-                                                <option data-language="bg-black">French (Switzerland) - français (Suisse)</option>
-                                                <option data-language="bg-primary">Galician - galego</option>
-                                                <option data-language="bg-teal">Georgian - ქართული</option>
-                                                <option data-language="bg-black">German - Deutsch</option>
-                                                <option data-language="bg-green">German (Austria) - Deutsch (Österreich)</option>
-                                                <option data-language="bg-danger">German (Germany) - Deutsch (Deutschland)</option>
-                                                <option data-language="bg-indigo">German (Liechtenstein) - Deutsch (Liechtenstein)</option>
-                                                <option data-language="bg-cyan">German (Switzerland) - Deutsch (Schweiz)</option>
-                                                <option data-language="bg-primary">Greek - Ελληνικά</option>
-                                                <option data-language="bg-green">Guarani</option>
-                                                <option data-language="bg-teal">Gujarati - ગુજરાતી</option>
-                                                <option data-language="bg-success">Hausa</option>
-                                                <option data-language="bg-primary">Hawaiian - ʻŌlelo Hawaiʻi</option>
-                                                <option data-language="bg-cyan">Hebrew - עברית</option>
-                                                <option data-language="bg-warning">Hindi - हिन्दी</option>
-                                                <option data-language="bg-green">Hungarian - magyar</option>
-                                                <option data-language="bg-black">Icelandic - íslenska</option>
-                                                <option data-language="bg-danger">Indonesian - Indonesia</option>
-                                                <option data-language="bg-primary">Interlingua</option>
-                                                <option data-language="bg-green">Irish - Gaeilge</option>
-                                                <option data-language="bg-success">Italian - italiano</option>
-                                                <option data-language="bg-cyan">Italian (Italy) - italiano (Italia)</option>
-                                                <option data-language="bg-teal">Italian (Switzerland) - italiano (Svizzera)</option>
-                                                <option data-language="bg-indigo">Japanese - 日本語</option>
-                                                <option data-language="bg-primary">Kannada - ಕನ್ನಡ</option>
-                                                <option data-language="bg-cyan">Kazakh - қазақ тілі</option>
-                                                <option data-language="bg-black">Khmer - ខ្មែរ</option>
-                                                <option data-language="bg-primary">Korean - 한국어</option>
-                                                <option data-language="bg-warning">Kurdish - Kurdî</option>
-                                                <option data-language="bg-cyan">Kyrgyz - кыргызча</option>
-                                                <option data-language="bg-danger">Lao - ລາວ</option>
-                                                <option data-language="bg-primary">Latin</option>
-                                                <option data-language="bg-orange">Latvian - latviešu</option>
-                                                <option data-language="bg-green">Lingala - lingála</option>
-                                                <option data-language="bg-black">Lithuanian - lietuvių</option>
-                                                <option data-language="bg-primary">Macedonian - македонски</option>
-                                                <option data-language="bg-indigo">Malay - Bahasa Melayu</option>
-                                                <option data-language="bg-green">Malayalam - മലയാളം</option>
-                                                <option data-language="bg-cyan">Maltese - Malti</option>
-                                                <option data-language="bg-teal">Marathi - मराठी</option>
-                                                <option data-language="bg-primary">Mongolian - монгол</option>
-                                                <option data-language="bg-danger">Nepali - नेपाली</option>
-                                                <option data-language="bg-green">Norwegian - norsk</option>
-                                                <option data-language="bg-warning">Norwegian Bokmål - norsk bokmål</option>
-                                                <option data-language="bg-primary">Norwegian Nynorsk - nynorsk</option>
-                                                <option data-language="bg-success">Occitan</option>
-                                                <option data-language="bg-cyan">Oriya - ଓଡ଼ିଆ</option>
-                                                <option data-language="bg-black">Oromo - Oromoo</option>
-                                                <option data-language="bg-danger">Pashto - پښتو</option>
-                                                <option data-language="bg-green">Persian - فارسی</option>
-                                                <option data-language="bg-primary">Polish - polski</option>
-                                                <option data-language="bg-teal">Portuguese - português</option>
-                                                <option data-language="bg-danger">Portuguese (Brazil) - português (Brasil)</option>
-                                                <option data-language="bg-black">Portuguese (Portugal) - português (Portugal)</option>
-                                                <option data-language="bg-green">Punjabi - ਪੰਜਾਬੀ</option>
-                                                <option data-language="bg-indigo">Quechua</option>
-                                                <option data-language="bg-success">Romanian - română</option>
-                                                <option data-language="bg-warning">Romanian (Moldova) - română (Moldova)</option>
-                                                <option data-language="bg-primary">Romansh - rumantsch</option>
-                                                <option data-language="bg-danger">Russian - русский</option>
-                                                <option data-language="bg-green">Scottish Gaelic</option>
-                                                <option data-language="bg-orange">Serbian - српски</option>
-                                                <option data-language="bg-teal">Serbo - Croatian</option>
-                                                <option data-language="bg-primary">Shona - chiShona</option>
-                                                <option data-language="bg-cyan">Sindhi</option>
-                                                <option data-language="bg-black">Sinhala - සිංහල</option>
-                                                <option data-language="bg-warning">Slovak - slovenčina</option>
-                                                <option data-language="bg-danger">Slovenian - slovenščina</option>
-                                                <option data-language="bg-green">Somali - Soomaali</option>
-                                                <option data-language="bg-primary">Southern Sotho</option>
-                                                <option data-language="bg-orange">Spanish - español</option>
-                                                <option data-language="bg-indigo">Spanish (Argentina) - español (Argentina)</option>
-                                                <option data-language="bg-green">Spanish (Latin America) - español (Latinoamérica)</option>
-                                                <option data-language="bg-cyan">Spanish (Mexico) - español (México)</option>
-                                                <option data-language="bg-black">Spanish (Spain) - español (España)</option>
-                                                <option data-language="bg-success">Spanish (United States) - español (Estados Unidos)</option>
-                                                <option data-language="bg-primary">Sundanese</option>
-                                                <option data-language="bg-teal">Swahili - Kiswahili</option>
-                                                <option data-language="bg-green">Swedish - svenska</option>
-                                                <option data-language="bg-cyan">Tajik - тоҷикӣ</option>
-                                                <option data-language="bg-warning">Tamil - தமிழ்</option>
-                                                <option data-language="bg-primary">Tatar</option>
-                                                <option data-language="bg-success">Telugu - తెలుగు</option>
-                                                <option data-language="bg-black">Thai - ไทย</option>
-                                                <option data-language="bg-green">Tigrinya - ትግርኛ</option>
-                                                <option data-language="bg-teal">Tongan - lea fakatonga</option>
-                                                <option data-language="bg-primary">Turkish - Türkçe</option>
-                                                <option data-language="bg-danger">Turkmen</option>
-                                                <option data-language="bg-indigo">Twi</option>
-                                                <option data-language="bg-black">Ukrainian - українська</option>
-                                                <option data-language="bg-green">Urdu - اردو</option>
-                                                <option data-language="bg-cyan">Uyghur</option>
-                                                <option data-language="bg-primary">Uzbek - o‘zbek</option>
-                                                <option data-language="bg-success">Vietnamese - Tiếng Việt</option>
-                                                <option data-language="bg-cyan">Walloon - wa</option>
-                                                <option data-language="bg-primary">Welsh - Cymraeg</option>
-                                                <option data-language="bg-teal">Western Frisian</option>
-                                                <option data-language="bg-warning">Xhosa</option>
-                                                <option data-language="bg-indigo">Yiddish</option>
-                                                <option data-language="bg-green">Yoruba - Èdè Yorùbá</option>
-                                                <option data-language="bg-black">Zulu - isiZulu</option>
-                                            </select>
-                                        </div>
-                                    </div> -->
-                                        <!-- <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-4">
-                                            <label class="fw-semibold">Currency: </label>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <select class="form-control" data-select2-selector="currency">
-                                                <option data-currency="af">AFN - Afghan Afghani - ؋</option>
-                                                <option data-currency="al">ALL - Albanian Lek - Lek</option>
-                                                <option data-currency="dz">DZD - Algerian Dinar - دج</option>
-                                                <option data-currency="ao">AOA - Angolan Kwanza - Kz</option>
-                                                <option data-currency="ar">ARS - Argentine Peso - $</option>
-                                                <option data-currency="am">AMD - Armenian Dram - ֏</option>
-                                                <option data-currency="aw">AWG - Aruban Florin - ƒ</option>
-                                                <option data-currency="au">AUD - Australian Dollar - $</option>
-                                                <option data-currency="az">AZN - Azerbaijani Manat - m</option>
-                                                <option data-currency="bs">BSD - Bahamian Dollar - B$</option>
-                                                <option data-currency="bh">BHD - Bahraini Dinar - .د.ب</option>
-                                                <option data-currency="bd">BDT - Bangladeshi Taka - ৳</option>
-                                                <option data-currency="bb">BBD - Barbadian Dollar - Bds$</option>
-                                                <option data-currency="by">BYR - Belarusian Ruble - Br</option>
-                                                <option data-currency="be">BEF - Belgian Franc - fr</option>
-                                                <option data-currency="bz">BZD - Belize Dollar - $</option>
-                                                <option data-currency="bm">BMD - Bermudan Dollar - $</option>
-                                                <option data-currency="bt">BTN - Bhutanese Ngultrum - Nu.</option>
-                                                <option data-currency="bt">BTC - Bitcoin - ฿</option>
-                                                <option data-currency="bo">BOB - Bolivian Boliviano - Bs.</option>
-                                                <option data-currency="ba">BAM - Bosnia-Herzegovina Convertible Mark - KM</option>
-                                                <option data-currency="bw">BWP - Botswanan Pula - P</option>
-                                                <option data-currency="br">BRL - Brazilian Real - R$</option>
-                                                <option data-currency="gb">GBP - British Pound Sterling - £</option>
-                                                <option data-currency="bn">BND - Brunei Dollar - B$</option>
-                                                <option data-currency="bg">BGN - Bulgarian Lev - Лв.</option>
-                                                <option data-currency="bi">BIF - Burundian Franc - FBu</option>
-                                                <option data-currency="kh">KHR - Cambodian Riel - KHR</option>
-                                                <option data-currency="ca">CAD - Canadian Dollar - $</option>
-                                                <option data-currency="cv">CVE - Cape Verdean Escudo - $</option>
-                                                <option data-currency="ky">KYD - Cayman Islands Dollar - $</option>
-                                                <option data-currency="fr">XOF - CFA Franc BCEAO - CFA</option>
-                                                <option data-currency="fr">XAF - CFA Franc BEAC - FCFA</option>
-                                                <option data-currency="fr">XPF - CFP Franc - ₣</option>
-                                                <option data-currency="cl">CLP - Chilean Peso - $</option>
-                                                <option data-currency="cn">CNY - Chinese Yuan - ¥</option>
-                                                <option data-currency="co">COP - Colombian Peso - $</option>
-                                                <option data-currency="km">KMF - Comorian Franc - CF</option>
-                                                <option data-currency="cd">CDF - Congolese Franc - FC</option>
-                                                <option data-currency="cr">CRC - Costa Rican ColÃ³n - ₡</option>
-                                                <option data-currency="hr">HRK - Croatian Kuna - kn</option>
-                                                <option data-currency="cu">CUC - Cuban Convertible Peso - $, CUC</option>
-                                                <option data-currency="cz">CZK - Czech Republic Koruna - Kč</option>
-                                                <option data-currency="dk">DKK - Danish Krone - Kr.</option>
-                                                <option data-currency="dj">DJF - Djiboutian Franc - Fdj</option>
-                                                <option data-currency="do">DOP - Dominican Peso - $</option>
-                                                <option data-currency="bq">XCD - East Caribbean Dollar - $</option>
-                                                <option data-currency="eg">EGP - Egyptian Pound - ج.م</option>
-                                                <option data-currency="er">ERN - Eritrean Nakfa - Nfk</option>
-                                                <option data-currency="ee">EEK - Estonian Kroon - kr</option>
-                                                <option data-currency="et">ETB - Ethiopian Birr - Nkf</option>
-                                                <option data-currency="eu">EUR - Euro - €</option>
-                                                <option data-currency="fk">FKP - Falkland Islands Pound - £</option>
-                                                <option data-currency="fj">FJD - Fijian Dollar - FJ$</option>
-                                                <option data-currency="gm">GMD - Gambian Dalasi - D</option>
-                                                <option data-currency="ge">GEL - Georgian Lari - ლ</option>
-                                                <option data-currency="de">DEM - German Mark - DM</option>
-                                                <option data-currency="gh">GHS - Ghanaian Cedi - GH₵</option>
-                                                <option data-currency="gi">GIP - Gibraltar Pound - £</option>
-                                                <option data-currency="gr">GRD - Greek Drachma - ₯, Δρχ, Δρ</option>
-                                                <option data-currency="gt">GTQ - Guatemalan Quetzal - Q</option>
-                                                <option data-currency="gn">GNF - Guinean Franc - FG</option>
-                                                <option data-currency="gy">GYD - Guyanaese Dollar - $</option>
-                                                <option data-currency="ht">HTG - Haitian Gourde - G</option>
-                                                <option data-currency="hn">HNL - Honduran Lempira - L</option>
-                                                <option data-currency="hk">HKD - Hong Kong Dollar - $</option>
-                                                <option data-currency="hu">HUF - Hungarian Forint - Ft</option>
-                                                <option data-currency="is">ISK - Icelandic KrÃ³na - kr</option>
-                                                <option data-currency="in">INR - Indian Rupee - ₹</option>
-                                                <option data-currency="id">IDR - Indonesian Rupiah - Rp</option>
-                                                <option data-currency="ir">IRR - Iranian Rial - ﷼</option>
-                                                <option data-currency="iq">IQD - Iraqi Dinar - د.ع</option>
-                                                <option data-currency="il">ILS - Israeli New Sheqel - ₪</option>
-                                                <option data-currency="it">ITL - Italian Lira - L,£</option>
-                                                <option data-currency="jm">JMD - Jamaican Dollar - J$</option>
-                                                <option data-currency="jp">JPY - Japanese Yen - ¥</option>
-                                                <option data-currency="jo">JOD - Jordanian Dinar - ا.د</option>
-                                                <option data-currency="kz">KZT - Kazakhstani Tenge - лв</option>
-                                                <option data-currency="ke">KES - Kenyan Shilling - KSh</option>
-                                                <option data-currency="kw">KWD - Kuwaiti Dinar - ك.د</option>
-                                                <option data-currency="kg">KGS - Kyrgystani Som - лв</option>
-                                                <option data-currency="la">LAK - Laotian Kip - ₭</option>
-                                                <option data-currency="lv">LVL - Latvian Lats - Ls</option>
-                                                <option data-currency="lb">LBP - Lebanese Pound - £</option>
-                                                <option data-currency="ls">LSL - Lesotho Loti - L</option>
-                                                <option data-currency="lr">LRD - Liberian Dollar - $</option>
-                                                <option data-currency="ly">LYD - Libyan Dinar - د.ل</option>
-                                                <option data-currency="lt">LTL - Lithuanian Litas - Lt</option>
-                                                <option data-currency="mo">MOP - Macanese Pataca - $</option>
-                                                <option data-currency="mk">MKD - Macedonian Denar - ден</option>
-                                                <option data-currency="mg">MGA - Malagasy Ariary - Ar</option>
-                                                <option data-currency="mw">MWK - Malawian Kwacha - MK</option>
-                                                <option data-currency="my">MYR - Malaysian Ringgit - RM</option>
-                                                <option data-currency="mv">MVR - Maldivian Rufiyaa - Rf</option>
-                                                <option data-currency="mr">MRO - Mauritanian Ouguiya - MRU</option>
-                                                <option data-currency="mu">MUR - Mauritian Rupee - ₨</option>
-                                                <option data-currency="mx">MXN - Mexican Peso - $</option>
-                                                <option data-currency="md">MDL - Moldovan Leu - L</option>
-                                                <option data-currency="mn">MNT - Mongolian Tugrik - ₮</option>
-                                                <option data-currency="ma">MAD - Moroccan Dirham - MAD</option>
-                                                <option data-currency="mz">MZM - Mozambican Metical - MT</option>
-                                                <option data-currency="mm">MMK - Myanmar Kyat - K</option>
-                                                <option data-currency="na">NAD - Namibian Dollar - $</option>
-                                                <option data-currency="np">NPR - Nepalese Rupee - ₨</option>
-                                                <option data-currency="nl">ANG - Netherlands Antillean Guilder - ƒ</option>
-                                                <option data-currency="tw">TWD - New Taiwan Dollar - $</option>
-                                                <option data-currency="nz">NZD - New Zealand Dollar - $</option>
-                                                <option data-currency="ni">NIO - Nicaraguan CÃ³rdoba - C$</option>
-                                                <option data-currency="ng">NGN - Nigerian Naira - ₦</option>
-                                                <option data-currency="kp">KPW - North Korean Won - ₩</option>
-                                                <option data-currency="no">NOK - Norwegian Krone - kr</option>
-                                                <option data-currency="om">OMR - Omani Rial - .ع.ر</option>
-                                                <option data-currency="pk">PKR - Pakistani Rupee - ₨</option>
-                                                <option data-currency="pa">PAB - Panamanian Balboa - B/.</option>
-                                                <option data-currency="pg">PGK - Papua New Guinean Kina - K</option>
-                                                <option data-currency="py">PYG - Paraguayan Guarani - ₲</option>
-                                                <option data-currency="pe">PEN - Peruvian Nuevo Sol - S/.</option>
-                                                <option data-currency="ph">PHP - Philippine Peso - ₱</option>
-                                                <option data-currency="pl">PLN - Polish Zloty - zł</option>
-                                                <option data-currency="qa">QAR - Qatari Rial - ق.ر</option>
-                                                <option data-currency="ro">RON - Romanian Leu - lei</option>
-                                                <option data-currency="ru">RUB - Russian Ruble - ₽</option>
-                                                <option data-currency="rw">RWF - Rwandan Franc - FRw</option>
-                                                <option data-currency="sv">SVC - Salvadoran ColÃ³n - ₡</option>
-                                                <option data-currency="ws">WST - Samoan Tala - SAT</option>
-                                                <option data-currency="sa">SAR - Saudi Riyal - ﷼</option>
-                                                <option data-currency="sr">RSD - Serbian Dinar - din</option>
-                                                <option data-currency="sc">SCR - Seychellois Rupee - SRe</option>
-                                                <option data-currency="sl">SLL - Sierra Leonean Leone - Le</option>
-                                                <option data-currency="sg">SGD - Singapore Dollar - $</option>
-                                                <option data-currency="sk">SKK - Slovak Koruna - Sk</option>
-                                                <option data-currency="sb">SBD - Solomon Islands Dollar - Si$</option>
-                                                <option data-currency="so">SOS - Somali Shilling - Sh.so.</option>
-                                                <option data-currency="za">ZAR - South African Rand - R</option>
-                                                <option data-currency="kr">KRW - South Korean Won - ₩</option>
-                                                <option data-currency="lk">LKR - Sri Lankan Rupee - Rs</option>
-                                                <option data-currency="sh">SHP - St. Helena Pound - £</option>
-                                                <option data-currency="sd">SDG - Sudanese Pound - .س.ج</option>
-                                                <option data-currency="sr">SRD - Surinamese Dollar - $</option>
-                                                <option data-currency="sz">SZL - Swazi Lilangeni - E</option>
-                                                <option data-currency="se">SEK - Swedish Krona - kr</option>
-                                                <option data-currency="ch">CHF - Swiss Franc - CHf</option>
-                                                <option data-currency="sy">SYP - Syrian Pound - LS</option>
-                                                <option data-currency="st">STD - São Tomé and Príncipe Dobra - Db</option>
-                                                <option data-currency="tj">TJS - Tajikistani Somoni - SM</option>
-                                                <option data-currency="tz">TZS - Tanzanian Shilling - TSh</option>
-                                                <option data-currency="th">THB - Thai Baht - ฿</option>
-                                                <option data-currency="to">TOP - Tongan pa'anga - $</option>
-                                                <option data-currency="tt">TTD - Trinidad & Tobago Dollar - $</option>
-                                                <option data-currency="tn">TND - Tunisian Dinar - ت.د</option>
-                                                <option data-currency="tr">TRY - Turkish Lira - ₺</option>
-                                                <option data-currency="tm">TMT - Turkmenistani Manat - T</option>
-                                                <option data-currency="ug">UGX - Ugandan Shilling - USh</option>
-                                                <option data-currency="ua">UAH - Ukrainian Hryvnia - ₴</option>
-                                                <option data-currency="ae">AED - United Arab Emirates Dirham - إ.د</option>
-                                                <option data-currency="uy">UYU - Uruguayan Peso - $</option>
-                                                <option data-currency="us" selected>USD - US Dollar - $</option>
-                                                <option data-currency="uz">UZS - Uzbekistan Som - лв</option>
-                                                <option data-currency="vu">VUV - Vanuatu Vatu - VT</option>
-                                                <option data-currency="ve">VEF - Venezuelan BolÃ­var - Bs</option>
-                                                <option data-currency="vn">VND - Vietnamese Dong - ₫</option>
-                                                <option data-currency="ye">YER - Yemeni Rial - ﷼</option>
-                                                <option data-currency="zm">ZMK - Zambian Kwacha - ZK</option>
-                                            </select>
-                                        </div>
-                                    </div>  -->
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-control">
-                                 <input type="submit" form="eventForm" href="javascript:void(0);" class="btn btn-primary successAlertMessage" value="Create event">
-                            </div>
+
                         </div>
 
                     </form>
 
                 </div>
                 <!-- [ Main Content ] end -->
-
-
-
-
-
-
-
-
-
-
-
-                <!-- [Mini Cards] start -->
-                <!--
-                    <div class="col-xxl-2 col-lg-4 col-md-6">
-                        <div class="card stretch stretch-full">
-                            <div class="card-body">
-                                <div class="fs-12 fw-medium text-muted mb-3">Total Inquiry</div>
-                                <div class="hstack justify-content-between lh-base">
-                                    <h3><span class="counter">32</span>K</h3>
-                                    <div class="hstack gap-2 fs-11 text-success">
-                                        <i class="feather-arrow-up-circle fs-12"></i>
-                                        <span>+20.36%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-2 col-lg-4 col-md-6">
-                        <div class="card stretch stretch-full">
-                            <div class="card-body">
-                                <div class="fs-12 fw-medium text-muted mb-3">Performance</div>
-                                <div class="hstack justify-content-between lh-base">
-                                    <h3><span class="counter">45.68</span>%</h3>
-                                    <div class="hstack gap-2 fs-11 text-danger">
-                                        <i class="feather-arrow-down-circle fs-12"></i>
-                                        <span>-10.46%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-2 col-lg-4 col-md-6">
-                        <div class="card stretch stretch-full">
-                            <div class="card-body">
-                                <div class="fs-12 fw-medium text-muted mb-3">Escalations</div>
-                                <div class="hstack justify-content-between lh-base">
-                                    <h3><span class="counter">985</span></h3>
-                                    <div class="hstack gap-2 fs-11 text-success">
-                                        <i class="feather-arrow-up-circle fs-12"></i>
-                                        <span>+25.48%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-2 col-lg-4 col-md-6">
-                        <div class="card stretch stretch-full">
-                            <div class="card-body">
-                                <div class="fs-12 fw-medium text-muted mb-3">SLA Compliant</div>
-                                <div class="hstack justify-content-between lh-base">
-                                    <h3><span class="counter">895</span></h3>
-                                    <div class="hstack gap-2 fs-11 text-success">
-                                        <i class="feather-arrow-up-circle fs-12"></i>
-                                        <span>+15.39%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-2 col-lg-4 col-md-6">
-                        <div class="card stretch stretch-full">
-                            <div class="card-body">
-                                <div class="fs-12 fw-medium text-muted mb-3">Avg. Time (H)</div>
-                                <div class="hstack justify-content-between lh-base">
-                                    <h3><span class="counter">03.45</span></h3>
-                                    <div class="hstack gap-2 fs-11 text-danger">
-                                        <i class="feather-arrow-down-circle fs-12"></i>
-                                        <span>-12.86%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-2 col-lg-4 col-md-6">
-                        <div class="card stretch stretch-full">
-                            <div class="card-body">
-                                <div class="fs-12 fw-medium text-muted mb-3">Avg. Fullfilment</div>
-                                <div class="hstack justify-content-between lh-base">
-                                    <h3><span class="counter">65.95</span>%</h3>
-                                    <div class="hstack gap-2 fs-11 text-success">
-                                        <i class="feather-arrow-up-circle fs-12"></i>
-                                        <span>+20.35%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
-                <!-- [Mini Cards] end -->
-                <!-- [Inquiry Tracking] start -->
-                <!-- <div class="col-xxl-6">
-                        <div class="card stretch stretch-full">
-                            <div class="card-header">
-                                <h5 class="card-title">Inquiry Tracking</h5>
-                                <div class="card-header-action">
-                                    <div class="card-header-btn">
-                                        <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
-                                            <div data-bs-toggle="tooltip" title="Options">
-                                                <i class="feather-more-vertical"></i>
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body custom-card-action">
-                                <div id="leads-inquiry-tracking"></div>
-                            </div>
-                        </div>
-                    </div> -->
-                <!-- [Inquiry Tracking] end -->
-                <!-- [Inquiry Channel] start -->
-                <!-- <div class="col-xxl-6">
-                        <div class="card stretch stretch-full">
-                            <div class="card-header">
-                                <h5 class="card-title">Inquiry Channel</h5>
-                                <div class="card-header-action">
-                                    <div class="card-header-btn">
-                                        <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
-                                            <div data-bs-toggle="tooltip" title="Options">
-                                                <i class="feather-more-vertical"></i>
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body custom-card-action">
-                                <div id="leads-inquiry-channel"></div>
-                            </div>
-                        </div>
-                    </div> -->
-                <!-- [Inquiry Channel] end -->
-                <!-- [Leads Status] start -->
-                <!-- <div class="col-xxl-6">
-                        <div class="card stretch stretch-full">
-                            <div class="card-header">
-                                <h5 class="card-title">Leads Status</h5>
-                                <div class="card-header-action">
-                                    <div class="card-header-btn">
-                                        <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
-                                            <div data-bs-toggle="tooltip" title="Options">
-                                                <i class="feather-more-vertical"></i>
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body custom-card-action p-0">
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Name</th>
-                                                <th scope="col" class="wd-100">Sale Rep.</th>
-                                                <th scope="col">Contacted</th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col">Value</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="position-relative">
-                                                    <div class="ht-50 position-absolute start-0 top-50 translate-middle border-start border-5 border-success rounded"></div>
-                                                    <a href="javascript:void(0);">Archie Tones</a>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="avatar-image avatar-md">
-                                                        <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
-                                                    </a>
-                                                </td>
-                                                <td>15 June, 2023</td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="badge bg-soft-success text-success">Deal Won</a>
-                                                </td>
-                                                <td><a href="javascript:void(0);">$15.65K</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="position-relative">
-                                                    <div class="ht-50 position-absolute start-0 top-50 translate-middle border-start border-5 border-warning rounded"></div>
-                                                    <a href="javascript:void(0);">Holmes Cherry</a>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="avatar-image avatar-md">
-                                                        <img src="assets/images/avatar/2.png" alt="" class="img-fluid">
-                                                    </a>
-                                                </td>
-                                                <td>20 June, 2023</td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="badge bg-soft-warning text-warning">Intro Call</a>
-                                                </td>
-                                                <td><a href="javascript:void(0);">$10.24K</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="position-relative">
-                                                    <div class="ht-50 position-absolute start-0 top-50 translate-middle border-start border-5 border-primary rounded"></div>
-                                                    <a href="javascript:void(0);">Kenneth Hune</a>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="avatar-image avatar-md">
-                                                        <img src="assets/images/avatar/3.png" alt="" class="img-fluid">
-                                                    </a>
-                                                </td>
-                                                <td>18 June, 2023</td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="badge bg-soft-primary text-primary">Stuck</a>
-                                                </td>
-                                                <td><a href="javascript:void(0);">$12.47K</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="position-relative">
-                                                    <div class="ht-50 position-absolute start-0 top-50 translate-middle border-start border-5 border-danger rounded"></div>
-                                                    <a href="javascript:void(0);">Malanie Hanvey</a>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="avatar-image avatar-md">
-                                                        <img src="assets/images/avatar/4.png" alt="" class="img-fluid">
-                                                    </a>
-                                                </td>
-                                                <td>22 June, 2023</td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="badge bg-soft-danger text-danger">Cancelled</a>
-                                                </td>
-                                                <td><a href="javascript:void(0);">$10.88K</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="position-relative">
-                                                    <div class="ht-50 position-absolute start-0 top-50 translate-middle border-start border-5 border-dark rounded"></div>
-                                                    <a href="javascript:void(0);">Valentine Maton</a>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="avatar-image avatar-md">
-                                                        <img src="assets/images/avatar/5.png" alt="" class="img-fluid">
-                                                    </a>
-                                                </td>
-                                                <td>25 June, 2023</td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="badge bg-soft-primary text-primary">Progress</a>
-                                                </td>
-                                                <td><a href="javascript:void(0);">$13.85K</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <a href="javascript:void(0);" class="card-footer fs-11 fw-bold text-uppercase text-center">Update: 30 Min Ago</a>
-                        </div>
-                    </div> -->
-                <!-- [Leads Status] end -->
-                <!-- [Upcoming Events] start -->
-                <!-- <div class="col-xxl-6">
-                        <div class="card stretch stretch-full">
-                            <div class="card-header">
-                                <h5 class="card-title">Upcoming Events</h5>
-                                <div class="card-header-action">
-                                    <div class="card-header-btn">
-                                        <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
-                                            <div data-bs-toggle="tooltip" title="Options">
-                                                <i class="feather-more-vertical"></i>
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body custom-card-action p-0">
-                                <ul class="list-group list-group-flush upcoming-event-report-lead">
-                                    <li class="list-group-item">
-                                        <div class="d-sm-flex justify-content-between">
-                                            <div class="hstack gap-3">
-                                                <div class="ht-60 wd-60 border bg-gray-200 rounded-3 d-flex flex-column justify-content-center text-center">
-                                                    <span class="fs-18 fw-bolder text-dark">20</span>
-                                                    <span class="fs-10 text-uppercase">Fri</span>
-                                                </div>
-                                                <div class="me-4">
-                                                    <p class="fs-12 fw-medium text-muted mb-2">09:00 PM - 10:30 PM</p>
-                                                    <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">Meeting for campaign with sales team</a>
-                                                </div>
-                                            </div>
-                                            <div class="img-group lh-0 ms-2 justify-content-start d-none d-sm-flex">
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                    <img src="assets/images/avatar/5.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                                    <img src="assets/images/avatar/2.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                                    <img src="assets/images/avatar/4.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                    <img src="assets/images/avatar/6.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                                    <img src="assets/images/avatar/3.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-text" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More"> 35+ </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="d-sm-flex justify-content-between">
-                                            <div class="hstack gap-3">
-                                                <div class="ht-60 wd-60 border bg-gray-200 rounded-3 d-flex flex-column justify-content-center text-center">
-                                                    <span class="fs-18 fw-bolder text-dark">22</span>
-                                                    <span class="fs-10 text-uppercase">Sun</span>
-                                                </div>
-                                                <div class="me-4">
-                                                    <p class="fs-12 fw-medium text-muted mb-2">11:00 PM - 12:00 PM</p>
-                                                    <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">Meeting for campaign with sales team</a>
-                                                </div>
-                                            </div>
-                                            <div class="img-group lh-0 ms-2 justify-content-start d-none d-sm-flex">
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                                    <img src="assets/images/avatar/3.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                                    <img src="assets/images/avatar/2.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                                    <img src="assets/images/avatar/4.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                    <img src="assets/images/avatar/6.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                    <img src="assets/images/avatar/5.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-text" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More"> 24+ </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="d-sm-flex justify-content-between">
-                                            <div class="hstack gap-3">
-                                                <div class="ht-60 wd-60 border bg-gray-200 rounded-3 d-flex flex-column justify-content-center text-center">
-                                                    <span class="fs-18 fw-bolder text-dark">25</span>
-                                                    <span class="fs-10 text-uppercase">Thu</span>
-                                                </div>
-                                                <div class="me-4">
-                                                    <p class="fs-12 fw-medium text-muted mb-2">10:30 PM - 11:30 PM</p>
-                                                    <a href="javascript:void(0);" class="fw-bold text-truncate-1-line">Meeting for campaign with sales team</a>
-                                                </div>
-                                            </div>
-                                            <div class="img-group lh-0 ms-2 justify-content-start d-none d-sm-flex">
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                                    <img src="assets/images/avatar/2.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                                    <img src="assets/images/avatar/4.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                    <img src="assets/images/avatar/6.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                    <img src="assets/images/avatar/5.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                                    <img src="assets/images/avatar/3.png" class="img-fluid" alt="image">
-                                                </a>
-                                                <a href="javascript:void(0)" class="avatar-text" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More"> 20+ </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="javascript:void(0);" class="card-footer fs-11 fw-bold text-uppercase text-center">Update: 20 Min Ago</a>
-                        </div>
-                    </div> -->
-                <!-- [Upcoming Events] end -->
-                <!-- [Project Leads] start -->
-                <!-- <div class="col-lg-12">
-                        <div class="card stretch stretch-full">
-                            <div class="card-header">
-                                <h5 class="card-title">Project Leads</h5>
-                                <div class="card-header-action">
-                                    <div class="card-header-btn">
-                                        <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
-                                            <div data-bs-toggle="tooltip" title="Options">
-                                                <i class="feather-more-vertical"></i>
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-at-sign"></i>New</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-calendar"></i>Event</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-bell"></i>Snoozed</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-trash-2"></i>Deleted</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-settings"></i>Settings</a>
-                                            <a href="javascript:void(0);" class="dropdown-item"><i class="feather-life-buoy"></i>Tips & Tricks</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body custom-card-action">
-                                <div class="row g-0 align-items-center border border-dashed rounded-3 mb-4">
-                                    <div class="col-lg-4">
-                                        <div class="d-lg-flex align-items-center">
-                                            <div class="m-3 wd-150 d-flex flex-column justify-content-center align-items-center text-center">
-                                                <div class="p-3 wd-150 bg-soft-primary text-primary rounded-top">
-                                                    <i class="feather-user-plus"></i>
-                                                </div>
-                                                <div class="p-4 text-white wd-150 bg-primary rounded-bottom">
-                                                    <div class="fs-16 fw-bold">5+</div>
-                                                    <div class="fs-12 fw-medium">Follow Up</div>
-                                                </div>
-                                            </div>
-                                            <div class="px-3">
-                                                <a href="javascript:void(0);" class="fs-14 fw-bold text-truncate-1-line">React admin dashboard design <span class="badge bg-gray-200 text-dark ms-2">#874965</span></a>
-                                                <div class="fs-12 mt-3">
-                                                    <div class="hstack gap-2 text-muted mb-2">
-                                                        <div class="avatar-text avatar-sm">
-                                                            <i class="feather-phone-call"></i>
-                                                        </div>
-                                                        <span class="text-truncate-1-line">+1 (375) 9874 663</span>
-                                                    </div>
-                                                    <div class="hstack gap-2 text-muted mb-2">
-                                                        <div class="avatar-text avatar-sm">
-                                                            <i class="feather-mail"></i>
-                                                        </div>
-                                                        <span class="text-truncate-1-line">support@wrapcoders.com</span>
-                                                    </div>
-                                                    <div class="hstack gap-2 text-muted mb-3">
-                                                        <div class="avatar-text avatar-sm">
-                                                            <i class="feather-map-pin"></i>
-                                                        </div>
-                                                        <span class="text-truncate-1-line">4295 Pheasant Ridge Road, Philadelphia, PA 19131</span>
-                                                    </div>
-                                                    <a href="javascript:void(0);" class="hstack gap-2 lh-sm">
-                                                        <span>
-                                                            <i class="feather-more-horizontal"></i>
-                                                        </span>
-                                                        <span>Show More</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 offset-lg-2 p-3">
-                                        <div class="row gy-4 gx-5 align-items-center">
-                                            <div class="col-lg-6 col-xl-4">
-                                                <div class="mb-4">
-                                                    <label class="fs-12 text-muted">Est. Revenue</label>
-                                                    <div class="fs-14 fw-bold text-dark">$5,685 USD</div>
-                                                </div>
-                                                <div class="mb-0">
-                                                    <label class="fs-12 text-muted">Sales Rep.</label>
-                                                    <div class="img-group lh-0 ms-2 justify-content-start">
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                            <img src="assets/images/avatar/5.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                                            <img src="assets/images/avatar/2.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                                            <img src="assets/images/avatar/4.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                            <img src="assets/images/avatar/6.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                                            <img src="assets/images/avatar/3.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-text" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More"> 35+ </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-xl-4">
-                                                <div class="form-group mb-4">
-                                                    <label class="fs-12 text-muted mb-2">Project Info</label>
-                                                    <select class="form-control" data-select2-selector="status">
-                                                        <option value="primary" data-bg="bg-primary" selected>Inprogress</option>
-                                                        <option value="secondary" data-bg="bg-secondary">Pending</option>
-                                                        <option value="success" data-bg="bg-success">Completed</option>
-                                                        <option value="danger" data-bg="bg-danger">Rejected</option>
-                                                        <option value="warning" data-bg="bg-warning">Upcoming</option>
-                                                    </select>
-                                                </div>
-                                                <div class="hstack gap-2">
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-camera"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-edit"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-clipboard"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-grid"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-more-vertical"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 d-lg-none d-xl-block">
-                                                <div class="lead-progress-1 text-start text-lg-end"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row g-0 align-items-center border border-dashed rounded-3 mb-4">
-                                    <div class="col-lg-4">
-                                        <div class="d-lg-flex align-items-center">
-                                            <div class="m-3 wd-150 d-flex flex-column justify-content-center align-items-center text-center">
-                                                <div class="p-3 wd-150 bg-soft-success text-success rounded-top">
-                                                    <i class="feather-check-circle"></i>
-                                                </div>
-                                                <div class="p-4 text-white wd-150 bg-success rounded-bottom">
-                                                    <div class="fs-16 fw-bold">15+</div>
-                                                    <div class="fs-12 fw-medium">Completed</div>
-                                                </div>
-                                            </div>
-                                            <div class="px-3">
-                                                <a href="javascript:void(0);" class="fs-14 fw-bold text-truncate-1-line">React admin dashboard design <span class="badge bg-gray-200 text-dark ms-2">#963245</span></a>
-                                                <div class="fs-12 mt-3">
-                                                    <div class="hstack gap-2 text-muted mb-2">
-                                                        <div class="avatar-text avatar-sm">
-                                                            <i class="feather-phone-call"></i>
-                                                        </div>
-                                                        <span class="text-truncate-1-line">+1 (951) 6547 862</span>
-                                                    </div>
-                                                    <div class="hstack gap-2 text-muted mb-2">
-                                                        <div class="avatar-text avatar-sm">
-                                                            <i class="feather-mail"></i>
-                                                        </div>
-                                                        <span class="text-truncate-1-line">support@wrapcoders.com</span>
-                                                    </div>
-                                                    <div class="hstack gap-2 text-muted mb-3">
-                                                        <div class="avatar-text avatar-sm">
-                                                            <i class="feather-map-pin"></i>
-                                                        </div>
-                                                        <span class="text-truncate-1-line">1362 Emerson Road, Doyline, LA 71023</span>
-                                                    </div>
-                                                    <a href="javascript:void(0);" class="hstack gap-2 lh-sm">
-                                                        <span>
-                                                            <i class="feather-more-horizontal"></i>
-                                                        </span>
-                                                        <span>Show More</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 offset-lg-2 p-3">
-                                        <div class="row gy-4 gx-5 align-items-center">
-                                            <div class="col-lg-6 col-xl-4">
-                                                <div class="mb-4">
-                                                    <label class="fs-12 text-muted">Est. Revenue</label>
-                                                    <div class="fs-14 fw-bold text-dark">$6,500 USD</div>
-                                                </div>
-                                                <div class="mb-0">
-                                                    <label class="fs-12 text-muted">Sales Rep.</label>
-                                                    <div class="img-group lh-0 ms-2 justify-content-start">
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                            <img src="assets/images/avatar/5.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                                            <img src="assets/images/avatar/2.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                                            <img src="assets/images/avatar/4.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                            <img src="assets/images/avatar/6.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                                            <img src="assets/images/avatar/3.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-text" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More"> 35+ </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-xl-4">
-                                                <div class="form-group mb-4">
-                                                    <label class="fs-12 text-muted mb-2">Project Info</label>
-                                                    <select class="form-control" data-select2-selector="status">
-                                                        <option value="primary" data-bg="bg-primary">Inprogress</option>
-                                                        <option value="secondary" data-bg="bg-secondary">Pending</option>
-                                                        <option value="success" data-bg="bg-success" selected>Completed</option>
-                                                        <option value="danger" data-bg="bg-danger">Rejected</option>
-                                                        <option value="warning" data-bg="bg-warning">Upcoming</option>
-                                                    </select>
-                                                </div>
-                                                <div class="hstack gap-2">
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-camera"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-edit"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-clipboard"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-grid"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-more-vertical"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 d-lg-none d-xl-block">
-                                                <div class="lead-progress-2 text-start text-lg-end"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row g-0 align-items-center border border-dashed rounded-3 mb-0">
-                                    <div class="col-lg-4">
-                                        <div class="d-lg-flex align-items-center">
-                                            <div class="m-3 wd-150 d-flex flex-column justify-content-center align-items-center text-center">
-                                                <div class="p-3 wd-150 bg-soft-warning text-warning rounded-top">
-                                                    <i class="feather-eye"></i>
-                                                </div>
-                                                <div class="p-4 text-white wd-150 bg-warning rounded-bottom">
-                                                    <div class="fs-16 fw-bold">2+</div>
-                                                    <div class="fs-12 fw-medium">Upcomming</div>
-                                                </div>
-                                            </div>
-                                            <div class="px-3">
-                                                <a href="javascript:void(0);" class="fs-14 fw-bold text-truncate-1-line">React admin dashboard design <span class="badge bg-gray-200 text-dark ms-2">#953684</span></a>
-                                                <div class="fs-12 mt-3">
-                                                    <div class="hstack gap-2 text-muted mb-2">
-                                                        <div class="avatar-text avatar-sm">
-                                                            <i class="feather-phone-call"></i>
-                                                        </div>
-                                                        <span class="text-truncate-1-line">+1 (856) 6548 963</span>
-                                                    </div>
-                                                    <div class="hstack gap-2 text-muted mb-2">
-                                                        <div class="avatar-text avatar-sm">
-                                                            <i class="feather-mail"></i>
-                                                        </div>
-                                                        <span class="text-truncate-1-line">support@wrapcoders.com</span>
-                                                    </div>
-                                                    <div class="hstack gap-2 text-muted mb-3">
-                                                        <div class="avatar-text avatar-sm">
-                                                            <i class="feather-map-pin"></i>
-                                                        </div>
-                                                        <span class="text-truncate-1-line">139 Ethels Lane, Okeechobee, FL 33472</span>
-                                                    </div>
-                                                    <a href="javascript:void(0);" class="hstack gap-2 lh-sm">
-                                                        <span>
-                                                            <i class="feather-more-horizontal"></i>
-                                                        </span>
-                                                        <span>Show More</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 offset-lg-2 p-3">
-                                        <div class="row gy-4 gx-5 align-items-center">
-                                            <div class="col-lg-6 col-xl-4">
-                                                <div class="mb-4">
-                                                    <label class="fs-12 text-muted">Est. Revenue</label>
-                                                    <div class="fs-14 fw-bold text-dark">$3,500 USD</div>
-                                                </div>
-                                                <div class="mb-0">
-                                                    <label class="fs-12 text-muted">Sales Rep.</label>
-                                                    <div class="img-group lh-0 ms-2 justify-content-start">
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                            <img src="assets/images/avatar/5.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                                            <img src="assets/images/avatar/2.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                                            <img src="assets/images/avatar/4.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                                            <img src="assets/images/avatar/6.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-image avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                                            <img src="assets/images/avatar/3.png" class="img-fluid" alt="image">
-                                                        </a>
-                                                        <a href="javascript:void(0)" class="avatar-text" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More"> 35+ </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-xl-4">
-                                                <div class="form-group mb-4">
-                                                    <label class="fs-12 text-muted mb-2">Project Info</label>
-                                                    <select class="form-control" data-select2-selector="status">
-                                                        <option value="primary" data-bg="bg-primary">Inprogress</option>
-                                                        <option value="secondary" data-bg="bg-secondary">Pending</option>
-                                                        <option value="success" data-bg="bg-success">Completed</option>
-                                                        <option value="danger" data-bg="bg-danger">Rejected</option>
-                                                        <option value="warning" data-bg="bg-warning" selected>Upcoming</option>
-                                                    </select>
-                                                </div>
-                                                <div class="hstack gap-2">
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-camera"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-edit"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-clipboard"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-grid"></i>
-                                                    </a>
-                                                    <a href="javascript:void(0);" class="avatar-text avatar-md">
-                                                        <i class="feather-more-vertical"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 d-lg-none d-xl-block">
-                                                <div class="lead-progress-3 text-start text-lg-end"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                <!-- [Project Leads ] end -->
             </div>
+
+            <!-- [ Main Content ] end -->
         </div>
-        <!-- [ Main Content ] end -->
-    </div>
-</main>
-<!--! ================================================================ !-->
-<!--! [End] Main Content !-->
-<!--! ================================================================ !-->
-@endsection
+    @endsection

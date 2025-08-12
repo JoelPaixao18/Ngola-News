@@ -16,13 +16,19 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('title', 100);
+            $table->string('subtitle', 100);
             $table->string('image');
             $table->text('description');
+            $table->string('country', 100);
+            $table->string('state', 100);
             $table->string('city', 100);
-            $table->boolean('visibility');
-            $table->date('date');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->boolean('status', 100);
+            $table->date('eventDate');
+            $table->date('lastModifyedDate');
+            $table->unsignedBigInteger('categoryId');
+            $table->foreign('categoryId')->references('id')->on('categories')->onDelete('cascade');
+            $table->unsignedBigInteger('authorId');
+            $table->foreign('authorId')->references('id')->on('authors')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });
