@@ -1,4 +1,4 @@
-@extends('admin.authors.author.layout.main')
+@extends('admin.authors.layouts.main')
 @section('title', 'Ngola News - Authors')
 @section('content-authors')
 
@@ -213,7 +213,7 @@
         <!-- [ Main Content ] start -->
         <div class="main-content">
 
-            !-- Este bloco pode ser removido se já estiver no layout principal -->
+            <!-- Este bloco pode ser removido se já estiver no layout principal -->
             @if (session('success'))
                 <!-- Mantenha este apenas como fallback -->
                 <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">

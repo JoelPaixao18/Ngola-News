@@ -15,6 +15,9 @@
     <!--! BEGIN: Apps Title-->
     <title>@yield('title')</title>
     <!--! END:  Apps Title-->
+
+    {{-- Alerts Link --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <!--! BEGIN: Favicon-->
     <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/images/favicon.png') }}">
     <!--! END: Favicon-->
@@ -41,10 +44,21 @@
 <body>
     @include('admin.layout.header')
     @include('admin.layout.menu')
+    
     <main class="nxl-container">
+        {{-- Content Authors --}}
+        @yield('content-authors')
+        {{-- Content Create --}}
+        @yield('content-authorCreate')
+        {{-- Content Edit --}}
+        @yield('content-authorEdit')
+        {{-- Content Show --}}
         @yield('content-authorView')
+        {{-- Footer --}}
         @include('admin.layout.footer')
     </main>
+    @include('admin.layout.theme')
+
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>
     <!-- vendors.min.js {always must need to be top} -->
