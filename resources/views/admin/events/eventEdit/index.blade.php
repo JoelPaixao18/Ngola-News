@@ -1,4 +1,4 @@
-@extends('admin.events.eventEdit.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Event Edit')
 @section('content-eventEdit')
     <!--! ================================================================ !-->
@@ -100,7 +100,7 @@
                                     Criando Formulario Event Create
                      _______________________________________________________________-->
                 <!-- [ page-header ] end -->
-                @if ($errors->any())
+                {{-- @if ($errors->any())
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
                             Swal.fire({
@@ -131,7 +131,7 @@
                             });
                         });
                     </script>
-                @endif
+                @endif --}}
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="eventForm" action="{{ route('admin.event.update', ['event' => $event]) }}" method="POST"

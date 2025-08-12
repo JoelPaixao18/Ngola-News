@@ -1,4 +1,4 @@
-@extends('admin.events.event.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Events')
 @section('content-events')
 
@@ -212,14 +212,14 @@
 
         <!-- [ Main Content ] start -->
         <div class="main-content">
-            @if (session('success'))
+            {{-- @if (session('success'))
                 <!-- Mantenha este apenas como fallback -->
                 <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
                     <i class="feather-check-circle me-2 fs-20"></i>
                     <div>{{ session('success') }}</div>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            @endif
+            @endif --}}
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card stretch stretch-full">
@@ -240,6 +240,10 @@
                                             <th>Imagem</th>
                                             <th>Título</th>
                                             <th>Subtítulo</th>
+<<<<<<< HEAD
+=======
+                                            {{--  <th>Autor</th> --}}
+>>>>>>> 6cf6567ac845c64baadd2a44d4929517ffa0c544
                                             <th>País</th>
                                             <th>Província</th>
                                             <th>Distrito</th>

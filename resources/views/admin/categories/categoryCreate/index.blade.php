@@ -1,4 +1,4 @@
-@extends('admin.categories.categoryCreate.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Category Create')
 @section('content-categoryCreate')
 
@@ -61,7 +61,7 @@
                                 @csrf
                                 @method('POST')
 
-                                @if ($errors->any())
+                                {{-- @if ($errors->any())
                                     <script>
                                         document.addEventListener('DOMContentLoaded', function() {
                                             Swal.fire({
@@ -89,7 +89,7 @@
                                             });
                                         });
                                     </script>
-                                @endif
+                                @endif --}}
 
                                 <div class="row">
                                     {{-- Nome --}}

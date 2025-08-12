@@ -1,4 +1,4 @@
-@extends('admin.comments.commentEdit.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Comment Edit')
 @section('content-commentEdit')
 
@@ -61,7 +61,7 @@
                                 @csrf
                                 @method('PUT')
 
-                                @if ($errors->any())
+                                {{-- @if ($errors->any())
                                     <script>
                                         document.addEventListener('DOMContentLoaded', function() {
                                             Swal.fire({
@@ -89,7 +89,7 @@
                                             });
                                         });
                                     </script>
-                                @endif
+                                @endif --}}
 
                                 <div class="row">
                                     {{-- Nome --}}

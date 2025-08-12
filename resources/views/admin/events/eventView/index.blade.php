@@ -1,4 +1,4 @@
-@extends('admin.events.eventView.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Event View')
 @section('content-eventView')
     <div class="nxl-content">

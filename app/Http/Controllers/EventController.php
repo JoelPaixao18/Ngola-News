@@ -85,9 +85,25 @@ class EventController extends Controller
             'lastModifyedDate' => now()->format('Y-m-d'),
             'categoryId' => $request->categoryId,
             'authorId' => $request->authorId,
+        ], [
+            'title.required' => 'O título é obrigatório.',
+            'subtitle.required' => 'O subtítulo é obrigatório.',
+            'description.required' => 'A descrição é obrigatória.',
+            'country.required' => 'O país é obrigatório.',
+            'state.required' => 'O estado é obrigatório.',
+            'city.required' => 'A cidade é obrigatória.',
+            'status.required' => 'O status é obrigatório.',
+            'eventDate.required' => 'A data do evento é obrigatória.',
+            'eventDate.after_or_equal' => 'A data do evento deve ser hoje ou uma data futura.',
+            'categoryId.required' => 'A categoria é obrigatória.',
+            'authorId.required' => 'O autor é obrigatório.',
+            'image.required' => 'A imagem é obrigatória.',
+            'image.image' => 'A imagem deve ser um arquivo de imagem válido.',
+            'image.mimes' => 'A imagem deve ser do tipo: jpg, jpeg, png.',
         ]);
 
-        return redirect()->route('admin.event.index')->with('msg', 'Evento criado com sucesso!');
+        return redirect()->route('admin.event.index')->with('success', 'Evento criado com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Evento!');
     }
 
     /**
@@ -112,8 +128,8 @@ class EventController extends Controller
     {
         //
         $categories = Category::all();
-         $authors = Author::all();
-        return view('admin.events.eventEdit.index', ['event' => $event], compact('categories','authors'));
+        $authors = Author::all();
+        return view('admin.events.eventEdit.index', ['event' => $event], compact('categories', 'authors'));
     }
 
     /**
@@ -138,6 +154,21 @@ class EventController extends Controller
             'eventDate' => 'required|date|after_or_equal:today',
             'categoryId' => 'required|exists:categories,id',
             'image' => 'sometimes|image|mimes:jpg,jpeg,png', // Alterado para 'sometimes'
+        ], [
+            'title.required' => 'O título é obrigatório.',
+            'subtitle.required' => 'O subtítulo é obrigatório.',
+            'authorId.required' => 'O autor é obrigatório.',
+            'description.required' => 'A descrição é obrigatória.',
+            'country.required' => 'O país é obrigatório.',
+            'state.required' => 'O estado é obrigatório.',
+            'city.required' => 'A cidade é obrigatória.',
+            'status.required' => 'O status é obrigatório.',
+            'eventDate.required' => 'A data do evento é obrigatória.',
+            'eventDate.after_or_equal' => 'A data do evento deve ser hoje ou uma data futura.',
+            'categoryId.required' => 'A categoria é obrigatória.',
+            'image.image' => 'A imagem deve ser um arquivo de imagem válido.',
+            'image.mimes' => 'A imagem deve ser do tipo: jpg, jpeg, png.',
+            'image.sometimes' => 'A imagem é opcional, mas se fornecida, deve ser uma imagem válida.',
         ]);
 
         // Processar imagem se for enviada
@@ -160,7 +191,8 @@ class EventController extends Controller
         // Atualizar o evento
         $event->update($validated);
 
-        return redirect()->route('admin.event.index')->with('msg', 'Evento atualizado com sucesso!');
+        return redirect()->route('admin.event.index')->with('success', 'Evento atualizado com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar o evento!');
     }
 
     /**

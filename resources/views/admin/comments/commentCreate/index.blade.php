@@ -1,4 +1,4 @@
-@extends('admin.comments.commentCreate.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Comments Create')
 @section('content-commentCreate')
 
@@ -61,7 +61,7 @@
                                 @csrf
                                 @method('POST')
 
-                                @if ($errors->any())
+                                {{-- @if ($errors->any())
                                     <script>
                                         document.addEventListener('DOMContentLoaded', function() {
                                             Swal.fire({
@@ -89,7 +89,7 @@
                                             });
                                         });
                                     </script>
-                                @endif
+                                @endif --}}
 
                                 <div class="row">
 
