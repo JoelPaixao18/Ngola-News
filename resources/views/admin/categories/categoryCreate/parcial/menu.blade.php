@@ -35,8 +35,6 @@
                         <li class="nxl-item"><a class="nxl-link"
                                 href="#">Category View</a>
                         </li>
-                                href="">Category
-                                View</a></li>
                         <li class="nxl-item"><a class="nxl-link"
                                 href="#">Category Edit</a>
                         </li>
