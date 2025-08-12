@@ -105,9 +105,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('admin.author.create') }}" class="btn btn-primary">
+                        <a href="{{ route('admin.author.create') }}" class="btn btn-danger">
                             <i class="feather-plus me-2"></i>
-                            <span>Criar Autor</span>
+                            <span>Novo Autor</span>
                         </a>
                     </div>
                 </div>
