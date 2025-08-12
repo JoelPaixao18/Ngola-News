@@ -214,7 +214,7 @@
         <div class="main-content">
 
             <!-- Este bloco pode ser removido se já estiver no layout principal -->
-            {{-- @if (session('success'))
+            @if (session('success'))
                 <!-- Mantenha este apenas como fallback -->
                 <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
                     <i class="feather-check-circle me-2 fs-20"></i>
@@ -239,6 +239,7 @@
                                                     </div>
                                                 </div>
                                             </th>
+                                            <th>Foto</th>
                                             <th>Nome</th>
                                             <th>Biografia</th>
                                             <th class="text-end">Ações</th>
@@ -259,18 +260,20 @@
                                                 </td>
                                                 <td>
                                                     <div class="hstack gap-3">
-                                                        <div>
-                                                            <div class="avatar-image ">
-                                                                @if ($author->foto)
-                                                                    <img src="{{ asset('img/authors/' . $author->foto) }}"
-                                                                        alt="author Image" class="img-thumbnail"
-                                                                        style="max-width: 50px; max-height: 50px;">
-                                                                @else
-                                                                    <i class="feather-image"></i>
-                                                                @endif
-                                                            </div>
-                                                            <span class="text-truncate-1-line">{{ $author->name }}</span>
+                                                        <div class="avatar-image ">
+                                                            @if ($author->foto)
+                                                                <img src="{{ asset('img/authors/' . $author->foto) }}"
+                                                                    alt="author Image" class="img-thumbnail"
+                                                                    style="max-width: 50px; max-height: 50px;">
+                                                            @else
+                                                                <i class="feather-image"></i>
+                                                            @endif
                                                         </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-3">
+                                                        <span class="text-truncate-1-line">{{ $author->name }}</span>
                                                     </div>
                                                 </td>
                                                 <td>
