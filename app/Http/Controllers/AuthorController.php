@@ -58,8 +58,7 @@ class AuthorController extends Controller
         // Criação do autor
         $author = Author::create($validated);
 
-        return redirect()->route('admin.author.index')->with('msg', 'author criado com sucesso!');
-    
+        return redirect()->route('admin.author.index')->with('alert', ['type' => 'success', 'message' => 'Author criado com sucesso!']);
     }
 
     /**
@@ -71,7 +70,7 @@ class AuthorController extends Controller
     public function show(Author $author)
     {
         //
-        return view('admin.authors.authorView.index', ['author' => $author ]);
+        return view('admin.authors.authorView.index', ['author' => $author]);
     }
 
     /**
@@ -97,7 +96,7 @@ class AuthorController extends Controller
     {
         //
         // Validação
-         $validated = $request->validate([
+        $validated = $request->validate([
             'name'      => 'required|string|max:255',
             'biography' => 'nullable|string',
             'foto' => 'sometimes|image|mimes:jpg,jpeg,png', // Alterado para 'sometimes'
@@ -124,7 +123,7 @@ class AuthorController extends Controller
         // Atualizar o author
         $author->update($validated);
 
-        return redirect()->route('admin.author.index')->with('msg', 'Author atualizado com sucesso!');
+        return redirect()->route('admin.author.index')->with('alert', ['type' => 'success', 'message' => 'Author atualizado com sucesso!']);
     }
 
     /**
