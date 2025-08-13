@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Comment;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
@@ -52,4 +53,11 @@ class News extends Model
             $news->slug = Str::slug($news->title);
         });
     }
+
+   public function tags()
+    {
+    return $this->belongsToMany(Tag::class, 'news_tags');
+    }
+
+
 }

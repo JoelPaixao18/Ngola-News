@@ -160,7 +160,19 @@
                                         <label class="form-label">Texto</label>
                                         <textarea name="description" class="form-control" rows="4" placeholder="Escreve o corpo da notícia...">{{ old('description') }}</textarea>
                                     </div>
-
+                                    {{-- Tags --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label for="tags" class="form-label">Tags</label>
+                                        <select class="form-control" name="tags[]" multiple data-select2-selector="tags">
+                                            @foreach($tags as $tag)
+                                                <option value="{{ $tag->id_tag }}"
+                                                    {{ in_array($tag->id_tag, old('tags', isset($news) ? $news->tags->pluck('id_tag')->toArray() : [])) ? 'selected' : '' }}>
+                                                    {{ $tag->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        <small class="text-muted">Segure CTRL (ou CMD no Mac) para selecionar várias</small>
+                                    </div>
                                     {{-- Botão de Enviar --}}
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-danger"> Salvar
