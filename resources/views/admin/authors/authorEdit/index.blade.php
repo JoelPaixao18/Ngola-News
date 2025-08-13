@@ -230,10 +230,10 @@
                                                         id="fotoInput" placeholder="Upload foto...">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-6 text-center rounded shadow-sm">
                                                 <img src="
-                                            {{ asset('img/author/' . $author->foto) }}"
-                                                    alt="{{ 'foto do ' . $author->name }}">
+                                            {{ asset('img/authors/' . $author->foto) }}"
+                                                    alt="{{ 'foto do ' . $author->name }}" class="img-fluid mt-2 w-50">
                                             </div>
                                         </div>
                                         <div class="row mb-4 align-items-center">
@@ -643,18 +643,11 @@
                                             </select>
                                         </div>
                                     </div> --}}
-<<<<<<< HEAD
-                                        <div class="row mb-4 align-items-center">
-                                            <div class="col-lg-12">
-                                                <input type="submit" class="btn btn-primary" value="Update author">
-                                            </div>
-=======
                                     <div class="row mb-4 align-items-center">
                                         <div class="col-lg-12">
                                             <button type="submit" class="btn btn-danger"> Salvar
                                             <i class="feather-save ms-2"></i>
                                         </button>
->>>>>>> 76bc5d424dc0165983f9b036c897f57955cfaa8e
                                         </div>
                                     </div>
                                 </div>

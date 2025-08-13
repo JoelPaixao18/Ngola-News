@@ -97,8 +97,8 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                                             Criando Formulario author Create
-                                                 _______________________________________________________________-->
+                             Criando Formulario author Create
+                _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="authorForm" action="{{ route('admin.author.store') }}" method="post"
@@ -636,18 +636,11 @@
                                             </select>
                                         </div>
                                     </div> --}}
-<<<<<<< HEAD
-                                        <div class="row mb-4 align-items-center">
-                                            <div class="col-lg-12">
-                                                <input type="submit" class="btn btn-primary" value="Create author">
-                                            </div>
-=======
                                     <div class="row mb-4 align-items-center">
                                         <div class="col-lg-12">
                                             <button type="submit" class="btn btn-danger"> Salvar
                                             <i class="feather-save ms-2"></i>
                                         </button>
->>>>>>> 76bc5d424dc0165983f9b036c897f57955cfaa8e
                                         </div>
                                     </div>
                                 </div>
