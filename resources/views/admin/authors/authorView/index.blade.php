@@ -1,4 +1,4 @@
-@extends('admin.authors.authorView.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Author View')
 @section('content-authorView')
     <div class="nxl-content">
@@ -51,8 +51,7 @@
                         </div>
 
                         <a href="{{ route('admin.author.index') }}" class="btn btn-danger ">
-                            <span class="me-3">
-                                <<< </span>
+                             <i class="feather-chevron-left me-2"></i>
                                     <span>Voltar</span>
 
                         </a>
@@ -123,12 +122,13 @@
                                     </li> --}}
                                 </ul>
                                 <div class="d-flex gap-2 text-center pt-4">
-                                    <a href="{{ route('admin.author.delete', ['author' => $author]) }}" class="w-50 btn btn-light-brand">
+                                    <a href="{{ route('admin.author.delete', ['author' => $author]) }}"
+                                        class="w-50 btn btn-light-brand">
                                         <i class="feather-trash-2 me-2"></i>
                                         <span>Deletar</span>
                                     </a>
                                     <a href="{{ route('admin.author.edit', ['author' => $author]) }}"
-                                        class="w-50 btn btn-primary">
+                                        class="w-50 btn btn-danger">
                                         <i class="feather-edit me-2"></i>
                                         <span>Editar Perfil</span>
                                     </a>

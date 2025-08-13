@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="nxl-theme-light nxl-theme-default nxl-theme-rtl">
 
 
-<!-- Mirrored from bestwpware.com/html/tf/duralux-demo/proposal.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jul 2025 12:20:31 GMT -->
+<!-- Mirrored from bestwpware.com/html/tf/duralux-demo/leads.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jul 2025 12:20:41 GMT -->
 
 <head>
     <meta charset="utf-8">
@@ -13,11 +13,13 @@
     <meta name="author" content="WRAPCODERS">
     <!--! The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags !-->
     <!--! BEGIN: Apps Title-->
-    <title> @yield('title')</title>
+    <title>@yield('title')</title>
     <!--! END:  Apps Title-->
-    <!--! BEGIN: Favicon-->
+
+    {{-- Alerts Link --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/images/favicon.ico') }}">
+    <!--! BEGIN: Favicon-->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/images/favicon.png') }}">
     <!--! END: Favicon-->
     <!--! BEGIN: Bootstrap CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap.min.css') }}">
@@ -40,6 +42,21 @@
    <script src="https:oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
    <script src="https:oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+<<<<<<< HEAD:resources/views/admin/events/eventView/layout/main.blade.php
+  <style>
+    .img-fluid {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+  </style>
+=======
+    <!--! BEGIN: Sweet Alert JS !-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="{{ url('assets/js/sweetalert-init.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--! END: Sweet Alert JS !-->
+>>>>>>> 6cf6567ac845c64baadd2a44d4929517ffa0c544:resources/views/admin/layout/main.blade.php
 </head>
 
 <body>
@@ -47,13 +64,61 @@
     @include('admin.layout.menu')
 
     <main class="nxl-container">
+        {{-- #------ Alerts ------# --}}
+        @include('admin.layout.alerts')
+
+        {{-- #------ Menu Authors ------# --}}
+        {{-- Content Authors --}}
+        @yield('content-authors')
+        {{-- Content Create --}}
+        @yield('content-authorCreate')
+        {{-- Content Edit --}}
+        @yield('content-authorEdit')
+        {{-- Content Show --}}
+        @yield('content-authorView')
+
+        {{-- #------ Menu Category ------# --}}
+        {{-- Content  Category --}}
         @yield('content-categories')
+        {{-- Content Create Category --}}
+        @yield('content-categoryCreate')
+        {{-- Content Edit Category --}}
+        @yield('content-categoryEdit')
+        {{-- Content Show Category --}}
+        @yield('content-categoryView')
+
+        {{-- #------ Menu comments ------# --}}
+        {{-- Content comment --}}
+        @yield('content-comments')
+        {{-- Content Create comment --}}
+        @yield('content-commentCreate')
+        {{-- Content Edit comment --}}
+        @yield('content-commentEdit')
+        {{-- Content Show comment --}}
+        @yield('content-commentView')
+
+        {{-- #------ Menu dashboard ------# --}}
+        {{-- Content Analystics --}}
+        @yield('content-Analytics')
+        {{-- Content crm --}}
+        @yield('content-crm')
+
+        {{-- #------ Menu events ------# --}}
+        {{-- Content event --}}
+        @yield('content-events')
+        {{-- Content Create event --}}
+        @yield('content-eventCreate')
+        {{-- Content Edit event --}}
+        @yield('content-eventEdit')
+        {{-- Content Show event --}}
+        @yield('content-eventView')
+
+        {{-- Footer --}}
         @include('admin.layout.footer')
     </main>
-
     @include('admin.layout.theme')
 
-
+    <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>
     <!-- vendors.min.js {always must need to be top} -->
     <script src="{{ url('assets/vendors/js/circle-progress.min.js') }}"></script>
@@ -64,72 +129,20 @@
     <script src="{{ url('assets/vendors/js/quill.min.js') }}"></script>
     <script src="{{ url('assets/vendors/js/select2.min.js') }}"></script>
     <script src="{{ url('assets/vendors/js/select2-active.min.js') }}"></script>
+
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
     <script src="{{ url('assets/js/common-init.min.js') }}"></script>
+    <script src="{{ url('assets/js/leads-init.min.js') }}"></script>
     <script src="{{ url('assets/js/proposal-init.min.js') }}"></script>
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
     <script src="{{ url('assets/js/theme-customizer-init.min.js') }}"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        @if (session('alert'))
-            document.addEventListener('DOMContentLoaded', function() {
-                Swal.fire({
-                    icon: '{{ session('alert')['type'] }}',
-                    title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
-                    text: '{{ session('alert')['message'] }}',
-                    confirmButtonText: 'OK',
-                    timer: 3000,
-                    timerProgressBar: true
-                });
-            });
-
-            function confirmDelete(event, deleteUrl) {
-                event.preventDefault();
-                
-                Swal.fire({
-                    title: 'Tem certeza?',
-                    text: "Você não poderá reverter isso!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Sim, deletar!',
-                    cancelButtonText: 'Cancelar'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        // Criar um formulário dinâmico para enviar a requisição DELETE
-                        const form = document.createElement('form');
-                        form.method = 'POST';
-                        form.action = deleteUrl;
-                        
-                        const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
-                        
-                        const csrfInput = document.createElement('input');
-                        csrfInput.type = 'hidden';
-                        csrfInput.name = '_token';
-                        csrfInput.value = csrfToken;
-                        
-                        const methodInput = document.createElement('input');
-                        methodInput.type = 'hidden';
-                        methodInput.name = '_method';
-                        methodInput.value = 'DELETE';
-                        
-                        form.appendChild(csrfInput);
-                        form.appendChild(methodInput);
-                        document.body.appendChild(form);
-                        form.submit();
-                    }
-                });
-            }
-        @endif
-    </script>
     <!--! END: Theme Customizer !-->
+
 </body>
 
 
-<!-- Mirrored from bestwpware.com/html/tf/duralux-demo/proposal.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jul 2025 12:20:33 GMT -->
+<!-- Mirrored from bestwpware.com/html/tf/duralux-demo/leads.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jul 2025 12:20:42 GMT -->
 
 </html>

@@ -64,7 +64,8 @@ class CategoryController extends Controller
             'category_id.exists' => 'A categoria selecionada é inválida.', */
         ]);
 
-        return redirect()->route('admin.categories.index')->with('success', 'Categoria criada com sucesso!');
+        return redirect()->route('admin.categories.index')->with('success', 'Categória criada com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Categória!');
     }
 
     /**
@@ -125,7 +126,8 @@ class CategoryController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('admin.categories.index')->with('success', 'Categoria atualizada com sucesso!');
+        return redirect()->route('admin.categories.index')->with('success', 'Categória atualizada com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Categória!');
     }
 
     /**

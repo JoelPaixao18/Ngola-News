@@ -1,4 +1,4 @@
-@extends('admin.authors.authorEdit.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Author Edit')
 @section('content-authorEdit')
     <!--! ================================================================ !-->
@@ -79,10 +79,10 @@
                                 </a> --}}
                             </div>
                         </div>
-                        {{-- <a href="javascript:void(0);" class="btn btn-primary">
-                            <i class="feather-plus me-2"></i>
-                            <span>Add Widgets</span>
-                        </a> --}}
+                        <a href="{{ route('admin.author.index')}}" class="btn btn-danger">
+                           <i class="feather-chevron-left me-2"></i>
+                            <span>Voltar</span>
+                        </a>
                     </div>
                 </div>
                 <div class="d-md-none d-flex align-items-center">
@@ -96,53 +96,53 @@
         <!-- [ Main Content ] start -->
         <div class="main-content">
             <div class="row">
-            <!-- __________________________________________________
-                         Criando Formulario author Create
-             _______________________________________________________________-->
-            <!-- [ Main Content ] start -->
-            <div class="main-content">
-                <form id="authorForm" action="{{ route('admin.author.update', ['author'=>$author]) }}" method="post"
-                    enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
+                <!-- __________________________________________________
+                                             Criando Formulario author Create
+                                 _______________________________________________________________-->
+                <!-- [ Main Content ] start -->
+                <div class="main-content">
+                    <form id="authorForm" action="{{ route('admin.author.update', ['author' => $author]) }}" method="post"
+                        enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
 
-                    @if ($errors->any())
-                                    <script>
-                                        document.addEventListener('DOMContentLoaded', function() {
-                                            Swal.fire({
-                                                icon: 'error',
-                                                title: 'Erro de Validação',
-                                                html: `@foreach ($errors->all() as $error)
+                        {{-- @if ($errors->any())
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Erro de Validação',
+                                        html: `@foreach ($errors->all() as $error)
                                                     <div>{{ $error }}</div>
                                                 @endforeach`,
-                                                confirmButtonText: 'OK',
-                                                showConfirmButton: true,
-                                                allowOutsideClick: false,
-                                                allowEscapeKey: false
-                                            });
-                                        });
-                                    </script>
-                                @endif
+                                        confirmButtonText: 'OK',
+                                        showConfirmButton: true,
+                                        allowOutsideClick: false,
+                                        allowEscapeKey: false
+                                    });
+                                });
+                            </script>
+                        @endif
 
-                                @if (session('alert'))
-                                    <script>
-                                        document.addEventListener('DOMContentLoaded', function() {
-                                            Swal.fire({
-                                                icon: '{{ session('alert')['type'] }}',
-                                                title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
-                                                text: '{{ session('alert')['message'] }}',
-                                                confirmButtonText: 'OK',
-                                                timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
-                                                timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
-                                            });
-                                        });
-                                    </script>
-                                @endif
+                        @if (session('alert'))
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    Swal.fire({
+                                        icon: '{{ session('alert')['type'] }}',
+                                        title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                                        text: '{{ session('alert')['message'] }}',
+                                        confirmButtonText: 'OK',
+                                        timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
+                                        timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
+                                    });
+                                });
+                            </script>
+                        @endif --}}
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card stretch stretch-full">
-                                {{-- <div class="card-body lead-status">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card stretch stretch-full">
+                                    {{-- <div class="card-body lead-status">
                                     <div class="mb-5 d-flex align-items-center justify-content-between">
                                         <h5 class="fw-bold mb-0 me-4">
                                             <span class="d-block mb-2">author Details :</span>
@@ -177,18 +177,19 @@
                                         </div>
                                     </div>
                                 </div> --}}
-                                <hr class="mt-0">
-                                <div class="card-body general-info">
-                                    <div class="mb-5 d-flex align-items-center justify-content-between">
-                                        <h5 class="fw-bold mb-0 me-4">
-                                            <span class="d-block mb-2">author Info :</span>
-                                            <span class="fs-12 fw-normal text-muted text-truncate-1-line">General
-                                                information for your author</span>
-                                        </h5>
-                                        <a href="javascript:void(0);" class="btn btn-sm btn-light-brand">Edit
-                                            author</a>
-                                    </div>
-                                    {{-- <div class="row mb-4 align-items-center">
+                                    <hr class="mt-0">
+                                    <div class="card-body general-info">
+                                        <div class="mb-5 d-flex align-items-center justify-content-between">
+                                            <h5 class="fw-bold mb-0 me-4">
+                                                <span class="d-block mb-2">author Info :</span>
+                                                <span class="fs-12 fw-normal text-muted text-truncate-1-line">General
+                                                    information for your author</span>
+                                            </h5>
+                                            <a href="{{ route('admin.author.index') }}"
+                                                class="btn btn-sm btn-light-brand">List
+                                                author</a>
+                                        </div>
+                                        {{-- <div class="row mb-4 align-items-center">
                                         <div class="col-lg-12">
                                             <label for="fullnameInput" class="fw-semibold">Title: </label>
                                             <div class="input-group">
@@ -209,41 +210,43 @@
                                         </div>
                                     </div> --}}
 
-                                    <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-12">
-                                            <label for="autorInput" class="fw-semibold">Author: </label>
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="feather-user"></i></div>
-                                                <input type="text" class="form-control" name="name" value="{{ old('name', $author->name ?? '') }}"
-                                                    id="autorInput" placeholder="autor">
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-12">
+                                                <label for="autorInput" class="fw-semibold">Author: </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="feather-user"></i></div>
+                                                    <input type="text" class="form-control" name="name"
+                                                        value="{{ old('name', $author->name ?? '') }}" id="autorInput"
+                                                        placeholder="autor">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-6">
-                                            <label for="fotoInput" class="fw-semibold">Foto: </label>
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="feather-image"></i></div>
-                                                <input type="file" class="form-control" name="foto" id="fotoInput"
-                                                    placeholder="Upload foto...">
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-6">
+                                                <label for="fotoInput" class="fw-semibold">Foto: </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="feather-image"></i></div>
+                                                    <input type="file" class="form-control" name="foto"
+                                                        id="fotoInput" placeholder="Upload foto...">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <img src="
+                                            {{ asset('img/author/' . $author->foto) }}"
+                                                    alt="{{ 'foto do ' . $author->name }}">
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <img src="
-                                            {{ asset('img/author/'.$author->foto)}}" alt="{{'foto do '.$author->name}}">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-12">
-                                            <label for="biographyInput" class="fw-semibold">biography: </label>
-                                            <div class="input-group">
-                                                <div class="input-group-text"><i class="feather-type"></i></div>
-                                                <textarea class="form-control" id="biographyInput" name="biography" cols="30" rows="5"
-                                                    placeholder="biography">{{ old('biography', $author->biography ?? '') }}</textarea>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-12">
+                                                <label for="biographyInput" class="fw-semibold">biography: </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="feather-type"></i></div>
+                                                    <textarea class="form-control" id="biographyInput" name="biography" cols="30" rows="5"
+                                                        placeholder="biography">{{ old('biography', $author->biography ?? '') }}</textarea>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                   {{--  <div class="row mb-4 align-items-center">
+                                        {{--  <div class="row mb-4 align-items-center">
                                         <div class="col-lg-12">
                                             <label class="fw-semibold">Country: </label>
                                             <select class="form-control" name="country" data-select2-selector="country">
@@ -640,23 +643,31 @@
                                             </select>
                                         </div>
                                     </div> --}}
+<<<<<<< HEAD
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-12">
+                                                <input type="submit" class="btn btn-primary" value="Update author">
+                                            </div>
+=======
                                     <div class="row mb-4 align-items-center">
                                         <div class="col-lg-12">
-                                            <input type="submit" class="btn btn-primary" value="Update author">
+                                            <button type="submit" class="btn btn-danger"> Salvar
+                                            <i class="feather-save ms-2"></i>
+                                        </button>
+>>>>>>> 76bc5d424dc0165983f9b036c897f57955cfaa8e
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
-                    </div>
+                    </form>
 
-                </form>
-
+                </div>
+                <!-- [ Main Content ] end -->
             </div>
+
             <!-- [ Main Content ] end -->
         </div>
-
-        <!-- [ Main Content ] end -->
-    </div>
-@endsection
+    @endsection

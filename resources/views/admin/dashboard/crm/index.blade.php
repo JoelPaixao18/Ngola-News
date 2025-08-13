@@ -1,4 +1,4 @@
-@extends('admin.dashboard.crm.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Visão Geral')
 @section('content-crm')
 

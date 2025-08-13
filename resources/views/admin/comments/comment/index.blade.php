@@ -1,4 +1,4 @@
-@extends('admin.comments.comment.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Comment')
 @section('content-comments')
     <div class="nxl-content">
@@ -6,11 +6,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Comment</h5>
+                    <h5 class="m-b-10">Comentários</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Comments</li>
+                    <li class="breadcrumb-item">Comentárioss</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -108,9 +108,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('admin.comment.create') }}" class="btn btn-primary">
+                        <a href="{{ route('admin.comment.create') }}" class="btn btn-danger">
                             <i class="feather-plus me-2"></i>
-                            <span>New Comment</span>
+                            <span>Novo Comentário</span>
                         </a>
                     </div>
                 </div>
@@ -182,14 +182,14 @@
         <!-- [ page-header ] end -->
         <!-- [ Main Content ] start -->
         <div class="main-content">
-            @if (session('success'))
+            {{-- @if (session('success'))
                 <!-- Mantenha este apenas como fallback -->
                 <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
                     <i class="feather-check-circle me-2 fs-20"></i>
                     <div>{{ session('success') }}</div>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            @endif
+            @endif --}}
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card stretch stretch-full">
@@ -245,24 +245,21 @@
                                                 <td>{{ $comment->date }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
+                                                        <a class="avatar-text avatar-md"
+                                                            href="{{ route('admin.comment.view', ['comment' => $comment]) }}">
+                                                            <i class="feather feather-eye"></i>
+                                                        </a>
                                                         <div class="dropdown">
                                                             <a href="javascript:void(0)" class="avatar-text avatar-md"
                                                                 data-bs-toggle="dropdown" data-bs-offset="0,21">
                                                                 <i class="feather feather-more-horizontal"></i>
                                                             </a>
                                                             <ul class="dropdown-menu">
-                                                                <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="{{ route('admin.comment.view', ['comment' => $comment]) }}">
-                                                                        <i class="feather feather-eye me-3"></i>
-                                                                        <span>View</span>
-                                                                    </a>
-                                                                <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="{{ route('admin.comment.edit', ['comment' => $comment]) }}">
-                                                                        <i class="feather feather-edit-3 me-3"></i>
-                                                                        <span>Edit</span>
-                                                                    </a>
+                                                                <a class="dropdown-item"
+                                                                    href="{{ route('admin.comment.edit', ['comment' => $comment]) }}">
+                                                                    <i class="feather feather-edit-3 me-3"></i>
+                                                                    <span>Edit</span>
+                                                                </a>
                                                                 </li>
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>

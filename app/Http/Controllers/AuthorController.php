@@ -44,6 +44,11 @@ class AuthorController extends Controller
             'name'      => 'required|string|max:255',
             'biography' => 'nullable|string',
             'foto' => 'required|image|mimes:jpg,jpeg,png',
+        ], [
+            'name.required' => 'O nome do autor é obrigatório.',
+            'foto.required' => 'A foto do autor é obrigatória.',
+            'foto.image' => 'A foto deve ser uma imagem válida.',
+            'foto.mimes' => 'A foto deve ser nos formatos: jpg, jpeg, png.',
         ]);
 
         // Upload da imagem
@@ -58,7 +63,8 @@ class AuthorController extends Controller
         // Criação do autor
         $author = Author::create($validated);
 
-        return redirect()->route('admin.author.index')->with('alert', ['type' => 'success', 'message' => 'Author criado com sucesso!']);
+        return redirect()->route('admin.author.index')->with('success', 'Autor criado com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Autor!');
     }
 
     /**
@@ -100,6 +106,10 @@ class AuthorController extends Controller
             'name'      => 'required|string|max:255',
             'biography' => 'nullable|string',
             'foto' => 'sometimes|image|mimes:jpg,jpeg,png', // Alterado para 'sometimes'
+        ], [
+            'name.required' => 'O nome do autor é obrigatório.',
+            'foto.image' => 'A foto deve ser uma imagem válida.',
+            'foto.mimes' => 'A foto deve ser nos formatos: jpg, jpeg, png.',
         ]);
 
 
@@ -123,7 +133,8 @@ class AuthorController extends Controller
         // Atualizar o author
         $author->update($validated);
 
-        return redirect()->route('admin.author.index')->with('alert', ['type' => 'success', 'message' => 'Author atualizado com sucesso!']);
+        return redirect()->route('admin.author.index')->with('success', 'Autor atualizado com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Autor!');
     }
 
     /**

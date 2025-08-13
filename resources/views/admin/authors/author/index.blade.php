@@ -1,4 +1,4 @@
-@extends('admin.authors.author.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Authors')
 @section('content-authors')
 
@@ -105,9 +105,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('admin.author.create') }}" class="btn btn-primary">
+                        <a href="{{ route('admin.author.create') }}" class="btn btn-danger">
                             <i class="feather-plus me-2"></i>
-                            <span>Criar Autor</span>
+                            <span>Novo Autor</span>
                         </a>
                     </div>
                 </div>
@@ -213,7 +213,7 @@
         <!-- [ Main Content ] start -->
         <div class="main-content">
 
-            !-- Este bloco pode ser removido se já estiver no layout principal -->
+            <!-- Este bloco pode ser removido se já estiver no layout principal -->
             @if (session('success'))
                 <!-- Mantenha este apenas como fallback -->
                 <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
@@ -221,7 +221,7 @@
                     <div>{{ session('success') }}</div>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            @endif
+            @endif --}}
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card stretch stretch-full">
@@ -239,6 +239,7 @@
                                                     </div>
                                                 </div>
                                             </th>
+                                            <th>Foto</th>
                                             <th>Nome</th>
                                             <th>Biografia</th>
                                             <th class="text-end">Ações</th>
@@ -259,18 +260,20 @@
                                                 </td>
                                                 <td>
                                                     <div class="hstack gap-3">
-                                                        <div>
-                                                            <div class="avatar-image ">
-                                                                @if ($author->foto)
-                                                                    <img src="{{ asset('img/authors/' . $author->foto) }}"
-                                                                        alt="author Image" class="img-thumbnail"
-                                                                        style="max-width: 50px; max-height: 50px;">
-                                                                @else
-                                                                    <i class="feather-image"></i>
-                                                                @endif
-                                                            </div>
-                                                            <span class="text-truncate-1-line">{{ $author->name }}</span>
+                                                        <div class="avatar-image ">
+                                                            @if ($author->foto)
+                                                                <img src="{{ asset('img/authors/' . $author->foto) }}"
+                                                                    alt="author Image" class="img-thumbnail"
+                                                                    style="max-width: 50px; max-height: 50px;">
+                                                            @else
+                                                                <i class="feather-image"></i>
+                                                            @endif
                                                         </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-3">
+                                                        <span class="text-truncate-1-line">{{ $author->name }}</span>
                                                     </div>
                                                 </td>
                                                 <td>

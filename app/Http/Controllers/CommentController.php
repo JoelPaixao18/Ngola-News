@@ -63,6 +63,7 @@ class CommentController extends Controller
         ]);
 
         return redirect()->route('admin.comments.index')->with('success', 'Comentário criado com sucesso.');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Comentário!');
     }
 
     /**
@@ -120,6 +121,7 @@ class CommentController extends Controller
         ]);
 
         return redirect()->route('admin.comments.index')->with('success', 'Comentário atualizado com sucesso.');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Comentário!');
     }
 
     /**

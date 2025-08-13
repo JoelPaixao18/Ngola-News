@@ -29,9 +29,9 @@
                             <i class="feather-layers me-2"></i>
                             <span>Save as Draft</span>
                         </a>
-                        <a href="javascript:void(0);" class="btn btn-primary successAlertMessage">
-                            <i class="feather-user-plus me-2"></i>
-                            <span>Create Lead</span>
+                        <a href="javascript:void(0);" class="btn btn-danger">
+                            <i class="feather-chevron-left me-2"></i>
+                            <span>Visualizar</span>
                         </a>
                     </div>
                 </div>
@@ -175,7 +175,8 @@
                                     </div>
                                     {{-- Botão de Enviar --}}
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-primary"> Criar Notícia
+                                        <button type="submit" class="btn btn-danger"> Salvar
+                                            <i class="feather-save ms-2"></i>
                                         </button>
                                     </div>
                                 </div>

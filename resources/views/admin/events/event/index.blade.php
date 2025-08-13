@@ -1,4 +1,4 @@
-@extends('admin.events.event.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Events')
 @section('content-events')
 
@@ -105,9 +105,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('admin.event.create') }}" class="btn btn-primary">
+                        <a href="{{ route('admin.event.create') }}" class="btn btn-danger">
                             <i class="feather-plus me-2"></i>
-                            <span>Create Event</span>
+                            <span>Novo Evento</span>
                         </a>
                     </div>
                 </div>
@@ -212,14 +212,14 @@
 
         <!-- [ Main Content ] start -->
         <div class="main-content">
-            @if (session('success'))
+            {{-- @if (session('success'))
                 <!-- Mantenha este apenas como fallback -->
                 <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
                     <i class="feather-check-circle me-2 fs-20"></i>
                     <div>{{ session('success') }}</div>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            @endif
+            @endif --}}
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card stretch stretch-full">
@@ -237,9 +237,13 @@
                                                     </div>
                                                 </div>
                                             </th>
+                                            <th>Imagem</th>
                                             <th>Título</th>
                                             <th>Subtítulo</th>
-                                           {{--  <th>Autor</th> --}}
+<<<<<<< HEAD
+=======
+                                            {{--  <th>Autor</th> --}}
+>>>>>>> 6cf6567ac845c64baadd2a44d4929517ffa0c544
                                             <th>País</th>
                                             <th>Província</th>
                                             <th>Distrito</th>
@@ -263,31 +267,28 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div class="hstack gap-3">
-                                                        <div>
-                                                            <div class="avatar-image avatar-md">
-                                                                @if ($event->image)
-                                                                    <img src="{{ asset('img/events/' . $event->image) }}"
-                                                                        alt="event Image" class="img-thumbnail"
-                                                                        style="max-width: 50px; max-height: 50px;">
-                                                                @else
-                                                                    <i class="feather-image"></i>
-                                                                @endif
-                                                            </div>
-                                                            <span class="text-truncate-1-line">{{ $event->title }}</span>
+                                                    <div class="hstack gap-2">
+
+                                                        <div class="avatar-image avatar-md">
+                                                            @if ($event->image)
+                                                                <img src="{{ asset('img/events/' . $event->image) }}"
+                                                                    alt="event Image" class="img-thumbnail"
+                                                                    style="max-width: 50px; max-height: 50px;">
+                                                            @else
+                                                                <i class="feather-image"></i>
+                                                            @endif
                                                         </div>
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-3">
+                                                        <span class="text-truncate-1-line">{{ $event->title }}</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div href="apps-mail.html">{{ $event->subtitle }}</div>
                                                 </td>
-                                                {{-- <td>
-                                                    <div class="hstack gap-2">
-
-                                                        {{ $event->author }}
-
-                                                    </div>
-                                                </td> --}}
                                                 <td>{{ $event->country }}</td>
                                                 <td>{{ $event->state }}</td>
                                                 <td> {{ $event->city }}</td>

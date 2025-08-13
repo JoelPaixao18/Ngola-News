@@ -1,4 +1,4 @@
-@extends('admin.events.eventCreate.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Event Create')
 @section('content-eventCreate')
     <!--! ================================================================ !-->
@@ -73,15 +73,15 @@
                                     <i class="feather-plus me-3"></i>
                                     <span>Create New</span>
                                 </a>
-                                <a href="javascript:void(0);" class="dropdown-item">
+                               {{--  <a href="javascript:void(0);" class="dropdown-item">
                                     <i class="feather-filter me-3"></i>
                                     <span>Manage Filter</span>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
-                        <a href="javascript:void(0);" class="btn btn-primary">
-                            <i class="feather-plus me-2"></i>
-                            <span>Add Widgets</span>
+                        <a href="{{ route('admin.event.index')}}" class="btn btn-danger">
+                            <i class="feather-chevron-left me-2"></i>
+                            <span>Visualizar</span>
                         </a>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                         enctype="multipart/form-data">
                         @csrf
 
-                        @if ($errors->any())
+                        {{-- @if ($errors->any())
                             <script>
                                 document.addEventListener('DOMContentLoaded', function() {
                                     Swal.fire({
@@ -133,7 +133,7 @@
                                     });
                                 });
                             </script>
-                        @endif
+                        @endif --}}
 
                         <div class="row">
                             <div class="col-lg-12">
@@ -650,7 +650,9 @@
                                         </div>
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
-                                                <input type="submit" class="btn btn-primary" value="Create event">
+                                                <button type="submit" class="btn btn-danger"> Salvar
+                                            <i class="feather-save ms-2"></i>
+                                        </button>
                                             </div>
                                         </div>
                                     </div>

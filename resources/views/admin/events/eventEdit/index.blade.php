@@ -1,4 +1,4 @@
-@extends('admin.events.eventEdit.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Event Edit')
 @section('content-eventEdit')
     <!--! ================================================================ !-->
@@ -79,9 +79,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="javascript:void(0);" class="btn btn-primary">
-                            <i class="feather-plus me-2"></i>
-                            <span>Add Widgets</span>
+                        <a href="{{ route('admin.event.index')}}" class="btn btn-danger">
+                            <i class="feather-chevron-left me-2"></i>
+                            <span>Voltar</span>
                         </a>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                                     Criando Formulario Event Create
                      _______________________________________________________________-->
                 <!-- [ page-header ] end -->
-                @if ($errors->any())
+                {{-- @if ($errors->any())
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
                             Swal.fire({
@@ -131,7 +131,7 @@
                             });
                         });
                     </script>
-                @endif
+                @endif --}}
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="eventForm" action="{{ route('admin.event.update', ['event' => $event]) }}" method="POST"
@@ -657,7 +657,9 @@
                                         </div>
                                         <div class="row mb-4 align-items-center">
                                             <div class="col-lg-12">
-                                                <input type="submit" class="btn btn-primary" value="Update event">
+                                               <button type="submit" class="btn btn-danger"> Salvar
+                                            <i class="feather-save ms-2"></i>
+                                        </button>
                                             </div>
                                         </div>
                                     </div>

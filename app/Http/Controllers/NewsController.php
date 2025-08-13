@@ -93,6 +93,8 @@ class NewsController extends Controller
             'type' => 'success',
             'message' => 'Notícia criada com sucesso!'
         ]);
+        return redirect()->route('admin.news.index')->with('success', 'Notícia criado com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Notícia!');
     }
 
     /**
@@ -166,7 +168,6 @@ class NewsController extends Controller
         ]);
 
         $data = $request->except('_token', '_method', 'image');
-        $news->update($request->all());
 
         // Atualiza o slug baseado no título se necessário
         if ($request->has('title') && $request->title !== $news->title) {
@@ -191,6 +192,7 @@ class NewsController extends Controller
         }
 
         // Atualiza todos os campos de uma vez
+        //$news->update($request->all());
         $news->update($data);
 
         // Atualizar as tags
@@ -205,6 +207,8 @@ class NewsController extends Controller
                 'type' => 'success',
                 'message' => 'Notícia atualizada com sucesso!'
             ]);
+        return redirect()->route('admin.news.index')->with('success', 'Notícia atualizada com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Notícia!');
     }
 
     /**

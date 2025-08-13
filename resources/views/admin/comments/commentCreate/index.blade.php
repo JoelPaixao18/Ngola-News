@@ -1,4 +1,4 @@
-@extends('admin.comments.commentCreate.layout.main')
+@extends('admin.layout.main')
 @section('title', 'Ngola News - Comments Create')
 @section('content-commentCreate')
 
@@ -24,13 +24,13 @@
                         </a>
                     </div>
                     <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
-                        <a href="javascript:void(0);" class="btn btn-light-brand successAlertMessage">
+                        {{-- <a href="javascript:void(0);" class="btn btn-light-brand successAlertMessage">
                             <i class="feather-layers me-2"></i>
                             <span>Save as Draft</span>
-                        </a>
-                        <a href="javascript:void(0);" class="btn btn-primary successAlertMessage">
-                            <i class="feather-user-plus me-2"></i>
-                            <span>Create Lead</span>
+                        </a> --}}
+                        <a href="{{ route('admin.comments.index')}}" class="btn btn-danger">
+                            <i class="feather-chevron-left me-2"></i>
+                            <span>Visualizar</span>
                         </a>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                                 @csrf
                                 @method('POST')
 
-                                @if ($errors->any())
+                                {{-- @if ($errors->any())
                                     <script>
                                         document.addEventListener('DOMContentLoaded', function() {
                                             Swal.fire({
@@ -89,7 +89,7 @@
                                             });
                                         });
                                     </script>
-                                @endif
+                                @endif --}}
 
                                 <div class="row">
 
@@ -147,8 +147,8 @@
 
                                     {{-- Botão de Enviar --}}
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-primary"> Criar Comentário
-                                            <i class="feather-send ms-2"></i>
+                                        <button type="submit" class="btn btn-danger"> Salvar
+                                            <i class="feather-save ms-2"></i>
                                         </button>
                                     </div>
                                 </div>

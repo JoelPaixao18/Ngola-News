@@ -108,9 +108,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('admin.news.create') }}" class="btn btn-primary">
+                        <a href="{{ route('admin.news.create') }}" class="btn btn-danger">
                             <i class="feather-plus me-2"></i>
-                            <span>New News</span>
+                            <span>Nova Notícia</span>
                         </a>
                     </div>
                 </div>
@@ -183,14 +183,14 @@
         <!-- [ Main Content ] start -->
         <div class="main-content">
             <!-- Este bloco pode ser removido se já estiver no layout principal -->
-            @if (session('success'))
+            {{-- @if (session('success'))
                 <!-- Mantenha este apenas como fallback -->
                 <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
                     <i class="feather-check-circle me-2 fs-20"></i>
                     <div>{{ session('success') }}</div>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            @endif
+            @endif --}}
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card stretch stretch-full">
@@ -268,27 +268,21 @@
                                                 </td> --}}
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
-                                                        {{-- <a href="leads-view.html" class="avatar-text avatar-md">
+                                                        <a class="avatar-text avatar-md"
+                                                            href="{{ route('admin.news.view', ['news' => $news]) }}">
                                                             <i class="feather feather-eye"></i>
-                                                        </a> --}}
+                                                        </a>
                                                         <div class="dropdown">
                                                             <a href="javascript:void(0)" class="avatar-text avatar-md"
                                                                 data-bs-toggle="dropdown" data-bs-offset="0,21">
                                                                 <i class="feather feather-more-horizontal"></i>
                                                             </a>
                                                             <ul class="dropdown-menu">
-                                                                <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="{{ route('admin.news.view', ['news' => $news]) }}">
-                                                                        <i class="feather feather-eye me-3"></i>
-                                                                        <span>View</span>
-                                                                    </a>
-                                                                <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="{{ route('admin.news.edit', ['news' => $news]) }}">
-                                                                        <i class="feather feather-edit-3 me-3"></i>
-                                                                        <span>Edit</span>
-                                                                    </a>
+                                                                <a class="dropdown-item"
+                                                                    href="{{ route('admin.news.edit', ['news' => $news]) }}">
+                                                                    <i class="feather feather-edit-3 me-3"></i>
+                                                                    <span>Edit</span>
+                                                                </a>
                                                                 </li>
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
