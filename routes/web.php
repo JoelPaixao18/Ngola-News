@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\TagController;
 
 /*-------------------------------------------------------
                     Dashboard routes
@@ -59,6 +60,7 @@ Route::prefix('_admin.news')->name('admin.')->group(function () {
     Route::put('newsUpdate/{news}', [NewsController::class, 'update'])->name('news.update');
     Route::get('newsViews/{news}', [NewsController::class, 'show'])->name('news.view');
     Route::get('newsDelete/{news}', [NewsController::class, 'destroy'])->name('news.delete');
+    Route::resource('tags', TagController::class);
 });
 
 

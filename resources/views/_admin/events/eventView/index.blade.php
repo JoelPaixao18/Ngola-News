@@ -64,16 +64,23 @@
         </div>
         <!-- [ page-header ] end -->
         <div class="main-content">
+<<<<<<< HEAD:resources/views/_admin/events/eventView/index.blade.php
             <div class="card card-body general-info row">
                 <div class="col-6 d-flex align-items-center justify-content-between">
                     <div class="wd-800 ht-300 mx-auto mb-3 position-relative">
                         <div class="wd-800 ht-300 border border-5 border-gray-3 max">
+=======
+            <div class="card card-body general-info">
+                <div>
+                    <div class="wd-800 ht-300 mx-auto mb-3 border border-5 border-gray-3 max">
+                        <div class="wd-800 ht-300 ">
+>>>>>>> 34a2064daf8b619f547ccc6c72ed1176c7cf69e1:resources/views/admin/events/eventView/index.blade.php
                             <img src="{{ asset('img/events/' . $event->image) }}" alt="{{ $event->image }}"
                                 class="img-fluid object-fit-cover">
                         </div>
                     </div>
                 </div>
-                <div class="col-6 d-flex align-items-center justify-content-between">
+                <div class="mb-4 d-flex align-items-center justify-content-between">
                     <h5 class="fw-bold mb-0">
                         <span class="d-block mb-2">General Information :</span>
                         <span class="fs-12 fw-normal text-muted d-block">General information for your event</span>

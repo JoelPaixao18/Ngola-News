@@ -58,6 +58,7 @@ class AuthorController extends Controller
             $extension = $foto->extension();
             $fotoName = md5($foto->getClientOriginalName() . strtotime('now')) . '.' . $extension;
             $foto->move(public_path('img/authors'), $fotoName);
+            $validated['foto'] = $fotoName;
         }
 
         // Criação do autor

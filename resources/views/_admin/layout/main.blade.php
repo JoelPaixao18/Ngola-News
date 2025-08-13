@@ -42,6 +42,7 @@
    <script src="https:oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
    <script src="https:oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+<<<<<<< HEAD:resources/views/_admin/layout/main.blade.php
     <style>
         .img-fluid {
             object-fit: cover;
@@ -54,6 +55,8 @@
     <script src="{{ url('assets/js/sweetalert-init.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--! END: Sweet Alert JS !-->
+=======
+>>>>>>> 34a2064daf8b619f547ccc6c72ed1176c7cf69e1:resources/views/admin/layout/main.blade.php
 </head>
 
 <body>

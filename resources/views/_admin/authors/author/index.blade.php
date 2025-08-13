@@ -213,6 +213,18 @@
         <!-- [ Main Content ] start -->
         <div class="main-content">
 
+<<<<<<< HEAD:resources/views/_admin/authors/author/index.blade.php
+=======
+            <!-- Este bloco pode ser removido se já estiver no layout principal -->
+            @if (session('success'))
+                <!-- Mantenha este apenas como fallback -->
+                <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+                    <i class="feather-check-circle me-2 fs-20"></i>
+                    <div>{{ session('success') }}</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif 
+>>>>>>> 34a2064daf8b619f547ccc6c72ed1176c7cf69e1:resources/views/admin/authors/author/index.blade.php
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card stretch stretch-full">

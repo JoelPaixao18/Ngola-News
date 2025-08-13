@@ -62,6 +62,41 @@
                                 @csrf
                                 @method('PUT')
 
+<<<<<<< HEAD:resources/views/_admin/news/newsEdit/index.blade.php
+=======
+                                @if ($errors->any())
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Erro de Validação',
+                                                html: `@foreach ($errors->all() as $error)
+                                                    <div>{{ $error }}</div>
+                                                @endforeach`,
+                                                confirmButtonText: 'OK',
+                                                showConfirmButton: true,
+                                                allowOutsideClick: false,
+                                                allowEscapeKey: false
+                                            });
+                                        });
+                                    </script>
+                                @endif
+
+                                @if (session('alert'))
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            Swal.fire({
+                                                icon: '{{ session('alert')['type'] }}',
+                                                title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
+                                                text: '{{ session('alert')['message'] }}',
+                                                confirmButtonText: 'OK',
+                                                timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
+                                                timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
+                                            });
+                                        });
+                                    </script>
+                                @endif
+>>>>>>> 34a2064daf8b619f547ccc6c72ed1176c7cf69e1:resources/views/admin/news/newsEdit/index.blade.php
 
                                 <div class="row">
                                     {{-- Categoria --}}
@@ -151,6 +186,15 @@
                                         <label class="form-label">Texto</label>
                                         <textarea name="description" class="form-control" rows="4" placeholder="Escreve o corpo da notícia...">{{ old('description', $news->description ?? '') }}</textarea>
                                     </div>
+                                    {{-- Tags --}}
+                                    <label for="tags">Tags</label>
+                                    <select name="tags[]" multiple>
+                                        @foreach($tags as $tag)
+                                            <option value="{{ $tag->id_tag }}" {{ in_array($tag->id_tag, old('tags', isset($news) ? $news->tags->pluck('id_tag')->toArray() : [])) ? 'selected' : '' }}>
+                                                {{ $tag->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
 
                                     {{-- Botão de Enviar --}}
                                     <div class="col-12">

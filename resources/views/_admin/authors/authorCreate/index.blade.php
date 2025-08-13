@@ -97,8 +97,13 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
+<<<<<<< HEAD:resources/views/_admin/authors/authorCreate/index.blade.php
                           Criando Formulario author Create
                     _______________________________________________________________-->
+=======
+                             Criando Formulario author Create
+                _______________________________________________________________-->
+>>>>>>> 34a2064daf8b619f547ccc6c72ed1176c7cf69e1:resources/views/admin/authors/authorCreate/index.blade.php
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="authorForm" action="{{ route('admin.author.store') }}" method="post"
@@ -603,23 +608,15 @@
                                             </select>
                                         </div>
                                     </div> --}}
-                                        <div class="row mb-4 align-items-center">
-                                            <div class="col-lg-12">
-                                                <input type="submit" class="btn btn-primary" value="Create author">
-                                            </div>
-
-                                            {{-- <div class="row mb-4 align-items-center">
-                                                <div class="col-lg-12">
-                                                    <button type="submit" class="btn btn-danger"> Salvar
-                                                        <i class="feather-save ms-2"></i>
-                                                    </button>
-
-                                                </div>
-                                            </div> --}}
-                                        </div>
+                                    <div class="row mb-4 align-items-center">
+                                        <div class="col-lg-12">
+                                            <button type="submit" class="btn btn-danger"> Salvar
+                                            <i class="feather-save ms-2"></i>
+                                        </button>
                                     </div>
+                                 </div>
 
-                                </div>
+                            </div>
 
                     </form>
 
