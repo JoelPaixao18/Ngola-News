@@ -603,15 +603,15 @@
                                             </select>
                                         </div>
                                     </div> --}}
-                                    <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-12">
-                                            <button type="submit" class="btn btn-danger"> Salvar
-                                            <i class="feather-save ms-2"></i>
-                                        </button>
-                                    </div>
-                                 </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-12">
+                                                <button type="submit" class="btn btn-danger"> Salvar
+                                                    <i class="feather-save ms-2"></i>
+                                                </button>
+                                            </div>
+                                        </div>
 
-                            </div>
+                                    </div>
 
                     </form>
 
