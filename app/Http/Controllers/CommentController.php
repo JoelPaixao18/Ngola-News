@@ -60,6 +60,12 @@ class CommentController extends Controller
             'author_comment' => $request->author_comment,
             'date' => $request->date,
             'news_id' => $request->news_id,
+        ], [
+            'text_comment.required' => 'O conteúdo é obrigatório.',
+            'author_comment.required' => 'O autor é obrigatório.',
+            'text_comment.max' => 'O campo comentário não pode ter mais de 1000 caracteres.',
+            'author_comment.max' => 'O campo autor não pode ter mais de 255 caracteres.',
+            /* 'news_id.exists' => 'A notícia selecionada não existe.', */
         ]);
 
         return redirect()->route('admin.comments.index')->with('success', 'Comentário criado com sucesso.');

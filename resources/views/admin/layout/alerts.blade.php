@@ -1,3 +1,4 @@
+{{-- Sucesso --}}
 @if(session('success'))
 <script>
     Swal.fire({
@@ -10,6 +11,7 @@
 </script>
 @endif
 
+{{-- Erro geral --}}
 @if(session('error'))
 <script>
     Swal.fire({
@@ -22,6 +24,7 @@
 </script>
 @endif
 
+{{-- Aviso --}}
 @if(session('warning'))
 <script>
     Swal.fire({
@@ -30,6 +33,23 @@
         text: @json(session('warning')),
         showConfirmButton: false,
         timer: 2500
+    });
+</script>
+@endif
+
+{{-- Erros de validação --}}
+@if ($errors->any())
+<script>
+    let errorMessages = '';
+    @foreach ($errors->all() as $error)
+        errorMessages += "- {{ $error }}\n";
+    @endforeach
+
+    Swal.fire({
+        icon: 'error',
+        title: 'Erro de validação',
+        text: errorMessages,
+        confirmButtonText: 'Ok'
     });
 </script>
 @endif
