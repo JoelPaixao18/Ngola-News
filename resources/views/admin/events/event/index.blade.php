@@ -240,10 +240,6 @@
                                             <th>Imagem</th>
                                             <th>Título</th>
                                             <th>Subtítulo</th>
-<<<<<<< HEAD
-=======
-                                            {{--  <th>Autor</th> --}}
->>>>>>> 6cf6567ac845c64baadd2a44d4929517ffa0c544
                                             <th>País</th>
                                             <th>Província</th>
                                             <th>Distrito</th>
