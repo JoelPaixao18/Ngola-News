@@ -237,9 +237,13 @@
                                                     </div>
                                                 </div>
                                             </th>
+                                            <th>Imagem</th>
                                             <th>Título</th>
                                             <th>Subtítulo</th>
+<<<<<<< HEAD
+=======
                                             {{--  <th>Autor</th> --}}
+>>>>>>> 6cf6567ac845c64baadd2a44d4929517ffa0c544
                                             <th>País</th>
                                             <th>Província</th>
                                             <th>Distrito</th>
@@ -263,31 +267,28 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div class="hstack gap-3">
-                                                        <div>
-                                                            <div class="avatar-image avatar-md">
-                                                                @if ($event->image)
-                                                                    <img src="{{ asset('img/events/' . $event->image) }}"
-                                                                        alt="event Image" class="img-thumbnail"
-                                                                        style="max-width: 50px; max-height: 50px;">
-                                                                @else
-                                                                    <i class="feather-image"></i>
-                                                                @endif
-                                                            </div>
-                                                            <span class="text-truncate-1-line">{{ $event->title }}</span>
+                                                    <div class="hstack gap-2">
+
+                                                        <div class="avatar-image avatar-md">
+                                                            @if ($event->image)
+                                                                <img src="{{ asset('img/events/' . $event->image) }}"
+                                                                    alt="event Image" class="img-thumbnail"
+                                                                    style="max-width: 50px; max-height: 50px;">
+                                                            @else
+                                                                <i class="feather-image"></i>
+                                                            @endif
                                                         </div>
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-3">
+                                                        <span class="text-truncate-1-line">{{ $event->title }}</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div href="apps-mail.html">{{ $event->subtitle }}</div>
                                                 </td>
-                                                {{-- <td>
-                                                    <div class="hstack gap-2">
-
-                                                        {{ $event->author }}
-
-                                                    </div>
-                                                </td> --}}
                                                 <td>{{ $event->country }}</td>
                                                 <td>{{ $event->state }}</td>
                                                 <td> {{ $event->city }}</td>
