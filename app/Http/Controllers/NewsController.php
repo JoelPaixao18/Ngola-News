@@ -33,10 +33,11 @@ class NewsController extends Controller
     public function create()
     {
         //
+        $tags = Tag::all();
         $categories1 = Category::where('type', 'Notícias')->get();
         $categories1 = Category::where('type', 'Notícia')->get();
         $categories = $categories1->merge($categories1);
-        return view('admin.news.newsCreate.index', compact('categories'));
+        return view('admin.news.newsCreate.index', compact('categories','tags'));
     }
 
     /**
