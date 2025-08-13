@@ -62,7 +62,7 @@
                                 @csrf
                                 @method('PUT')
 
-                               @if ($errors->any())
+                                @if ($errors->any())
                                     <script>
                                         document.addEventListener('DOMContentLoaded', function() {
                                             Swal.fire({
@@ -183,6 +183,15 @@
                                         <label class="form-label">Texto</label>
                                         <textarea name="description" class="form-control" rows="4" placeholder="Escreve o corpo da notícia...">{{ old('description', $news->description ?? '') }}</textarea>
                                     </div>
+                                    {{-- Tags --}}
+                                    <label for="tags">Tags</label>
+                                    <select name="tags[]" multiple>
+                                        @foreach($tags as $tag)
+                                            <option value="{{ $tag->id_tag }}" {{ in_array($tag->id_tag, old('tags', isset($news) ? $news->tags->pluck('id_tag')->toArray() : [])) ? 'selected' : '' }}>
+                                                {{ $tag->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
 
                                     {{-- Botão de Enviar --}}
                                     <div class="col-12">

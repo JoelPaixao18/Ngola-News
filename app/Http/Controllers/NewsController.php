@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
+use App\Models\Tag;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -14,6 +15,7 @@ class NewsController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -26,14 +28,16 @@ class NewsController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function create()
     {
         //
+        $tags = Tag::all();
         $categories1 = Category::where('type', 'Notícias')->get();
         $categories1 = Category::where('type', 'Notícia')->get();
         $categories = $categories1->merge($categories1);
-        return view('admin.news.newsCreate.index', compact('categories'));
+        return view('admin.news.newsCreate.index', compact('categories','tags'));
     }
 
     /**
@@ -41,6 +45,7 @@ class NewsController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -70,6 +75,7 @@ class NewsController extends Controller
             'category_id.exists' => 'A categoria selecionada é inválida.',
         ]);
 
+        $news = News::create($request->all());
         $data = $request->except('_token');
 
         // Upload da imagem
@@ -84,6 +90,15 @@ class NewsController extends Controller
 
         News::create($data);
 
+        // Salvar as tags
+        if ($request->has('tags')) {
+            $news->tags()->sync($request->tags);
+        }
+
+        return redirect()->route('admin.news.index')->with('alert', [
+            'type' => 'success',
+            'message' => 'Notícia criada com sucesso!'
+        ]);
         return redirect()->route('admin.news.index')->with('success', 'Notícia criado com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Notícia!');
     }
@@ -93,6 +108,7 @@ class NewsController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function show(News $news)
     {
@@ -106,14 +122,18 @@ class NewsController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function edit(News $news)
     {
         //
         $categories = Category::all(); // Or any other query to fetch categories
+        $tags = Tag::all(); // pega todas as tags
+
         return view('admin.news.newsEdit.index', [
             'news' => $news,
-            'categories' => $categories // Pass categories to the view
+            'categories' => $categories , // Pass categories to the view
+            'tags' => $tags // envia as tags para a view
         ]);
     }
 
@@ -123,6 +143,7 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, News $news)
     {
@@ -174,8 +195,21 @@ class NewsController extends Controller
         }
 
         // Atualiza todos os campos de uma vez
+        //$news->update($request->all());
         $news->update($data);
 
+        // Atualizar as tags
+        if ($request->has('tags')) {
+            $news->tags()->sync($request->tags);
+        } else {
+            $news->tags()->sync([]); // Se não enviar nenhuma tag, remove todas
+        }
+
+        return redirect()->route('admin.news.index')
+            ->with('alert', [
+                'type' => 'success',
+                'message' => 'Notícia atualizada com sucesso!'
+            ]);
         return redirect()->route('admin.news.index')->with('success', 'Notícia atualizada com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Notícia!');
     }
@@ -185,6 +219,7 @@ class NewsController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(News $news)
     {
