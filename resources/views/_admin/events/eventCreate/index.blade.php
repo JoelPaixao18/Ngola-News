@@ -26,11 +26,11 @@
                     </div>
                     <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
                         <div class="dropdown filter-dropdown">
-                            <a class="btn btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10"
+                           {{--  <a class="btn btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10"
                                 data-bs-auto-close="outside">
                                 <i class="feather-filter me-2"></i>
                                 <span>Filter</span>
-                            </a>
+                            </a> --}}
                             <div class="dropdown-menu dropdown-menu-end">
                                 <div class="dropdown-item">
                                     <div class="custom-control custom-checkbox">
