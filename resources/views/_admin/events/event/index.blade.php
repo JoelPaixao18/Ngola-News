@@ -232,16 +232,6 @@
                                             <th>Imagem</th>
                                             <th>Título</th>
                                             <th>Subtítulo</th>
-<<<<<<< HEAD:resources/views/_admin/events/event/index.blade.php
-                                            {{--  <th>Autor</th> --}}
-                                                <th>País</th>
-                                                <th>Província</th>
-                                                <th>Distrito</th>
-                                                <th>Estado</th>
-                                                <th>Data do Evento</th>
-                                                <th>Ultima Alteração</th>
-                                                <th class="text-end">Actions</th>
-=======
                                             <th>País</th>
                                             <th>Província</th>
                                             <th>Distrito</th>
@@ -249,7 +239,6 @@
                                             <th>Data do Evento</th>
                                             <th>Ultima Alteração</th>
                                             <th class="text-end">Actions</th>
->>>>>>> cb278ea561256b6853e18916fc50acdf97a9f65d:resources/views/admin/events/event/index.blade.php
 
                                         </tr>
                                     </thead>

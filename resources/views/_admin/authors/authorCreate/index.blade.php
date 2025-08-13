@@ -97,13 +97,8 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-<<<<<<< HEAD:resources/views/_admin/authors/authorCreate/index.blade.php
-                          Criando Formulario author Create
-                    _______________________________________________________________-->
-=======
                              Criando Formulario author Create
                 _______________________________________________________________-->
->>>>>>> 34a2064daf8b619f547ccc6c72ed1176c7cf69e1:resources/views/admin/authors/authorCreate/index.blade.php
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="authorForm" action="{{ route('admin.author.store') }}" method="post"
