@@ -114,8 +114,14 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
+<<<<<<< HEAD
         //
         return view('_admin.events.eventView.index', ['event' => $event]);
+=======
+        // 
+        $event = Event::with('author', 'category')->find($event->id);
+        return view('admin.events.eventView.index', ['event' => $event]);
+>>>>>>> cb278ea561256b6853e18916fc50acdf97a9f65d
     }
 
     /**

@@ -234,7 +234,7 @@
                                                     <a href="leads-view.html" class="hstack gap-3">
                                                         <div class="avatar-image avatar-md">
                                                             @if ($news->image)
-                                                                <img src="{{ asset('storage/' . $news->image) }}"
+                                                                <img src="{{ asset('img/news/' . $news->image) }}"
                                                                     alt="News Image" class="img-thumbnail"
                                                                     style="max-width: 50px; max-height: 50px;">
                                                             @else
