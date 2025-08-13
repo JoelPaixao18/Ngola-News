@@ -98,8 +98,13 @@
             <div class="row">
                 <!-- __________________________________________________
 
+<<<<<<< HEAD
                               Criando Formulario author Create
                         _______________________________________________________________-->
+=======
+                                  Criando Formulario author Create
+                            _______________________________________________________________-->
+>>>>>>> joel
 
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
