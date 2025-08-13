@@ -18,7 +18,7 @@ class CommentController extends Controller
     {
         //
         $comments = Comment::orderByDesc('id')->get();
-        return view('admin.comments.comment.index', compact('comments'));
+        return view('_admin.comments.comment.index', compact('comments'));
     }
 
     /**
@@ -30,7 +30,7 @@ class CommentController extends Controller
     {
         //
         $news = News::all(); // Busca todas as notícias cadastradas
-        return view('admin.comments.commentCreate.index', compact('news'));
+        return view('_admin.comments.commentCreate.index', compact('news'));
     }
 
     /**
@@ -81,7 +81,7 @@ class CommentController extends Controller
     public function show(Comment $comment)
     {
         //
-        return view('admin.comments.commentView.index', ['comment' => $comment]);
+        return view('_admin.comments.commentView.index', ['comment' => $comment]);
     }
 
     /**
@@ -93,7 +93,7 @@ class CommentController extends Controller
     public function edit(Comment $comment)
     {
         //
-        return view('admin.comments.commentEdit.index', ['comment' => $comment]);
+        return view('_admin.comments.commentEdit.index', ['comment' => $comment]);
     }
 
     /**

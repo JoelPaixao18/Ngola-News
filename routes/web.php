@@ -13,19 +13,19 @@ use App\Http\Controllers\TagController;
                     Dashboard routes
 -------------------------------------------------------*/
 
-Route::redirect('/', 'admin/dashboard');
+Route::redirect('/', '_admin/dashboard');
 
-Route::get('admin/dashboard', function () {
-    return view('admin.dashboard.crm.index');
+Route::get('_admin/dashboard', function () {
+    return view('_admin.dashboard.crm.index');
 });
-Route::get('admin/analytics', function () {
-    return view('admin.dashboard.Analytics.index');
+Route::get('_admin/analytics', function () {
+    return view('_admin.dashboard.Analytics.index');
 });
 /*-------------------------------------------------------
                     Category routes
 -------------------------------------------------------*/
 
-Route::prefix('admin.categories')->name('admin.')->group(function () {
+Route::prefix('_admin.categories')->name('admin.')->group(function () {
     Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::get('categoryCreate', [CategoryController::class, 'create'])->name('category.create');
     Route::post('categories', [CategoryController::class, 'store'])->name('categories.store');
@@ -38,7 +38,7 @@ Route::prefix('admin.categories')->name('admin.')->group(function () {
                     Author routes
 -------------------------------------------------------*/
 
-Route::prefix('admin.authors')->name('admin.')->group(function () {
+Route::prefix('_admin.authors')->name('admin.')->group(function () {
     Route::get('author', [AuthorController::class, 'index'])->name('author.index');
     Route::get('authorCreate', [AuthorController::class, 'create'])->name('author.create');
     Route::post('authorStore', [AuthorController::class, 'store'])->name('author.store');
@@ -52,7 +52,7 @@ Route::prefix('admin.authors')->name('admin.')->group(function () {
 /*-------------------------------------------------------
                     News routes
 -------------------------------------------------------*/
-Route::prefix('admin.news')->name('admin.')->group(function () {
+Route::prefix('_admin.news')->name('admin.')->group(function () {
     Route::get('news', [NewsController::class, 'index'])->name('news.index');
     Route::get('newsCreate', [NewsController::class, 'create'])->name('news.create');
     Route::post('newsStore', [NewsController::class, 'store'])->name('news.store');
@@ -67,7 +67,7 @@ Route::prefix('admin.news')->name('admin.')->group(function () {
 /* -----------------------------------------------
                     Event Routes
 --------------------------------------------------*/
-Route::prefix('admin/events')->name('admin.')->group(function () {
+Route::prefix('_admin/events')->name('admin.')->group(function () {
     Route::get('event', [EventController::class, 'index'])->name('event.index');
     Route::get('eventCreate', [EventController::class, 'create'])->name('event.create');
     Route::post('eventStore', [EventController::class, 'store'])->name('event.store');
@@ -82,7 +82,7 @@ Route::prefix('admin/events')->name('admin.')->group(function () {
                     Comment Routes
 -------------------------------------------------------*/
 
-Route::prefix('admin/comments')->name('admin.')->group(function () {
+Route::prefix('_admin/comments')->name('admin.')->group(function () {
     Route::get('comment', [CommentController::class, 'index'])->name('comments.index');
     Route::get('commentCreate', [CommentController::class, 'create'])->name('comment.create');
     Route::post('commentStore', [CommentController::class, 'store'])->name('comment.store');

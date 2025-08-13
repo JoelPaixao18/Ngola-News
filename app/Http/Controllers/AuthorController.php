@@ -17,7 +17,7 @@ class AuthorController extends Controller
         //
         $authors = Author::orderByDesc('id')->get();
 
-        return view('admin.authors.author.index', compact('authors'));
+        return view('_admin.authors.author.index', compact('authors'));
     }
 
     /**
@@ -28,7 +28,7 @@ class AuthorController extends Controller
     public function create()
     {
         //
-        return view('admin.authors.authorCreate.index');
+        return view('_admin.authors.authorCreate.index');
     }
 
     /**
@@ -77,7 +77,7 @@ class AuthorController extends Controller
     public function show(Author $author)
     {
         //
-        return view('admin.authors.authorView.index', ['author' => $author]);
+        return view('_admin.authors.authorView.index', ['author' => $author]);
     }
 
     /**
@@ -89,7 +89,7 @@ class AuthorController extends Controller
     public function edit(Author $author)
     {
         //
-        return view('admin.authors.authorEdit.index', ['author' => $author]);
+        return view('_admin.authors.authorEdit.index', ['author' => $author]);
     }
 
     /**
