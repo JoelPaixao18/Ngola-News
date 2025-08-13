@@ -18,7 +18,7 @@ class EventController extends Controller
     {
         //
         $events = Event::orderByDesc('id')->get();
-        return view('admin.events.event.index', compact('events'));
+        return view('_admin.events.event.index', compact('events'));
     }
 
     /**
@@ -35,7 +35,7 @@ class EventController extends Controller
         //trazendo os autores
         $authors = Author::all();
 
-        return view('admin.events.eventCreate.index', compact('categories', 'authors'));
+        return view('_admin.events.eventCreate.index', compact('categories', 'authors'));
     }
 
     /**
@@ -114,8 +114,8 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        // 
-        return view('admin.events.eventView.index', ['event' => $event]);
+        //
+        return view('_admin.events.eventView.index', ['event' => $event]);
     }
 
     /**
@@ -129,7 +129,7 @@ class EventController extends Controller
         //
         $categories = Category::all();
         $authors = Author::all();
-        return view('admin.events.eventEdit.index', ['event' => $event], compact('categories', 'authors'));
+        return view('_admin.events.eventEdit.index', ['event' => $event], compact('categories', 'authors'));
     }
 
     /**

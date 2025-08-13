@@ -19,7 +19,7 @@ class NewsController extends Controller
     {
         //
         $news = News::orderByDesc('id')->get();
-        return view('admin.news.news.index', compact('news'));
+        return view('_admin.news.news.index', compact('news'));
     }
 
     /**
@@ -33,7 +33,7 @@ class NewsController extends Controller
         $categories1 = Category::where('type', 'Notícias')->get();
         $categories1 = Category::where('type', 'Notícia')->get();
         $categories = $categories1->merge($categories1);
-        return view('admin.news.newsCreate.index', compact('categories'));
+        return view('_admin.news.newsCreate.index', compact('categories'));
     }
 
     /**
@@ -93,7 +93,7 @@ class NewsController extends Controller
     {
         //
 
-        return view('admin.news.newsViews.index', ['news' => $news]);
+        return view('_admin.news.newsViews.index', ['news' => $news]);
     }
 
     /**
@@ -106,7 +106,7 @@ class NewsController extends Controller
     {
         //
         $categories = Category::all(); // Or any other query to fetch categories
-        return view('admin.news.newsEdit.index', [
+        return view('_admin.news.newsEdit.index', [
             'news' => $news,
             'categories' => $categories // Pass categories to the view
         ]);

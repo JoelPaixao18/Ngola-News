@@ -16,7 +16,7 @@ class CategoryController extends Controller
     {
         $categories = Category::orderByDesc('id')->get();
         //$categories = Category::all();
-        return view('admin.categories.categories.index', compact('categories'));
+        return view('_admin.categories.categories.index', compact('categories'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.categoryCreate.index');
+        return view('_admin.categories.categoryCreate.index');
     }
 
     /**
@@ -78,7 +78,7 @@ class CategoryController extends Controller
     {
         //
 
-        return view('admin.categories.categoryView.index', ['category' => $category]);
+        return view('_admin.categories.categoryView.index', ['category' => $category]);
     }
 
     /**
@@ -90,7 +90,7 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         //
-        return view('admin.categories.categoryEdit.index', ['category' => $category]);
+        return view('_admin.categories.categoryEdit.index', ['category' => $category]);
     }
 
     /**
@@ -139,6 +139,16 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category = Category::findOrFail($category->id);
+
+        // Verifica se a categoria está associada a algum artigo
+        if (!$category) {
+            return redirect()->back()->with('error', 'categoria não encontrada!');
+        }
+
+
+        // Exclui a categoria do banco de dados
+
         $category->delete();
         return redirect()->route('admin.categories.index')->with('success', 'Categoria apagado com sucesso!');
     }
