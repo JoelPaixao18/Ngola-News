@@ -25,11 +25,11 @@
                         </a>
                     </div>
                     <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
-                        <a href="javascript:void(0);" class="btn btn-light-brand successAlertMessage">
+                        {{-- <a href="javascript:void(0);" class="btn btn-light-brand successAlertMessage">
                             <i class="feather-layers me-2"></i>
                             <span>Save as Draft</span>
-                        </a>
-                        <a href="javascript:void(0);" class="btn btn-danger">
+                        </a> --}}
+                        <a href="{{ route('admin.news.index')}}" class="btn btn-danger">
                             <i class="feather-chevron-left me-2"></i>
                             <span>Visualizar</span>
                         </a>
