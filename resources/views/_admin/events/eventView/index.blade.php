@@ -63,23 +63,6 @@
             </div>
         </div>
         <!-- [ page-header ] end -->
-<<<<<<< HEAD:resources/views/_admin/events/eventView/index.blade.php
-        <div class="main-content">
-<<<<<<< HEAD:resources/views/_admin/events/eventView/index.blade.php
-            <div class="card card-body general-info row">
-                <div class="col-6 d-flex align-items-center justify-content-between">
-                    <div class="wd-800 ht-300 mx-auto mb-3 position-relative">
-                        <div class="wd-800 ht-300 border border-5 border-gray-3 max">
-=======
-            <div class="card card-body general-info">
-                <div>
-                    <div class="wd-800 ht-300 mx-auto mb-3 border border-5 border-gray-3 max">
-                        <div class="wd-800 ht-300 ">
->>>>>>> 34a2064daf8b619f547ccc6c72ed1176c7cf69e1:resources/views/admin/events/eventView/index.blade.php
-                            <img src="{{ asset('img/events/' . $event->image) }}" alt="{{ $event->image }}"
-                                class="img-fluid object-fit-cover">
-=======
-
         <!-- Main Content -->
         <div class="container my-4">
             <!-- Event Image -->
@@ -147,7 +130,6 @@
                                 <i class="fas fa-history me-1"></i>
                                 {{ \Carbon\Carbon::parse($event->lastModifyedDate)->format('F j, Y \a\t g:i a') }}
                             </div>
->>>>>>> cb278ea561256b6853e18916fc50acdf97a9f65d:resources/views/admin/events/eventView/index.blade.php
                         </div>
                     </div>
                 </div>
