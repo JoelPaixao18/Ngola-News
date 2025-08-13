@@ -243,7 +243,7 @@
                                             <th>País</th>
                                             <th>Província</th>
                                             <th>Distrito</th>
-                                            <th>Estado</th>
+                                           {{--  <th>Estado</th> --}}
                                             <th>Data do Evento</th>
                                             <th>Ultima Alteração</th>
                                             <th class="text-end">Actions</th>
@@ -288,7 +288,7 @@
                                                 <td>{{ $event->country }}</td>
                                                 <td>{{ $event->state }}</td>
                                                 <td> {{ $event->city }}</td>
-                                                <td>{{ $event->status }}</td>
+                                                {{-- <td>{{ $event->status }}</td> --}}
                                                 <td>{{ $event->eventDate }}</td>
                                                 <td> {{ $event->lastModifyedDate }}</td>
                                                 <td>
