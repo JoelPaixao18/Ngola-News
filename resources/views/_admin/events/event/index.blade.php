@@ -232,18 +232,10 @@
                                             <th>Imagem</th>
                                             <th>Título</th>
                                             <th>Subtítulo</th>
-                                            {{--  <th>Autor</th> --}}
                                             <th>País</th>
                                             <th>Província</th>
                                             <th>Distrito</th>
-                                            <th>Estado</th>
-                                            <th>Data do Evento</th>
-                                            <th>Ultima Alteração</th>
-                                            <th class="text-end">Actions</th>
-                                            <th>País</th>
-                                            <th>Província</th>
-                                            <th>Distrito</th>
-                                            {{--  <th>Estado</th> --}}
+                                           {{--  <th>Estado</th> --}}
                                             <th>Data do Evento</th>
                                             <th>Ultima Alteração</th>
                                             <th class="text-end">Actions</th>
