@@ -78,9 +78,14 @@ class NewsController extends Controller
         $news = News::create($request->all());
         $data = $request->except('_token');
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('news_images', 'public');
-            $data['image'] = $imagePath;
+        // Upload da imagem
+        $imageName = null;
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $image = $request->file('image');
+            $extension = $image->extension();
+            $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+            $image->move(public_path('img/news'), $imageName);
+            $data['image'] = $imageName; // Adiciona o nome da imagem ao array de dados
         }
 
         News::create($data);
@@ -175,21 +180,18 @@ class NewsController extends Controller
             $data['slug'] = Str::slug($request->title);
         }
 
-        // Tratamento da imagem
-        if ($request->hasFile('image')) {
-            // Remove a imagem antiga se existir
-            if ($news->image) {
-                Storage::disk('public')->delete($news->image);
+        // Processar imagem se for enviada
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            // Remover imagem antiga se existir
+            if ($news->image && file_exists(public_path('img/news/' . $news->image))) {
+                unlink(public_path('img/news/' . $news->image));
             }
 
-            $imagePath = $request->file('image')->store('news_images', 'public');
-            $data['image'] = $imagePath;
-        } elseif ($request->has('remove_image')) {
-            // Se for para remover a imagem
-            if ($news->image) {
-                Storage::disk('public')->delete($news->image);
-            }
-            $data['image'] = null;
+            $image = $request->file('image');
+            $extension = $image->extension();
+            $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+            $image->move(public_path('img/news'), $imageName);
+            $data['image'] = $imageName;
         }
 
         // Atualiza todos os campos de uma vez

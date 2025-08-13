@@ -240,14 +240,10 @@
                                             <th>Imagem</th>
                                             <th>Título</th>
                                             <th>Subtítulo</th>
-<<<<<<< HEAD
-=======
-                                            {{--  <th>Autor</th> --}}
->>>>>>> 6cf6567ac845c64baadd2a44d4929517ffa0c544
                                             <th>País</th>
                                             <th>Província</th>
                                             <th>Distrito</th>
-                                            <th>Estado</th>
+                                           {{--  <th>Estado</th> --}}
                                             <th>Data do Evento</th>
                                             <th>Ultima Alteração</th>
                                             <th class="text-end">Actions</th>
@@ -292,7 +288,7 @@
                                                 <td>{{ $event->country }}</td>
                                                 <td>{{ $event->state }}</td>
                                                 <td> {{ $event->city }}</td>
-                                                <td>{{ $event->status }}</td>
+                                                {{-- <td>{{ $event->status }}</td> --}}
                                                 <td>{{ $event->eventDate }}</td>
                                                 <td> {{ $event->lastModifyedDate }}</td>
                                                 <td>
