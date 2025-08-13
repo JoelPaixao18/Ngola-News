@@ -79,7 +79,7 @@
                                 </a> --}}
                             </div>
                         </div>
-                        <a href="{{ route('admin.author.index')}}" class="btn btn-danger">
+                        <a href="{{ route('admin.author.index') }}" class="btn btn-danger">
                             <i class="feather-chevron-left me-2"></i>
                             <span>Visualizar</span>
                         </a>
@@ -104,39 +104,6 @@
                     <form id="authorForm" action="{{ route('admin.author.store') }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
-
-                        {{-- @if ($errors->any())
-                            <script>
-                                document.addEventListener('DOMContentLoaded', function() {
-                                    Swal.fire({
-                                        icon: 'error',
-                                        title: 'Erro de Validação',
-                                        html: `@foreach ($errors->all() as $error)
-                                                    <div>{{ $error }}</div>
-                                                @endforeach`,
-                                        confirmButtonText: 'OK',
-                                        showConfirmButton: true,
-                                        allowOutsideClick: false,
-                                        allowEscapeKey: false
-                                    });
-                                });
-                            </script>
-                        @endif
-
-                        @if (session('alert'))
-                            <script>
-                                document.addEventListener('DOMContentLoaded', function() {
-                                    Swal.fire({
-                                        icon: '{{ session('alert')['type'] }}',
-                                        title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
-                                        text: '{{ session('alert')['message'] }}',
-                                        confirmButtonText: 'OK',
-                                        timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
-                                        timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
-                                    });
-                                });
-                            </script>
-                        @endif --}}
 
                         <div class="row">
                             <div class="col-lg-12">
@@ -641,12 +608,10 @@
                                             <button type="submit" class="btn btn-danger"> Salvar
                                             <i class="feather-save ms-2"></i>
                                         </button>
-                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                 </div>
 
-                        </div>
+                            </div>
 
                     </form>
 
