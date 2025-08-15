@@ -97,8 +97,8 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                            Criando Formulario Event Create
-                             _______________________________________________________________-->
+                                                            Criando Formulario Event Create
+                                             _______________________________________________________________-->
                 <!-- [ page-header ] end -->
 
                 <!-- [ Main Content ] start -->
@@ -113,14 +113,14 @@
                                     <div class="card-body lead-status">
                                         <div class="mb-5 d-flex align-items-center justify-content-between">
                                             <h5 class="fw-bold mb-0 me-4">
-                                                <span class="d-block mb-2">Event Details :</span>
-                                                <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically
-                                                    refers to adding a new potential customer or sales prospect</span>
+                                                <span class="d-block mb-2">Editando Evento :</span>
+                                                <span class="fs-12 fw-normal text-muted text-truncate-1-line">Faça as
+                                                    alterações necessárias das informações do evento</span>
                                             </h5>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-6 mb-4">
-                                                <label class="form-label">Category</label>
+                                                <label class="form-label">Categoria</label>
                                                 <select class="form-select form-control" name="categoryId"
                                                     data-select2-selector="status">
                                                     @foreach ($categories as $category)
@@ -142,7 +142,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-lg-6 mb-4">
-                                                <label class="form-label">Event date</label>
+                                                <label class="form-label">Data de Eventos</label>
                                                 <input type="date" class="form-control" name="eventDate"
                                                     value="{{ $event->eventDate }}" id="date">
                                             </div>

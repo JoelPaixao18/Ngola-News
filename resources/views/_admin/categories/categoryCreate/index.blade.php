@@ -8,11 +8,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Categories</h5>
+                    <h5 class="m-b-10">Categoria</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Create</li>
+                    <li class="breadcrumb-item">Criar</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -50,12 +50,12 @@
                         <div class="card-body lead-status">
                             <div class="mb-5 d-flex align-items-center justify-content-between">
                                 <h5 class="fw-bold mb-0 me-4">
-                                    <span class="d-block mb-2">Category Status :</span>
-                                    <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to
-                                        adding a new potential customer or sales prospect</span>
+                                    <span class="d-block mb-2">Criando Categoria :</span>
+                                    <span class="fs-12 fw-normal text-muted text-truncate-1-line">Normalmente se refere a
+                                        adicionar uma nova Categoria</span>
                                 </h5>
-                                <a href="{{ route('admin.categories.index') }}" class="btn btn-sm btn-light-brand">List
-                                    Category</a>
+                                <a href="{{ route('admin.categories.index') }}" class="btn btn-sm btn-light-brand">Listar
+                                    Categoria</a>
                             </div>
                             <form action="{{ route('admin.categories.store') }}" method="POST">
                                 @csrf

@@ -1,17 +1,16 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Lisar Autores')
-@section('content-authors')
-
+@section('title', 'Ngola News - Listar Tags')
+@section('content-tags')
     <div class="nxl-content">
         <!-- [ page-header ] start -->
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Autores</h5>
+                    <h5 class="m-b-10">Tags</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Autores</li>
+                    <li class="breadcrumb-item">Listagem</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -28,52 +27,56 @@
                             <i class="feather-bar-chart"></i>
                         </a>
                         <div class="dropdown">
-                            <a class="btn btn-icon btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10"
+                            <a class="btn btn-icon btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 12"
                                 data-bs-auto-close="outside">
                                 <i class="feather-filter"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <span class="wd-7 ht-7 bg-primary rounded-circle d-inline-block me-3"></span>
-                                    <span>New</span>
+                                    <i class="feather-eye me-3"></i>
+                                    <span>All</span>
                                 </a>
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <span class="wd-7 ht-7 bg-warning rounded-circle d-inline-block me-3"></span>
-                                    <span>Working</span>
+                                    <i class="feather-send me-3"></i>
+                                    <span>Sent</span>
                                 </a>
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <span class="wd-7 ht-7 bg-success rounded-circle d-inline-block me-3"></span>
-                                    <span>Qualified</span>
+                                    <i class="feather-book-open me-3"></i>
+                                    <span>Open</span>
                                 </a>
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <span class="wd-7 ht-7 bg-danger rounded-circle d-inline-block me-3"></span>
+                                    <i class="feather-archive me-3"></i>
+                                    <span>Draft</span>
+                                </a>
+                                <a href="javascript:void(0);" class="dropdown-item">
+                                    <i class="feather-bell me-3"></i>
+                                    <span>Revised</span>
+                                </a>
+                                <a href="javascript:void(0);" class="dropdown-item">
+                                    <i class="feather-shield-off me-3"></i>
                                     <span>Declined</span>
                                 </a>
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <span class="wd-7 ht-7 bg-teal rounded-circle d-inline-block me-3"></span>
-                                    <span>Customer</span>
-                                </a>
-                                <a href="javascript:void(0);" class="dropdown-item">
-                                    <span class="wd-7 ht-7 bg-indigo rounded-circle d-inline-block me-3"></span>
-                                    <span>Contacted</span>
+                                    <i class="feather-check me-3"></i>
+                                    <span>Accepted</span>
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <span class="wd-7 ht-7 bg-warning rounded-circle d-inline-block me-3"></span>
-                                    <span>Pending</span>
+                                    <i class="feather-briefcase me-3"></i>
+                                    <span>Leads</span>
                                 </a>
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <span class="wd-7 ht-7 bg-success rounded-circle d-inline-block me-3"></span>
-                                    <span>Approved</span>
+                                    <i class="feather-wifi-off me-3"></i>
+                                    <span>Expired</span>
                                 </a>
                                 <a href="javascript:void(0);" class="dropdown-item">
-                                    <span class="wd-7 ht-7 bg-teal rounded-circle d-inline-block me-3"></span>
-                                    <span>In Progress</span>
+                                    <i class="feather-users me-3"></i>
+                                    <span>Customers</span>
                                 </a>
                             </div>
                         </div>
                         <div class="dropdown">
-                            <a class="btn btn-icon btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10"
+                            <a class="btn btn-icon btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 12"
                                 data-bs-auto-close="outside">
                                 <i class="feather-paperclip"></i>
                             </a>
@@ -105,9 +108,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('admin.author.create') }}" class="btn btn-danger">
+                        <a href="{{ route('admin.tag.create') }}" class="btn btn-danger">
                             <i class="feather-plus me-2"></i>
-                            <span>Novo Autor</span>
+                            <span>Nova Tag</span>
                         </a>
                     </div>
                 </div>
@@ -125,19 +128,11 @@
                         <div class="card stretch stretch-full">
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="avatar-text avatar-xl rounded">
-                                            <i class="feather-users"></i>
-                                        </div>
-                                        <a href="javascript:void(0);" class="fw-bold d-block">
-                                            <span class="d-block">Total Leads</span>
-                                            <span class="fs-24 fw-bolder d-block">26,595</span>
-                                        </a>
-                                    </div>
-                                    <div class="badge bg-soft-success text-success">
-                                        <i class="feather-arrow-up fs-10 me-1"></i>
-                                        <span>36.85%</span>
-                                    </div>
+                                    <a href="javascript:void(0);" class="fw-bold d-block">
+                                        <span class="d-block">Paid</span>
+                                        <span class="fs-20 fw-bold d-block">78/100</span>
+                                    </a>
+                                    <div class="progress-1"></div>
                                 </div>
                             </div>
                         </div>
@@ -146,19 +141,11 @@
                         <div class="card stretch stretch-full">
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="avatar-text avatar-xl rounded">
-                                            <i class="feather-user-check"></i>
-                                        </div>
-                                        <a href="javascript:void(0);" class="fw-bold d-block">
-                                            <span class="d-block">Active Leads</span>
-                                            <span class="fs-24 fw-bolder d-block">2,245</span>
-                                        </a>
-                                    </div>
-                                    <div class="badge bg-soft-danger text-danger">
-                                        <i class="feather-arrow-down fs-10 me-1"></i>
-                                        <span>24.56%</span>
-                                    </div>
+                                    <a href="javascript:void(0);" class="fw-bold d-block">
+                                        <span class="d-block">Unpaid</span>
+                                        <span class="fs-20 fw-bold d-block">38/50</span>
+                                    </a>
+                                    <div class="progress-2"></div>
                                 </div>
                             </div>
                         </div>
@@ -167,19 +154,11 @@
                         <div class="card stretch stretch-full">
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="avatar-text avatar-xl rounded">
-                                            <i class="feather-user-plus"></i>
-                                        </div>
-                                        <a href="javascript:void(0);" class="fw-bold d-block">
-                                            <span class="d-block">New Leads</span>
-                                            <span class="fs-24 fw-bolder d-block">1,254</span>
-                                        </a>
-                                    </div>
-                                    <div class="badge bg-soft-success text-success">
-                                        <i class="feather-arrow-up fs-10 me-1"></i>
-                                        <span>33.29%</span>
-                                    </div>
+                                    <a href="javascript:void(0);" class="fw-bold d-block">
+                                        <span class="d-block">Overdue</span>
+                                        <span class="fs-20 fw-bold d-block">15/30</span>
+                                    </a>
+                                    <div class="progress-3"></div>
                                 </div>
                             </div>
                         </div>
@@ -188,19 +167,11 @@
                         <div class="card stretch stretch-full">
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="avatar-text avatar-xl rounded">
-                                            <i class="feather-user-minus"></i>
-                                        </div>
-                                        <a href="javascript:void(0);" class="fw-bold d-block">
-                                            <span class="d-block">Inactive Leads</span>
-                                            <span class="fs-24 fw-bolder d-block">4,586</span>
-                                        </a>
-                                    </div>
-                                    <div class="badge bg-soft-danger text-danger">
-                                        <i class="feather-arrow-down fs-10 me-1"></i>
-                                        <span>42.47%</span>
-                                    </div>
+                                    <a href="javascript:void(0);" class="fw-bold d-block">
+                                        <span class="d-block">Draft</span>
+                                        <span class="fs-20 fw-bold d-block">3/10</span>
+                                    </a>
+                                    <div class="progress-4"></div>
                                 </div>
                             </div>
                         </div>
@@ -209,46 +180,37 @@
             </div>
         </div>
         <!-- [ page-header ] end -->
-
         <!-- [ Main Content ] start -->
         <div class="main-content">
 
-            <!-- Este bloco pode ser removido se já estiver no layout principal -->
-            @if (session('success'))
-                <!-- Mantenha este apenas como fallback -->
-                <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
-                    <i class="feather-check-circle me-2 fs-20"></i>
-                    <div>{{ session('success') }}</div>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card stretch stretch-full">
                         <div class="card-body p-0">
                             <div class="table-responsive">
-                                <table class="table table-hover" id="leadList">
+                                <table class="table table-hover" id="proposalList">
                                     <thead>
                                         <tr>
                                             <th class="wd-30">
                                                 <div class="btn-group mb-1">
                                                     <div class="custom-control custom-checkbox ms-1">
                                                         <input type="checkbox" class="custom-control-input"
-                                                            id="checkAllLead">
-                                                        <label class="custom-control-label" for="checkAllLead"></label>
+                                                            id="checkAllProposal">
+                                                        <label class="custom-control-label"
+                                                            for="checkAllProposal"></label>
                                                     </div>
                                                 </div>
                                             </th>
                                             <th>ID</th>
-                                            <th>Foto</th>
-                                            <th>Nome</th>
-                                            <th>Biografia</th>
-                                            <th class="text-end">Ações</th>
-
+                                            <th>Nome da Tag</th>
+                                            <th>Descrição</th>o</th>
+                                            <th class="text-end">Actions</th>
                                         </tr>
+
                                     </thead>
+
                                     <tbody>
-                                        @foreach ($authors as $author)
+                                        @foreach ($tags as $tag)
                                             <tr class="single-item">
                                                 <td>
                                                     <div class="item-checkbox ms-1">
@@ -259,39 +221,22 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                    <div class="hstack gap-2">
-                                                        <span class="text-truncate-1-line">{{ $author->id }}</span>
-                                                    </div>
+                                                <td><a href="javascript:void(0);" class="fw-bold">{{ $tag->id }}</a>
                                                 </td>
                                                 <td>
-                                                    <div class="hstack gap-3">
-                                                        <div class="avatar-image ">
-                                                            @if ($author->foto)
-                                                                <a
-                                                                    href="{{ route('admin.author.show', ['author' => $author]) }}"><img
-                                                                        src="{{ asset('img/authors/' . $author->foto) }}"
-                                                                        alt="author Image" class="img-thumbnail"
-                                                                        style="max-width: 50px; max-height: 50px;"></a>
-                                                            @else
-                                                                <i class="feather-image"></i>
-                                                            @endif
+                                                    <a href="javascript:void(0)" class="hstack gap-3">
+                                                        <div>
+                                                            <span class="text-truncate-1-line">{{ $tag->name }}</span>
+                                                            {{-- <small
+                                                                class="fs-12 fw-normal text-muted">alex.della@outlook.com</small> --}}
                                                         </div>
-                                                    </div>
+                                                    </a>
                                                 </td>
-                                                <td>
-                                                    <div class="hstack gap-3">
-                                                        <span class="text-truncate-1-line">{{ $author->name }}</span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div href="apps-mail.html">
-                                                        {{ Str::limit($author->biography, 50, '...') }}</div>
-                                                </td>
+                                                <td class="fw-bold text-dark">{{ $tag->description }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
-                                                        <a href="{{ route('admin.author.show', ['author' => $author]) }}"
-                                                            class="avatar-text avatar-md">
+                                                        <a class="avatar-text avatar-md"
+                                                            href="{{ route('admin.tag.view', ['tag' => $tag]) }}">
                                                             <i class="feather feather-eye"></i>
                                                         </a>
                                                         <div class="dropdown">
@@ -300,20 +245,18 @@
                                                                 <i class="feather feather-more-horizontal"></i>
                                                             </a>
                                                             <ul class="dropdown-menu">
-                                                                <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="{{ route('admin.author.edit', ['author' => $author]) }}">
-                                                                        <i class="feather feather-edit-3 me-3"></i>
-                                                                        <span>Editar</span>
-                                                                    </a>
+                                                                <a class="dropdown-item"
+                                                                    href="{{ route('admin.tag.edit', ['tag' => $tag]) }}">
+                                                                    <i class="feather feather-edit-3 me-3"></i>
+                                                                    <span>Edit</span>
+                                                                </a>
                                                                 </li>
-
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
                                                                     <a class="dropdown-item"
-                                                                        href="{{ route('admin.author.delete', ['author' => $author]) }}">
+                                                                        href="{{ route('admin.tag.delete', ['tag' => $tag]) }}">
                                                                         <i class="feather feather-trash-2 me-3"></i>
-                                                                        <span>Deletar</span>
+                                                                        <span>Delete</span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
@@ -323,8 +266,10 @@
                                             </tr>
                                         @endforeach
                                     </tbody>
+
                                 </table>
                             </div>
+
                         </div>
                     </div>
                 </div>

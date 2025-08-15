@@ -8,11 +8,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">News</h5>
+                    <h5 class="m-b-10">Notícias</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">News</li>
+                    <li class="breadcrumb-item">Listagem</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -212,7 +212,7 @@
                                             {{-- <th>Status</th> --}}
                                             <th>Data de Públicação</th>
                                             {{-- <th>Descrição</th> --}}
-                                            <th class="text-end">Actions</th>
+                                            <th class="text-end">Ação</th>
                                         </tr>
 
                                     </thead>
@@ -231,7 +231,8 @@
                                                 </td>
                                                 <td>{{ $news->id }} </td>
                                                 <td>
-                                                    <a href="leads-view.html" class="hstack gap-3">
+                                                    <a href="{{ route('admin.news.view', ['news' => $news]) }}"
+                                                        class="hstack gap-3">
                                                         <div class="avatar-image avatar-md">
                                                             @if ($news->image)
                                                                 <img src="{{ asset('img/news/' . $news->image) }}"
@@ -243,7 +244,7 @@
                                                         </div>
                                                     </a>
                                                 </td>
-                                                <td><a href="apps-mail.html">{{ $news->title }}</a></td>
+                                                <td>{{ $news->title }}</td>
                                                 <td>
                                                     <div class="hstack gap-2">
                                                         {{ $news->slug }}

@@ -1,13 +1,13 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Visualizar Categoria')
-@section('content-categoryView')
+@section('title', 'Ngola News - Visualizar Tag')
+@section('content-tagView')
 
     <div class="nxl-content">
         <!-- [ page-header ] start -->
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Categoria</h5>
+                    <h5 class="m-b-10">Tags</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -27,7 +27,7 @@
                         <i class="feather-layers me-2"></i>
                         <span>Save & Send</span>
                     </a> --}}
-                        <a href="{{ route('admin.categories.index') }}" class="btn btn-danger">
+                        <a href="{{ route('admin.tags.index') }}" class="btn btn-danger">
                             <i class="feather-chevron-left me-2"></i>
                             Voltar</a>
                     </div>
@@ -1409,46 +1409,34 @@
                         <div class="mb-4 d-flex align-items-center justify-content-between">
                             <h5 class="fw-bold mb-0">
                                 <span class="d-block mb-2">Informação Geral :</span>
-                                <span class="fs-12 fw-normal text-muted d-block">Informação geral da Categoria</span>
+                                <span class="fs-12 fw-normal text-muted d-block">Informação geral da Tag</span>
                             </h5>
-                            <a href="{{ route('admin.categories.index') }}" class="btn btn-sm btn-light-brand">Listar
-                                Categoria</a>
+                            <a href="{{ route('admin.tags.index') }}" class="btn btn-sm btn-light-brand">Listar
+                                Tag</a>
                         </div>
                         <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">ID</div>
                             <div class="col-lg-10 hstack gap-1">
                                 <a href="javascript:void(0);" class="hstack gap-2">
-                                    <span>{{ $category->id }}</span>
+                                    <span>{{ $tag->id }}</span>
                                 </a>
                             </div>
                         </div>
+
+                        {{-- Name of Tag --}}
                         <div class="row mb-4">
-                            <div class="col-lg-2 fw-medium">Nome da Categoria</div>
+                            <div class="col-lg-2 fw-medium">Nome da Tag</div>
                             <div class="col-lg-10 hstack gap-1">
                                 <a href="javascript:void(0);" class="hstack gap-2">
-                                    <span>{{ $category->name }}</span>
+                                    <span>{{ $tag->name }}</span>
                                 </a>
                             </div>
                         </div>
-                        <div class="row mb-4">
-                            <div class="col-lg-2 fw-medium">Tipo de Categoria</div>
-                            <div class="col-lg-10 hstack gap-1">
-                                <a href="javascript:void(0);" class="hstack gap-2">
-                                    <span>{{ $category->type }}</span>
-                                </a>
-                            </div>
-                        </div>
-                        {{-- <div class="row mb-4">
-                            <div class="col-lg-2 fw-medium">Status</div>
-                            <div class="col-lg-10 hstack gap-1">
-                                <a href="javascript:void(0);" class="hstack gap-2">
-                                    <span>{{ $category->status }}</span>
-                                </a>
-                            </div>
-                        </div> --}}
+
+                        {{-- Description of Tag --}}
                         <div class="row mb-4">
                             <div class="col-lg-2 fw-medium">Descrição</div>
-                            <div class="col-lg-10 hstack gap-1">{{ $category->description }}</div>
+                            <div class="col-lg-10 hstack gap-1">{{ $tag->description }}</div>
                         </div>
                     </div>
                 </div>

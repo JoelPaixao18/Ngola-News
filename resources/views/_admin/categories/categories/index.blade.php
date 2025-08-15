@@ -10,7 +10,7 @@
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Categories</li>
+                    <li class="breadcrumb-item">Listagem</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -205,7 +205,7 @@
                                             <th>Nome da Categória</th>
                                             <th>Tipo de Categória</th>
                                             <th>Descrição</th>
-                                            <th class="text-end">Actions</th>
+                                            <th class="text-end">Ações</th>
                                         </tr>
 
                                     </thead>
@@ -222,18 +222,17 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td><a href="javascript:void(0);" class="fw-bold">{{ $category->id }}</a>
-                                                </td>
+                                                <td>{{ $category->id }}</td>
                                                 <td>
-                                                    <a href="javascript:void(0)" class="hstack gap-3">
+
                                                         <div>
                                                             <span class="text-truncate-1-line">{{ $category->name }}</span>
                                                             {{-- <small
                                                                 class="fs-12 fw-normal text-muted">alex.della@outlook.com</small> --}}
                                                         </div>
-                                                    </a>
+
                                                 </td>
-                                                <td class="fw-bold text-dark">{{ $category->type }}</td>
+                                                <td >{{ $category->type }}</td>
                                                 <td>{{ $category->description }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
