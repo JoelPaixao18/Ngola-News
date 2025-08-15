@@ -232,9 +232,7 @@
                                             <th>Imagem</th>
                                             <th>Título</th>
                                             <th>Subtítulo</th>
-                                            <th>País</th>
-                                            <th>Província</th>
-                                            <th>Distrito</th>
+                                            <th>Localização</th>
                                             {{--  <th>Estado</th> --}}
                                             <th>Data do Evento</th>
                                             <th>Ultima Alteração</th>
@@ -277,9 +275,7 @@
                                                 <td>
                                                     <div href="apps-mail.html">{{ $event->subtitle }}</div>
                                                 </td>
-                                                <td>{{ $event->country }}</td>
-                                                <td>{{ $event->state }}</td>
-                                                <td> {{ $event->city }}</td>
+                                                <td>{{ $event->location }}</td>
                                                 {{-- <td>{{ $event->status }}</td> --}}
                                                 <td>{{ $event->eventDate }}</td>
                                                 <td> {{ $event->lastModifyedDate }}</td>

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Category;
 use App\Models\Author;
+use App\Models\Cities;
 
 class Event extends Model
 {
@@ -27,12 +28,9 @@ class Event extends Model
         'author',
         'image',
         'description',
-        'country',
-        'state',
-        'city',
-        'status',
+        'location',
         'eventDate',
-        'lastModifyedDate',
+        'status',
         'categoryId',
         'authorId'
     ];
