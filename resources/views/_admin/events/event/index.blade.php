@@ -11,7 +11,7 @@
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Eventos</li>
+                    <li class="breadcrumb-item">Listagem</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -235,10 +235,10 @@
                                             <th>País</th>
                                             <th>Província</th>
                                             <th>Distrito</th>
-                                           {{--  <th>Estado</th> --}}
+                                            {{--  <th>Estado</th> --}}
                                             <th>Data do Evento</th>
                                             <th>Ultima Alteração</th>
-                                            <th class="text-end">Actions</th>
+                                            <th class="text-end">Ações</th>
 
                                         </tr>
                                     </thead>

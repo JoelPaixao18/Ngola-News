@@ -33,15 +33,12 @@ class NewsController extends Controller
     public function create()
     {
         //
-        $tags = Tag::all();
+        //trazendo as categorias
         $categories1 = Category::where('type', 'Notícias')->get();
-        $categories1 = Category::where('type', 'Notícia')->get();
-        $categories = $categories1->merge($categories1);
+        $categories2 = Category::where('type', 'Notícia')->get();
+        $categories = $categories1->merge($categories2);
 
-       /*  return view('_admin.news.newsCreate.index', compact('categories')); */
-
-
-        return view('_admin.news.newsCreate.index', compact('categories', 'tags'));
+        return view('_admin.news.newsCreate.index', compact('categories'));
     }
 
     /**
@@ -79,7 +76,7 @@ class NewsController extends Controller
             'category_id.exists' => 'A categoria selecionada é inválida.',
         ]);
 
-        $news = News::create($request->all());
+        /* $news = News::create($request->all()); */
         $data = $request->except('_token');
 
         // Upload da imagem
@@ -94,15 +91,11 @@ class NewsController extends Controller
 
         News::create($data);
 
-        // Salvar as tags
-        if ($request->has('tags')) {
+       // Salvar as tags
+         /* if ($request->has('tags')) {
             $news->tags()->sync($request->tags);
-        }
+        } */
 
-        return redirect()->route('admin.news.index')->with('alert', [
-            'type' => 'success',
-            'message' => 'Notícia criada com sucesso!'
-        ]);
         return redirect()->route('admin.news.index')->with('success', 'Notícia criado com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Notícia!');
     }
@@ -133,14 +126,7 @@ class NewsController extends Controller
         //
         $categories = Category::all(); // Or any other query to fetch categories
 
-        return view('_admin.news.newsEdit.index', ['news' => $news]);
-        $tags = Tag::all(); // pega todas as tags
-
-        return view('admin.news.newsEdit.index', [
-            'news' => $news,
-            'categories' => $categories, // Pass categories to the view
-            'tags' => $tags // envia as tags para a view
-        ]);
+        return view('_admin.news.newsEdit.index', ['news' => $news], compact('categories'));
     }
 
     /**
@@ -205,17 +191,12 @@ class NewsController extends Controller
         $news->update($data);
 
         // Atualizar as tags
-        if ($request->has('tags')) {
+        /* if ($request->has('tags')) {
             $news->tags()->sync($request->tags);
         } else {
             $news->tags()->sync([]); // Se não enviar nenhuma tag, remove todas
-        }
+        } */
 
-        return redirect()->route('admin.news.index')
-            ->with('alert', [
-                'type' => 'success',
-                'message' => 'Notícia atualizada com sucesso!'
-            ]);
         return redirect()->route('admin.news.index')->with('success', 'Notícia atualizada com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Notícia!');
     }
@@ -233,9 +214,6 @@ class NewsController extends Controller
         $news->delete();
 
         return redirect()->route('admin.news.index')
-            ->with('alert', [
-                'type' => 'success',
-                'message' => 'Notícia excluída com sucesso!'
-            ]);
+            ->with('success', 'Notícia eliminado com sucesso');
     }
 }

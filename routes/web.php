@@ -91,3 +91,17 @@ Route::prefix('_admin/comments')->name('admin.')->group(function () {
     Route::get('commentView/{comment}', [CommentController::class, 'show'])->name('comment.view');
     Route::get('commentDelete/{comment}', [CommentController::class, 'destroy'])->name('comment.delete');
 });
+
+/*-------------------------------------------------------
+                    Tags Routes
+-------------------------------------------------------*/
+
+Route::prefix('_admin.tags')->name('admin.')->group(function () {
+    Route::get('tags', [TagController::class, 'index'])->name('tags.index');
+    Route::get('tagCreate', [TagController::class, 'create'])->name('tag.create');
+    Route::post('tagStore', [TagController::class, 'store'])->name('tag.store');
+    Route::get('tagEdit/{tag}', [TagController::class, 'edit'])->name('tag.edit');
+    Route::put('tagUpdate/{tag}', [TagController::class, 'update'])->name('tag.update');
+    Route::get('tagView/{tag}', [TagController::class, 'show'])->name('tag.view');
+    Route::get('tagDelete/{tag}', [TagController::class, 'destroy'])->name('tag.delete');
+});

@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Criar Comentário')
-@section('content-commentCreate')
+@section('title', 'Ngola News - Editar Tag')
+@section('content-tagEdit')
 
     <!-- [ Craete Form ] -->
     <div class="nxl-content">
@@ -8,11 +8,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Commentários</h5>
+                    <h5 class="m-b-10">Tags</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Criar</li>
+                    <li class="breadcrumb-item">Edit</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -28,7 +28,7 @@
                             <i class="feather-layers me-2"></i>
                             <span>Save as Draft</span>
                         </a> --}}
-                        <a href="{{ route('admin.comments.index') }}" class="btn btn-danger">
+                        <a href="{{ route('admin.tags.index') }}" class="btn btn-danger">
                             <i class="feather-chevron-left me-2"></i>
                             <span>Voltar</span>
                         </a>
@@ -50,70 +50,29 @@
                         <div class="card-body lead-status">
                             <div class="mb-5 d-flex align-items-center justify-content-between">
                                 <h5 class="fw-bold mb-0 me-4">
-                                    <span class="d-block mb-2">Criar Comentário:</span>
+                                    <span class="d-block mb-2">Editando as Tag:</span>
                                     <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to
                                         adding a new potential customer or sales prospect</span>
                                 </h5>
-                                <a href="{{ route('admin.comments.index') }}" class="btn btn-sm btn-light-brand">Listar
-                                    Commentários</a>
+                                <a href="{{ route('admin.tags.index') }}" class="btn btn-sm btn-light-brand">Listar
+                                    Tags</a>
                             </div>
-                            <form action="{{ route('admin.comment.store') }}" method="POST">
+                            <form action="{{ route('admin.tag.update', ['tag' => $tag]) }}" method="POST">
                                 @csrf
-                                @method('POST')
-
+                                @method('PUT')
 
                                 <div class="row">
-
-                                    {{-- Comentários --}}
+                                    {{-- Nome --}}
                                     <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Notícias Publicadas</label>
-                                        <select class="form-control" name="news_id" data-select2-selector="news">
-                                            <option value="">-- Selecione uma notícia --</option>
-                                            @foreach ($news as $news)
-                                                <option value="{{ $news->id }}"
-                                                    {{ old('category_id', $comment->news_id ?? '') == $news->id ? 'selected' : '' }}>
-                                                    {{ $news->title }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <label class="form-label">Nome da Tag</label>
+                                        <input type="text" name="name" class="form-control"
+                                            value="{{ old('nome', $tag->name ?? '') }}" placeholder="Ex: COVID-19">
                                     </div>
 
-                                    {{-- Texto do Comentário --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Texto do Comentário</label>
-                                        <input type="text" name="text_comment" class="form-control"
-                                            value="{{ old('text_comment') }}" placeholder="Ex: Será que é verdade...">
-                                    </div>
-
-                                    {{-- Slug --}}
-                                    {{-- <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Slug</label>
-                                        <input type="text" name="slug" class="form-control"
-                                            value="{{ old('slug') }}" placeholder="ex: politica, desporto...">
-                                    </div> --}}
-
-                                    {{-- Autor do Comentário --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Autor do Comentário</label>
-                                        <input type="text" name="author_comment" class="form-control"
-                                            value="{{ old('author_comment') }}" placeholder="Ex: Ana Maria...">
-                                    </div>
-
-                                    {{-- Status --}}
-                                    {{--  <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Status</label>
-                                        <select class="form-control" name="status" data-select2-selector="status">
-                                            <option value="" disabled selected>Selecione o status</option>
-                                            <option value="active" data-bg="bg-success"> Ativo</option>
-                                            <option value="inactive" data-bg="bg-danger"> Inativo</option>
-                                        </select>
-                                    </div> --}}
-
-                                    {{-- Date --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Data de Publicação</label>
-                                        <input type="date" name="date" class="form-control"
-                                            value="{{ old('date', $comment->date ?? date('Y-m-d')) }}">
+                                    {{-- Descrição - descrevendo sobre o que se trata --}}
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Descrição</label>
+                                        <textarea name="description" class="form-control" rows="4" placeholder="Escreve uma descrição...">{{ old('description', $tag->description ?? '') }}</textarea>
                                     </div>
 
                                     {{-- Botão de Enviar --}}

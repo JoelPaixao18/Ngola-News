@@ -8,11 +8,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Categories</h5>
+                    <h5 class="m-b-10">Categoria</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Edit</li>
+                    <li class="breadcrumb-item">Editar</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -28,7 +28,7 @@
                             <i class="feather-layers me-2"></i>
                             <span>Save as Draft</span>
                         </a> --}}
-                        <a href="{{ route('admin.categories.index')}}" class="btn btn-danger">
+                        <a href="{{ route('admin.categories.index') }}" class="btn btn-danger">
                             <i class="feather-chevron-left me-2"></i>
                             <span>Voltar</span>
                         </a>
@@ -50,12 +50,12 @@
                         <div class="card-body lead-status">
                             <div class="mb-5 d-flex align-items-center justify-content-between">
                                 <h5 class="fw-bold mb-0 me-4">
-                                    <span class="d-block mb-2">Category Status :</span>
-                                    <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to
-                                        adding a new potential customer or sales prospect</span>
+                                    <span class="d-block mb-2">Editando a Categoria :</span>
+                                    <span class="fs-12 fw-normal text-muted text-truncate-1-line">Normalmente se refere a
+                                        editar/atualizar uma nova Categoria</span>
                                 </h5>
-                                <a href="{{ route('admin.categories.index') }}" class="btn btn-sm btn-light-brand">List
-                                    Category</a>
+                                <a href="{{ route('admin.categories.index') }}" class="btn btn-sm btn-light-brand">Listar
+                                    Categoria</a>
                             </div>
                             <form action="{{ route('admin.category.update', ['category' => $category->id]) }}"
                                 method="POST">
@@ -63,7 +63,7 @@
                                 @method('PUT')
 
                                 <div class="row">
-                                    {{-- Nome --}}
+                                    {{-- Campo dos Nomes das categorias --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Nome da Categoria</label>
                                         <input type="text" name="name" class="form-control"
@@ -71,15 +71,7 @@
                                             placeholder="Ex: Política, Desporto...">
                                     </div>
 
-                                    {{-- Slug --}}
-                                    {{-- <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Slug</label>
-                                        <input type="text" name="slug" class="form-control"
-                                            value="{{ old('slug', $category->slug) }}"
-                                            placeholder="ex: politica, desporto...">
-                                    </div> --}}
-
-                                    {{-- Tipo --}}
+                                    {{-- Campo select para selecionar os Tipos de categoria --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Tipo de Categoria</label>
                                         <input type="text" name="type" class="form-control"
@@ -87,25 +79,15 @@
                                             placeholder="Ex: Notícia, Eventos...">
                                     </div>
 
-                                    {{-- Status --}}
-                                    {{-- <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Status</label>
-                                        <select class="form-control" name="status" data-select2-selector="status">
-                                            <option value="" disabled selected>Selecione o status</option>
-                                            <option value="active" data-bg="bg-success"> Ativo</option>
-                                            <option value="inactive" data-bg="bg-danger"> Inativo</option>
-                                        </select>
-                                    </div> --}}
-
-                                    {{-- Descrição --}}
+                                    {{-- Descrição - descrevendo sobre o que se trata --}}
                                     <div class="col-12 mb-4">
                                         <label class="form-label">Descrição</label>
                                         <textarea name="description" class="form-control" rows="4" placeholder="Escreve uma descrição...">{{ old('description', $category->description ?? '') }}</textarea>
                                     </div>
 
-                                    {{-- Botão de Enviar --}}
+                                    {{-- Botão de atualizar as alterações --}}
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-danger"> Salvar
+                                        <button type="submit" class="btn btn-danger"> Atualizar
                                             <i class="feather-save ms-2"></i>
                                         </button>
                                     </div>

@@ -9,11 +9,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">News</h5>
+                    <h5 class="m-b-10">Notícias</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Edit</li>
+                    <li class="breadcrumb-item">Editar</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -51,52 +51,17 @@
                         <div class="card-body lead-status">
                             <div class="mb-5 d-flex align-items-center justify-content-between">
                                 <h5 class="fw-bold mb-0 me-4">
-                                    <span class="d-block mb-2">News Status :</span>
+                                    <span class="d-block mb-2">Editando Notícia :</span>
                                     <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to
                                         adding a new potential customer or sales prospect</span>
                                 </h5>
-                                <a href="{{ route('admin.news.index') }}" class="btn btn-sm btn-light-brand">List News</a>
+                                <a href="{{ route('admin.news.index') }}" class="btn btn-sm btn-light-brand">Listar
+                                    Notícia</a>
                             </div>
                             <form action="{{ route('admin.news.update', ['news' => $news]) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
-
-<<<<<<< HEAD:resources/views/_admin/news/newsEdit/index.blade.php
-=======
-                                @if ($errors->any())
-                                    <script>
-                                        document.addEventListener('DOMContentLoaded', function() {
-                                            Swal.fire({
-                                                icon: 'error',
-                                                title: 'Erro de Validação',
-                                                html: `@foreach ($errors->all() as $error)
-                                                    <div>{{ $error }}</div>
-                                                @endforeach`,
-                                                confirmButtonText: 'OK',
-                                                showConfirmButton: true,
-                                                allowOutsideClick: false,
-                                                allowEscapeKey: false
-                                            });
-                                        });
-                                    </script>
-                                @endif
-
-                                @if (session('alert'))
-                                    <script>
-                                        document.addEventListener('DOMContentLoaded', function() {
-                                            Swal.fire({
-                                                icon: '{{ session('alert')['type'] }}',
-                                                title: '{{ session('alert')['type'] == 'success' ? 'Sucesso!' : 'Erro!' }}',
-                                                text: '{{ session('alert')['message'] }}',
-                                                confirmButtonText: 'OK',
-                                                timer: {{ session('alert')['type'] == 'success' ? '3000' : 'null' }},
-                                                timerProgressBar: {{ session('alert')['type'] == 'success' ? 'true' : 'false' }}
-                                            });
-                                        });
-                                    </script>
-                                @endif
->>>>>>> 34a2064daf8b619f547ccc6c72ed1176c7cf69e1:resources/views/admin/news/newsEdit/index.blade.php
 
                                 <div class="row">
                                     {{-- Categoria --}}
@@ -186,19 +151,10 @@
                                         <label class="form-label">Texto</label>
                                         <textarea name="description" class="form-control" rows="4" placeholder="Escreve o corpo da notícia...">{{ old('description', $news->description ?? '') }}</textarea>
                                     </div>
-                                    {{-- Tags --}}
-                                    <label for="tags">Tags</label>
-                                    <select name="tags[]" multiple>
-                                        @foreach($tags as $tag)
-                                            <option value="{{ $tag->id_tag }}" {{ in_array($tag->id_tag, old('tags', isset($news) ? $news->tags->pluck('id_tag')->toArray() : [])) ? 'selected' : '' }}>
-                                                {{ $tag->name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
 
                                     {{-- Botão de Enviar --}}
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-danger"> Salvar
+                                        <button type="submit" class="btn btn-danger"> Atualizar
                                             <i class="feather-save ms-2"></i>
                                         </button>
                                     </div>

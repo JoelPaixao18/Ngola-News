@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use App\Models\News;
 
 use Illuminate\Database\Eloquent\Model;
@@ -11,13 +12,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Tag extends Model
 {
     //
- protected $fillable = [
-    "name",
-    "description",
- ] ;
+    use SoftDeletes;
+    
+    protected $fillable = [
+        "name",
+        "description",
+    ];
 
     public function news()
     {
-    return $this->belongsToMany(News::class, 'news_tags');
+        return $this->belongsToMany(News::class, 'news_tags');
     }
 }

@@ -13,7 +13,7 @@
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Novo</li>
+                    <li class="breadcrumb-item">Criar</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
                         <div class="dropdown filter-dropdown">
-                           {{--  <a class="btn btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10"
+                            {{--  <a class="btn btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10"
                                 data-bs-auto-close="outside">
                                 <i class="feather-filter me-2"></i>
                                 <span>Filter</span>
@@ -81,7 +81,7 @@
                         </div>
                         <a href="{{ route('admin.event.index') }}" class="btn btn-danger">
                             <i class="feather-chevron-left me-2"></i>
-                            <span>Visualizar</span>
+                            <span>Voltar</span>
                         </a>
                     </div>
                 </div>
@@ -97,8 +97,8 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                             Criando Formulario Event Create
-                                 _______________________________________________________________-->
+                                                     Criando Formulario Event Create
+                                         _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="eventForm" action="{{ route('admin.event.store') }}" method="post"
@@ -111,7 +111,7 @@
                                     <div class="card-body lead-status">
                                         <div class="mb-5 d-flex align-items-center justify-content-between">
                                             <h5 class="fw-bold mb-0 me-4">
-                                                <span class="d-block mb-2">Detalhes do Evento :</span>
+                                                <span class="d-block mb-2">Criando Eventos :</span>
                                                 <span class="fs-12 fw-normal text-muted text-truncate-1-line">
                                                     Insira as informações do seu próximo evento aqui.
                                                 </span>
@@ -123,6 +123,8 @@
                                                 <select class="form-select form-control" name="categoryId"
                                                     data-select2-selector="status">
                                                     @foreach ($categories as $category)
+                                                        <option value="">-- Selecione uma
+                                                            Categoria --</option>
                                                         <option value="{{ $category->id }}" data-bg="bg-primary">
                                                             {{ $category->name }}</option>
                                                     @endforeach
@@ -132,6 +134,7 @@
                                                 <label class="form-label">Estado:</label>
                                                 <select class="form-select form-control" name="status"
                                                     data-select2-selector="visibility">
+                                                    <option value="">-- Selecione um Estado --</option>
                                                     <option value="1">Ativo</option>
                                                     <option value="0">Desativo</option>
                                                 </select>

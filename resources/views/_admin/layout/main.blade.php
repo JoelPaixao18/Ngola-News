@@ -121,6 +121,16 @@
         {{-- Content Show news --}}
         @yield('content-newsView')
 
+        {{-- #------ Menu Tags ------# --}}
+        {{-- Content tag --}}
+        @yield('content-tags')
+        {{-- Content Create tag --}}
+        @yield('content-tagCreate')
+        {{-- Content Edit tag --}}
+        @yield('content-tagEdit')
+        {{-- Content Show tag --}}
+        @yield('content-tagView')
+
         {{-- Footer --}}
         @include('_admin.layout.footer')
     </main>

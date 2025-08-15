@@ -9,11 +9,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">News</h5>
+                    <h5 class="m-b-10">Notícias</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Create</li>
+                    <li class="breadcrumb-item">Criar</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -31,7 +31,7 @@
                         </a> --}}
                         <a href="{{ route('admin.news.index') }}" class="btn btn-danger">
                             <i class="feather-chevron-left me-2"></i>
-                            <span>Visualizar</span>
+                            <span>Voltar</span>
                         </a>
                     </div>
                 </div>
@@ -51,11 +51,12 @@
                         <div class="card-body lead-status">
                             <div class="mb-5 d-flex align-items-center justify-content-between">
                                 <h5 class="fw-bold mb-0 me-4">
-                                    <span class="d-block mb-2">News Status :</span>
-                                    <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to
-                                        adding a new potential customer or sales prospect</span>
+                                    <span class="d-block mb-2">Criando Notícias :</span>
+                                    <span class="fs-12 fw-normal text-muted text-truncate-1-line">Normalmente refere-se na
+                                        criação de uma nova Notícia</span>
                                 </h5>
-                                <a href="{{ route('admin.news.index') }}" class="btn btn-sm btn-light-brand">List News</a>
+                                <a href="{{ route('admin.news.index') }}" class="btn btn-sm btn-light-brand">Listar
+                                    Notícia</a>
                             </div>
                             <form action="{{ route('admin.news.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
@@ -93,10 +94,11 @@
                                     {{-- Destaque --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Destaque</label>
-                                        <select class="form-control" name="detach">
-                                            <option value="normal">Normal</option>
-                                            <option value="destaque">Destaque</option>
-                                            <option value="urgente">Urgente</option>
+                                        <select class="form-control" name="detach" data-select2-selector="detach">
+                                            <option value="" disabled selected>-- Selecione o destaque --</option>
+                                            <option value="normal"> Normal</option>
+                                            <option value="destaque"> Destaque</option>
+                                            <option value="urgente"> Urgente</option>
                                         </select>
                                     </div>
 
@@ -104,7 +106,7 @@
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Status</label>
                                         <select class="form-control" name="status" data-select2-selector="status">
-                                            <option value="" disabled selected>Selecione o status</option>
+                                            <option value="" disabled selected>-- Selecione o status --</option>
                                             <option value="draft" data-bg="bg-success"> Rascunho</option>
                                             <option value="published" data-bg="bg-danger"> Publicado</option>
                                             <option value="filed" data-bg="bg-warning"> Arquivado</option>
