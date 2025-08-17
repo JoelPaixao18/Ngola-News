@@ -275,10 +275,10 @@
                                                 <td>
                                                     <div href="apps-mail.html">{{ $event->subtitle }}</div>
                                                 </td>
-                                                <td>{{ $event->location }}</td>
+                                                <td>{{ $event->location}}</td>
                                                 {{-- <td>{{ $event->status }}</td> --}}
                                                 <td>{{ $event->eventDate }}</td>
-                                                <td> {{ $event->lastModifyedDate }}</td>
+                                                <td> {{ $event->updated_at }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
                                                         <a href="{{ route('admin.event.view', ['event' => $event]) }}"

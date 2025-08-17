@@ -20,6 +20,10 @@ class Event extends Model
     {
         return $this->belongsTo(author::class);
     }
+     public function cities()
+    {
+        return $this->belongsTo(Cities::class);
+    }
 
     protected $guarded = [];
     protected $fillable = [

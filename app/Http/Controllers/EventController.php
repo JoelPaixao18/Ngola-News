@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Author;
 use App\Models\Cities;
+use App\Models\Country;
+use App\Models\State;
 
 class EventController extends Controller
 {
@@ -110,8 +112,10 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
+        $cities = Cities::with('state')->find($event->location);
         $event = Event::with('author', 'category')->find($event->id);
-        return view('_admin.events.eventView.index', ['event' => $event]);
+        $state = State::with('country')->find($cities->state_id);
+        return view('_admin.events.eventView.index', compact('event', 'cities', 'state'));
     }
 
     /**

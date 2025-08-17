@@ -12,6 +12,10 @@ class Cities extends Model
     {
         return $this->belongsTo(State::class);
     }
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
     use SoftDeletes;
     protected $fillable = ['name', 'state_id'];
 }
