@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Criar Categoria')
-@section('content-categoryCreate')
+@section('title', 'Ngola News - Criar Tipo de Categoria')
+@section('content-typeCategoryCreate')
 
     <!-- [ Craete Form ] -->
     <div class="nxl-content">
@@ -8,7 +8,7 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Categoria</h5>
+                    <h5 class="m-b-10">Tipos de Categorias</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -28,9 +28,9 @@
                             <i class="feather-layers me-2"></i>
                             <span>Save as Draft</span>
                         </a> --}}
-                        <a href="{{ route('admin.categories.index') }}" class="btn btn-danger">
+                        <a href="{{ route('admin.typeCategories.index') }}" class="btn btn-danger">
                             <i class="feather-chevron-left me-2"></i>
-                            <span>Visualizar</span>
+                            <span>Voltar</span>
                         </a>
                     </div>
                 </div>
@@ -50,57 +50,28 @@
                         <div class="card-body lead-status">
                             <div class="mb-5 d-flex align-items-center justify-content-between">
                                 <h5 class="fw-bold mb-0 me-4">
-                                    <span class="d-block mb-2">Criando Categoria :</span>
+                                    <span class="d-block mb-2">Criando Tipo de Categoria :</span>
                                     <span class="fs-12 fw-normal text-muted text-truncate-1-line">Normalmente se refere a
-                                        adicionar uma nova Categoria</span>
+                                        adicionar um novo tipo de Categoria</span>
                                 </h5>
-                                <a href="{{ route('admin.categories.index') }}" class="btn btn-sm btn-light-brand">Listar
+                                <a href="{{ route('admin.typeCategories.index') }}"
+                                    class="btn btn-sm btn-light-brand">ListarTips de
                                     Categoria</a>
                             </div>
-                            <form action="{{ route('admin.categories.store') }}" method="POST">
+                            <form action="{{ route('admin.typeCategories.store') }}" method="POST">
                                 @csrf
                                 @method('POST')
 
                                 <div class="row">
-                                    {{-- Nome --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Nome da Categoria</label>
-                                        <input type="text" name="name" class="form-control"
-                                            value="{{ old('nome') }}" placeholder="Ex: Política, Desporto...">
-                                    </div>
 
-                                    {{-- Slug --}}
-                                    {{-- <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Slug</label>
-                                        <input type="text" name="slug" class="form-control"
-                                            value="{{ old('slug') }}" placeholder="ex: politica, desporto...">
-                                    </div> --}}
-
-                                    {{-- Type Category --}}
+                                    {{-- Tipo --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Tipo de Categoria</label>
-                                        <select class="form-control" name="typecategory_id"
-                                            data-select2-selector="typeCategory">
-                                            <option value="">-- Selecione uma categoria --</option>
-                                            @foreach ($typeCategories as $typeCategory)
-                                                <option value="{{ $typeCategory->id }}"
-                                                    {{ old('typecategory_id', $typeCategory->typecategory_id ?? '') == $typeCategory->id ? 'selected' : '' }}>
-                                                    {{ $typeCategory->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <input type="text" name="name" class="form-control"
+                                            value="{{ old('name', $typeCategory->name ?? '') }}" value="{{ old('name') }}"
+                                            placeholder="Ex: Notícia, Eventos...">
                                     </div>
-
-                                    {{-- Status --}}
-                                    {{--  <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Status</label>
-                                        <select class="form-control" name="status" data-select2-selector="status">
-                                            <option value="" disabled selected>Selecione o status</option>
-                                            <option value="active" data-bg="bg-success"> Ativo</option>
-                                            <option value="inactive" data-bg="bg-danger"> Inativo</option>
-                                        </select>
-                                    </div> --}}
-
+                                    
                                     {{-- Descrição --}}
                                     <div class="col-12 mb-4">
                                         <label class="form-label">Descrição</label>

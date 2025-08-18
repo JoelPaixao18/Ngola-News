@@ -9,26 +9,33 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\News;
 use App\Models\Event;
+use App\Models\TypeCategory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
     use SoftDeletes;
 
-    public function events()
-    {
-        return $this->hasMany(Event::class);
-    }
-
     protected $fillable = [
         'name',
         'description',
-        'type',
+        /* 'type', */
+        'typecategory_id',
     ];
 
     public function news()
     {
         return $this->hasMany(News::class);
+    }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
+    public function typeCategory()
+    {
+    return $this->belongsTo(TypeCategory::class, 'typecategory_id');
     }
 
     /* protected static function boot()

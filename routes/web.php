@@ -8,6 +8,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\TypeCategoryController;
 
 /*-------------------------------------------------------
                     Dashboard routes
@@ -104,4 +105,18 @@ Route::prefix('_admin.tags')->name('admin.')->group(function () {
     Route::put('tagUpdate/{tag}', [TagController::class, 'update'])->name('tag.update');
     Route::get('tagView/{tag}', [TagController::class, 'show'])->name('tag.view');
     Route::get('tagDelete/{tag}', [TagController::class, 'destroy'])->name('tag.delete');
+});
+
+/*-------------------------------------------------------
+                    TypeCategory Routes
+-------------------------------------------------------*/
+
+Route::prefix('_admin.typeCategories')->name('admin.')->group(function () {
+    Route::get('typeCategory', [TypeCategoryController::class, 'index'])->name('typeCategories.index');
+    Route::get('typeCategoryCreate', [TypeCategoryController::class, 'create'])->name('typeCategory.create');
+    Route::post('typeCategories', [TypeCategoryController::class, 'store'])->name('typeCategories.store');
+    Route::get('typeCategoryView/{typeCategory}', [TypeCategoryController::class, 'show'])->name('typeCategory.show');
+    Route::get('typeCategoryEdit/{typeCategory}', [TypeCategoryController::class, 'edit'])->name('typeCategory.edit');
+    Route::put('typeCategoryUpdate/{typeCategory}', [TypeCategoryController::class, 'update'])->name('typeCategory.update');
+    Route::get('typeCategoryDelete/{typeCategory}', [TypeCategoryController::class, 'destroy'])->name('typeCategory.delete');
 });

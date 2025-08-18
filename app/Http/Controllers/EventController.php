@@ -32,7 +32,7 @@ class EventController extends Controller
     public function create()
     {
         //trazendo as categorias
-        $categories1 = Category::where('type', 'evento')->get();
+        $categories1 = Category::where('type', 'LIKE', 'evento')->get();
         $categories2 = Category::where('type', 'eventos')->get();
         $categories = $categories1->merge($categories2);
         //trazendo os autores
