@@ -6,6 +6,9 @@ use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Author;
+use App\Models\Cities;
+use App\Models\Country;
+use App\Models\State;
 
 class EventController extends Controller
 {
@@ -34,8 +37,10 @@ class EventController extends Controller
         $categories = $categories1->merge($categories2);
         //trazendo os autores
         $authors = Author::all();
+        //trazendo as cidades
+        $locations = Cities::all();
 
-        return view('_admin.events.eventCreate.index', compact('categories', 'authors'));
+        return view('_admin.events.eventCreate.index', compact('categories', 'authors', 'locations'));
     }
 
     /**
@@ -52,14 +57,25 @@ class EventController extends Controller
             'title' => 'required|string|max:100',
             'subtitle' => 'required|string|max:100',
             'description' => 'required|string',
-            'country' => 'required|string|max:100',
-            'state' => 'required|string|max:100',
-            'city' => 'required|string|max:100',
-            'status' => 'required|boolean ',
+            'status' => 'required|string',
             'eventDate' => 'required|date|after_or_equal:today',
             'categoryId' => 'required|exists:categories,id',
             'authorId' => 'required|exists:authors,id',
+            'location' => 'required|exists:cities,id',
             'image' => 'required|image|mimes:jpg,jpeg,png',
+        ], [
+            'title.required' => 'O título é obrigatório.',
+            'subtitle.required' => 'O subtítulo é obrigatório.',
+            'description.required' => 'A descrição é obrigatória.',
+            'status.required' => 'O status é obrigatório.',
+            'eventDate.required' => 'A data do evento é obrigatória.',
+            'eventDate.after_or_equal' => 'A data do evento deve ser hoje ou uma data futura.',
+            'categoryId.required' => 'A categoria é obrigatória.',
+            'authorId.required' => 'O autor é obrigatório.',
+            'location.required' => 'A Loacalizaçao é obrigatória.',
+            'image.required' => 'A imagem é obrigatória.',
+            'image.image' => 'A imagem deve ser um arquivo de imagem válido.',
+            'image.mimes' => 'A imagem deve ser do tipo: jpg, jpeg, png.',
         ]);
 
         // Upload da imagem
@@ -75,31 +91,13 @@ class EventController extends Controller
         Event::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
+            'status' => $request->status,
             'image' => $imageName,
             'description' => $request->description,
-            'country' => $request->country,
-            'state' => $request->state,
-            'city' => $request->city,
-            'status' => $request->status,
             'eventDate' => $request->eventDate,
-            'lastModifyedDate' => now()->format('Y-m-d'),
             'categoryId' => $request->categoryId,
             'authorId' => $request->authorId,
-        ], [
-            'title.required' => 'O título é obrigatório.',
-            'subtitle.required' => 'O subtítulo é obrigatório.',
-            'description.required' => 'A descrição é obrigatória.',
-            'country.required' => 'O país é obrigatório.',
-            'state.required' => 'O estado é obrigatório.',
-            'city.required' => 'A cidade é obrigatória.',
-            'status.required' => 'O status é obrigatório.',
-            'eventDate.required' => 'A data do evento é obrigatória.',
-            'eventDate.after_or_equal' => 'A data do evento deve ser hoje ou uma data futura.',
-            'categoryId.required' => 'A categoria é obrigatória.',
-            'authorId.required' => 'O autor é obrigatório.',
-            'image.required' => 'A imagem é obrigatória.',
-            'image.image' => 'A imagem deve ser um arquivo de imagem válido.',
-            'image.mimes' => 'A imagem deve ser do tipo: jpg, jpeg, png.',
+            'location' => $request->location,
         ]);
 
         return redirect()->route('admin.event.index')->with('success', 'Evento criado com sucesso!');
@@ -114,8 +112,10 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
+        $cities = Cities::with('state')->find($event->location);
         $event = Event::with('author', 'category')->find($event->id);
-        return view('_admin.events.eventView.index', ['event' => $event]);
+        $state = State::with('country')->find($cities->state_id);
+        return view('_admin.events.eventView.index', compact('event', 'cities', 'state'));
     }
 
     /**
@@ -129,7 +129,8 @@ class EventController extends Controller
         //
         $categories = Category::all();
         $authors = Author::all();
-        return view('_admin.events.eventEdit.index', ['event' => $event], compact('categories', 'authors'));
+        $locations = Cities::all();
+        return view('_admin.events.eventEdit.index', ['event' => $event], compact('categories', 'authors', 'locations'));
     }
 
     /**
@@ -147,25 +148,21 @@ class EventController extends Controller
             'subtitle' => 'required|string|max:100',
             'authorId' => 'required|exists:authors,id',
             'description' => 'required|string',
-            'country' => 'required|string|max:100',
-            'state' => 'required|string|max:100',
-            'city' => 'required|string|max:100',
             'status' => 'required|string',
             'eventDate' => 'required|date|after_or_equal:today',
             'categoryId' => 'required|exists:categories,id',
             'image' => 'sometimes|image|mimes:jpg,jpeg,png', // Alterado para 'sometimes'
+            'location' => 'required|exists:cities,id',
         ], [
             'title.required' => 'O título é obrigatório.',
             'subtitle.required' => 'O subtítulo é obrigatório.',
             'authorId.required' => 'O autor é obrigatório.',
             'description.required' => 'A descrição é obrigatória.',
-            'country.required' => 'O país é obrigatório.',
-            'state.required' => 'O estado é obrigatório.',
-            'city.required' => 'A cidade é obrigatória.',
             'status.required' => 'O status é obrigatório.',
             'eventDate.required' => 'A data do evento é obrigatória.',
             'eventDate.after_or_equal' => 'A data do evento deve ser hoje ou uma data futura.',
             'categoryId.required' => 'A categoria é obrigatória.',
+            'location.required' => 'A Localização é obrigatória.',
             'image.image' => 'A imagem deve ser um arquivo de imagem válido.',
             'image.mimes' => 'A imagem deve ser do tipo: jpg, jpeg, png.',
             'image.sometimes' => 'A imagem é opcional, mas se fornecida, deve ser uma imagem válida.',
@@ -184,9 +181,6 @@ class EventController extends Controller
             $image->move(public_path('img/events'), $imageName);
             $validated['image'] = $imageName;
         }
-
-        // Atualizar data de modificação
-        $validated['lastModifyedDate'] = now()->format('Y-m-d');
 
         // Atualizar o evento
         $event->update($validated);

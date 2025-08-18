@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Category;
 use App\Models\Author;
+use App\Models\Cities;
 
 class Event extends Model
 {
@@ -19,6 +20,10 @@ class Event extends Model
     {
         return $this->belongsTo(author::class);
     }
+     public function cities()
+    {
+        return $this->belongsTo(Cities::class);
+    }
 
     protected $guarded = [];
     protected $fillable = [
@@ -27,12 +32,9 @@ class Event extends Model
         'author',
         'image',
         'description',
-        'country',
-        'state',
-        'city',
-        'status',
+        'location',
         'eventDate',
-        'lastModifyedDate',
+        'status',
         'categoryId',
         'authorId'
     ];

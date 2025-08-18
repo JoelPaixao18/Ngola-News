@@ -25,7 +25,7 @@
                         <a href="javascript:void(0);" class="btn btn-icon btn-light-brand">
                             <i class="feather-printer"></i>
                         </a>
-                        <a href="leads-create.html" class="btn btn-icon btn-light-brand">
+                        <a href="{{ route('admin.event.edit', ['event' => $event])}}" class="btn btn-icon btn-light-brand">
                             <i class="feather-edit"></i>
                         </a>
                         <div class="dropdown">
@@ -128,7 +128,7 @@
                             <div class="info-label">Última Atualização:</div>
                             <div class="info-value">
                                 <i class="fas fa-history me-1"></i>
-                                {{ \Carbon\Carbon::parse($event->lastModifyedDate)->format('F j, Y \a\t g:i a') }}
+                                {{ \Carbon\Carbon::parse($event->updated_at)->format('F j, Y \a\t g:i a') }}
                             </div>
                         </div>
                     </div>
@@ -142,17 +142,17 @@
                         <div class="location-container">
                             <div class="location-item">
                                 <i class="fas fa-globe-americas"></i>
-                                <strong>País:</strong> {{ $event->country }}
+                                <strong>País:</strong> {{ $state->country->name}}
                             </div>
                             
                             <div class="location-item">
                                 <i class="fas fa-map"></i>
-                                <strong>Província:</strong> {{ $event->state }}
+                                <strong>Província:</strong> {{ $cities->state->name}}
                             </div>
                             
                             <div class="location-item">
                                 <i class="fas fa-city"></i>
-                                <strong>Distrito:</strong> {{ $event->city }}
+                                <strong>Distrito:</strong> {{ $cities->name}}
                             </div>
                         </div>
                         
@@ -161,7 +161,7 @@
                             <div style="height: 200px; background-color: #e9ecef; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
                                 <div class="text-center">
                                     <i class="fas fa-map-marked-alt fa-2x mb-2"></i>
-                                    <p>Map of {{ $event->city }}, {{ $event->state }}</p>
+                                    <p>Map of {{ $cities->name }}, {{ $state->country->name }}</p>
                                 </div>
                             </div>
                         </div>

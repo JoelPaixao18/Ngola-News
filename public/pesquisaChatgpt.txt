@@ -1,9 +1,0 @@
-estou criando a parte administrative de um site de notícias e já começei a trabalhar alguns menus como: 
-categories(name, type, id)
-authors(name, biography, image, id)
-events(image, title, subtitle, description, event date, last modified date, categor id, author id, country, state, city, status, id)
-news(title, subtitle, category id, type, dasteqs, status, image, date, text, tag id, id)
-tags(name, id)
-comments(author, date, text, id news, id)
-
-Então desses menus o crud está funcional, mas eu gostaria de saber mais coisas sobre oque é realmente necessário num site administrador de notícias. Para além disso nos atributos de cada modelo quais são descartáveis, para não encher a base de dados com várias informações que não mudam muita coisa.
