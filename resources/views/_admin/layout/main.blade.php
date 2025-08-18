@@ -131,6 +131,16 @@
         {{-- Content Show tag --}}
         @yield('content-tagView')
 
+        {{-- #------ Menu Type Categories ------# --}}
+        {{-- Content typeCategories --}}
+        @yield('content-typeCategories')
+        {{-- Content Create typeCategory --}}
+        @yield('content-typeCategoryCreate')
+        {{-- Content Edit typeCategory --}}
+        @yield('content-typeCategoryEdit')
+        {{-- Content Show typeCategory --}}
+        @yield('content-typeCategoryView')
+
         {{-- Footer --}}
         @include('_admin.layout.footer')
     </main>

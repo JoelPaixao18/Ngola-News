@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Criar Categoria')
-@section('content-categoryCreate')
+@section('title', 'Ngola News - Editar Tipo de Categoria')
+@section('content-typeCategoryEdit')
 
     <!-- [ Craete Form ] -->
     <div class="nxl-content">
@@ -8,11 +8,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Categoria</h5>
+                    <h5 class="m-b-10">Tipos de Categorias</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Criar</li>
+                    <li class="breadcrumb-item">Editar</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -30,7 +30,7 @@
                         </a> --}}
                         <a href="{{ route('admin.categories.index') }}" class="btn btn-danger">
                             <i class="feather-chevron-left me-2"></i>
-                            <span>Visualizar</span>
+                            <span>Voltar</span>
                         </a>
                     </div>
                 </div>
@@ -50,67 +50,37 @@
                         <div class="card-body lead-status">
                             <div class="mb-5 d-flex align-items-center justify-content-between">
                                 <h5 class="fw-bold mb-0 me-4">
-                                    <span class="d-block mb-2">Criando Categoria :</span>
+                                    <span class="d-block mb-2">Editando Tipo de Categoria :</span>
                                     <span class="fs-12 fw-normal text-muted text-truncate-1-line">Normalmente se refere a
-                                        adicionar uma nova Categoria</span>
+                                        editar/atualizar um novo tipo de Categoria</span>
                                 </h5>
-                                <a href="{{ route('admin.categories.index') }}" class="btn btn-sm btn-light-brand">Listar
+                                <a href="{{ route('admin.typeCategories.index') }}"
+                                    class="btn btn-sm btn-light-brand">Listar Tipos de
                                     Categoria</a>
                             </div>
-                            <form action="{{ route('admin.categories.store') }}" method="POST">
+                            <form action="{{ route('admin.typeCategory.update', ['typeCategory' => $typeCategory->id]) }}"
+                                method="POST">
                                 @csrf
-                                @method('POST')
+                                @method('PUT')
 
                                 <div class="row">
-                                    {{-- Nome --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Nome da Categoria</label>
-                                        <input type="text" name="name" class="form-control"
-                                            value="{{ old('nome') }}" placeholder="Ex: Política, Desporto...">
-                                    </div>
-
-                                    {{-- Slug --}}
-                                    {{-- <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Slug</label>
-                                        <input type="text" name="slug" class="form-control"
-                                            value="{{ old('slug') }}" placeholder="ex: politica, desporto...">
-                                    </div> --}}
-
-                                    {{-- Type Category --}}
+                                    {{-- Campo select para selecionar os Tipos de categoria --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Tipo de Categoria</label>
-                                        <select class="form-control" name="typecategory_id"
-                                            data-select2-selector="typeCategory">
-                                            <option value="">-- Selecione uma categoria --</option>
-                                            @foreach ($typeCategories as $typeCategory)
-                                                <option value="{{ $typeCategory->id }}"
-                                                    {{ old('typecategory_id', $typeCategory->typecategory_id ?? '') == $typeCategory->id ? 'selected' : '' }}>
-                                                    {{ $typeCategory->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <input type="text" name="name" class="form-control"
+                                            value="{{ old('name', $typeCategory->name ?? '') }}"
+                                            placeholder="Ex: Notícia, Eventos...">
                                     </div>
 
-                                    {{-- Status --}}
-                                    {{--  <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Status</label>
-                                        <select class="form-control" name="status" data-select2-selector="status">
-                                            <option value="" disabled selected>Selecione o status</option>
-                                            <option value="active" data-bg="bg-success"> Ativo</option>
-                                            <option value="inactive" data-bg="bg-danger"> Inativo</option>
-                                        </select>
-                                    </div> --}}
-
-                                    {{-- Descrição --}}
+                                    {{-- Descrição - descrevendo sobre o que se trata --}}
                                     <div class="col-12 mb-4">
                                         <label class="form-label">Descrição</label>
-                                        <textarea name="description" class="form-control" rows="4" placeholder="Escreve uma descrição..."
-                                            value="{{ old('description') }}"></textarea>
+                                        <textarea name="description" class="form-control" rows="4" placeholder="Escreve uma descrição...">{{ old('description', $category->description ?? '') }}</textarea>
                                     </div>
 
-                                    {{-- Botão de Enviar --}}
+                                    {{-- Botão de atualizar as alterações --}}
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-danger"> Salvar
+                                        <button type="submit" class="btn btn-danger"> Atualizar
                                             <i class="feather-save ms-2"></i>
                                         </button>
                                     </div>

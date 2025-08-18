@@ -54,10 +54,8 @@ class News extends Model
         });
     }
 
-   public function tags()
+    public function tags()
     {
-    return $this->belongsToMany(Tag::class, 'news_tags');
+        return $this->belongsToMany(Tag::class, 'news_tags');
     }
-
-
 }

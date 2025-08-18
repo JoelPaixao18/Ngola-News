@@ -34,9 +34,7 @@ class NewsController extends Controller
     {
         //
         //trazendo as categorias
-        $categories1 = Category::where('type', 'Notícias')->get();
-        $categories2 = Category::where('type', 'Notícia')->get();
-        $categories = $categories1->merge($categories2);
+        $categories = Category::all();
 
         return view('_admin.news.newsCreate.index', compact('categories'));
     }
@@ -91,8 +89,8 @@ class NewsController extends Controller
 
         News::create($data);
 
-       // Salvar as tags
-         /* if ($request->has('tags')) {
+        // Salvar as tags
+        /* if ($request->has('tags')) {
             $news->tags()->sync($request->tags);
         } */
 

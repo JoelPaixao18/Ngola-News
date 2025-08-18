@@ -29,6 +29,21 @@
                     </ul>
                 </li>
 
+                {{-- Menu Types Categories --}}
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="javascript:void(0);" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-list"></i></span>
+                        <span class="nxl-mtext">Tipos de Categorias</span><span class="nxl-arrow"><i
+                                class="feather-chevron-right"></i></span>
+                    </a>
+                    <ul class="nxl-submenu">
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.typeCategories.index') }}">Lista
+                                de Tipos de Categorias</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.typeCategory.create') }}">Novo
+                                Tipo de Categoria</a></li>
+                    </ul>
+                </li>
+
                 {{-- Menu Category --}}
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">

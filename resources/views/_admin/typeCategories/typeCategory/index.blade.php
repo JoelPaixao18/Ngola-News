@@ -1,12 +1,12 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Listar Comentários')
-@section('content-categories')
+@section('title', 'Ngola News - Listar Tipos de Categorias')
+@section('content-typeCategories')
     <div class="nxl-content">
         <!-- [ page-header ] start -->
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Categories</h5>
+                    <h5 class="m-b-10">Tipos de Categorias</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -108,9 +108,9 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('admin.category.create') }}" class="btn btn-danger">
+                        <a href="{{ route('admin.typeCategory.create') }}" class="btn btn-danger">
                             <i class="feather-plus me-2"></i>
-                            <span>Nova Categoria</span>
+                            <span>Novo Tipo de Categoria</span>
                         </a>
                     </div>
                 </div>
@@ -202,7 +202,6 @@
                                                 </div>
                                             </th>
                                             <th>ID</th>
-                                            <th>Nome da Categória</th>
                                             <th>Tipo de Categória</th>
                                             <th>Descrição</th>
                                             <th class="text-end">Ações</th>
@@ -211,7 +210,7 @@
                                     </thead>
 
                                     <tbody>
-                                        @foreach ($categories as $category)
+                                        @foreach ($typeCategories as $typeCategory)
                                             <tr class="single-item">
                                                 <td>
                                                     <div class="item-checkbox ms-1">
@@ -222,22 +221,13 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>{{ $category->id }}</td>
-                                                <td>
-
-                                                        <div>
-                                                            <span class="text-truncate-1-line">{{ $category->name }}</span>
-                                                            {{-- <small
-                                                                class="fs-12 fw-normal text-muted">alex.della@outlook.com</small> --}}
-                                                        </div>
-
-                                                </td>
-                                                <td>{{ $category->typeCategory->name ?? 'Sem tipo' }}</td>
-                                                <td>{{ $category->description }}</td>
+                                                <td>{{ $typeCategory->id }}</td>
+                                                <td>{{ $typeCategory->name }}</td>
+                                                <td>{{ $typeCategory->description }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
                                                         <a class="avatar-text avatar-md"
-                                                            href="{{ route('admin.category.show', ['category' => $category]) }}">
+                                                            href="{{ route('admin.typeCategory.show', ['typeCategory' => $typeCategory]) }}">
                                                             <i class="feather feather-eye"></i>
                                                         </a>
                                                         <div class="dropdown">
@@ -247,7 +237,7 @@
                                                             </a>
                                                             <ul class="dropdown-menu">
                                                                 <a class="dropdown-item"
-                                                                    href="{{ route('admin.category.edit', ['category' => $category]) }}">
+                                                                    href="{{ route('admin.typeCategory.edit', ['typeCategory' => $typeCategory]) }}">
                                                                     <i class="feather feather-edit-3 me-3"></i>
                                                                     <span>Edit</span>
                                                                 </a>
@@ -255,7 +245,7 @@
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
                                                                     <a class="dropdown-item"
-                                                                        href="{{ route('admin.category.delete', ['category' => $category]) }}">
+                                                                        href="{{ route('admin.typeCategory.delete', ['typeCategory' => $typeCategory]) }}">
                                                                         <i class="feather feather-trash-2 me-3"></i>
                                                                         <span>Delete</span>
                                                                     </a>
