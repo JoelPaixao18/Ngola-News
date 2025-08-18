@@ -233,7 +233,7 @@
                                             <th>Título</th>
                                             <th>Subtítulo</th>
                                             <th>Localização</th>
-                                            {{--  <th>Estado</th> --}}
+                                            {{-- <th>Estado</th> --}}
                                             <th>Data do Evento</th>
                                             <th>Ultima Alteração</th>
                                             <th class="text-end">Ações</th>
@@ -275,7 +275,7 @@
                                                 <td>
                                                     <div href="apps-mail.html">{{ $event->subtitle }}</div>
                                                 </td>
-                                                <td>{{ $event->location}}</td>
+                                                <td>{{ $event->cities->name ?? $event->location }}</td>
                                                 {{-- <td>{{ $event->status }}</td> --}}
                                                 <td>{{ $event->eventDate }}</td>
                                                 <td> {{ $event->updated_at }}</td>
@@ -311,7 +311,6 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                            </tr>
                                             </tr>
                                         @endforeach
                                     </tbody>

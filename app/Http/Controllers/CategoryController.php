@@ -94,7 +94,8 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         //
-        return view('_admin.categories.categoryEdit.index', ['category' => $category]);
+        $typeCategories = TypeCategory::all();
+        return view('_admin.categories.categoryEdit.index', compact('category', 'typeCategories'));
     }
 
     /**
@@ -113,6 +114,7 @@ class CategoryController extends Controller
             'type' => 'required|string|max:50',
             /* 'status' => 'required|in:active,inactive', */
             'description' => 'nullable|string|max:1000',
+            'typecategory_id' => 'required|exists:type_categories,id',
         ], [
             'name.required' => 'O nome é obrigátorio.',
             /* 'slug.required' => 'O Slug é obrigátorio.', */
@@ -120,6 +122,8 @@ class CategoryController extends Controller
             'type.required' => 'O tipo é obrigátorio.',
             /* 'status.required' => 'Obrigátorio seleciona um status.', */
             'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
+            'typecategory_id.required' => 'O tipo de categoria é obrigatória.',
+            'typecategory_id.exists' => 'O tipo de categoria selecionada é inválida.',
         ]);
 
         $category->update([
@@ -128,6 +132,15 @@ class CategoryController extends Controller
             'type' => $request->type,
             /* 'status' => $request->status === 'active' ? 'active' : 'inactive', */
             'description' => $request->description,
+            'typecategory_id' => $request->typecategory_id,
+        ], [
+            'name' => $request->name,
+            /* 'slug' => $request->slug, */
+            'type' => $request->type,
+            /* 'status' => $request->status === 'active' ? 'active' : 'inactive', */
+            'description' => $request->description,
+            'typecategory_id.required' => 'O tipo de categoria é obrigatória.',
+            'typecategory_id.exists' => 'O tipo de categoria selecionada é inválida.',
         ]);
 
         return redirect()->route('admin.categories.index')->with('success', 'Categória atualizada com sucesso!');

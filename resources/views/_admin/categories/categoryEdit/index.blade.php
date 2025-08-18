@@ -71,12 +71,18 @@
                                             placeholder="Ex: Política, Desporto...">
                                     </div>
 
-                                    {{-- Campo select para selecionar os Tipos de categoria --}}
+                                    {{-- Type Category --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Tipo de Categoria</label>
-                                        <input type="text" name="type" class="form-control"
-                                            value="{{ old('type', $category->type ?? '') }}"
-                                            placeholder="Ex: Notícia, Eventos...">
+                                        <select class="form-control" name="typecategory_id"
+                                            data-select2-selector="typeCategory">
+                                            @foreach ($typeCategories as $typeCategory)
+                                                <option value="{{ $typeCategory->id }}"
+                                                    {{ old('typecategory_id', $typeCategory->typecategory_id ?? '') == $typeCategory->id ? 'selected' : '' }}>
+                                                    {{ $typeCategory->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </div>
 
                                     {{-- Descrição - descrevendo sobre o que se trata --}}
