@@ -213,7 +213,7 @@
         <!-- [ Main Content ] start -->
         <div class="main-content">
 
-            <!-- Este bloco pode ser removido se já estiver no layout principal -->
+           {{--  <!-- Este bloco pode ser removido se já estiver no layout principal -->
             @if (session('success'))
                 <!-- Mantenha este apenas como fallback -->
                 <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
@@ -221,7 +221,7 @@
                     <div>{{ session('success') }}</div>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            @endif
+            @endif --}}
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card stretch stretch-full">
