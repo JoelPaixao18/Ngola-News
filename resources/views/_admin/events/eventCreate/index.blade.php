@@ -97,8 +97,8 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                                                             Criando Formulario Event Create
-                                                                 _______________________________________________________________-->
+                          Criando Formulario Event Create
+           _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="eventForm" action="{{ route('admin.event.store') }}" method="post"
@@ -118,7 +118,7 @@
                                             </h5>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-3 mb-4">
+                                            <div class="col-lg-4 mb-4">
                                                 <label class="form-label">Categoria</label>
                                                 <select class="form-select form-control" name="categoryId"
                                                     data-select2-selector="status">
@@ -130,7 +130,7 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <div class="col-lg-3 mb-4">
+                                            <div class="col-lg-4 mb-4">
                                                 <label class="form-label">Estado:</label>
                                                 <select class="form-select form-control" name="status"
                                                     data-select2-selector="visibility">
@@ -139,7 +139,7 @@
                                                     <option value="0">Desativo</option>
                                                 </select>
                                             </div>
-                                            <div class="col-lg-3 mb-4">
+                                            <div class="col-lg-4 mb-4">
                                                 <label class="form-label">localização:</label>
                                                 <select class="form-select form-control" name="location"
                                                     data-select2-selector="visibility">
@@ -150,44 +150,45 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <div class="col-lg-3 mb-4">
-                                                <label class="form-label">Data do Evento</label>
-                                                <input type="date" class="form-control" name="eventDate"
-                                                    value="{{ old('eventDate', \Carbon\Carbon::now()->format('Y-m-d')) }}"
-                                                    id="date">
-                                            </div>
-                                            <div class="col-lg-6 mb-4">
-                                                <label for="fullnameInput" class="form-label">Título: </label>
-                                                <input type="text" class="form-control" value="{{ old('title') }}"
-                                                    name="title" id="fullnameInput" placeholder="Título... ">
-                                            </div>
-                                            <div class="col-lg-6 mb-4">
-                                                <label for="fullnameInput" class="form-label">Subtítulo: </label>
-                                                <input type="text" class="form-control" name="subtitle"
-                                                    value="{{ old('subtitle') }}" id="fullnameInput"
-                                                    placeholder="Subtítulo... ">
-                                            </div>
-                                            <div class="col-lg-6 mb-4">
-                                                <label for="mailInput" class="form-label">Imagem de Capa: </label>
-                                                <input type="file" class="form-control" name="image" id="mailInput"
-                                                    placeholder="Carregue a imagem...">
-                                            </div>
-                                            <div class="col-lg-6 mb-4">
+                                            <div class="col-lg-4 mb-4">
                                                 <label for="autorInput" class="form-label">Autor: </label>
-                                                <select class="form-control" name="authorId"
-                                                    data-select2-selector="country">
+                                                <select class="form-select form-control" name="authorId"
+                                                data-select2-selector="visibility">
+                                                    <option value="" selected>-- Selecione um Autor --</option>
                                                     @foreach ($authors as $author)
                                                         <option value="{{ $author->id }}" data-bg="bg-primary">
                                                             {{ $author->name }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
+                                            <div class="col-lg-4 mb-4">
+                                                <label for="fullnameInput" class="form-label">Título: </label>
+                                                <input type="text" class="form-control" value="{{ old('title') }}"
+                                                    name="title" id="fullnameInput" placeholder="Título... ">
+                                            </div>
+                                            <div class="col-lg-4 mb-4">
+                                                <label for="fullnameInput" class="form-label">Subtítulo: </label>
+                                                <input type="text" class="form-control" name="subtitle"
+                                                    value="{{ old('subtitle') }}" id="fullnameInput"
+                                                    placeholder="Subtítulo... ">
+                                            </div>
+                                            <div class="col-lg-4 mb-4">
+                                                <label class="form-label">Data do Evento</label>
+                                                <input type="date" class="form-control" name="eventDate"
+                                                    value="{{ old('eventDate', \Carbon\Carbon::now()->format('Y-m-d')) }}"
+                                                    id="date">
+                                            </div>
+                                            <div class="col-lg-4 mb-4">
+                                                <label for="mailInput" class="form-label">Imagem de Capa: </label>
+                                                <input type="file" class="form-control" name="image" id="mailInput"
+                                                    placeholder="Carregue a imagem...">
+                                            </div>
                                             <div class="col-lg-12 mb-4">
                                                 <label for="descriptionInput" class="form-label">Descrição: </label>
                                                 <textarea class="form-control" id="descriptionInput" name="description" cols="30" rows="5"
                                                     placeholder="Description">{{ old('description') }}</textarea>
                                             </div>
-                                            <div class="col-lg-6 mb-4"> <button type="submit" class="btn btn-danger">
+                                            <div class="col-lg-4 mb-4"> <button type="submit" class="btn btn-danger">
                                                     Salvar
                                                     <i class="feather-save ms-2"></i>
                                                 </button>
