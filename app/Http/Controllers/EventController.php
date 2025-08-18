@@ -20,7 +20,7 @@ class EventController extends Controller
     public function index()
     {
         //
-        $events = Event::orderByDesc('id')->get();
+        $events = Event::with('cities')->orderByDesc('id')->get(); // obter todos eventos e também o nome da cidade
         return view('_admin.events.event.index', compact('events'));
     }
 
