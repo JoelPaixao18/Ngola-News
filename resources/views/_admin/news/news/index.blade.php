@@ -235,22 +235,22 @@
                                                         class="hstack gap-3">
                                                         <div class="avatar-image avatar-md">
                                                             @if ($news->image)
-                                                                <img src="{{ asset('img/news/' . $news->image) }}"
+                                                               <a href="{{ asset('img/news/' . $news->image) }}"> <img src="{{ asset('img/news/' . $news->image) }}"
                                                                     alt="News Image" class="img-thumbnail"
-                                                                    style="max-width: 50px; max-height: 50px;">
+                                                                    style="max-width: 50px; max-height: 50px;"></a>
                                                             @else
                                                                 <i class="feather-image"></i>
                                                             @endif
                                                         </div>
                                                     </a>
                                                 </td>
-                                                <td>{{ $news->title }}</td>
+                                                <td>{{ Str::limit($news->title, 20, '...') }}</td>
                                                 <td>
                                                     <div class="hstack gap-2">
-                                                        {{ $news->slug }}
+                                                        {{ Str::limit($news->slug, 20, '...') }}
                                                     </div>
                                                 </td>
-                                                <td>{{ $news->subtitle }}</td>
+                                                <td>{{ Str::limit($news->subtitle, 20, '...') }}</td>
                                                 {{-- <td>{{ $news->detach }}</td> --}}
                                                 {{--  <td>
                                                     {{ $news->status }}

@@ -65,15 +65,17 @@
         <!-- [ page-header ] end -->
         <!-- Main Content -->
         <div class="container my-4">
-            <!-- Event Image -->
-            <div class="event-image-container">
-                <img src="{{ asset('img/events/' . $event->image) }}" alt="{{ $event->title }}" class="event-image">
-            </div>
             
             <!-- Event Title and Subtitle -->
             <div class="mb-4">
                 <h1 class="event-title">{{ $event->title }}</h1>
                 <div class="event-subtitle">{{ $event->subtitle }}</div>
+            </div>
+            <!-- Event Image -->
+            <div class="event-image-container">
+                <a href="{{ asset('img/events/' . $event->image) }}">
+                    <img src="{{ asset('img/events/' . $event->image) }}" alt="{{ $event->title }}" class="event-image rounded shadow">
+                </a>
             </div>
             
             <!-- Event Information -->
@@ -232,14 +234,17 @@
             height: 400px;
             overflow: hidden;
             border-radius: 0.5rem;
-            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
-            margin-bottom: 2rem;
+            margin-bottom: 0;
         }
         
         .event-image {
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
             object-fit: cover;
+            justify-content: center;
+            display: block;
+            margin: 0 auto;
+            border-radius: 0.5rem;
             transition: transform 0.3s ease;
         }
         
@@ -248,16 +253,18 @@
         }
         
         .event-title {
-            font-size: 2.5rem;
+             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--dark-bg);
+            margin: 2rem 2rem;
         }
         
         .event-subtitle {
-            font-size: 1.25rem;
+             font-size: 1.25rem;
             color: var(--secondary-color);
             margin-bottom: 1.5rem;
+            margin: 0 1rem;
         }
         
         .info-card {

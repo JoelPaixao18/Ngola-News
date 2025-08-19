@@ -233,7 +233,7 @@
 
                                                 </td>
                                                 <td>{{ $category->typeCategory->name ?? 'Sem tipo' }}</td>
-                                                <td>{{ $category->description }}</td>
+                                                <td>{{ Str::limit($category->description, 20, '...') }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
                                                         <a class="avatar-text avatar-md"
