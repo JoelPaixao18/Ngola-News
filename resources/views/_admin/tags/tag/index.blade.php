@@ -203,7 +203,7 @@
                                             </th>
                                             <th>ID</th>
                                             <th>Nome da Tag</th>
-                                            <th>Descrição</th>o</th>
+                                            <th>Descrição</th>
                                             <th class="text-end">Actions</th>
                                         </tr>
 

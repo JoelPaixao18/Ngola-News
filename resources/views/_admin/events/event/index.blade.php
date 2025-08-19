@@ -232,10 +232,10 @@
                                             <th>Imagem</th>
                                             <th>Título</th>
                                             <th>Subtítulo</th>
-                                            <th>Localização</th>
+                                            {{-- <th>Localização</th> --}}
                                             {{-- <th>Estado</th> --}}
                                             <th>Data do Evento</th>
-                                            <th>Ultima Alteração</th>
+                                            {{-- <th>Ultima Alteração</th> --}}
                                             <th class="text-end">Ações</th>
 
                                         </tr>
@@ -257,9 +257,9 @@
 
                                                         <div class="avatar-image avatar-md">
                                                             @if ($event->image)
-                                                                <img src="{{ asset('img/events/' . $event->image) }}"
+                                                               <a href="{{ asset('img/events/' . $event->image) }}"><img src="{{ asset('img/events/' . $event->image) }}"
                                                                     alt="event Image" class="img-thumbnail"
-                                                                    style="max-width: 50px; max-height: 50px;">
+                                                                    style="max-width: 50px; max-height: 50px;"></a> 
                                                             @else
                                                                 <i class="feather-image"></i>
                                                             @endif
@@ -269,16 +269,16 @@
                                                 </td>
                                                 <td>
                                                     <div class="hstack gap-3">
-                                                        <span class="text-truncate-1-line">{{ $event->title }}</span>
+                                                        <span class="text-truncate-1-line">{{ Str::limit($event->title, 20, '...') }}</span>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div href="apps-mail.html">{{ $event->subtitle }}</div>
+                                                    <div href="apps-mail.html">{{ Str::limit($event->subtitle, 20, '...') }}</div>
                                                 </td>
-                                                <td>{{ $event->cities->name ?? $event->location }}</td>
+                                                {{-- <td>{{ $event->cities->name ?? $event->location }}</td> --}}
                                                 {{-- <td>{{ $event->status }}</td> --}}
                                                 <td>{{ $event->eventDate }}</td>
-                                                <td> {{ $event->updated_at }}</td>
+                                                {{-- <td> {{ $event->updated_at }}</td> --}}
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
                                                         <a href="{{ route('admin.event.view', ['event' => $event]) }}"
