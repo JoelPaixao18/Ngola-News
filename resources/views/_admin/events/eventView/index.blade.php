@@ -334,7 +334,7 @@
         .action-buttons {
             display: flex;
             gap: 0.75rem;
-            justify-content: flex-end;
+            justify-content: flex-end;s
             margin-top: 1.5rem;
         }
         
