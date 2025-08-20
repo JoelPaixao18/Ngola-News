@@ -17,7 +17,7 @@ use App\Http\Controllers\TypeCategoryController;
 Route::redirect('/', '_admin/dashboard');
 
 Route::get('_admin/dashboard', function () {
-    return view('_admin.dashboard.crm.index');
+    return view('site.home.index');
 });
 Route::get('_admin/analytics', function () {
     return view('_admin.dashboard.Analytics.index');
