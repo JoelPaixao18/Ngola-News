@@ -77,7 +77,7 @@
 
             <div class="news-image-container">
                 <a href="{{ asset('img/news/' . $news->image) }}">
-                    <img src="{{ asset('img/news/' . $news->image) }}" alt="{{ $news->title }}" class="news-image rounded shadow">
+                    <img src="{{ asset('img/news/' . $news->image) }}" alt="{{ $news->title }}" class="news-image rounded shadow/">
                 </a>
                 
             </div>
