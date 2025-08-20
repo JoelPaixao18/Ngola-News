@@ -11,16 +11,29 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\TypeCategoryController;
 
 /*-------------------------------------------------------
-                    Dashboard routes
+                    Site Routes
 -------------------------------------------------------*/
+Route::redirect('/', 'site/home');
 
-Route::redirect('/', '_admin/dashboard');
-
-Route::get('_admin/dashboard', function () {
+Route::get('site/home', function () {
     return view('site.home.index');
 });
-Route::get('_admin/analytics', function () {
-    return view('_admin.dashboard.Analytics.index');
+Route::get('site/about', function () {
+    return view('site.about.index');
+});
+Route::get('site/contact', function () {
+    return view('site.contact.index');
+});
+
+
+/*____________________________________________________________ */
+
+
+/*-------------------------------------------------------
+                    Dashboard routes
+-------------------------------------------------------*/
+Route::get('admin/dashboard', function () {
+    return view('_admin.dashboard.crm.index');
 });
 /*-------------------------------------------------------
                     Category routes

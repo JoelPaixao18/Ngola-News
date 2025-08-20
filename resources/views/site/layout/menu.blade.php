@@ -4,20 +4,20 @@
           <i class="fal fa-times"></i>
         </button>
         <div class="mobile-logo">
-          <a href="home-newspaper.html">
-            <img src="assets/img/logo.svg" alt="Tnews">
+          <a href="/">
+            <img src="{{ url('site/assets/img/logo.svg')}}" alt="Tnews">
           </a>
         </div>
         <div class="th-mobile-menu">
           <ul>
             <li class="menu-item-has-children">
-              <a href="home-newspaper.html">Home</a>
+              <a href="/">Home</a>
               <ul class="sub-menu">
-                <li><a href="home-newspaper.html">Home Newspaper</a></li>
-                <li><a href="home-magazine.html">Home Magazine</a></li>
+                <li><a href="/">Home</a></li>
+                {{-- <li><a href="home-magazine.html">Home Magazine</a></li>
                 <li><a href="home-sports.html">Home Sports</a></li>
                 <li><a href="home-movie.html">Home Movie</a></li>
-                <li><a href="home-gadget.html">Home Gadget</a></li>
+                <li><a href="home-gadget.html">Home Gadget</a></li> --}}
               </ul>
             </li>
             <li><a href="about.html">About Us</a></li>

@@ -42,7 +42,17 @@
     @include('site.layout.search')
     @include('site.layout.switcher')
     @include('site.layout.popupSubscribe')
+    {{--Menu home--}}
     @yield('content-home')
+    {{--End menu home--}}
+
+    {{--Menu about--}}
+    @yield('content-about')
+    {{--End menu about--}}
+
+    {{--Menu contact--}}
+    @yield('content-contact')
+    {{--End menu contact--}}
   @include('site.layout.footer')
      <div class="scroll-top">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
