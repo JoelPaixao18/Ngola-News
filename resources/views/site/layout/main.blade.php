@@ -66,6 +66,14 @@
     @yield('content-newsCategory')
     {{--End menu newsCategory--}}
 
+    {{-- Menu Visualizar Evento --}}
+    @yield('content-visualizar-evento')
+    {{-- End menu Visualizar Evento --}}
+    
+    {{-- Menu Visualizar Notícia --}}
+    @yield('content-visualizar-noticia')
+    {{-- End menu Visualizar Notícia --}}
+
     @include('site.layout.footer')
     <div class="scroll-top">
       <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
