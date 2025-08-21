@@ -5,14 +5,15 @@
         <div class="hero-slider-1 th-carousel" data-fade="true" data-slide-show="1" data-md-slide-show="1"
             data-adaptive-height="true">
             <div class="th-hero-slide">
-                <div class="th-hero-bg" data-overlay="black" data-opacity="6" data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_1.jpg')}}">
+                <div class="th-hero-bg" data-overlay="black" data-opacity="6"
+                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_1.jpg') }}">
                 </div>
                 <div class="container">
                     <div class="blog-bg-style1">
-                        <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="blog.html"
+                        <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="#"
                             class="category">Gadget</a>
                         <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
-                            <a class="hover-line" href="blog-details.html">Tech made simple, Your Everyday Made
+                            <a class="hover-line" href="#">Tech made simple, Your Everyday Made
                                 extraordinary.</a>
                         </h3>
                         <div class="blog-meta" data-ani="slideinup" data-ani-delay="0.5s">
@@ -29,7 +30,8 @@
                 </div>
             </div>
             <div class="th-hero-slide">
-                <div class="th-hero-bg" data-overlay="black" data-opacity="6" data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_2.jpg')}}">
+                <div class="th-hero-bg" data-overlay="black" data-opacity="6"
+                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_2.jpg') }}">
                 </div>
                 <div class="container">
                     <div class="blog-bg-style1">
@@ -53,7 +55,8 @@
                 </div>
             </div>
             <div class="th-hero-slide">
-                <div class="th-hero-bg" data-overlay="black" data-opacity="6" data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_3.jpg')}}">
+                <div class="th-hero-bg" data-overlay="black" data-opacity="6"
+                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_3.jpg') }}">
                 </div>
                 <div class="container">
                     <div class="blog-bg-style1">
@@ -77,7 +80,8 @@
                 </div>
             </div>
             <div class="th-hero-slide">
-                <div class="th-hero-bg" data-overlay="black" data-opacity="6" data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_4.jpg')}}">
+                <div class="th-hero-bg" data-overlay="black" data-opacity="6"
+                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_4.jpg') }}">
                 </div>
                 <div class="container">
                     <div class="blog-bg-style1">
@@ -102,7 +106,7 @@
             </div>
             <div class="th-hero-slide">
                 <div class="th-hero-bg" data-overlay="black" data-opacity="6"
-                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_5.jpg')}}"></div>
+                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_5.jpg') }}"></div>
                 <div class="container">
                     <div class="blog-bg-style1">
                         <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="blog.html"
@@ -126,7 +130,7 @@
             </div>
             <div class="th-hero-slide">
                 <div class="th-hero-bg" data-overlay="black" data-opacity="6"
-                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_6.jpg')}}"></div>
+                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_6.jpg') }}"></div>
                 <div class="container">
                     <div class="blog-bg-style1">
                         <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="blog.html"
@@ -153,32 +157,33 @@
             <div class="container">
                 <div class="hero-tab" data-asnavfor=".hero-slider-1">
                     <div class="tab-btn active">
-                        <img src="{{ url('site/assets/img/hero/hero_1_1.jpg')}}" alt="Image">
+                        <img src="{{ url('site/assets/img/hero/hero_1_1.jpg') }}" alt="Image">
                     </div>
                     <div class="tab-btn">
-                        <img src="{{ url('site/assets/img/hero/hero_1_2.jpg')}}" alt="Image">
+                        <img src="{{ url('site/assets/img/hero/hero_1_2.jpg') }}" alt="Image">
                     </div>
                     <div class="tab-btn">
-                        <img src="{{ url('site/assets/img/hero/hero_1_3.jpg')}}" alt="Image">
+                        <img src="{{ url('site/assets/img/hero/hero_1_3.jpg') }}" alt="Image">
                     </div>
                     <div class="tab-btn">
-                        <img src="{{ url('site/assets/img/hero/hero_1_4.jpg')}}" alt="Image">
+                        <img src="{{ url('site/assets/img/hero/hero_1_4.jpg') }}" alt="Image">
                     </div>
                     <div class="tab-btn">
-                        <img src="{{ url('site/assets/img/hero/hero_1_5.jpg')}}" alt="Image">
+                        <img src="{{ url('site/assets/img/hero/hero_1_5.jpg') }}" alt="Image">
                     </div>
                     <div class="tab-btn">
-                        <img src="{{ url('site/assets/img/hero/hero_1_6.jpg')}}" alt="Image">
+                        <img src="{{ url('site/assets/img/hero/hero_1_6.jpg') }}" alt="Image">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="space-top">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col">
-                    <h2 class="sec-title has-line">Trending news</h2>
+                    <h2 class="sec-title has-line">Notícias por Categoria</h2>
                 </div>
                 <div class="col-auto">
                     <div class="sec-btn">
@@ -193,34 +198,36 @@
                     </div>
                 </div>
             </div>
+
             <div class="row th-carousel" id="blog-slide7" data-slide-show="4" data-lg-slide-show="3"
                 data-md-slide-show="2" data-sm-slide-show="2">
-                <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
-                    <div class="blog-style3">
-                        <div class="blog-img">
-                            <img src="{{ url('site/assets/img/blog/blog_5_2_21.jpg')}}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">Laptop</a>
-                            <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">Tech on the go, laptop Redefines
-                                    mobility.</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="author.html">
-                                    <i class="far fa-user"></i>By - Tnews
-                                </a>
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>17 Mar, 2025
-                                </a>
+                @foreach ($news as $news)
+                    <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
+                        <div class="blog-style3">
+                            <div class="blog-img">
+                                <img src="{{ asset('img/news/' . $news->image) }}" alt="blog image">
+                            </div>
+                            <div class="blog-content">
+                                <a data-theme-color="#6234AC" href="blog.html" class="category">Laptop</a>
+                                <h3 class="box-title-20">
+                                    <a class="hover-line" href="blog-details.html">{{$news->title}}</a>
+                                </h3>
+                                <div class="blog-meta">
+                                    <a href="author.html">
+                                        <i class="far fa-user"></i>By - Tnews
+                                    </a>
+                                    <a href="blog.html">
+                                        <i class="fal fa-calendar-days"></i>{{ $news->created_at->format('d M, Y') }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
+                @endforeach
+                {{-- <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
                     <div class="blog-style3">
                         <div class="blog-img">
-                            <img src="{{ url('site/assets/img/blog/blog_5_2_22.jpg')}}" alt="blog image">
+                            <img src="{{ url('site/assets/img/blog/blog_5_2_22.jpg') }}" alt="blog image">
                         </div>
                         <div class="blog-content">
                             <a data-theme-color="#6234AC" href="blog.html" class="category">Tech</a>
@@ -242,12 +249,13 @@
                 <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
                     <div class="blog-style3">
                         <div class="blog-img">
-                            <img src="{{ url('site/assets/img/blog/blog_5_2_23.jpg')}}" alt="blog image">
+                            <img src="{{ url('site/assets/img/blog/blog_5_2_23.jpg') }}" alt="blog image">
                         </div>
                         <div class="blog-content">
                             <a data-theme-color="#6234AC" href="blog.html" class="category">VR Glass</a>
                             <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">Elevate life, redefine Human potential.</a>
+                                <a class="hover-line" href="blog-details.html">Elevate life, redefine Human
+                                    potential.</a>
                             </h3>
                             <div class="blog-meta">
                                 <a href="author.html">
@@ -263,7 +271,7 @@
                 <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
                     <div class="blog-style3">
                         <div class="blog-img">
-                            <img src="{{ url('site/assets/img/blog/blog_5_2_24.jpg')}}" alt="blog image">
+                            <img src="{{ url('site/assets/img/blog/blog_5_2_24.jpg') }}" alt="blog image">
                         </div>
                         <div class="blog-content">
                             <a data-theme-color="#6234AC" href="blog.html" class="category">Camera</a>
@@ -285,7 +293,7 @@
                 <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
                     <div class="blog-style3">
                         <div class="blog-img">
-                            <img src="{{ url('site/assets/img/blog/blog_5_2_25.jpg')}}" alt="blog image">
+                            <img src="{{ url('site/assets/img/blog/blog_5_2_25.jpg') }}" alt="blog image">
                         </div>
                         <div class="blog-content">
                             <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
@@ -303,14 +311,16 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
+
         </div>
     </div>
+
     <div class="container space-top">
         <a href="https://themeforest.net/user/themeholy/portfolio">
-            <img class="light-img" src="{{ url('site/assets/img/ads/ads_5.jpg')}}" alt="ads">
-            <img class="dark-img" src="{{ url('site/assets/img/ads/ads_5_dark.jpg')}}" alt="ads">
+            <img class="light-img" src="{{ url('site/assets/img/ads/ads_5.jpg') }}" alt="ads">
+            <img class="dark-img" src="{{ url('site/assets/img/ads/ads_5_dark.jpg') }}" alt="ads">
         </a>
     </div>
     <section class="space">
@@ -322,7 +332,7 @@
                         <div class="col-xl-12 col-sm-6">
                             <div class="blog-style1">
                                 <div class="blog-img">
-                                    <img src="{{ url('site/assets/img/blog/blog_1_37.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_1_37.jpg') }}" alt="blog image">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
                                 </div>
                                 <h3 class="box-title-22">
@@ -342,7 +352,7 @@
                         <div class="col-xl-12 col-sm-6">
                             <div class="blog-style1">
                                 <div class="blog-img">
-                                    <img src="{{ url('site/assets/img/blog/blog_1_38.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_1_38.jpg') }}" alt="blog image">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">Monitor</a>
                                 </div>
                                 <h3 class="box-title-22">
@@ -365,7 +375,7 @@
                     <div class="dark-theme space-40">
                         <div class="blog-style3">
                             <div class="blog-img">
-                                <img src="{{ url('site/assets/img/blog/blog_5_14.jpg')}}" alt="blog image">
+                                <img src="{{ url('site/assets/img/blog/blog_5_14.jpg') }}" alt="blog image">
                             </div>
                             <div class="blog-content">
                                 <a data-theme-color="#6234AC" href="blog.html" class="category">Technology</a>
@@ -388,8 +398,8 @@
             </div>
         </div>
     </section>
-    <section class="bg-fixed dark-theme" data-bg-src="{{ url('site/assets/img/blog/blog_full_1.jpg')}}" data-overlay="black"
-        data-opacity="7">
+    <section class="bg-fixed dark-theme" data-bg-src="{{ url('site/assets/img/blog/blog_full_1.jpg') }}"
+        data-overlay="black" data-opacity="7">
         <div class="container">
             <div class="blog-bg-style1 row">
                 <div class="col-md-9 col-sm">
@@ -436,7 +446,7 @@
                 <div class="col-xl-4 col-md-6 filter-item cat1">
                     <div class="blog-style3 dark-theme">
                         <div class="blog-img">
-                            <img src="{{ url('site/assets/img/blog/blog_5_2_26.jpg')}}" alt="blog image">
+                            <img src="{{ url('site/assets/img/blog/blog_5_2_26.jpg') }}" alt="blog image">
                         </div>
                         <div class="blog-content">
                             <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
@@ -458,7 +468,7 @@
                 <div class="col-xl-4 col-md-6 filter-item cat1">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_1.jpg')}}" alt="blog image">
+                            <img src="{{ url('site/assets/img/blog/blog_3_3_1.jpg') }}" alt="blog image">
                         </div>
                         <div class="blog-content">
                             <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
@@ -477,7 +487,7 @@
                 <div class="col-xl-4 col-md-6 filter-item cat2">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_2.jpg')}}" alt="blog image">
+                            <img src="{{ url('site/assets/img/blog/blog_3_3_2.jpg') }}" alt="blog image">
                         </div>
                         <div class="blog-content">
                             <a data-theme-color="#6234AC" href="blog.html" class="category">Phone</a>
@@ -496,7 +506,7 @@
                 <div class="col-xl-4 col-md-6 filter-item cat2">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_3.jpg')}}" alt="blog image">
+                            <img src="{{ url('site/assets/img/blog/blog_3_3_3.jpg') }}" alt="blog image">
                         </div>
                         <div class="blog-content">
                             <a data-theme-color="#6234AC" href="blog.html" class="category">Phone</a>
@@ -515,7 +525,7 @@
                 <div class="col-xl-4 col-md-6 filter-item cat3">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_4.jpg')}}" alt="blog image">
+                            <img src="{{ url('site/assets/img/blog/blog_3_3_4.jpg') }}" alt="blog image">
                         </div>
                         <div class="blog-content">
                             <a data-theme-color="#6234AC" href="blog.html" class="category">Electronic</a>
@@ -534,7 +544,7 @@
                 <div class="col-xl-4 col-md-6 filter-item cat3">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_5.jpg')}}" alt="blog image">
+                            <img src="{{ url('site/assets/img/blog/blog_3_3_5.jpg') }}" alt="blog image">
                         </div>
                         <div class="blog-content">
                             <a data-theme-color="#6234AC" href="blog.html" class="category">Electronic</a>
@@ -553,7 +563,7 @@
                 <div class="col-xl-4 col-md-6 filter-item cat1">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_6.jpg')}}" alt="blog image">
+                            <img src="{{ url('site/assets/img/blog/blog_3_3_6.jpg') }}" alt="blog image">
                         </div>
                         <div class="blog-content">
                             <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
@@ -581,7 +591,7 @@
                         <div class="dark-theme img-overlay2 space-40">
                             <div class="blog-style3">
                                 <div class="blog-img">
-                                    <img src="{{ url('site/assets/img/blog/blog_5_15.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_5_15.jpg') }}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">Technology</a>
@@ -605,7 +615,7 @@
                         <div class="col-md-6">
                             <div class="blog-style2">
                                 <div class="blog-img img-big">
-                                    <img src="{{ url('site/assets/img/blog/blog_3_3_7.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_3_3_7.jpg') }}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">Robotic</a>
@@ -624,7 +634,7 @@
                         <div class="col-md-6">
                             <div class="blog-style2">
                                 <div class="blog-img img-big">
-                                    <img src="{{ url('site/assets/img/blog/blog_3_3_8.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_3_3_8.jpg') }}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">Tech</a>
@@ -643,7 +653,7 @@
                         <div class="col-md-6">
                             <div class="blog-style2">
                                 <div class="blog-img img-big">
-                                    <img src="{{ url('site/assets/img/blog/blog_3_3_9.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_3_3_9.jpg') }}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
@@ -662,7 +672,7 @@
                         <div class="col-md-6">
                             <div class="blog-style2">
                                 <div class="blog-img img-big">
-                                    <img src="{{ url('site/assets/img/blog/blog_3_3_10.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_3_3_10.jpg') }}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">VR Glass</a>
@@ -681,8 +691,10 @@
                     </div>
                     <div class="space">
                         <a href="https://themeforest.net/user/themeholy/portfolio">
-                            <img class="w-100 light-img" src="{{ url('site/assets/img/ads/ads_6.jpg')}}" alt="ads">
-                            <img class="w-100 dark-img" src="{{ url('site/assets/img/ads/ads_6_dark.jpg')}}" alt="ads">
+                            <img class="w-100 light-img" src="{{ url('site/assets/img/ads/ads_6.jpg') }}"
+                                alt="ads">
+                            <img class="w-100 dark-img" src="{{ url('site/assets/img/ads/ads_6_dark.jpg') }}"
+                                alt="ads">
                         </a>
                     </div>
                     <h2 class="sec-title has-line">Featured News</h2>
@@ -690,7 +702,7 @@
                         <div class="mb-4">
                             <div class="blog-style4">
                                 <div class="blog-img w-270">
-                                    <img src="{{ url('site/assets/img/blog/blog_6_3_1.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_6_3_1.jpg') }}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
@@ -714,7 +726,7 @@
                         <div class="mb-4">
                             <div class="blog-style4">
                                 <div class="blog-img w-270">
-                                    <img src="{{ url('site/assets/img/blog/blog_6_3_2.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_6_3_2.jpg') }}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">Technology</a>
@@ -738,7 +750,7 @@
                         <div class="mb-4">
                             <div class="blog-style4">
                                 <div class="blog-img w-270">
-                                    <img src="{{ url('site/assets/img/blog/blog_6_3_3.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_6_3_3.jpg') }}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">Robotic</a>
@@ -762,7 +774,7 @@
                         <div class="mb-4">
                             <div class="blog-style4">
                                 <div class="blog-img w-270">
-                                    <img src="{{ url('site/assets/img/blog/blog_6_3_4.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_6_3_4.jpg') }}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">Desk</a>
@@ -786,7 +798,7 @@
                         <div class="mb-4">
                             <div class="blog-style4">
                                 <div class="blog-img w-270">
-                                    <img src="{{ url('site/assets/img/blog/blog_6_3_5.jpg')}}" alt="blog image">
+                                    <img src="{{ url('site/assets/img/blog/blog_6_3_5.jpg') }}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <a data-theme-color="#6234AC" href="blog.html" class="category">VR Glass</a>
@@ -814,9 +826,10 @@
                         <div class="widget">
                             <div class="widget-ads">
                                 <a href="https://themeforest.net/user/themeholy/portfolio">
-                                    <img class="w-100 light-img" src="{{ url('site/assets/img/ads/siderbar_ads_3.jpg')}}" alt="ads">
-                                    <img class="w-100 dark-img" src="{{ url('site/assets/img/ads/siderbar_ads_3_dark.jpg')}}"
-                                        alt="ads">
+                                    <img class="w-100 light-img"
+                                        src="{{ url('site/assets/img/ads/siderbar_ads_3.jpg') }}" alt="ads">
+                                    <img class="w-100 dark-img"
+                                        src="{{ url('site/assets/img/ads/siderbar_ads_3_dark.jpg') }}" alt="ads">
                                 </a>
                             </div>
                         </div>
@@ -826,7 +839,8 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="blog-style2">
                                         <div class="blog-img img-big">
-                                            <img src="{{ url('site/assets/img/blog/blog_3_3_11.jpg')}}" alt="blog image">
+                                            <img src="{{ url('site/assets/img/blog/blog_3_3_11.jpg') }}"
+                                                alt="blog image">
                                         </div>
                                         <div class="blog-content">
                                             <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
@@ -845,7 +859,8 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="blog-style2">
                                         <div class="blog-img img-big">
-                                            <img src="{{ url('site/assets/img/blog/blog_3_3_12.jpg')}}" alt="blog image">
+                                            <img src="{{ url('site/assets/img/blog/blog_3_3_12.jpg') }}"
+                                                alt="blog image">
                                         </div>
                                         <div class="blog-content">
                                             <a data-theme-color="#6234AC" href="blog.html" class="category">Phone</a>
@@ -864,7 +879,8 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="blog-style2">
                                         <div class="blog-img img-big">
-                                            <img src="{{ url('site/assets/img/blog/blog_3_3_13.jpg')}}" alt="blog image">
+                                            <img src="{{ url('site/assets/img/blog/blog_3_3_13.jpg') }}"
+                                                alt="blog image">
                                         </div>
                                         <div class="blog-content">
                                             <a data-theme-color="#6234AC" href="blog.html" class="category">VR Glass</a>
@@ -883,7 +899,8 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="blog-style2">
                                         <div class="blog-img img-big">
-                                            <img src="{{ url('site/assets/img/blog/blog_3_3_14.jpg')}}" alt="blog image">
+                                            <img src="{{ url('site/assets/img/blog/blog_3_3_14.jpg') }}"
+                                                alt="blog image">
                                         </div>
                                         <div class="blog-content">
                                             <a data-theme-color="#6234AC" href="blog.html" class="category">Robotic</a>
@@ -901,9 +918,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="widget newsletter-widget3" data-bg-src="{{ url('site/assets/img/bg/line_bg_1.png')}}">
+                        <div class="widget newsletter-widget3"
+                            data-bg-src="{{ url('site/assets/img/bg/line_bg_1.png') }}">
                             <div class="mb-4">
-                                <img src="{{ url('site/assets/img/bg/newsletter_img_2.png')}}" alt="Icon">
+                                <img src="{{ url('site/assets/img/bg/newsletter_img_2.png') }}" alt="Icon">
                             </div>
                             <h3 class="box-title-24 mb-20">Subscribe Now</h3>
                             <form class="newsletter-form">

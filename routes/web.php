@@ -31,7 +31,7 @@ Route::get('site/newsView/{news}', [SiteController::class, 'newsView'])->name('s
 /*-------------------------------------------------------
                     Dashboard routes
 -------------------------------------------------------*/
-Route::get('admin/dashboard', function () {
+Route::get('_admin/dashboard', function () {
     return view('_admin.dashboard.crm.index');
 });
 /*-------------------------------------------------------
