@@ -37,7 +37,7 @@
   <body>
     @include('site.layout.header')
     @include('site.layout.menu')
-    {{-- @include('site.layout.sidemenu') Este include é do carrinho coisa que não é necessário --}}
+    @include('site.layout.sidemenu') 
     @include('site.layout.search')
     @include('site.layout.switcher')
     @include('site.layout.popupSubscribe')
