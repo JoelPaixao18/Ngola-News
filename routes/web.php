@@ -29,7 +29,7 @@ Route::get('site/eventCategory', [SiteController::class, 'eventCategory'])->name
 /*-------------------------------------------------------
                     Dashboard routes
 -------------------------------------------------------*/
-Route::get('admin/dashboard', function () {
+Route::get('_admin/dashboard', function () {
     return view('_admin.dashboard.crm.index');
 });
 /*-------------------------------------------------------
