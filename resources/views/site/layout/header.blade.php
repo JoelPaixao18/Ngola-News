@@ -93,8 +93,8 @@
                           <a href="#">Categorias</a>
                           <ul class="sub-menu">
                             <li><a href="/site/category">Todas</a></li>
-                            <li><a href="#">Notícias</a></li>
-                            <li><a href="#">Eventos</a></li>
+                            <li><a href="/site/newsCategory">Notícias</a></li>
+                            <li><a href="/site/eventCategory">Eventos</a></li>
                           </ul>
                         </li>
                         {{-- <li class="menu-item-has-children">

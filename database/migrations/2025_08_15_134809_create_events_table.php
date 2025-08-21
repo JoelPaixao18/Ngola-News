@@ -22,11 +22,11 @@ class CreateEventsTable extends Migration
             $table->unsignedBigInteger('location');
             $table->foreign('location')->references('id')->on('cities')->onDelete('cascade');
             $table->boolean('status', 100);
-            $table->date('eventDate');
-            $table->unsignedBigInteger('categoryId');
-            $table->foreign('categoryId')->references('id')->on('categories')->onDelete('cascade');
-            $table->unsignedBigInteger('authorId');
-            $table->foreign('authorId')->references('id')->on('authors')->onDelete('cascade');
+            $table->date('event_date');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->unsignedBigInteger('author_id');
+            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

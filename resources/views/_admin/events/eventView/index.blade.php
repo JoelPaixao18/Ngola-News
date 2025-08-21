@@ -122,7 +122,7 @@
                             <div class="info-label">Data do Evento:</div>
                             <div class="info-value">
                                 <i class="fas fa-calendar me-1"></i>
-                                {{ \Carbon\Carbon::parse($event->eventDate)->format('F j, Y') }}
+                                {{ \Carbon\Carbon::parse($event->event_date)->format('F j, Y') }}
                             </div>
                         </div>
                         

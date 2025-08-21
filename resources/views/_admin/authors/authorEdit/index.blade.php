@@ -153,7 +153,7 @@
                                     <div class="row">
                                         <div class="col-lg-6 mb-4">
                                             <label class="form-label">Category</label>
-                                            <select class="form-select form-control" name="categoryId"
+                                            <select class="form-select form-control" name="category_id"
                                                 data-select2-selector="status">
                                                     <option value="" data-bg="bg-primary">
                                             </select>
