@@ -37,11 +37,11 @@
   <body>
     @include('site.layout.header')
     @include('site.layout.menu')
-    @include('site.layout.sidemenu')
-    
+    {{-- @include('site.layout.sidemenu') Este include é do carrinho coisa que não é necessário --}}
     @include('site.layout.search')
     @include('site.layout.switcher')
     @include('site.layout.popupSubscribe')
+
     {{--Menu home--}}
     @yield('content-home')
     {{--End menu home--}}
@@ -53,11 +53,16 @@
     {{--Menu contact--}}
     @yield('content-contact')
     {{--End menu contact--}}
-  @include('site.layout.footer')
-     <div class="scroll-top">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-        </svg>
+
+    {{--Menu category--}}
+    @yield('content-category')
+    {{--End menu category--}}
+
+    @include('site.layout.footer')
+    <div class="scroll-top">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+      </svg>
     </div>
 
     <script src="{{ url('site/assets/js/vendor/jquery-3.7.1.min.js')}}"></script>

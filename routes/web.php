@@ -24,6 +24,10 @@ Route::get('site/about', function () {
 Route::get('site/contact', function () {
     return view('site.contact.index');
 });
+Route::get('site/category', function () {
+    return view('site.category.index');
+});
+
 
 
 /*____________________________________________________________ */

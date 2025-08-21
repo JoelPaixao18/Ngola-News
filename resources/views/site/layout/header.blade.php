@@ -79,7 +79,7 @@
                     <nav class="main-menu d-none d-lg-inline-block">
                       <ul>
                         <li>
-                          <a href="/">Home</a>{{-- 
+                          <a href="/">Pagina Inicial</a>{{-- 
                           <ul class="sub-menu">
                             <li><a href="/">Home Newspaper</a></li>
                             <li><a href="home-magazine.html">Home Magazine</a></li>
@@ -88,16 +88,16 @@
                             <li><a href="home-gadget.html">Home Gadget</a></li>
                           </ul> --}}
                         </li>
-                        <li><a href="/site/about">About Us</a></li>
+                        <li><a href="/site/about">Quem somos</a></li>
                         <li class="menu-item-has-children">
-                          <a href="#">Category</a>
+                          <a href="#">Categorias</a>
                           <ul class="sub-menu">
-                            <li><a href="category.html">Category</a></li>
-                            <li><a href="blog-three-column.html">Three Column</a></li>
-                            <li><a href="blog-three-column-sidebar.html">Three Column Sidebar</a></li>
+                            <li><a href="/site/category">Todas</a></li>
+                            <li><a href="#">Notícias</a></li>
+                            <li><a href="#">Eventos</a></li>
                           </ul>
                         </li>
-                        <li class="menu-item-has-children">
+                        {{-- <li class="menu-item-has-children">
                           <a href="#">Pages</a>
                           <ul class="sub-menu">
                             <li class="menu-item-has-children">
@@ -114,8 +114,6 @@
                             <li><a href="author.html">Author</a></li>
                             <li><a href="error.html">Error Page</a></li>
                           </ul>
-                        </li>
-                        <li class="menu-item-has-children">
                           <a href="#">Blog</a>
                           <ul class="sub-menu">
                             <li><a href="#">Blog Standard</a></li>
@@ -127,8 +125,8 @@
                             <li><a href="#">Blog Details Nosidebar</a></li>
                             <li><a href="#">Blog Details Full Image</a></li>
                           </ul>
-                        </li>
-                        <li><a href="/site/contact">Contact</a></li>
+                        </li> --}}
+                        <li><a href="/site/contact">Contactos</a></li>
                       </ul>
                     </nav>
                   </div>
@@ -136,12 +134,12 @@
                     <div class="header-button">
                       <button type="button" class="simple-icon searchBoxToggler">
                         <i class="far fa-search"></i>
-                      </button>
+                      </button>{{-- 
                       <button type="button" class="simple-icon d-none d-lg-block cartToggler">
                         <i class="far fa-cart-shopping"></i>
-                        <span class="badge">5</span>
+                        <span class="badge">5</span> --}}
                       </button>
-                      <a href="contact.html" class="th-btn style3">Contact Us</a>
+                      <a href="contact.html" class="th-btn style3">Contacte-nos</a>
                       <button type="button" class="th-menu-toggle d-block d-lg-none">
                         <i class="far fa-bars"></i>
                       </button>
