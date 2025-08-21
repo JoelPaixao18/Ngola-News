@@ -121,7 +121,7 @@
                                         <div class="row">
                                             <div class="col-lg-3 mb-4">
                                                 <label class="form-label">Categoria</label>
-                                                <select class="form-select form-control" name="categoryId"
+                                                <select class="form-select form-control" name="category_id"
                                                     data-select2-selector="status">
                                                     @foreach ($categories as $category)
                                                         <option value="{{ $category->id }}" data-bg="bg-primary">
@@ -153,8 +153,8 @@
                                             </div>
                                             <div class="col-lg-3 mb-4">
                                                 <label class="form-label">Data de Eventos</label>
-                                                <input type="date" class="form-control" name="eventDate"
-                                                    value="{{ $event->eventDate }}" id="date">
+                                                <input type="date" class="form-control" name="event_date"
+                                                    value="{{ $event->event_date }}" id="date">
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label for="fullnameInput" class="fw-semibold">Title: </label>
@@ -179,7 +179,7 @@
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label for="autorInput" class="fw-semibold">Autor: </label>
-                                                <select class="form-control" name="authorId"
+                                                <select class="form-control" name="author_id"
                                                     data-select2-selector="country">
                                                     @foreach ($authors as $author)
                                                         <option value="{{ $author->id }}" data-bg="bg-primary">

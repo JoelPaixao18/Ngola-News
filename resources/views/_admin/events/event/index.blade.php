@@ -277,7 +277,7 @@
                                                 </td>
                                                 {{-- <td>{{ $event->cities->name ?? $event->location }}</td> --}}
                                                 {{-- <td>{{ $event->status }}</td> --}}
-                                                <td>{{ $event->eventDate }}</td>
+                                                <td>{{ $event->event_date }}</td>
                                                 {{-- <td> {{ $event->updated_at }}</td> --}}
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">

@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\SiteController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\TypeCategoryController;
 
@@ -15,20 +16,12 @@ use App\Http\Controllers\TypeCategoryController;
 -------------------------------------------------------*/
 Route::redirect('/', 'site/home');
 
-Route::get('site/home', function () {
-    return view('site.home.index');
-});
-Route::get('site/about', function () {
-    return view('site.about.index');
-});
-Route::get('site/contact', function () {
-    return view('site.contact.index');
-});
-Route::get('site/category', function () {
-    return view('site.category.index');
-});
-
-
+Route::get('site/home', [SiteController::class, 'home'])->name('site.home');
+Route::get('site/contact', [SiteController::class, 'contact'])->name('site.contact');
+Route::get('site/about', [SiteController::class, 'about'])->name('site.about');
+Route::get('site/category', [SiteController::class, 'category'])->name('site.category');
+Route::get('site/newsCategory', [SiteController::class, 'NewsCategory'])->name('site.newsCategory');
+Route::get('site/eventCategory', [SiteController::class, 'eventCategory'])->name('site.eventCategory');
 
 /*____________________________________________________________ */
 

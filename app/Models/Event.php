@@ -33,9 +33,9 @@ class Event extends Model
         'image',
         'description',
         'location',
-        'eventDate',
+        'event_date',
         'status',
-        'categoryId',
-        'authorId'
+        'category_id',
+        'author_id'
     ];
 }

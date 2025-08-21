@@ -120,7 +120,7 @@
                                         <div class="row">
                                             <div class="col-lg-4 mb-4">
                                                 <label class="form-label">Categoria</label>
-                                                <select class="form-select form-control" name="categoryId"
+                                                <select class="form-select form-control" name="category_id"
                                                     data-select2-selector="status">
                                                         <option value="" selected>-- Selecione uma
                                                             Categoria --</option>
@@ -152,7 +152,7 @@
                                             </div>
                                             <div class="col-lg-4 mb-4">
                                                 <label for="autorInput" class="form-label">Autor: </label>
-                                                <select class="form-select form-control" name="authorId"
+                                                <select class="form-select form-control" name="author_id"
                                                 data-select2-selector="visibility">
                                                     <option value="" selected>-- Selecione um Autor --</option>
                                                     @foreach ($authors as $author)
@@ -174,8 +174,8 @@
                                             </div>
                                             <div class="col-lg-4 mb-4">
                                                 <label class="form-label">Data do Evento</label>
-                                                <input type="date" class="form-control" name="eventDate"
-                                                    value="{{ old('eventDate', \Carbon\Carbon::now()->format('Y-m-d')) }}"
+                                                <input type="date" class="form-control" name="event_date"
+                                                    value="{{ old('event_date', \Carbon\Carbon::now()->format('Y-m-d')) }}"
                                                     id="date">
                                             </div>
                                             <div class="col-lg-4 mb-4">
