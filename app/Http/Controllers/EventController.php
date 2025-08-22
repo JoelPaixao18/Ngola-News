@@ -53,8 +53,8 @@ class EventController extends Controller
 
         // Validação básica
         $request->validate([
-            'title' => 'required|string|max:100',
-            'subtitle' => 'required|string|max:100',
+            'title' => 'required|string|max:1000',
+            'subtitle' => 'required|string|max:10000',
             'description' => 'required|string',
             'status' => 'required|string',
             'event_date' => 'required|date|after_or_equal:today',
@@ -143,13 +143,13 @@ class EventController extends Controller
     {
         // Validação
         $validated = $request->validate([
-            'title' => 'required|string|max:100',
-            'subtitle' => 'required|string|max:100',
+            'title' => 'required|string|max:1000',
+            'subtitle' => 'required|string|max:10000',
             'author_id' => 'required|exists:authors,id',
             'description' => 'required|string',
             'status' => 'required|string',
             'event_date' => 'required|date|after_or_equal:today',
-            'categor_id' => 'required|exists:categories,id',
+            'category_id' => 'required|exists:categories,id',
             'image' => 'sometimes|image|mimes:jpg,jpeg,png', // Alterado para 'sometimes'
             'location' => 'required|exists:cities,id',
         ], [

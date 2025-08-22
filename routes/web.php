@@ -20,8 +20,10 @@ Route::get('site/home', [SiteController::class, 'home'])->name('site.home');
 Route::get('site/contact', [SiteController::class, 'contact'])->name('site.contact');
 Route::get('site/about', [SiteController::class, 'about'])->name('site.about');
 Route::get('site/category', [SiteController::class, 'category'])->name('site.category');
-Route::get('site/newsCategory', [SiteController::class, 'NewsCategory'])->name('site.newsCategory');
+Route::get('site/newsCategory', [SiteController::class, 'newsCategory'])->name('site.newsCategory');
 Route::get('site/eventCategory', [SiteController::class, 'eventCategory'])->name('site.eventCategory');
+Route::get('site/eventView/{event}', [SiteController::class, 'eventView'])->name('site.eventView');
+Route::get('site/newsView/{news}', [SiteController::class, 'newsView'])->name('site.newsView');
 
 /*____________________________________________________________ */
 
@@ -29,7 +31,7 @@ Route::get('site/eventCategory', [SiteController::class, 'eventCategory'])->name
 /*-------------------------------------------------------
                     Dashboard routes
 -------------------------------------------------------*/
-Route::get('_admin/dashboard', function () {
+Route::get('admin/dashboard', function () {
     return view('_admin.dashboard.crm.index');
 });
 /*-------------------------------------------------------
