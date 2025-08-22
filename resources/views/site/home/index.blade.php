@@ -178,7 +178,7 @@
             </div>
         </div>
     </div>
-
+    <!-- ==================== Category News Section ==================== -->
     <div class="space-top">
         <div class="container">
             <div class="row align-items-center">
@@ -215,7 +215,8 @@
                                     @endif
                                 @endforeach
                                 <h3 class="box-title-20">
-                                    <a class="hover-line" href="blog-details.html">{{ Str::limit($news->title, 45) }}</a>
+                                    <a class="hover-line"
+                                        href="{{ route('site.newsView', ['news' => $news]) }}">{{ Str::limit($news->title, 45) }}</a>
                                 </h3>
                                 <div class="blog-meta">
                                     <a href="author.html">
@@ -321,13 +322,14 @@
 
         </div>
     </div>
-
+    <!-- ==================== Ads Section ==================== -->
     <div class="container space-top">
         <a href="https://themeforest.net/user/themeholy/portfolio">
             <img class="light-img" src="{{ url('site/assets/img/ads/ads_5.jpg') }}" alt="ads">
             <img class="dark-img" src="{{ url('site/assets/img/ads/ads_5_dark.jpg') }}" alt="ads">
         </a>
     </div>
+    <!-- ==================== Today News Section ==================== -->
     <section class="space">
         <div class="container">
             <h2 class="sec-title has-line">Notícias de Hoje</h2>
@@ -347,7 +349,8 @@
                                         @endforeach
                                     </div>
                                     <h3 class="box-title-22">
-                                        <a class="hover-line" href="#">{{ Str::limit($today->title, 45) }}</a>
+                                        <a class="hover-line"
+                                            href="{{ route('site.newsView', ['news' => $today]) }}">{{ Str::limit($today->title, 45) }}</a>
                                     </h3>
                                     <div class="blog-meta">
                                         <a href="author.html">
@@ -398,7 +401,7 @@
                                     @endforeach
                                     <h3 class="box-title-40">
                                         <a class="hover-line"
-                                            href="blog-details.html">{{ Str::limit($today1->title, 45) }}</a>
+                                            href="{{ route('site.newsView', ['news' => $today1]) }}">{{ Str::limit($today1->title, 45) }}</a>
                                     </h3>
                                     <div class="blog-meta">
                                         <a href="author.html">
