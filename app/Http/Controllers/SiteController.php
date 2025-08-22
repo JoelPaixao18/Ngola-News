@@ -11,12 +11,13 @@ class SiteController extends Controller
 {
     public function home()
     {
-        $categories = Category::all();
-        $news = News::all();
+        $categories = Category::where('name->name')->get();
+        $news = News::orderBy('created_at', 'desc')->take(6)->get();
+        $today = News::orderBy('created_at', 'desc')->take(2)->get();
+        $today1 = News::where('detach', 'destaque')->orderByDesc('id')->first();
         /* $events = Event::with('category')->has('category')->orderByDesc('id')->take(6)->get(); */
 
-        return view('site.home.index', compact('categories', 'news'));
-
+        return view('site.home.index', compact('categories', 'news', 'today', 'today1'));
     }
 
     public function contact()
