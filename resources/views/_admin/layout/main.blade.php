@@ -55,6 +55,12 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--! END: Sweet Alert JS !-->
 
+    {{-- editor de texto --}}
+    
+	<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/46.0.2/ckeditor5.css" crossorigin>
+	<link rel="stylesheet"
+		href="https://cdn.ckeditor.com/ckeditor5-premium-features/46.0.2/ckeditor5-premium-features.css" crossorigin>
+
 </head>
 
 <body>
