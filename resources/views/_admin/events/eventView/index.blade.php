@@ -175,7 +175,7 @@
             <div class="description-container">
                 <h5 class="mb-4"><i class="fas fa-align-left me-2"></i>Descrição do Evento</h5>
                 <div class="event-description">
-                    {!! nl2br(e($event->description)) !!}
+                    {!! $event->description !!}
                 </div>
             </div>
             
