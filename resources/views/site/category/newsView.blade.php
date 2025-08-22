@@ -46,14 +46,14 @@
                                             class="fas fa-eye"></i></span> <span class="blog-info">12k <i
                                             class="fas fa-share-nodes"></i></span></div>
                                 <div class="content">
-                                    {{$news->description}}
+                                    {!! $event->description !!}
                                     {{-- <p>Igniting their competitive spirit. It encourages them to set ambitious goals, not
                                         settling for mediocrity but pushing themselves to excel in their chosen sport or
                                         athletic endeavor. The pursuit of victory becomes the driving force, motivating
                                         athletes to give their all,</p>
                                     <p>Surpass their limitations, and achieve remarkable feats. It emphasizes the
                                         importance of hard work, dedication, and Perseverance in the face of challenges
-                                        and obstacles that may arise along the way.</p> --}}
+                                        and obstacles that may arise along the way.</p> 
                                     <div class="my-4 py-lg-2"><a
                                             href="../../../../themeforest.net/user/themeholy/portfolio.html"><img
                                                 class="light-img w-100" src="assets/img/ads/ads_blog_1.jpg" alt="Ads">
@@ -111,7 +111,7 @@
                                         level of power, skill, and effectiveness in your chosen sport.</p>
                                     <p class="mb-n2">This phrase implies that the incorporation of groundbreaking
                                         technologies, techniques, and functionalities can provide you with a competitive
-                                        edge and push the boundaries of what is achievable in your game.</p>
+                                        edge and push the boundaries of what is achievable in your game.</p>--}}
                                 </div>
                                 <div class="blog-tag">
                                     <h6 class="title">Related Tag :</h6>
