@@ -33,11 +33,12 @@
     <link rel="stylesheet" href="{{ url('site/assets/css/app.min.css')}}">
     <link rel="stylesheet" href="{{ url('site/assets/css/fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{ url('site/assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ url('site/assets/css/newStyle.css')}}">
   </head>
   <body>
     @include('site.layout.header')
     @include('site.layout.menu')
-    @include('site.layout.sidemenu') 
+    @include('site.layout.sidemenu')
     @include('site.layout.search')
     @include('site.layout.switcher')
     @include('site.layout.popupSubscribe')
@@ -62,7 +63,7 @@
     @yield('content-eventCategory')
     {{--End menu eventCategory--}}
 
-    {{--Menu newsCategory--}} 
+    {{--Menu newsCategory--}}
     @yield('content-newsCategory')
     {{--End menu newsCategory--}}
 

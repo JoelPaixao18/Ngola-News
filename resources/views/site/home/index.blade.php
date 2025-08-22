@@ -1,5 +1,5 @@
 @extends('site.layout.main')
-@section('title', 'Tnews - News & Magazine HTML Template - Home Gadget')
+@section('title', 'Ngola News - Home')
 @section('content-home')
     <div class="th-hero-wrapper hero-1" id="hero">
         <div class="hero-slider-1 th-carousel" data-fade="true" data-slide-show="1" data-md-slide-show="1"
@@ -201,16 +201,21 @@
 
             <div class="row th-carousel" id="blog-slide7" data-slide-show="4" data-lg-slide-show="3"
                 data-md-slide-show="2" data-sm-slide-show="2">
-                @foreach ($news as $news)
-                    <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
+                @foreach ($news as $key => $news)
+                    <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme {{ $key == 0 ? 'active' : '' }}">
                         <div class="blog-style3">
-                            <div class="blog-img">
+                            <div class="blog-img img-card">
                                 <img src="{{ asset('img/news/' . $news->image) }}" alt="blog image">
                             </div>
                             <div class="blog-content">
-                                <a data-theme-color="#6234AC" href="blog.html" class="category">Laptop</a>
+                                @foreach ($categories as $category)
+                                    @if ($category->id == $news->category_id)
+                                        <a data-theme-color="#6234AC" href="blog.html" class="category">
+                                            {{ $category->name }}</a>
+                                    @endif
+                                @endforeach
                                 <h3 class="box-title-20">
-                                    <a class="hover-line" href="blog-details.html">{{$news->title}}</a>
+                                    <a class="hover-line" href="blog-details.html">{{ Str::limit($news->title, 45) }}</a>
                                 </h3>
                                 <div class="blog-meta">
                                     <a href="author.html">
@@ -325,31 +330,37 @@
     </div>
     <section class="space">
         <div class="container">
-            <h2 class="sec-title has-line">Today News</h2>
+            <h2 class="sec-title has-line">Notícias de Hoje</h2>
             <div class="row">
                 <div class="col-xl-3">
                     <div class="row gy-4">
-                        <div class="col-xl-12 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img">
-                                    <img src="{{ url('site/assets/img/blog/blog_1_37.jpg') }}" alt="blog image">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
-                                </div>
-                                <h3 class="box-title-22">
-                                    <a class="hover-line" href="blog-details.html">Where style meets innovation
-                                        seamlessly.</a>
-                                </h3>
-                                <div class="blog-meta">
-                                    <a href="author.html">
-                                        <i class="far fa-user"></i>By - Tnews
-                                    </a>
-                                    <a href="blog.html">
-                                        <i class="fal fa-calendar-days"></i>16 Mar, 2025
-                                    </a>
+                        @foreach ($today as $key => $today)
+                            <div class="col-xl-12 col-sm-6" {{ $key == 0 ? 'active' : '' }}>
+                                <div class="blog-style1">
+                                    <div class="blog-img img-today">
+                                        <img src="{{ asset('img/news/' . $today->image) }}" alt="blog image">
+                                        @foreach ($categories as $category)
+                                            @if ($category->id == $today->category_id)
+                                                <a data-theme-color="#6234AC" href="#" class="category">
+                                                    {{ $category->name }}</a>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                    <h3 class="box-title-22">
+                                        <a class="hover-line" href="#">{{ Str::limit($today->title, 45) }}</a>
+                                    </h3>
+                                    <div class="blog-meta">
+                                        <a href="author.html">
+                                            <i class="far fa-user"></i>By - Tnews
+                                        </a>
+                                        <a href="blog.html">
+                                            <i class="fal fa-calendar-days"></i>{{ $today->created_at->format('d M, Y') }}
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-12 col-sm-6">
+                        @endforeach
+                        {{-- <div class="col-xl-12 col-sm-6">
                             <div class="blog-style1">
                                 <div class="blog-img">
                                     <img src="{{ url('site/assets/img/blog/blog_1_38.jpg') }}" alt="blog image">
@@ -368,31 +379,39 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-xl-9 mt-4 mt-xl-0">
                     <div class="dark-theme space-40">
-                        <div class="blog-style3">
-                            <div class="blog-img">
-                                <img src="{{ url('site/assets/img/blog/blog_5_14.jpg') }}" alt="blog image">
-                            </div>
-                            <div class="blog-content">
-                                <a data-theme-color="#6234AC" href="blog.html" class="category">Technology</a>
-                                <h3 class="box-title-40">
-                                    <a class="hover-line" href="blog-details.html">Tech brilliance, forging a path to a
-                                        smarter, Connected universe.</a>
-                                </h3>
-                                <div class="blog-meta">
-                                    <a href="author.html">
-                                        <i class="far fa-user"></i>By - Tnews
-                                    </a>
-                                    <a href="blog.html">
-                                        <i class="fal fa-calendar-days"></i>22 Mar, 2025
-                                    </a>
+                        @if ($today1)
+                            <div class="blog-style3">
+                                <div class="blog-img img-big1">
+                                    <img src="{{ asset('img/news/' . $today1->image) }}" alt="blog image">
+                                </div>
+                                <div class="blog-content">
+                                    @foreach ($categories as $category)
+                                        @if ($category->id == $today1->category_id)
+                                            <a data-theme-color="#6234AC" href="#" class="category">
+                                                {{ $category->name }}</a>
+                                        @endif
+                                    @endforeach
+                                    <h3 class="box-title-40">
+                                        <a class="hover-line"
+                                            href="blog-details.html">{{ Str::limit($today1->title, 45) }}</a>
+                                    </h3>
+                                    <div class="blog-meta">
+                                        <a href="author.html">
+                                            <i class="far fa-user"></i>By - Tnews
+                                        </a>
+                                        <a href="blog.html">
+                                            <i
+                                                class="fal fa-calendar-days"></i>{{ $today1->created_at->format('d M, Y') }}
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
