@@ -10,7 +10,7 @@
     <meta name="keywords" content="Tnews - News & Magazine HTML Template">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ url('site/assets/img/favicons/apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ url('site/assets/img/favicons/apple-icon-57x5.png')}}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ url('site/assets/img/favicons/apple-icon-60x60.png')}}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ url('site/assets/img/favicons/apple-icon-72x72.png')}}">
     <link rel="apple-touch-icon" sizes="76x76" href="{{ url('site/assets/img/favicons/apple-icon-76x76.png')}}">
@@ -37,7 +37,7 @@
   </head>
   <body>
     @include('site.layout.header')
-    @include('site.layout.menu')
+    {{-- @include('site.layout.menu') --}}
     @include('site.layout.sidemenu')
     @include('site.layout.search')
     @include('site.layout.switcher')
@@ -70,7 +70,7 @@
     {{-- Menu Visualizar Evento --}}
     @yield('content-eventView')
     {{-- End menu Visualizar Evento --}}
-    
+
     {{-- Menu Visualizar Notícia --}}
     @yield('content-newsView')
     {{-- End menu Visualizar Notícia --}}
