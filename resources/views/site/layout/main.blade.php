@@ -67,11 +67,11 @@
     {{--End menu newsCategory--}}
 
     {{-- Menu Visualizar Evento --}}
-    @yield('content-visualizar-evento')
+    @yield('content-eventView')
     {{-- End menu Visualizar Evento --}}
     
     {{-- Menu Visualizar Notícia --}}
-    @yield('content-visualizar-noticia')
+    @yield('content-newsView')
     {{-- End menu Visualizar Notícia --}}
 
     @include('site.layout.footer')

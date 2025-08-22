@@ -46,7 +46,7 @@ class SiteController extends Controller
         return view('site.category.eventView', compact('event'));
     }
     public function newsView(News $news){
-        $news = News::with('category', 'author')->findOrFail($news->id);
+        $news = News::with('category')->findOrFail($news->id);
         return view('site.category.newsView', compact('news'));
     }
 }   

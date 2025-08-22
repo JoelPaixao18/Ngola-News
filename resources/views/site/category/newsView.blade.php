@@ -1,6 +1,6 @@
 @extends('site.layout.main')
-@section('title', 'Visualizar evento')
-@section('content-eventView')
+@section('title', 'Visualizar Notícias')
+@section('content-newsView')
 
 
     <div class="breadcumb-wrapper">
@@ -14,13 +14,13 @@
     <section class="th-blog-wrapper blog-details space-top space-extra-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-12"><a data-theme-color="#019D9E" href="blog.html" class="category">{{$event->category->name}}</a>
-                    <h2 class="blog-title">{{$event->title}}.</h2>
+                <div class="col-12"><a data-theme-color="#019D9E" href="blog.html" class="category">{{$news->category->name}}</a>
+                    <h2 class="blog-title">{{$news->title}}.</h2>
                     <div class="blog-meta"><a class="author" href="author.html"><i class="far fa-user"></i>By -
                             Tnews</a> <a href="blog.html"><i class="fal fa-calendar-days"></i>21 June, 2025</a> <a
                             href="blog-details.html"><i class="far fa-comments"></i>Comments (3)</a> <span><i
                                 class="far fa-book-open"></i>5 Mins Read</span></div>
-                    <div class="blog-img mb-40"><img src="{{ asset('/img/events/' . $event->image) }}" alt="Blog Image"></div>
+                    <div class="blog-img mb-40"><img src="{{ asset('/img/news/' . $news->image) }}" alt="Blog Image"></div>
                 </div>
                 <div class="col-xxl-9 col-lg-8">
                     <div class="th-blog blog-single">
@@ -46,7 +46,7 @@
                                             class="fas fa-eye"></i></span> <span class="blog-info">12k <i
                                             class="fas fa-share-nodes"></i></span></div>
                                 <div class="content">
-                                    {{$event->description}}
+                                    {{$news->description}}
                                     {{-- <p>Igniting their competitive spirit. It encourages them to set ambitious goals, not
                                         settling for mediocrity but pushing themselves to excel in their chosen sport or
                                         athletic endeavor. The pursuit of victory becomes the driving force, motivating
@@ -175,7 +175,7 @@
                                                 class="fas fa-calendar-alt"></i>14 March, 2023</span>
                                         <h3 class="name">Brooklyn Simmons</h3>
                                         <p class="text">Your sport blog is simply fantastic! The in-depth analysis,
-                                            engaging writing style, and up-to-date coverage of various sports events
+                                            engaging writing style, and up-to-date coverage of various sports newss
                                             make it a must-visit for any sports enthusiast.</p>
                                         <div class="reply_and_edit"><a href="blog-details.html" class="reply-btn"><i
                                                     class="fas fa-reply"></i>Reply</a></div>
