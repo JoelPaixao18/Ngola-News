@@ -8,7 +8,7 @@
                 <div class="th-widget-about">
                   <div class="about-logo">
                     <a href="home-newspaper.html">
-                      <img src="assets/img/logo-footer.svg" alt="Tnews">
+                      <img src="assets/img/logoNgolaLong1.png" alt="Tnews">
                     </a>
                   </div>
                   <p class="about-text">Magazines cover a wide subjects, including not limited to fashion, lifestyle, health, politics, business, Entertainment, sports, science,</p>
