@@ -87,4 +87,12 @@ class SiteController extends Controller
     {
         return view('site.multimedia.videos');
     }
+    public function api(){
+        $event = Event::all();
+        return response()->json($event);
+    }
+    public function apiShow(Event $event){
+        $event = Event::find($event->id);
+        return response()->json($event);
+    }
 }

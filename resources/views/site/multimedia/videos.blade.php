@@ -2,8 +2,6 @@
 @section('title', 'Videos')
 @section('content-videos')
 
-    <link rel="stylesheet" href="{{ url('flipbook/assets/style.css')}}">
-
     <div class="breadcumb-wrapper">
         <div class="container">
             <ul class="breadcumb-menu">
@@ -12,7 +10,15 @@
             </ul>
         </div>
     </div>
-    <section class="space-top space-extra-bottom">
+
+    {{-- <button id="eventShow">Ver eventos</button>
+    <div id="eventList"></div> --}}
+    <input type="number" id="eventIdInput" placeholder="Digite o ID do evento">
+    <button id="btnBuscarEvento">Buscar Evento</button>
+
+    <div id="eventoDetalhes"></div>
+
+    {{-- <section class="space-top space-extra-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-9 col-lg-8">
@@ -117,6 +123,52 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+       /*  $('#eventShow').on('click', function() {
+            fetch('{{ route('site.api') }}')
+                .then(response => response.json())
+                .then(data => {
+                    let eventList = $('#eventList');
+                    eventList.empty(); // Clear previous content
+                    data.forEach(event => {
+                        let eventItem = `<div><h3>${event.title}</h3><p>${event.description}</p><hr></div>`;
+                        eventList.append(eventItem);
+                    });
+                })
+                .catch(error => console.error('Error fetching events:', error));
+        }); */
+        $('#btnBuscarEvento').on('click', function () {
+        const eventId = $('#eventIdInput').val();
+
+       /*  if (!eventId) {
+            alert('Informe um ID válido.');
+            return;
+        } */
+
+        fetch(`/site/api/${eventId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Evento não encontrado');
+                }
+                return response.json();
+            })
+            .then(event => {
+                let html = `
+                    <h3>${event.title}</h3>
+                    <p>${event.description}</p>
+                    <p><strong>Data:</strong> ${event.date ?? 'N/A'}</p>
+                `;
+                $('#eventoDetalhes').html(html);
+            })
+            .catch(error => {
+                $('#eventoDetalhes').html(`<p style="color:red;">${error.message}</p>`);
+                console.error('Erro ao buscar evento:', error);
+            });
+    });
+    </script>
 
 @endsection
+
+
