@@ -1,16 +1,34 @@
+/* tratamentos das imagens na sessão Noticias por categorias */
 .img-card {
     width: 100%;
     height: 13.5rem;
 }
 
+/* tratamento das imagem na Home na sessão Noticias de hoje as masi recentes*/
 .img-today {
     width: 100%;
     height: 10rem;
     object-fit: cover;
 }
 
+/* tratamento das imagem na Home na sessão Noticias de hoje as com destaques */
 .img-big1 {
     width: 100%;
     height: 33rem;
     object-fit: cover;
+}
+
+/* tratamento das imagens na listagem das categorias do tipo categoria */
+.img-card-policy {
+    width: 100%;
+    height: 20rem;
+}
+
+/* Tratamento da imagem nos detalhes da noticias */
+
+.fixed-img {
+    width: 80%;
+    height: 25rem;
+    object-fit: cover;
+    border-radius: 8px;
 }

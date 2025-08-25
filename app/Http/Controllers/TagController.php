@@ -136,7 +136,7 @@ class TagController extends Controller
         // This method should handle the deletion of a tag.
         $tag->delete();
 
-        return redirect()->route('tags.index')->with('success', 'Tag deletada com sucesso!');
+        return redirect()->route('admin.tag.index')->with('success', 'Tag deletada com sucesso!');
         return redirect()->back()->with('error', 'Erro ao deletar a tag. Por favor, tente novamente.');
     }
 }

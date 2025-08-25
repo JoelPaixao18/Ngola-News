@@ -1,26 +1,30 @@
 @extends('site.layout.main')
-@section('title', 'Visualizar Notícias')
+@section('title', 'Notícia Detalhada')
 @section('content-newsView')
 
 
     <div class="breadcumb-wrapper">
         <div class="container">
             <ul class="breadcumb-menu">
-                <li><a href="home-newspaper.html">Home</a></li>
-                <li>Blog Details Full Image</li>
+                <li><a href="/">Home</a></li>
+                <li>Informações Detalhadas</li>
             </ul>
         </div>
     </div>
     <section class="th-blog-wrapper blog-details space-top space-extra-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-12"><a data-theme-color="#019D9E" href="blog.html" class="category">{{$news->category->name}}</a>
-                    <h2 class="blog-title">{{$news->title}}.</h2>
-                    <div class="blog-meta"><a class="author" href="author.html"><i class="far fa-user"></i>By -
-                            Tnews</a> <a href="blog.html"><i class="fal fa-calendar-days"></i>21 June, 2025</a> <a
+                <div class="col-12"><a data-theme-color="#019D9E" href="#"
+                        class="category">{{ $news->category->name }}</a>
+                    <h2 class="blog-title">{{ $news->title }}.</h2>
+                    <div class="blog-meta"><a class="author" href="#"><i class="far fa-user"></i>By -
+                            Tnews</a> <a href="#"><i
+                                class="fal fa-calendar-days"></i>{{ $news->created_at->format('d M, Y') }}</a> <a
                             href="blog-details.html"><i class="far fa-comments"></i>Comments (3)</a> <span><i
                                 class="far fa-book-open"></i>5 Mins Read</span></div>
-                    <div class="blog-img mb-40"><img src="{{ asset('/img/news/' . $news->image) }}" alt="Blog Image"></div>
+                    <div class="blog-img mb-40"><img src="{{ asset('/img/news/' . $news->image) }}" alt="Blog Image"
+                            class="fixed-img">
+                    </div>
                 </div>
                 <div class="col-xxl-9 col-lg-8">
                     <div class="th-blog blog-single">
@@ -46,14 +50,14 @@
                                             class="fas fa-eye"></i></span> <span class="blog-info">12k <i
                                             class="fas fa-share-nodes"></i></span></div>
                                 <div class="content">
-                                    {!! $event->description !!}
+                                    {!! $news->description !!}
                                     {{-- <p>Igniting their competitive spirit. It encourages them to set ambitious goals, not
                                         settling for mediocrity but pushing themselves to excel in their chosen sport or
                                         athletic endeavor. The pursuit of victory becomes the driving force, motivating
                                         athletes to give their all,</p>
                                     <p>Surpass their limitations, and achieve remarkable feats. It emphasizes the
                                         importance of hard work, dedication, and Perseverance in the face of challenges
-                                        and obstacles that may arise along the way.</p> 
+                                        and obstacles that may arise along the way.</p>
                                     <div class="my-4 py-lg-2"><a
                                             href="../../../../themeforest.net/user/themeholy/portfolio.html"><img
                                                 class="light-img w-100" src="assets/img/ads/ads_blog_1.jpg" alt="Ads">
@@ -111,12 +115,12 @@
                                         level of power, skill, and effectiveness in your chosen sport.</p>
                                     <p class="mb-n2">This phrase implies that the incorporation of groundbreaking
                                         technologies, techniques, and functionalities can provide you with a competitive
-                                        edge and push the boundaries of what is achievable in your game.</p>--}}
+                                        edge and push the boundaries of what is achievable in your game.</p> --}}
                                 </div>
                                 <div class="blog-tag">
                                     <h6 class="title">Related Tag :</h6>
-                                    <div class="tagcloud"><a href="blog.html">Sports</a> <a
-                                            href="blog.html">Politics</a> <a href="blog.html">Business</a></div>
+                                    <div class="tagcloud"><a href="blog.html">Sports</a> <a href="blog.html">Politics</a> <a
+                                            href="blog.html">Business</a></div>
                                 </div>
                             </div>
                         </div>
@@ -135,8 +139,8 @@
                         <div class="nav-btn next">
                             <div class="media-body">
                                 <h5 class="title"><a class="hover-line" href="blog-details.html">Push your limits,
-                                        redefine what's possible</a></h5><a href="blog-details.html"
-                                    class="nav-text">Next<i class="fas fa-arrow-right ms-2"></i></a>
+                                        redefine what's possible</a></h5><a href="blog-details.html" class="nav-text">Next<i
+                                        class="fas fa-arrow-right ms-2"></i></a>
                             </div>
                             <div class="img"><img src="assets/img/blog/blog-nav-2.jpg" alt="blog img" class="nav-img">
                             </div>
@@ -230,8 +234,9 @@
                                     class="form-control"> <i class="far fa-envelope"></i></div>
                             <div class="col-12 form-group"><input type="text" placeholder="Website"
                                     class="form-control"> <i class="far fa-globe"></i></div>
-                            <div class="col-12 form-group"><textarea placeholder="Write a Comment*"
-                                    class="form-control"></textarea> <i class="far fa-pencil"></i></div>
+                            <div class="col-12 form-group">
+                                <textarea placeholder="Write a Comment*" class="form-control"></textarea> <i class="far fa-pencil"></i>
+                            </div>
                             <div class="col-12 form-group mb-0"><button class="th-btn">Post Comment</button></div>
                         </div>
                     </div>
@@ -245,7 +250,8 @@
                                     <div class="icon-box"><button data-slick-prev="#related-post-slide"
                                             class="slick-arrow default"><i class="far fa-arrow-left"></i></button>
                                         <button data-slick-next="#related-post-slide" class="slick-arrow default"><i
-                                                class="far fa-arrow-right"></i></button></div>
+                                                class="far fa-arrow-right"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -319,8 +325,8 @@
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Health</a></li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Technology</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg"
-                                        href="blog.html">Entertainment</a></li>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entertainment</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="widget">

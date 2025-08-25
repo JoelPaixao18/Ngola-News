@@ -92,14 +92,17 @@
                           </ul> --}}
                                         </li>
                                         <li><a href="/site/about">Sobre</a></li>
-                                        <li><a href="#">Política</a></li>
+                                        <li><a href="{{ route ('site.policy')}}">Política</a></li>
                                         <li><a href="#">Cultura</a></li>
                                         <li class="menu-item-has-children">
                                             <a href="#">Desportos</a>
                                             <ul class="sub-menu">
-                                                <li><a href="https://www.abola.pt/internacional" target="_blank" rel="noopener noreferrer">Desporto
+                                                <li><a href="https://www.abola.pt/internacional" target="_blank"
+                                                        rel="noopener noreferrer">Desporto
                                                         Internacional</a></li>
-                                                <li><a href="https://www.jornaldeangola.ao/noticias/6/desporto" target="_blank" rel="noopener noreferrer">Desporto Nacional</a></li>
+                                                <li><a href="https://www.jornaldeangola.ao/noticias/6/desporto"
+                                                        target="_blank" rel="noopener noreferrer">Desporto Nacional</a>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children">
