@@ -109,8 +109,8 @@
                                             <a href="#">Multimédia</a>
                                             <ul class="sub-menu">
                                                 {{-- <li><a href="/site/category">Todas</a></li> --}}
-                                                <li><a href="/site/newsCategory">Publicação</a></li>
-                                                <li><a href="/site/eventCategory">Vídeos</a></li>
+                                                <li><a href="/site/publication">Publicação</a></li>
+                                                <li><a href="/site/videos">Vídeos</a></li>
                                             </ul>
                                         </li>
                                         {{-- <li class="menu-item-has-children">

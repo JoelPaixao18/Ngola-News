@@ -12,7 +12,7 @@ class SiteController extends Controller
     /* Função Home - exibindo todos os carrosseis de algumas noticias e eventos com mais destaques e mais recentes */
     public function home()
     {
-        $categories = Category::where('name->name')->get();
+        $categories = Category::where('name')->get();
         $news = News::orderBy('created_at', 'desc')->take(6)->get();
         $today = News::orderBy('created_at', 'desc')->take(2)->get();
         $today1 = News::where('detach', 'destaque')->latest()->first();
@@ -78,5 +78,13 @@ class SiteController extends Controller
     {
         $news = News::with('category')->findOrFail($news->id);
         return view('site.category.policy.policyView', compact('news'));
+    }
+    public function publication()
+    {
+        return view('site.multimedia.publication');
+    }
+    public function videos()
+    {
+        return view('site.multimedia.videos');
     }
 }

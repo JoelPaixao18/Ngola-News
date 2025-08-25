@@ -16,9 +16,9 @@ use App\Http\Controllers\TypeCategoryController;
 -------------------------------------------------------*/
 
 Route::redirect('/', 'site/home');
-Route::get('admin/', function () {
+/* Route::get('admin/', function () {
     return view('_admin.index');
-});
+}); */
 
 Route::get('site/home', [SiteController::class, 'home'])->name('site.home');
 Route::get('site/contact', [SiteController::class, 'contact'])->name('site.contact');
@@ -31,7 +31,12 @@ Route::get('site/eventCategory', [SiteController::class, 'eventCategory'])->name
 /* Routas de Visualizações */
 Route::get('site/eventView/{event}', [SiteController::class, 'eventView'])->name('site.eventView');
 Route::get('site/newsView/{news}', [SiteController::class, 'newsView'])->name('site.newsView');
+<<<<<<< HEAD
 Route::get('site/policyView/{news}', [SiteController::class, 'policyView'])->name('site.policyView');
+=======
+Route::get('site/publication', [SiteController::class, 'publication'])->name('site.publication');
+Route::get('site/videos', [SiteController::class, 'videos'])->name('site.videos');
+>>>>>>> 5a024d8484509613167828402987b8b9cab1052b
 
 /*================================================================================================================ */
 
