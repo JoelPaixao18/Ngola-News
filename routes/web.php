@@ -130,7 +130,7 @@ Route::prefix('_admin.tags')->name('admin.')->group(function () {
 });
 
 /*-------------------------------------------------------
-                    TypeCategory Routes
+               TypeCategory Routes
 -------------------------------------------------------*/
 
 Route::prefix('_admin.typeCategories')->name('admin.')->group(function () {
