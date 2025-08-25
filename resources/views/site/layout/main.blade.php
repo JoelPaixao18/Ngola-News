@@ -75,6 +75,14 @@
     @yield('content-newsView')
     {{-- End menu Visualizar Notícia --}}
 
+    {{-- Menu Publicação --}}
+    @yield('content-publication')
+    {{-- End menu Publicação --}}
+
+    {{-- Menu Videos --}}
+    @yield('content-videos')
+    {{-- End menu Videos --}}
+
     @include('site.layout.footer')
     <div class="scroll-top">
       <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
@@ -82,7 +90,9 @@
       </svg>
     </div>
 
-    <script src="{{ url('site/assets/js/vendor/jquery-3.7.1.min.js')}}"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="{{ url('flipbook/assets/turn.min.js')}}"></script>
+    <script src="{{ url('flipbook/assets/script.js')}}"></script>
     <script src="{{ url('site/assets/js/app.min.js')}}"></script>
     <script src="{{ url('site/assets/js/main.js')}}"></script>
 </body>

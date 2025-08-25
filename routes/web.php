@@ -15,9 +15,9 @@ use App\Http\Controllers\TypeCategoryController;
                     Site Routes
 -------------------------------------------------------*/
 Route::redirect('/', 'site/home');
-Route::get('admin/', function () {
+/* Route::get('admin/', function () {
     return view('_admin.index');
-});
+}); */
 
 Route::get('site/home', [SiteController::class, 'home'])->name('site.home');
 Route::get('site/contact', [SiteController::class, 'contact'])->name('site.contact');
@@ -27,6 +27,8 @@ Route::get('site/newsCategory', [SiteController::class, 'newsCategory'])->name('
 Route::get('site/eventCategory', [SiteController::class, 'eventCategory'])->name('site.eventCategory');
 Route::get('site/eventView/{event}', [SiteController::class, 'eventView'])->name('site.eventView');
 Route::get('site/newsView/{news}', [SiteController::class, 'newsView'])->name('site.newsView');
+Route::get('site/publication', [SiteController::class, 'publication'])->name('site.publication');
+Route::get('site/videos', [SiteController::class, 'videos'])->name('site.videos');
 
 /*================================================================================================================ */
 

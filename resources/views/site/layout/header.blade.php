@@ -97,17 +97,20 @@
                                         <li class="menu-item-has-children">
                                             <a href="#">Desportos</a>
                                             <ul class="sub-menu">
-                                                <li><a href="https://www.abola.pt/internacional" target="_blank" rel="noopener noreferrer">Desporto
+                                                <li><a href="https://www.abola.pt/internacional" target="_blank"
+                                                        rel="noopener noreferrer">Desporto
                                                         Internacional</a></li>
-                                                <li><a href="https://www.jornaldeangola.ao/noticias/6/desporto" target="_blank" rel="noopener noreferrer">Desporto Nacional</a></li>
+                                                <li><a href="https://www.jornaldeangola.ao/noticias/6/desporto"
+                                                        target="_blank" rel="noopener noreferrer">Desporto Nacional</a>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children">
                                             <a href="#">Multimédia</a>
                                             <ul class="sub-menu">
                                                 {{-- <li><a href="/site/category">Todas</a></li> --}}
-                                                <li><a href="/site/newsCategory">Publicação</a></li>
-                                                <li><a href="/site/eventCategory">Vídeos</a></li>
+                                                <li><a href="/site/publication">Publicação</a></li>
+                                                <li><a href="/site/videos">Vídeos</a></li>
                                             </ul>
                                         </li>
                                         {{-- <li class="menu-item-has-children">

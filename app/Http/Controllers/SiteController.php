@@ -11,7 +11,7 @@ class SiteController extends Controller
 {
     public function home()
     {
-        $categories = Category::where('name->name')->get();
+        $categories = Category::where('name')->get();
         $news = News::orderBy('created_at', 'desc')->take(6)->get();
         $today = News::orderBy('created_at', 'desc')->take(2)->get();
         $today1 = News::where('detach', 'destaque')->orderByDesc('id')->first();
@@ -51,5 +51,13 @@ class SiteController extends Controller
     {
         $news = News::with('category')->findOrFail($news->id);
         return view('site.category.newsView', compact('news'));
+    }
+    public function publication()
+    {
+        return view('site.multimedia.publication');
+    }
+    public function videos()
+    {
+        return view('site.multimedia.videos');
     }
 }
