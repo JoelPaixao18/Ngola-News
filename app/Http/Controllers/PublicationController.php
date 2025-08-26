@@ -39,7 +39,47 @@ class PublicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validação básica
+        $request->validate([
+            'title' => 'required|string|max:1000',
+            'date' => 'required|date|after_or_equal:today',
+            'file' => 'required|exists:categories,id',
+            'cover' => 'required|image|mimes:jpg,jpeg,png',
+        ], [
+            'title.required' => 'O título é obrigatório.',
+            'file.required' => 'O arquivo é obrigatório.',
+            'cover.required' => 'A capa é obrigatória.',
+            'date.required' => 'A data é obrigatória.',
+            'cover.required' => 'A capa é obrigatória.',
+            'cover.image' => 'A capa deve ser um arquivo de imagem válido.',
+            'cover.mimes' => 'A capa deve ser do tipo: jpg, jpeg, png.',
+        ]);
+
+        // Upload da imagem
+        $imageName = null;
+        if ($request->hasFile('cover') && $request->file('cover')->isValid()) {
+            $image = $request->file('cover');
+            $extension = $image->extension();
+            $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+            $image->move(public_path('img/publication'), $imageName);
+        }
+
+        // Criação do evento
+        Event::create([
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'status' => $request->status,
+            'image' => $imageName,
+            'description' => $request->description,
+            'event_date' => $request->event_date,
+            'category_id' => $request->category_id,
+            'author_id' => $request->author_id,
+            'location' => $request->location,
+        ]);
+
+        return redirect()->route('admin.event.index')->with('success', 'Evento criado com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Evento!');
+    }
     }
 
     /**

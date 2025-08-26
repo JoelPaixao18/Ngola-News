@@ -124,18 +124,18 @@
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label class="form-label">Data de Publicação</label>
-                                                <input type="date" class="form-control" name="event_date"
-                                                    value="{{ old('event_date', \Carbon\Carbon::now()->format('Y-m-d')) }}"
+                                                <input type="date" class="form-control" name="date"
+                                                    value="{{ old('date', \Carbon\Carbon::now()->format('Y-m-d')) }}"
                                                     id="date">
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label for="coverImg" class="form-label">Imagem de Capa: </label>
-                                                <input type="file" class="form-control" name="image" id="coverImg"
+                                                <input type="file" class="form-control" name="cover" id="coverImg"
                                                     placeholder="Carregue a imagem...">
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label for="arquivo" class="form-label">Arquivo: </label>
-                                                <input type="file" class="form-control" name="name" id="arquivo"
+                                                <input type="file" class="form-control" name="file" id="arquivo"
                                                     placeholder="Carregue o arquivo...">
                                             </div>
                                             </div>
