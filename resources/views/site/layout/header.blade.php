@@ -5,7 +5,7 @@
                 <div class="col-lg-2 d-none d-lg-inline-block">
                     <div class="header-logo">
                         <a href="/">
-                            <img src="assets/img/logo-white.svg" alt="Tnews">
+                            <img src="assets/img/logoNgolaLong1.png" alt="Tnews">
                         </a>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                             <div class="col-auto d-lg-none d-block">
                                 <div class="header-logo">
                                     <a href="/">
-                                        <img class="light-img" src="assets/img/logo.svg" alt="Tnews">
+                                        <img class="light-img" src="assets/img/logoNgolaLong1.png" alt="Tnews">
                                     </a>
                                     <a href="/">
                                         <img class="dark-img" src="assets/img/logo-white.svg" alt="Tnews">
@@ -92,7 +92,7 @@
                           </ul> --}}
                                         </li>
                                         <li><a href="/site/about">Sobre</a></li>
-                                        <li><a href="{{ route ('site.policy')}}">Política</a></li>
+                                        <li><a href="{{ route('site.policy') }}">Política</a></li>
                                         <li><a href="#">Cultura</a></li>
                                         <li class="menu-item-has-children">
                                             <a href="#">Desportos</a>

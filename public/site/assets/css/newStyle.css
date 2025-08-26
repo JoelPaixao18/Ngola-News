@@ -32,3 +32,10 @@
     object-fit: cover;
     border-radius: 8px;
 }
+
+/* Tratamento da imagem na sessão das noticias no geral*/
+.img-general {
+    width: 100%;
+    height: 28.5rem;
+    object-fit: cover;
+}

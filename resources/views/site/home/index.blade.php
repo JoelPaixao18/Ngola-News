@@ -420,6 +420,7 @@
             </div>
         </div>
     </section>
+    {{-- =================== Video de exposição ==================== --}}
     <section class="bg-fixed dark-theme" data-bg-src="{{ url('site/assets/img/blog/blog_full_1.jpg') }}"
         data-overlay="black" data-opacity="7">
         <div class="container">
@@ -447,46 +448,53 @@
             </div>
         </div>
     </section>
+    <!-- ==================== Tech News Section ==================== -->
     <section class="space">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col">
-                    <h2 class="sec-title has-line">Tech News</h2>
+                    <h2 class="sec-title has-line">Nóticia no Geral</h2>
                 </div>
                 <div class="col-auto">
                     <div class="sec-btn">
                         <div class="filter-menu filter-menu-active">
-                            <button data-filter="*" class="tab-btn active" type="button">ALL</button>
-                            <button data-filter=".cat1" class="tab-btn" type="button">Gadget</button>
-                            <button data-filter=".cat2" class="tab-btn" type="button">Phone</button>
-                            <button data-filter=".cat3" class="tab-btn" type="button">Electronic</button>
+                            <button data-filter="*" class="tab-btn active" type="button">Todas</button>
+                            <button data-filter=".cat1" class="tab-btn" type="button">Políticas</button>
+                            <button data-filter=".cat2" class="tab-btn" type="button">Cultuta</button>
+                            <button data-filter=".cat3" class="tab-btn" type="button">Publicidades</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row gy-24 filter-active mbn-24">
-                <div class="col-xl-4 col-md-6 filter-item cat1">
-                    <div class="blog-style3 dark-theme">
-                        <div class="blog-img">
-                            <img src="{{ url('site/assets/img/blog/blog_5_2_26.jpg') }}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
-                            <h3 class="box-title-24">
-                                <a class="hover-line" href="blog-details.html">Your life, upgraded - gadgets Make it
-                                    extraordinary</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="author.html">
-                                    <i class="far fa-user"></i>By - Tnews
-                                </a>
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>23 Mar, 2025
-                                </a>
+                @if ($today1)
+                    <div class="col-xl-4 col-md-6 filter-item cat1">
+                        <div class="blog-style3 dark-theme">
+                            <div class="blog-img img-general">
+                                <img src="{{ asset('img/news/' . $today1->image) }}" alt="blog image">
+                            </div>
+                            <div class="blog-content">
+                                @foreach ($categories as $category)
+                                        @if ($category->id == $today1->category_id)
+                                            <a data-theme-color="#6234AC" href="#" class="category">
+                                                {{ $category->name }}</a>
+                                        @endif
+                                    @endforeach
+                                <h3 class="box-title-24">
+                                    <a class="hover-line" href="{{ route('site.newsView', ['news' => $today1]) }}">{{ Str::limit($today1->title, 45) }}</a>
+                                </h3>
+                                <div class="blog-meta">
+                                    <a href="author.html">
+                                        <i class="far fa-user"></i>By - Tnews
+                                    </a>
+                                    <a href="blog.html">
+                                        <i class="fal fa-calendar-days"></i>{{ $today1->created_at->format('d M, Y') }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
                 <div class="col-xl-4 col-md-6 filter-item cat1">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
