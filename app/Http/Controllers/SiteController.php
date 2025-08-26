@@ -81,7 +81,8 @@ class SiteController extends Controller
     }
     public function publication()
     {
-        return view('site.multimedia.publication');
+        $events = Event::all();
+        return view('site.multimedia.publication', compact('events'));
     }
     public function videos()
     {
@@ -91,8 +92,13 @@ class SiteController extends Controller
         $event = Event::all();
         return response()->json($event);
     }
-    public function apiShow(Event $event){
-        $event = Event::find($event->id);
-        return response()->json($event);
+    public function show($id)
+    {
+        $event = Event::find($id);
+        if ($event) {
+            return response()->json($event);
+        } else {
+            return response()->json(['message' => 'Evento não encontrado.'], 404);
+        }
     }
 }

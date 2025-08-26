@@ -147,6 +147,13 @@
         {{-- Content Show typeCategory --}}
         @yield('content-typeCategoryView')
 
+        {{-- #------ Menu Publications ------# --}}
+        {{-- Content Publications --}}
+        @yield('content-publication')
+        {{-- Content Create Publications --}}
+        @yield('content-publicationCreate')
+        {{-- Content Edit Publications --}}
+
         {{-- Footer --}}
         @include('_admin.layout.footer')
     </main>

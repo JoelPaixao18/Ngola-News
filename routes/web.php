@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\TypeCategoryController;
+use App\Http\Controllers\PublicationController;
 
 /*-------------------------------------------------------
                     Site Routes
@@ -37,7 +38,7 @@ Route::get('site/videos', [SiteController::class, 'videos'])->name('site.videos'
 
 /* API */
 Route::get('site/api/', [SiteController::class, 'api'])->name('site.api');
-Route::get('site/apiShow/{event}', [SiteController::class, 'apiShow'])->name('site.apiShow');
+Route::get('site/apiShow/{id}', [SiteController::class, 'apiShow'])->name('site.apiShow');
 
 /*================================================================================================================ */
 
@@ -145,4 +146,17 @@ Route::prefix('_admin.typeCategories')->name('admin.')->group(function () {
     Route::get('typeCategoryEdit/{typeCategory}', [TypeCategoryController::class, 'edit'])->name('typeCategory.edit');
     Route::put('typeCategoryUpdate/{typeCategory}', [TypeCategoryController::class, 'update'])->name('typeCategory.update');
     Route::get('typeCategoryDelete/{typeCategory}', [TypeCategoryController::class, 'destroy'])->name('typeCategory.delete');
+});
+
+/* -----------------------------------------------
+                    publication Routes
+--------------------------------------------------*/
+Route::prefix('_admin/publications')->name('admin.')->group(function () {
+    Route::get('publication', [PublicationController::class, 'index'])->name('publication.index');
+    Route::get('publicationCreate', [PublicationController::class, 'create'])->name('publication.create');
+   /*  Route::post('publicationStore', [PublicationController::class, 'store'])->name('publication.store');
+    Route::get('publicationEdit/{publication}', [PublicationController::class, 'edit'])->name('publication.edit');
+    Route::put('publicationUpdate/{publication}', [PublicationController::class, 'update'])->name('publication.update');
+    Route::get('publicationView/{publication}', [PublicationController::class, 'show'])->name('publication.view');
+    Route::get('publicationDelete/{publication}', [PublicationController::class, 'destroy'])->name('publication.delete'); */
 });
