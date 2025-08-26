@@ -8,35 +8,18 @@ use App\Models\Category;
 
 class PublicationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $categories = Category::all();
         $publications = Publication::all();
         return view('_admin.publications.publication.index', compact('publications', 'categories'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $categories = Category::all();
         return view('_admin.publications.publicationCreate.index', compact('categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         // Validação básica
@@ -48,7 +31,6 @@ class PublicationController extends Controller
         ], [
             'title.required' => 'O título é obrigatório.',
             'file.required' => 'O arquivo é obrigatório.',
-            'cover.required' => 'A capa é obrigatória.',
             'date.required' => 'A data é obrigatória.',
             'cover.required' => 'A capa é obrigatória.',
             'cover.image' => 'A capa deve ser um arquivo de imagem válido.',
@@ -65,65 +47,33 @@ class PublicationController extends Controller
         }
 
         // Criação do evento
-        Event::create([
+        Publication::create([
             'title' => $request->title,
-            'subtitle' => $request->subtitle,
-            'status' => $request->status,
-            'image' => $imageName,
-            'description' => $request->description,
-            'event_date' => $request->event_date,
-            'category_id' => $request->category_id,
-            'author_id' => $request->author_id,
-            'location' => $request->location,
+            'date' => $request->date,
+            'file' => $request->file,
+            'cover' => $imageName,
+           
         ]);
 
         return redirect()->route('admin.event.index')->with('success', 'Evento criado com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Evento!');
     }
+
+   
+    public function show()
+    {
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function edit()
     {
-        //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function update(Request $request)
     {
-        //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function destroy()
     {
-        //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
