@@ -128,38 +128,417 @@
                                     </div>
 
                                     {{-- Descrição --}}
-                                    <div class="col-12 mb-4">
-                                        <label class="form-label">Texto</label>
-                                        <textarea name="description" class="form-control" rows="4" placeholder="Escreve o corpo da notícia...">{{ old('description') }}</textarea>
-                                    </div>
-                                    {{-- Tags --}}
-                                    {{-- <div class="col-lg-4 mb-4">
-                                        <label for="tags" class="form-label">Tags</label>
-                                        <select class="form-control" name="tags[]" multiple data-select2-selector="tags">
-                                            @foreach ($tags as $tag)
-                                                <option value="{{ $tag->id_tag }}"
-                                                    {{ in_array($tag->id_tag, old('tags', isset($news) ? $news->tags->pluck('id_tag')->toArray() : [])) ? 'selected' : '' }}>
-                                                    {{ $tag->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                        <small class="text-muted">Segure CTRL (ou CMD no Mac) para selecionar
-                                            várias</small>
-                                    </div> --}}
-                                    {{-- Botão de Enviar --}}
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-danger"> Salvar
-                                            <i class="feather-save ms-2"></i>
-                                        </button>
+                                    <div class="col-lg-12 mb-4">
+                                                <div class="main-container">
+                                                    <div class="editor-container editor-container_classic-editor editor-container_include-outline editor-container_include-block-toolbar"
+                                                        id="editor-container">
+                                                        <div class="editor-container__editor-wrappe">
+                                                            <div class="editor-container__sidebar" id="editor-outline">
+                                                            </div>
+                                                            <div class="editor-container__editor">
+                                                                <label for="descriptionInput"
+                                                                    class="form-label">Descrição: </label>
+                                                                <textarea id="editor" name="description">{{ old('description') }}</textarea>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{--  <label for="descriptionInput" class="form-label">Descrição: </label>
+                                                <textarea class="form-control" id="editor" name="description" cols="30" rows="5"
+                                                    placeholder="Description">{{ old('description') }}</textarea> --}}
+                                            </div>
+                                            <div class="col-lg-4 mb-4"> <button type="submit" class="btn btn-danger">
+                                                    Salvar
+                                                    <i class="feather-save ms-2"></i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </form>
-
+                            </div>
                         </div>
-                    </div>
+
                 </div>
+
+                </form>
+
             </div>
+            <!-- [ Main Content ] end -->
         </div>
+
         <!-- [ Main Content ] end -->
     </div>
+    <!-- estilo css do editor de texto -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+        @media print {
+            body {
+                margin: 0 !important;
+            }
+        }
+
+        :root {
+            --ck-content-font-family: 'Lato';
+            --ck-sidebar-width: 270px;
+        }
+
+        .main-container {
+            font-family: var(--ck-content-font-family);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .editor-container__editor-wrapper {
+            display: flex;
+            width: fit-content;
+        }
+
+        .editor-container_include-outline .editor-container__editor .ck.ck-editor__editable {
+            margin-left: 0;
+        }
+
+        .editor-container_classic-editor .editor-container__editor {
+            min-width: 795px;
+            max-width: 795px;
+        }
+
+        .editor-container_include-block-toolbar {
+            margin-left: 42px;
+        }
+
+        .editor-container__sidebar {
+            min-width: var(--ck-sidebar-width);
+            max-width: var(--ck-sidebar-width);
+            margin-top: 28px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
+    <!-- fim do estilo css do editor de texto -->
+
+    <!-- script do editor de texto -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/46.0.2/ckeditor5.umd.js" crossorigin></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5-premium-features/46.0.2/ckeditor5-premium-features.umd.js" crossorigin>
+    </script>
+    <script>
+        /**
+         * This configuration was generated using the CKEditor 5 Builder. You can modify it anytime using this link:
+         * https://ckeditor.com/ckeditor-5/builder/?redirect=portal#installation/NoRgNARATAdA7DKFJSgBnWgHHKBOPAZkIDZCRCAWKEEkOEuyrEAVldRErlOQgFMAdsjRhQYcJIlg0AXUjEsAQ1IBjCLKA===
+         */
+
+        const {
+            ClassicEditor,
+            AutoImage,
+            AutoLink,
+            Autosave,
+            BalloonToolbar,
+            BlockQuote,
+            BlockToolbar,
+            Bold,
+            Bookmark,
+            CloudServices,
+            Code,
+            CodeBlock,
+            Essentials,
+            Heading,
+            Highlight,
+            HorizontalLine,
+            HtmlEmbed,
+            ImageBlock,
+            ImageCaption,
+            ImageInline,
+            ImageInsertViaUrl,
+            ImageResize,
+            ImageStyle,
+            ImageTextAlternative,
+            ImageToolbar,
+            ImageUpload,
+            Indent,
+            IndentBlock,
+            Italic,
+            Link,
+            LinkImage,
+            List,
+            ListProperties,
+            MediaEmbed,
+            Paragraph,
+            PasteFromOffice,
+            Strikethrough,
+            Table,
+            TableCellProperties,
+            TableProperties,
+            TableToolbar,
+            TodoList,
+            Underline
+        } = window.CKEDITOR;
+        const {
+            DocumentOutline,
+            ExportPdf,
+            ExportWord,
+            ImportWord,
+            TableOfContents
+        } = window.CKEDITOR_PREMIUM_FEATURES;
+
+        const LICENSE_KEY =
+            'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NTcxMTY3OTksImp0aSI6IjNmMWUyMWY3LTdjY2MtNDhkZi1hMDYxLTcwZDU2NTE1ODdkZiIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiLCJzaCJdLCJ3aGl0ZUxhYmVsIjp0cnVlLCJsaWNlbnNlVHlwZSI6InRyaWFsIiwiZmVhdHVyZXMiOlsiKiJdLCJ2YyI6IjUxNjQ5ZjEwIn0.M5m-E9IgfYYfoOb0Z-HzsmDK8ONBvh_i7hCfH0JKcq0au7DvZHAd5yKJhZnfl2a61jlux4bV6COx_ktp8zdn6w';
+
+        const editorConfig = {
+            toolbar: {
+                items: [
+                    'undo',
+                    'redo',
+                    '|',
+                    'heading',
+                    '|',
+                    'bold',
+                    'italic',
+                    'underline',
+                    '|',
+                    'link',
+                    'insertTable',
+                    'highlight',
+                    'blockQuote',
+                    'codeBlock',
+                    '|',
+                    'bulletedList',
+                    'numberedList',
+                    'todoList',
+                    'outdent',
+                    'indent'
+                ],
+                shouldNotGroupWhenFull: false
+            },
+            plugins: [
+                AutoImage,
+                AutoLink,
+                Autosave,
+                BalloonToolbar,
+                BlockQuote,
+                BlockToolbar,
+                Bold,
+                Bookmark,
+                CloudServices,
+                Code,
+                CodeBlock,
+                DocumentOutline,
+                Essentials,
+                ExportPdf,
+                ExportWord,
+                Heading,
+                Highlight,
+                HorizontalLine,
+                HtmlEmbed,
+                ImageBlock,
+                ImageCaption,
+                ImageInline,
+                ImageInsertViaUrl,
+                ImageResize,
+                ImageStyle,
+                ImageTextAlternative,
+                ImageToolbar,
+                ImageUpload,
+                ImportWord,
+                Indent,
+                IndentBlock,
+                Italic,
+                Link,
+                LinkImage,
+                List,
+                ListProperties,
+                MediaEmbed,
+                Paragraph,
+                PasteFromOffice,
+                Strikethrough,
+                Table,
+                TableCellProperties,
+                TableOfContents,
+                TableProperties,
+                TableToolbar,
+                TodoList,
+                Underline
+            ],
+            balloonToolbar: ['bold', 'italic', '|', 'link', '|', 'bulletedList', 'numberedList'],
+            blockToolbar: ['bold', 'italic', '|', 'link', 'insertTable', '|', 'bulletedList', 'numberedList', 'outdent',
+                'indent'
+            ],
+            documentOutline: {
+                container: document.querySelector('#editor-outline')
+            },
+            exportPdf: {
+                stylesheets: [
+                    /* This path should point to the content stylesheets on your assets server. */
+                    /* See: https://ckeditor.com/docs/ckeditor5/latest/features/converters/export-pdf.html */
+                    './style.css',
+                    /* Export PDF needs access to stylesheets that style the content. */
+                    'https://cdn.ckeditor.com/ckeditor5/46.0.2/ckeditor5.css',
+                    'https://cdn.ckeditor.com/ckeditor5-premium-features/46.0.2/ckeditor5-premium-features.css'
+                ],
+                fileName: 'export-pdf-demo.pdf',
+                converterOptions: {
+                    format: 'Tabloid',
+                    margin_top: '20mm',
+                    margin_bottom: '20mm',
+                    margin_right: '24mm',
+                    margin_left: '24mm',
+                    page_orientation: 'portrait'
+                }
+            },
+            exportWord: {
+                stylesheets: [
+                    /* This path should point to the content stylesheets on your assets server. */
+                    /* See: https://ckeditor.com/docs/ckeditor5/latest/features/converters/export-word.html */
+                    './style.css',
+                    /* Export Word needs access to stylesheets that style the content. */
+                    'https://cdn.ckeditor.com/ckeditor5/46.0.2/ckeditor5.css',
+                    'https://cdn.ckeditor.com/ckeditor5-premium-features/46.0.2/ckeditor5-premium-features.css'
+                ],
+                fileName: 'export-word-demo.docx',
+                converterOptions: {
+                    document: {
+                        orientation: 'portrait',
+                        size: 'Tabloid',
+                        margins: {
+                            top: '20mm',
+                            bottom: '20mm',
+                            right: '24mm',
+                            left: '24mm'
+                        }
+                    }
+                }
+            },
+            heading: {
+                options: [{
+                        model: 'paragraph',
+                        title: 'Paragraph',
+                        class: 'ck-heading_paragraph'
+                    },
+                    {
+                        model: 'heading1',
+                        view: 'h1',
+                        title: 'Heading 1',
+                        class: 'ck-heading_heading1'
+                    },
+                    {
+                        model: 'heading2',
+                        view: 'h2',
+                        title: 'Heading 2',
+                        class: 'ck-heading_heading2'
+                    },
+                    {
+                        model: 'heading3',
+                        view: 'h3',
+                        title: 'Heading 3',
+                        class: 'ck-heading_heading3'
+                    },
+                    {
+                        model: 'heading4',
+                        view: 'h4',
+                        title: 'Heading 4',
+                        class: 'ck-heading_heading4'
+                    },
+                    {
+                        model: 'heading5',
+                        view: 'h5',
+                        title: 'Heading 5',
+                        class: 'ck-heading_heading5'
+                    },
+                    {
+                        model: 'heading6',
+                        view: 'h6',
+                        title: 'Heading 6',
+                        class: 'ck-heading_heading6'
+                    }
+                ]
+            },
+            image: {
+                toolbar: [
+                    'toggleImageCaption',
+                    'imageTextAlternative',
+                    '|',
+                    'imageStyle:inline',
+                    'imageStyle:wrapText',
+                    'imageStyle:breakText',
+                    '|',
+                    'resizeImage'
+                ]
+            },
+            initialData: '',
+            licenseKey: LICENSE_KEY,
+            link: {
+                addTargetToExternalLinks: true,
+                defaultProtocol: 'https://',
+                decorators: {
+                    toggleDownloadable: {
+                        mode: 'manual',
+                        label: 'Downloadable',
+                        attributes: {
+                            download: 'file'
+                        }
+                    }
+                }
+            },
+            list: {
+                properties: {
+                    styles: true,
+                    startIndex: true,
+                    reversed: true
+                }
+            },
+            menuBar: {
+                isVisible: true
+            },
+            placeholder: 'Type or paste your content here!',
+            table: {
+                contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
+            }
+        };
+
+        configUpdateAlert(editorConfig);
+
+        ClassicEditor.create(document.querySelector('#editor'), editorConfig);
+
+        /**
+         * This function exists to remind you to update the config needed for premium features.
+         * The function can be safely removed. Make sure to also remove call to this function when doing so.
+         */
+        function configUpdateAlert(config) {
+            if (configUpdateAlert.configUpdateAlertShown) {
+                return;
+            }
+
+            const isModifiedByUser = (currentValue, forbiddenValue) => {
+                if (currentValue === forbiddenValue) {
+                    return false;
+                }
+
+                if (currentValue === undefined) {
+                    return false;
+                }
+
+                return true;
+            };
+
+            const valuesToUpdate = [];
+
+            configUpdateAlert.configUpdateAlertShown = true;
+
+            if (!isModifiedByUser(config.licenseKey, '<YOUR_LICENSE_KEY>')) {
+                valuesToUpdate.push('LICENSE_KEY');
+            }
+
+            if (valuesToUpdate.length) {
+                window.alert(
+                    [
+                        'Please update the following values in your editor config',
+                        'to receive full access to Premium Features:',
+                        '',
+                        ...valuesToUpdate.map(value => ` - ${value}`)
+                    ].join('\n')
+                );
+            }
+        }
+    </script>
 @endsection

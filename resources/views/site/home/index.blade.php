@@ -198,7 +198,7 @@
                     </div>
                 </div>
             </div>
-
+            {{-- Carrossel da Sessão Noticia por categoria --}}
             <div class="row th-carousel" id="blog-slide7" data-slide-show="4" data-lg-slide-show="3"
                 data-md-slide-show="2" data-sm-slide-show="2">
                 @foreach ($news as $key => $news)
@@ -448,7 +448,7 @@
             </div>
         </div>
     </section>
-    <!-- ==================== Tech News Section ==================== -->
+    <!-- ==================== General News Section ==================== -->
     <section class="space">
         <div class="container">
             <div class="row align-items-center">
@@ -466,6 +466,7 @@
                     </div>
                 </div>
             </div>
+            {{-- Detach News --}}
             <div class="row gy-24 filter-active mbn-24">
                 @if ($today1)
                     <div class="col-xl-4 col-md-6 filter-item cat1">
@@ -475,13 +476,14 @@
                             </div>
                             <div class="blog-content">
                                 @foreach ($categories as $category)
-                                        @if ($category->id == $today1->category_id)
-                                            <a data-theme-color="#6234AC" href="#" class="category">
-                                                {{ $category->name }}</a>
-                                        @endif
-                                    @endforeach
+                                    @if ($category->id == $today1->category_id)
+                                        <a data-theme-color="#6234AC" href="#" class="category">
+                                            {{ $category->name }}</a>
+                                    @endif
+                                @endforeach
                                 <h3 class="box-title-24">
-                                    <a class="hover-line" href="{{ route('site.newsView', ['news' => $today1]) }}">{{ Str::limit($today1->title, 45) }}</a>
+                                    <a class="hover-line"
+                                        href="{{ route('site.newsView', ['news' => $today1]) }}">{{ Str::limit($today1->title, 45) }}</a>
                                 </h3>
                                 <div class="blog-meta">
                                     <a href="author.html">
@@ -495,45 +497,62 @@
                         </div>
                     </div>
                 @endif
-                <div class="col-xl-4 col-md-6 filter-item cat1">
-                    <div class="blog-style2">
-                        <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_1.jpg') }}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
-                            <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">Gadgets Elevating lifes moments,
-                                    effortlessly.</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>15 Mar, 2025
-                                </a>
+                {{-- News Policy --}}
+                @foreach ($newsPolicy as $newspolicy)
+                    <div class="col-xl-4 col-md-6 filter-item cat1">
+                        <div class="blog-style2">
+                            <div class="blog-img img-big img-allnews">
+                                <img src="{{ asset('img/news/' . $newspolicy->image) }}" alt="blog image">
+                            </div>
+                            <div class="blog-content">
+                                @foreach ($categories as $category)
+                                    @if ($category->id == $newspolicy->category_id)
+                                        <a data-theme-color="#6234AC" href="blog.html" class="category">
+                                            {{ $category->name }}</a>
+                                    @endif
+                                @endforeach
+                                <h3 class="box-title-20">
+                                    <a class="hover-line"
+                                        href="{{ route('site.newsView', ['news' => $newspolicy]) }}">{{ Str::limit($newspolicy->title, 50) }}</a>
+                                </h3>
+                                <div class="blog-meta">
+                                    <a href="blog.html">
+                                        <i
+                                            class="fal fa-calendar-days"></i>{{ $newspolicy->created_at->format('d M, Y') }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-md-6 filter-item cat2">
-                    <div class="blog-style2">
-                        <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_2.jpg') }}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">Phone</a>
-                            <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">Efficiency meets style - embrace gadgets
-                                    charm</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>26 Mar, 2025
-                                </a>
+                @endforeach
+                @foreach ($newsCulture as $newsculture)
+                    <div class="col-xl-4 col-md-6 filter-item cat2">
+                        <div class="blog-style2">
+                            <div class="blog-img img-big img-allnews">
+                                <img src="{{ asset('img/news/' . $newsculture->image) }}" alt="blog image">
+                            </div>
+                            <div class="blog-content">
+                                @foreach ($categories as $category)
+                                    @if ($category->id == $newsculture->category_id)
+                                        <a data-theme-color="#6234AC" href="blog.html" class="category">
+                                            {{ $category->name }}</a>
+                                    @endif
+                                @endforeach
+                                <h3 class="box-title-20">
+                                    <a class="hover-line"
+                                        href="{{ route('site.newsView', ['news' => $newsculture]) }}">{{ Str::limit($newsculture->title, 50) }}</a>
+                                </h3>
+                                <div class="blog-meta">
+                                    <a href="blog.html">
+                                        <i
+                                            class="fal fa-calendar-days"></i>{{ $newsculture->created_at->format('d M, Y') }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-md-6 filter-item cat2">
+                @endforeach
+                {{-- <div class="col-xl-4 col-md-6 filter-item cat2">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
                             <img src="{{ url('site/assets/img/blog/blog_3_3_3.jpg') }}" alt="blog image">
@@ -551,7 +570,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-xl-4 col-md-6 filter-item cat3">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
@@ -571,7 +590,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 filter-item cat3">
+                {{-- <div class="col-xl-4 col-md-6 filter-item cat3">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
                             <img src="{{ url('site/assets/img/blog/blog_3_3_5.jpg') }}" alt="blog image">
@@ -589,8 +608,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-md-6 filter-item cat1">
+                </div> --}}
+                {{-- <div class="col-xl-4 col-md-6 filter-item cat1">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
                             <img src="{{ url('site/assets/img/blog/blog_3_3_6.jpg') }}" alt="blog image">
@@ -608,7 +627,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
