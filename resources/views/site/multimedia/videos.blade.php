@@ -2,8 +2,6 @@
 @section('title', 'Videos')
 @section('content-videos')
 
-    <link rel="stylesheet" href="{{ url('flipbook/assets/style.css')}}">
-
     <div class="breadcumb-wrapper">
         <div class="container">
             <ul class="breadcumb-menu">
@@ -12,7 +10,14 @@
             </ul>
         </div>
     </div>
-    <section class="space-top space-extra-bottom">
+
+    {{-- <button id="eventShow">Ver eventos</button>
+    <div id="eventList"></div> --}}
+    <input type="text" name="id" id="id">
+    <button id="pesquisar">Pesquisar</button>
+    <div id="resultado"></div>
+
+    {{-- <section class="space-top space-extra-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-9 col-lg-8">
@@ -117,6 +122,39 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        /*  $('#eventShow').on('click', function() {
+                fetch('{{ route('site.api') }}')
+                    .then(response => response.json())
+                    .then(data => {
+                        let eventList = $('#eventList');
+                        eventList.empty(); // Clear previous content
+                        data.forEach(event => {
+                            let eventItem = `<div><h3>${event.title}</h3><p>${event.description}</p><hr></div>`;
+                            eventList.append(eventItem);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching events:', error));
+            }); */
+        $(document).ready(function() {
+            $('#pesquisar').click(function() {
+                var id = $('#id').val();
+                $.ajax({
+                    url: 'site/apiShow/' + id,
+                    method: 'GET',
+                    success: function(event) {
+                        $('#resultado').html(
+                            '<p>Title: ' + event.title + '</p>'
+                        );
+                    },
+                    error: function() {
+                        $('#resultado').html('<p>Evento não encontrado.</p>');
+                    }
+                });
+            });
+        });
+    </script>
 
 @endsection

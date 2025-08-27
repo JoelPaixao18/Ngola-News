@@ -137,6 +137,21 @@
                     <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                 </ul>
             </li>
+            {{-- Menu publications --}}
+            <li class="nxl-item nxl-hasmenu">
+                <a href="javascript:void(0);" class="nxl-link">
+                    <span class="nxl-micon"><i class="feather-archive"></i></span>
+                    <span class="nxl-mtext">publications</span><span class="nxl-arrow"><i
+                            class="feather-chevron-right"></i></span>
+                </a>
+                <ul class="nxl-submenu">
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.publication.index') }}">publications</a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.publication.create') }}">publications
+                            Create</a></li>
+                    <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
+                </ul>
+            </li>
             {{--
                     {{-- <li class="nxl-item nxl-hasmenu">
                         <a href="javascript:void(0);" class="nxl-link">

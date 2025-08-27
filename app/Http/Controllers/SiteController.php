@@ -111,11 +111,25 @@ class SiteController extends Controller
 
     public function publication()
     {
-        return view('site.multimedia.publication');
+        $events = Event::all();
+        return view('site.multimedia.publication', compact('events'));
     }
 
     public function videos()
     {
         return view('site.multimedia.videos');
+    }
+    public function api(){
+        $event = Event::all();
+        return response()->json($event);
+    }
+    public function show($id)
+    {
+        $event = Event::find($id);
+        if ($event) {
+            return response()->json($event);
+        } else {
+            return response()->json(['message' => 'Evento não encontrado.'], 404);
+        }
     }
 }

@@ -29,6 +29,94 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="filter-item col-xl-4 col-sm-6">
+                            <div class="blog-style1">
+                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
+                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
+                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
+                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-item col-xl-4 col-sm-6">
+                            <div class="blog-style1">
+                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
+                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
+                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
+                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-item col-xl-4 col-sm-6">
+                            <div class="blog-style1">
+                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
+                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
+                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
+                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-item col-xl-4 col-sm-6">
+                            <div class="blog-style1">
+                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
+                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
+                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
+                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-item col-xl-4 col-sm-6">
+                            <div class="blog-style1">
+                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
+                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
+                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
+                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-item col-xl-4 col-sm-6">
+                            <div class="blog-style1">
+                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
+                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
+                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
+                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-item col-xl-4 col-sm-6">
+                            <div class="blog-style1">
+                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
+                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
+                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
+                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-item col-xl-4 col-sm-6">
+                            <div class="blog-style1">
+                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
+                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
+                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
+                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
