@@ -24,12 +24,11 @@ class PublicationController extends Controller
             'title' => 'required|string|max:1000',
             'date' => 'required|date|after_or_equal:today',
             'file' => 'required|file|mimes:pdf,doc,docx',
-            'cover' => 'required|image|mimes:jpg,jpeg,png',
+            'cover' => 'nullable|image|mimes:jpg,jpeg,png',
         ], [
             'title.required' => 'O título é obrigatório.',
             'file.required' => 'O arquivo é obrigatório.',
             'date.required' => 'A data é obrigatória.',
-            'cover.required' => 'A capa é obrigatória.',
             'cover.image' => 'A capa deve ser um arquivo de imagem válido.',
             'cover.mimes' => 'A capa deve ser do tipo: jpg, jpeg, png.',
         ]);

@@ -17,7 +17,7 @@ class CreatePublicationsTable extends Migration
             $table->id();
             $table->String('title');
             $table->String('file');
-            $table->String('cover');
+            $table->String('cover')->nullable();
             $table->date('date');
             $table->softDeletes();
             $table->timestamps();

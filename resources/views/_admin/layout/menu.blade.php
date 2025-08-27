@@ -126,14 +126,13 @@
             <li class="nxl-item nxl-hasmenu">
                 <a href="javascript:void(0);" class="nxl-link">
                     <span class="nxl-micon"><i class="feather-edit"></i></span>
-                    <span class="nxl-mtext">Comments</span><span class="nxl-arrow"><i
+                    <span class="nxl-mtext">Comentários</span><span class="nxl-arrow"><i
                             class="feather-chevron-right"></i></span>
                 </a>
                 <ul class="nxl-submenu">
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.comments.index') }}">Comment</a>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.comments.index') }}">Comentários</a>
                     </li>
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.comment.create') }}">Comment
-                            Create</a></li>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.comment.create') }}">Criar Comentário</a></li>
                     <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                 </ul>
             </li>
@@ -141,14 +140,27 @@
             <li class="nxl-item nxl-hasmenu">
                 <a href="javascript:void(0);" class="nxl-link">
                     <span class="nxl-micon"><i class="feather-archive"></i></span>
-                    <span class="nxl-mtext">publications</span><span class="nxl-arrow"><i
+                    <span class="nxl-mtext">Publicações</span><span class="nxl-arrow"><i
                             class="feather-chevron-right"></i></span>
                 </a>
                 <ul class="nxl-submenu">
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.publication.index') }}">publications</a>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.publication.index') }}">Publicações</a>
                     </li>
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.publication.create') }}">publications
-                            Create</a></li>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.publication.create') }}">Criar Publicação</a></li>
+                    <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
+                </ul>
+            </li>
+            {{-- Menu videos --}}
+            <li class="nxl-item nxl-hasmenu">
+                <a href="javascript:void(0);" class="nxl-link">
+                    <span class="nxl-micon"><i class="feather-video"></i></span>
+                    <span class="nxl-mtext">Videos</span><span class="nxl-arrow"><i
+                            class="feather-chevron-right"></i></span>
+                </a>
+                <ul class="nxl-submenu">
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.video.index') }}">Videos</a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.video.create') }}">Criar Vídeo</a></li>
                     <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                 </ul>
             </li>
