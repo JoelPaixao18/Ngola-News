@@ -17,14 +17,23 @@
                                     <div class="title">Últimas Notícias :</div>
                                     <div class="news-wrap">
                                         <div class="row slick-marquee">
-                                            @foreach ($headerNews as $newsItem)
-                                                <div class="col-auto">
-                                                    <a href="{{ route('site.newsView', ['news' => $newsItem->id]) }}"
-                                                        class="breaking-news">
-                                                        {{ $newsItem->title }}
-                                                    </a>
-                                                </div>
+                                            @foreach($breaknews as $topic)
+                                            <div class="col-auto">
+                                                <a href="{{ route('site.newsView', ['news' => $newsItem->id]) }}" class="breaking-news">{{ $topic->title }}</a>
+                                            </div>
                                             @endforeach
+                                           {{--  <div class="col-auto">
+                                                <a href="blog-details.html" class="breaking-news">From health to
+                                                    fashion, lifestyle news curated.</a>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="blog-details.html" class="breaking-news">Sun, sand, and luxury
+                                                    at our resort</a>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="blog-details.html" class="breaking-news">Relaxation redefined,
+                                                    your beach resort sanctuary.</a>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
