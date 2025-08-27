@@ -48,7 +48,7 @@ class SiteController extends Controller
         $categories = Category::where('name->name')->get();
 
 
-        return view('site.home.index', compact('categories', 'news', 'today', 'today1', 'newsPolicy', 'newsCulture','breaknews'));
+        return view('site.home.index', compact('categories', 'news', 'today', 'today1', 'newsPolicy', 'newsCulture', 'breaknews'));
     }
 
     /* Função Sobre - exibindo as informações do site */
@@ -133,7 +133,8 @@ class SiteController extends Controller
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         return view('site.multimedia.videos', compact('videos', 'breaknews'));
     }
-    public function api(){
+    public function api()
+    {
         $event = Event::all();
         return response()->json($event);
     }

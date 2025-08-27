@@ -17,6 +17,7 @@
                 <div class="col-12"><a data-theme-color="#019D9E" href="#"
                         class="category">{{ $news->category->name }}</a>
                     <h2 class="blog-title">{{ $news->title }}.</h2>
+                    <h6>{{ $news->subtitle }}</h6>
                     <div class="blog-meta"><a class="author" href="#"><i class="far fa-user"></i>By -
                             Tnews</a> <a href="#"><i
                                 class="fal fa-calendar-days"></i>{{ $news->created_at->format('d M, Y') }}</a> <a

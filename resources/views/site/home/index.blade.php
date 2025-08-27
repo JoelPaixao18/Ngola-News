@@ -453,7 +453,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col">
-                    <h2 class="sec-title has-line">Nóticia no Geral</h2>
+                    <h2 class="sec-title has-line">Categorias de Notícias</h2>
                 </div>
                 <div class="col-auto">
                     <div class="sec-btn">

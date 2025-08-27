@@ -18,7 +18,7 @@ class CreateEventsTable extends Migration
             $table->string('title', 1000);
             $table->string('subtitle', 10000);
             $table->string('image');
-            $table->text('description');
+            $table->text('description', 65500)->nullable();
             $table->unsignedBigInteger('location');
             $table->foreign('location')->references('id')->on('cities')->onDelete('cascade');
             $table->boolean('status', 100);

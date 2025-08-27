@@ -50,7 +50,7 @@ class NewsController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:10000',
             'status' => 'required|in:draft,published,filed',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -139,7 +139,7 @@ class NewsController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:10000',
             'status' => 'required|in:draft,published,filed',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
