@@ -111,10 +111,10 @@
     </div>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="{{ url('flipbook/assets/turn.min.js')}}"></script>
-    <script src="{{ url('flipbook/assets/script.js')}}"></script>
-    <script src="{{ url('site/assets/js/app.min.js')}}"></script>
-    <script src="{{ url('site/assets/js/main.js')}}"></script>
+    <script type="text/javascript" src="{{ url('flipbook/assets/turn.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url('flipbook/assets/script.js')}}"></script>
+    <script type="text/javascript" src="{{ url('site/assets/js/app.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url('site/assets/js/main.js')}}"></script>
 </body>
 
 </html>
