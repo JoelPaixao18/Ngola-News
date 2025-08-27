@@ -77,7 +77,7 @@
                                 </a> --}}
                             </div>
                         </div>
-                        <a href="{{ route('admin.event.index') }}" class="btn btn-danger">
+                        <a href="{{ route('admin.publication.index') }}" class="btn btn-danger">
                             <i class="feather-chevron-left me-2"></i>
                             <span>Visualizar</span>
                         </a>
@@ -95,11 +95,11 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                      Criando Formulario Event Create
+                                      Criando Formulario publication Create
                        _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
-                    <form id="eventForm" action="{{ route('admin.event.store') }}" method="post"
+                    <form id="publicationForm" action="{{ route('admin.publication.store') }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
 
@@ -131,12 +131,12 @@
                                             <div class="col-lg-6 mb-4">
                                                 <label for="coverImg" class="form-label">Imagem de Capa: </label>
                                                 <input type="file" class="form-control" name="cover" id="coverImg"
-                                                    placeholder="Carregue a imagem...">
+                                                value="{{ old('cover') }}" placeholder="Carregue a imagem...">
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label for="arquivo" class="form-label">Arquivo: </label>
                                                 <input type="file" class="form-control" name="file" id="arquivo"
-                                                    placeholder="Carregue o arquivo...">
+                                                value="{{ old('file') }}" placeholder="Carregue o arquivo...">
                                             </div>
                                             </div>
                                             <div class="col-lg-4 mb-4"> <button type="submit" class="btn btn-danger">

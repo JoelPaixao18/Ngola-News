@@ -153,6 +153,10 @@
         {{-- Content Create Publications --}}
         @yield('content-publicationCreate')
         {{-- Content Edit Publications --}}
+        @yield('content-publicationEdit')
+        {{-- Content Show Publications --}}
+        @yield('content-publicationView')
+        
 
         {{-- Footer --}}
         @include('_admin.layout.footer')

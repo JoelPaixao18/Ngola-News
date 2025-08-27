@@ -154,9 +154,9 @@ Route::prefix('_admin.typeCategories')->name('admin.')->group(function () {
 Route::prefix('_admin/publications')->name('admin.')->group(function () {
     Route::get('publication', [PublicationController::class, 'index'])->name('publication.index');
     Route::get('publicationCreate', [PublicationController::class, 'create'])->name('publication.create');
-   /*  Route::post('publicationStore', [PublicationController::class, 'store'])->name('publication.store');
+    Route::post('publicationStore', [PublicationController::class, 'store'])->name('publication.store');
     Route::get('publicationEdit/{publication}', [PublicationController::class, 'edit'])->name('publication.edit');
     Route::put('publicationUpdate/{publication}', [PublicationController::class, 'update'])->name('publication.update');
     Route::get('publicationView/{publication}', [PublicationController::class, 'show'])->name('publication.view');
-    Route::get('publicationDelete/{publication}', [PublicationController::class, 'destroy'])->name('publication.delete'); */
+    Route::get('publicationDelete/{publication}', [PublicationController::class, 'destroy'])->name('publication.delete');
 });
