@@ -29,6 +29,7 @@ Route::get('site/category', [SiteController::class, 'category'])->name('site.cat
 Route::get('site/policy', [SiteController::class, 'policy'])->name('site.policy');
 Route::get('site/newsCategory', [SiteController::class, 'newsCategory'])->name('site.newsCategory');
 Route::get('site/eventCategory', [SiteController::class, 'eventCategory'])->name('site.eventCategory');
+Route::get('site/allNews', [SiteController::class, 'allNews'])->name('site.allNews');
 /* Routas de Visualizações */
 Route::get('site/eventView/{event}', [SiteController::class, 'eventView'])->name('site.eventView');
 Route::get('site/newsView/{news}', [SiteController::class, 'newsView'])->name('site.newsView');

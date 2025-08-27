@@ -35,7 +35,12 @@ class Category extends Model
 
     public function typeCategory()
     {
-    return $this->belongsTo(TypeCategory::class, 'typecategory_id');
+        return $this->belongsTo(TypeCategory::class, 'typecategory_id');
+    }
+
+    public function latestNews()
+    {
+        return $this->hasOne(News::class)->latestOfMany();
     }
 
     /* protected static function boot()
