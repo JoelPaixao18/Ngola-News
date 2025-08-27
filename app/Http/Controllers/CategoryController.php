@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\TypeCategory;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -14,9 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderByDesc('id')->get();
+        $categories = Category::with('typeCategory')->orderByDesc('id')->get();
         //$categories = Category::all();
-        return view('admin.categories.categories.index', compact('categories'));
+        return view('_admin.categories.categories.index', compact('categories'));
     }
 
     /**
@@ -26,7 +28,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.categoryCreate.index');
+        /*  $typeCategories = typeCategory::where('name->name')->get(); */
+        $typeCategories = TypeCategory::all();
+        return view('_admin.categories.categoryCreate.index', compact('typeCategories'));
     }
 
     /**
@@ -41,27 +45,31 @@ class CategoryController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:categories,slug',
-            'type' => 'required|string|max:50',
-            'status' => 'required|in:active,inactive',
+            /* 'type' => 'required|string|max:50', */
             'description' => 'nullable|string|max:1000',
+            'typecategory_id' => 'required|exists:type_categories,id',
         ], [
             'name.required' => 'O nome é obrigátorio.',
-            'slug.required' => 'O Slug é obrigátorio.',
-            'slug.unique' => 'O Slug deve ser unico.',
-            'type.required' => 'O tipo é obrigátorio.',
-            'status.required' => 'Obrigátorio seleciona um status.',
+            /* 'type.required' => 'O tipo é obrigátorio.', */
             'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
+            'typecategory_id.required' => 'O tipo de categoria é obrigatória.',
+            'typecategory_id.exists' => 'O tipo de categoria selecionada é inválida.',
         ]);
         Category::create([
             'name' => $request->name,
-            'slug' => $request->slug,
-            'type' => $request->type,
-            'status' => $request->status === 'active' ? 'active' : 'inactive',
+            /* 'type' => $request->type, */
             'description' => $request->description,
+            'typecategory_id' => $request->typecategory_id,
+        ], [
+            'name' => $request->name,
+            /* 'type' => $request->type, */
+            'description' => $request->description,
+            'typecategory_id.required' => 'O tipo de categoria é obrigatória.',
+            'typecategory_id.exists' => 'O tipo de categoria selecionada é inválida.',
         ]);
 
-        return redirect()->route('admin.categories.index')->with('success', 'Categoria criada com sucesso!');
+        return redirect()->route('admin.categories.index')->with('success', 'Categória criada com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Categória!');
     }
 
     /**
@@ -74,7 +82,7 @@ class CategoryController extends Controller
     {
         //
 
-        return view('admin.categories.categoryView.index', ['category' => $category]);
+        return view('_admin.categories.categoryView.index', ['category' => $category]);
     }
 
     /**
@@ -86,7 +94,8 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         //
-        return view('admin.categories.categoryEdit.index', ['category' => $category]);
+        $typeCategories = TypeCategory::all();
+        return view('_admin.categories.categoryEdit.index', compact('category', 'typeCategories'));
     }
 
     /**
@@ -101,28 +110,41 @@ class CategoryController extends Controller
         //
         $request->validate([
             'name' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:categories,slug,' . $category->id,
+            /* 'slug' => 'required|string|max:255|unique:categories,slug,' . $category->id, */
             'type' => 'required|string|max:50',
-            'status' => 'required|in:active,inactive',
+            /* 'status' => 'required|in:active,inactive', */
             'description' => 'nullable|string|max:1000',
+            'typecategory_id' => 'required|exists:type_categories,id',
         ], [
             'name.required' => 'O nome é obrigátorio.',
-            'slug.required' => 'O Slug é obrigátorio.',
-            'slug.unique' => 'O Slug deve ser unico.',
+            /* 'slug.required' => 'O Slug é obrigátorio.', */
+            /* 'slug.unique' => 'O Slug deve ser unico.', */
             'type.required' => 'O tipo é obrigátorio.',
-            'status.required' => 'Obrigátorio seleciona um status.',
+            /* 'status.required' => 'Obrigátorio seleciona um status.', */
             'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
+            'typecategory_id.required' => 'O tipo de categoria é obrigatória.',
+            'typecategory_id.exists' => 'O tipo de categoria selecionada é inválida.',
         ]);
 
         $category->update([
             'name' => $request->name,
-            'slug' => $request->slug,
+            /* 'slug' => $request->slug, */
             'type' => $request->type,
-            'status' => $request->status === 'active' ? 'active' : 'inactive',
+            /* 'status' => $request->status === 'active' ? 'active' : 'inactive', */
             'description' => $request->description,
+            'typecategory_id' => $request->typecategory_id,
+        ], [
+            'name' => $request->name,
+            /* 'slug' => $request->slug, */
+            'type' => $request->type,
+            /* 'status' => $request->status === 'active' ? 'active' : 'inactive', */
+            'description' => $request->description,
+            'typecategory_id.required' => 'O tipo de categoria é obrigatória.',
+            'typecategory_id.exists' => 'O tipo de categoria selecionada é inválida.',
         ]);
 
-        return redirect()->route('admin.categories.index')->with('success', 'Categoria atualizada com sucesso!');
+        return redirect()->route('admin.categories.index')->with('success', 'Categória atualizada com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Categória!');
     }
 
     /**
@@ -134,6 +156,16 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category = Category::findOrFail($category->id);
+
+        // Verifica se a categoria está associada a algum artigo
+        if (!$category) {
+            return redirect()->back()->with('error', 'categoria não encontrada!');
+        }
+
+
+        // Exclui a categoria do banco de dados
+
         $category->delete();
         return redirect()->route('admin.categories.index')->with('success', 'Categoria apagado com sucesso!');
     }

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Author;
+use App\Models\Cities;
+use App\Models\Country;
+use App\Models\State;
 
 class EventController extends Controller
 {
@@ -16,8 +20,8 @@ class EventController extends Controller
     public function index()
     {
         //
-        $events = Event::orderByDesc('id')->get();
-        return view('admin.events.event.index', compact('events'));
+        $events = Event::with('cities')->orderByDesc('id')->get(); // obter todos eventos e também o nome da cidade
+        return view('_admin.events.event.index', compact('events'));
     }
 
     /**
@@ -27,12 +31,15 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
-        $categories1 = Category::where('type', 'evento')->get();
-        $categories2 = Category::where('type', 'eventos')->get();
-        $categories = $categories1->merge($categories2);
+        //trazendo as categorias
 
-        return view('admin.events.eventCreate.index', compact('categories'));
+        $categories = Category::all();
+        //trazendo os autores
+        $authors = Author::all();
+        //trazendo as cidades
+        $locations = Cities::all();
+
+        return view('_admin.events.eventCreate.index', compact('categories', 'authors', 'locations'));
     }
 
     /**
@@ -46,18 +53,28 @@ class EventController extends Controller
 
         // Validação básica
         $request->validate([
-            'title' => 'required|string|max:100',
-            'subtitle' => 'required|string|max:100',
-            'author' => 'required|string|max:100',
+            'title' => 'required|string|max:1000',
+            'subtitle' => 'required|string|max:10000',
             'description' => 'required|string',
-            'country' => 'required|string|max:100',
-            'state' => 'required|string|max:100',
-            'city' => 'required|string|max:100',
-            'status' => 'required|string ',
-            'eventDate' => 'required|date|after_or_equal:today',
-            'lastModifyedDate' => 'required|date|',
-            'categoryId' => 'required|exists:categories,id',
+            'status' => 'required|string',
+            'event_date' => 'required|date|after_or_equal:today',
+            'category_id' => 'required|exists:categories,id',
+            'author_id' => 'required|exists:authors,id',
+            'location' => 'required|exists:cities,id',
             'image' => 'required|image|mimes:jpg,jpeg,png',
+        ], [
+            'title.required' => 'O título é obrigatório.',
+            'subtitle.required' => 'O subtítulo é obrigatório.',
+            'description.required' => 'A descrição é obrigatória.',
+            'status.required' => 'O status é obrigatório.',
+            'event_date.required' => 'A data do evento é obrigatória.',
+            'event_date.after_or_equal' => 'A data do evento deve ser hoje ou uma data futura.',
+            'category_id.required' => 'A categoria é obrigatória.',
+            'author_id.required' => 'O autor é obrigatório.',
+            'location.required' => 'A Loacalizaçao é obrigatória.',
+            'image.required' => 'A imagem é obrigatória.',
+            'image.image' => 'A imagem deve ser um arquivo de imagem válido.',
+            'image.mimes' => 'A imagem deve ser do tipo: jpg, jpeg, png.',
         ]);
 
         // Upload da imagem
@@ -73,19 +90,17 @@ class EventController extends Controller
         Event::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
-            'author' => $request->author,
+            'status' => $request->status,
             'image' => $imageName,
             'description' => $request->description,
-            'country' => $request->country,
-            'state' => $request->state,
-            'city' => $request->city,
-            'status' => $request->status,
-            'eventDate' => $request->eventDate,
-            'lastModifyedDate' => $request->lastModifyedDate,
-            'categoryId' => $request->categoryId,
+            'event_date' => $request->event_date,
+            'category_id' => $request->category_id,
+            'author_id' => $request->author_id,
+            'location' => $request->location,
         ]);
 
-        return redirect()->route('admin.event.index')->with('msg', 'Evento criado com sucesso!');
+        return redirect()->route('admin.event.index')->with('success', 'Evento criado com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Evento!');
     }
 
     /**
@@ -96,8 +111,10 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //   
-        return view('admin.events.eventView.index', ['event' => $event]);
+        $cities = Cities::with('state')->find($event->location);
+        $event = Event::with('author', 'category')->find($event->id);
+        $state = State::with('country')->find($cities->state_id);
+        return view('_admin.events.eventView.index', compact('event', 'cities', 'state'));
     }
 
     /**
@@ -110,7 +127,9 @@ class EventController extends Controller
     {
         //
         $categories = Category::all();
-        return view('admin.events.eventEdit.index', ['event' => $event], compact('categories'));
+        $authors = Author::all();
+        $locations = Cities::all();
+        return view('_admin.events.eventEdit.index', ['event' => $event], compact('categories', 'authors', 'locations'));
     }
 
     /**
@@ -124,17 +143,28 @@ class EventController extends Controller
     {
         // Validação
         $validated = $request->validate([
-            'title' => 'required|string|max:100',
-            'subtitle' => 'required|string|max:100',
-            'author' => 'required|string|max:100',
+            'title' => 'required|string|max:1000',
+            'subtitle' => 'required|string|max:10000',
+            'author_id' => 'required|exists:authors,id',
             'description' => 'required|string',
-            'country' => 'required|string|max:100',
-            'state' => 'required|string|max:100',
-            'city' => 'required|string|max:100',
             'status' => 'required|string',
-            'eventDate' => 'required|date|after_or_equal:today',
-            'categoryId' => 'required|exists:categories,id',
+            'event_date' => 'required|date|after_or_equal:today',
+            'category_id' => 'required|exists:categories,id',
             'image' => 'sometimes|image|mimes:jpg,jpeg,png', // Alterado para 'sometimes'
+            'location' => 'required|exists:cities,id',
+        ], [
+            'title.required' => 'O título é obrigatório.',
+            'subtitle.required' => 'O subtítulo é obrigatório.',
+            'author_id.required' => 'O autor é obrigatório.',
+            'description.required' => 'A descrição é obrigatória.',
+            'status.required' => 'O status é obrigatório.',
+            'event_date.required' => 'A data do evento é obrigatória.',
+            'event_date.after_or_equal' => 'A data do evento deve ser hoje ou uma data futura.',
+            'category_id.required' => 'A categoria é obrigatória.',
+            'location.required' => 'A Localização é obrigatória.',
+            'image.image' => 'A imagem deve ser um arquivo de imagem válido.',
+            'image.mimes' => 'A imagem deve ser do tipo: jpg, jpeg, png.',
+            'image.sometimes' => 'A imagem é opcional, mas se fornecida, deve ser uma imagem válida.',
         ]);
 
         // Processar imagem se for enviada
@@ -151,13 +181,11 @@ class EventController extends Controller
             $validated['image'] = $imageName;
         }
 
-        // Atualizar data de modificação
-        $validated['lastModifyedDate'] = now()->format('Y-m-d');
-
         // Atualizar o evento
         $event->update($validated);
 
-        return redirect()->route('admin.event.index')->with('msg', 'Evento atualizado com sucesso!');
+        return redirect()->route('admin.event.index')->with('success', 'Evento atualizado com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar o evento!');
     }
 
     /**
