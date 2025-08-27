@@ -81,7 +81,7 @@ class PublicationController extends Controller
         $request->validate([
             'title' => 'required|string|max:1000',
             'date' => 'required|date|after_or_equal:today',
-            'file' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'file' => 'nullable|file|mimes:pdf,doc,docx',
             'cover' => 'nullable|image|mimes:jpg,jpeg,png',
         ], [
             'title.required' => 'O título é obrigatório.',
