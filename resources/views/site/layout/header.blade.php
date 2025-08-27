@@ -17,11 +17,12 @@
                                     <div class="title">Breaking News :</div>
                                     <div class="news-wrap">
                                         <div class="row slick-marquee">
+                                            @foreach($breaknews as $topic)
                                             <div class="col-auto">
-                                                <a href="blog-details.html" class="breaking-news">Relaxation redefined,
-                                                    your beach resort sanctuary.</a>
+                                                <a href="blog-details.html" class="breaking-news">{{ $topic->title }}</a>
                                             </div>
-                                            <div class="col-auto">
+                                            @endforeach
+                                           {{--  <div class="col-auto">
                                                 <a href="blog-details.html" class="breaking-news">From health to
                                                     fashion, lifestyle news curated.</a>
                                             </div>
@@ -32,7 +33,7 @@
                                             <div class="col-auto">
                                                 <a href="blog-details.html" class="breaking-news">Relaxation redefined,
                                                     your beach resort sanctuary.</a>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
