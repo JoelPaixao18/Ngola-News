@@ -12,6 +12,8 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\TypeCategoryController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\GaleryController;
+
 
 /*-------------------------------------------------------
                     Site Routes
@@ -173,5 +175,17 @@ Route::prefix('_admin/videos')->name('admin.')->group(function () {
     Route::put('videoUpdate/{video}', [videoController::class, 'update'])->name('video.update');
     Route::get('videoView/{video}', [videoController::class, 'show'])->name('video.view');
     Route::get('videoDelete/{video}', [videoController::class, 'destroy'])->name('video.delete');
+});
+/* -----------------------------------------------
+                    galery Routes
+--------------------------------------------------*/
+Route::prefix('_admin/galeries')->name('admin.')->group(function () {
+    Route::get('galery', [GaleryController::class, 'index'])->name('galery.index');
+    Route::get('galeryCreate', [GaleryController::class, 'create'])->name('galery.create');
+    Route::post('galeryStore', [GaleryController::class, 'store'])->name('galery.store');
+    Route::get('galeryEdit/{galery}', [GaleryController::class, 'edit'])->name('galery.edit');
+    Route::put('galeryUpdate/{galery}', [GaleryController::class, 'update'])->name('galery.update');
+    Route::get('galeryView/{galery}', [GaleryController::class, 'show'])->name('galery.view');
+    Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
 });
 

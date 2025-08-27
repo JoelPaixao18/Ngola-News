@@ -21,15 +21,17 @@ class VideoController extends Controller
         //validation
         $request->validate([
             'title' => 'required|string|max:1000',
+            'detach' => 'required|string|max:1000',
             'description' => 'nullable|string|max:1000',
             'url' => 'required|url',
         ], [
             'title.required' => 'O título é obrigátorio.',
+            'detach.required' => 'O campo "detach" é obrigátorio.',
             'url.required' => 'A URL é obrigátorio.',
             'url.url' => 'A URL deve ser um link válido.',
             'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
         ]);
-        Video::create($request->only('title', 'description', 'url'));
+        Video::create($request->only('title', 'detach', 'description', 'url'));
         return redirect()->route('admin.video.index')->with('success', 'Vídeo criado com sucesso.');
     }
     public function show(Video $video)
@@ -45,15 +47,17 @@ class VideoController extends Controller
         //
         $request->validate([
             'title' => 'required|string|max:1000',
+            'detach' => 'required|string|max:1000',
             'description' => 'nullable|string|max:1000',
             'url' => 'required|url',
         ], [
             'title.required' => 'O título é obrigátorio.',
+            'detach.required' => 'O campo "detach" é obrigátorio.',
             'url.required' => 'A URL é obrigátorio.',
             'url.url' => 'A URL deve ser um link válido.',
             'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
         ]);
-        $video->update($request->only('title', 'description', 'url'));
+        $video->update($request->only('title', 'detach', 'description', 'url'));
         return redirect()->route('admin.video.index')->with('success', 'Vídeo atualizado com sucesso.');    
     }
     public function destroy(Video $video)

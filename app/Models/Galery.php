@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Video extends Model
+class Galery extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['title', 'detach', 'description', 'url'];
+    protected $fillable = ['title', 'description', 'image'];
 }

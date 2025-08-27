@@ -167,6 +167,15 @@
         {{-- Content Show Videos --}}
         @yield('content-videoView')
 
+        {{-- Content Galeria --}}
+        @yield('content-galery')
+        {{-- Content Create Galeria --}}
+        @yield('content-galeryCreate')
+        {{-- Content Edit Galeria --}}
+        @yield('content-galeryEdit')
+        {{-- Content Show Galeria --}}
+        @yield('content-galeryView')
+
         {{-- Footer --}}
         @include('_admin.layout.footer')
     </main>
