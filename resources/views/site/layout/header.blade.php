@@ -14,12 +14,12 @@
                         <div class="row align-items-center">
                             <div class="col-xl-9">
                                 <div class="news-area">
-                                    <div class="title">Breaking News :</div>
+                                    <div class="title">Últimas Notícias :</div>
                                     <div class="news-wrap">
                                         <div class="row slick-marquee">
                                             @foreach($breaknews as $topic)
                                             <div class="col-auto">
-                                                <a href="blog-details.html" class="breaking-news">{{ $topic->title }}</a>
+                                                <a href="{{ route('site.newsView', ['news' => $newsItem->id]) }}" class="breaking-news">{{ $topic->title }}</a>
                                             </div>
                                             @endforeach
                                            {{--  <div class="col-auto">

@@ -2,12 +2,25 @@
 .img-card {
     width: 100%;
     height: 13.5rem;
+    overflow: hidden;
+}
+
+.img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* tratamento das imagem na Home na sessão Noticias de hoje as masi recentes*/
 .img-today {
     width: 100%;
     height: 10rem;
+    overflow: hidden;
+}
+
+.img-today img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -15,6 +28,12 @@
 .img-big1 {
     width: 100%;
     height: 33rem;
+    overflow: hidden;
+}
+
+.img-big1 img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -22,6 +41,13 @@
 .img-card-policy {
     width: 100%;
     height: 20rem;
+    overflow: hidden;
+}
+
+.img-card-policy img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Tratamento da imagem nos detalhes da noticias */
@@ -29,6 +55,13 @@
 .fixed-img {
     width: 80%;
     height: 25rem;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.fixed-img img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -37,5 +70,27 @@
 .img-general {
     width: 100%;
     height: 28.5rem;
+    /* altura fixa do container */
+    overflow: hidden;
+    /* garante que nada ultrapasse */
+}
+
+.img-general img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* faz o recorte proporcional */
+}
+
+/* allnews - todas */
+.img-allnews {
+    width: 100%;
+    height: 8rem;
+    overflow: hidden;
+}
+
+.img-allnews img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
