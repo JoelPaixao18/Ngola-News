@@ -12,28 +12,59 @@
     </div>
 
     {{-- <button id="eventShow">Ver eventos</button>
-    <div id="eventList"></div> --}}
+    <div id="eventList"></div>
     <input type="text" name="id" id="id">
     <button id="pesquisar">Pesquisar</button>
-    <div id="resultado"></div>
+    <div id="resultado"></div> --}}
 
-    {{-- <section class="space-top space-extra-bottom">
+    <section class="space-top space-extra-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-9 col-lg-8">
                     <div class="row gy-30 filter-active">
-                        <div class="filter-item col-xl-4 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
-                                        data-theme-color="#868101" href="#" class="category">Action</a></div>
-                                <h3 class="box-title-20"><a href="#" class="hover-line"
-                                        data-bs-target="#exampleModal">Eureka moments
-                                        science journey enlightenment</a></h3>
-                                <div class="blog-meta"><a href="#"><i class="far fa-user"></i>By - Tnews</a>
-                                    <a href="#"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                        @foreach ($videos as $video)
+                            <div class="filter-item col-xl-4 col-sm-6">
+                                <div class="blog-style1">
+                                    <div class="blog-img">
+                                        @if (strpos($video->url, 'youtube.com') !== false || strpos($video->url, 'youtu.be') !== false)
+                                            @php
+                                                // Extrair o ID do vídeo da URL
+                                                preg_match(
+                                                    '/(?:youtube\.com\/(?:[^\/]+\/[^\/]+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/',
+                                                    $video->url,
+                                                    $matches,
+                                                );
+                                                $video_id = $matches[1] ?? null;
+                                            @endphp
+
+                                            @if ($video_id)
+                                                <!-- Incorporar o vídeo do YouTube usando iframe -->
+                                                <iframe width="640" height="360"
+                                                    src="https://www.youtube.com/embed/{{ $video_id }}" frameborder="0"
+                                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen></iframe>
+                                            @else
+                                                <p>Vídeo não encontrado.</p>
+                                            @endif
+                                        @else
+                                            <!-- Caso a URL não seja do YouTube, exibe como vídeo direto -->
+                                            <video width="640" height="360" controls>
+                                                <source src="{{ $video->url }}" type="video/mp4">
+                                                Seu navegador não suporta o elemento de vídeo.
+                                            </video>
+                                        @endif
+                                        <a data-theme-color="#868101" href="#" class="category">Action</a>
+                                    </div>
+                                    <h3 class="box-title-20"><a href="#" class="hover-line"
+                                            data-bs-target="#exampleModal">Eureka moments
+                                            science journey enlightenment</a></h3>
+                                    <div class="blog-meta"><a href="#"><i class="far fa-user"></i>By - Tnews</a>
+                                        <a href="#"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            <!-- Verificar se a URL contém o ID do YouTube -->
+                        @endforeach
                     </div>
                     <div class="mt-40 mb-30 text-center"><a href="blog-masonary.html" class="th-btn">Load More</a></div>
                 </div>
@@ -122,39 +153,39 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         /*  $('#eventShow').on('click', function() {
-                fetch('{{ route('site.api') }}')
-                    .then(response => response.json())
-                    .then(data => {
-                        let eventList = $('#eventList');
-                        eventList.empty(); // Clear previous content
-                        data.forEach(event => {
-                            let eventItem = `<div><h3>${event.title}</h3><p>${event.description}</p><hr></div>`;
-                            eventList.append(eventItem);
-                        });
-                    })
-                    .catch(error => console.error('Error fetching events:', error));
-            }); */
-        $(document).ready(function() {
-            $('#pesquisar').click(function() {
-                var id = $('#id').val();
-                $.ajax({
-                    url: 'site/apiShow/' + id,
-                    method: 'GET',
-                    success: function(event) {
-                        $('#resultado').html(
-                            '<p>Title: ' + event.title + '</p>'
-                        );
-                    },
-                    error: function() {
-                        $('#resultado').html('<p>Evento não encontrado.</p>');
-                    }
-                });
-            });
-        });
+                                fetch('{{ route('site.api') }}')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        let eventList = $('#eventList');
+                                        eventList.empty(); // Clear previous content
+                                        data.forEach(event => {
+                                            let eventItem = `<div><h3>${event.title}</h3><p>${event.description}</p><hr></div>`;
+                                            eventList.append(eventItem);
+                                        });
+                                    })
+                                    .catch(error => console.error('Error fetching events:', error));
+                            }); */
+        /*  $(document).ready(function() {
+             $('#pesquisar').click(function() {
+                 var id = $('#id').val();
+                 $.ajax({
+                     url: 'site/apiShow/' + id,
+                     method: 'GET',
+                     success: function(event) {
+                         $('#resultado').html(
+                             '<p>Title: ' + event.title + '</p>'
+                         );
+                     },
+                     error: function() {
+                         $('#resultado').html('<p>Evento não encontrado.</p>');
+                     }
+                 });
+             });
+         }); */
     </script>
 
 @endsection

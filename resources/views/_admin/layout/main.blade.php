@@ -156,7 +156,25 @@
         @yield('content-publicationEdit')
         {{-- Content Show Publications --}}
         @yield('content-publicationView')
-        
+
+        {{-- #------ Menu Videos ------# --}}
+        {{-- Content Videos --}}
+        @yield('content-video')
+        {{-- Content Create Videos --}}
+        @yield('content-videoCreate')
+        {{-- Content Edit Videos --}}
+        @yield('content-videoEdit')
+        {{-- Content Show Videos --}}
+        @yield('content-videoView')
+
+        {{-- Content Galeria --}}
+        @yield('content-galery')
+        {{-- Content Create Galeria --}}
+        @yield('content-galeryCreate')
+        {{-- Content Edit Galeria --}}
+        @yield('content-galeryEdit')
+        {{-- Content Show Galeria --}}
+        @yield('content-galeryView')
 
         {{-- Footer --}}
         @include('_admin.layout.footer')
