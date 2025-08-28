@@ -1,16 +1,16 @@
 @extends('_admin.layout.main')
-@section('title', 'Criar Galeria')
-@section('content-galeryCreate')
+@section('title', 'Editar Galeria')
+@section('content-galeryEdit')
     <div class="nxl-content">
         <!-- [ page-header ] start -->
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">galery</h5>
+                    <h5 class="m-b-10">Galeria</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Create</li>
+                    <li class="breadcrumb-item">Editar</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -55,9 +55,9 @@
                                 <a href="{{ route('admin.galery.index') }}" class="btn btn-sm btn-light-brand">Listar
                                     galery</a>
                             </div>
-                            <form action="{{ route('admin.galery.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.galery.update', ['galery' => $galery]) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                @method('POST')
+                                @method('Put')
 
                                 <div class="row">
 
@@ -65,20 +65,20 @@
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Título</label>
                                         <input type="text" name="title" class="form-control"
-                                            value="{{ old('title') }}" placeholder="Ex: INFOSI ou João Silva">
+                                            value="{{ old('title') ?? $galery->title }}" placeholder="Ex: INFOSI ou João Silva">
                                     </div>
 
                                     {{-- Image --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Imagem</label>
-                                        <input type="file" name="image" class="form-control">
+                                        <input type="file" name="image" value="{{old('image') ?? $galery->image}}" class="form-control">
                                         <small class="text-muted">Formatos suportados: jpg, jpeg, png, gif</small>
                                     </div>
 
                                     {{-- description --}}
                                     <div class="col-12 mb-4">
                                         <label class="form-label">Descrição</label>
-                                        <textarea name="description" class="form-control" rows="4" placeholder="Escreve a sua descrição...">{{ old('description') }}</textarea>
+                                        <textarea name="description" class="form-control" rows="4" placeholder="Escreve a sua descrição...">{{ old('description') ?? $galery->description }}</textarea>
                                     </div>
 
                                     {{-- Botão de Enviar --}}

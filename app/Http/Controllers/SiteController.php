@@ -8,6 +8,7 @@ use App\Models\News;
 use App\Models\Category;
 use App\Models\Publication;
 use App\Models\Video;
+use App\Models\Galery;
 
 class SiteController extends Controller
 {
@@ -137,6 +138,11 @@ class SiteController extends Controller
         return view('site.multimedia.videos', compact('videos', 'breaknews'));
     }
 
+    public function galery(){
+        $galeries = Galery::all();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        return view('site.multimedia.galery', compact('galeries', 'breaknews'));
+    }
     public function api()
     {
         $event = Event::all();

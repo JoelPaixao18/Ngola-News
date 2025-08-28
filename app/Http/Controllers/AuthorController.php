@@ -7,36 +7,16 @@ use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
         $authors = Author::orderByDesc('id')->get();
 
         return view('_admin.authors.author.index', compact('authors'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
         return view('_admin.authors.authorCreate.index');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request, Author $author)
     {
         // Validação dos campos
@@ -67,41 +47,16 @@ class AuthorController extends Controller
         return redirect()->route('admin.author.index')->with('success', 'Autor criado com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Autor!');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Author  $author
-     * @return \Illuminate\Http\Response
-     */
     public function show(Author $author)
     {
-        //
         return view('_admin.authors.authorView.index', ['author' => $author]);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Author  $author
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Author $author)
     {
-        //
         return view('_admin.authors.authorEdit.index', ['author' => $author]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Author  $author
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Author $author)
     {
-        //
         // Validação
         $validated = $request->validate([
             'name'      => 'required|string|max:255',
@@ -137,16 +92,8 @@ class AuthorController extends Controller
         return redirect()->route('admin.author.index')->with('success', 'Autor atualizado com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Autor!');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Author  $author
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Author $author)
     {
-        //
         $author->delete();
         return redirect()->route('admin.author.index')->with('msg', 'author eliminado com sucesso!');
     }

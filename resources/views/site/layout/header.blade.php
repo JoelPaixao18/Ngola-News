@@ -113,6 +113,7 @@
                                                 {{-- <li><a href="/site/category">Todas</a></li> --}}
                                                 <li><a href="/site/publication">Publicação</a></li>
                                                 <li><a href="/site/videos">Vídeos</a></li>
+                                                <li><a href="/site/galery">Galeria</a></li>
                                             </ul>
                                         </li>
                                         {{-- <li class="menu-item-has-children">

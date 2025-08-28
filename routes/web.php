@@ -39,6 +39,7 @@ Route::get('site/newsView/{news}', [SiteController::class, 'newsView'])->name('s
 Route::get('site/policyView/{news}', [SiteController::class, 'policyView'])->name('site.policyView');
 Route::get('site/publication', [SiteController::class, 'publication'])->name('site.publication');
 Route::get('site/videos', [SiteController::class, 'videos'])->name('site.videos');
+Route::get('site/galery', [SiteController::class, 'galery'])->name('site.galery');
 
 /* API */
 Route::get('site/api/', [SiteController::class, 'api'])->name('site.api');

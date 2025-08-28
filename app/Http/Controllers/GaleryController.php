@@ -21,7 +21,7 @@ class GaleryController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'required|image|max:2048',
+            'image' => 'required|image',
         ], [
             'title.required' => 'O título é obrigatório.',
             'image.required' => 'A imagem é obrigatória.',
@@ -43,37 +43,48 @@ class GaleryController extends Controller
     }
     public function show(Galery $galery)
     {
-        return view('_admin.galeries.galery.show', compact('galery'));
+        return view('_admin.galeries.galeryView.index', compact('galery'));
     }
     public function edit(Galery $galery)
     {
-        return view('_admin.galeries.galery.edit', compact('galery'));
+        return view('_admin.galeries.galeryEdit.index', compact('galery'));
     }
     public function update(Request $request, Galery $galery)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
+       // Validação
+        $validated = $request->validate([
+            'title'      => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'sometimes|image|mimes:jpg,jpeg,png', // Alterado para 'sometimes'
         ], [
             'title.required' => 'O título é obrigatório.',
-            'image.image' => 'O arquivo deve ser uma imagem válida.',
-            'image.max' => 'A imagem não pode ser maior que 2MB.',
+            'image.image' => 'A image deve ser uma imagem válida.',
+            'image.mimes' => 'A image deve ser nos formatos: jpg, jpeg, png.',
         ]);
-        // Upload da imagem
+
+
+        // Processar imagem se for enviada
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            // Remover imagem antiga se existir
+            if ($galery->image && file_exists(public_path('img/galerys/' . $galery->image))) {
+                unlink(public_path('img/galerys/' . $galery->image));
+            }
+
             $image = $request->file('image');
             $extension = $image->extension();
             $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
-            $image->move(public_path('img/galeries'), $imageName);
-            // Deleta a imagem antiga se existir
-            if ($galery->image && file_exists(public_path('img/galeries/' . $galery->image))) {
-                unlink(public_path('img/galeries/' . $galery->image));
-            }
-            $galery->image = $imageName;
+            $image->move(public_path('img/galerys'), $imageName);
+            $validated['image'] = $imageName;
         }
-        $galery->save();
-        return redirect()->route('admin.galery.index')->with('success', 'Galeria atualizada com sucesso.');
+
+        // Atualizar data de modificação
+        $validated['lastModifyedDate'] = now()->format('Y-m-d');
+
+        // Atualizar o galery
+        $galery->update($validated);
+
+        return redirect()->route('admin.galery.index')->with('success', 'Autor atualizado com sucesso!');
+        return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Autor!');
     }
     public function destroy(Galery $galery)
     {
