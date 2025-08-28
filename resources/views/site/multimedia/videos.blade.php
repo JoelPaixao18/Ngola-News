@@ -56,8 +56,7 @@
                                         <a data-theme-color="#868101" href="#" class="category">Action</a>
                                     </div>
                                     <h3 class="box-title-20"><a href="#" class="hover-line"
-                                            data-bs-target="#exampleModal">Eureka moments
-                                            science journey enlightenment</a></h3>
+                                            data-bs-target="#exampleModal">{{$video->title}}</a></h3>
                                     <div class="blog-meta"><a href="#"><i class="far fa-user"></i>By - Tnews</a>
                                         <a href="#"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
                                     </div>
