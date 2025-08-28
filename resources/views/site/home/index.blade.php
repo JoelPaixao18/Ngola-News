@@ -223,7 +223,7 @@
                                         <i class="far fa-user"></i>By - Tnews
                                     </a>
                                     <a href="blog.html">
-                                        <i class="fal fa-calendar-days"></i>{{ $news->created_at->format('d M, Y') }}
+                                        <i class="fal fa-calendar-days"></i>{{ $news->updated_at->format('d M, Y') }}
                                     </a>
                                 </div>
                             </div>
@@ -357,7 +357,7 @@
                                             <i class="far fa-user"></i>By - Tnews
                                         </a>
                                         <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>{{ $today->created_at->format('d M, Y') }}
+                                            <i class="fal fa-calendar-days"></i>{{ $today->updated_at->format('d M, Y') }}
                                         </a>
                                     </div>
                                 </div>
@@ -409,7 +409,7 @@
                                         </a>
                                         <a href="blog.html">
                                             <i
-                                                class="fal fa-calendar-days"></i>{{ $today1->created_at->format('d M, Y') }}
+                                                class="fal fa-calendar-days"></i>{{ $today1->updated_at->format('d M, Y') }}
                                         </a>
                                     </div>
                                 </div>
@@ -424,30 +424,21 @@
     <section class="bg-fixed dark-theme" data-bg-src="{{ url('site/assets/img/blog/blog_full_1.jpg') }}"
         data-overlay="black" data-opacity="7">
         <div class="container">
-            <div class="blog-bg-style1 row">
-                <div class="col-md-9 col-sm">
-                    <a data-theme-color="#6234AC" href="blog.html" class="category">Technology</a>
-                    <h3 class="box-title-50">
-                        <a class="hover-line" href="blog-details.html">From vision to reality, technology Pioneers
-                            progress</a>
-                    </h3>
-                    <div class="blog-meta">
-                        <a href="author.html">
-                            <i class="far fa-user"></i>By - Tnews
-                        </a>
-                        <a href="blog.html">
-                            <i class="fal fa-calendar-days"></i>20 Mar, 2025
-                        </a>
+            <div class="row justify-content-center">
+                @isset($videos)
+                    <div class="col-lg-10 col-md-12">
+                        <div class="video-container mt-4">
+                            <iframe src="{{ $videos->embed_url }}"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-auto mt-5 mt-sm-0">
-                    <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn style2 popup-video">
-                        <i class="fas fa-play"></i>
-                    </a>
-                </div>
+                @endisset
             </div>
         </div>
     </section>
+
     <!-- ==================== Category Main Section ==================== -->
     <section class="space">
         <div class="container">
@@ -490,7 +481,7 @@
                                         <i class="far fa-user"></i>By - Tnews
                                     </a>
                                     <a href="blog.html">
-                                        <i class="fal fa-calendar-days"></i>{{ $today1->created_at->format('d M, Y') }}
+                                        <i class="fal fa-calendar-days"></i>{{ $today1->updated_at->format('d M, Y') }}
                                     </a>
                                 </div>
                             </div>
@@ -518,7 +509,7 @@
                                 <div class="blog-meta">
                                     <a href="blog.html">
                                         <i
-                                            class="fal fa-calendar-days"></i>{{ $newspolicy->created_at->format('d M, Y') }}
+                                            class="fal fa-calendar-days"></i>{{ $newspolicy->updated_at->format('d M, Y') }}
                                     </a>
                                 </div>
                             </div>
@@ -545,7 +536,7 @@
                                 <div class="blog-meta">
                                     <a href="blog.html">
                                         <i
-                                            class="fal fa-calendar-days"></i>{{ $newsculture->created_at->format('d M, Y') }}
+                                            class="fal fa-calendar-days"></i>{{ $newsculture->updated_at->format('d M, Y') }}
                                     </a>
                                 </div>
                             </div>
@@ -637,30 +628,41 @@
                 {{-- =================== Tech Section ================== --}}
                 <div class="col-xl-8">
                     <h2 class="sec-title has-line">Ciências & Tecnologias</h2>
-                    <div class="mb-4">
-                        <div class="dark-theme img-overlay2 space-40">
-                            <div class="blog-style3">
-                                <div class="blog-img">
-                                    <img src="{{ url('site/assets/img/blog/blog_5_15.jpg') }}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">Technology</a>
-                                    <h3 class="box-title-40">
-                                        <a class="hover-line" href="blog-details.html">Tech Unleash possibilities, shape a
-                                            brighter future.</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="author.html">
-                                            <i class="far fa-user"></i>By - Tnews
+                    {{-- Noticia de Ciências e Tecnologia com destaque --}}
+                    @if ($newsTech1)
+                        <div class="mb-4">
+                            <div class="dark-theme img-overlay2 space-40">
+                                <div class="blog-style3">
+                                    <div class="blog-img img-tech1">
+                                        <img src="{{ asset('img/news/' . $newsTech1->image) }}"
+                                            alt="{{ $newsTech1->title }}">
+                                    </div>
+                                    <div class="blog-content">
+                                        <a data-theme-color="#6234AC"
+                                            href="{{ route('site.newsCategory', $newsTech1->category->id) }}"
+                                            class="category">
+                                            {{ $newsTech1->category->name }}
                                         </a>
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>15 Mar, 2025
-                                        </a>
+                                        <h3 class="box-title-40">
+                                            <a class="hover-line" href="{{ route('site.newsView', $newsTech1->id) }}">
+                                                {{ Str::limit($newsTech1->title, 85) }}
+                                            </a>
+                                        </h3>
+                                        <div class="blog-meta">
+                                            <a href="#">
+                                                <i class="far fa-user"></i> By - Tnews
+                                            </a>
+                                            <a href="#">
+                                                <i class="fal fa-calendar-days"></i>
+                                                {{ $newsTech1->updated_at->format('d M, Y') }}
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
+                    {{-- Noticia de Ciências e Tecnologia exibindo as 4 mais recentes --}}
                     <div class="row gy-4">
                         @foreach ($newsTech as $newstech)
                             <div class="col-md-6">
@@ -677,12 +679,12 @@
                                         @endforeach
                                         <h3 class="box-title-20">
                                             <a class="hover-line"
-                                                href="{{ route('site.newsView', ['news' => $newstech->id]) }}">{{ Str::limit($newstech->title) }}</a>
+                                                href="{{ route('site.newsView', ['news' => $newstech->id]) }}">{{ Str::limit($newstech->title, 50) }}</a>
                                         </h3>
                                         <div class="blog-meta">
                                             <a href="blog.html">
                                                 <i
-                                                    class="fal fa-calendar-days"></i>{{ $newstech->created_at->format('d M, Y') }}
+                                                    class="fal fa-calendar-days"></i>{{ $newstech->updated_at->format('d M, Y') }}
                                             </a>
                                         </div>
                                     </div>

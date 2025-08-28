@@ -45,14 +45,43 @@ class SiteController extends Controller
         })->get();
 
         /* --------- Sessão Ciências e Tecnologia */
+
+        /* exibindo a mais recente e destacada */
+        $newsTech1 = News::where('detach', 'destaque') // apenas notícias destaque
+            ->whereHas('category', function ($query) {
+                $query->whereIn('name', [
+                    'Tecnologia',
+                    'Tecnologias',
+                    'Ciência',
+                    'Ciências'
+                ]);
+            })
+            ->orderByDesc('id') // pega a mais recente
+            ->first();
+
+
+        /* exibindo as 4 primeiras mais recentas */
         $newsTech = News::whereHas('category', function ($query) {
-            $query->where('name', 'Tecnologia')->take(4);
+            $query->where('name', 'Tecnologia')->orderByDesc('id')->take(4);
         })->get();
 
         $categories = Category::where('name->name')->get();
 
+        $videos = Video::where('detach', 'destaque')->orderByDesc('id')->first();
 
-        return view('site.home.index', compact('categories', 'news', 'today', 'today1', 'newsPolicy', 'newsTech', 'newsCulture', 'breaknews'));
+
+        return view('site.home.index', compact(
+            'categories',
+            'news',
+            'today',
+            'today1',
+            'newsPolicy',
+            'newsTech',
+            'newsTech1',
+            'newsCulture',
+            'breaknews',
+            'videos'
+        ));
     }
 
     /* Função Sobre - exibindo as informações do site */
@@ -102,7 +131,7 @@ class SiteController extends Controller
         return view('site.category.news.newsView', compact('news', 'breaknews'));
     }
 
-    /* Ppliticas */
+    /* Politicas */
 
     public function policy()
     {
@@ -138,7 +167,8 @@ class SiteController extends Controller
         return view('site.multimedia.videos', compact('videos', 'breaknews'));
     }
 
-    public function galery(){
+    public function galery()
+    {
         $galeries = Galery::all();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         return view('site.multimedia.galery', compact('galeries', 'breaknews'));

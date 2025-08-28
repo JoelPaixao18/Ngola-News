@@ -157,18 +157,18 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         /*  $('#eventShow').on('click', function() {
-                                fetch('{{ route('site.api') }}')
-                                    .then(response => response.json())
-                                    .then(data => {
-                                        let eventList = $('#eventList');
-                                        eventList.empty(); // Clear previous content
-                                        data.forEach(event => {
-                                            let eventItem = `<div><h3>${event.title}</h3><p>${event.description}</p><hr></div>`;
-                                            eventList.append(eventItem);
-                                        });
-                                    })
-                                    .catch(error => console.error('Error fetching events:', error));
-                            }); */
+                                    fetch('{{ route('site.api') }}')
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            let eventList = $('#eventList');
+                                            eventList.empty(); // Clear previous content
+                                            data.forEach(event => {
+                                                let eventItem = `<div><h3>${event.title}</h3><p>${event.description}</p><hr></div>`;
+                                                eventList.append(eventItem);
+                                            });
+                                        })
+                                        .catch(error => console.error('Error fetching events:', error));
+                                }); */
         /*  $(document).ready(function() {
              $('#pesquisar').click(function() {
                  var id = $('#id').val();

@@ -1,7 +1,7 @@
 @extends('site.layout.main')
 @section('title', 'Galeria de Fotos')
 @section('content-galery')
-<div class="breadcumb-wrapper">
+    <div class="breadcumb-wrapper">
         <div class="container">
             <ul class="breadcumb-menu">
                 <li><a href="home-newspaper.html">Home</a></li>
@@ -19,18 +19,15 @@
                                 <div class="filter-item col-xl-4 col-sm-6">
                                     <div class="blog-style1">
                                         <div class="blog-img"><img
-                                            @if ($galery->image)
-                                                src="{{ asset('img/galeries/' . $galery->image) }}"
+                                                @if ($galery->image) src="{{ asset('img/galeries/' . $galery->image) }}"
                                             @else
-                                                src="{{ asset('img/galeries/pdfimg.png')}}"
-                                            @endif
-                                                
+                                                src="{{ asset('img/galeries/pdfimg.png') }}" @endif
                                                 alt="blog image"></div>
                                         <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal">{{ $galery->title }}</a></h3>
                                         <div class="blog-meta">
-                                                <a href="#"><i
-                                                        class="fal fa-calendar-days"></i>{{ $galery->created_at->format('d M, Y') }}</a>
+                                            <a href="#"><i
+                                                    class="fal fa-calendar-days"></i>{{ $galery->updated_at->format('d M, Y') }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -166,5 +163,4 @@
                 </div>
             </div>
         </div>
-    </section
-@endsection
+</section @endsection

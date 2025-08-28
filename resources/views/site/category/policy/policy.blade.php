@@ -25,8 +25,7 @@
                                         <div class="blog-content">
                                             @foreach ($categories as $category)
                                                 @if ($item->category_id == $category->id)
-                                                    <a data-theme-color="#FF9500"
-                                                        href="#"
+                                                    <a data-theme-color="#FF9500" href="#"
                                                         class="category">{{ $category->name }}</a>
                                                 @endif
                                             @endforeach
@@ -38,7 +37,7 @@
                                             <div class="blog-meta">
                                                 <a href="#"><i class="far fa-user"></i>{{ $item->author }}</a>
                                                 <a href="#"><i
-                                                        class="fal fa-calendar-days"></i>{{ $item->created_at->format('d M, Y') }}</a>
+                                                        class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}</a>
                                             </div>
                                             <a href="{{ route('site.policyView', ['news' => $item]) }}"
                                                 class="th-btn style2">Ver mais<i class="fas fa-arrow-up-right ms-2"></i></a>
