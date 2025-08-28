@@ -42,12 +42,15 @@ class SiteController extends Controller
             $query->where('name', 'Cultura')->take(6);
         })->get();
 
-
+        /* --------- Sessão Ciências e Tecnologia */
+        $newsTech = News::whereHas('category', function ($query) {
+            $query->where('name', 'Tecnologia')->take(4);
+        })->get();
 
         $categories = Category::where('name->name')->get();
 
 
-        return view('site.home.index', compact('categories', 'news', 'today', 'today1', 'newsPolicy', 'newsCulture', 'breaknews'));
+        return view('site.home.index', compact('categories', 'news', 'today', 'today1', 'newsPolicy', 'newsTech', 'newsCulture', 'breaknews'));
     }
 
     /* Função Sobre - exibindo as informações do site */
@@ -131,11 +134,13 @@ class SiteController extends Controller
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         return view('site.multimedia.videos', compact('breaknews'));
     }
+
     public function api()
     {
         $event = Event::all();
         return response()->json($event);
     }
+
     public function show($id)
     {
         $event = Event::find($id);
