@@ -18,11 +18,11 @@
                             @foreach ($galeries as $galery)
                                 <div class="filter-item col-xl-4 col-sm-6">
                                     <div class="blog-style1">
-                                        <div class="blog-img"><img
+                                        <div class="blog-img"><img class="rounded "
                                                 @if ($galery->image) src="{{ asset('img/galeries/' . $galery->image) }}"
                                             @else
                                                 src="{{ asset('img/galeries/pdfimg.png') }}" @endif
-                                                alt="blog image"></div>
+                                                alt="{{$galery->title}}" ></div>
                                         <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal" id="img" 
                                                 >{{ $galery->title }}</a></h3>
@@ -30,10 +30,10 @@
                                             <a href="#"><i
                                                     class="fal fa-calendar-days"></i>{{ $galery->created_at->format('d M, Y') }}</a>
                                         </div>
-                                        <button onclick="take()">get id</button>
+                                       {{--  <button onclick="take()">get id</button> --}}
                                         {{-- <div id="takeId" style="display: none">
                                             <input type="text" id="galeryId" value="1">
-                                        </div> --}}<input type="text" id="galeryId" value="{{$galery->id}}">
+                                        </div> --}}{{-- <input type="text" id="galeryId" value="{{$galery->id}}"> --}}
                                     </div>
                                 </div>
                             @endforeach
