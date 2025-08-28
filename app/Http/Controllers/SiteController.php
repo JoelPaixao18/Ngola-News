@@ -7,6 +7,7 @@ use App\Models\Event;
 use App\Models\News;
 use App\Models\Category;
 use App\Models\Publication;
+use App\Models\Video;
 
 class SiteController extends Controller
 {
@@ -128,8 +129,9 @@ class SiteController extends Controller
 
     public function videos()
     {
+        $videos = Video::all();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
-        return view('site.multimedia.videos', compact('breaknews'));
+        return view('site.multimedia.videos', compact('videos', 'breaknews'));
     }
     public function api()
     {
