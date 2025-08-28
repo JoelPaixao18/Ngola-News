@@ -448,7 +448,7 @@
             </div>
         </div>
     </section>
-    <!-- ==================== General News Section ==================== -->
+    <!-- ==================== Category Main Section ==================== -->
     <section class="space">
         <div class="container">
             <div class="row align-items-center">
@@ -634,8 +634,9 @@
     <section class="space-bottom">
         <div class="container">
             <div class="row">
+                {{-- =================== Tech Section ================== --}}
                 <div class="col-xl-8">
-                    <h2 class="sec-title has-line">Popular News</h2>
+                    <h2 class="sec-title has-line">Ciências & Tecnologias</h2>
                     <div class="mb-4">
                         <div class="dark-theme img-overlay2 space-40">
                             <div class="blog-style3">
@@ -661,26 +662,34 @@
                         </div>
                     </div>
                     <div class="row gy-4">
-                        <div class="col-md-6">
-                            <div class="blog-style2">
-                                <div class="blog-img img-big">
-                                    <img src="{{ url('site/assets/img/blog/blog_3_3_7.jpg') }}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">Robotic</a>
-                                    <h3 class="box-title-20">
-                                        <a class="hover-line" href="blog-details.html">Smarter living, gadgets make your
-                                            world.</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>15 Mar, 2025
-                                        </a>
+                        @foreach ($newsTech as $newstech)
+                            <div class="col-md-6">
+                                <div class="blog-style2">
+                                    <div class="blog-img img-tech">
+                                        <img src="{{ asset('img/news/' . $newstech->image) }}" alt="blog image">
+                                    </div>
+                                    <div class="blog-content">
+                                        @foreach ($categories as $category)
+                                            @if ($category->id == $newstech->category_id)
+                                                <a data-theme-color="#6234AC" href="blog.html" class="category">
+                                                    {{ $category->name }}</a>
+                                            @endif
+                                        @endforeach
+                                        <h3 class="box-title-20">
+                                            <a class="hover-line"
+                                                href="{{ route('site.newsView', ['news' => $newstech->id]) }}">{{ Str::limit($newstech->title) }}</a>
+                                        </h3>
+                                        <div class="blog-meta">
+                                            <a href="blog.html">
+                                                <i
+                                                    class="fal fa-calendar-days"></i>{{ $newstech->created_at->format('d M, Y') }}
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
+                        @endforeach
+                        {{-- <div class="col-md-6">
                             <div class="blog-style2">
                                 <div class="blog-img img-big">
                                     <img src="{{ url('site/assets/img/blog/blog_3_3_8.jpg') }}" alt="blog image">
@@ -736,7 +745,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="space">
                         <a href="https://themeforest.net/user/themeholy/portfolio">

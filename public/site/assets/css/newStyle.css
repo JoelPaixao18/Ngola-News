@@ -66,7 +66,7 @@
     border-radius: 8px;
 }
 
-/* Tratamento da imagem na sessão das noticias no geral*/
+/* Tratamento da imagem na sessão das categorias de noticias*/
 .img-general {
     width: 100%;
     height: 28.5rem;
@@ -90,6 +90,19 @@
 }
 
 .img-allnews img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tratamento de imagem na Sessão Ciências e Tecnologias */
+.img-tech {
+    width: 100%;
+    height: 8rem;
+    overflow: hidden;
+}
+
+.img-tech img {
     width: 100%;
     height: 100%;
     object-fit: cover;
