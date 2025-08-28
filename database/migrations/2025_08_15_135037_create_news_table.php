@@ -16,12 +16,12 @@ class CreateNewsTable extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->string('image');
-            $table->string('title');
+            $table->string('title', 255);
             $table->string('slug');
-            $table->string('subtitle');
+            $table->string('subtitle', 10000);
             $table->string('detach');
             $table->enum('status', ['draft', 'published', 'filed']);
-            $table->text('description');
+            $table->text('description', 65500)->nullable();
             $table->date('date');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

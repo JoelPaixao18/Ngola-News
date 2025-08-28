@@ -50,9 +50,9 @@ class NewsController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:10000',
             'status' => 'required|in:draft,published,filed',
-            'description' => 'nullable|string|max:10000',
+            'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'date' => 'required|date|after_or_equal:today',
             'detach' => 'required|in:normal,destaque,urgente',
@@ -139,9 +139,9 @@ class NewsController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:10000',
             'status' => 'required|in:draft,published,filed',
-            'description' => 'nullable|string|max:1000',
+            'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'date' => 'required|date|after_or_equal:today',
             'detach' => 'required|in:normal,destaque,urgente',

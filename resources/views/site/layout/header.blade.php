@@ -14,14 +14,16 @@
                         <div class="row align-items-center">
                             <div class="col-xl-9">
                                 <div class="news-area">
-                                    <div class="title">Breaking News :</div>
+                                    <div class="title">Últimas Notícias :</div>
                                     <div class="news-wrap">
                                         <div class="row slick-marquee">
-                                            <div class="col-auto">
-                                                <a href="blog-details.html" class="breaking-news">Relaxation redefined,
-                                                    your beach resort sanctuary.</a>
-                                            </div>
-                                            <div class="col-auto">
+                                            @foreach ($breaknews as $topic)
+                                                <div class="col-auto">
+                                                    <a href="{{ route('site.newsView', ['news' => $topic->id]) }}"
+                                                        class="breaking-news">{{ $topic->title }}</a>
+                                                </div>
+                                            @endforeach
+                                            {{--  <div class="col-auto">
                                                 <a href="blog-details.html" class="breaking-news">From health to
                                                     fashion, lifestyle news curated.</a>
                                             </div>
@@ -32,7 +34,7 @@
                                             <div class="col-auto">
                                                 <a href="blog-details.html" class="breaking-news">Relaxation redefined,
                                                     your beach resort sanctuary.</a>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -111,6 +113,7 @@
                                                 {{-- <li><a href="/site/category">Todas</a></li> --}}
                                                 <li><a href="/site/publication">Publicação</a></li>
                                                 <li><a href="/site/videos">Vídeos</a></li>
+                                                <li><a href="/site/galery">Galeria</a></li>
                                             </ul>
                                         </li>
                                         {{-- <li class="menu-item-has-children">

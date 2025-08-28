@@ -6,30 +6,63 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\News;
 use App\Models\Category;
+use App\Models\Publication;
+use App\Models\Video;
+use App\Models\Galery;
 
 class SiteController extends Controller
 {
     /* Função Home - exibindo todos os carrosseis de algumas noticias e eventos com mais destaques e mais recentes */
     public function home()
     {
-        $categories = Category::where('name->name')->get();
-        $news = News::orderBy('created_at', 'desc')->take(6)->get();
+        /* Sessão Noticia por Categoria - Puxando a noticia mais recente de cada categoria */
+        $news = News::select('news.*')
+            ->whereIn('news.id', function ($query) {
+                $query->selectRaw('MAX(id)')
+                    ->from('news')
+                    ->groupBy('category_id');
+            })
+            ->orderBy('created_at', 'desc')
+            ->take(6) // se quiser limitar a 6 no máximo
+            ->get();
+        $categories = Category::all();
+
+        /* Sessão das Noticias de Hoje */
         $today = News::orderBy('created_at', 'desc')->take(2)->get();
         $today1 = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        /* $events = Event::with('category')->has('category')->orderByDesc('id')->take(6)->get(); */
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
 
-        return view('site.home.index', compact('categories', 'news', 'today', 'today1'));
+        /* --------- Sessão Noticia no Geral ----------------- */
+
+        /* Noticias da categoria Politicas */
+        $newsPolicy = News::whereHas('category', function ($query) {
+            $query->where('name', 'Política')->take(6);
+        })->get();
+
+        /* Noticias da categoria Culturas */
+        $newsCulture = News::whereHas('category', function ($query) {
+            $query->where('name', 'Cultura')->take(6);
+        })->get();
+
+
+
+        $categories = Category::where('name->name')->get();
+
+
+        return view('site.home.index', compact('categories', 'news', 'today', 'today1', 'newsPolicy', 'newsCulture', 'breaknews'));
     }
 
     /* Função Sobre - exibindo as informações do site */
     public function about()
     {
-        return view('site.about.index');
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        return view('site.about.index', compact('breaknews'));
     }
 
     /* Função Categoria - Mostando todas as categorias */
     public function category()
     {
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         return view('site.category.index');
     }
 
@@ -37,29 +70,33 @@ class SiteController extends Controller
 
     public function eventCategory()
     {
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $events = Event::with('category')->has('category')->get();
-        return view('site.category.events.eventCategory', compact('events'));
+        return view('site.category.events.eventCategory', compact('events', 'breaknews'));
     }
 
     public function eventView(Event $event)
     {
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $event = Event::with('category', 'author')->findOrFail($event->id);
-        return view('site.category.events.eventView', compact('event'));
+        return view('site.category.events.eventView', compact('event', 'breaknews'));
     }
 
     /* Notícias */
 
     public function NewsCategory()
     {
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $news = News::with('category')->get();
-        return view('site.category.news.newsCategory', compact('news'));
+        return view('site.category.news.newsCategory', compact('news', 'breaknews'));
     }
 
 
     public function newsView(News $news)
     {
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $news = News::with('category')->findOrFail($news->id);
-        return view('site.category.news.newsView', compact('news'));
+        return view('site.category.news.newsView', compact('news', 'breaknews'));
     }
 
     /* Ppliticas */
@@ -70,25 +107,40 @@ class SiteController extends Controller
             $query->where('name', 'Política');
         })->get();
         $categories = Category::where('name->name')->get();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
 
-        return view('site.category.policy.policy', compact('news', 'categories'));
+        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews'));
     }
 
     public function policyView(News $news)
     {
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $news = News::with('category')->findOrFail($news->id);
-        return view('site.category.policy.policyView', compact('news'));
+        return view('site.category.policy.policyView', compact('news', 'breaknews'));
     }
+
+    /* Multimédia */
+
     public function publication()
     {
-        $events = Event::all();
-        return view('site.multimedia.publication', compact('events'));
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $publications = Publication::all();
+        return view('site.multimedia.publication', compact('publications', 'breaknews'));
     }
+
     public function videos()
     {
-        return view('site.multimedia.videos');
+        $videos = Video::all();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        return view('site.multimedia.videos', compact('videos', 'breaknews'));
     }
-    public function api(){
+    public function galery(){
+        $galeries = Galery::all();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        return view('site.multimedia.galery', compact('galeries', 'breaknews'));
+    }
+    public function api()
+    {
         $event = Event::all();
         return response()->json($event);
     }

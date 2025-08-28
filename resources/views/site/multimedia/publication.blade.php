@@ -2,7 +2,7 @@
 @section('title', 'Publicação')
 @section('content-publication')
 
-    <link rel="stylesheet" href="{{ url('flipbook/assets/style.css')}}">
+    <link rel="stylesheet" href="{{ url('flipbook/assets/style.css') }}">
 
     <div class="breadcumb-wrapper">
         <div class="container">
@@ -17,106 +17,50 @@
             <div class="row">
                 <div class="col-xxl-9 col-lg-8">
                     <div class="row gy-30 filter-active">
-                        <div class="filter-item col-xl-4 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
-                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
-                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">Eureka moments
-                                        science journey enlightenment</a></h3>
-                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                        @if ($publications)
+                            @foreach ($publications as $publication)
+                                <div class="filter-item col-xl-4 col-sm-6">
+                                    <div class="blog-style1">
+                                        <div class="blog-img"><img
+                                            @if ($publication->cover)
+                                                src="{{ asset('img/publication/' . $publication->cover) }}"
+                                            @else
+                                                src="{{ asset('img/publication/pdfimg.png')}}"
+                                            @endif
+                                                
+                                                alt="blog image"></div>
+                                        <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">{{ $publication->title }}</a></h3>
+                                        <div class="blog-meta">
+                                                @if ($publication->file && file_exists(public_path('files/publication/' . $publication->file)))
+                                                    <a href="{{ asset('files/publication/' . $publication->file) }}"
+                                                         download>
+                                                        <i class="fas fa-file-pdf me-1"></i> Baixar PDF
+                                                    </a>
+                                                @else
+                                                    <span class="text-muted">Nenhum arquivo PDF disponível</span>
+                                                @endif
+                                                <a href="#"><i
+                                                        class="fal fa-calendar-days"></i>{{ $publication->created_at->format('d M, Y') }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="filter-item col-xl-4 col-sm-6">
+                                <div class="blog-style1">
+                                    <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg') }}"
+                                            alt="blog image"> <a data-theme-color="#868101" href="blog.html"
+                                            class="category">Action</a></div>
+                                    <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">Eureka moments
+                                            science journey enlightenment</a></h3>
+                                    <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="filter-item col-xl-4 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
-                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
-                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
-                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filter-item col-xl-4 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
-                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
-                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
-                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filter-item col-xl-4 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
-                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
-                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
-                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filter-item col-xl-4 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
-                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
-                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
-                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filter-item col-xl-4 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
-                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
-                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
-                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filter-item col-xl-4 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
-                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
-                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
-                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filter-item col-xl-4 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
-                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
-                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
-                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filter-item col-xl-4 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img"><img src="{{ url('site/assets/img/blog/masonary_1_1.jpg')}}" alt="blog image"> <a
-                                        data-theme-color="#868101" href="blog.html" class="category">Action</a></div>
-                                <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">hoiklmekrm</a></h3>
-                                <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Mar, 2025</a>
-                                </div>
-                            </div>
-                        </div>
+                        @endif
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -146,7 +90,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-40 mb-30 text-center"><a href="blog-masonary.html" class="th-btn">Load More</a></div>
+                    <div class="mt-40 mb-30 text-center"><a href="blog-masonary.html" class="th-btn">Ver Mais</a></div>
                 </div>
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">
                     <aside class="sidebar-area">
@@ -155,22 +99,22 @@
                                     type="submit"><i class="far fa-search"></i></button></form>
                         </div>
                         <div class="widget widget_categories">
-                            <h3 class="widget_title">Categories</h3>
+                            <h3 class="widget_title">Categorias</h3>
                             <ul>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg" href="blog.html">Sports</a></li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg" href="blog.html">Business</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg" href="blog.html">Esportes</a></li>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg" href="blog.html">Negócios</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg" href="blog.html">Politics</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg" href="blog.html">Políticas</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Health</a></li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Technology</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Saúde</a></li>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Tecnologia</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entertainment</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="widget">
-                            <h3 class="widget_title">Recent Posts</h3>
+                            <h3 class="widget_title">Postagens Recentes</h3>
                             <div class="recent-post-wrap">
                                 <div class="recent-post">
                                     <div class="media-img"><a href="blog-details.html"><img
@@ -221,12 +165,12 @@
                                         src="assets/img/ads/siderbar_ads_1.jpg" alt="ads"></a></div>
                         </div>
                         <div class="widget widget_tag_cloud">
-                            <h3 class="widget_title">Popular Tags</h3>
-                            <div class="tagcloud"><a href="blog.html">Sports</a> <a href="blog.html">Politics</a> <a
-                                    href="blog.html">Business</a> <a href="blog.html">Music</a> <a
-                                    href="blog.html">Food</a> <a href="blog.html">Technology</a> <a
-                                    href="blog.html">Travels</a> <a href="blog.html">Health</a> <a
-                                    href="blog.html">Fashions</a> <a href="blog.html">Animal</a> <a
+                            <h3 class="widget_title">Tags Populares</h3>
+                            <div class="tagcloud"><a href="blog.html">Esportes</a> <a href="blog.html">Políticas</a> <a
+                                    href="blog.html">Negócios</a> <a href="blog.html">úsica</a> <a
+                                    href="blog.html">Comida</a> <a href="blog.html">Tecnologia</a> <a
+                                    href="blog.html">Viagens</a> <a href="blog.html">Saúde</a> <a
+                                    href="blog.html">Moda</a> <a href="blog.html">Animais</a> <a
                                     href="blog.html">Weather</a> <a href="blog.html">Movies</a></div>
                         </div>
                     </aside>

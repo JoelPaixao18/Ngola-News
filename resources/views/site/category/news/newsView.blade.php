@@ -17,6 +17,7 @@
                 <div class="col-12"><a data-theme-color="#019D9E" href="#"
                         class="category">{{ $news->category->name }}</a>
                     <h2 class="blog-title">{{ $news->title }}.</h2>
+                    <h6>{{ $news->subtitle }}</h6>
                     <div class="blog-meta"><a class="author" href="#"><i class="far fa-user"></i>By -
                             Tnews</a> <a href="#"><i
                                 class="fal fa-calendar-days"></i>{{ $news->created_at->format('d M, Y') }}</a> <a
@@ -51,76 +52,13 @@
                                             class="fas fa-share-nodes"></i></span></div>
                                 <div class="content">
                                     {!! $news->description !!}
-                                    {{-- <p>Igniting their competitive spirit. It encourages them to set ambitious goals, not
-                                        settling for mediocrity but pushing themselves to excel in their chosen sport or
-                                        athletic endeavor. The pursuit of victory becomes the driving force, motivating
-                                        athletes to give their all,</p>
-                                    <p>Surpass their limitations, and achieve remarkable feats. It emphasizes the
-                                        importance of hard work, dedication, and Perseverance in the face of challenges
-                                        and obstacles that may arise along the way.</p>
-                                    <div class="my-4 py-lg-2"><a
-                                            href="../../../../themeforest.net/user/themeholy/portfolio.html"><img
-                                                class="light-img w-100" src="assets/img/ads/ads_blog_1.jpg" alt="Ads">
-                                            <img class="dark-img w-100" src="assets/img/ads/ads_blog_1_dark.jpg"
-                                                alt="Ads"></a></div>
-                                    <p>The slogan reminds athletes that their participation in sports has the potential
-                                        to leave a lasting legacy. It suggests that their accomplishments, records, and
-                                        impact can inspire future generations, shaping the sport itself and influencing
-                                        others to follow in their footsteps. By embracing sports and embracing the
-                                        pursuit of victory, individuals have the opportunity to create a legacy that
-                                        will be remembered and celebrated long after their own participation.</p>
-                                    <div class="my-4 py-lg-2"><img class="w-100" src="assets/img/blog/blog_inner_3.jpg"
-                                            alt="Blog Image"></div>
-                                    <h3 class="h4">Achieve greatness, fueled by innovation</h3>
-                                    <p>Achieve greatness, fueled by innovation" encapsulates the idea that by embracing
-                                        and harnessing innovative approaches and technologies, individuals can reach
-                                        extraordinary heights of success and achievement. It implies that the
-                                        combination of pushing boundaries, thinking outside the box, and adopting
-                                        cutting-edge advancements can Propel individuals to surpass their limitations
-                                        and accomplish remarkable feats.</p>
-                                    <p>This phrase suggests that innovation serves as the driving force behind progress
-                                        and improvement in various fields, including sports, business, arts, and
-                                        personal development. It conveys the message that by embracing new ideas.</p>
-                                    <blockquote>
-                                        <p>Fuel your competitive spirit, chase victory, and let sports be your legacy
-                                            Encapsulates the essence of embracing sports as a means</p><cite>Robert
-                                            Milton</cite>
-                                    </blockquote>
-                                    <div class="row mb-4 pb-lg-2 pt-xl-2 gy-4">
-                                        <div class="col-md-auto">
-                                            <div class=""><img class="w-100" src="assets/img/blog/blog_inner_4.jpg"
-                                                    alt="Blog Image"></div>
-                                        </div>
-                                        <div class="col-md">
-                                            <h3 class="box-title-24">Take your game to new heights.</h3>
-                                            <p>business, arts, and personal development. It conveys the message that by
-                                                embracing new ideas, techniques, and technologies, individuals can
-                                                unlock their full potential</p>
-                                            <div class="blog-inner-list">
-                                                <ul>
-                                                    <li><b>Workout Modes:</b> Access pre-programmed workout modes
-                                                        Tailored specifically to different</li>
-                                                    <li><b>Workout Modes:</b> Access pre-programmed workout modes
-                                                        Tailored specifically to different</li>
-                                                    <li><b>Workout Modes:</b> Access pre-programmed workout modes
-                                                        Tailored specifically to different</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h4">Power your game with innovative features.</h3>
-                                    <p>Power your game with innovative features" signifies the utilization of advanced
-                                        and cutting-edge elements to enhance your performance and elevate your gameplay.
-                                        It suggests that by embracing these innovative features, you can tap into a new
-                                        level of power, skill, and effectiveness in your chosen sport.</p>
-                                    <p class="mb-n2">This phrase implies that the incorporation of groundbreaking
-                                        technologies, techniques, and functionalities can provide you with a competitive
-                                        edge and push the boundaries of what is achievable in your game.</p> --}}
                                 </div>
                                 <div class="blog-tag">
                                     <h6 class="title">Related Tag :</h6>
-                                    <div class="tagcloud"><a href="blog.html">Sports</a> <a href="blog.html">Politics</a> <a
-                                            href="blog.html">Business</a></div>
+                                    <div class="tagcloud"><a href="blog.html">Sports</a> <a
+                                            href="{{ route('site.policy') }}">Políticas</a>
+                                        <a href="blog.html">Business</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -320,7 +258,8 @@
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg" href="blog.html">Sports</a></li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg" href="blog.html">Business</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg" href="blog.html">Politics</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg"
+                                        href="{{ route('site.policy') }}">Políticas</a>
                                 </li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Health</a></li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Technology</a>
