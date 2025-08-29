@@ -23,6 +23,7 @@
                                             @else
                                                 src="{{ asset('img/galeries/pdfimg.png') }}" @endif
                                                 alt="{{$galery->title}}" ></div>
+
                                         <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal" id="img" 
                                                 >{{ Str::limit($galery->title, 20, '...')}}</a></h3>

@@ -95,7 +95,7 @@
                                         </li>
                                         <li><a href="/site/about">Sobre</a></li>
                                         <li><a href="{{ route('site.policy') }}">Política</a></li>
-                                        <li><a href="#">Cultura</a></li>
+                                        <li><a href="#">Artes & Cultura</a></li>
                                         <li class="menu-item-has-children">
                                             <a href="#">Desportos</a>
                                             <ul class="sub-menu">

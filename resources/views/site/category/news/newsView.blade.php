@@ -20,7 +20,7 @@
                     <h6>{{ $news->subtitle }}</h6>
                     <div class="blog-meta"><a class="author" href="#"><i class="far fa-user"></i>By -
                             Tnews</a> <a href="#"><i
-                                class="fal fa-calendar-days"></i>{{ $news->created_at->format('d M, Y') }}</a> <a
+                                class="fal fa-calendar-days"></i>{{ $news->updated_at->format('d M, Y') }}</a> <a
                             href="#"><i class="far fa-comments"></i>Comments (3)</a> <span><i
                                 class="far fa-book-open"></i>5 Mins Read</span></div>
                     <div class="blog-img mb-40"><img src="{{ asset('/img/news/' . $news->image) }}" alt="Blog Image"

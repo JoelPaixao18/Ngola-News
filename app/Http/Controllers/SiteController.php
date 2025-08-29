@@ -31,41 +31,79 @@ class SiteController extends Controller
         $today = News::orderBy('created_at', 'desc')->take(2)->get();
         $today1 = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
 
         /* --------- Sessão Noticia no Geral ----------------- */
 
         /* Noticias da categoria Politicas */
         $newsPolicy = News::whereHas('category', function ($query) {
-            $query->where('name', 'Política')->take(6);
+            $query->where('name', ['Política', 'Politícas'])->take(6);
         })->get();
 
         /* Noticias da categoria Culturas */
         $newsCulture = News::whereHas('category', function ($query) {
-            $query->where('name', 'Cultura')->take(6);
+            $query->where('name', ['Cultura', 'Culturas'])->take(6);
+        })->get();
+
+        /* Noticias de Categoria Desportos */
+        $newsSports = News::whereHas('category', function ($query) {
+            $query->where('name', ['Desporto', 'Desportos'])->take(6);
         })->get();
 
         /* --------- Sessão Ciências e Tecnologia */
+
+        /* exibindo a mais recente e destacada */
+        $newsTech1 = News::where('detach', 'destaque') // apenas notícias destaque
+            ->whereHas('category', function ($query) {
+                $query->whereIn('name', [
+                    'Tecnologia',
+                    'Tecnologias',
+                    'Ciência',
+                    'Ciências'
+                ]);
+            })
+            ->orderByDesc('id') // pega a mais recente
+            ->first();
+
+
+        /* exibindo as 4 primeiras mais recentas */
         $newsTech = News::whereHas('category', function ($query) {
-            $query->where('name', 'Tecnologia')->take(4);
+            $query->where('name', 'Tecnologia')->orderByDesc('id')->take(4);
         })->get();
 
         $categories = Category::where('name->name')->get();
 
+        $videos = Video::where('detach', 'destaque')->orderByDesc('id')->first();
 
-        return view('site.home.index', compact('categories', 'news', 'today', 'today1', 'newsPolicy', 'newsTech', 'newsCulture', 'breaknews'));
+
+        return view('site.home.index', compact(
+            'categories',
+            'news',
+            'today',
+            'today1',
+            'newsPolicy',
+            'newsTech',
+            'newsTech1',
+            'newsCulture',
+            'newsSports',
+            'breaknews',
+            'videos',
+            'subscription'
+        ));
     }
 
     /* Função Sobre - exibindo as informações do site */
     public function about()
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
-        return view('site.about.index', compact('breaknews'));
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
+        return view('site.about.index', compact('breaknews', 'subscription'));
     }
 
     /* Função Categoria - Mostando todas as categorias */
     public function category()
     {
-        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        /* $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get(); */
         return view('site.category.index');
     }
 
@@ -74,15 +112,17 @@ class SiteController extends Controller
     public function eventCategory()
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $events = Event::with('category')->has('category')->get();
-        return view('site.category.events.eventCategory', compact('events', 'breaknews'));
+        return view('site.category.events.eventCategory', compact('events', 'breaknews', 'subscription'));
     }
 
     public function eventView(Event $event)
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $event = Event::with('category', 'author')->findOrFail($event->id);
-        return view('site.category.events.eventView', compact('event', 'breaknews'));
+        return view('site.category.events.eventView', compact('event', 'breaknews', 'subscription'));
     }
 
     /* Notícias */
@@ -90,19 +130,21 @@ class SiteController extends Controller
     public function NewsCategory()
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $news = News::with('category')->get();
-        return view('site.category.news.newsCategory', compact('news', 'breaknews'));
+        return view('site.category.news.newsCategory', compact('news', 'breaknews', 'subscription'));
     }
 
 
     public function newsView(News $news)
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $news = News::with('category')->findOrFail($news->id);
-        return view('site.category.news.newsView', compact('news', 'breaknews'));
+        return view('site.category.news.newsView', compact('news', 'breaknews', 'subscription'));
     }
 
-    /* Ppliticas */
+    /* Politicas */
 
     public function policy()
     {
@@ -111,15 +153,17 @@ class SiteController extends Controller
         })->get();
         $categories = Category::where('name->name')->get();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
 
-        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews'));
+        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'subscription'));
     }
 
     public function policyView(News $news)
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $news = News::with('category')->findOrFail($news->id);
-        return view('site.category.policy.policyView', compact('news', 'breaknews'));
+        return view('site.category.policy.policyView', compact('news', 'breaknews', 'subscription'));
     }
 
     /* Multimédia */
@@ -127,21 +171,25 @@ class SiteController extends Controller
     public function publication()
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $publications = Publication::all();
-        return view('site.multimedia.publication', compact('publications', 'breaknews'));
+        return view('site.multimedia.publication', compact('publications', 'breaknews', 'subscription'));
     }
 
     public function videos()
     {
         $videos = Video::all();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
-        return view('site.multimedia.videos', compact('videos', 'breaknews'));
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
+        return view('site.multimedia.videos', compact('videos', 'breaknews', 'subscription'));
     }
 
-    public function galery(){
+    public function galery()
+    {
         $galeries = Galery::all();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
-        return view('site.multimedia.galery', compact('galeries', 'breaknews'));
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
+        return view('site.multimedia.galery', compact('galeries', 'breaknews', 'subscription'));
     }
     public function api()
     {
