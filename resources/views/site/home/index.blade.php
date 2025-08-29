@@ -451,8 +451,8 @@
                         <div class="filter-menu filter-menu-active">
                             <button data-filter="*" class="tab-btn active" type="button">Todas</button>
                             <button data-filter=".cat1" class="tab-btn" type="button">Políticas</button>
-                            <button data-filter=".cat2" class="tab-btn" type="button">Cultuta</button>
-                            <button data-filter=".cat3" class="tab-btn" type="button">Publicidades</button>
+                            <button data-filter=".cat2" class="tab-btn" type="button">Arets & Cultura</button>
+                            <button data-filter=".cat3" class="tab-btn" type="button">Desporto</button>
                         </div>
                     </div>
                 </div>
@@ -516,6 +516,7 @@
                         </div>
                     </div>
                 @endforeach
+                {{-- News Culture --}}
                 @foreach ($newsCulture as $newsculture)
                     <div class="col-xl-4 col-md-6 filter-item cat2">
                         <div class="blog-style2">
@@ -562,25 +563,33 @@
                         </div>
                     </div>
                 </div> --}}
-                <div class="col-xl-4 col-md-6 filter-item cat3">
-                    <div class="blog-style2">
-                        <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_4.jpg') }}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">Electronic</a>
-                            <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">Smart tech, brighter future embrace
-                                    gadgets.</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>15 Mar, 2025
-                                </a>
+                {{-- News Sports --}}
+                @foreach ($newsSports as $newssport)
+                    <div class="col-xl-4 col-md-6 filter-item cat3">
+                        <div class="blog-style2">
+                            <div class="blog-img img-big">
+                                <img src="{{ asset('img/news/' . $newssport->image) }}" alt="blog image">
+                            </div>
+                            <div class="blog-content">
+                                @foreach ($categories as $category)
+                                    @if ($category->id == $newssport->category_id)
+                                        <a data-theme-color="#6234AC" href="blog.html" class="category">
+                                            {{ $category->name }}</a>
+                                    @endif
+                                @endforeach
+                                <h3 class="box-title-20">
+                                    <a class="hover-line"
+                                        href="{{ route('site.newsView', ['news' => $newssport->id]) }}">{{ Str::limit($newssport->title, 50) }}</a>
+                                </h3>
+                                <div class="blog-meta">
+                                    <a href="blog.html">
+                                        <i class="fal fa-calendar-days"></i>{{ $newssport->updated_at->format('d M, Y') }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
                 {{-- <div class="col-xl-4 col-md-6 filter-item cat3">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
