@@ -12728,3 +12728,8 @@ html.dark-theme .dark-theme>.blog-style3 {
         padding-bottom: 70px
     }
 }
+/* taratamento de imagens */
+.img-size img{
+    width: 200px;
+    height: 200px;
+}
