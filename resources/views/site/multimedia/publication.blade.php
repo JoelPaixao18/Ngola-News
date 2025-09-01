@@ -83,7 +83,7 @@
                                         <!-- Botão para abrir flipbook -->
                                         <button
                                             onclick="openFlipbook('{{ asset('files/publication/' . $publication->file) }}')">Abrir
-                                            Flipbook</button>
+                                            {{$publication->title}}</button>
                                         <div id="book"></div>
                                         <input type="text" id="page-number">
                                         <span id="number-pages"></span>
