@@ -178,7 +178,7 @@ class SiteController extends Controller
 
     public function videos()
     {
-        $videos = Video::all();
+        $videos = Video::where('detach', 'destaque')->orderByDesc('id')->get();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         return view('site.multimedia.videos', compact('videos', 'breaknews', 'subscription'));

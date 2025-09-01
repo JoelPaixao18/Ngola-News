@@ -58,7 +58,7 @@ class VideoController extends Controller
             'description.max' => 'O campo descrição não pode ter mais de 1000 caracteres.',
         ]);
         $video->update($request->only('title', 'detach', 'description', 'url'));
-        return redirect()->route('admin.video.index')->with('success', 'Vídeo atualizado com sucesso.');    
+        return redirect()->route('admin.video.index')->with('success', 'Vídeo atualizado com sucesso.');
     }
     public function destroy(Video $video)
     {
