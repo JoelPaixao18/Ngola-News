@@ -227,25 +227,17 @@
                             </form>
                         </div>
                         <div class="widget widget_categories">
-                            <h3 class="widget_title">Categories</h3>
+                            <h3 class="widget_title">Categorias</h3>
                             <ul>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_1.jpg" href="blog.html">Sports</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg" href="blog.html">Esportes</a></li>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg" href="blog.html">Negócios</a>
                                 </li>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_2.jpg" href="blog.html">Business</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg" href="blog.html">Políticas</a>
                                 </li>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_3.jpg" href="blog.html">Politics</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Saúde</a></li>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Tecnologia</a>
                                 </li>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Health</a>
-                                </li>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Technology</a>
-                                </li>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entertainment</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a>
                                 </li>
                             </ul>
                         </div>
