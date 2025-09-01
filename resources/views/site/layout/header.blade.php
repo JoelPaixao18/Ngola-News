@@ -94,8 +94,8 @@
                           </ul> --}}
                                         </li>
                                         <li><a href="{{ route('site.policy') }}">Política</a></li>
-                                        <li><a href="">Sociedade</a></li>
-                                        <li><a href="">Economia</a></li>
+                                        <li><a href="#">Sociedade</a></li>
+                                        <li><a href="#">Economia</a></li>
                                         <li><a href="#">Artes & Cultura</a></li>
                                         <li class="menu-item-has-children">
                                             <a href="#">Desportos</a>
@@ -109,7 +109,7 @@
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children">
-                                            <a href="#">Galeria</a>
+                                            <a href="#">Multimídia</a>
                                             <ul class="sub-menu">
                                                 {{-- <li><a href="/site/category">Todas</a></li> --}}
                                                 <li><a href="/site/publication">Publicação</a></li>

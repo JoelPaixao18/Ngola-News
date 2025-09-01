@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">Categories</h3>
+                        <h3 class="widget_title">Categorias</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
                                 @foreach ($footerCategory as $dados)
@@ -50,42 +50,45 @@
                 </div>
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">Use links</h3>
+                        <h3 class="widget_title">links Usados</h3>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
                                 <li><a href="/">Home</a></li>
-                                <li><a href="{{ 'site.' }}">About Us</a></li>
-                                <li><a href="authors.html">Authors</a></li>
-                                <li><a href="category.html">Category</a></li>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                {{-- <li><a href="{{ 'site.' }}">About Us</a></li> --}}
+                                <li><a href="#">Políticas</a></li>
+                                <li><a href="#">Sociedade</a></li>
+                                <li><a href="#">Economia & Negócio</a></li>
+                                <li><a href="#">Artes & Cultura</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget footer-widget">
-                        <h3 class="widget_title">Recent Posts</h3>
+                        <h3 class="widget_title">Posts Recentes</h3>
                         <div class="recent-post-wrap">
-                            <div class="recent-post">
-                                <div class="media-img">
-                                    <a href="blog-details.html">
-                                        <img src="assets/img/blog/recent-post-2-1.jpg" alt="Blog Image">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="post-title">
-                                        <a class="hover-line" href="blog-details.html">Equality and
-                                            justice for Every citizen</a>
-                                    </h4>
-                                    <div class="recent-post-meta">
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>21 June, 2025
+                            @foreach ($Recent as $recent)
+                                <div class="recent-post img-footer">
+                                    <div class="media-img">
+                                        <a href="blog-details.html ">
+                                            <img src="{{ asset('img/news/' . $recent->image) }}" alt="Blog Image">
                                         </a>
                                     </div>
+                                    <div class="media-body">
+                                        <h4 class="post-title">
+                                            <a class="hover-line"
+                                                href="blog-details.html">{{ Str::limit($recent->title, 50) }}</a>
+                                        </h4>
+                                        <div class="recent-post-meta">
+                                            <a href="blog.html">
+                                                <i
+                                                    class="fal fa-calendar-days"></i>{{ $recent->updated_at->format('d M, Y') }}
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="recent-post">
+                            @endforeach
+                            {{-- <div class="recent-post">
                                 <div class="media-img">
                                     <a href="blog-details.html">
                                         <img src="assets/img/blog/recent-post-2-2.jpg" alt="Blog Image">
@@ -102,7 +105,7 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
