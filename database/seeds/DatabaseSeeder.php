@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             TypeCategoriesTableSeeder::class,
             CategoriesTableSeeder::class,
             NewsTableSeeder::class,
+            VideosTableSeeder::class,
         ]);
     }
 }

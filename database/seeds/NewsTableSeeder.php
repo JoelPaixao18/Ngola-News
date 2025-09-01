@@ -196,6 +196,22 @@ ser internado num hospital, acrescentou a mesma fonte.</p><p>Não foi feita qual
                 'created_at' => '2025-08-27 09:43:22',
                 'updated_at' => '2025-08-27 09:43:22',
             ),
+            10 =>
+            array (
+                'id' => 16,
+                'image' => '82ad18bc36ed174af020c796bf74e11a.jpg',
+                'title' => 'Ministro Mário Oliveira destaca importância da Feira de Inovação Tecnológica do ITEL na promoção de soluções inovadoras',
+                'slug' => 'ministro-mario-oliveira-destaca-importancia-da-feira-de-inovacao-tecnologica-do-itel-na-promocao-de-solucoes-inovadoras',
+                'subtitle' => 'ITEL realiza a 16ª edição da FITITEL - Feira de Inovação Tecnologica do ITEL',
+                'detach' => 'destaque',
+                'status' => 'published',
+                'description' => '<p style="margin-left:0px;">O Ministro das Telecomunicações tecnologias de informação e comunicação social destacou a importância da Feira de Inovação Tecnológica do ITEL, FITITEL como meio para fomentar a criatividade, intercambio e partilha de conhecimento.</p><p style="margin-left:0px;">Mário Oliveira que falava esta quinta-feira, 12 de setembro, na abertura da décima quinta edição do FITITEL sublinhou ainda o papel da feira para a promoção de soluções inovadoras e contribuir para transformação da economia digital de Angola.</p><p style="margin-left:0px;">O director do ITEL Cláudio Gonçalves, disse que a feira tem também como objectivo despertar os estudantes para a necessidade de se investir no sector do empreendedorismo.</p><p style="margin-left:0px;">A Feira de Inovação Tecnológica do ITEL decorre este ano sob o lema “Fintechs como Impulsionadoras da Economia Digital e Independência Financeira” e conta com 100 expositores, 60 projectos inovadores, 40 feitos pelos estudantes do ITEL e 12 mesas redondas.</p>',
+                'date' => '2025-08-28',
+                'category_id' => 9,
+                'deleted_at' => NULL,
+                'created_at' => '2025-08-28 09:56:28',
+                'updated_at' => '2025-08-28 09:56:28',
+            ),
         ));
     }
 }
