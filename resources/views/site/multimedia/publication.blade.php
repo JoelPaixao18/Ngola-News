@@ -21,7 +21,7 @@
                             @foreach ($publications as $publication)
                                 <div class="filter-item col-xl-4 col-sm-6">
                                     <div class="blog-style1">
-                                        <div class="blog-img"><img
+                                        <div class="blog-img img-size"><img
                                                 @if ($publication->cover) src="{{ asset('img/publication/' . $publication->cover) }}"
                                             @else
                                                 src="{{ asset('img/publication/pdfimg.png') }}" @endif
@@ -68,7 +68,7 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div id="book">
+                                        {{-- <div id="book">
                                             <div class="cover bg-danger">
                                                 <h1>O Livro</h1>
                                             </div>
@@ -76,7 +76,19 @@
                                         <div id="controls" class="mt-3">
                                             <label for="page-number">Pagina:</label> <input type="text" size="3"
                                                 id="page-number"> de <span id="number-pages"></span>
-                                        </div>
+                                        </div> --}}
+                                        {{-- <h1>{{ $publication->title }}</h1>
+                                        <iframe src="/files/publication/{{$publication->file}}" width="100%" height="600px"></iframe> --}}
+
+                                        <!-- Botão para abrir flipbook -->
+                                        <button
+                                            onclick="openFlipbook('{{ asset('files/publication/' . $publication->file) }}')">Abrir
+                                            Flipbook</button>
+                                        <div id="book"></div>
+                                        <input type="text" id="page-number">
+                                        <span id="number-pages"></span>
+                                        <span id="prev-page">Anterior</span>
+                                        <span id="next-page">Próxima</span>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -174,5 +186,14 @@
             </div>
         </div>
     </section>
-
+    <script src="{{ url('flipbook/assets/turn.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $("#flipbook{{ $publication->id }}").turn({
+                width: 800,
+                height: 600,
+                autoCenter: true
+            });
+        });
+    </script>
 @endsection

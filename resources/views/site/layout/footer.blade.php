@@ -7,7 +7,7 @@
               <div class="widget footer-widget">
                 <div class="th-widget-about">
                   <div class="about-logo">
-                    <a href="home-newspaper.html">
+                    <a href="/">
                       <img src="assets/img/logoNgolaLong1.png" alt="Tnews">
                     </a>
                   </div>
@@ -34,12 +34,14 @@
                 <h3 class="widget_title">Categories</h3>
                 <div class="menu-all-pages-container">
                   <ul class="menu">
-                    <li><a href="blog.html">Political</a></li>
-                    <li><a href="blog.html">Business</a></li>
+                    @foreach($footerCategory as $dados)
+                    <li><a href="#">{{$dados->name}}</a></li>
+                    @endforeach
+                    {{-- <li><a href="blog.html">Business</a></li>
                     <li><a href="blog.html">Health</a></li>
                     <li><a href="blog.html">Technology</a></li>
                     <li><a href="blog.html">Sports</a></li>
-                    <li><a href="blog.html">Entertainment</a></li>
+                    <li><a href="blog.html">Entertainment</a></li> --}}
                   </ul>
                 </div>
               </div>
@@ -49,8 +51,8 @@
                 <h3 class="widget_title">Use links</h3>
                 <div class="menu-all-pages-container">
                   <ul class="menu">
-                    <li><a href="home-newspaper.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{('site.')}}">About Us</a></li>
                     <li><a href="authors.html">Authors</a></li>
                     <li><a href="category.html">Category</a></li>
                     <li><a href="shop.html">Shop</a></li>
