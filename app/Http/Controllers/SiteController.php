@@ -95,6 +95,7 @@ class SiteController extends Controller
         })->get();
 
         $categories = Category::where('name->name')->get();
+        $footerCategory = Category::all()->take(6);
 
         /* Sessão de Videos */
         $videos = Video::where('detach', 'destaque')->orderByDesc('id')->first();
@@ -105,6 +106,7 @@ class SiteController extends Controller
 
         return view('site.home.index', compact(
             'categories',
+            'footerCategory',
             'news',
             'today',
             'today1',
@@ -128,8 +130,9 @@ class SiteController extends Controller
     public function about()
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        return view('site.about.index', compact('breaknews', 'subscription'));
+        return view('site.about.index', compact('breaknews','footerCategory', 'subscription'));
     }
 
     /* Função Categoria - Mostando todas as categorias */
@@ -144,17 +147,19 @@ class SiteController extends Controller
     public function eventCategory()
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $events = Event::with('category')->has('category')->get();
-        return view('site.category.events.eventCategory', compact('events', 'breaknews', 'subscription'));
+        return view('site.category.events.eventCategory', compact('events', 'breaknews','footerCategory', 'subscription'));
     }
 
     public function eventView(Event $event)
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $event = Event::with('category', 'author')->findOrFail($event->id);
-        return view('site.category.events.eventView', compact('event', 'breaknews', 'subscription'));
+        return view('site.category.events.eventView', compact('event', 'breaknews','footerCategory', 'subscription'));
     }
 
     /* Notícias */
@@ -162,18 +167,20 @@ class SiteController extends Controller
     public function NewsCategory()
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $news = News::with('category')->get();
-        return view('site.category.news.newsCategory', compact('news', 'breaknews', 'subscription'));
+        return view('site.category.news.newsCategory', compact('news', 'breaknews','footerCategory', 'subscription'));
     }
 
 
     public function newsView(News $news)
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $news = News::with('category')->findOrFail($news->id);
-        return view('site.category.news.newsView', compact('news', 'breaknews', 'subscription'));
+        return view('site.category.news.newsView', compact('news', 'breaknews','footerCategory','subscription'));
     }
 
     /* Politicas */
@@ -185,17 +192,19 @@ class SiteController extends Controller
         })->get();
         $categories = Category::where('name->name')->get();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
 
-        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'subscription'));
+        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews','footerCategory', 'subscription'));
     }
 
     public function policyView(News $news)
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         $news = News::with('category')->findOrFail($news->id);
-        return view('site.category.policy.policyView', compact('news', 'breaknews', 'subscription'));
+        return view('site.category.policy.policyView', compact('news', 'breaknews','footerCategory', 'subscription'));
     }
 
     /* Multimédia */
@@ -203,27 +212,35 @@ class SiteController extends Controller
     public function publication()
     {
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        $publications = Publication::all();
-        return view('site.multimedia.publication', compact('publications', 'breaknews', 'subscription'));
-    }
+        $publications = Publication::orderBy('updated_at', 'desc')->get();
+        return view('site.multimedia.publication', compact('publications', 'breaknews','footerCategory', 'subscription'));
+    }//fim Multimedia
 
+    /* inicio menu videos */
     public function videos()
     {
         $videos = Video::where('detach', 'destaque')->orderByDesc('id')->get();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        return view('site.multimedia.videos', compact('videos', 'breaknews', 'subscription'));
+        return view('site.multimedia.videos', compact('videos', 'breaknews','footerCategory', 'subscription'));
     }
+    /* fim do menu videos */
 
+    /* inicio do menu galeria */
     public function galery()
     {
         $galeries = Galery::all();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        return view('site.multimedia.galery', compact('galeries', 'breaknews', 'subscription'));
+        return view('site.multimedia.galery', compact('galeries', 'breaknews','footerCategory', 'subscription'));
     }
-    public function api()
+    /* fim do menu galeria */
+    
+   /*  public function api()
     {
         $event = Event::all();
         return response()->json($event);
@@ -237,5 +254,5 @@ class SiteController extends Controller
         } else {
             return response()->json(['message' => 'Evento não encontrado.'], 404);
         }
-    }
+    } */
 }
