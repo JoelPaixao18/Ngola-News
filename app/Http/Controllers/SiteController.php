@@ -12,9 +12,22 @@ use App\Models\Galery;
 
 class SiteController extends Controller
 {
-    /* Função Home - exibindo todos os carrosseis de algumas noticias e eventos com mais destaques e mais recentes */
+    /* Função Home - exibindo todos os carrosseis de algumas noticias com mais destaques e mais recentes */
     public function home()
     {
+
+        /* Noticia da Categoria Politica com mais destaques */
+        $newsDetach = News::where('detach', 'destaque') // apenas notícias destaque
+            ->whereHas('category', function ($query) {
+                $query->whereIn('name', [
+                    'Politica',
+                    'Politicas'
+                ]);
+            })
+            ->orderByDesc('id') // pega a mais recente
+            ->take(6)
+            ->get();
+
         /* Sessão Noticia por Categoria - Puxando a noticia mais recente de cada categoria */
         $news = News::select('news.*')
             ->whereIn('news.id', function ($query) {
@@ -68,12 +81,26 @@ class SiteController extends Controller
 
         /* exibindo as 4 primeiras mais recentas */
         $newsTech = News::whereHas('category', function ($query) {
-            $query->where('name', 'Tecnologia')->orderByDesc('id')->take(4);
+            $query->where('name', ['Tecnologia', 'Tecnologia'])->orderByDesc('id')->take(4);
+        })->get();
+
+        /* Sessão de Economia e Negocio */
+        $Economic = News::whereHas('category', function ($query) {
+            $query->where('name', ['Economia', 'Economias'])->orderByDesc('id')->take(5);
+        })->get();
+
+        /* Sessão de Sociedade */
+        $Society = News::whereHas('category', function ($query) {
+            $query->where('name', ['Sociedade', 'Sociedades'])->orderByDesc('id')->take(5);
         })->get();
 
         $categories = Category::where('name->name')->get();
 
+        /* Sessão de Videos */
         $videos = Video::where('detach', 'destaque')->orderByDesc('id')->first();
+
+        /* Posts Recentes no Footer */
+        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
 
 
         return view('site.home.index', compact(
@@ -88,9 +115,14 @@ class SiteController extends Controller
             'newsSports',
             'breaknews',
             'videos',
-            'subscription'
+            'subscription',
+            'newsDetach',
+            'Recent',
+            'Economic',
+            'Society'
         ));
     }
+    /* Fim da função Home */
 
     /* Função Sobre - exibindo as informações do site */
     public function about()

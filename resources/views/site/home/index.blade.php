@@ -1,35 +1,36 @@
 @extends('site.layout.main')
 @section('title', 'Ngola News - Home')
 @section('content-home')
+    {{-- Sessão dos noticias da categoria Politica com mais destaque e as mais recentes --}}
     <div class="th-hero-wrapper hero-1" id="hero">
         <div class="hero-slider-1 th-carousel" data-fade="true" data-slide-show="1" data-md-slide-show="1"
             data-adaptive-height="true">
-            <div class="th-hero-slide">
-                <div class="th-hero-bg" data-overlay="black" data-opacity="6"
-                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_1.jpg') }}">
-                </div>
-                <div class="container">
-                    <div class="blog-bg-style1">
-                        <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="#"
-                            class="category">Gadget</a>
-                        <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
-                            <a class="hover-line" href="#">Tech made simple, Your Everyday Made
-                                extraordinary.</a>
-                        </h3>
-                        <div class="blog-meta" data-ani="slideinup" data-ani-delay="0.5s">
-                            <a href="author.html">
-                                <i class="far fa-user"></i>By - Tnews
-                            </a>
-                            <a href="blog.html">
-                                <i class="fal fa-calendar-days"></i>18 Mar, 2025
-                            </a>
+            @foreach ($newsDetach as $detach)
+                <div class="th-hero-slide">
+                    <div class="th-hero-bg" data-overlay="black" data-opacity="6"
+                        data-bg-src="{{ url('img/news/' . $detach->image) }}">
+                    </div>
+                    <div class="container">
+                        <div class="blog-bg-style1">
+                            <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="#"
+                                class="category">Gadget</a>
+                            <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
+                                <a class="hover-line" href="#">{{ $detach->title }}</a>
+                            </h3>
+                            <div class="blog-meta" data-ani="slideinup" data-ani-delay="0.5s">
+                                <a href="author.html">
+                                    <i class="far fa-user"></i>By - Tnews
+                                </a>
+                                <a href="blog.html">
+                                    <i class="fal fa-calendar-days"></i>{{ $detach->updated_at->format('d M, Y') }}
+                                </a>
+                            </div>
+                            <p class="blog-text" data-ani="slideinup" data-ani-delay="0.7s">{{ $detach->subtitle }}</p>
                         </div>
-                        <p class="blog-text" data-ani="slideinup" data-ani-delay="0.7s">Conveys the idea that technology has
-                            become accessible and easy to use, simplifying our daily tasks and routines</p>
                     </div>
                 </div>
-            </div>
-            <div class="th-hero-slide">
+            @endforeach
+            {{-- <div class="th-hero-slide">
                 <div class="th-hero-bg" data-overlay="black" data-opacity="6"
                     data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_2.jpg') }}">
                 </div>
@@ -151,15 +152,17 @@
                             has become accessible and easy to use, simplifying our daily tasks and routines</p>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="hero-tab-area">
             <div class="container">
                 <div class="hero-tab" data-asnavfor=".hero-slider-1">
-                    <div class="tab-btn active">
-                        <img src="{{ url('site/assets/img/hero/hero_1_1.jpg') }}" alt="Image">
-                    </div>
-                    <div class="tab-btn">
+                    @foreach ($newsDetach as $detach)
+                        <div class="tab-btn active img-detach">
+                            <img src="{{ asset('img/news/' . $detach->image) }}" alt="Image">
+                        </div>
+                    @endforeach
+                    {{--  <div class="tab-btn">
                         <img src="{{ url('site/assets/img/hero/hero_1_2.jpg') }}" alt="Image">
                     </div>
                     <div class="tab-btn">
@@ -173,12 +176,13 @@
                     </div>
                     <div class="tab-btn">
                         <img src="{{ url('site/assets/img/hero/hero_1_6.jpg') }}" alt="Image">
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
     </div>
-    <!-- ==================== Category News Section ==================== -->
+    {{-- Fim de Sessão dos noticias da categoria Politica com mais destaque e as mais recentes --}}
+    <!-- ==================== noticias por categoria  ==================== -->
     <div class="space-top">
         <div class="container">
             <div class="row align-items-center">
@@ -199,8 +203,8 @@
                 </div>
             </div>
             {{-- Carrossel da Sessão Noticia por categoria --}}
-            <div class="row th-carousel" id="blog-slide7" data-slide-show="4" data-lg-slide-show="3"
-                data-md-slide-show="2" data-sm-slide-show="2">
+            <div class="row th-carousel" id="blog-slide7" data-slide-show="4" data-lg-slide-show="3" data-md-slide-show="2"
+                data-sm-slide-show="2">
                 @foreach ($news as $key => $news)
                     <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme {{ $key == 0 ? 'active' : '' }}">
                         <div class="blog-style3">
@@ -322,13 +326,16 @@
 
         </div>
     </div>
-    <!-- ==================== Ads Section ==================== -->
+    {{-- Fim de noticias por categoria --}}
+    <!-- ==================== Publicidade ==================== -->
     <div class="container space-top">
         <a href="https://themeforest.net/user/themeholy/portfolio">
             <img class="light-img" src="{{ url('site/assets/img/ads/ads_5.jpg') }}" alt="ads">
             <img class="dark-img" src="{{ url('site/assets/img/ads/ads_5_dark.jpg') }}" alt="ads">
         </a>
     </div>
+    {{-- Fim de Publicidade --}}
+
     <!-- ==================== Today News Section ==================== -->
     <section class="space">
         <div class="container">
@@ -420,6 +427,7 @@
             </div>
         </div>
     </section>
+    {{-- Fim das Noticia de Hoje --}}
     {{-- =================== Video de exposição ==================== --}}
     <section class="bg-fixed dark-theme" data-bg-src="{{ url('site/assets/img/blog/blog_full_1.jpg') }}"
         data-overlay="black" data-opacity="7">
@@ -439,7 +447,7 @@
         </div>
     </section>
 
-    <!-- ==================== Category Main Section ==================== -->
+    <!-- ==================== Algumas Categorias ==================== -->
     <section class="space">
         <div class="container">
             <div class="row align-items-center">
@@ -457,8 +465,9 @@
                     </div>
                 </div>
             </div>
-            {{-- Detach News --}}
+
             <div class="row gy-24 filter-active mbn-24">
+                {{-- Noticia de destaque - todas as categorias que constão nessa sessão --}}
                 @if ($today1)
                     <div class="col-xl-4 col-md-6 filter-item cat1">
                         <div class="blog-style3 dark-theme">
@@ -488,7 +497,9 @@
                         </div>
                     </div>
                 @endif
-                {{-- News Policy --}}
+                {{-- Fim de Notia de Cateforia --}}
+
+                {{-- Categoria Politica --}}
                 @foreach ($newsPolicy as $newspolicy)
                     <div class="col-xl-4 col-md-6 filter-item cat1">
                         <div class="blog-style2">
@@ -516,7 +527,9 @@
                         </div>
                     </div>
                 @endforeach
-                {{-- News Culture --}}
+                {{-- Fim de Categoria Politica --}}
+
+                {{-- Categoria de Cultura - trás 6 categotias da cultura --}}
                 @foreach ($newsCulture as $newsculture)
                     <div class="col-xl-4 col-md-6 filter-item cat2">
                         <div class="blog-style2">
@@ -544,6 +557,8 @@
                         </div>
                     </div>
                 @endforeach
+                {{-- Fim de Categoria de Cultura --}}
+
                 {{-- <div class="col-xl-4 col-md-6 filter-item cat2">
                     <div class="blog-style2">
                         <div class="blog-img img-big">
@@ -631,10 +646,11 @@
             </div>
         </div>
     </section>
+    <!-- ==================== Fim de Algumas Categorias ==================== -->
     <section class="space-bottom">
         <div class="container">
             <div class="row">
-                {{-- =================== Tech Section ================== --}}
+                {{-- =================== Sessão de Tecnologia, Economia e Sociedade ================== --}}
                 <div class="col-xl-8">
                     <h2 class="sec-title has-line">Ciências & Tecnologias</h2>
                     {{-- Noticia de Ciências e Tecnologia com destaque --}}
@@ -758,6 +774,9 @@
                             </div>
                         </div> --}}
                     </div>
+                    {{-- Fim de Noticias de Ciencias e Tecnologia --}}
+
+                    {{-- Publicidade --}}
                     <div class="space">
                         <a href="https://themeforest.net/user/themeholy/portfolio">
                             <img class="w-100 light-img" src="{{ url('site/assets/img/ads/ads_6.jpg') }}"
@@ -766,33 +785,38 @@
                                 alt="ads">
                         </a>
                     </div>
-                    <h2 class="sec-title has-line">Featured News</h2>
+                    {{-- Fim de Publicidade --}}
+
+                    {{-- Sessão de Economia e Negócio --}}
+                    <h2 class="sec-title has-line">Economia & Negócio</h2>
                     <div class="mbn-24">
-                        <div class="mb-4">
-                            <div class="blog-style4">
-                                <div class="blog-img w-270">
-                                    <img src="{{ url('site/assets/img/blog/blog_6_3_1.jpg') }}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
-                                    <h3 class="box-title-22">
-                                        <a class="hover-line" href="blog-details.html">Tech brilliance, forging a path to
-                                            a smarter connected universe.</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="author.html">
-                                            <i class="far fa-user"></i>By - Tnews
-                                        </a>
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>22 Mar, 2025
-                                        </a>
+                        @foreach ($Economic as $economic)
+                            <div class="mb-4">
+                                <div class="blog-style4">
+                                    <div class="blog-img w-270">
+                                        <img src="{{ url('img/news/' . $economic->image) }}" alt="blog image">
                                     </div>
-                                    <a href="blog-details.html" class="th-btn style2">Read More<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
+                                    <div class="blog-content">
+                                        <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
+                                        <h3 class="box-title-22">
+                                            <a class="hover-line" href="blog-details.html">{{ $economic->title }}</a>
+                                        </h3>
+                                        <div class="blog-meta">
+                                            <a href="author.html">
+                                                <i class="far fa-user"></i>By - Tnews
+                                            </a>
+                                            <a href="blog.html">
+                                                <i
+                                                    class="fal fa-calendar-days"></i>{{ $economic->updated_at->format('d M, Y') }}
+                                            </a>
+                                        </div>
+                                        <a href="blog-details.html" class="th-btn style2">Ler mais<i
+                                                class="fas fa-arrow-up-right ms-2"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="mb-4">
+                        @endforeach
+                        {{-- <div class="mb-4">
                             <div class="blog-style4">
                                 <div class="blog-img w-270">
                                     <img src="{{ url('site/assets/img/blog/blog_6_3_2.jpg') }}" alt="blog image">
@@ -887,11 +911,13 @@
                                             class="fas fa-arrow-up-right ms-2"></i></a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
+                    {{-- Fim da sessão de Economia e Negocio --}}
                 </div>
                 <div class="col-xl-4 mt-35 mt-xl-0 sidebar-wrap mb-10">
                     <div class="sidebar-area">
+                        {{-- Publicidade --}}
                         <div class="widget">
                             <div class="widget-ads">
                                 <a href="https://themeforest.net/user/themeholy/portfolio">
@@ -902,30 +928,36 @@
                                 </a>
                             </div>
                         </div>
+                        {{-- Fim da Publicidade --}}
+
+                        {{-- Sessão de Sociedade --}}
                         <div class="widget">
-                            <h2 class="sec-title fs-20 has-line">Most Read</h2>
+                            <h2 class="sec-title fs-20 has-line">Sociedade</h2>
                             <div class="row gy-4">
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="blog-style2">
-                                        <div class="blog-img img-big">
-                                            <img src="{{ url('site/assets/img/blog/blog_3_3_11.jpg') }}"
-                                                alt="blog image">
-                                        </div>
-                                        <div class="blog-content">
-                                            <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
-                                            <h3 class="box-title-20">
-                                                <a class="hover-line" href="blog-details.html">Gadgets amaze, connect
-                                                    inspire you.</a>
-                                            </h3>
-                                            <div class="blog-meta">
-                                                <a href="blog.html">
-                                                    <i class="fal fa-calendar-days"></i>21 Mar, 2025
-                                                </a>
+                                @foreach ($Society as $society)
+                                    <div class="col-xl-12 col-md-6">
+                                        <div class="blog-style2">
+                                            <div class="blog-img img-big">
+                                                <img src="{{ asset('img/news/' . $society->image) }}" alt="blog image">
+                                            </div>
+                                            <div class="blog-content">
+                                                <a data-theme-color="#6234AC" href="blog.html"
+                                                    class="category">Gadget</a>
+                                                <h3 class="box-title-20">
+                                                    <a class="hover-line"
+                                                        href="blog-details.html">{{ Str::limit($society->title, 50) }}</a>
+                                                </h3>
+                                                <div class="blog-meta">
+                                                    <a href="blog.html">
+                                                        <i
+                                                            class="fal fa-calendar-days"></i>{{ $society->updated_at->format('d M, Y') }}
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-12 col-md-6">
+                                @endforeach
+                                {{-- <div class="col-xl-12 col-md-6">
                                     <div class="blog-style2">
                                         <div class="blog-img img-big">
                                             <img src="{{ url('site/assets/img/blog/blog_3_3_12.jpg') }}"
@@ -984,9 +1016,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
+                        {{-- Fim da sessão de Sociedade --}}
                         <div class="widget newsletter-widget3"
                             data-bg-src="{{ url('site/assets/img/bg/line_bg_1.png') }}">
                             <div class="mb-4">
@@ -1003,6 +1036,7 @@
                     </div>
                 </div>
             </div>
+            {{-- =================== Fim de Sessão de Tecnologia, Economia e Sociedade ================== --}}
         </div>
     </section>
 @endsection

@@ -1,3 +1,16 @@
+/* Tratamento de imagem na Noticia da Categoria Politica com mais destaques */
+.img-detach {
+    width: 100%;
+    height: 8rem;
+    overflow: hidden;
+}
+
+.img-detach img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* tratamentos das imagens na sessão Noticias por categorias */
 .img-card {
     width: 100%;

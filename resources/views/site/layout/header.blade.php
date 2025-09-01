@@ -41,7 +41,7 @@
                             </div>
                             <div class="col-xl-3 text-end d-none d-xl-block">
                                 <div class="social-links">
-                                    <span class="social-title">Follow Us :</span>
+                                    <span class="social-title">Siga-nos :</span>
                                     <a href="https://www.facebook.com">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
@@ -84,8 +84,8 @@
                                 <nav class="main-menu d-none d-lg-inline-block">
                                     <ul>
                                         <li>
-                                            <a href="/">Home</a>{{--
-                          <ul class="sub-menu">
+                                            <a href="/">Home</a>
+                          {{-- <ul class="sub-menu">
                             <li><a href="/">Home Newspaper</a></li>
                             <li><a href="home-magazine.html">Home Magazine</a></li>
                             <li><a href="home-sports.html">Home Sports</a></li>
@@ -93,8 +93,9 @@
                             <li><a href="home-gadget.html">Home Gadget</a></li>
                           </ul> --}}
                                         </li>
-                                        <li><a href="/site/about">Sobre</a></li>
                                         <li><a href="{{ route('site.policy') }}">Política</a></li>
+                                        <li><a href="">Sociedade</a></li>
+                                        <li><a href="">Economia</a></li>
                                         <li><a href="#">Artes & Cultura</a></li>
                                         <li class="menu-item-has-children">
                                             <a href="#">Desportos</a>
@@ -108,15 +109,16 @@
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children">
-                                            <a href="#">Multimédia</a>
+                                            <a href="#">Galeria</a>
                                             <ul class="sub-menu">
                                                 {{-- <li><a href="/site/category">Todas</a></li> --}}
                                                 <li><a href="/site/publication">Publicação</a></li>
                                                 <li><a href="/site/videos">Vídeos</a></li>
-                                                <li><a href="/site/galery">Galeria</a></li>
+                                                <li><a href="/site/galery">Imagens</a></li>
                                             </ul>
                                         </li>
-                                        {{-- <li class="menu-item-has-children">
+                                        {{--<li><a href="/site/about">Sobre</a></li>
+                                         <li class="menu-item-has-children">
                           <a href="#">Pages</a>
                           <ul class="sub-menu">
                             <li class="menu-item-has-children">
