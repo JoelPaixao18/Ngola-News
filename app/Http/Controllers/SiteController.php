@@ -182,10 +182,11 @@ class SiteController extends Controller
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        $publications = Publication::all();
+        $publications = Publication::orderBy('updated_at', 'desc')->get();
         return view('site.multimedia.publication', compact('publications', 'breaknews','footerCategory', 'subscription'));
-    }
+    }//fim Multimedia
 
+    /* inicio menu videos */
     public function videos()
     {
         $videos = Video::where('detach', 'destaque')->orderByDesc('id')->get();
@@ -194,7 +195,9 @@ class SiteController extends Controller
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         return view('site.multimedia.videos', compact('videos', 'breaknews','footerCategory', 'subscription'));
     }
+    /* fim do menu videos */
 
+    /* inicio do menu galeria */
     public function galery()
     {
         $galeries = Galery::all();
@@ -203,7 +206,9 @@ class SiteController extends Controller
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
         return view('site.multimedia.galery', compact('galeries', 'breaknews','footerCategory', 'subscription'));
     }
-    public function api()
+    /* fim do menu galeria */
+    
+   /*  public function api()
     {
         $event = Event::all();
         return response()->json($event);
@@ -217,5 +222,5 @@ class SiteController extends Controller
         } else {
             return response()->json(['message' => 'Evento não encontrado.'], 404);
         }
-    }
+    } */
 }
