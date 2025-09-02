@@ -12,8 +12,13 @@
                     </div>
                     <div class="container">
                         <div class="blog-bg-style1">
-                            <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="#"
-                                class="category">Gadget</a>
+                            @foreach ($categories as $category)
+                                @if ($category->id == $detach->category_id)
+                                    <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="#">
+                                        {{ $category->name }}</a>
+                                @endif
+                            @endforeach
+                            <br>
                             <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
                                 <a class="hover-line" href="#">{{ $detach->title }}</a>
                             </h3>
@@ -647,10 +652,10 @@
         </div>
     </section>
     <!-- ==================== Fim de Algumas Categorias ==================== -->
+    {{-- =================== Sessão de Tecnologia, Economia e Sociedade ================== --}}
     <section class="space-bottom">
         <div class="container">
             <div class="row">
-                {{-- =================== Sessão de Tecnologia, Economia e Sociedade ================== --}}
                 <div class="col-xl-8">
                     <h2 class="sec-title has-line">Ciências & Tecnologias</h2>
                     {{-- Noticia de Ciências e Tecnologia com destaque --}}
@@ -797,7 +802,12 @@
                                         <img src="{{ url('img/news/' . $economic->image) }}" alt="blog image">
                                     </div>
                                     <div class="blog-content">
-                                        <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
+                                        @foreach ($categories as $category)
+                                            @if ($category->id == $economic->category_id)
+                                                <a data-theme-color="#6234AC" href="blog.html" class="category">
+                                                    {{ $category->name }}</a>
+                                            @endif
+                                        @endforeach
                                         <h3 class="box-title-22">
                                             <a class="hover-line" href="blog-details.html">{{ $economic->title }}</a>
                                         </h3>
@@ -941,8 +951,12 @@
                                                 <img src="{{ asset('img/news/' . $society->image) }}" alt="blog image">
                                             </div>
                                             <div class="blog-content">
-                                                <a data-theme-color="#6234AC" href="blog.html"
-                                                    class="category">Gadget</a>
+                                                @foreach ($categories as $category)
+                                                    @if ($category->id == $society->category_id)
+                                                        <a data-theme-color="#6234AC" href="blog.html" class="category">
+                                                            {{ $category->name }}</a>
+                                                    @endif
+                                                @endforeach
                                                 <h3 class="box-title-20">
                                                     <a class="hover-line"
                                                         href="blog-details.html">{{ Str::limit($society->title, 50) }}</a>
@@ -1039,4 +1053,5 @@
             {{-- =================== Fim de Sessão de Tecnologia, Economia e Sociedade ================== --}}
         </div>
     </section>
+    {{-- =================== Fim de Sessão de Tecnologia, Economia e Sociedade ================== --}}
 @endsection

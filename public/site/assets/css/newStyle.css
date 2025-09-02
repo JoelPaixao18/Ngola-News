@@ -173,3 +173,16 @@
     height: 100%;
     object-fit: cover;
 }
+
+/* Tratamento de imagem no footer */
+.img-footer {
+    width: 100%;
+    height: 8rem;
+    overflow: hidden;
+}
+
+.img-footer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
