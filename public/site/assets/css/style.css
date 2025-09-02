@@ -6281,7 +6281,8 @@ a.hover-line {
     background-position: bottom left;
     background-size: 0 2px;
     -webkit-transition: .4s ease-in-out;
-    transition: .4s ease-in-out
+    transition: .4s ease-in-out;
+    cursor: pointer;
 }
 
 a.hover-line:hover {
