@@ -26,15 +26,8 @@
                                             @else
                                                 src="{{ asset('img/publication/pdfimg.png') }}" @endif
                                                 alt="blog image"></div>
-                                        <h3 class="box-title-20"><a href="#"
-                                                onclick="openPublicationModal(
-                                            '{{ addslashes($Publication->title) }}',
-                                            '{{ asset('img/galeries/' . ($Publication->image ?? 'pdfimg.png')) }}',
-                                            '{{ addslashes($Publication->description) }}',
-                                            '{{ $Publication->updated_at }}'
-                                        )">
-                                            {{ $publication->title }}
-                                        </a></h3>
+                                        <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">{{ $publication->title }}</a></h3>
                                         <div class="blog-meta">
                                             @if ($publication->file && file_exists(public_path('files/publication/' . $publication->file)))
                                                 <a href="{{ asset('files/publication/' . $publication->file) }}" download>
@@ -50,40 +43,40 @@
                                 </div>
                             @endforeach
                         @else
-                            <div class="filter-item col-xl-4 col-sm-6">
-                                <div class="blog-style1">
-                                    <div class="blog-img img-size">
-                                        <img @if ($publication->cover) src="{{ asset('img/publication/' . $publication->cover) }}"
-                                            @else
-                                                src="{{ asset('img/publication/pdfimg.png') }}" @endif
-                                            alt="blog image">
-                                    </div>
-                                    <h3 class="box-title-20">
-                                        <a class="hover-line" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">{{ $publication->title }}</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        @if ($publication->file && file_exists(public_path('files/publication/' . $publication->file)))
-                                            <a href="{{ asset('files/publication/' . $publication->file) }}" download>
-                                                <i class="fas fa-file-pdf me-1"></i> Baixar PDF
-                                            </a>
-                                        @else
-                                            <span class="text-muted">Nenhum arquivo PDF disponível</span>
-                                        @endif
-                                        <a href="#">
-                                            <i
-                                                class="fal fa-calendar-days"></i>{{ $publication->updated_at->format('d M, Y') }}
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
                             <div class="col-12 text-center my-5">
                                 <p class="alert alert-warning fs-5 py-4 px-5">
                                     Nenhuma publicação encontrada no momento.
                                 </p>
                             </div>
-                        @endforelse
+                        @endif
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Botão para abrir flipbook -->
+                                        <button
+                                            onclick="openFlipbook('{{ asset('files/publication/' . $publication->file) }}')">Abrir
+                                            {{ $publication->title }}</button>
+                                        <div id="book"></div>
+                                        <input type="text" id="page-number" style="width: 80px">
+                                        <span id="number-pages"></span>
+                                        <span id="prev-page">Anterior</span>
+                                        <span id="next-page">Próxima</span>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     {{-- Botão "Ver Mais" só aparece se houver publicações --}}
@@ -103,7 +96,7 @@
                         <div class="widget widget_categories">
                             <h3 class="widget_title">Categorias</h3>
                             <ul>
-                                 <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg"
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg"
                                         href="{{ route('site.policy') }}">Políticas</a></li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg"
                                         href="{{ route('site.society') }}">Sociedades</a>
@@ -207,6 +200,7 @@
                 autoCenter: true
             });
         });
+
         function openPublicationModal(title, img, description, date) {
             document.getElementById('PublicationModalLabel').textContent = title;
             document.getElementById('PublicationModalImg').src = img;
