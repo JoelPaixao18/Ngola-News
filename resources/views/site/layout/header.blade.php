@@ -5,7 +5,7 @@
                 <div class="col-lg-2 d-none d-lg-inline-block">
                     <div class="header-logo">
                         <a href="/">
-                            <img src="assets/img/logoNgolaLong1.png" alt="Tnews">
+                            <img src="assets/img/1-Photoroom.png" alt="Tnews">
                         </a>
                     </div>
                 </div>

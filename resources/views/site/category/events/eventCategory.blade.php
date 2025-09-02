@@ -228,6 +228,7 @@
                         <div class="widget widget_categories">
                             <h3 class="widget_title">Categorias</h3>
                             <ul>
+
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg"
                                         href="{{ route('site.policy') }}">Políticas</a></li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg"

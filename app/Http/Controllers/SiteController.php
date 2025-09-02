@@ -395,7 +395,7 @@ class SiteController extends Controller
         $publications = Publication::orderBy('updated_at', 'desc')->paginate(6);
         return view('site.multimedia.publication', compact('publications', 'breaknews', 'footerCategory', 'subscription', 'Recent'));
     } //fim Multimedia
-
+  
     /* inicio menu videos */
     public function videos()
     {
