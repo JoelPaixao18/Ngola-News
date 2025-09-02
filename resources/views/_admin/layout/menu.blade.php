@@ -61,7 +61,7 @@
                 </li>
 
                 {{-- Menu Events --}}
-                <li class="nxl-item nxl-hasmenu">
+                {{-- <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-cast"></i></span>
                         <span class="nxl-mtext">Eventos</span><span class="nxl-arrow"><i
@@ -74,7 +74,7 @@
                                 Evento</a></li>
                         <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                     </ul>
-                </li>
+                </li> --}}
 
                 {{-- Menu Authors --}}
                 <li class="nxl-item nxl-hasmenu">

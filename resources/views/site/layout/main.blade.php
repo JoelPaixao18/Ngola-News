@@ -67,7 +67,7 @@
     @yield('content-category')
     {{-- End menu category --}}
 
-    {{-- Listagens --}}
+    {{-- ######## Listagens ####### --}}
 
     {{-- Menu eventCategory --}}
     @yield('content-eventCategory')
@@ -80,6 +80,18 @@
     {{-- Menu Policy --}}
     @yield('content-policyCategory')
     {{-- End menu Policy --}}
+
+    {{-- Menu Society --}}
+    @yield('content-societyCategory')
+    {{-- End menu Society --}}
+
+    {{-- Menu economic --}}
+    @yield('content-economicCategory')
+    {{-- End menu economic --}}
+
+    {{-- Menu Culture --}}
+    @yield('content-cultureCategory')
+    {{-- End menu Culture --}}
 
     {{-- End Listagens --}}
 
@@ -116,10 +128,10 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-    <script type="text/javascript" src="{{ url('flipbook/assets/turn.min.js')}}"></script>
-    <script type="text/javascript" src="{{ url('flipbook/assets/script.js')}}"></script>
-    <script type="text/javascript" src="{{ url('site/assets/js/app.min.js')}}"></script>
-    <script type="text/javascript" src="{{ url('site/assets/js/main.js')}}"></script>
+    <script type="text/javascript" src="{{ url('flipbook/assets/turn.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url('flipbook/assets/script.js') }}"></script>
+    <script type="text/javascript" src="{{ url('site/assets/js/app.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url('site/assets/js/main.js') }}"></script>
 </body>
 
 </html>

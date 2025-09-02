@@ -85,7 +85,7 @@
                                     <ul>
                                         <li>
                                             <a href="/">Home</a>
-                          {{-- <ul class="sub-menu">
+                                            {{-- <ul class="sub-menu">
                             <li><a href="/">Home Newspaper</a></li>
                             <li><a href="home-magazine.html">Home Magazine</a></li>
                             <li><a href="home-sports.html">Home Sports</a></li>
@@ -94,9 +94,9 @@
                           </ul> --}}
                                         </li>
                                         <li><a href="{{ route('site.policy') }}">Política</a></li>
-                                        <li><a href="#">Sociedade</a></li>
-                                        <li><a href="#">Economia</a></li>
-                                        <li><a href="#">Artes & Cultura</a></li>
+                                        <li><a href="{{ route('site.society') }}">Sociedade</a></li>
+                                        <li><a href="{{ route('site.economic') }}">Economia</a></li>
+                                        <li><a href="{{ route('site.culture') }}">Artes & Cultura</a></li>
                                         <li class="menu-item-has-children">
                                             <a href="#">Desportos</a>
                                             <ul class="sub-menu">
@@ -117,7 +117,7 @@
                                                 <li><a href="/site/galery">Imagens</a></li>
                                             </ul>
                                         </li>
-                                        {{--<li><a href="/site/about">Sobre</a></li>
+                                        {{-- <li><a href="/site/about">Sobre</a></li>
                                          <li class="menu-item-has-children">
                           <a href="#">Pages</a>
                           <ul class="sub-menu">
