@@ -22,12 +22,9 @@
                             <div class="filter-item col-xl-4 col-sm-6">
                                 <div class="blog-style1">
                                     <div class="blog-img img-size">
-                                        <img
-                                            @if ($publication->cover)
-                                                src="{{ asset('img/publication/' . $publication->cover) }}"
+                                        <img @if ($publication->cover) src="{{ asset('img/publication/' . $publication->cover) }}"
                                             @else
-                                                src="{{ asset('img/publication/pdfimg.png') }}"
-                                            @endif
+                                                src="{{ asset('img/publication/pdfimg.png') }}" @endif
                                             alt="blog image">
                                     </div>
                                     <h3 class="box-title-20">
@@ -43,7 +40,8 @@
                                             <span class="text-muted">Nenhum arquivo PDF disponível</span>
                                         @endif
                                         <a href="#">
-                                            <i class="fal fa-calendar-days"></i>{{ $publication->updated_at->format('d M, Y') }}
+                                            <i
+                                                class="fal fa-calendar-days"></i>{{ $publication->updated_at->format('d M, Y') }}
                                         </a>
                                     </div>
                                 </div>
@@ -51,18 +49,16 @@
                         @empty
                             <div class="col-12 text-center my-5">
                                 <p class="alert alert-warning fs-5 py-4 px-5">
-                                     Nenhuma publicação encontrada no momento.
+                                    Nenhuma publicação encontrada no momento.
                                 </p>
                             </div>
                         @endforelse
                     </div>
 
                     {{-- Botão "Ver Mais" só aparece se houver publicações --}}
-                    @if ($publications->count() > 0)
-                        <div class="mt-40 mb-30 text-center">
-                            <a href="blog-masonary.html" class="th-btn">Ver Mais</a>
-                        </div>
-                    @endif
+                    <div class="th-pagination mt-40">
+                        {{ $publications->links('vendor.pagination.custom') }}
+                    </div>
                 </div>
 
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">
@@ -81,7 +77,8 @@
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg" href="blog.html">Políticas</a></li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Saúde</a></li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Tecnologia</a></li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a></li>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="widget">

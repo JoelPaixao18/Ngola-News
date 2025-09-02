@@ -207,16 +207,11 @@
                         </div> --}}
                         @endif
                     </div>
+                    {{-- Paginação --}}
                     <div class="th-pagination mt-40">
-                        <ul>
-                            <li><a href="blog.html">01</a></li>
-                            <li><a href="blog.html">02</a></li>
-                            <li><a href="blog.html">03</a></li>
-                            <li>
-                                <a href="blog.html"><i class="fas fa-arrow-right"></i></a>
-                            </li>
-                        </ul>
+                        {{ $news->links('vendor.pagination.custom') }}
                     </div>
+                    {{-- Fim de Paginação --}}
                 </div>
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">
                     <aside class="sidebar-area">

@@ -221,7 +221,7 @@ class SiteController extends Controller
     {
         $news = News::whereHas('category', function ($query) {
             $query->where('name', ['Política', 'Políticas']);
-        })->orderByDesc('id')->take(6)->get();
+        })->orderByDesc('id')->paginate(6);
 
         $categories = Category::where('name->name')->get();
 
@@ -251,7 +251,7 @@ class SiteController extends Controller
     {
         $news = News::whereHas('category', function ($query) {
             $query->where('name', ['Sociedade', 'Sociedades']);
-        })->orderByDesc('id')->take(6)->get();
+        })->orderByDesc('id')->paginate(6);
 
         $categories = Category::where('name->name')->get();
 
@@ -281,7 +281,7 @@ class SiteController extends Controller
     {
         $news = News::whereHas('category', function ($query) {
             $query->where('name', ['Economia', 'Economias']);
-        })->orderByDesc('id')->take(6)->get();
+        })->orderByDesc('id')->paginate(6);
 
         $categories = Category::where('name->name')->get();
 
@@ -311,7 +311,7 @@ class SiteController extends Controller
     {
         $news = News::whereHas('category', function ($query) {
             $query->where('name', ['Cultura', 'Culturas']);
-        })->orderByDesc('id')->take(6)->get();
+        })->orderByDesc('id')->paginate(6);
 
         $categories = Category::where('name->name')->get();
 
@@ -341,7 +341,7 @@ class SiteController extends Controller
     {
         $news = News::whereHas('category', function ($query) {
             $query->where('name', ['Tecnologia', 'Tecnologias']);
-        })->orderByDesc('id')->take(6)->get();
+        })->orderByDesc('id')->paginate(6);
 
         $categories = Category::where('name->name')->get();
 
@@ -392,7 +392,7 @@ class SiteController extends Controller
             ->get();
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        $publications = Publication::orderBy('updated_at', 'desc')->get();
+        $publications = Publication::orderBy('updated_at', 'desc')->paginate(6);
         return view('site.multimedia.publication', compact('publications', 'breaknews', 'footerCategory', 'subscription', 'Recent'));
     } //fim Multimedia
 
