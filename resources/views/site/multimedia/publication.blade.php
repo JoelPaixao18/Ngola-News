@@ -53,12 +53,9 @@
                             <div class="filter-item col-xl-4 col-sm-6">
                                 <div class="blog-style1">
                                     <div class="blog-img img-size">
-                                        <img
-                                            @if ($publication->cover)
-                                                src="{{ asset('img/publication/' . $publication->cover) }}"
+                                        <img @if ($publication->cover) src="{{ asset('img/publication/' . $publication->cover) }}"
                                             @else
-                                                src="{{ asset('img/publication/pdfimg.png') }}"
-                                            @endif
+                                                src="{{ asset('img/publication/pdfimg.png') }}" @endif
                                             alt="blog image">
                                     </div>
                                     <h3 class="box-title-20">
@@ -74,60 +71,25 @@
                                             <span class="text-muted">Nenhum arquivo PDF disponível</span>
                                         @endif
                                         <a href="#">
-                                            <i class="fal fa-calendar-days"></i>{{ $publication->updated_at->format('d M, Y') }}
+                                            <i
+                                                class="fal fa-calendar-days"></i>{{ $publication->updated_at->format('d M, Y') }}
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        @endif
-                        <!-- Modal -->
-                        <div class="modal fade" id="PublicationModal" tabindex="-1" aria-labelledby="PublicationModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="PublicationModalLabel">Modal title</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        {{-- <div id="book">
-                                            <div class="cover bg-danger">
-                                                <h1>O Livro</h1>
-                                            </div>
-                                        </div>
-                                        <div id="controls" class="mt-3">
-                                            <label for="page-number">Pagina:</label> <input type="text" size="3"
-                                                id="page-number"> de <span id="number-pages"></span>
-                                        </div> --}}
-                                        {{-- <h1>{{ $publication->title }}</h1>
-                                        <iframe src="/files/publication/{{$publication->file}}" width="100%" height="600px"></iframe> --}}
-
-                                        <!-- Botão para abrir flipbook -->
-                                        <button
-                                            onclick="openFlipbook('{{ asset('files/publication/' . $publication->file) }}')">Abrir
-                                            {{$publication->title}}</button>
-                                        <div id="book"></div>
-                                        <input type="text" id="page-number">
-                                        <span id="number-pages"></span>
-                                        <span id="prev-page">Anterior</span>
-                                        <span id="next-page">Próxima</span>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
+                        @empty
+                            <div class="col-12 text-center my-5">
+                                <p class="alert alert-warning fs-5 py-4 px-5">
+                                    Nenhuma publicação encontrada no momento.
+                                </p>
                             </div>
                         @endforelse
                     </div>
 
                     {{-- Botão "Ver Mais" só aparece se houver publicações --}}
-                    @if ($publications->count() > 0)
-                        <div class="mt-40 mb-30 text-center">
-                            <a href="blog-masonary.html" class="th-btn">Ver Mais</a>
-                        </div>
-                    @endif
+                    <div class="th-pagination mt-40">
+                        {{ $publications->links('vendor.pagination.custom') }}
+                    </div>
                 </div>
 
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">
