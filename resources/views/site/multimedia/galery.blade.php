@@ -103,22 +103,25 @@
                             <h3 class="widget_title">Categorias</h3>
                             <ul>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg"
-                                        href="https://www.jornaldeangola.ao/noticias/6/desporto" target="blank">Futebol
-                                        Nacional</a></li>
+                                        href="{{ route('site.policy') }}">Políticas</a></li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg"
-                                        href="{{ route('site.policy') }}">Economia</a>
+                                        href="{{ route('site.society') }}">Sociedades</a>
                                 </li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg"
-                                        href="{{ route('site.policy') }}">Políticas</a>
+                                        href="{{ route('site.economic') }}">Economia
+                                        &
+                                        Negócios</a>
                                 </li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg"
-                                        href="{{ route('site.policy') }}">Saúde</a></li>
+                                        href="{{ route('site.culture') }}">Artes &
+                                        Culturas</a>
+                                </li>
                                 <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg"
-                                        href="{{ route('site.policy') }}">Tecnologia</a>
+                                        href="{{ route('site.tech') }}">Ciências
+                                        Tecnologia</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg"
-                                        href="{{ route('site.policy') }}">Arte & Cultura</a>
-                                </li>
+                                {{-- <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a>
+                                </li> --}}
                             </ul>
                         </div>
                         <div class="widget">

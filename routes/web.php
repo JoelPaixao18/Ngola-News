@@ -30,6 +30,10 @@ Route::get('site/about', [SiteController::class, 'about'])->name('site.about');
 /* Routas de Categorias */
 Route::get('site/category', [SiteController::class, 'category'])->name('site.category');
 Route::get('site/policy', [SiteController::class, 'policy'])->name('site.policy');
+Route::get('site/society', [SiteController::class, 'society'])->name('site.society');
+Route::get('site/economic', [SiteController::class, 'economic'])->name('site.economic');
+Route::get('site/culture', [SiteController::class, 'culture'])->name('site.culture');
+Route::get('site/tech', [SiteController::class, 'tech'])->name('site.tech');
 Route::get('site/newsCategory', [SiteController::class, 'newsCategory'])->name('site.newsCategory');
 Route::get('site/eventCategory', [SiteController::class, 'eventCategory'])->name('site.eventCategory');
 Route::get('site/allNews', [SiteController::class, 'allNews'])->name('site.allNews');
@@ -189,4 +193,3 @@ Route::prefix('_admin/galeries')->name('admin.')->group(function () {
     Route::get('galeryView/{galery}', [GaleryController::class, 'show'])->name('galery.view');
     Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
 });
-
