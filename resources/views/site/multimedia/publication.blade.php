@@ -61,14 +61,14 @@
                                     </div>
                                     <div class="modal-body">
                                         <!-- Botão para abrir flipbook -->
-                                        <button
+                                        <button class="btn btn-success"
                                             onclick="openFlipbook('{{ asset('files/publication/' . $publication->file) }}')">Abrir
                                             {{ $publication->title }}</button>
                                         <div id="book"></div>
                                         <input type="text" id="page-number" style="width: 80px">
-                                        <span id="number-pages"></span>
-                                        <span id="prev-page">Anterior</span>
-                                        <span id="next-page">Próxima</span>
+                                        <span id="number-pages" ></span><br>
+                                        <span class="btn btn-warning" id="prev-page">Anterior</span>
+                                        <span class="btn btn-dark" id="next-page">Próxima</span>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
