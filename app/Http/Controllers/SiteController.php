@@ -392,10 +392,10 @@ class SiteController extends Controller
             ->get();
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        $publications = Publication::orderBy('updated_at', 'desc')->paginate(6);
+        $publications = Publication::orderBy('updated_at', 'desc')->paginate(18);
         return view('site.multimedia.publication', compact('publications', 'breaknews', 'footerCategory', 'subscription', 'Recent'));
     } //fim Multimedia
-  
+
     /* inicio menu videos */
     public function videos()
     {
