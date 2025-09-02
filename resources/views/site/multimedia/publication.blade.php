@@ -118,52 +118,87 @@
                                 </li> --}}
                             </ul>
                         </div>
+                        {{-- Sessão dos Posts Recentes --}}
+
                         <div class="widget">
-                            <h3 class="widget_title">Postagens Recentes</h3>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a></div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Fitness:
-                                                Your journey to Better, stronger you.</a></h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>21 June, 2025</a></div>
+                            <h3 class="widget_title">Posts Recentes</h3>
+                            @forelse ($RecentPost as $recents)
+                                <div class="recent-post-wrap">
+                                    <div class="recent-post">
+                                        <div class="media-img">
+                                            <a href="blog-details.html"><img
+                                                    src="{{ asset('img/news/' . $recents->image) }}"
+                                                    alt="Blog Image" /></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="post-title">
+                                                <a class="hover-line" href="blog-details.html">{{ $recents->title }}</a>
+                                            </h4>
+                                            <div class="recent-post-meta">
+                                                <a href="blog.html"><i
+                                                        class="fal fa-calendar-days"></i>{{ $recents->updated_at->format('d M, Y') }}</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a></div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Embrace
-                                                the game Ignite your sporting</a></h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>22 June, 2025</a></div>
+                                    {{-- <div class="recent-post">
+                                    <div class="media-img">
+                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg"
+                                                alt="Blog Image" /></a>
                                     </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-1-3.jpg" alt="Blog Image"></a></div>
                                     <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line"
-                                                href="blog-details.html">Revolutionizing lives Through technology</a>
+                                        <h4 class="post-title">
+                                            <a class="hover-line" href="blog-details.html">Embrace the game Ignite your
+                                                sporting</a>
                                         </h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>23 June, 2025</a></div>
+                                        <div class="recent-post-meta">
+                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>22 June,
+                                                2025</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-1-4.jpg" alt="Blog Image"></a></div>
+                                    <div class="media-img">
+                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-3.jpg"
+                                                alt="Blog Image" /></a>
+                                    </div>
                                     <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Enjoy the
-                                                Virtual Reality embrace the</a></h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>25 June, 2025</a></div>
+                                        <h4 class="post-title">
+                                            <a class="hover-line" href="blog-details.html">Revolutionizing lives Through
+                                                technology</a>
+                                        </h4>
+                                        <div class="recent-post-meta">
+                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>23 June,
+                                                2025</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="recent-post">
+                                    <div class="media-img">
+                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-4.jpg"
+                                                alt="Blog Image" /></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="post-title">
+                                            <a class="hover-line" href="blog-details.html">Enjoy the Virtual Reality
+                                                embrace the</a>
+                                        </h4>
+                                        <div class="recent-post-meta">
+                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>25 June,
+                                                2025</a>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                                </div>
+                            @empty
                         </div>
+
+                        <div class="col-12 text-center my-5">
+                            <p class="alert alert-warning fs-5 py-4 px-5">
+                                Nenhum post recente de momento.
+                            </p>
+                        </div>
+                        @endforelse
+                        {{-- Fim de Sesssão dos Postes Recentes --}}
                         <div class="widget">
                             <div class="widget-ads"><a
                                     href="../../../../themeforest.net/user/themeholy/portfolio.html"><img class="w-100"
@@ -172,18 +207,10 @@
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Tags Populares</h3>
                             <div class="tagcloud">
-                                <a href="blog.html">Esportes</a>
-                                <a href="blog.html">Políticas</a>
-                                <a href="blog.html">Negócios</a>
-                                <a href="blog.html">úsica</a>
-                                <a href="blog.html">Comida</a>
-                                <a href="blog.html">Tecnologia</a>
-                                <a href="blog.html">Viagens</a>
-                                <a href="blog.html">Saúde</a>
-                                <a href="blog.html">Moda</a>
-                                <a href="blog.html">Animais</a>
-                                <a href="blog.html">Weather</a>
-                                <a href="blog.html">Movies</a>
+                                <a href="{{ route('site.policy') }}">Politicas</a>
+                                <a href="{{ route('site.economic') }}">Economia</a>
+                                <a href="{{ route('site.tech') }}">Tecnologia</a>
+                                <a href="{{ route('site.society') }}">sociedade</a>
                             </div>
                         </div>
                     </aside>

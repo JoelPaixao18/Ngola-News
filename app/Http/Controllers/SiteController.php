@@ -203,16 +203,37 @@ class SiteController extends Controller
 
     public function newsView(News $news)
     {
+        // Busca a notícia atual
+        $news = News::with('category')->findOrFail($news->id);
+
+        // Busca notícias relacionadas pela categoria
+        $Related = News::where('category_id', $news->category_id)
+            ->where('id', '!=', $news->id) // exclui a própria notícia
+            ->latest()
+            ->take(6) // quantidade de relacionadas
+            ->get();
+
+        /* Ultimas noticias - Trás as 3 ultimas noticias*/
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+
+        /* Subscrição - mostrando um  modal com a imagem da noticia mais recentes */
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
+
+        /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
             ->orderBy('updated_at', 'desc')
             ->take(5)
             ->get();
+
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
-        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        $news = News::with('category')->findOrFail($news->id);
-        return view('site.category.news.newsView', compact('news', 'breaknews', 'footerCategory', 'subscription', 'Recent'));
+
+        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+
+        $categories = Category::all();
+        /* $categories = Category::where('name->name')->get(); */
+
+        return view('site.category.news.newsView', compact('news', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost', 'Related', 'categories'));
     }
 
     /* Politicas - Listagem de todas as noticias  */
@@ -384,31 +405,45 @@ class SiteController extends Controller
 
     public function publication()
     {
+
+        $publications = Publication::orderBy('updated_at', 'desc')->paginate(18);
+
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
+
         $footerCategory = Category::select('name')
             ->distinct()
             ->orderBy('updated_at', 'desc')
             ->take(5)
             ->get();
+
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
-        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        $publications = Publication::orderBy('updated_at', 'desc')->paginate(18);
-        return view('site.multimedia.publication', compact('publications', 'breaknews', 'footerCategory', 'subscription', 'Recent'));
-    } //fim Multimedia
+
+        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+
+        return view('site.multimedia.publication', compact('publications', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
+    }
+    //fim Multimedia
 
     /* inicio menu videos */
     public function videos()
     {
         $videos = Video::where('detach', 'destaque')->orderByDesc('id')->get();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
+
         $footerCategory = Category::select('name')
             ->distinct()
             ->orderBy('updated_at', 'desc')
             ->take(5)
             ->get();
+
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
-        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        return view('site.multimedia.videos', compact('videos', 'breaknews', 'footerCategory', 'subscription', 'Recent'));
+
+        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+        return view('site.multimedia.videos', compact('videos', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
     }
     /* fim do menu videos */
 
@@ -417,14 +452,19 @@ class SiteController extends Controller
     {
         $galeries = Galery::orderByDesc('id')->get();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
+
         $footerCategory = Category::select('name')
             ->distinct()
             ->orderBy('updated_at', 'desc')
             ->take(5)
             ->get();
+
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
-        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        return view('site.multimedia.galery', compact('galeries', 'breaknews', 'footerCategory', 'subscription', 'Recent'));
+
+        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+        return view('site.multimedia.galery', compact('galeries', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
     }
     /* fim do menu galeria */
 

@@ -20,7 +20,7 @@
                             @endforeach
                             <br>
                             <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
-                                <a class="hover-line" href="#">{{ $detach->title }}</a>
+                                <a class="hover-line" href="{{ route('site.newsView', ['news' => $detach->id])}}">{{ $detach->title }}</a>
                             </h3>
                             <div class="blog-meta" data-ani="slideinup" data-ani-delay="0.5s">
                                 <a href="author.html">

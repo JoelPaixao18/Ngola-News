@@ -8,7 +8,7 @@
                         <div class="th-widget-about">
                             <div class="about-logo">
                                 <a href="/">
-                                    <img src="assets/img/logoNgolaLong1.png" alt="Tnews">
+                                    <img src="assets/img/1-Photoroom.png" alt="Tnews">
                                 </a>
                             </div>
                             <p class="about-text">Magazines cover a wide subjects, including not
