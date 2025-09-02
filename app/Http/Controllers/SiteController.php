@@ -214,8 +214,7 @@ class SiteController extends Controller
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        /* $publications = Publication::orderBy('updated_at', 'desc')->get(); */
-        $publications = Publication::all();
+        $publications = Publication::orderByDesc('id')->get(); 
         return view('site.multimedia.publication', compact('publications', 'breaknews','footerCategory', 'subscription'));
     }//fim Multimedia
 
@@ -233,7 +232,7 @@ class SiteController extends Controller
     /* inicio do menu galeria */
     public function galery()
     {
-        $galeries = Galery::all();
+        $galeries = Galery::orderByDesc('id')->get();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();

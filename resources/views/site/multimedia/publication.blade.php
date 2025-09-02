@@ -26,8 +26,15 @@
                                             @else
                                                 src="{{ asset('img/publication/pdfimg.png') }}" @endif
                                                 alt="blog image"></div>
-                                        <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">{{ $publication->title }}</a></h3>
+                                        <h3 class="box-title-20"><a href="#"
+                                                onclick="openPublicationModal(
+                                            '{{ addslashes($Publication->title) }}',
+                                            '{{ asset('img/galeries/' . ($Publication->image ?? 'pdfimg.png')) }}',
+                                            '{{ addslashes($Publication->description) }}',
+                                            '{{ $Publication->updated_at }}'
+                                        )">
+                                            {{ $publication->title }}
+                                        </a></h3>
                                         <div class="blog-meta">
                                             @if ($publication->file && file_exists(public_path('files/publication/' . $publication->file)))
                                                 <a href="{{ asset('files/publication/' . $publication->file) }}" download>
@@ -58,12 +65,12 @@
                             </div>
                         @endif
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" id="PublicationModal" tabindex="-1" aria-labelledby="PublicationModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <h1 class="modal-title fs-5" id="PublicationModalLabel">Modal title</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
@@ -195,5 +202,13 @@
                 autoCenter: true
             });
         });
+        function openPublicationModal(title, img, description, date) {
+            document.getElementById('PublicationModalLabel').textContent = title;
+            document.getElementById('PublicationModalImg').src = img;
+            document.getElementById('PublicationModalDescription').textContent = description;
+            document.getElementById('PublicationModalDate').textContent = date;
+            var modal = new bootstrap.Modal(document.getElementById('PublicationModal'));
+            modal.show();
+        }
     </script>
 @endsection
