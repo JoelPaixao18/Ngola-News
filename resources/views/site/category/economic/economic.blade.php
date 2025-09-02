@@ -1,12 +1,12 @@
 @extends('site.layout.main')
-@section('title', 'Ngola News - Economia')
+@section('title', 'Ngola News - Economia & Negócios')
 @section('content-economicCategory')
 
     <div class="breadcumb-wrapper">
         <div class="container">
             <ul class="breadcumb-menu">
                 <li><a href="/">Home</a></li>
-                <li>Economias</li>
+                <li>Economias & Negócios</li>
             </ul>
         </div>
     </div>
@@ -236,39 +236,50 @@
                         <div class="widget widget_categories">
                             <h3 class="widget_title">Categorias</h3>
                             <ul>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg" href="blog.html">Esportes</a></li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg" href="blog.html">Negócios</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg"
+                                        href="{{ route('site.policy') }}">Políticas</a></li>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg"
+                                        href="{{ route('site.society') }}">Sociedades</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg" href="blog.html">Políticas</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg"
+                                        href="{{ route('site.economic') }}">Economia
+                                        &
+                                        Negócios</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Saúde</a></li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Tecnologia</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg"
+                                        href="{{ route('site.culture') }}">Artes &
+                                        Culturas</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg"
+                                        href="{{ route('site.tech') }}">Ciências
+                                        Tecnologia</a>
                                 </li>
+                                {{-- <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a>
+                                </li> --}}
                             </ul>
                         </div>
-                        <div class="widget">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-1.jpg"
-                                                alt="Blog Image" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title">
-                                            <a class="hover-line" href="blog-details.html">Fitness: Your journey to
-                                                Better, stronger
-                                                you.</a>
-                                        </h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>21 June,
-                                                2025</a>
+                        {{-- Sessão dos Posts Recentes --}}
+                        @forelse ($RecentPost as $recents)
+                            <div class="widget">
+                                <h3 class="widget_title">Posts Recentes</h3>
+                                <div class="recent-post-wrap">
+                                    <div class="recent-post">
+                                        <div class="media-img">
+                                            <a href="blog-details.html"><img
+                                                    src="{{ asset('img/news/' . $recents->image) }}"
+                                                    alt="Blog Image" /></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="post-title">
+                                                <a class="hover-line" href="blog-details.html">{{ $recents->title }}</a>
+                                            </h4>
+                                            <div class="recent-post-meta">
+                                                <a href="blog.html"><i
+                                                        class="fal fa-calendar-days"></i>{{ $recents->updated_at->format('d M, Y') }}</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="recent-post">
+                                    {{-- <div class="recent-post">
                                     <div class="media-img">
                                         <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg"
                                                 alt="Blog Image" /></a>
@@ -315,9 +326,17 @@
                                                 2025</a>
                                         </div>
                                     </div>
+                                </div> --}}
                                 </div>
                             </div>
-                        </div>
+                        @empty
+                            <div class="col-12 text-center my-5">
+                                <p class="alert alert-warning fs-5 py-4 px-5">
+                                    Nenhum post recente de momento.
+                                </p>
+                            </div>
+                        @endforelse
+                        {{-- Fim de Sesssão dos Postes Recentes --}}
                         <div class="widget">
                             <div class="widget-ads">
                                 <a href="https://themeforest.net/user/themeholy/portfolio"><img class="w-100"

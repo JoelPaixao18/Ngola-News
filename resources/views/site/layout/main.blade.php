@@ -93,6 +93,10 @@
     @yield('content-cultureCategory')
     {{-- End menu Culture --}}
 
+    {{-- Menu Tech --}}
+    @yield('content-techCategory')
+    {{-- End menu Tech --}}
+
     {{-- End Listagens --}}
 
     {{-- Visualizações --}}

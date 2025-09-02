@@ -225,16 +225,24 @@ class SiteController extends Controller
 
         $categories = Category::where('name->name')->get();
 
+        /* Ultimas noticias - Trás as 3 ultimas noticias*/
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+
+        /* Subscrição - mostrando um  modal com a imagem da noticia mais recentes */
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
+
+        /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
             ->orderBy('updated_at', 'desc')
             ->take(5)
             ->get();
-        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
-        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
 
-        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent'));
+        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
+
+        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+
+        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
     }
     /* Fim da categoria Politica - Menu */
 
@@ -262,7 +270,9 @@ class SiteController extends Controller
 
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
 
-        return view('site.category.society.society', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent'));
+        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+
+        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
     }
     /* Fim da categoria Sociedade - Menu */
 
@@ -290,7 +300,9 @@ class SiteController extends Controller
 
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
 
-        return view('site.category.economic.economic', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent'));
+        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+
+        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
     }
     /* Fim da categoria Economia - Menu */
 
@@ -318,7 +330,39 @@ class SiteController extends Controller
 
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
 
-        return view('site.category.culture.culture', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent'));
+        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+
+        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
+    }
+    /* Fim da categoria Economia - Menu */
+
+    /* Economia - Listagem de todas as noticias  */
+    public function tech()
+    {
+        $news = News::whereHas('category', function ($query) {
+            $query->where('name', ['Tecnologia', 'Tecnologias']);
+        })->orderByDesc('id')->take(6)->get();
+
+        $categories = Category::where('name->name')->get();
+
+        /* Ultimas noticias - Trás as 3 ultimas noticias*/
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+
+        /* Subscrição - mostrando um  modal com a imagem da noticia mais recentes */
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
+
+        /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
+        $footerCategory = Category::select('name')
+            ->distinct()
+            ->orderBy('updated_at', 'desc')
+            ->take(5)
+            ->get();
+
+        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
+
+        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+
+        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
     }
     /* Fim da categoria Economia - Menu */
 

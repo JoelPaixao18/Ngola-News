@@ -15,33 +15,37 @@
             <div class="row">
                 <div class="col-xxl-9 col-lg-8">
                     <div class="mb-30">
-                        @if($events)
-                        @foreach($events as $event)
-                        <div class="border-blog2">
-                            <div class="blog-style4">
-                                <div class="blog-img w-386">
-                                    <img src="{{ asset('/img/events/' . $event->image) }}" alt="blog image" />
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#FF9500" href="blog.html" class="category">{{ $event->category->name }}</a>
-                                    <h3 class="box-title-30">
-                                        <a class="hover-line" href="{{ route('site.eventView', $event)}}">{{ $event->title }}</a>
-                                    </h3>
-                                    <p class="blog-text">
-                                        {{$event->subtitle }}
-                                    </p>
-                                    <div class="blog-meta">
-                                        <a href="author.html"><i class="far fa-user"></i>{{ $event->author->name }}</a>
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>{{date('d/m/Y', strtotime($event->event_date)) }}</a>
+                        @if ($events)
+                            @foreach ($events as $event)
+                                <div class="border-blog2">
+                                    <div class="blog-style4">
+                                        <div class="blog-img w-386">
+                                            <img src="{{ asset('/img/events/' . $event->image) }}" alt="blog image" />
+                                        </div>
+                                        <div class="blog-content">
+                                            <a data-theme-color="#FF9500" href="blog.html"
+                                                class="category">{{ $event->category->name }}</a>
+                                            <h3 class="box-title-30">
+                                                <a class="hover-line"
+                                                    href="{{ route('site.eventView', $event) }}">{{ $event->title }}</a>
+                                            </h3>
+                                            <p class="blog-text">
+                                                {{ $event->subtitle }}
+                                            </p>
+                                            <div class="blog-meta">
+                                                <a href="author.html"><i
+                                                        class="far fa-user"></i>{{ $event->author->name }}</a>
+                                                <a href="blog.html"><i
+                                                        class="fal fa-calendar-days"></i>{{ date('d/m/Y', strtotime($event->event_date)) }}</a>
+                                            </div>
+                                            <a href="blog-details.html" class="th-btn style2">Ver mais<i
+                                                    class="fas fa-arrow-up-right ms-2"></i></a>
+                                        </div>
                                     </div>
-                                    <a href="blog-details.html" class="th-btn style2">Ver mais<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
                                 </div>
-                            </div>
-                        </div>
-                        @endforeach
+                            @endforeach
                         @else
-                        {{-- <div class="border-blog2">
+                            {{-- <div class="border-blog2">
                             <div class="blog-style4">
                                 <div class="blog-img w-386">
                                     <img src="assets/img/blog/blog_6_4_1.jpg" alt="blog image" />
@@ -229,39 +233,50 @@
                         <div class="widget widget_categories">
                             <h3 class="widget_title">Categorias</h3>
                             <ul>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg" href="blog.html">Esportes</a></li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg" href="blog.html">Negócios</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg"
+                                        href="{{ route('site.policy') }}">Políticas</a></li>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg"
+                                        href="{{ route('site.society') }}">Sociedades</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg" href="blog.html">Políticas</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg"
+                                        href="{{ route('site.economic') }}">Economia
+                                        &
+                                        Negócios</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Saúde</a></li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Tecnologia</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg"
+                                        href="{{ route('site.culture') }}">Artes &
+                                        Culturas</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg"
+                                        href="{{ route('site.tech') }}">Ciências
+                                        Tecnologia</a>
                                 </li>
+                                {{-- <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a>
+                                </li> --}}
                             </ul>
                         </div>
-                        <div class="widget">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-1.jpg"
-                                                alt="Blog Image" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title">
-                                            <a class="hover-line" href="blog-details.html">Fitness: Your journey to
-                                                Better, stronger
-                                                you.</a>
-                                        </h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>21 June,
-                                                2025</a>
+                        {{-- Sessão dos Posts Recentes --}}
+                        @forelse ($RecentPost as $recents)
+                            <div class="widget">
+                                <h3 class="widget_title">Posts Recentes</h3>
+                                <div class="recent-post-wrap">
+                                    <div class="recent-post">
+                                        <div class="media-img">
+                                            <a href="blog-details.html"><img
+                                                    src="{{ asset('img/news/' . $recents->image) }}"
+                                                    alt="Blog Image" /></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="post-title">
+                                                <a class="hover-line" href="blog-details.html">{{ $recents->title }}</a>
+                                            </h4>
+                                            <div class="recent-post-meta">
+                                                <a href="blog.html"><i
+                                                        class="fal fa-calendar-days"></i>{{ $recents->updated_at->format('d M, Y') }}</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="recent-post">
+                                    {{-- <div class="recent-post">
                                     <div class="media-img">
                                         <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg"
                                                 alt="Blog Image" /></a>
@@ -308,9 +323,17 @@
                                                 2025</a>
                                         </div>
                                     </div>
+                                </div> --}}
                                 </div>
                             </div>
-                        </div>
+                        @empty
+                            <div class="col-12 text-center my-5">
+                                <p class="alert alert-warning fs-5 py-4 px-5">
+                                    Nenhum post recente de momento.
+                                </p>
+                            </div>
+                        @endforelse
+                        {{-- Fim de Sesssão dos Postes Recentes --}}
                         <div class="widget">
                             <div class="widget-ads">
                                 <a href="https://themeforest.net/user/themeholy/portfolio"><img class="w-100"

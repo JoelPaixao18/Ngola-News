@@ -22,16 +22,16 @@
                                                 @if ($galery->image) src="{{ asset('img/galeries/' . $galery->image) }}"
                                             @else
                                                 src="{{ asset('img/galeries/pdfimg.png') }}" @endif
-                                                alt="{{$galery->title}}" ></div>
+                                                alt="{{ $galery->title }}"></div>
 
                                         <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal" id="img" 
-                                                >{{ Str::limit($galery->title, 20, '...')}}</a></h3>
+                                                data-bs-target="#exampleModal"
+                                                id="img">{{ Str::limit($galery->title, 20, '...') }}</a></h3>
                                         <div class="blog-meta">
                                             <a href="#"><i
                                                     class="fal fa-calendar-days"></i>{{ $galery->created_at->format('d M, Y') }}</a>
                                         </div>
-                                       {{--  <button onclick="take()">get id</button> --}}
+                                        {{--  <button onclick="take()">get id</button> --}}
                                         {{-- <div id="takeId" style="display: none">
                                             <input type="text" id="galeryId" value="1">
                                         </div> --}}{{-- <input type="text" id="galeryId" value="{{$galery->id}}"> --}}
@@ -94,16 +94,26 @@
                         <div class="widget widget_categories">
                             <h3 class="widget_title">Categorias</h3>
                             <ul>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg" href="blog.html">Esportes</a></li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg" href="blog.html">Negócios</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg"
+                                        href="{{ route('site.policy') }}">Políticas</a></li>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg"
+                                        href="{{ route('site.society') }}">Sociedades</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg" href="blog.html">Políticas</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg"
+                                        href="{{ route('site.economic') }}">Economia
+                                        &
+                                        Negócios</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Saúde</a></li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Tecnologia</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg"
+                                        href="{{ route('site.culture') }}">Artes &
+                                        Culturas</a>
                                 </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg"
+                                        href="{{ route('site.tech') }}">Ciências
+                                        Tecnologia</a>
                                 </li>
+                                {{-- <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a>
+                                </li> --}}
                             </ul>
                         </div>
                         <div class="widget">
@@ -174,7 +184,7 @@
     <script>
         function take() {
             let id = document.querySelector('#galeryId').value
-            window.alert( id);
+            window.alert(id);
         }
     </script>
 @endsection

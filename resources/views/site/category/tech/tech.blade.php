@@ -1,12 +1,12 @@
 @extends('site.layout.main')
-@section('title', 'Ngola News - Política')
-@section('content-policyCategory')
+@section('title', 'Ngola News - Ciências & Tecnologias')
+@section('content-techCategory')
 
     <div class="breadcumb-wrapper">
         <div class="container">
             <ul class="breadcumb-menu">
                 <li><a href="/">Home</a></li>
-                <li>Políticas</li>
+                <li>Ciências & Tecnologias</li>
             </ul>
         </div>
     </div>

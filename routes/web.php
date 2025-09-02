@@ -33,6 +33,7 @@ Route::get('site/policy', [SiteController::class, 'policy'])->name('site.policy'
 Route::get('site/society', [SiteController::class, 'society'])->name('site.society');
 Route::get('site/economic', [SiteController::class, 'economic'])->name('site.economic');
 Route::get('site/culture', [SiteController::class, 'culture'])->name('site.culture');
+Route::get('site/tech', [SiteController::class, 'tech'])->name('site.tech');
 Route::get('site/newsCategory', [SiteController::class, 'newsCategory'])->name('site.newsCategory');
 Route::get('site/eventCategory', [SiteController::class, 'eventCategory'])->name('site.eventCategory');
 Route::get('site/allNews', [SiteController::class, 'allNews'])->name('site.allNews');
