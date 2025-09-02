@@ -252,9 +252,9 @@
                             </ul>
                         </div>
                         {{-- Sessão dos Posts Recentes --}}
-                        @forelse ($RecentPost as $recents)
-                            <div class="widget">
-                                <h3 class="widget_title">Posts Recentes</h3>
+                        <div class="widget">
+                            <h3 class="widget_title">Posts Recentes</h3>
+                            @forelse ($RecentPost as $recents)
                                 <div class="recent-post-wrap">
                                     <div class="recent-post">
                                         <div class="media-img">
@@ -321,13 +321,14 @@
                                     </div>
                                 </div> --}}
                                 </div>
-                            </div>
-                        @empty
-                            <div class="col-12 text-center my-5">
-                                <p class="alert alert-warning fs-5 py-4 px-5">
-                                    Nenhum post recente de momento.
-                                </p>
-                            </div>
+                            @empty
+                        </div>
+
+                        <div class="col-12 text-center my-5">
+                            <p class="alert alert-warning fs-5 py-4 px-5">
+                                Nenhum post recente de momento.
+                            </p>
+                        </div>
                         @endforelse
                         {{-- Fim de Sesssão dos Postes Recentes --}}
                         <div class="widget">
