@@ -214,7 +214,8 @@ class SiteController extends Controller
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $footerCategory = Category::all()->take(6);
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
-        $publications = Publication::orderBy('updated_at', 'desc')->get();
+        /* $publications = Publication::orderBy('updated_at', 'desc')->get(); */
+        $publications = Publication::all();
         return view('site.multimedia.publication', compact('publications', 'breaknews','footerCategory', 'subscription'));
     }//fim Multimedia
 
