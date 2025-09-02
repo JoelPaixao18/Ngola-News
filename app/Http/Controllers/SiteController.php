@@ -415,7 +415,7 @@ class SiteController extends Controller
     /* inicio do menu galeria */
     public function galery()
     {
-        $galeries = Galery::all();
+        $galeries = Galery::orderByDesc('id')->get();
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $footerCategory = Category::select('name')
             ->distinct()

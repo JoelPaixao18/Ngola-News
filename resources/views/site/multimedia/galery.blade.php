@@ -24,9 +24,15 @@
                                                 src="{{ asset('img/galeries/pdfimg.png') }}" @endif
                                                 alt="{{ $galery->title }}"></div>
 
-                                        <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal"
-                                                id="img">{{ Str::limit($galery->title, 20, '...') }}</a></h3>
+                                        <h3 class="box-title-20"><a href="#"
+                                                onclick="openGaleryModal(
+                                            '{{ addslashes($galery->title) }}',
+                                            '{{ asset('img/galeries/' . ($galery->image ?? 'pdfimg.png')) }}',
+                                            '{{ addslashes($galery->description) }}',
+                                            '{{ $galery->updated_at }}'
+                                        )">
+                                                {{ Str::limit($galery->title, 20, '...') }}
+                                            </a></h3>
                                         <div class="blog-meta">
                                             <a href="#"><i
                                                     class="fal fa-calendar-days"></i>{{ $galery->created_at->format('d M, Y') }}</a>
@@ -54,25 +60,27 @@
                             </div>
                         @endif
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" id="galeryModal" tabindex="-1" aria-labelledby="galeryModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <h1 class="modal-title fs-5" id="galeryModalLabel"></h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div id="book">
-                                            <div class="cover bg-danger">
-                                                <img src="{{ asset('img/galeries/' . $galery->image) }}" alt="">
-                                                <h1>O Livro</h1>
+                                        <div class="row">
+                                            <div class="col-md-4 me-2">
+                                                <img id="galeryModalImg" src="" alt=""
+                                                    style="max-width:100%">
                                             </div>
-                                        </div>
-                                        <div id="controls" class="mt-3">
-                                            <label for="page-number">Pagina:</label> <input type="text" size="3"
-                                                id="page-number"> de <span id="number-pages"></span>
+                                            <div class="col-md-4 me-2">
+                                                <label>Descrição:</label>
+                                                <span id="galeryModalDescription"></span><br>
+                                                <label>Data:</label>
+                                                <span id="galeryModalDate"></span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -182,9 +190,13 @@
         </div>
     </section>
     <script>
-        function take() {
-            let id = document.querySelector('#galeryId').value
-            window.alert(id);
+        function openGaleryModal(title, img, description, date) {
+            document.getElementById('galeryModalLabel').textContent = title;
+            document.getElementById('galeryModalImg').src = img;
+            document.getElementById('galeryModalDescription').textContent = description;
+            document.getElementById('galeryModalDate').textContent = date;
+            var modal = new bootstrap.Modal(document.getElementById('galeryModal'));
+            modal.show();
         }
     </script>
 @endsection
