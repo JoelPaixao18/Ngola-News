@@ -11,9 +11,9 @@
                                     <img src="assets/img/1-Photoroom.png" alt="Tnews">
                                 </a>
                             </div>
-                            <p class="about-text">Magazines cover a wide subjects, including not
-                                limited to fashion, lifestyle, health, politics, business,
-                                Entertainment, sports, science,</p>
+                            <p class="about-text">As revistas abrangem uma ampla gama de assuntos, incluindo, entre
+                                outros, moda, estilo de vida,
+                                política, negócios, entretenimento, desportos, ciência...</p>
                             <div class="th-social style-black">
                                 <a href="https://www.facebook.com">
                                     <i class="fab fa-facebook-f"></i>
@@ -69,7 +69,7 @@
                         <div class="recent-post-wrap">
                             @foreach ($Recent as $recent)
                                 <div class="recent-post img-footer">
-                                    <div class="media-img">
+                                    <div class="media-img img-footer">
                                         <a href="blog-details.html ">
                                             <img src="{{ asset('img/news/' . $recent->image) }}" alt="Blog Image">
                                         </a>
@@ -77,7 +77,7 @@
                                     <div class="media-body">
                                         <h4 class="post-title">
                                             <a class="hover-line"
-                                                href="blog-details.html">{{ Str::limit($recent->title, 50) }}</a>
+                                                href="blog-details.html">{{ Str::limit($recent->title, 45) }}</a>
                                         </h4>
                                         <div class="recent-post-meta">
                                             <a href="blog.html">

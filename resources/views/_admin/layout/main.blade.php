@@ -56,10 +56,10 @@
     <!--! END: Sweet Alert JS !-->
 
     {{-- editor de texto --}}
-    
-	<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/46.0.2/ckeditor5.css" crossorigin>
-	<link rel="stylesheet"
-		href="https://cdn.ckeditor.com/ckeditor5-premium-features/46.0.2/ckeditor5-premium-features.css" crossorigin>
+
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/46.0.2/ckeditor5.css" crossorigin>
+    <link rel="stylesheet"
+        href="https://cdn.ckeditor.com/ckeditor5-premium-features/46.0.2/ckeditor5-premium-features.css" crossorigin>
 
 </head>
 
@@ -175,6 +175,16 @@
         @yield('content-galeryEdit')
         {{-- Content Show Galeria --}}
         @yield('content-galeryView')
+
+        {{-- #------ Menu Category ------# --}}
+        {{-- Content  Category --}}
+        @yield('content-ads')
+        {{-- Content Create Category --}}
+        @yield('content-adsCreate')
+        {{-- Content Edit Category --}}
+        {{-- @yield('content-categoryEdit') --}}
+        {{-- Content Show Category --}}
+        {{-- @yield('content-categoryView') --}}
 
         {{-- Footer --}}
         @include('_admin.layout.footer')

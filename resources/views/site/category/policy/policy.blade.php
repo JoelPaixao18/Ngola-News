@@ -336,12 +336,18 @@
                         </div>
                         @endforelse
                         {{-- Fim de Sesssão dos Postes Recentes --}}
-                        <div class="widget">
-                            <div class="widget-ads">
-                                <a href="https://themeforest.net/user/themeholy/portfolio"><img class="w-100"
-                                        src="assets/img/ads/siderbar_ads_1.jpg" alt="ads" /></a>
+                        {{-- Publicidades --}}
+                        @foreach ($ads as $ad)
+                            <div class="widget">
+                                <div class="widget-ads">
+                                    <a href="{{ $ad->link }}">
+                                        <img class="w-100" src="{{ url('img/ads/' . $ad->image) }}" alt="ads" />
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
+                        {{-- Fim das Publicidades --}}
+                        {{-- Tags Populares --}}
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Tags Populares</h3>
                             <div class="tagcloud">
@@ -351,6 +357,7 @@
                                 <a href="{{ route('site.society') }}">sociedade</a>
                             </div>
                         </div>
+                        {{-- Fim das Tags Populares --}}
                     </aside>
                 </div>
             </div>

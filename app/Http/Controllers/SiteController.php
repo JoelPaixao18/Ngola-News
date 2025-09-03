@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Publication;
 use App\Models\Video;
 use App\Models\Galery;
+use App\Models\Advertisement;
 
 class SiteController extends Controller
 {
@@ -110,6 +111,8 @@ class SiteController extends Controller
         /* Posts Recentes no Footer */
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
 
+        $ads = Advertisement::all();
+
 
         return view('site.home.index', compact(
             'categories',
@@ -128,7 +131,8 @@ class SiteController extends Controller
             'newsDetach',
             'Recent',
             'Economic',
-            'Society'
+            'Society',
+            'ads'
         ));
     }
     /* Fim da função Home */
@@ -263,7 +267,18 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
+        $ads = Advertisement::all();
+
+        return view('site.category.policy.policy', compact(
+            'news',
+            'categories',
+            'breaknews',
+            'footerCategory',
+            'subscription',
+            'Recent',
+            'RecentPost',
+            'ads'
+        ));
     }
     /* Fim da categoria Politica - Menu */
 
@@ -293,7 +308,18 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
+        $ads = Advertisement::all();
+
+        return view('site.category.society.society', compact(
+            'news',
+            'categories',
+            'breaknews',
+            'footerCategory',
+            'subscription',
+            'Recent',
+            'RecentPost',
+            'ads'
+        ));
     }
     /* Fim da categoria Sociedade - Menu */
 
@@ -323,7 +349,18 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
+        $ads = Advertisement::all();
+
+        return view('site.category.economic.economic', compact(
+            'news',
+            'categories',
+            'breaknews',
+            'footerCategory',
+            'subscription',
+            'Recent',
+            'RecentPost',
+            'ads'
+        ));
     }
     /* Fim da categoria Economia - Menu */
 
@@ -353,7 +390,18 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
+        $ads = Advertisement::all();
+
+        return view('site.category.culture.culture', compact(
+            'news',
+            'categories',
+            'breaknews',
+            'footerCategory',
+            'subscription',
+            'Recent',
+            'RecentPost',
+            'ads'
+        ));
     }
     /* Fim da categoria Economia - Menu */
 
@@ -383,7 +431,18 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        return view('site.category.policy.policy', compact('news', 'categories', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
+        $ads = Advertisement::all();
+
+        return view('site.category.tech.tech', compact(
+            'news',
+            'categories',
+            'breaknews',
+            'footerCategory',
+            'subscription',
+            'Recent',
+            'RecentPost',
+            'ads'
+        ));
     }
     /* Fim da categoria Economia - Menu */
 
@@ -422,7 +481,17 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        return view('site.multimedia.publication', compact('publications', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
+        $ads = Advertisement::all();
+
+        return view('site.multimedia.publication', compact(
+            'publications',
+            'breaknews',
+            'footerCategory',
+            'subscription',
+            'Recent',
+            'RecentPost',
+            'ads'
+        ));
     }
     //fim Multimedia
 
@@ -443,7 +512,18 @@ class SiteController extends Controller
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
-        return view('site.multimedia.videos', compact('videos', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
+
+        $ads = Advertisement::all();
+
+        return view('site.multimedia.videos', compact(
+            'videos', 
+            'breaknews', 
+            'footerCategory', 
+            'subscription', 
+            'Recent', 
+            'RecentPost',
+            'ads'
+        ));
     }
     /* fim do menu videos */
 
@@ -464,7 +544,18 @@ class SiteController extends Controller
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
-        return view('site.multimedia.galery', compact('galeries', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost'));
+
+        $ads = Advertisement::all();
+
+        return view('site.multimedia.galery', compact(
+            'galeries', 
+            'breaknews', 
+            'footerCategory', 
+            'subscription', 
+            'Recent', 
+            'RecentPost',
+            'ads'
+        ));
     }
     /* fim do menu galeria */
 

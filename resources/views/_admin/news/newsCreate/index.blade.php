@@ -129,45 +129,45 @@
 
                                     {{-- Descrição --}}
                                     <div class="col-lg-12 mb-4">
-                                                <div class="main-container">
-                                                    <div class="editor-container editor-container_classic-editor editor-container_include-outline editor-container_include-block-toolbar"
-                                                        id="editor-container">
-                                                        <div class="editor-container__editor-wrappe">
-                                                            <div class="editor-container__sidebar" id="editor-outline">
-                                                            </div>
-                                                            <div class="editor-container__editor">
-                                                                <label for="descriptionInput"
-                                                                    class="form-label">Descrição: </label>
-                                                                <textarea id="editor" name="description">{{ old('description') }}</textarea>
+                                        <div class="main-container">
+                                            <div class="editor-container editor-container_classic-editor editor-container_include-outline editor-container_include-block-toolbar"
+                                                id="editor-container">
+                                                <div class="editor-container__editor-wrappe">
+                                                    <div class="editor-container__sidebar" id="editor-outline">
+                                                    </div>
+                                                    <div class="editor-container__editor">
+                                                        <label for="descriptionInput" class="form-label">Descrição:
+                                                        </label>
+                                                        <textarea id="editor" name="description">{{ old('description') }}</textarea>
 
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
-                                                {{--  <label for="descriptionInput" class="form-label">Descrição: </label>
-                                                <textarea class="form-control" id="editor" name="description" cols="30" rows="5"
-                                                    placeholder="Description">{{ old('description') }}</textarea> --}}
-                                            </div>
-                                            <div class="col-lg-4 mb-4"> <button type="submit" class="btn btn-danger">
-                                                    Salvar
-                                                    <i class="feather-save ms-2"></i>
-                                                </button>
                                             </div>
                                         </div>
+                                        {{--  <label for="descriptionInput" class="form-label">Descrição: </label>
+                                                <textarea class="form-control" id="editor" name="description" cols="30" rows="5"
+                                                    placeholder="Description">{{ old('description') }}</textarea> --}}
+                                    </div>
+                                    <div class="col-lg-4 mb-4"> <button type="submit" class="btn btn-danger">
+                                            Salvar
+                                            <i class="feather-save ms-2"></i>
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
                         </div>
-
+                    </div>
                 </div>
-
-                </form>
-
             </div>
-            <!-- [ Main Content ] end -->
+
         </div>
 
-        <!-- [ Main Content ] end -->
+        </form>
+
+    </div>
+    <!-- [ Main Content ] end -->
+    </div>
+
+    <!-- [ Main Content ] end -->
     </div>
     <!-- estilo css do editor de texto -->
     <style>

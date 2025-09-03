@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Listar Categorias')
-@section('content-categories')
+@section('title', 'Ngola News - Listar Ads(Publicidades)')
+@section('content-ads')
     <div class="nxl-content">
         <!-- [ page-header ] start -->
         <div class="page-header">
@@ -108,7 +108,7 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('admin.category.create') }}" class="btn btn-danger">
+                        <a href="{{ route('admin.ads.create') }}" class="btn btn-danger">
                             <i class="feather-plus me-2"></i>
                             <span>Nova Categoria</span>
                         </a>
@@ -202,16 +202,16 @@
                                                 </div>
                                             </th>
                                             <th>ID</th>
-                                            <th>Nome da Categória</th>
-                                            <th>Tipo de Categória</th>
-                                            <th>Descrição</th>
+                                            <th>Título</th>
+                                            <th>Link</th>
+                                            <th>Posição</th>
                                             <th class="text-end">Ações</th>
                                         </tr>
 
                                     </thead>
 
                                     <tbody>
-                                        @foreach ($categories as $category)
+                                        @foreach ($ads as $ad)
                                             <tr class="single-item">
                                                 <td>
                                                     <div class="item-checkbox ms-1">
@@ -222,22 +222,20 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>{{ $category->id }}</td>
+                                                <td>{{ $ad->id }}</td>
                                                 <td>
 
-                                                        <div>
-                                                            <span class="text-truncate-1-line">{{ $category->name }}</span>
-                                                            {{-- <small
-                                                                class="fs-12 fw-normal text-muted">alex.della@outlook.com</small> --}}
-                                                        </div>
+                                                    <div>
+                                                        <span class="text-truncate-1-line">{{ $ad->title }}</span>
+                                                    </div>
 
                                                 </td>
-                                                <td>{{ $category->typeCategory->name ?? 'Sem tipo' }}</td>
-                                                <td>{{ Str::limit($category->description, 20, '...') }}</td>
+                                                <td><a href="{{ $ad->link }}" target="_blank">{{ $ad->link }}</a></td>
+                                                <td>{{ ucfirst($ad->position) }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
                                                         <a class="avatar-text avatar-md"
-                                                            href="{{ route('admin.category.show', ['category' => $category]) }}">
+                                                            href="#">
                                                             <i class="feather feather-eye"></i>
                                                         </a>
                                                         <div class="dropdown">
@@ -247,7 +245,7 @@
                                                             </a>
                                                             <ul class="dropdown-menu">
                                                                 <a class="dropdown-item"
-                                                                    href="{{ route('admin.category.edit', ['category' => $category]) }}">
+                                                                    href="#">
                                                                     <i class="feather feather-edit-3 me-3"></i>
                                                                     <span>Edit</span>
                                                                 </a>
@@ -255,7 +253,7 @@
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
                                                                     <a class="dropdown-item"
-                                                                        href="{{ route('admin.category.delete', ['category' => $category]) }}">
+                                                                        href="#">
                                                                         <i class="feather feather-trash-2 me-3"></i>
                                                                         <span>Delete</span>
                                                                     </a>

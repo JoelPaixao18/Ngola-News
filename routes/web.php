@@ -13,6 +13,7 @@ use App\Http\Controllers\TypeCategoryController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\AdvertisementController;
 
 
 /*-------------------------------------------------------
@@ -192,4 +193,18 @@ Route::prefix('_admin/galeries')->name('admin.')->group(function () {
     Route::put('galeryUpdate/{galery}', [GaleryController::class, 'update'])->name('galery.update');
     Route::get('galeryView/{galery}', [GaleryController::class, 'show'])->name('galery.view');
     Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
+});
+
+/*-------------------------------------------------------
+                    Publicidades routes
+-------------------------------------------------------*/
+
+Route::prefix('_admin.categories')->name('admin.')->group(function () {
+    Route::get('ads', [AdvertisementController::class, 'index'])->name('ads.index');
+    Route::get('adsCreate', [AdvertisementController::class, 'create'])->name('ads.create');
+    Route::post('ads', [AdvertisementController::class, 'store'])->name('ads.store');
+    /* Route::get('categoryView/{category}', [AdvertisementController::class, 'show'])->name('category.show');
+    Route::get('categoryEdit/{category}', [AdvertisementController::class, 'edit'])->name('category.edit');
+    Route::put('categoryUpdate/{category}', [AdvertisementController::class, 'update'])->name('category.update');
+    Route::get('categoryDelete/{category}', [AdvertisementController::class, 'destroy'])->name('category.delete'); */
 });
