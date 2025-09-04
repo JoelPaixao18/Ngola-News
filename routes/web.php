@@ -208,3 +208,7 @@ Route::prefix('_admin.categories')->name('admin.')->group(function () {
     Route::put('categoryUpdate/{category}', [AdvertisementController::class, 'update'])->name('category.update');
     Route::get('categoryDelete/{category}', [AdvertisementController::class, 'destroy'])->name('category.delete'); */
 });
+
+Auth::routes();
+
+Route::get('/admin', 'HomeController@index')->name('home')->middleware('auth');

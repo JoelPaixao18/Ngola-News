@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="nxl-theme-light nxl-theme-default nxl-theme-rtl">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="nxl-theme-light nxl-theme-default nxl-theme-rtl">
 
 
 <!-- Mirrored from bestwpware.com/html/tf/duralux-demo/leads.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jul 2025 12:20:41 GMT -->
@@ -42,6 +42,22 @@
    <script src="https:oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
    <script src="https:oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+
+    {{-- Inicio das dependências do auhtentication --}}
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- fim das dependências do auhtentication --}}
+
     <style>
         .img-fluid {
             object-fit: cover;

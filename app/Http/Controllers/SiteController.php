@@ -97,11 +97,11 @@ class SiteController extends Controller
             $query->where('name', ['Sociedade', 'Sociedades'])->orderByDesc('id')->take(5);
         })->get();
 
-        $categories = Category::where('name->name')->get();
+        $categories = Category::where('name')->get();
 
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
 
@@ -143,7 +143,7 @@ class SiteController extends Controller
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
@@ -165,7 +165,7 @@ class SiteController extends Controller
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
@@ -179,7 +179,7 @@ class SiteController extends Controller
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
@@ -195,7 +195,7 @@ class SiteController extends Controller
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
@@ -226,7 +226,7 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
 
@@ -235,7 +235,7 @@ class SiteController extends Controller
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
         $categories = Category::all();
-        /* $categories = Category::where('name->name')->get(); */
+        /* $categories = Category::where('name')->get(); */
 
         return view('site.category.news.newsView', compact('news', 'breaknews', 'footerCategory', 'subscription', 'Recent', 'RecentPost', 'Related', 'categories'));
     }
@@ -248,7 +248,7 @@ class SiteController extends Controller
             $query->where('name', ['Política', 'Políticas']);
         })->orderByDesc('id')->paginate(6);
 
-        $categories = Category::where('name->name')->get();
+        $categories = Category::where('name')->get();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
@@ -259,7 +259,7 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
 
@@ -289,7 +289,7 @@ class SiteController extends Controller
             $query->where('name', ['Sociedade', 'Sociedades']);
         })->orderByDesc('id')->paginate(6);
 
-        $categories = Category::where('name->name')->get();
+        $categories = Category::where('name')->get();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
@@ -300,7 +300,7 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
 
@@ -330,7 +330,7 @@ class SiteController extends Controller
             $query->where('name', ['Economia', 'Economias']);
         })->orderByDesc('id')->paginate(6);
 
-        $categories = Category::where('name->name')->get();
+        $categories = Category::where('name')->get();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
@@ -341,7 +341,7 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
 
@@ -371,7 +371,7 @@ class SiteController extends Controller
             $query->where('name', ['Cultura', 'Culturas']);
         })->orderByDesc('id')->paginate(6);
 
-        $categories = Category::where('name->name')->get();
+        $categories = Category::where('name')->get();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
@@ -382,7 +382,7 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
 
@@ -412,7 +412,7 @@ class SiteController extends Controller
             $query->where('name', ['Tecnologia', 'Tecnologias']);
         })->orderByDesc('id')->paginate(6);
 
-        $categories = Category::where('name->name')->get();
+        $categories = Category::where('name')->get();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
@@ -423,7 +423,7 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
 
@@ -451,7 +451,7 @@ class SiteController extends Controller
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
@@ -473,7 +473,7 @@ class SiteController extends Controller
 
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
 
@@ -505,7 +505,7 @@ class SiteController extends Controller
 
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
 
@@ -537,7 +537,7 @@ class SiteController extends Controller
 
         $footerCategory = Category::select('name')
             ->distinct()
-            ->orderBy('updated_at', 'desc')
+            
             ->take(5)
             ->get();
 
