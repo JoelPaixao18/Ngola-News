@@ -2,7 +2,7 @@
 
 @section('title', 'Ngola News - Criar Notícia')
 
-@section('content-newsCreate')
+@section('content')
     <!-- [ Craete Form ] -->
     <div class="nxl-content">
         <!-- [ page-header ] start -->

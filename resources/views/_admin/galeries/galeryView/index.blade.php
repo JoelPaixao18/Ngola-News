@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Ngola News - Visualizar Autor')
-@section('content-galeryView')
+@section('content')
     <div class="nxl-content">
         <!-- [ page-header ] start -->
         <div class="page-header">

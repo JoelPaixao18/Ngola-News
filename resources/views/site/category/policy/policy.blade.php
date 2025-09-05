@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 @section('title', 'Ngola News - Política')
-@section('content-policyCategory')
+@section('content')
 
     <div class="breadcumb-wrapper">
         <div class="container">

@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Ngola News - Visualizar Tipo de Categoria')
-@section('content-typeCategoryView')
+@section('content')
 
     <div class="nxl-content">
         <!-- [ page-header ] start -->

@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Ngola News - Criar Tipo de Categoria')
-@section('content-typeCategoryCreate')
+@section('content')
 
     <!-- [ Craete Form ] -->
     <div class="nxl-content">

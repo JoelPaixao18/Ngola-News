@@ -2,7 +2,7 @@
 
 @section('title', 'Ngola News - Listar Notícia')
 
-@section('content-news')
+@section('content')
     <div class="nxl-content">
         <!-- [ page-header ] start -->
         <div class="page-header">

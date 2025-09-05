@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 @section('title', 'Galeria de Fotos')
-@section('content-galery')
+@section('content')
     <div class="breadcumb-wrapper">
         <div class="container">
             <ul class="breadcumb-menu">
