@@ -5,7 +5,7 @@
                 <div class="col-lg-2 d-none d-lg-inline-block">
                     <div class="header-logo">
                         <a href="/">
-                            <img src="{{ url('site/assets/img/1-Photoroom.png')}}" alt="Tnews">
+                            <img src="{{ url('site/assets/img/1-Photoroom.png') }}" alt="Assessorarte">
                         </a>
                     </div>
                 </div>
@@ -23,18 +23,6 @@
                                                         class="breaking-news">{{ $topic->title }}</a>
                                                 </div>
                                             @endforeach
-                                            {{--  <div class="col-auto">
-                                                <a href="blog-details.html" class="breaking-news">From health to
-                                                    fashion, lifestyle news curated.</a>
-                                            </div>
-                                            <div class="col-auto">
-                                                <a href="blog-details.html" class="breaking-news">Sun, sand, and luxury
-                                                    at our resort</a>
-                                            </div>
-                                            <div class="col-auto">
-                                                <a href="blog-details.html" class="breaking-news">Relaxation redefined,
-                                                    your beach resort sanctuary.</a>
-                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -73,10 +61,12 @@
                             <div class="col-auto d-lg-none d-block">
                                 <div class="header-logo">
                                     <a href="/">
-                                        <img class="light-img" src="{{ url('assets/images/1-Photoroom.png') }}" alt="Assessorarte">
+                                        <img class="light-img" src="{{ url('assets/images/1-Photoroom.png') }}"
+                                            alt="Assessorarte">
                                     </a>
                                     <a href="/">
-                                        <img class="dark-img" src="{{ url('assets/images/1-Photoroom.png') }}" alt="Assessorarte">
+                                        <img class="dark-img" src="{{ url('assets/images/1-Photoroom.png') }}"
+                                            alt="Assessorarte">
                                     </a>
                                 </div>
                             </div>
@@ -85,13 +75,6 @@
                                     <ul>
                                         <li>
                                             <a href="/">Home</a>
-                                            {{-- <ul class="sub-menu">
-                            <li><a href="/">Home Newspaper</a></li>
-                            <li><a href="home-magazine.html">Home Magazine</a></li>
-                            <li><a href="home-sports.html">Home Sports</a></li>
-                            <li><a href="home-movie.html">Home Movie</a></li>
-                            <li><a href="home-gadget.html">Home Gadget</a></li>
-                          </ul> --}}
                                         </li>
                                         <li><a href="{{ route('site.policy') }}">Política</a></li>
                                         <li><a href="{{ route('site.society') }}">Sociedade</a></li>
@@ -111,43 +94,11 @@
                                         <li class="menu-item-has-children">
                                             <a href="#">Multimídia</a>
                                             <ul class="sub-menu">
-                                                {{-- <li><a href="/site/category">Todas</a></li> --}}
                                                 <li><a href="/site/publication">Publicação</a></li>
                                                 <li><a href="/site/videos">Vídeos</a></li>
                                                 <li><a href="/site/galery">Imagens</a></li>
                                             </ul>
                                         </li>
-                                        {{-- <li><a href="/site/about">Sobre</a></li>
-                                         <li class="menu-item-has-children">
-                          <a href="#">Pages</a>
-                          <ul class="sub-menu">
-                            <li class="menu-item-has-children">
-                              <a href="#">Shop</a>
-                              <ul class="sub-menu">
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="shop-details.html">Shop Details</a></li>
-                                <li><a href="cart.html">Cart Page</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                              </ul>
-                            </li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="author.html">Author</a></li>
-                            <li><a href="error.html">Error Page</a></li>
-                          </ul>
-                          <a href="#">Blog</a>
-                          <ul class="sub-menu">
-                            <li><a href="#">Blog Standard</a></li>
-                            <li><a href="#">Blog Masonary</a></li>
-                            <li><a href="#">Blog List</a></li>
-                            <li><a href="#">Blog Details</a></li>
-                            <li><a href="#">Blog Details Video</a></li>
-                            <li><a href="#">Blog Details Audio</a></li>
-                            <li><a href="#">Blog Details Nosidebar</a></li>
-                            <li><a href="#">Blog Details Full Image</a></li>
-                          </ul>
-                        </li> --}}
-                                        {{-- <li><a href="/site/contact">Contactos</a></li> --}}
                                     </ul>
                                 </nav>
                             </div>
@@ -155,12 +106,8 @@
                                 <div class="header-button">
                                     <button type="button" class="simple-icon searchBoxToggler">
                                         <i class="far fa-search"></i>
-                                    </button>{{--
-                      <button type="button" class="simple-icon d-none d-lg-block cartToggler">
-                        <i class="far fa-cart-shopping"></i>
-                        <span class="badge">5</span> --}}
                                     </button>
-                                    <a href="#" class="th-btn style3">Contacte-nos</a>
+                                    <a href="contact.html" class="th-btn style3" style="opacity:0">Contacte-nos</a>
                                     <button type="button" class="th-menu-toggle d-block d-lg-none">
                                         <i class="far fa-bars"></i>
                                     </button>
