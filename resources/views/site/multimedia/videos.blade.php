@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 @section('title', 'Videos')
-@section('content-videos')
+@section('content')
 
     <div class="breadcumb-wrapper">
         <div class="container">

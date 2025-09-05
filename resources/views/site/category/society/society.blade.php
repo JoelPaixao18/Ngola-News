@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 @section('title', 'Ngola News - Sociedade')
-@section('content-societyCategory')
+@section('content')
 
     <div class="breadcumb-wrapper">
         <div class="container">

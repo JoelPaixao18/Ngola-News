@@ -52,76 +52,10 @@
     @include('site.layout.switcher')
     @include('site.layout.popupSubscribe')
 
-    {{-- Menu home --}}
-    @yield('content-home')
-    {{-- End menu home --}}
-
-    {{-- Menu about --}}
-    @yield('content-about')
-    {{-- End menu about --}}
-
-    {{-- Menu contact --}}
-    @yield('content-contact')
-    {{-- End menu contact --}}
-
-    {{-- Menu category --}}
-    @yield('content-category')
-    {{-- End menu category --}}
-
-    {{-- ######## Listagens ####### --}}
-
-    {{-- Menu eventCategory --}}
-    @yield('content-eventCategory')
-    {{-- End menu eventCategory --}}
-
-    {{-- Menu newsCategory --}}
-    @yield('content-newsCategory')
-    {{-- End menu newsCategory --}}
-
-    {{-- Menu Policy --}}
-    @yield('content-policyCategory')
-    {{-- End menu Policy --}}
-
-    {{-- Menu Society --}}
-    @yield('content-societyCategory')
-    {{-- End menu Society --}}
-
-    {{-- Menu economic --}}
-    @yield('content-economicCategory')
-    {{-- End menu economic --}}
-
-    {{-- Menu Culture --}}
-    @yield('content-cultureCategory')
-    {{-- End menu Culture --}}
-
-    {{-- Menu Tech --}}
-    @yield('content-techCategory')
-    {{-- End menu Tech --}}
-
-    {{-- End Listagens --}}
-
-    {{-- Visualizações --}}
-
-    {{-- Menu Visualizar Evento --}}
-    @yield('content-eventView')
-    {{-- End menu Visualizar Evento --}}
-
-    {{-- Menu Visualizar Notícia --}}
-    @yield('content-newsView')
-    {{-- End menu Visualizar Notícia --}}
-
-    {{-- Menu Publicação --}}
-    @yield('content-publication')
-    {{-- End menu Publicação --}}
-
-    {{-- Menu Videos --}}
-    @yield('content-videos')
-    {{-- End menu Videos --}}
-
-    {{-- Menu galery --}}
-    @yield('content-galery')
-    {{-- End menu galery --}}
-
+    {{-- pegando todos os conteudos --}}
+    @yield('content')
+    {{-- fim  pegando todos os conteudos--}}
+    
     @include('site.layout.footer')
     <div class="scroll-top">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">

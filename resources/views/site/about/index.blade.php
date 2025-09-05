@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 @section('title', 'About Us')
-@section('content-about')
+@section('content')
 
 
     <div class="breadcumb-wrapper">

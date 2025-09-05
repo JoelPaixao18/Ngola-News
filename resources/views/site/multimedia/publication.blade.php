@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 @section('title', 'Publicação')
-@section('content-publication')
+@section('content')
 
     <link rel="stylesheet" href="{{ url('flipbook/assets/style.css') }}">
 

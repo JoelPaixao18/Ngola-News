@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Criar Vídeo')
-@section('content-videoCreate')
+@section('content')
 
     <div class="nxl-content">
         <!-- [ page-header ] start -->

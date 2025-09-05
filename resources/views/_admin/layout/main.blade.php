@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="nxl-theme-light nxl-theme-default nxl-theme-rtl">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="nxl-theme-light nxl-theme-default nxl-theme-rtl">
 
 
 <!-- Mirrored from bestwpware.com/html/tf/duralux-demo/leads.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Jul 2025 12:20:41 GMT -->
@@ -42,6 +42,22 @@
    <script src="https:oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
    <script src="https:oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+
+    {{-- Inicio das dependências do auhtentication --}}
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- fim das dependências do auhtentication --}}
+
     <style>
         .img-fluid {
             object-fit: cover;
@@ -71,121 +87,9 @@
         {{-- #------ Alerts ------# --}}
         @include('_admin.layout.alerts')
 
-        {{-- #------ Menu Authors ------# --}}
-        {{-- Content Authors --}}
-        @yield('content-authors')
-        {{-- Content Create --}}
-        @yield('content-authorCreate')
-        {{-- Content Edit --}}
-        @yield('content-authorEdit')
-        {{-- Content Show --}}
-        @yield('content-authorView')
-
-        {{-- #------ Menu Category ------# --}}
-        {{-- Content  Category --}}
-        @yield('content-categories')
-        {{-- Content Create Category --}}
-        @yield('content-categoryCreate')
-        {{-- Content Edit Category --}}
-        @yield('content-categoryEdit')
-        {{-- Content Show Category --}}
-        @yield('content-categoryView')
-
-        {{-- #------ Menu comments ------# --}}
-        {{-- Content comment --}}
-        @yield('content-comments')
-        {{-- Content Create comment --}}
-        @yield('content-commentCreate')
-        {{-- Content Edit comment --}}
-        @yield('content-commentEdit')
-        {{-- Content Show comment --}}
-        @yield('content-commentView')
-
-        {{-- #------ Menu dashboard ------# --}}
-        {{-- Content Analystics --}}
-        @yield('content-Analytics')
-        {{-- Content crm --}}
-        @yield('content-crm')
-
-        {{-- #------ Menu events ------# --}}
-        {{-- Content event --}}
-        @yield('content-events')
-        {{-- Content Create event --}}
-        @yield('content-eventCreate')
-        {{-- Content Edit event --}}
-        @yield('content-eventEdit')
-        {{-- Content Show event --}}
-        @yield('content-eventView')
-
-        {{-- #------ Menu News ------# --}}
-        {{-- Content news --}}
-        @yield('content-news')
-        {{-- Content Create news --}}
-        @yield('content-newsCreate')
-        {{-- Content Edit news --}}
-        @yield('content-newsEdit')
-        {{-- Content Show news --}}
-        @yield('content-newsView')
-
-        {{-- #------ Menu Tags ------# --}}
-        {{-- Content tag --}}
-        @yield('content-tags')
-        {{-- Content Create tag --}}
-        @yield('content-tagCreate')
-        {{-- Content Edit tag --}}
-        @yield('content-tagEdit')
-        {{-- Content Show tag --}}
-        @yield('content-tagView')
-
-        {{-- #------ Menu Type Categories ------# --}}
-        {{-- Content typeCategories --}}
-        @yield('content-typeCategories')
-        {{-- Content Create typeCategory --}}
-        @yield('content-typeCategoryCreate')
-        {{-- Content Edit typeCategory --}}
-        @yield('content-typeCategoryEdit')
-        {{-- Content Show typeCategory --}}
-        @yield('content-typeCategoryView')
-
-        {{-- #------ Menu Publications ------# --}}
-        {{-- Content Publications --}}
-        @yield('content-publication')
-        {{-- Content Create Publications --}}
-        @yield('content-publicationCreate')
-        {{-- Content Edit Publications --}}
-        @yield('content-publicationEdit')
-        {{-- Content Show Publications --}}
-        @yield('content-publicationView')
-
-        {{-- #------ Menu Videos ------# --}}
-        {{-- Content Videos --}}
-        @yield('content-video')
-        {{-- Content Create Videos --}}
-        @yield('content-videoCreate')
-        {{-- Content Edit Videos --}}
-        @yield('content-videoEdit')
-        {{-- Content Show Videos --}}
-        @yield('content-videoView')
-
-        {{-- Content Galeria --}}
-        @yield('content-galery')
-        {{-- Content Create Galeria --}}
-        @yield('content-galeryCreate')
-        {{-- Content Edit Galeria --}}
-        @yield('content-galeryEdit')
-        {{-- Content Show Galeria --}}
-        @yield('content-galeryView')
-
-        {{-- #------ Menu Category ------# --}}
-        {{-- Content  Category --}}
-        @yield('content-ads')
-        {{-- Content Create Category --}}
-        @yield('content-adsCreate')
-        {{-- Content Edit Category --}}
-        {{-- @yield('content-categoryEdit') --}}
-        {{-- Content Show Category --}}
-        {{-- @yield('content-categoryView') --}}
-
+        {{-- Buscando todos os conteudos --}}
+        @yield('content')
+        
         {{-- Footer --}}
         @include('_admin.layout.footer')
     </main>

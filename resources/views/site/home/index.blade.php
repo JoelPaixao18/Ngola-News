@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 @section('title', 'Ngola News - Home')
-@section('content-home')
+@section('content')
     {{-- Sessão dos noticias da categoria Politica com mais destaque e as mais recentes --}}
     <div class="th-hero-wrapper hero-1" id="hero">
         <div class="hero-slider-1 th-carousel" data-fade="true" data-slide-show="1" data-md-slide-show="1"
