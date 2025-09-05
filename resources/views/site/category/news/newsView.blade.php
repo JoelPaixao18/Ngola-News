@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 @section('title', 'Ngola News - Notícia Detalhada')
-@section('content-newsView')
+@section('content')
 
 
     <div class="breadcumb-wrapper">
@@ -20,7 +20,7 @@
                     <h6>{{ $news->subtitle }}</h6>
                     <div class="blog-meta"><a class="author" href="#"><i class="far fa-user"></i>By -
                             Tnews</a> <a href="#"><i
-                                class="fal fa-calendar-days"></i>{{ $news->created_at->format('d M, Y') }}</a> <a
+                                class="fal fa-calendar-days"></i>{{ $news->updated_at->format('d M, Y') }}</a> <a
                             href="#"><i class="far fa-comments"></i>Comments (3)</a> <span><i
                                 class="far fa-book-open"></i>5 Mins Read</span></div>
                     <div class="blog-img mb-40"><img src="{{ asset('/img/news/' . $news->image) }}" alt="Blog Image"
@@ -31,7 +31,7 @@
                     <div class="th-blog blog-single">
                         <div class="blog-content-wrap">
                             <div class="share-links-wrap">
-                                <div class="share-links"><span class="share-links-title">Share Post:</span>
+                                <div class="share-links"><span class="share-links-title">Pesquisar Posts:</span>
                                     <div class="multi-social"><a href="../../../../www.facebook.com/index.html"
                                             target="_blank"><i class="fab fa-facebook-f"></i></a> <a
                                             href="../../../../www.twitter.com/index.html" target="_blank"><i
@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <div class="blog-info-wrap"><button class="blog-info print_btn">Print : <i
+                                <div class="blog-info-wrap"><button class="blog-info print_btn">Imprimir : <i
                                             class="fas fa-print"></i></button> <a class="blog-info" href="mailto:">Email
                                         : <i class="fas fa-envelope"></i> </a><button class="blog-info ms-sm-auto">15k
                                         <i class="fas fa-thumbs-up"></i></button> <span class="blog-info">126k <i
@@ -54,7 +54,7 @@
                                     {!! $news->description !!}
                                 </div>
                                 <div class="blog-tag">
-                                    <h6 class="title">Related Tag :</h6>
+                                    <h6 class="title">Etiqueta relacionada :</h6>
                                     <div class="tagcloud"><a href="blog.html">Sports</a> <a
                                             href="{{ route('site.policy') }}">Políticas</a>
                                         <a href="blog.html">Business</a>
@@ -107,20 +107,20 @@
                         </div>
                     </div>
                     <div class="th-comments-wrap">
-                        <h2 class="blog-inner-title h3">Comments (03)</h2>
+                        <h2 class="blog-inner-title h3">Comentários (03)</h2>
                         <ul class="comment-list">
                             <li class="th-comment-item">
                                 <div class="th-post-comment">
                                     <div class="comment-avater"><img src="assets/img/blog/comment-author-1.jpg"
                                             alt="Comment Author"></div>
                                     <div class="comment-content"><span class="commented-on"><i
-                                                class="fas fa-calendar-alt"></i>14 March, 2023</span>
+                                                class="fas fa-calendar-alt"></i>14 Março, 2023</span>
                                         <h3 class="name">Brooklyn Simmons</h3>
                                         <p class="text">Your sport blog is simply fantastic! The in-depth analysis,
                                             engaging writing style, and up-to-date coverage of various sports newss
                                             make it a must-visit for any sports enthusiast.</p>
                                         <div class="reply_and_edit"><a href="blog-details.html" class="reply-btn"><i
-                                                    class="fas fa-reply"></i>Reply</a></div>
+                                                    class="fas fa-reply"></i>Responder</a></div>
                                     </div>
                                 </div>
                                 <ul class="children">
@@ -129,13 +129,13 @@
                                             <div class="comment-avater"><img src="assets/img/blog/comment-author-2.jpg"
                                                     alt="Comment Author"></div>
                                             <div class="comment-content"><span class="commented-on"><i
-                                                        class="fas fa-calendar-alt"></i>15 March, 2023</span>
+                                                        class="fas fa-calendar-alt"></i>15 Março, 2023</span>
                                                 <h3 class="name">Marvin McKinney</h3>
                                                 <p class="text">Whether it's breaking news, expert opinions, or
                                                     inspiring athlete profiles, your blog delivers a winning combination
                                                     of excitement and information that keeps.</p>
                                                 <div class="reply_and_edit"><a href="blog-details.html"
-                                                        class="reply-btn"><i class="fas fa-reply"></i>Reply</a></div>
+                                                        class="reply-btn"><i class="fas fa-reply"></i>Responder</a></div>
                                             </div>
                                         </div>
                                     </li>
@@ -146,14 +146,14 @@
                                     <div class="comment-avater"><img src="assets/img/blog/comment-author-3.jpg"
                                             alt="Comment Author"></div>
                                     <div class="comment-content"><span class="commented-on"><i
-                                                class="fas fa-calendar-alt"></i>16 March, 2023</span>
+                                                class="fas fa-calendar-alt"></i>16 Março, 2023</span>
                                         <h3 class="name">Ronald Richards</h3>
                                         <p class="text">The way you seamlessly blend statistical insights with
                                             compelling storytelling creates an immersive and captivating reading
                                             experience. Whether it's the latest match updates, behind-the-scenes
                                             glimpses.</p>
                                         <div class="reply_and_edit"><a href="blog-details.html" class="reply-btn"><i
-                                                    class="fas fa-reply"></i>Reply</a></div>
+                                                    class="fas fa-reply"></i>Responder</a></div>
                                     </div>
                                 </div>
                             </li>
@@ -161,90 +161,79 @@
                     </div>
                     <div class="th-comment-form">
                         <div class="form-title">
-                            <h3 class="blog-inner-title mb-2">Leave a Comment</h3>
+                            <h3 class="blog-inner-title mb-2">Deixe um comentário</h3>
                             <p class="form-text">Your email address will not be published. Required fields are marked *
                             </p>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 form-group"><input type="text" placeholder="Your Name*"
+                            <div class="col-md-6 form-group"><input type="text" placeholder="Seu Nome*"
                                     class="form-control"> <i class="far fa-user"></i></div>
-                            <div class="col-md-6 form-group"><input type="text" placeholder="Your Email*"
+                            <div class="col-md-6 form-group"><input type="text" placeholder="Seu Email*"
                                     class="form-control"> <i class="far fa-envelope"></i></div>
                             <div class="col-12 form-group"><input type="text" placeholder="Website"
                                     class="form-control"> <i class="far fa-globe"></i></div>
                             <div class="col-12 form-group">
-                                <textarea placeholder="Write a Comment*" class="form-control"></textarea> <i class="far fa-pencil"></i>
+                                <textarea placeholder="Escreva um comentário*" class="form-control"></textarea> <i class="far fa-pencil"></i>
                             </div>
-                            <div class="col-12 form-group mb-0"><button class="th-btn">Post Comment</button></div>
+                            <div class="col-12 form-group mb-0"><button class="th-btn">Poste o Comentário</button></div>
                         </div>
                     </div>
                     <div class="related-post-wrapper pt-30 mb-30">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h2 class="sec-title has-line">Related Post</h2>
+                                <h2 class="sec-title has-line">Postagem relacionada</h2>
                             </div>
                             <div class="col-auto">
                                 <div class="sec-btn">
-                                    <div class="icon-box"><button data-slick-prev="#related-post-slide"
-                                            class="slick-arrow default"><i class="far fa-arrow-left"></i></button>
-                                        <button data-slick-next="#related-post-slide" class="slick-arrow default"><i
-                                                class="far fa-arrow-right"></i></button>
+                                    <div class="icon-box">
+                                        <button data-slick-prev="#related-post-slide" class="slick-arrow default">
+                                            <i class="far fa-arrow-left"></i>
+                                        </button>
+                                        <button data-slick-next="#related-post-slide" class="slick-arrow default">
+                                            <i class="far fa-arrow-right"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="row slider-shadow th-carousel" id="related-post-slide" data-slide-show="3"
                             data-lg-slide-show="2" data-md-slide-show="2" data-sm-slide-show="2">
-                            <div class="col-sm-6 col-xl-4">
-                                <div class="blog-style1">
-                                    <div class="blog-img"><img src="assets/img/blog/blog_1_1.jpg" alt="blog image"> <a
-                                            data-theme-color="#00D084" href="blog.html" class="category">Lifestyle</a>
+
+                            @forelse ($Related as $related)
+                                <div class="col-sm-6 col-xl-4">
+                                    <div class="blog-style1">
+                                        <div class="blog-img">
+                                            <img src="{{ url('img/news/' . $related->image) }}" alt="blog image">
+                                            <a data-theme-color="#00D084"
+                                                href="{{ route('site.newsView', $related->category->id) }}"
+                                                class="category">
+                                                {{ $related->category->name }}
+                                            </a>
+                                        </div>
+                                        <h3 class="box-title-22">
+                                            <a class="hover-line" href="{{ route('site.newsView', $related->id) }}">
+                                                {{ Str::limit($related->title, 50) }}
+                                            </a>
+                                        </h3>
+                                        <div class="blog-meta">
+                                            <a href="#"><i class="far fa-user"></i>By - Tnews</a>
+                                            <a href="#"><i class="fal fa-calendar-days"></i>
+                                                {{ $related->updated_at->format('d M, Y') }}
+                                            </a>
+                                        </div>
                                     </div>
-                                    <h3 class="box-title-22"><a class="hover-line" href="blog-details.html">Balance
-                                            harmony and joy in Every lifestyle.</a></h3>
-                                    <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By -
-                                            Tnews</a> <a href="blog.html"><i class="fal fa-calendar-days"></i>29 Mar,
-                                            2025</a></div>
                                 </div>
-                            </div>
-                            <div class="col-sm-6 col-xl-4">
-                                <div class="blog-style1">
-                                    <div class="blog-img"><img src="assets/img/blog/blog_1_2.jpg" alt="blog image"> <a
-                                            data-theme-color="#FF9500" href="blog.html" class="category">Politics</a>
-                                    </div>
-                                    <h3 class="box-title-22"><a class="hover-line" href="blog-details.html">Power to the
-                                            people for a Better future!</a></h3>
-                                    <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By -
-                                            Tnews</a> <a href="blog.html"><i class="fal fa-calendar-days"></i>14 Mar,
-                                            2025</a></div>
+                            @empty
+                                <div class="col-12 text-center my-5">
+                                    <p class="alert alert-warning fs-5 py-4 px-5">
+                                        Nenhuma postagem relacionada.
+                                    </p>
                                 </div>
-                            </div>
-                            <div class="col-sm-6 col-xl-4">
-                                <div class="blog-style1">
-                                    <div class="blog-img"><img src="assets/img/blog/blog_1_3.jpg" alt="blog image"> <a
-                                            data-theme-color="#E7473C" href="blog.html" class="category">Fitness</a>
-                                    </div>
-                                    <h3 class="box-title-22"><a class="hover-line" href="blog-details.html">Fitness the
-                                            key to vitality and Well-being.</a></h3>
-                                    <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By -
-                                            Tnews</a> <a href="blog.html"><i class="fal fa-calendar-days"></i>14 Mar,
-                                            2025</a></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xl-4">
-                                <div class="blog-style1">
-                                    <div class="blog-img"><img src="assets/img/blog/blog_1_4.jpg" alt="blog image"> <a
-                                            data-theme-color="#00D084" href="blog.html" class="category">Health</a>
-                                    </div>
-                                    <h3 class="box-title-22"><a class="hover-line" href="blog-details.html">Embrace bump
-                                            and Victory volleyball style.</a></h3>
-                                    <div class="blog-meta"><a href="author.html"><i class="far fa-user"></i>By -
-                                            Tnews</a> <a href="blog.html"><i class="fal fa-calendar-days"></i>25 Mar,
-                                            2025</a></div>
-                                </div>
-                            </div>
+                            @endforelse
                         </div>
                     </div>
+
                 </div>
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">
                     <aside class="sidebar-area">
@@ -252,81 +241,100 @@
                             <form class="search-form"><input type="text" placeholder="Enter Keyword"> <button
                                     type="submit"><i class="far fa-search"></i></button></form>
                         </div>
-                        <div class="widget widget_categories">
-                            <h3 class="widget_title">Categories</h3>
-                            <ul>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg" href="blog.html">Sports</a></li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg" href="blog.html">Business</a>
-                                </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg"
-                                        href="{{ route('site.policy') }}">Políticas</a>
-                                </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Health</a></li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Technology</a>
-                                </li>
-                                <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entertainment</a>
-                                </li>
-                            </ul>
-                        </div>
+                        {{-- Sessão dos Posts Recentes --}}
+
                         <div class="widget">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a></div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Fitness:
-                                                Your journey to Better, stronger you.</a></h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>21 June, 2025</a></div>
+                            <h3 class="widget_title">Posts Recentes</h3>
+                            @forelse ($RecentPost as $recents)
+                                <div class="recent-post-wrap">
+                                    <div class="recent-post">
+                                        <div class="media-img">
+                                            <a href="blog-details.html"><img
+                                                    src="{{ asset('img/news/' . $recents->image) }}"
+                                                    alt="Blog Image" /></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="post-title">
+                                                <a class="hover-line" href="blog-details.html">{{ $recents->title }}</a>
+                                            </h4>
+                                            <div class="recent-post-meta">
+                                                <a href="blog.html"><i
+                                                        class="fal fa-calendar-days"></i>{{ $recents->updated_at->format('d M, Y') }}</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a></div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Embrace
-                                                the game Ignite your sporting</a></h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>22 June, 2025</a></div>
+                                    {{-- <div class="recent-post">
+                                    <div class="media-img">
+                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg"
+                                                alt="Blog Image" /></a>
                                     </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-1-3.jpg" alt="Blog Image"></a></div>
                                     <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line"
-                                                href="blog-details.html">Revolutionizing lives Through technology</a>
+                                        <h4 class="post-title">
+                                            <a class="hover-line" href="blog-details.html">Embrace the game Ignite your
+                                                sporting</a>
                                         </h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>23 June, 2025</a></div>
+                                        <div class="recent-post-meta">
+                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>22 June,
+                                                2025</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-1-4.jpg" alt="Blog Image"></a></div>
+                                    <div class="media-img">
+                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-3.jpg"
+                                                alt="Blog Image" /></a>
+                                    </div>
                                     <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Enjoy the
-                                                Virtual Reality embrace the</a></h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>25 June, 2025</a></div>
+                                        <h4 class="post-title">
+                                            <a class="hover-line" href="blog-details.html">Revolutionizing lives Through
+                                                technology</a>
+                                        </h4>
+                                        <div class="recent-post-meta">
+                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>23 June,
+                                                2025</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="recent-post">
+                                    <div class="media-img">
+                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-4.jpg"
+                                                alt="Blog Image" /></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="post-title">
+                                            <a class="hover-line" href="blog-details.html">Enjoy the Virtual Reality
+                                                embrace the</a>
+                                        </h4>
+                                        <div class="recent-post-meta">
+                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>25 June,
+                                                2025</a>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                                </div>
+                            @empty
                         </div>
+
+                        <div class="col-12 text-center my-5">
+                            <p class="alert alert-warning fs-5 py-4 px-5">
+                                Nenhum post recente de momento.
+                            </p>
+                        </div>
+                        @endforelse
+                        {{-- Fim de Sesssão dos Postes Recentes --}}
                         <div class="widget">
                             <div class="widget-ads"><a
                                     href="../../../../themeforest.net/user/themeholy/portfolio.html"><img class="w-100"
                                         src="assets/img/ads/siderbar_ads_1.jpg" alt="ads"></a></div>
                         </div>
                         <div class="widget widget_tag_cloud">
-                            <h3 class="widget_title">Popular Tags</h3>
-                            <div class="tagcloud"><a href="blog.html">Sports</a> <a href="blog.html">Politics</a> <a
-                                    href="blog.html">Business</a> <a href="blog.html">Music</a> <a
-                                    href="blog.html">Food</a> <a href="blog.html">Technology</a> <a
-                                    href="blog.html">Travels</a> <a href="blog.html">Health</a> <a
-                                    href="blog.html">Fashions</a> <a href="blog.html">Animal</a> <a
-                                    href="blog.html">Weather</a> <a href="blog.html">Movies</a></div>
+                            <h3 class="widget_title">Tags Populares</h3>
+                            <div class="tagcloud">
+                                <a href="{{ route('site.policy') }}">Politicas</a>
+                                <a href="{{ route('site.economic') }}">Economia</a>
+                                <a href="{{ route('site.tech') }}">Tecnologia</a>
+                                <a href="{{ route('site.society') }}">sociedade</a>
+                            </div>
                         </div>
                     </aside>
                 </div>

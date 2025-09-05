@@ -11,24 +11,24 @@
     <meta name="keywords" content="Tnews - News & Magazine HTML Template">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ url('site/assets/img/favicons/apple-icon-57x5.png') }}">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ url('site/assets/img/favicons/apple-icon-60x60.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ url('site/assets/img/favicons/apple-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ url('site/assets/img/favicons/apple-icon-76x76.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ url('site/assets/img/favicons/apple-icon-114x114.png') }}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ url('site/assets/img/favicons/apple-icon-120x120.png') }}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ url('site/assets/img/favicons/apple-icon-144x144.png') }}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ url('site/assets/img/favicons/apple-icon-152x152.png') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('site/assets/img/favicons/apple-icon-180x180.png') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url('site/assets/img/2-Photoroom.png') }}">
     <link rel="icon" type="image/png" sizes="192x192"
-        href="{{ url('site/assets/img/favicons/android-icon-192x192.png') }}">
+        href="{{ url('site/assets/img/2-Photoroom.png') }}">
     <link rel="icon" type="image/png" sizes="32x32"
-        href="{{ url('site/assets/img/favicons/favicon-32x32.png') }}">
+        href="{{ url('site/assets/img/2-Photoroom.png') }}">
     <link rel="icon" type="image/png" sizes="96x96"
-        href="{{ url('site/assets/img/favicons/favicon-96x96.png') }}">
+        href="{{ url('site/assets/img/2-Photoroom.png') }}">
     <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ url('site/assets/img/favicons/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ url('site/assets/img/favicons/manifest.json') }}">
+        href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="manifest" href="{{ url('site/assets/img/2-Photoroom.png') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ url('site/assets/img/favicons/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
@@ -51,58 +51,76 @@
     @include('site.layout.switcher')
     @include('site.layout.popupSubscribe')
 
-    {{-- Menu home --}}
-    @yield('content-home')
+    {{-- pegando todos os conteudos --}}
+    @yield('content')
+    {{-- Menu home --}}{{-- 
+    @yield('content-home') --}}
     {{-- End menu home --}}
 
-    {{-- Menu about --}}
-    @yield('content-about')
+    {{-- Menu about --}}{{-- 
+    @yield('content-about') --}}
     {{-- End menu about --}}
 
-    {{-- Menu contact --}}
-    @yield('content-contact')
+    {{-- Menu contact --}}{{-- 
+    @yield('content-contact') --}}
     {{-- End menu contact --}}
 
     {{-- Menu category --}}
-    @yield('content-category')
+    {{-- @yield('content-category') --}}
     {{-- End menu category --}}
 
-    {{-- Listagens --}}
+    {{-- ######## Listagens ####### --}}
 
     {{-- Menu eventCategory --}}
-    @yield('content-eventCategory')
+    {{-- @yield('content-eventCategory') --}}
     {{-- End menu eventCategory --}}
 
     {{-- Menu newsCategory --}}
-    @yield('content-newsCategory')
+   {{--  @yield('content-newsCategory') --}}
     {{-- End menu newsCategory --}}
 
     {{-- Menu Policy --}}
-    @yield('content-policyCategory')
+    {{-- @yield('content-policyCategory') --}}
     {{-- End menu Policy --}}
+
+    {{-- Menu Society --}}
+    {{-- @yield('content-societyCategory') --}}
+    {{-- End menu Society --}}
+
+    {{-- Menu economic --}}
+    {{-- @yield('content-economicCategory') --}}
+    {{-- End menu economic --}}
+
+    {{-- Menu Culture --}}
+   {{--  @yield('content-cultureCategory') --}}
+    {{-- End menu Culture --}}
+
+    {{-- Menu Tech --}}
+    {{-- @yield('content-techCategory') --}}
+    {{-- End menu Tech --}}
 
     {{-- End Listagens --}}
 
     {{-- Visualizações --}}
 
     {{-- Menu Visualizar Evento --}}
-    @yield('content-eventView')
+    {{-- @yield('content-eventView') --}}
     {{-- End menu Visualizar Evento --}}
 
     {{-- Menu Visualizar Notícia --}}
-    @yield('content-newsView')
+   {{--  @yield('content-newsView') --}}
     {{-- End menu Visualizar Notícia --}}
 
     {{-- Menu Publicação --}}
-    @yield('content-publication')
+    {{-- @yield('content-publication') --}}
     {{-- End menu Publicação --}}
 
     {{-- Menu Videos --}}
-    @yield('content-videos')
+    {{-- @yield('content-videos') --}}
     {{-- End menu Videos --}}
 
     {{-- Menu galery --}}
-    @yield('content-galery')
+    {{-- @yield('content-galery') --}}
     {{-- End menu galery --}}
 
     @include('site.layout.footer')
@@ -114,11 +132,12 @@
         </svg>
     </div>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="{{ url('flipbook/assets/turn.min.js')}}"></script>
-    <script type="text/javascript" src="{{ url('flipbook/assets/script.js')}}"></script>
-    <script type="text/javascript" src="{{ url('site/assets/js/app.min.js')}}"></script>
-    <script type="text/javascript" src="{{ url('site/assets/js/main.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script type="text/javascript" src="{{ url('flipbook/assets/turn.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url('flipbook/assets/script.js') }}"></script>
+    <script type="text/javascript" src="{{ url('site/assets/js/app.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url('site/assets/js/main.js') }}"></script>
 </body>
 
 </html>

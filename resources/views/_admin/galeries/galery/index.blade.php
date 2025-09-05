@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Galeria')
-@section('content-galery')
+@section('content')
      <div class="nxl-content">
         <!-- [ page-header ] start -->
         <div class="page-header">

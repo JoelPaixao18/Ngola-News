@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Gerenciar Vídeos')
-@section('content-video')
+@section('content')
 
  <div class="nxl-content">
         <!-- [ page-header ] start -->
@@ -265,9 +265,9 @@
 
                                                     </div>
                                                 </td> --}}
-                                                <td>{{ $video->title }}</td>
-                                                <td>{{ $video->description }}</td>
-                                                <td>{{ $video->url }}</td>
+                                                <td>{{  Str::limit($video->title, 20, '...') }}</td>
+                                                <td>{{ Str::limit($video->description, 20, '...') }}</td>
+                                                <td>{{ Str::limit($video->url, 20, '...') }}</td>
                                                {{--  <td>{{ $video->date }}</td> --}}
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">

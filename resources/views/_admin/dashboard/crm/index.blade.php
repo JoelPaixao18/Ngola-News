@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Ngola News - Visão Geral')
-@section('content-crm')
+@section('content')
 
     <div class="nxl-content">
         <!-- [ page-header ] start -->

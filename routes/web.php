@@ -13,6 +13,7 @@ use App\Http\Controllers\TypeCategoryController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\AdvertisementController;
 
 
 /*-------------------------------------------------------
@@ -30,6 +31,10 @@ Route::get('site/about', [SiteController::class, 'about'])->name('site.about');
 /* Routas de Categorias */
 Route::get('site/category', [SiteController::class, 'category'])->name('site.category');
 Route::get('site/policy', [SiteController::class, 'policy'])->name('site.policy');
+Route::get('site/society', [SiteController::class, 'society'])->name('site.society');
+Route::get('site/economic', [SiteController::class, 'economic'])->name('site.economic');
+Route::get('site/culture', [SiteController::class, 'culture'])->name('site.culture');
+Route::get('site/tech', [SiteController::class, 'tech'])->name('site.tech');
 Route::get('site/newsCategory', [SiteController::class, 'newsCategory'])->name('site.newsCategory');
 Route::get('site/eventCategory', [SiteController::class, 'eventCategory'])->name('site.eventCategory');
 Route::get('site/allNews', [SiteController::class, 'allNews'])->name('site.allNews');
@@ -190,3 +195,20 @@ Route::prefix('_admin/galeries')->name('admin.')->group(function () {
     Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
 });
 
+/*-------------------------------------------------------
+                    Publicidades routes
+-------------------------------------------------------*/
+
+Route::prefix('_admin.categories')->name('admin.')->group(function () {
+    Route::get('ads', [AdvertisementController::class, 'index'])->name('ads.index');
+    Route::get('adsCreate', [AdvertisementController::class, 'create'])->name('ads.create');
+    Route::post('ads', [AdvertisementController::class, 'store'])->name('ads.store');
+    /* Route::get('categoryView/{category}', [AdvertisementController::class, 'show'])->name('category.show');
+    Route::get('categoryEdit/{category}', [AdvertisementController::class, 'edit'])->name('category.edit');
+    Route::put('categoryUpdate/{category}', [AdvertisementController::class, 'update'])->name('category.update');
+    Route::get('categoryDelete/{category}', [AdvertisementController::class, 'destroy'])->name('category.delete'); */
+});
+
+Auth::routes();
+Route::redirect('/home', '/admin');
+Route::get('/admin', 'HomeController@index')->name('home')->middleware('auth');

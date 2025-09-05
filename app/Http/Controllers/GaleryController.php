@@ -9,7 +9,7 @@ class GaleryController extends Controller
 {
     public function index()
     {
-        $galeries = Galery::all();
+        $galeries = Galery::orderByDesc('id')->get();
         return view('_admin.galeries.galery.index', compact('galeries'));
     }
     public function create()

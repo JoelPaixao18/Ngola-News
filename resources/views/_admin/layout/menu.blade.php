@@ -6,8 +6,9 @@
         <div class="m-header">
             <a href="/admin/dashboard" class="b-brand">
                 <!-- ========   change your logo hear   ============ -->
-                <img src="{{ url('assets/images/logoNgolaLong.png') }}" alt="SOS" class="logo logo-lg">
-                <img src="{{ url('assets/images/logoNgola.png') }}" alt="" class="logo logo-sm">
+                <img src="{{ url('assets/images/3-Photoroom.png') }}" alt="SOS" class="logo logo-lg"
+                    style="heigth:10rem; width:12rem;">
+                <img src="{{ url('assets/images/2-Photoroom.png') }}" alt="" class="logo logo-sm">
             </a>
         </div>
         <div class="navbar-content">
@@ -53,15 +54,15 @@
                     </a>
                     <ul class="nxl-submenu">
                         <li class="nxl-item"><a class="nxl-link"
-                                href="{{ route('admin.categories.index') }}">Category</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Category
-                                Create</a>
+                                href="{{ route('admin.categories.index') }}">Categoria</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Criar
+                                Categoria</a>
                         </li>
                     </ul>
                 </li>
 
                 {{-- Menu Events --}}
-                <li class="nxl-item nxl-hasmenu">
+                {{-- <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-cast"></i></span>
                         <span class="nxl-mtext">Eventos</span><span class="nxl-arrow"><i
@@ -74,7 +75,7 @@
                                 Evento</a></li>
                         <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                     </ul>
-                </li>
+                </li> --}}
 
                 {{-- Menu Authors --}}
                 <li class="nxl-item nxl-hasmenu">
@@ -130,9 +131,11 @@
                             class="feather-chevron-right"></i></span>
                 </a>
                 <ul class="nxl-submenu">
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.comments.index') }}">Comentários</a>
+                    <li class="nxl-item"><a class="nxl-link"
+                            href="{{ route('admin.comments.index') }}">Comentários</a>
                     </li>
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.comment.create') }}">Criar Comentário</a></li>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.comment.create') }}">Criar
+                            Comentário</a></li>
                     <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                 </ul>
             </li>
@@ -144,9 +147,11 @@
                             class="feather-chevron-right"></i></span>
                 </a>
                 <ul class="nxl-submenu">
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.publication.index') }}">Publicações</a>
+                    <li class="nxl-item"><a class="nxl-link"
+                            href="{{ route('admin.publication.index') }}">Publicações</a>
                     </li>
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.publication.create') }}">Criar Publicação</a></li>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.publication.create') }}">Criar
+                            Publicação</a></li>
                     <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                 </ul>
             </li>
@@ -160,7 +165,8 @@
                 <ul class="nxl-submenu">
                     <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.video.index') }}">Videos</a>
                     </li>
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.video.create') }}">Criar Vídeo</a></li>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.video.create') }}">Criar
+                            Vídeo</a></li>
                     <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                 </ul>
             </li>
@@ -174,8 +180,24 @@
                 <ul class="nxl-submenu">
                     <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.galery.index') }}">Galeria</a>
                     </li>
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.galery.create') }}">Criar Galeria</a></li>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.galery.create') }}">Criar
+                            Galeria</a></li>
                     <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
+                </ul>
+            </li>
+            {{-- Menu Publicidade --}}
+            <li class="nxl-item nxl-hasmenu">
+                <a href="javascript:void(0);" class="nxl-link">
+                    <span class="nxl-micon"><i class="feather-at-sign"></i></span>
+                    <span class="nxl-mtext">Publicidade</span><span class="nxl-arrow"><i
+                            class="feather-chevron-right"></i></span>
+                </a>
+                <ul class="nxl-submenu">
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.ads.index') }}">Publicidade</a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.ads.create') }}">Criar
+                            Publicidade</a>
+                    </li>
                 </ul>
             </li>
             {{--

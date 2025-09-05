@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Ngola News - Editar Evento')
-@section('content-eventEdit')
+@section('content')
     <!--! ================================================================ !-->
     <!--! [Start] Main Content !-->
     <!--! ================================================================ !-->

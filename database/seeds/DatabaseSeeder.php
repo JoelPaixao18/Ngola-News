@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Models\Publication;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             TypeCategoriesTableSeeder::class,
             CategoriesTableSeeder::class,
             NewsTableSeeder::class,
+            VideosTableSeeder::class,
+            PublicationTableSeeder::class,
         ]);
     }
 }

@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Editar Vídeo')
-@section('content-videoEdit')
+@section('content')
 
  <div class="nxl-content">
         <!-- [ page-header ] start -->
@@ -103,7 +103,7 @@
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card stretch stretch-full">
@@ -122,6 +122,16 @@
                                                 <input type="text" class="form-control" name="title"
                                                     value="{{ old('title') ?? $video->title }}" id="title"
                                                     placeholder="Insira o título da Video...">
+                                            </div>
+                                            <div class="col-lg-4 mb-4">
+                                                <label class="form-label">Destaque</label>
+                                                <select class="form-control" name="detach" data-select2-selector="detach">
+                                                    <option value="" disabled selected>-- Selecione o destaque --
+                                                    </option>
+                                                    <option value="normal"> Normal</option>
+                                                    <option value="destaque"> Destaque</option>
+                                                    <option value="urgente"> Urgente</option>
+                                                </select>
                                             </div>
                                             <div class="col-lg-6 mb-4">
                                                 <label for="arquivo" class="form-label">Url: </label>

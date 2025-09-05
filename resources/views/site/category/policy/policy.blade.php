@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 @section('title', 'Ngola News - Política')
-@section('content-policyCategory')
+@section('content')
 
     <div class="breadcumb-wrapper">
         <div class="container">
@@ -13,6 +13,7 @@
     <section class="space-top space-extra-bottom">
         <div class="container">
             <div class="row">
+                {{-- Listagem das Categotias  --}}
                 <div class="col-xxl-9 col-lg-8">
                     <div class="mb-30">
                         @if ($news->count())
@@ -25,8 +26,7 @@
                                         <div class="blog-content">
                                             @foreach ($categories as $category)
                                                 @if ($item->category_id == $category->id)
-                                                    <a data-theme-color="#FF9500"
-                                                        href="#"
+                                                    <a data-theme-color="#FF9500" href="#"
                                                         class="category">{{ $category->name }}</a>
                                                 @endif
                                             @endforeach
@@ -38,7 +38,7 @@
                                             <div class="blog-meta">
                                                 <a href="#"><i class="far fa-user"></i>{{ $item->author }}</a>
                                                 <a href="#"><i
-                                                        class="fal fa-calendar-days"></i>{{ $item->created_at->format('d M, Y') }}</a>
+                                                        class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}</a>
                                             </div>
                                             <a href="{{ route('site.policyView', ['news' => $item]) }}"
                                                 class="th-btn style2">Ver mais<i class="fas fa-arrow-up-right ms-2"></i></a>
@@ -213,17 +213,13 @@
                             </div>
                         </div> --}}
                     </div>
+                    {{-- Paginação --}}
                     <div class="th-pagination mt-40">
-                        <ul>
-                            <li><a href="blog.html">01</a></li>
-                            <li><a href="blog.html">02</a></li>
-                            <li><a href="blog.html">03</a></li>
-                            <li>
-                                <a href="blog.html"><i class="fas fa-arrow-right"></i></a>
-                            </li>
-                        </ul>
+                        {{ $news->links('vendor.pagination.custom') }}
                     </div>
+                    {{-- Fim de Paginação --}}
                 </div>
+                {{-- Fim da listagem  --}}
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">
                     <aside class="sidebar-area">
                         <div class="widget widget_search">
@@ -235,49 +231,53 @@
                             </form>
                         </div>
                         <div class="widget widget_categories">
-                            <h3 class="widget_title">Categories</h3>
+                            <h3 class="widget_title">Categorias</h3>
                             <ul>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_1.jpg" href="blog.html">Sports</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_1.jpg"
+                                        href="{{ route('site.policy') }}">Políticas</a></li>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_2.jpg"
+                                        href="{{ route('site.society') }}">Sociedades</a>
                                 </li>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_2.jpg" href="blog.html">Business</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_3.jpg"
+                                        href="{{ route('site.economic') }}">Economia
+                                        &
+                                        Negócios</a>
                                 </li>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_3.jpg" href="blog.html">Politics</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_4.jpg"
+                                        href="{{ route('site.culture') }}">Artes &
+                                        Culturas</a>
                                 </li>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_4.jpg" href="blog.html">Health</a>
+                                <li><a data-bg-src="assets/img/bg/category_bg_1_5.jpg"
+                                        href="{{ route('site.tech') }}">Ciências
+                                        Tecnologia</a>
                                 </li>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_5.jpg" href="blog.html">Technology</a>
-                                </li>
-                                <li>
-                                    <a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entertainment</a>
-                                </li>
+                                {{-- <li><a data-bg-src="assets/img/bg/category_bg_1_6.jpg" href="blog.html">Entretenimento</a>
+                                </li> --}}
                             </ul>
                         </div>
+                        {{-- Sessão dos Posts Recentes --}}
+
                         <div class="widget">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-1.jpg"
-                                                alt="Blog Image" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title">
-                                            <a class="hover-line" href="blog-details.html">Fitness: Your journey to
-                                                Better, stronger
-                                                you.</a>
-                                        </h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>21 June,
-                                                2025</a>
+                            <h3 class="widget_title">Posts Recentes</h3>
+                            @forelse ($RecentPost as $recents)
+                                <div class="recent-post-wrap">
+                                    <div class="recent-post">
+                                        <div class="media-img">
+                                            <a href="blog-details.html"><img
+                                                    src="{{ asset('img/news/' . $recents->image) }}"
+                                                    alt="Blog Image" /></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="post-title">
+                                                <a class="hover-line" href="blog-details.html">{{ $recents->title }}</a>
+                                            </h4>
+                                            <div class="recent-post-meta">
+                                                <a href="blog.html"><i
+                                                        class="fal fa-calendar-days"></i>{{ $recents->updated_at->format('d M, Y') }}</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="recent-post">
+                                    {{-- <div class="recent-post">
                                     <div class="media-img">
                                         <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg"
                                                 alt="Blog Image" /></a>
@@ -324,32 +324,40 @@
                                                 2025</a>
                                         </div>
                                     </div>
+                                </div> --}}
+                                </div>
+                            @empty
+                        </div>
+
+                        <div class="col-12 text-center my-5">
+                            <p class="alert alert-warning fs-5 py-4 px-5">
+                                Nenhum post recente de momento.
+                            </p>
+                        </div>
+                        @endforelse
+                        {{-- Fim de Sesssão dos Postes Recentes --}}
+                        {{-- Publicidades --}}
+                        @foreach ($ads as $ad)
+                            <div class="widget">
+                                <div class="widget-ads">
+                                    <a href="{{ $ad->link }}">
+                                        <img class="w-100" src="{{ url('img/ads/' . $ad->image) }}" alt="ads" />
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="widget">
-                            <div class="widget-ads">
-                                <a href="https://themeforest.net/user/themeholy/portfolio"><img class="w-100"
-                                        src="assets/img/ads/siderbar_ads_1.jpg" alt="ads" /></a>
-                            </div>
-                        </div>
+                        @endforeach
+                        {{-- Fim das Publicidades --}}
+                        {{-- Tags Populares --}}
                         <div class="widget widget_tag_cloud">
-                            <h3 class="widget_title">Popular Tags</h3>
+                            <h3 class="widget_title">Tags Populares</h3>
                             <div class="tagcloud">
-                                <a href="blog.html">Sports</a>
-                                <a href="blog.html">Politics</a>
-                                <a href="blog.html">Business</a>
-                                <a href="blog.html">Music</a>
-                                <a href="blog.html">Food</a>
-                                <a href="blog.html">Technology</a>
-                                <a href="blog.html">Travels</a>
-                                <a href="blog.html">Health</a>
-                                <a href="blog.html">Fashions</a>
-                                <a href="blog.html">Animal</a>
-                                <a href="blog.html">Weather</a>
-                                <a href="blog.html">Movies</a>
+                                <a href="{{ route('site.policy') }}">Politicas</a>
+                                <a href="{{ route('site.economic') }}">Economia</a>
+                                <a href="{{ route('site.tech') }}">Tecnologia</a>
+                                <a href="{{ route('site.society') }}">sociedade</a>
                             </div>
                         </div>
+                        {{-- Fim das Tags Populares --}}
                     </aside>
                 </div>
             </div>
