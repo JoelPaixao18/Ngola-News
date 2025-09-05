@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             VideosTableSeeder::class,
             PublicationTableSeeder::class,
             AdvertisementsTableSeeder::class,
+            UserTableSeeder::class,
         ]);
     }
 }
