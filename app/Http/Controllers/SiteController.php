@@ -214,8 +214,8 @@ class SiteController extends Controller
         $Related = News::where('category_id', $news->category_id)
             ->where('id', '!=', $news->id) // exclui a própria notícia
             ->latest()
-            ->take(6) // quantidade de relacionadas
-            ->get();
+            ->get()
+            ->take(6); // quantidade de relacionadas
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
@@ -226,13 +226,12 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
-            
             ->take(5)
             ->get();
 
-        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
+        $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
 
-        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+        $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
 
         $categories = Category::all();
         /* $categories = Category::where('name')->get(); */
@@ -251,7 +250,7 @@ class SiteController extends Controller
         $categories = Category::where('name')->get();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
-        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 
         /* Subscrição - mostrando um  modal com a imagem da noticia mais recentes */
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
@@ -259,13 +258,13 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
-            
-            ->take(5)
-            ->get();
+            ->get()
+            ->take(5) ;
+           
 
-        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
+        $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
 
-        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+        $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
 
         $ads = Advertisement::all();
 
@@ -292,7 +291,7 @@ class SiteController extends Controller
         $categories = Category::where('name')->get();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
-        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 
         /* Subscrição - mostrando um  modal com a imagem da noticia mais recentes */
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
@@ -300,13 +299,12 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
+            ->get()
+            ->take(5);
             
-            ->take(5)
-            ->get();
+        $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
 
-        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
-
-        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+        $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
 
         $ads = Advertisement::all();
 
@@ -333,7 +331,7 @@ class SiteController extends Controller
         $categories = Category::where('name')->get();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
-        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 
         /* Subscrição - mostrando um  modal com a imagem da noticia mais recentes */
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
@@ -341,13 +339,13 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
+            ->get()
+            ->take(5);
             
-            ->take(5)
-            ->get();
 
-        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
+        $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
 
-        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+        $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
 
         $ads = Advertisement::all();
 
@@ -374,7 +372,7 @@ class SiteController extends Controller
         $categories = Category::where('name')->get();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
-        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 
         /* Subscrição - mostrando um  modal com a imagem da noticia mais recentes */
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
@@ -382,13 +380,13 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
+            ->get()
+            ->take(5);
             
-            ->take(5)
-            ->get();
 
-        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
+        $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
 
-        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+        $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
 
         $ads = Advertisement::all();
 
@@ -415,7 +413,7 @@ class SiteController extends Controller
         $categories = Category::where('name')->get();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
-        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 
         /* Subscrição - mostrando um  modal com a imagem da noticia mais recentes */
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
@@ -423,13 +421,12 @@ class SiteController extends Controller
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
             ->distinct()
-            
-            ->take(5)
-            ->get();
+            ->get()
+            ->take(5);
 
-        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
+        $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
 
-        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+        $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
 
         $ads = Advertisement::all();
 
@@ -467,19 +464,18 @@ class SiteController extends Controller
 
         $publications = Publication::orderBy('updated_at', 'desc')->paginate(18);
 
-        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
 
         $footerCategory = Category::select('name')
             ->distinct()
-            
-            ->take(5)
-            ->get();
+            ->get()
+            ->take(5);
 
-        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
+        $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
 
-        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+        $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
 
         $ads = Advertisement::all();
 
@@ -499,19 +495,18 @@ class SiteController extends Controller
     public function videos()
     {
         $videos = Video::where('detach', 'destaque')->orderByDesc('id')->get();
-        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
 
         $footerCategory = Category::select('name')
             ->distinct()
-            
-            ->take(5)
-            ->get();
+            ->get()
+            ->take(5);
 
-        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
+        $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
 
-        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+        $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
 
         $ads = Advertisement::all();
 
@@ -531,19 +526,18 @@ class SiteController extends Controller
     public function galery()
     {
         $galeries = Galery::orderByDesc('id')->get();
-        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
 
         $footerCategory = Category::select('name')
             ->distinct()
-            
-            ->take(5)
-            ->get();
+            ->get()
+            ->take(5);
 
-        $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
+        $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
 
-        $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
+        $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
 
         $ads = Advertisement::all();
 
