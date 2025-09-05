@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="{{ url('site/assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ url('site/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ url('site/assets/css/newStyle.css') }}">
+    
 </head>
 
 <body>

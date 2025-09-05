@@ -20,7 +20,8 @@
                             @endforeach
                             <br>
                             <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
-                                <a class="hover-line" href="{{ route('site.newsView', ['news' => $detach->id])}}">{{ $detach->title }}</a>
+                                <a class="hover-line"
+                                    href="{{ route('site.newsView', ['news' => $detach->id]) }}">{{ $detach->title }}</a>
                             </h3>
                             <div class="blog-meta" data-ani="slideinup" data-ani-delay="0.5s">
                                 <a href="author.html">
@@ -333,12 +334,14 @@
     </div>
     {{-- Fim de noticias por categoria --}}
     <!-- ==================== Publicidade ==================== -->
-    <div class="container space-top">
-        <a href="https://themeforest.net/user/themeholy/portfolio">
-            <img class="light-img" src="{{ url('site/assets/img/ads/ads_5.jpg') }}" alt="ads">
-            <img class="dark-img" src="{{ url('site/assets/img/ads/ads_5_dark.jpg') }}" alt="ads">
-        </a>
-    </div>
+    @foreach ($ads as $ad)
+        <div class="container space-top img-ads">
+            <a href="{{ $ad->link }}" target="_blank" class="ads-style1">
+                <img class="light-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
+                <img class="dark-img" src="{{ url('site/assets/img/ads/ads_5_dark.jpg') }}" alt="ads">
+            </a>
+        </div>
+    @endforeach
     {{-- Fim de Publicidade --}}
 
     <!-- ==================== Today News Section ==================== -->
@@ -782,14 +785,15 @@
                     {{-- Fim de Noticias de Ciencias e Tecnologia --}}
 
                     {{-- Publicidade --}}
-                    <div class="space">
-                        <a href="https://themeforest.net/user/themeholy/portfolio">
-                            <img class="w-100 light-img" src="{{ url('site/assets/img/ads/ads_6.jpg') }}"
-                                alt="ads">
-                            <img class="w-100 dark-img" src="{{ url('site/assets/img/ads/ads_6_dark.jpg') }}"
-                                alt="ads">
-                        </a>
-                    </div>
+                    @foreach ($ads as $ad)
+                        <div class="space mt-40 mb-40 img-ads">
+                            <a href="{{ $ad->link }}" target="_blank" class="ads-style1">
+                                <img class="w-100 light-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
+                                <img class="w-100 dark-img" src="{{ url('site/assets/img/ads/ads_6_dark.jpg') }}"
+                                    alt="ads">
+                            </a>
+                        </div>
+                    @endforeach
                     {{-- Fim de Publicidade --}}
 
                     {{-- Sessão de Economia e Negócio --}}
@@ -928,16 +932,18 @@
                 <div class="col-xl-4 mt-35 mt-xl-0 sidebar-wrap mb-10">
                     <div class="sidebar-area">
                         {{-- Publicidade --}}
-                        <div class="widget">
-                            <div class="widget-ads">
-                                <a href="https://themeforest.net/user/themeholy/portfolio">
-                                    <img class="w-100 light-img"
-                                        src="{{ url('site/assets/img/ads/siderbar_ads_3.jpg') }}" alt="ads">
-                                    <img class="w-100 dark-img"
-                                        src="{{ url('site/assets/img/ads/siderbar_ads_3_dark.jpg') }}" alt="ads">
-                                </a>
+                        @foreach ($ads as $ad)
+                            <div class="widget mb-40 img-ads">
+                                <div class="widget-ads">
+                                    <a href="{{ $ad->link }}" target="_blank" class="ads-style1">
+                                        <img class="w-100 light-img" src="{{ asset('img/ads/' . $ad->image) }}"
+                                            alt="ads">
+                                        <img class="w-100 dark-img" src="{{ url('site/assets/img/ads/ads_3_dark.jpg') }}"
+                                            alt="ads">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
                         {{-- Fim da Publicidade --}}
 
                         {{-- Sessão de Sociedade --}}
@@ -1034,19 +1040,21 @@
                             </div>
                         </div>
                         {{-- Fim da sessão de Sociedade --}}
+                        {{-- Subscrição --}}
                         <div class="widget newsletter-widget3"
                             data-bg-src="{{ url('site/assets/img/bg/line_bg_1.png') }}">
                             <div class="mb-4">
                                 <img src="{{ url('site/assets/img/bg/newsletter_img_2.png') }}" alt="Icon">
                             </div>
-                            <h3 class="box-title-24 mb-20">Subscribe Now</h3>
+                            <h3 class="box-title-24 mb-20">Subscreve Agora</h3>
                             <form class="newsletter-form">
-                                <input class="form-control" type="email" placeholder="Enter Email" required>
+                                <input class="form-control" type="email" placeholder="Digite o E-mail" required>
                                 <button type="submit" class="icon-btn">
                                     <i class="fa-solid fa-paper-plane"></i>
                                 </button>
                             </form>
                         </div>
+                        {{-- Fim de Subscrição --}}
                     </div>
                 </div>
             </div>
