@@ -4,7 +4,7 @@
         <i class="fal fa-times"></i>
       </button>
       <form action="#">
-        <input type="text" placeholder="What are you looking for?">
+        <input type="text" placeholder="Oque está procurando?">
         <button type="submit">
           <i class="fal fa-search"></i>
         </button>
