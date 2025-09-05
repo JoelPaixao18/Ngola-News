@@ -25,7 +25,9 @@
                                 class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="/">Gestão de contatos</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="/admin/dashboard">Gestão de
+                                contatos</a>
+                        </li>
                         {{-- <li class="nxl-item"><a class="nxl-link" href="/analytics">Analytics</a></li> --}}
                     </ul>
                 </li>

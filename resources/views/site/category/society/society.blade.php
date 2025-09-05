@@ -40,7 +40,7 @@
                                                 <a href="#"><i
                                                         class="fal fa-calendar-days"></i>{{ $item->updated_at->format('d M, Y') }}</a>
                                             </div>
-                                            <a href="{{ route('site.policyView', ['news' => $item]) }}"
+                                            <a href="{{ route('site.newsView', ['news' => $item]) }}"
                                                 class="th-btn style2">Ver mais<i class="fas fa-arrow-up-right ms-2"></i></a>
                                         </div>
                                     </div>

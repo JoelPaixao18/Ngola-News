@@ -5,7 +5,7 @@
                 <div class="col-lg-2 d-none d-lg-inline-block">
                     <div class="header-logo">
                         <a href="/">
-                            <img src="{{ url('site/assets/img/1-Photoroom.png')}}" alt="Tnews">
+                            <img src="{{ url('site/assets/img/1-Photoroom.png') }}" alt="Tnews">
                         </a>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                         <i class="far fa-cart-shopping"></i>
                         <span class="badge">5</span> --}}
                                     </button>
-                                    <a href="contact.html" class="th-btn style3">Contacte-nos</a>
+                                    <a href="#" class="th-btn style3">Contacte-nos</a>
                                     <button type="button" class="th-menu-toggle d-block d-lg-none">
                                         <i class="far fa-bars"></i>
                                     </button>
