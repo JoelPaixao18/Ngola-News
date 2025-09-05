@@ -20,17 +20,15 @@
                                 <div class="blog-style1">
                                     <div class="blog-img img-size">
                                         <img class="rounded"
-                                            @if ($galery->image)
-                                                src="{{ asset('img/galeries/' . $galery->image) }}"
+                                            @if ($galery->image) src="{{ asset('img/galeries/' . $galery->image) }}"
                                             @else
-                                                src="{{ asset('img/galeries/pdfimg.png') }}"
-                                            @endif
+                                                src="{{ asset('img/galeries/pdfimg.png') }}" @endif
                                             alt="{{ $galery->title }}">
                                     </div>
 
                                     <h3 class="box-title-20">
-                                        <a class="hover-line" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal" id="img">
+                                        <a class="hover-line" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                            id="img">
                                             {{ Str::limit($galery->title, 20, '...') }}
                                         </a>
                                     </h3>
@@ -45,7 +43,7 @@
                         @empty
                             <div class="col-12 text-center my-5">
                                 <p class="alert alert-warning fs-5 py-4 px-5">
-                                     Nenhuma galeria encontrada no momento.
+                                    Nenhuma galeria encontrada no momento.
                                 </p>
                             </div>
                         @endforelse
@@ -61,18 +59,18 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div id="book">
-                                            <div class="cover bg-danger">
-                                                @isset($galery)
+                                        <div class="row align-items-start">
+                                            <div class="col-md-4 ms-4">
+                                                @if($galery)
                                                     <img src="{{ asset('img/galeries/' . $galery->image) }}" alt="">
-                                                @endisset
-                                                <h1>O Livro</h1>
+                                                @endif
                                             </div>
-                                        </div>
-                                        <div id="controls" class="mt-3">
-                                            <label for="page-number">Página:</label>
-                                            <input type="text" size="3" id="page-number"> de
-                                            <span id="number-pages"></span>
+                                            <div class="col-md-4 ms-4">
+                                                <ul class="nxl-has-children">
+                                                    <li class="nxl-item">Título: {{$galery->title}}</li>
+                                                    <li class="nxl-item">Descrição: {{$galery->description}}</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -207,9 +205,8 @@
                         @endforelse
                         {{-- Fim de Sesssão dos Postes Recentes --}}
                         <div class="widget">
-                            <div class="widget-ads"><a
-                                    href="../../../../themeforest.net/user/themeholy/portfolio.html"><img class="w-100"
-                                        src="assets/img/ads/siderbar_ads_1.jpg" alt="ads"></a></div>
+                            <div class="widget-ads"><a href="../../../../themeforest.net/user/themeholy/portfolio.html"><img
+                                        class="w-100" src="assets/img/ads/siderbar_ads_1.jpg" alt="ads"></a></div>
                         </div>
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Tags Populares</h3>
