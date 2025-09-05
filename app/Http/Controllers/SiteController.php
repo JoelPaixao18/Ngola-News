@@ -111,7 +111,7 @@ class SiteController extends Controller
         /* Posts Recentes no Footer */
         $Recent = News::orderBy('updated_at', 'desc')->take(2)->get();
 
-        $ads = Advertisement::all();
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
 
 
         return view('site.home.index', compact(
@@ -267,7 +267,7 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        $ads = Advertisement::all();
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
 
         return view('site.category.policy.policy', compact(
             'news',
@@ -308,7 +308,7 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        $ads = Advertisement::all();
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
 
         return view('site.category.society.society', compact(
             'news',
@@ -349,7 +349,7 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        $ads = Advertisement::all();
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
 
         return view('site.category.economic.economic', compact(
             'news',
@@ -390,7 +390,7 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        $ads = Advertisement::all();
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
 
         return view('site.category.culture.culture', compact(
             'news',
@@ -431,7 +431,7 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        $ads = Advertisement::all();
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
 
         return view('site.category.tech.tech', compact(
             'news',
@@ -481,7 +481,7 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        $ads = Advertisement::all();
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
 
         return view('site.multimedia.publication', compact(
             'publications',
@@ -513,14 +513,14 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        $ads = Advertisement::all();
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
 
         return view('site.multimedia.videos', compact(
-            'videos', 
-            'breaknews', 
-            'footerCategory', 
-            'subscription', 
-            'Recent', 
+            'videos',
+            'breaknews',
+            'footerCategory',
+            'subscription',
+            'Recent',
             'RecentPost',
             'ads'
         ));
@@ -545,14 +545,14 @@ class SiteController extends Controller
 
         $RecentPost = News::orderBy('updated_at', 'desc')->take(4)->get();
 
-        $ads = Advertisement::all();
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
 
         return view('site.multimedia.galery', compact(
-            'galeries', 
-            'breaknews', 
-            'footerCategory', 
-            'subscription', 
-            'Recent', 
+            'galeries',
+            'breaknews',
+            'footerCategory',
+            'subscription',
+            'Recent',
             'RecentPost',
             'ads'
         ));

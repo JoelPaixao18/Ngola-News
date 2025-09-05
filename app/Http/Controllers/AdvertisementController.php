@@ -14,7 +14,7 @@ class AdvertisementController extends Controller
      */
     public function index()
     {
-        $ads = Advertisement::all();
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
         return view('_admin.ads.ads.index', compact('ads'));
     }
 
@@ -48,7 +48,7 @@ class AdvertisementController extends Controller
             'image.max' => 'A imagem não pode ter mais de 5MB.',
         ]);
 
-                // Upload da imagem
+        // Upload da imagem
         $imageName = null;
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $image = $request->file('image');
