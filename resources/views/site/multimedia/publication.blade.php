@@ -53,7 +53,7 @@
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
+                                <div class="modal-content" >
                                     <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -65,8 +65,8 @@
                                             onclick="openFlipbook('{{ asset('files/publication/' . $publication->file) }}')">Abrir
                                             {{ $publication->title }}</button>
                                         <div id="book"></div>
-                                        <input type="text" id="page-number" style="width: 80px">
-                                        <span id="number-pages" ></span><br>
+                                        <input type="text" id="page-number" style="background-color: #0909096f; color:#fff; width:140px;">
+                                        <span id="number-pages" style="background-color: #0909096f; color:#fff; width:140px; padding:15px 50px; border-radius:5px" ><br>
                                         <span class="btn btn-warning" id="prev-page">Anterior</span>
                                         <span class="btn btn-dark" id="next-page">Próxima</span>
                                     </div>
@@ -218,7 +218,6 @@
             </div>
         </div>
     </section>
-    <script src="{{ url('flipbook/assets/turn.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $("#flipbook{{ $publication->id ?? '' }}").turn({
@@ -226,15 +225,16 @@
                 height: 600,
                 autoCenter: true
             });
-        });
+        
 
-        function openPublicationModal(title, img, description, date) {
-            document.getElementById('PublicationModalLabel').textContent = title;
-            document.getElementById('PublicationModalImg').src = img;
-            document.getElementById('PublicationModalDescription').textContent = description;
-            document.getElementById('PublicationModalDate').textContent = date;
-            var modal = new bootstrap.Modal(document.getElementById('PublicationModal'));
-            modal.show();
-        }
+            function openPublicationModal(title, img, description, date) {
+                document.getElementById('PublicationModalLabel').textContent = title;
+                document.getElementById('PublicationModalImg').src = img;
+                document.getElementById('PublicationModalDescription').textContent = description;
+                document.getElementById('PublicationModalDate').textContent = date;
+                var modal = new bootstrap.Modal(document.getElementById('PublicationModal'));
+                modal.show();
+            }
+        });
     </script>
 @endsection
