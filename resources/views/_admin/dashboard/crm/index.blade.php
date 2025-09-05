@@ -348,7 +348,7 @@
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="hstack gap-3">
                                     <div class="avatar-image avatar-lg p-2 rounded">
-                                        <img class="img-fluid" src="assets/images/brand/shopify.png" alt="" />
+                                        <img class="img-fluid" src="{{ url('assets/images/brand/shopify.png')}}" alt="" />
                                     </div>
                                     <div>
                                         <a href="javascript:void(0);" class="d-block">Shopify eCommerce Store</a>
@@ -364,7 +364,7 @@
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="hstack gap-3">
                                     <div class="avatar-image avatar-lg p-2 rounded">
-                                        <img class="img-fluid" src="assets/images/brand/app-store.png" alt="" />
+                                        <img class="img-fluid" src="{{ url('assets/images/brand/app-store.png')}}" alt="" />
                                     </div>
                                     <div>
                                         <a href="javascript:void(0);" class="d-block">iOS Apps Development</a>
@@ -380,7 +380,7 @@
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="hstack gap-3">
                                     <div class="avatar-image avatar-lg p-2 rounded">
-                                        <img class="img-fluid" src="assets/images/brand/figma.png" alt="" />
+                                        <img class="img-fluid" src="{{ url('assets/images/brand/figma.png')}}" alt="" />
                                     </div>
                                     <div>
                                         <a href="javascript:void(0);" class="d-block">Figma Dashboard Design</a>
@@ -656,7 +656,7 @@
                                             <td>
                                                 <div class="d-flex align-items-center gap-3">
                                                     <div class="avatar-image">
-                                                        <img src="assets/images/avatar/2.png" alt=""
+                                                        <img src="{{ url('assets/images/avatar/2.png')}}" alt=""
                                                             class="img-fluid" />
                                                     </div>
                                                     <a href="javascript:void(0);">
@@ -681,7 +681,7 @@
                                             <td>
                                                 <div class="d-flex align-items-center gap-3">
                                                     <div class="avatar-image">
-                                                        <img src="assets/images/avatar/3.png" alt=""
+                                                        <img src="{{ url('assets/images/avatar/3.png')}}" alt=""
                                                             class="img-fluid" />
                                                     </div>
                                                     <a href="javascript:void(0);">
@@ -706,7 +706,7 @@
                                             <td>
                                                 <div class="d-flex align-items-center gap-3">
                                                     <div class="avatar-image">
-                                                        <img src="assets/images/avatar/4.png" alt=""
+                                                        <img src="{{ url('assets/images/avatar/4.png')}}" alt=""
                                                             class="img-fluid" />
                                                     </div>
                                                     <a href="javascript:void(0);">
@@ -731,7 +731,7 @@
                                             <td>
                                                 <div class="d-flex align-items-center gap-3">
                                                     <div class="avatar-image">
-                                                        <img src="assets/images/avatar/5.png" alt=""
+                                                        <img src="{{ url('assets/images/avatar/5.png')}}" alt=""
                                                             class="img-fluid" />
                                                     </div>
                                                     <a href="javascript:void(0);">
@@ -756,7 +756,7 @@
                                             <td>
                                                 <div class="d-flex align-items-center gap-3">
                                                     <div class="avatar-image">
-                                                        <img src="assets/images/avatar/6.png" alt=""
+                                                        <img src="{{ url('assets/images/avatar/6.png')}}" alt=""
                                                             class="img-fluid" />
                                                     </div>
                                                     <a href="javascript:void(0);">
@@ -866,19 +866,19 @@
                                     <div class="img-group lh-0 ms-3 justify-content-start d-none d-sm-flex">
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                            <img src="assets/images/avatar/2.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/2.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                            <img src="assets/images/avatar/3.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/3.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                            <img src="assets/images/avatar/4.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/4.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/6.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/6.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-text avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More">
@@ -906,19 +906,19 @@
                                     <div class="img-group lh-0 ms-3 justify-content-start d-none d-sm-flex">
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                            <img src="assets/images/avatar/2.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/2.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                            <img src="assets/images/avatar/3.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/3.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/5.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/5.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/6.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/6.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-text avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More">
@@ -946,19 +946,19 @@
                                     <div class="img-group lh-0 ms-3 justify-content-start d-none d-sm-flex">
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                            <img src="assets/images/avatar/2.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/2.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Michael Ksen">
-                                            <img src="assets/images/avatar/3.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/3.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                            <img src="assets/images/avatar/4.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/4.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/5.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/5.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-text avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More">
@@ -986,19 +986,19 @@
                                     <div class="img-group lh-0 ms-3 justify-content-start d-none d-sm-flex">
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Janette Dalton">
-                                            <img src="assets/images/avatar/2.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/2.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Socrates Itumay">
-                                            <img src="assets/images/avatar/4.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/4.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/5.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/5.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-image avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Marianne Audrey">
-                                            <img src="assets/images/avatar/6.png" class="img-fluid" alt="image" />
+                                            <img src="{{ url('assets/images/avatar/6.png')}}" class="img-fluid" alt="image" />
                                         </a>
                                         <a href="javascript:void(0)" class="avatar-text avatar-md"
                                             data-bs-toggle="tooltip" data-bs-trigger="hover" title="Explorer More">
@@ -1062,7 +1062,7 @@
                             <div class="mb-3">
                                 <div class="mb-4 pb-1 d-flex">
                                     <div class="d-flex w-50 align-items-center me-3">
-                                        <img src="assets/images/brand/app-store.png" alt="laravel-logo" class="me-3"
+                                        <img src="{{ url('assets/images/brand/app-store.png')}}" alt="laravel-logo" class="me-3"
                                             width="35" />
                                         <div>
                                             <a href="javascript:void(0);" class="text-truncate-1-line">Apps
@@ -1081,7 +1081,7 @@
                                 <hr class="border-dashed my-3" />
                                 <div class="mb-4 pb-1 d-flex">
                                     <div class="d-flex w-50 align-items-center me-3">
-                                        <img src="assets/images/brand/figma.png" alt="figma-logo" class="me-3"
+                                        <img src="{{ url('assets/images/brand/figma.png')}}" alt="figma-logo" class="me-3"
                                             width="35" />
                                         <div>
                                             <a href="javascript:void(0);" class="text-truncate-1-line">Dashboard
@@ -1100,7 +1100,7 @@
                                 <hr class="border-dashed my-3" />
                                 <div class="mb-4 pb-1 d-flex">
                                     <div class="d-flex w-50 align-items-center me-3">
-                                        <img src="assets/images/brand/facebook.png" alt="vue-logo" class="me-3"
+                                        <img src="{{ url('assets/images/brand/facebook.png')}}" alt="vue-logo" class="me-3"
                                             width="35" />
                                         <div>
                                             <a href="javascript:void(0);" class="text-truncate-1-line">Facebook
@@ -1119,7 +1119,7 @@
                                 <hr class="border-dashed my-3" />
                                 <div class="mb-4 pb-1 d-flex">
                                     <div class="d-flex w-50 align-items-center me-3">
-                                        <img src="assets/images/brand/github.png" alt="react-logo" class="me-3"
+                                        <img src="{{ url('assets/images/brand/github.png')}}" alt="react-logo" class="me-3"
                                             width="35" />
                                         <div>
                                             <a href="javascript:void(0);" class="text-truncate-1-line">React Dashboard
@@ -1138,7 +1138,7 @@
                                 <hr class="border-dashed my-3" />
                                 <div class="d-flex">
                                     <div class="d-flex w-50 align-items-center me-3">
-                                        <img src="assets/images/brand/paypal.png" alt="sketch-logo" class="me-3"
+                                        <img src="{{ url('assets/images/brand/paypal.png')}}" alt="sketch-logo" class="me-3"
                                             width="35" />
                                         <div>
                                             <a href="javascript:void(0);" class="text-truncate-1-line">Paypal Payment
@@ -1210,7 +1210,7 @@
                             <div class="hstack justify-content-between border border-dashed rounded-3 p-3 mb-3">
                                 <div class="hstack gap-3">
                                     <div class="avatar-image">
-                                        <img src="assets/images/avatar/1.png" alt="" class="img-fluid" />
+                                        <img src="{{ url('assets/images/avatar/1.png')}}" alt="" class="img-fluid" />
                                     </div>
                                     <div>
                                         <a href="javascript:void(0);">Alexandra Della</a>
@@ -1222,7 +1222,7 @@
                             <div class="hstack justify-content-between border border-dashed rounded-3 p-3 mb-3">
                                 <div class="hstack gap-3">
                                     <div class="avatar-image">
-                                        <img src="assets/images/avatar/2.png" alt="" class="img-fluid" />
+                                        <img src="{{ url('assets/images/avatar/2.png')}}" alt="" class="img-fluid" />
                                     </div>
                                     <div>
                                         <a href="javascript:void(0);">Archie Cantones</a>
@@ -1234,7 +1234,7 @@
                             <div class="hstack justify-content-between border border-dashed rounded-3 p-3 mb-3">
                                 <div class="hstack gap-3">
                                     <div class="avatar-image">
-                                        <img src="assets/images/avatar/3.png" alt="" class="img-fluid" />
+                                        <img src="{{ url('assets/images/avatar/3.png')}}" alt="" class="img-fluid" />
                                     </div>
                                     <div>
                                         <a href="javascript:void(0);">Malanie Hanvey</a>
@@ -1246,7 +1246,7 @@
                             <div class="hstack justify-content-between border border-dashed rounded-3 p-3 mb-2">
                                 <div class="hstack gap-3">
                                     <div class="avatar-image">
-                                        <img src="assets/images/avatar/4.png" alt="" class="img-fluid" />
+                                        <img src="{{ url('assets/images/avatar/4.png')}}" alt="" class="img-fluid" />
                                     </div>
                                     <div>
                                         <a href="javascript:void(0);">Kenneth Hune</a>
