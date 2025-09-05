@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Tag;
 use App\Models\Category;
+use App\Models\Advertisement;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -214,4 +215,53 @@ class NewsController extends Controller
         return redirect()->route('admin.news.index')
             ->with('success', 'Notícia eliminado com sucesso');
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('q');
+
+        $news = News::with(['category.typeCategory'])
+            ->where('title', 'like', "%{$query}%")
+
+            // Filtra pelo nome da categoria
+            ->orWhereHas('category', function ($q1) use ($query) {
+                $q1->where('name', 'like', "%{$query}%");
+            })
+
+            // Filtra pelo nome do tipo de categoria
+            ->orWhereHas('category.typeCategory', function ($q2) use ($query) {
+                $q2->where('name', 'like', "%{$query}%");
+            })
+            ->get();
+
+            $categories = Category::where('name')->get();
+
+            $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
+
+            $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
+
+            $footerCategory = Category::select('name')
+                ->distinct()
+                ->get()
+                ->take(5);
+
+            $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
+
+            $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
+
+            $ads = Advertisement::orderByDesc('id')->take(1)->get();
+
+        return view('site.search-results.search', compact(
+            'news',
+            'query',
+            'categories',
+            'breaknews',
+            'footerCategory',
+            'subscription',
+            'Recent',
+            'RecentPost',
+            'ads'));
+    }
+
+
 }

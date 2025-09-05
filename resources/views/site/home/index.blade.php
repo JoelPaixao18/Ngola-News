@@ -36,129 +36,6 @@
                     </div>
                 </div>
             @endforeach
-            {{-- <div class="th-hero-slide">
-                <div class="th-hero-bg" data-overlay="black" data-opacity="6"
-                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_2.jpg') }}">
-                </div>
-                <div class="container">
-                    <div class="blog-bg-style1">
-                        <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="blog.html"
-                            class="category">Robotic</a>
-                        <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
-                            <a class="hover-line" href="blog-details.html">Embracing Tech: Elevating Everyday
-                                Experiences</a>
-                        </h3>
-                        <div class="blog-meta" data-ani="slideinup" data-ani-delay="0.5s">
-                            <a href="author.html">
-                                <i class="far fa-user"></i>By - Tnews
-                            </a>
-                            <a href="blog.html">
-                                <i class="fal fa-calendar-days"></i>10 Mar, 2025
-                            </a>
-                        </div>
-                        <p class="blog-text" data-ani="slideinup" data-ani-delay="0.7s">Conveys the idea that technology has
-                            become accessible and easy to use, simplifying our daily tasks and routines</p>
-                    </div>
-                </div>
-            </div>
-            <div class="th-hero-slide">
-                <div class="th-hero-bg" data-overlay="black" data-opacity="6"
-                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_3.jpg') }}">
-                </div>
-                <div class="container">
-                    <div class="blog-bg-style1">
-                        <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="blog.html"
-                            class="category">Tech</a>
-                        <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
-                            <a class="hover-line" href="blog-details.html">Unraveling Innovation: Simplifying Your Daily
-                                Life</a>
-                        </h3>
-                        <div class="blog-meta" data-ani="slideinup" data-ani-delay="0.5s">
-                            <a href="author.html">
-                                <i class="far fa-user"></i>By - Tnews
-                            </a>
-                            <a href="blog.html">
-                                <i class="fal fa-calendar-days"></i>29 Mar, 2025
-                            </a>
-                        </div>
-                        <p class="blog-text" data-ani="slideinup" data-ani-delay="0.7s">Conveys the idea that technology has
-                            become accessible and easy to use, simplifying our daily tasks and routines</p>
-                    </div>
-                </div>
-            </div>
-            <div class="th-hero-slide">
-                <div class="th-hero-bg" data-overlay="black" data-opacity="6"
-                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_4.jpg') }}">
-                </div>
-                <div class="container">
-                    <div class="blog-bg-style1">
-                        <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="blog.html"
-                            class="category">Gadget</a>
-                        <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
-                            <a class="hover-line" href="blog-details.html">Transforming Daily Routines with Tech
-                                Wonders</a>
-                        </h3>
-                        <div class="blog-meta" data-ani="slideinup" data-ani-delay="0.5s">
-                            <a href="author.html">
-                                <i class="far fa-user"></i>By - Tnews
-                            </a>
-                            <a href="blog.html">
-                                <i class="fal fa-calendar-days"></i>20 Mar, 2025
-                            </a>
-                        </div>
-                        <p class="blog-text" data-ani="slideinup" data-ani-delay="0.7s">Conveys the idea that technology
-                            has become accessible and easy to use, simplifying our daily tasks and routines</p>
-                    </div>
-                </div>
-            </div>
-            <div class="th-hero-slide">
-                <div class="th-hero-bg" data-overlay="black" data-opacity="6"
-                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_5.jpg') }}"></div>
-                <div class="container">
-                    <div class="blog-bg-style1">
-                        <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="blog.html"
-                            class="category">VR Glass</a>
-                        <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
-                            <a class="hover-line" href="blog-details.html">Revolutionizing Your Day: Techs Extraordinary
-                                Touch</a>
-                        </h3>
-                        <div class="blog-meta" data-ani="slideinup" data-ani-delay="0.5s">
-                            <a href="author.html">
-                                <i class="far fa-user"></i>By - Tnews
-                            </a>
-                            <a href="blog.html">
-                                <i class="fal fa-calendar-days"></i>15 Mar, 2025
-                            </a>
-                        </div>
-                        <p class="blog-text" data-ani="slideinup" data-ani-delay="0.7s">Conveys the idea that technology
-                            has become accessible and easy to use, simplifying our daily tasks and routines</p>
-                    </div>
-                </div>
-            </div>
-            <div class="th-hero-slide">
-                <div class="th-hero-bg" data-overlay="black" data-opacity="6"
-                    data-bg-src="{{ url('site/assets/img/hero/hero_bg_1_6.jpg') }}"></div>
-                <div class="container">
-                    <div class="blog-bg-style1">
-                        <a data-theme-color="#6234AC" data-ani="slideinup" data-ani-delay="0.1s" href="blog.html"
-                            class="category">Gadget</a>
-                        <h3 data-ani="slideinup" data-ani-delay="0.3s" class="box-title-50">
-                            <a class="hover-line" href="blog-details.html">Tech Marvels: Elevate Your Everyday to
-                                Extraordinary</a>
-                        </h3>
-                        <div class="blog-meta" data-ani="slideinup" data-ani-delay="0.5s">
-                            <a href="author.html">
-                                <i class="far fa-user"></i>By - Tnews
-                            </a>
-                            <a href="blog.html">
-                                <i class="fal fa-calendar-days"></i>30 Mar, 2025
-                            </a>
-                        </div>
-                        <p class="blog-text" data-ani="slideinup" data-ani-delay="0.7s">Conveys the idea that technology
-                            has become accessible and easy to use, simplifying our daily tasks and routines</p>
-                    </div>
-                </div>
-            </div> --}}
         </div>
         <div class="hero-tab-area">
             <div class="container">
@@ -168,21 +45,6 @@
                             <img src="{{ asset('img/news/' . $detach->image) }}" alt="Image">
                         </div>
                     @endforeach
-                    {{--  <div class="tab-btn">
-                        <img src="{{ url('site/assets/img/hero/hero_1_2.jpg') }}" alt="Image">
-                    </div>
-                    <div class="tab-btn">
-                        <img src="{{ url('site/assets/img/hero/hero_1_3.jpg') }}" alt="Image">
-                    </div>
-                    <div class="tab-btn">
-                        <img src="{{ url('site/assets/img/hero/hero_1_4.jpg') }}" alt="Image">
-                    </div>
-                    <div class="tab-btn">
-                        <img src="{{ url('site/assets/img/hero/hero_1_5.jpg') }}" alt="Image">
-                    </div>
-                    <div class="tab-btn">
-                        <img src="{{ url('site/assets/img/hero/hero_1_6.jpg') }}" alt="Image">
-                    </div> --}}
                 </div>
             </div>
         </div>
@@ -240,94 +102,6 @@
                         </div>
                     </div>
                 @endforeach
-                {{-- <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
-                    <div class="blog-style3">
-                        <div class="blog-img">
-                            <img src="{{ url('site/assets/img/blog/blog_5_2_22.jpg') }}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">Tech</a>
-                            <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">Tech brilliance, where Possibilities
-                                    unfold.</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="author.html">
-                                    <i class="far fa-user"></i>By - Tnews
-                                </a>
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>25 Mar, 2025
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
-                    <div class="blog-style3">
-                        <div class="blog-img">
-                            <img src="{{ url('site/assets/img/blog/blog_5_2_23.jpg') }}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">VR Glass</a>
-                            <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">Elevate life, redefine Human
-                                    potential.</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="author.html">
-                                    <i class="far fa-user"></i>By - Tnews
-                                </a>
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>22 Mar, 2025
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
-                    <div class="blog-style3">
-                        <div class="blog-img">
-                            <img src="{{ url('site/assets/img/blog/blog_5_2_24.jpg') }}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">Camera</a>
-                            <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">Gadgets: Simplify life, elevate your
-                                    experience.</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="author.html">
-                                    <i class="far fa-user"></i>By - Tnews
-                                </a>
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>17 Mar, 2025
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 col-xl-3 dark-theme">
-                    <div class="blog-style3">
-                        <div class="blog-img">
-                            <img src="{{ url('site/assets/img/blog/blog_5_2_25.jpg') }}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
-                            <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">New gadget can unblock some of your
-                                    future.</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="author.html">
-                                    <i class="far fa-user"></i>By - Tnews
-                                </a>
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>25 Mar, 2025
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
 
         </div>
@@ -338,7 +112,7 @@
         <div class="container space-top img-ads">
             <a href="{{ $ad->link }}" target="_blank" class="ads-style1">
                 <img class="light-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
-                <img class="dark-img" src="{{ url('site/assets/img/ads/ads_5_dark.jpg') }}" alt="ads">
+                <img class="dark-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
             </a>
         </div>
     @endforeach
@@ -378,26 +152,6 @@
                                 </div>
                             </div>
                         @endforeach
-                        {{-- <div class="col-xl-12 col-sm-6">
-                            <div class="blog-style1">
-                                <div class="blog-img">
-                                    <img src="{{ url('site/assets/img/blog/blog_1_38.jpg') }}" alt="blog image">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">Monitor</a>
-                                </div>
-                                <h3 class="box-title-22">
-                                    <a class="hover-line" href="blog-details.html">Embrace the future, gadgets that
-                                        amazing.</a>
-                                </h3>
-                                <div class="blog-meta">
-                                    <a href="author.html">
-                                        <i class="far fa-user"></i>By - Tnews
-                                    </a>
-                                    <a href="blog.html">
-                                        <i class="fal fa-calendar-days"></i>25 Mar, 2025
-                                    </a>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
                 <div class="col-xl-9 mt-4 mt-xl-0">
@@ -567,25 +321,6 @@
                 @endforeach
                 {{-- Fim de Categoria de Cultura --}}
 
-                {{-- <div class="col-xl-4 col-md-6 filter-item cat2">
-                    <div class="blog-style2">
-                        <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_3.jpg') }}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">Phone</a>
-                            <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">Upgrade living, unleash gadget magic
-                                    now.</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>18 Mar, 2025
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
                 {{-- News Sports --}}
                 @foreach ($newsSports as $newssport)
                     <div class="col-xl-4 col-md-6 filter-item cat3">
@@ -613,44 +348,7 @@
                         </div>
                     </div>
                 @endforeach
-                {{-- <div class="col-xl-4 col-md-6 filter-item cat3">
-                    <div class="blog-style2">
-                        <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_5.jpg') }}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">Electronic</a>
-                            <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">Tech wonders, where possibilities
-                                    gadgets.</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>19 Mar, 2025
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-                {{-- <div class="col-xl-4 col-md-6 filter-item cat1">
-                    <div class="blog-style2">
-                        <div class="blog-img img-big">
-                            <img src="{{ url('site/assets/img/blog/blog_3_3_6.jpg') }}" alt="blog image">
-                        </div>
-                        <div class="blog-content">
-                            <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
-                            <h3 class="box-title-20">
-                                <a class="hover-line" href="blog-details.html">Where innovation meets everyday
-                                    brilliance.</a>
-                            </h3>
-                            <div class="blog-meta">
-                                <a href="blog.html">
-                                    <i class="fal fa-calendar-days"></i>26 Mar, 2025
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
+                {{-- Fim de News Sports --}}
             </div>
         </div>
     </section>
@@ -724,63 +422,6 @@
                                 </div>
                             </div>
                         @endforeach
-                        {{-- <div class="col-md-6">
-                            <div class="blog-style2">
-                                <div class="blog-img img-big">
-                                    <img src="{{ url('site/assets/img/blog/blog_3_3_8.jpg') }}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">Tech</a>
-                                    <h3 class="box-title-20">
-                                        <a class="hover-line" href="blog-details.html">From dreams to reality, tech
-                                            pioneers</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>10 Mar, 2025
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="blog-style2">
-                                <div class="blog-img img-big">
-                                    <img src="{{ url('site/assets/img/blog/blog_3_3_9.jpg') }}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">Gadget</a>
-                                    <h3 class="box-title-20">
-                                        <a class="hover-line" href="blog-details.html">Technology drives the digital
-                                            revolution</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>16 Mar, 2025
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="blog-style2">
-                                <div class="blog-img img-big">
-                                    <img src="{{ url('site/assets/img/blog/blog_3_3_10.jpg') }}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">VR Glass</a>
-                                    <h3 class="box-title-20">
-                                        <a class="hover-line" href="blog-details.html">Where possibility meet boundless
-                                            feelings</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>30 Mar, 2025
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                     {{-- Fim de Noticias de Ciencias e Tecnologia --}}
 
@@ -789,8 +430,7 @@
                         <div class="space mt-40 mb-40 img-ads">
                             <a href="{{ $ad->link }}" target="_blank" class="ads-style1">
                                 <img class="w-100 light-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
-                                <img class="w-100 dark-img" src="{{ url('site/assets/img/ads/ads_6_dark.jpg') }}"
-                                    alt="ads">
+                                <img class="w-100 dark-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
                             </a>
                         </div>
                     @endforeach
@@ -819,7 +459,7 @@
                                             <a href="author.html">
                                                 <i class="far fa-user"></i>By - Tnews
                                             </a>
-                                            <a href="blog.html">
+                                            <a href="#">
                                                 <i
                                                     class="fal fa-calendar-days"></i>{{ $economic->updated_at->format('d M, Y') }}
                                             </a>
@@ -830,102 +470,6 @@
                                 </div>
                             </div>
                         @endforeach
-                        {{-- <div class="mb-4">
-                            <div class="blog-style4">
-                                <div class="blog-img w-270">
-                                    <img src="{{ url('site/assets/img/blog/blog_6_3_2.jpg') }}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">Technology</a>
-                                    <h3 class="box-title-22">
-                                        <a class="hover-line" href="blog-details.html">where possibilities blossom, and
-                                            lives thrive with technology.</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="author.html">
-                                            <i class="far fa-user"></i>By - Tnews
-                                        </a>
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>17 Mar, 2025
-                                        </a>
-                                    </div>
-                                    <a href="blog-details.html" class="th-btn style2">Read More<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="blog-style4">
-                                <div class="blog-img w-270">
-                                    <img src="{{ url('site/assets/img/blog/blog_6_3_3.jpg') }}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">Robotic</a>
-                                    <h3 class="box-title-22">
-                                        <a class="hover-line" href="blog-details.html">Robotics empowers progress,
-                                            reshaping industries with ingenuity.</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="author.html">
-                                            <i class="far fa-user"></i>By - Tnews
-                                        </a>
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>29 Mar, 2025
-                                        </a>
-                                    </div>
-                                    <a href="blog-details.html" class="th-btn style2">Read More<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="blog-style4">
-                                <div class="blog-img w-270">
-                                    <img src="{{ url('site/assets/img/blog/blog_6_3_4.jpg') }}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">Desk</a>
-                                    <h3 class="box-title-22">
-                                        <a class="hover-line" href="blog-details.html">where gadgets enhance your life
-                                            effortlessly and beautifully.</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="author.html">
-                                            <i class="far fa-user"></i>By - Tnews
-                                        </a>
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>29 Mar, 2025
-                                        </a>
-                                    </div>
-                                    <a href="blog-details.html" class="th-btn style2">Read More<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="blog-style4">
-                                <div class="blog-img w-270">
-                                    <img src="{{ url('site/assets/img/blog/blog_6_3_5.jpg') }}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#6234AC" href="blog.html" class="category">VR Glass</a>
-                                    <h3 class="box-title-22">
-                                        <a class="hover-line" href="blog-details.html">Elevate life, redefine human
-                                            potential with virtual reality.</a>
-                                    </h3>
-                                    <div class="blog-meta">
-                                        <a href="author.html">
-                                            <i class="far fa-user"></i>By - Tnews
-                                        </a>
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>15 Mar, 2025
-                                        </a>
-                                    </div>
-                                    <a href="blog-details.html" class="th-btn style2">Read More<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                     {{-- Fim da sessão de Economia e Negocio --}}
                 </div>
@@ -938,7 +482,7 @@
                                     <a href="{{ $ad->link }}" target="_blank" class="ads-style1">
                                         <img class="w-100 light-img" src="{{ asset('img/ads/' . $ad->image) }}"
                                             alt="ads">
-                                        <img class="w-100 dark-img" src="{{ url('site/assets/img/ads/ads_3_dark.jpg') }}"
+                                        <img class="w-100 dark-img" src="{{ asset('img/ads/' . $ad->image) }}"
                                             alt="ads">
                                     </a>
                                 </div>
@@ -977,66 +521,6 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                {{-- <div class="col-xl-12 col-md-6">
-                                    <div class="blog-style2">
-                                        <div class="blog-img img-big">
-                                            <img src="{{ url('site/assets/img/blog/blog_3_3_12.jpg') }}"
-                                                alt="blog image">
-                                        </div>
-                                        <div class="blog-content">
-                                            <a data-theme-color="#6234AC" href="blog.html" class="category">Phone</a>
-                                            <h3 class="box-title-20">
-                                                <a class="hover-line" href="blog-details.html">Tech at your fingertips,
-                                                    phone redefines</a>
-                                            </h3>
-                                            <div class="blog-meta">
-                                                <a href="blog.html">
-                                                    <i class="fal fa-calendar-days"></i>17 Mar, 2025
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="blog-style2">
-                                        <div class="blog-img img-big">
-                                            <img src="{{ url('site/assets/img/blog/blog_3_3_13.jpg') }}"
-                                                alt="blog image">
-                                        </div>
-                                        <div class="blog-content">
-                                            <a data-theme-color="#6234AC" href="blog.html" class="category">VR Glass</a>
-                                            <h3 class="box-title-20">
-                                                <a class="hover-line" href="blog-details.html">Elevate life, embrace
-                                                    modern technology.</a>
-                                            </h3>
-                                            <div class="blog-meta">
-                                                <a href="blog.html">
-                                                    <i class="fal fa-calendar-days"></i>20 Mar, 2025
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="blog-style2">
-                                        <div class="blog-img img-big">
-                                            <img src="{{ url('site/assets/img/blog/blog_3_3_14.jpg') }}"
-                                                alt="blog image">
-                                        </div>
-                                        <div class="blog-content">
-                                            <a data-theme-color="#6234AC" href="blog.html" class="category">Robotic</a>
-                                            <h3 class="box-title-20">
-                                                <a class="hover-line" href="blog-details.html">Robotic wonders redefine
-                                                    possibilities.</a>
-                                            </h3>
-                                            <div class="blog-meta">
-                                                <a href="blog.html">
-                                                    <i class="fal fa-calendar-days"></i>25 Mar, 2025
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
                             </div>
                         </div>
                         {{-- Fim da sessão de Sociedade --}}

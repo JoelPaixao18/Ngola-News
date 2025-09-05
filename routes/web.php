@@ -213,3 +213,7 @@ Route::prefix('_admin.ads')->name('admin.')->group(function () {
 Auth::routes();
 Route::redirect('/home', '/admin');
 Route::get('/admin', 'HomeController@index')->name('home')->middleware('auth');
+
+
+Route::get('/pesquisa', [NewsController::class, 'search'])->name('news.search');
+

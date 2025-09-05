@@ -14,8 +14,8 @@
                     </a>
                 </div>
                 <p class="about-text">As revistas abrangem uma ampla gama de assuntos, incluindo, entre
-                                outros, moda, estilo de vida,
-                                política, negócios, entretenimento, desportos, ciência...</p>
+                    outros, moda, estilo de vida,
+                    política, negócios, entretenimento, desportos, ciência...</p>
                 <div class="th-social style-black">
                     <a href="https://www.facebook.com">
                         <i class="fab fa-facebook-f"></i>
@@ -43,7 +43,8 @@
                     </div>
                     <div class="media-body">
                         <h4 class="post-title">
-                            <a class="hover-line" href="blog-details.html">Fitness: Your journey to Better, stronger
+                            <a class="hover-line" href="blog-details.html">Fitness: Your journey to Better,
+                                stronger
                                 you.</a>
                         </h4>
                         <div class="recent-post-meta">

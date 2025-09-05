@@ -66,7 +66,7 @@
                                             {{ $publication->title }}</button>
                                         <div id="book"></div>
                                         <input type="text" id="page-number" style="width: 80px">
-                                        <span id="number-pages" ></span><br>
+                                        <span id="number-pages"></span><br>
                                         <span class="btn btn-warning" id="prev-page">Anterior</span>
                                         <span class="btn btn-dark" id="next-page">Próxima</span>
                                     </div>
@@ -200,9 +200,8 @@
                         @endforelse
                         {{-- Fim de Sesssão dos Postes Recentes --}}
                         <div class="widget">
-                            <div class="widget-ads"><a
-                                    href="../../../../themeforest.net/user/themeholy/portfolio.html"><img class="w-100"
-                                        src="assets/img/ads/siderbar_ads_1.jpg" alt="ads"></a></div>
+                            <div class="widget-ads"><a href="../../../../themeforest.net/user/themeholy/portfolio.html"><img
+                                        class="w-100" src="assets/img/ads/siderbar_ads_1.jpg" alt="ads"></a></div>
                         </div>
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Tags Populares</h3>
