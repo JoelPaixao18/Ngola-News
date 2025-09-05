@@ -14,6 +14,7 @@ use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\AdvertisementController;
+use Illuminate\Support\Facades\Auth;
 
 
 /*-------------------------------------------------------
