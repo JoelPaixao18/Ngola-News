@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 @section('title', 'Visualizar evento')
-@section('content-eventView')
+@section('content')
 
 
     <div class="breadcumb-wrapper">

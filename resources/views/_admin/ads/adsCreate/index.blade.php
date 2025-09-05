@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Ngola News - Criar Ads(Publicidade)')
-@section('content-adsCreate')
+@section('content')
 
     <!-- [ Craete Form ] -->
     <div class="nxl-content">

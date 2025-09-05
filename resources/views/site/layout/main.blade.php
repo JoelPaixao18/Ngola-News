@@ -51,50 +51,52 @@
     @include('site.layout.switcher')
     @include('site.layout.popupSubscribe')
 
-    {{-- Menu home --}}
-    @yield('content-home')
+    {{-- pegando todos os conteudos --}}
+    @yield('content')
+    {{-- Menu home --}}{{-- 
+    @yield('content-home') --}}
     {{-- End menu home --}}
 
-    {{-- Menu about --}}
-    @yield('content-about')
+    {{-- Menu about --}}{{-- 
+    @yield('content-about') --}}
     {{-- End menu about --}}
 
-    {{-- Menu contact --}}
-    @yield('content-contact')
+    {{-- Menu contact --}}{{-- 
+    @yield('content-contact') --}}
     {{-- End menu contact --}}
 
     {{-- Menu category --}}
-    @yield('content-category')
+    {{-- @yield('content-category') --}}
     {{-- End menu category --}}
 
     {{-- ######## Listagens ####### --}}
 
     {{-- Menu eventCategory --}}
-    @yield('content-eventCategory')
+    {{-- @yield('content-eventCategory') --}}
     {{-- End menu eventCategory --}}
 
     {{-- Menu newsCategory --}}
-    @yield('content-newsCategory')
+   {{--  @yield('content-newsCategory') --}}
     {{-- End menu newsCategory --}}
 
     {{-- Menu Policy --}}
-    @yield('content-policyCategory')
+    {{-- @yield('content-policyCategory') --}}
     {{-- End menu Policy --}}
 
     {{-- Menu Society --}}
-    @yield('content-societyCategory')
+    {{-- @yield('content-societyCategory') --}}
     {{-- End menu Society --}}
 
     {{-- Menu economic --}}
-    @yield('content-economicCategory')
+    {{-- @yield('content-economicCategory') --}}
     {{-- End menu economic --}}
 
     {{-- Menu Culture --}}
-    @yield('content-cultureCategory')
+   {{--  @yield('content-cultureCategory') --}}
     {{-- End menu Culture --}}
 
     {{-- Menu Tech --}}
-    @yield('content-techCategory')
+    {{-- @yield('content-techCategory') --}}
     {{-- End menu Tech --}}
 
     {{-- End Listagens --}}
@@ -102,23 +104,23 @@
     {{-- Visualizações --}}
 
     {{-- Menu Visualizar Evento --}}
-    @yield('content-eventView')
+    {{-- @yield('content-eventView') --}}
     {{-- End menu Visualizar Evento --}}
 
     {{-- Menu Visualizar Notícia --}}
-    @yield('content-newsView')
+   {{--  @yield('content-newsView') --}}
     {{-- End menu Visualizar Notícia --}}
 
     {{-- Menu Publicação --}}
-    @yield('content-publication')
+    {{-- @yield('content-publication') --}}
     {{-- End menu Publicação --}}
 
     {{-- Menu Videos --}}
-    @yield('content-videos')
+    {{-- @yield('content-videos') --}}
     {{-- End menu Videos --}}
 
     {{-- Menu galery --}}
-    @yield('content-galery')
+    {{-- @yield('content-galery') --}}
     {{-- End menu galery --}}
 
     @include('site.layout.footer')

@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Ngola News - Editar Autor')
-@section('content-authorEdit')
+@section('content')
     <!--! ================================================================ !-->
     <!--! [Start] Main Content !-->
     <!--! ================================================================ !-->

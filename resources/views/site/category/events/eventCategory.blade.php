@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 @section('title', 'Event Category')
-@section('content-eventCategory')
+@section('content')
 
     <div class="breadcumb-wrapper">
         <div class="container">

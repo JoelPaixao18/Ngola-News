@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Create Publication')
-@section('content-publicationCreate')
+@section('content')
 
     <div class="nxl-content">
         <!-- [ page-header ] start -->
