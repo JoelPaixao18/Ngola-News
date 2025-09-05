@@ -51,6 +51,7 @@
     @include('site.layout.search')
     @include('site.layout.switcher')
     @include('site.layout.popupSubscribe')
+    @include('site.layout.mobileMenu')
 
     {{-- pegando todos os conteudos --}}
     @yield('content')
