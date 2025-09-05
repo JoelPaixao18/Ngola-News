@@ -2374,7 +2374,7 @@
                             <div class="dropdown nxl-h-item">
                                 <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button"
                                     data-bs-auto-close="outside">
-                                    <img src="{{ url('assets/images/avatar/1.png') }}" alt="user-image"
+                                    <img src="{{ url('assets/images/user.png') }}" alt="user-image"
                                         class="img-fluid user-avtar me-0">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-user-dropdown">
@@ -2385,8 +2385,11 @@
                                                 <span class="badge bg-soft-success text-success ms-1">PRO</span>
                                             </h6>
                                         </div>
+                                        <p class="fs-11 text-muted mb-0">{{ Auth::user()->email }}</p>
                                     </div>
                                     <div class="dropdown-item">
+                                        <a href="/">Website</a>
+                                    </div>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -2397,14 +2400,14 @@
                                     class="d-none">
                                     @csrf
                                 </form>
-                                </div>
-                                
                             </div>
-                            </li>
+
                     </div>
-                @endguest
-                </ul>
-                {{-- <div class="dropdown nxl-h-item">
+                    </li>
+                </div>
+            @endguest
+            </ul>
+            {{-- <div class="dropdown nxl-h-item">
                         <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button" data-bs-auto-close="outside">
                             <img src="{{ url('assets/images/avatar/1.png')}}" alt="user-image" class="img-fluid user-avtar me-0">
                         </a>
@@ -2543,7 +2546,7 @@
                             </a>
                         </div>
                     </div> --}}
-            </div>
+        </div>
         </div>
         <!--! [End] Header Right !-->
         </div>
