@@ -5,7 +5,7 @@
                 <div class="col-lg-2 d-none d-lg-inline-block">
                     <div class="header-logo">
                         <a href="/">
-                            <img src="{{ url('site/assets/img/1-Photoroom.png') }}" alt="Tnews">
+                            <img src="{{ url('site/assets/img/1-Photoroom.png')}}" alt="Tnews">
                         </a>
                     </div>
                 </div>
@@ -73,10 +73,10 @@
                             <div class="col-auto d-lg-none d-block">
                                 <div class="header-logo">
                                     <a href="/">
-                                        <img class="light-img" src="assets/img/logoNgolaLong1.png" alt="Tnews">
+                                        <img class="light-img" src="{{ url('assets/images/1-Photoroom.png') }}" alt="Assessorarte">
                                     </a>
                                     <a href="/">
-                                        <img class="dark-img" src="assets/img/logo-white.svg" alt="Tnews">
+                                        <img class="dark-img" src="{{ url('assets/images/1-Photoroom.png') }}" alt="Assessorarte">
                                     </a>
                                 </div>
                             </div>
