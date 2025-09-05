@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Ngola News - Editar Tag')
-@section('content-tagEdit')
+@section('content')
 
     <!-- [ Craete Form ] -->
     <div class="nxl-content">

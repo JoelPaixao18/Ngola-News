@@ -210,5 +210,5 @@ Route::prefix('_admin.categories')->name('admin.')->group(function () {
 });
 
 Auth::routes();
-
+Route::redirect('/home', '/admin');
 Route::get('/admin', 'HomeController@index')->name('home')->middleware('auth');

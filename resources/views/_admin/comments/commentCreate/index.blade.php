@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 @section('title', 'Ngola News - Criar Comentário')
-@section('content-commentCreate')
+@section('content')
 
     <!-- [ Craete Form ] -->
     <div class="nxl-content">
