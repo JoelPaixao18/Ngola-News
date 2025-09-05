@@ -65,13 +65,8 @@
                                             onclick="openFlipbook('{{ asset('files/publication/' . $publication->file) }}')">Abrir
                                             {{ $publication->title }}</button>
                                         <div id="book"></div>
-<<<<<<< HEAD
-                                        <input type="text" id="page-number" style="width: 80px">
-                                        <span id="number-pages"></span><br>
-=======
                                         <input type="text" id="page-number" style="background-color: #0909096f; color:#fff; width:140px;">
                                         <span id="number-pages" style="background-color: #0909096f; color:#fff; width:140px; padding:15px 50px; border-radius:5px" ><br>
->>>>>>> 63bb00b317ab735186330c461bcb37dd0dcf1d6f
                                         <span class="btn btn-warning" id="prev-page">Anterior</span>
                                         <span class="btn btn-dark" id="next-page">Próxima</span>
                                     </div>
