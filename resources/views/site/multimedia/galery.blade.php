@@ -59,18 +59,18 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div id="book">
-                                            <div class="cover bg-danger">
-                                                @isset($galery)
+                                        <div class="row align-items-start">
+                                            <div class="col-md-4 ms-4">
+                                                @if($galery)
                                                     <img src="{{ asset('img/galeries/' . $galery->image) }}" alt="">
-                                                @endisset
-                                                <h1>O Livro</h1>
+                                                @endif
                                             </div>
-                                        </div>
-                                        <div id="controls" class="mt-3">
-                                            <label for="page-number">Página:</label>
-                                            <input type="text" size="3" id="page-number"> de
-                                            <span id="number-pages"></span>
+                                            <div class="col-md-4 ms-4">
+                                                <ul class="nxl-has-children">
+                                                    <li class="nxl-item">Título: {{$galery->title}}</li>
+                                                    <li class="nxl-item">Descrição: {{$galery->description}}</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">

@@ -149,3 +149,9 @@
 /* #page-number input{
     width: 50px;
 } */
+
+/* modal */
+/* Torna o fundo do modal transparente */
+.modal-content{
+    background-color: #0909096f;
+}
