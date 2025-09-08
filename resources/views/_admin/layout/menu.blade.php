@@ -95,6 +95,20 @@
                     </ul>
                 </li>
 
+                {{-- Menu Tags --}}
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="javascript:void(0);" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-tag"></i></span>
+                        <span class="nxl-mtext">Tags</span><span class="nxl-arrow"><i
+                                class="feather-chevron-right"></i></span>
+                    </a>
+                    <ul class="nxl-submenu">
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.tags.index') }}">Tag</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.tag.create') }}">Nova Tag</a>
+                        </li>
+                    </ul>
+                </li>
+
                 {{-- Menu News --}}
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
@@ -109,20 +123,6 @@
                 <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.news.create') }}">Nova Notícia</a>
                 </li>
             </ul>
-            </li>
-
-            {{-- Menu Tags --}}
-            <li class="nxl-item nxl-hasmenu">
-                <a href="javascript:void(0);" class="nxl-link">
-                    <span class="nxl-micon"><i class="feather-tag"></i></span>
-                    <span class="nxl-mtext">Tags</span><span class="nxl-arrow"><i
-                            class="feather-chevron-right"></i></span>
-                </a>
-                <ul class="nxl-submenu">
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.tags.index') }}">Tag</a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.tag.create') }}">Nova Tag</a>
-                    </li>
-                </ul>
             </li>
 
             {{-- Menu Comments --}}

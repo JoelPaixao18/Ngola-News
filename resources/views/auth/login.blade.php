@@ -9,13 +9,14 @@
                 </div>
                 <div class="card-body p-sm-5">
                     <h2 class="fs-20 fw-bolder mb-4">Login</h2>
-                    <h4 class="fs-13 fw-bold mb-2">Login to your account</h4>
-                    <p class="fs-12 fw-medium text-muted">Thank you for get back <strong>Nelel</strong> web applications,
-                        let's access our the best recommendation for you.</p>
+                    <h4 class="fs-13 fw-bold mb-2">Entra com a sua conta</h4>
+                    {{-- <p class="fs-12 fw-medium text-muted">Thank you for get back <strong>Nelel</strong> web applications,
+                        let's access our the best recommendation for you.</p> --}}
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="mb-4">
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                                value="{{ old('email') }}" required autocomplete="email" autofocus>
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -37,24 +38,24 @@
                                     <input type="checkbox" class="custom-control-input" name="remember" id="remember"
                                         {{ old('remember') ? 'checked' : '' }}>
                                     <label class="custom-control-label c-pointer"
-                                        for="rememberMe">{{ __('Remember Me') }}</label>
+                                        for="rememberMe">{{ __('Lembre de mim') }}</label>
                                 </div>
                             </div>
                             <div>
                                 @if (Route::has('password.request'))
                                     <a class="fs-11 text-danger" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Esqueceu a sua senha?') }}
                                     </a>
                                 @endif
                             </div>
                         </div>
                         <div class="mt-5">
-                            <button type="submit" class="btn btn-lg btn-danger w-100">{{ __('Login') }}</button>
+                            <button type="submit" class="btn btn-lg btn-danger w-100">{{ __('Entrar') }}</button>
                         </div>
                     </form>
                     <div class="w-100 mt-5 text-center mx-auto">
                         <div class="mb-4 border-bottom position-relative"><span
-                                class="small py-1 px-3 text-uppercase text-muted bg-white position-absolute translate-middle">or</span>
+                                class="small py-1 px-3 text-uppercase text-muted bg-white position-absolute translate-middle">ou</span>
                         </div>
                         <div class="d-flex align-items-center justify-content-center gap-2">
                             <a href="javascript:void(0);" class="btn btn-light-brand flex-fill" data-bs-toggle="tooltip"
@@ -72,8 +73,8 @@
                         </div>
                     </div>
                     <div class="mt-5 text-muted">
-                        <span> Don't have an account?</span>
-                        <a href="/register" class="fw-bold">Create an Account</a>
+                        <span> Não tem uma conta?</span>
+                        <a href="/register" class="fw-bold">Criar Conta</a>
                     </div>
                 </div>
             </div>

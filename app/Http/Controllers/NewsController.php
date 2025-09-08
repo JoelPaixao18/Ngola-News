@@ -36,8 +36,8 @@ class NewsController extends Controller
         //
         //trazendo as categorias
         $categories = Category::all();
-
-        return view('_admin.news.newsCreate.index', compact('categories'));
+        $tags = Tag::all();
+        return view('_admin.news.newsCreate.index', compact('categories', 'tags'));
     }
 
     /**
@@ -58,6 +58,8 @@ class NewsController extends Controller
             'date' => 'required|date|after_or_equal:today',
             'detach' => 'required|in:normal,destaque,urgente',
             'category_id' => 'required|exists:categories,id',
+            'tags' => 'array',
+            'tags.*' => 'exists:tags,id'
         ], [
             'title.required' => 'O título é obrigatório.',
             'subtitle.required' => 'O subtítulo é obrigatório.',
@@ -88,12 +90,14 @@ class NewsController extends Controller
             $data['image'] = $imageName; // Adiciona o nome da imagem ao array de dados
         }
 
-        News::create($data);
+        $news = News::create($data);
 
-        // Salvar as tags
-        /* if ($request->has('tags')) {
+        // Associar tags se fornecidas
+        if ($request->has('tags')) {
             $news->tags()->sync($request->tags);
-        } */
+        } else {
+            $news->tags()->sync([]); // Se não enviar nenhuma tag, remove todas
+        }
 
         return redirect()->route('admin.news.index')->with('success', 'Notícia criado com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Notícia!');
@@ -124,8 +128,9 @@ class NewsController extends Controller
     {
         //
         $categories = Category::all(); // Or any other query to fetch categories
+        $tags = Tag::all();
 
-        return view('_admin.news.newsEdit.index', ['news' => $news], compact('categories'));
+        return view('_admin.news.newsEdit.index', ['news' => $news], compact('categories', 'tags'));
     }
 
     /**
@@ -147,6 +152,8 @@ class NewsController extends Controller
             'date' => 'required|date|after_or_equal:today',
             'detach' => 'required|in:normal,destaque,urgente',
             'category_id' => 'required|exists:categories,id',
+            'tags' => 'array',
+            'tags.*' => 'exists:tags,id'
         ], [
             'title.required' => 'O título é obrigatório.',
             'subtitle.required' => 'O subtítulo é obrigatório.',
@@ -189,12 +196,12 @@ class NewsController extends Controller
         //$news->update($request->all());
         $news->update($data);
 
-        // Atualizar as tags
-        /* if ($request->has('tags')) {
+         // Associar tags se fornecidas
+        if ($request->has('tags')) {
             $news->tags()->sync($request->tags);
         } else {
             $news->tags()->sync([]); // Se não enviar nenhuma tag, remove todas
-        } */
+        }
 
         return redirect()->route('admin.news.index')->with('success', 'Notícia atualizada com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Notícia!');
@@ -216,40 +223,40 @@ class NewsController extends Controller
             ->with('success', 'Notícia eliminado com sucesso');
     }
 
+    // Função de busca
     public function search(Request $request)
     {
         $query = $request->input('q');
 
-        $news = News::with(['category.typeCategory'])
+        $news = News::with(['category.typeCategory', 'tags'])
             ->where('title', 'like', "%{$query}%")
-
-            // Filtra pelo nome da categoria
             ->orWhereHas('category', function ($q1) use ($query) {
                 $q1->where('name', 'like', "%{$query}%");
             })
-
-            // Filtra pelo nome do tipo de categoria
             ->orWhereHas('category.typeCategory', function ($q2) use ($query) {
                 $q2->where('name', 'like', "%{$query}%");
             })
+            ->orWhereHas('tags', function ($q3) use ($query) {
+                $q3->where('name', 'like', "%{$query}%");
+            })
             ->get();
 
-            $categories = Category::where('name')->get();
+        $categories = Category::where('name')->get();
 
-            $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
+        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 
-            $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
+        $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
 
-            $footerCategory = Category::select('name')
-                ->distinct()
-                ->get()
-                ->take(5);
+        $footerCategory = Category::select('name')
+            ->distinct()
+            ->get()
+            ->take(5);
 
-            $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
+        $Recent = News::orderBy('updated_at', 'desc')->get()->take(2);
 
-            $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
+        $RecentPost = News::orderBy('updated_at', 'desc')->get()->take(4);
 
-            $ads = Advertisement::orderByDesc('id')->take(1)->get();
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
 
         return view('site.search-results.search', compact(
             'news',
@@ -260,8 +267,7 @@ class NewsController extends Controller
             'subscription',
             'Recent',
             'RecentPost',
-            'ads'));
+            'ads'
+        ));
     }
-
-
 }

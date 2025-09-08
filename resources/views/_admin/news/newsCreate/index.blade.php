@@ -63,6 +63,21 @@
                                 @method('POST')
 
                                 <div class="row">
+
+                                    {{-- Name of Tag --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Tags</label>
+                                        <select class="form-control" name="tags[]">
+                                            <option value="">-- Selecione uma categoria --</option>
+                                            @foreach ($tags as $tag)
+                                                <option value="{{ $tag->id }}"
+                                                    {{ isset($news) && $news->tags->contains($tag->id) ? 'selected' : '' }}>
+                                                    {{ $tag->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
                                     {{-- Categoria --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Categoria da Notícia</label>

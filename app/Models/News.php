@@ -26,21 +26,25 @@ class News extends Model
         'description',
     ];
 
+    /* função para criar o relacionamento 1:N entre notícias e comentários */
     public function comment()
     {
         return $this->hasMany(Comment::class);
     }
 
+    /* função para criar o relacionamento N:1 entre notícias e categorias */
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
+
 
     public function getFormattedDateAttribute()
     {
         return $this->date->format('d/m/Y');
     }
 
+    /* Função de Slug */
     protected static function boot()
     {
         parent::boot();
@@ -54,6 +58,7 @@ class News extends Model
         });
     }
 
+    /* função para criar o relacionamento N:N entre notícias e tags */
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'news_tags');
