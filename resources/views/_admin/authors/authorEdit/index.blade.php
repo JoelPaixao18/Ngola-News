@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Editar Autor')
+@section('title', 'Assessorarte- Editar Autor')
 @section('content')
     <!--! ================================================================ !-->
     <!--! [Start] Main Content !-->
@@ -79,8 +79,8 @@
                                 </a> --}}
                             </div>
                         </div>
-                        <a href="{{ route('admin.author.index')}}" class="btn btn-danger">
-                           <i class="feather-chevron-left me-2"></i>
+                        <a href="{{ route('admin.author.index') }}" class="btn btn-danger">
+                            <i class="feather-chevron-left me-2"></i>
                             <span>Voltar</span>
                         </a>
                     </div>
@@ -97,8 +97,8 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                             Criando Formulario author Create
-                                 _______________________________________________________________-->
+                                                 Criando Formulario author Create
+                                     _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="authorForm" action="{{ route('admin.author.update', ['author' => $author]) }}" method="post"
@@ -643,17 +643,17 @@
                                             </select>
                                         </div>
                                     </div> --}}
-                                    <div class="row mb-4 align-items-center">
-                                        <div class="col-lg-12">
-                                            <button type="submit" class="btn btn-danger"> Salvar
-                                            <i class="feather-save ms-2"></i>
-                                        </button>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-12">
+                                                <button type="submit" class="btn btn-danger"> Salvar
+                                                    <i class="feather-save ms-2"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        </div>
+                            </div>
 
                     </form>
 

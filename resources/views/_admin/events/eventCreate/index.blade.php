@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Criar Evento')
+@section('title', 'Assessorarte- Criar Evento')
 @section('content')
     <!--! ================================================================ !-->
     <!--! [Start] Main Content !-->
@@ -97,8 +97,8 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                  Criando Formulario Event Create
-                   _______________________________________________________________-->
+                                      Criando Formulario Event Create
+                       _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="eventForm" action="{{ route('admin.event.store') }}" method="post"

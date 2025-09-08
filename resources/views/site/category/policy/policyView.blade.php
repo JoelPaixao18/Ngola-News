@@ -1,5 +1,5 @@
 @extends('site.layout.main')
-@section('title', 'Ngola News - Política')
+@section('title', 'Assessorarte- Política')
 @section('content')
 
 

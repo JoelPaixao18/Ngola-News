@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 
-@section('title', 'Ngola News - Editar Notícia')
+@section('title', 'Assessorarte- Editar Notícia')
 
 @section('content')
     <!-- [ Craete Form ] -->
@@ -78,7 +78,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    
+
                                     {{-- Categoria --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Categoria da Notícia</label>

@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Criar Tipo de Categoria')
+@section('title', 'Assessorarte- Criar Tipo de Categoria')
 @section('content')
 
     <!-- [ Craete Form ] -->
@@ -71,7 +71,7 @@
                                             value="{{ old('name', $typeCategory->name ?? '') }}" value="{{ old('name') }}"
                                             placeholder="Ex: Notícia, Eventos...">
                                     </div>
-                                    
+
                                     {{-- Descrição --}}
                                     <div class="col-12 mb-4">
                                         <label class="form-label">Descrição</label>

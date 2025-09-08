@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 
-@section('title', 'Ngola News - Listar Notícia')
+@section('title', 'Assessorarte- Listar Notícia')
 
 @section('content')
     <div class="nxl-content">
@@ -235,9 +235,10 @@
                                                         class="hstack gap-3">
                                                         <div class="avatar-image avatar-md">
                                                             @if ($news->image)
-                                                               <a href="{{ asset('img/news/' . $news->image) }}"> <img src="{{ asset('img/news/' . $news->image) }}"
-                                                                    alt="News Image" class="img-thumbnail"
-                                                                    style="max-width: 50px; max-height: 50px;"></a>
+                                                                <a href="{{ asset('img/news/' . $news->image) }}"> <img
+                                                                        src="{{ asset('img/news/' . $news->image) }}"
+                                                                        alt="News Image" class="img-thumbnail"
+                                                                        style="max-width: 50px; max-height: 50px;"></a>
                                                             @else
                                                                 <i class="feather-image"></i>
                                                             @endif

@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Listar Ads(Publicidades)')
+@section('title', 'Assessorarte- Listar Ads(Publicidades)')
 @section('content')
     <div class="nxl-content">
         <!-- [ page-header ] start -->
@@ -230,12 +230,12 @@
                                                     </div>
 
                                                 </td>
-                                                <td><a href="{{ $ad->link }}" target="_blank">{{ $ad->link }}</a></td>
+                                                <td><a href="{{ $ad->link }}" target="_blank">{{ $ad->link }}</a>
+                                                </td>
                                                 <td>{{ ucfirst($ad->position) }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
-                                                        <a class="avatar-text avatar-md"
-                                                            href="#">
+                                                        <a class="avatar-text avatar-md" href="#">
                                                             <i class="feather feather-eye"></i>
                                                         </a>
                                                         <div class="dropdown">
@@ -244,16 +244,14 @@
                                                                 <i class="feather feather-more-horizontal"></i>
                                                             </a>
                                                             <ul class="dropdown-menu">
-                                                                <a class="dropdown-item"
-                                                                    href="#">
+                                                                <a class="dropdown-item" href="#">
                                                                     <i class="feather feather-edit-3 me-3"></i>
                                                                     <span>Edit</span>
                                                                 </a>
                                                                 </li>
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="#">
+                                                                    <a class="dropdown-item" href="#">
                                                                         <i class="feather feather-trash-2 me-3"></i>
                                                                         <span>Delete</span>
                                                                     </a>

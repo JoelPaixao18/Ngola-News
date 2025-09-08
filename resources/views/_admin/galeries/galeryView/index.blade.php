@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Visualizar Autor')
+@section('title', 'Assessorarte- Visualizar Autor')
 @section('content')
     <div class="nxl-content">
         <!-- [ page-header ] start -->
@@ -51,8 +51,8 @@
                         </div>
 
                         <a href="{{ route('admin.galery.index') }}" class="btn btn-danger ">
-                             <i class="feather-chevron-left me-2"></i>
-                                    <span>Voltar</span>
+                            <i class="feather-chevron-left me-2"></i>
+                            <span>Voltar</span>
 
                         </a>
                     </div>
@@ -75,8 +75,8 @@
                                     <div class="wd-150 ht-150 mx-auto mb-3 position-relative">
                                         <div class="avatar-image wd-150 ht-150 border border-5 border-gray-3">
                                             <a href="{{ asset('img/galeries/' . $galery->image) }}">
-                                            <img src="{{ asset('img/galeries/' . $galery->image) }}" alt="{{ $galery->image }}"
-                                                class="img-fluid"></a>
+                                                <img src="{{ asset('img/galeries/' . $galery->image) }}"
+                                                    alt="{{ $galery->image }}" class="img-fluid"></a>
                                         </div>
                                         <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle"
                                             style="top: 76%; right: 10px">
@@ -96,18 +96,18 @@
                                     </div>
                                 </div>
                                 <ul class="list-unstyled mb-4">
-                                <div class="d-flex gap-2 text-center pt-4">
-                                    <a href="{{ route('admin.galery.delete', ['galery' => $galery]) }}"
-                                        class="w-50 btn btn-light-brand">
-                                        <i class="feather-trash-2 me-2"></i>
-                                        <span>Deletar</span>
-                                    </a>
-                                    <a href="{{ route('admin.galery.edit', ['galery' => $galery]) }}"
-                                        class="w-50 btn btn-danger">
-                                        <i class="feather-edit me-2"></i>
-                                        <span>Editar Perfil</span>
-                                    </a>
-                                </div>
+                                    <div class="d-flex gap-2 text-center pt-4">
+                                        <a href="{{ route('admin.galery.delete', ['galery' => $galery]) }}"
+                                            class="w-50 btn btn-light-brand">
+                                            <i class="feather-trash-2 me-2"></i>
+                                            <span>Deletar</span>
+                                        </a>
+                                        <a href="{{ route('admin.galery.edit', ['galery' => $galery]) }}"
+                                            class="w-50 btn btn-danger">
+                                            <i class="feather-edit me-2"></i>
+                                            <span>Editar Perfil</span>
+                                        </a>
+                                    </div>
                             </div>
                         </div>
                     </div>

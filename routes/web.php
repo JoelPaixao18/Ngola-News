@@ -15,6 +15,8 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\AdvertisementController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 
 /*-------------------------------------------------------
@@ -210,10 +212,17 @@ Route::prefix('_admin.ads')->name('admin.')->group(function () {
     Route::get('categoryDelete/{category}', [AdvertisementController::class, 'destroy'])->name('category.delete'); */
 });
 
+/*-------------------------------------------------------
+                    Auth routes
+-------------------------------------------------------*/
+
 Auth::routes();
 Route::redirect('/home', '/admin');
 Route::get('/admin', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
 
 Route::get('/pesquisa', [NewsController::class, 'search'])->name('news.search');
-

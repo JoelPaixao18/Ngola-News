@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Criar Ads(Publicidade)')
+@section('title', 'Assessorarte- Criar Ads(Publicidade)')
 @section('content')
 
     <!-- [ Craete Form ] -->
