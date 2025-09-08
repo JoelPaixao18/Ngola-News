@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Criar Comentário')
+@section('title', 'Assessorarte- Criar Comentário')
 @section('content')
 
     <!-- [ Craete Form ] -->

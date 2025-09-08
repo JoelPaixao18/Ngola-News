@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Listar Eventos')
+@section('title', 'Assessorarte- Listar Eventos')
 @section('content')
 
     <div class="nxl-content">
@@ -257,9 +257,10 @@
 
                                                         <div class="avatar-image avatar-md">
                                                             @if ($event->image)
-                                                               <a href="{{ asset('img/events/' . $event->image) }}"><img src="{{ asset('img/events/' . $event->image) }}"
-                                                                    alt="event Image" class="img-thumbnail"
-                                                                    style="max-width: 50px; max-height: 50px;"></a> 
+                                                                <a href="{{ asset('img/events/' . $event->image) }}"><img
+                                                                        src="{{ asset('img/events/' . $event->image) }}"
+                                                                        alt="event Image" class="img-thumbnail"
+                                                                        style="max-width: 50px; max-height: 50px;"></a>
                                                             @else
                                                                 <i class="feather-image"></i>
                                                             @endif
@@ -269,11 +270,13 @@
                                                 </td>
                                                 <td>
                                                     <div class="hstack gap-3">
-                                                        <span class="text-truncate-1-line">{{ Str::limit($event->title, 20, '...') }}</span>
+                                                        <span
+                                                            class="text-truncate-1-line">{{ Str::limit($event->title, 20, '...') }}</span>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div href="apps-mail.html">{{ Str::limit($event->subtitle, 20, '...') }}</div>
+                                                    <div href="apps-mail.html">
+                                                        {{ Str::limit($event->subtitle, 20, '...') }}</div>
                                                 </td>
                                                 {{-- <td>{{ $event->cities->name ?? $event->location }}</td> --}}
                                                 {{-- <td>{{ $event->status }}</td> --}}

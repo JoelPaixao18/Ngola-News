@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Listar Tipos de Categorias')
+@section('title', 'Assessorarte- Listar Tipos de Categorias')
 @section('content')
     <div class="nxl-content">
         <!-- [ page-header ] start -->

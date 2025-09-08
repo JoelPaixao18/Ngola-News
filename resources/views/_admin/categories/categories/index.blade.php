@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Listar Categorias')
+@section('title', 'Assessorarte- Listar Categorias')
 @section('content')
     <div class="nxl-content">
         <!-- [ page-header ] start -->
@@ -225,11 +225,11 @@
                                                 <td>{{ $category->id }}</td>
                                                 <td>
 
-                                                        <div>
-                                                            <span class="text-truncate-1-line">{{ $category->name }}</span>
-                                                            {{-- <small
+                                                    <div>
+                                                        <span class="text-truncate-1-line">{{ $category->name }}</span>
+                                                        {{-- <small
                                                                 class="fs-12 fw-normal text-muted">alex.della@outlook.com</small> --}}
-                                                        </div>
+                                                    </div>
 
                                                 </td>
                                                 <td>{{ $category->typeCategory->name ?? 'Sem tipo' }}</td>

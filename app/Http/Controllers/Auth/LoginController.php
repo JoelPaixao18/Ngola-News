@@ -47,6 +47,11 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/login', 302)->with('success', 'Logout feito com sucesso!');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        return redirect()->intended('/admin/dashboard')->with('success', 'Login feito com sucesso. Bem-vindo, ' . $user->name . '!');
     }
 }

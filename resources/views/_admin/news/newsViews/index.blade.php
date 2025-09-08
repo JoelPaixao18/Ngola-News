@@ -1,8 +1,8 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Visualizar Notícia')
+@section('title', 'Assessorarte- Visualizar Notícia')
 @section('content-newsView')
     <div class="nxl-content">
-       <!-- [ page-header ] start -->
+        <!-- [ page-header ] start -->
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
@@ -25,7 +25,7 @@
                         <a href="javascript:void(0);" class="btn btn-icon btn-light-brand">
                             <i class="feather-printer"></i>
                         </a>
-                        <a href="{{ route('admin.news.edit', ['news' => $news])}}" class="btn btn-icon btn-light-brand">
+                        <a href="{{ route('admin.news.edit', ['news' => $news]) }}" class="btn btn-icon btn-light-brand">
                             <i class="feather-edit"></i>
                         </a>
                         <div class="dropdown">
@@ -66,20 +66,21 @@
         <!-- Main Content -->
         <div class="container my-4">
             <!-- News Image -->
-            
+
 
             <!-- News Title and Subtitle -->
             <div class="mb-4">
                 <h1 class="news-title">{{ $news->title }}</h1>
                 <div class="news-subtitle">{{ $news->subtitle }}</div>
-                
+
             </div>
 
             <div class="news-image-container">
                 <a href="{{ asset('img/news/' . $news->image) }}">
-                    <img src="{{ asset('img/news/' . $news->image) }}" alt="{{ $news->title }}" class="news-image rounded shadow/">
+                    <img src="{{ asset('img/news/' . $news->image) }}" alt="{{ $news->title }}"
+                        class="news-image rounded shadow/">
                 </a>
-                
+
             </div>
             {{-- <div class="news-slug">{{ $news->slug }}</div> --}}
 
@@ -89,11 +90,11 @@
                 <div class="col-md-12 mb-4">
                     <div class="info-card">
                         <h5><i class="fas fa-info-circle me-2"></i>Detalhes da Notícia</h5>
-                        
+
                         <div class="info-item">
                             <div class="info-label">Destaque:</div>
                             <div class="info-value">
-                                @if($news->detach == 'normal')
+                                @if ($news->detach == 'normal')
                                     <span class="badge bg-secondary">Normal</span>
                                 @elseif($news->detach == 'destaque')
                                     <span class="badge bg-primary">Destaque</span>
@@ -104,11 +105,11 @@
                                 @endif
                             </div>
                         </div>
-                        
+
                         <div class="info-item">
                             <div class="info-label">Estado:</div>
                             <div class="info-value">
-                                @if($news->status == 'draft')
+                                @if ($news->status == 'draft')
                                     <span class="badge bg-warning">Rascunho</span>
                                 @elseif($news->status == 'published')
                                     <span class="badge bg-success">Publicado</span>
@@ -119,7 +120,7 @@
                                 @endif
                             </div>
                         </div>
-                        
+
                         <div class="info-item">
                             <div class="info-label">Categoria:</div>
                             <div class="info-value">
@@ -129,7 +130,7 @@
                                 </span>
                             </div>
                         </div>
-                        
+
                         <div class="info-item">
                             <div class="info-label">Data da Publicação:</div>
                             <div class="info-value">
@@ -145,12 +146,12 @@
                                 {{ \Carbon\Carbon::parse($news->updated_at)->format('F j, Y \a\t g:i a') }}
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
-                
+
                 <!-- Additional Info -->
-               {{--  <div class="col-md-6 mb-4">
+                {{--  <div class="col-md-6 mb-4">
                     <div class="info-card">
                         <h5><i class="fas fa-link me-2"></i>Informações Adicionais</h5>
                         
@@ -177,7 +178,7 @@
                     </div>
                 </div> --}}
             </div>
-            
+
             <!-- News Description -->
             <div class="description-container">
                 <h5 class="mb-4"><i class="fas fa-align-left me-2"></i>Descrição da Notícia</h5>
@@ -188,7 +189,7 @@
         </div>
     </div>
 
-     <style>
+    <style>
         :root {
             --primary-color: #0d6efd;
             --secondary-color: #6c757d;
@@ -240,43 +241,44 @@
             margin-bottom: 1.5rem;
             margin: 0 1rem;
         }
+
         .news-slug {
             font-size: 1rem;
             color: var(--secondary-color);
             margin-bottom: 1.5rem;
         }
-        
+
         .info-card {
             background-color: white;
             border-radius: 0.5rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
             padding: 1.5rem;
             margin-bottom: 0 1.5rem;
             height: 100%;
         }
-        
+
         .info-card h5 {
             color: var(--primary-color);
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 0.75rem;
             margin-bottom: 1.25rem;
         }
-        
+
         .info-item {
             margin-bottom: 1rem;
             display: flex;
         }
-        
+
         .info-label {
             font-weight: 600;
             min-width: 120px;
             color: var(--secondary-color);
         }
-        
+
         .info-value {
             flex: 1;
         }
-        
+
         .category-badge {
             background-color: rgba(25, 135, 84, 0.1);
             color: var(--success-color);
@@ -284,24 +286,24 @@
             border-radius: 50px;
             display: inline-block;
         }
-        
+
         .description-container {
             background-color: white;
             border-radius: 0.5rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
             padding: 2rem;
             margin-top: 1.5rem;
             font-size: 1.1rem;
             line-height: 1.7;
         }
-        
+
         .action-buttons {
             display: flex;
             gap: 0.75rem;
             justify-content: flex-end;
             margin-top: 1.5rem;
         }
-        
+
         @media (max-width: 768px) {
             .news-title {
                 font-size: 2rem;
@@ -310,11 +312,11 @@
             .news-image-container {
                 height: 300px;
             }
-            
+
             .info-item {
                 flex-direction: column;
             }
-            
+
             .info-label {
                 min-width: auto;
                 margin-bottom: 0.25rem;

@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Publications')
+@section('title', 'Assessorarte- Publications')
 @section('content')
     <div class="nxl-content">
         <!-- [ page-header ] start -->
@@ -252,7 +252,8 @@
 
                                                         <div class="avatar-image avatar-md">
                                                             @if ($publication->cover)
-                                                                <a href="{{ asset('img/publication/' . $publication->cover) }}"><img
+                                                                <a
+                                                                    href="{{ asset('img/publication/' . $publication->cover) }}"><img
                                                                         src="{{ asset('img/publication/' . $publication->cover) }}"
                                                                         alt="publication Image" class="img-thumbnail"
                                                                         style="max-width: 50px; max-height: 50px;"></a>

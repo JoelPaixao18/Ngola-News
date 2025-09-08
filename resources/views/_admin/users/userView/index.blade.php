@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Visualizar Autor')
+@section('title', 'Assessorarte- Visualizar Autor')
 @section('content')
     <div class="nxl-content">
         <!-- [ page-header ] start -->
@@ -51,8 +51,8 @@
                         </div>
 
                         <a href="{{ route('admin.author.index') }}" class="btn btn-danger ">
-                             <i class="feather-chevron-left me-2"></i>
-                                    <span>Voltar</span>
+                            <i class="feather-chevron-left me-2"></i>
+                            <span>Voltar</span>
 
                         </a>
                     </div>

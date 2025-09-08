@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -49,18 +51,20 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ],
-        [
-            'name.required' => 'Nome obrigatório',
-            'email.required' => 'E-mail obrigatório',
-            'email.unique:users' => 'E-mail já existente!',
-            'password.required' => 'Password obrigatório'
-        ]
-    );
+        return Validator::make(
+            $data,
+            [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+            ],
+            [
+                'name.required' => 'Nome obrigatório',
+                'email.required' => 'E-mail obrigatório',
+                'email.unique:users' => 'E-mail já existente!',
+                'password.required' => 'Password obrigatório'
+            ]
+        );
     }
 
     /**
@@ -76,5 +80,11 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        Auth::logout(); // 👈 Desloga o usuário após registro
+        return redirect('/login')->with('success', 'Cadastro feito com sucesso! Faça login.');
     }
 }

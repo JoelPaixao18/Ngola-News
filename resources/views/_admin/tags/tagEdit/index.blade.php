@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Editar Tag')
+@section('title', 'Assessorarte- Editar Tag')
 @section('content')
 
     <!-- [ Craete Form ] -->

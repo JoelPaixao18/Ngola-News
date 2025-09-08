@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Editar Tipo de Categoria')
+@section('title', 'Assessorarte- Editar Tipo de Categoria')
 @section('content')
 
     <!-- [ Craete Form ] -->
