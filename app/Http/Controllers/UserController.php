@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -57,7 +58,7 @@ class UserController extends Controller
         $dados = $request->validate([
             'name' => ['required','string','max:255'],
             'email' => ['required', 'string', 'email', 'unique:users'],
-            'password' => ['required', 'string', 'password','min:8'],
+            'password' => ['required', 'string','min:8'],
             'access_level' => ['required', 'string'],
             'image' => ['nullable','image','mimes:jpg,jpeg,png'],
 
@@ -80,19 +81,25 @@ class UserController extends Controller
             $image->move(public_path('img/users'), $imageName);
             $dados['image']= $imageName;
         }
-
+        $senha = Hash::make($request->password);
+        $dados['password'] = $senha;
         //criando um novo user
         $user = User::create($dados);
-        redirect()->route('admin.user.index')->with('Success',' Utilizador cadastrado com sucesso! ');
-        redirect()->back()->with('Error', 'Erro ao cadastrar utilizador');
+        if ($user) {
+            return redirect()->route('admin.user.index')->with('Success',' Utilizador cadastrado com sucesso! ');
+        } else {
+            return redirect()->back()->with('Error', 'Erro ao cadastrar utilizador');
+        }
+
     }
     public function show(User $user)
     {
-        //
+        return view('_admin.users.userView.index', compact('user'));
     }
     public function edit(User $user)
     {
-        //
+        $users = User::All();
+        return view('_admin.users.userView.index', compact('users'));
     }
     public function update(Request $request, User $user)
     {
@@ -100,6 +107,7 @@ class UserController extends Controller
     }
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('admin.user.index')->with(' Success ', ' Utilizador Deletado com sucesso! ');
     }
 }

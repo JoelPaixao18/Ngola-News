@@ -6,18 +6,13 @@ use Illuminate\Support\Facades\DB;
 class AdvertisementsTableSeeder extends Seeder
 {
 
-    /**
-     * Auto generated seed file
-     *
-     * @return void
-     */
     public function run()
     {
 
 
-        DB::table('Advertisements')->delete();
+        DB::table('advertisements')->delete();
 
-        DB::table('Advertisements')->insert(array(
+        DB::table('advertisements')->insert(array(
             0 =>
             array(
                 'id' => 1,

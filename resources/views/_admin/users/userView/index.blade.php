@@ -6,7 +6,7 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Authors</h5>
+                    <h5 class="m-b-10">users</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -50,7 +50,7 @@
                             </div>
                         </div>
 
-                        <a href="{{ route('admin.author.index') }}" class="btn btn-danger ">
+                        <a href="{{ route('admin.user.index') }}" class="btn btn-danger ">
                             <i class="feather-chevron-left me-2"></i>
                             <span>Voltar</span>
 
@@ -74,7 +74,7 @@
                                 <div class="mb-4 text-center">
                                     <div class="wd-150 ht-150 mx-auto mb-3 position-relative">
                                         <div class="avatar-image wd-150 ht-150 border border-5 border-gray-3">
-                                            <img src="{{ asset('img/authors/' . $author->foto) }}" alt="{{ $author->foto }}"
+                                            <img src="{{ asset('img/users/' . $user->foto) }}" alt="{{ $user->foto }}"
                                                 class="img-fluid">
                                         </div>
                                         <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle"
@@ -84,13 +84,13 @@
                                     </div>
                                     <div class="mb-4">
                                         <a href="javascript:void(0);" class="fs-14 fw-bold d-block">
-                                            {{ $author->name }}</a>
+                                            {{ $user->name }}</a>
                                     </div>
                                     <div class="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4">
                                         <div
                                             class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
                                             <h6 class="fs-15 fw-bolder">Biography</h6>
-                                            <p class="fs-12 text-muted mb-0">{{ $author->biography }}</p>
+                                            <p class="fs-12 text-muted mb-0">{{ $user->biography }}</p>
                                         </div>
                                         {{--  <div
                                             class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
@@ -122,12 +122,12 @@
                                     </li> --}}
                                 </ul>
                                 <div class="d-flex gap-2 text-center pt-4">
-                                    <a href="{{ route('admin.author.delete', ['author' => $author]) }}"
+                                    <a href="{{ route('admin.user.delete', ['user' => $user]) }}"
                                         class="w-50 btn btn-light-brand">
                                         <i class="feather-trash-2 me-2"></i>
                                         <span>Deletar</span>
                                     </a>
-                                    <a href="{{ route('admin.author.edit', ['author' => $author]) }}"
+                                    <a href="{{ route('admin.user.edit', ['user' => $user]) }}"
                                         class="w-50 btn btn-danger">
                                         <i class="feather-edit me-2"></i>
                                         <span>Editar Perfil</span>

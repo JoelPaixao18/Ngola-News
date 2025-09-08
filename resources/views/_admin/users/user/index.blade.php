@@ -1,9 +1,5 @@
 @extends('_admin.layout.main')
-<<<<<<< HEAD:resources/views/_admin/users/user/index.blade.php
-@section('title', 'Ngola News - Lisar Utilizadores')
-=======
-@section('title', 'Assessorarte - Lisar Autores')
->>>>>>> joel:resources/views/_admin/authors/author/index.blade.php
+@section('title', 'Assessorarte - Listar Autores')
 @section('content')
 
     <div class="nxl-content">
@@ -246,6 +242,8 @@
                                             <th>ID</th>
                                             <th>Foto</th>
                                             <th>Nome</th>
+                                            <th>E-Mail</th>
+                                            <th>Função</th>
                                             <th>Biografia</th>
                                             <th class="text-end">Ações</th>
 
@@ -274,7 +272,7 @@
                                                             @if ($user->foto)
                                                                 <a
                                                                     href="{{ route('admin.user.show', ['user' => $user]) }}"><img
-                                                                        src="{{ asset('img/users/' . $user->foto) }}"
+                                                                        src="{{ asset('img/users/' . $user->image) }}"
                                                                         alt="user Image" class="img-thumbnail"
                                                                         style="max-width: 50px; max-height: 50px;"></a>
                                                             @else
@@ -286,6 +284,16 @@
                                                 <td>
                                                     <div class="hstack gap-3">
                                                         <span class="text-truncate-1-line">{{ $user->name }}</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-3">
+                                                        <span class="text-truncate-1-line">{{ $user->email }}</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="hstack gap-3">
+                                                        <span class="text-truncate-1-line">{{ $user->access_level }}</span>
                                                     </div>
                                                 </td>
                                                 <td>
