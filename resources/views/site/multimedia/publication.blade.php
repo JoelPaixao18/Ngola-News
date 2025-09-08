@@ -26,7 +26,7 @@
                                             @else
                                                 src="{{ asset('img/publication/pdfimg.png') }}" @endif
                                                 alt="blog image"></div>
-                                        <h3 class="box-title-20"><a class="hover-line" data-bs-toggle="modal"
+                                        <h3 class="box-title-20"><a class="hover-line" id="modallink" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal">{{ $publication->title }}</a></h3>
                                         <div class="blog-meta">
                                             @if ($publication->file && file_exists(public_path('files/publication/' . $publication->file)))

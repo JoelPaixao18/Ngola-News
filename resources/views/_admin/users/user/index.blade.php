@@ -1,5 +1,5 @@
 @extends('_admin.layout.main')
-@section('title', 'Ngola News - Lisar Autores')
+@section('title', 'Ngola News - Lisar Utilizadores')
 @section('content')
 
     <div class="nxl-content">
@@ -7,11 +7,11 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Autores</h5>
+                    <h5 class="m-b-10">Utilizadores</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Autores</li>
+                    <li class="breadcrumb-item">Utilizadores</li>
                 </ul>
             </div>
             <div class="page-header-right ms-auto">
@@ -105,7 +105,7 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ route('admin.author.create') }}" class="btn btn-danger">
+                        <a href="{{ route('admin.user.create') }}" class="btn btn-danger">
                             <i class="feather-plus me-2"></i>
                             <span>Novo Autor</span>
                         </a>
@@ -248,7 +248,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($authors as $author)
+                                        @foreach ($users as $user)
                                             <tr class="single-item">
                                                 <td>
                                                     <div class="item-checkbox ms-1">
@@ -261,17 +261,17 @@
                                                 </td>
                                                 <td>
                                                     <div class="hstack gap-2">
-                                                        <span class="text-truncate-1-line">{{ $author->id }}</span>
+                                                        <span class="text-truncate-1-line">{{ $user->id }}</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="hstack gap-3">
                                                         <div class="avatar-image ">
-                                                            @if ($author->foto)
+                                                            @if ($user->foto)
                                                                 <a
-                                                                    href="{{ route('admin.author.show', ['author' => $author]) }}"><img
-                                                                        src="{{ asset('img/authors/' . $author->foto) }}"
-                                                                        alt="author Image" class="img-thumbnail"
+                                                                    href="{{ route('admin.user.show', ['user' => $user]) }}"><img
+                                                                        src="{{ asset('img/users/' . $user->foto) }}"
+                                                                        alt="user Image" class="img-thumbnail"
                                                                         style="max-width: 50px; max-height: 50px;"></a>
                                                             @else
                                                                 <i class="feather-image"></i>
@@ -281,16 +281,16 @@
                                                 </td>
                                                 <td>
                                                     <div class="hstack gap-3">
-                                                        <span class="text-truncate-1-line">{{ $author->name }}</span>
+                                                        <span class="text-truncate-1-line">{{ $user->name }}</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div href="apps-mail.html">
-                                                        {{ Str::limit($author->biography, 50, '...') }}</div>
+                                                        {{ Str::limit($user->biography, 50, '...') }}</div>
                                                 </td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
-                                                        <a href="{{ route('admin.author.show', ['author' => $author]) }}"
+                                                        <a href="{{ route('admin.user.show', ['user' => $user]) }}"
                                                             class="avatar-text avatar-md">
                                                             <i class="feather feather-eye"></i>
                                                         </a>
@@ -302,7 +302,7 @@
                                                             <ul class="dropdown-menu">
                                                                 <li>
                                                                     <a class="dropdown-item"
-                                                                        href="{{ route('admin.author.edit', ['author' => $author]) }}">
+                                                                        href="{{ route('admin.user.edit', ['user' => $user]) }}">
                                                                         <i class="feather feather-edit-3 me-3"></i>
                                                                         <span>Editar</span>
                                                                     </a>
@@ -311,7 +311,7 @@
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
                                                                     <a class="dropdown-item"
-                                                                        href="{{ route('admin.author.delete', ['author' => $author]) }}">
+                                                                        href="{{ route('admin.user.delete', ['user' => $user]) }}">
                                                                         <i class="feather feather-trash-2 me-3"></i>
                                                                         <span>Deletar</span>
                                                                     </a>

@@ -138,7 +138,7 @@
                                         </div>
                                         <div class="media-body">
                                             <h4 class="post-title">
-                                                <a class="hover-line" href="blog-details.html">{{ $recents->title }}</a>
+                                                <a class="hover-line" id="modallink" href="blog-details.html">{{ $recents->title }}</a>
                                             </h4>
                                             <div class="recent-post-meta">
                                                 <a href="blog.html"><i

@@ -79,18 +79,18 @@
                     </ul>
                 </li> --}}
 
-                {{-- Menu Authors --}}
+                {{-- Menu users --}}
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-user"></i></span>
-                        <span class="nxl-mtext">Autor</span><span class="nxl-arrow"><i
+                        <span class="nxl-mtext">Utilizador</span><span class="nxl-arrow"><i
                                 class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.author.index') }}">Listan de
-                                Autor</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.author.create') }}">Novo
-                                Autor</a>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.user.index') }}">Lista de
+                                Utilizadores</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.user.create') }}">Novo
+                                Utilizador</a>
                         </li>
                     </ul>
                 </li>
