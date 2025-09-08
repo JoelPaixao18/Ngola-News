@@ -2390,10 +2390,10 @@
                                     <div class="dropdown-item">
                                         <a href="/">Website</a>
                                     </div>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="/login"
                                         onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Termirar Sessão') }}
                                     </a>
                                 </div>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"

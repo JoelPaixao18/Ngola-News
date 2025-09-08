@@ -13,12 +13,13 @@ class Tag extends Model
 {
     //
     use SoftDeletes;
-    
+
     protected $fillable = [
         "name",
         "description",
     ];
 
+    /* função para criar o relacionamento N:N entre notícias e tags */
     public function news()
     {
         return $this->belongsToMany(News::class, 'news_tags');
