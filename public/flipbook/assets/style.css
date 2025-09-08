@@ -155,3 +155,13 @@
 .modal-content{
     background-color: #0909096f;
 }
+
+
+/* Esconder o modal em telas pequenas (móveis) */
+@media (max-width: 768px) {
+  #modallink {
+    pointer-events: none;
+    text-decoration: none;
+    cursor: default;
+  }
+}
