@@ -76,7 +76,7 @@ Route::prefix('_admin.categories')->name('admin.')->group(function () {
 /*-------------------------------------------------------
                     Author routes
 -------------------------------------------------------*/
-
+/* 
 Route::prefix('_admin.authors')->name('admin.')->group(function () {
     Route::get('author', [AuthorController::class, 'index'])->name('author.index')->middleware('auth');
     Route::get('authorCreate', [AuthorController::class, 'create'])->name('author.create')->middleware('auth');
@@ -85,7 +85,7 @@ Route::prefix('_admin.authors')->name('admin.')->group(function () {
     Route::get('authorEdit/{author}', [AuthorController::class, 'edit'])->name('author.edit')->middleware('auth');
     Route::put('authorUpdate/{author}', [AuthorController::class, 'update'])->name('author.update')->middleware('auth');
     Route::get('authorDelete/{author}', [AuthorController::class, 'destroy'])->name('author.delete')->middleware('auth');
-});
+}); */
 
 
 /*-------------------------------------------------------
@@ -208,6 +208,19 @@ Route::prefix('_admin.ads')->name('admin.')->group(function () {
     Route::get('categoryEdit/{category}', [AdvertisementController::class, 'edit'])->name('category.edit');
     Route::put('categoryUpdate/{category}', [AdvertisementController::class, 'update'])->name('category.update');
     Route::get('categoryDelete/{category}', [AdvertisementController::class, 'destroy'])->name('category.delete'); */
+});
+/*-------------------------------------------------------
+                    User routes
+-------------------------------------------------------*/
+
+Route::prefix('_admin.users')->name('admin.')->group(function () {
+    Route::get('user', [UserController::class, 'index'])->name('user.index')->middleware('auth');
+    Route::get('userCreate', [UserController::class, 'create'])->name('user.create')->middleware('auth');
+    Route::post('userStore', [UserController::class, 'store'])->name('user.store')->middleware('auth');
+    Route::get('userView/{user}', [UserController::class, 'show'])->name('user.show')->middleware('auth');
+    Route::get('userEdit/{user}', [UserController::class, 'edit'])->name('user.edit')->middleware('auth');
+    Route::put('userUpdate/{user}', [UserController::class, 'update'])->name('user.update')->middleware('auth');
+    Route::get('userDelete/{user}', [UserController::class, 'destroy'])->name('user.delete')->middleware('auth');
 });
 
 Auth::routes();

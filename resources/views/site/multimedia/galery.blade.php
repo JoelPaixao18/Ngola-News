@@ -27,19 +27,53 @@
                                     </div>
 
                                     <h3 class="box-title-20">
-                                        <a class="hover-line" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                            id="img">
+                                        <a class="hover-line" data-bs-toggle="modal"
+                                            data-bs-target="#modalGalery{{ $galery->id }}" id="img">
                                             {{ Str::limit($galery->title, 20, '...') }}
                                         </a>
                                     </h3>
 
                                     <div class="blog-meta">
                                         <a href="#">
-                                            <i class="fal fa-calendar-days"></i>{{ $galery->created_at->format('d M, Y') }}
+                                            <i class="fal fa-calendar-days"></i>{{ $galery->updated_at->format('d M, Y') }}
                                         </a>
                                     </div>
                                 </div>
                             </div>
+                            {{-- Inicio do modal --}}
+                            <div class="modal fade" id="modalGalery{{ $galery->id }}" tabindex="-1"
+                                aria-labelledby="exampleModalLabel{{ $galery->id }}" aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel{{ $galery->id }}">
+                                                {{ $galery->title }}</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row align-items-start">
+                                                <div class="col-md-4 ms-4">
+                                                    <img src="{{ asset('img/galeries/' . $galery->image) }}"
+                                                        alt="">
+                                                </div>
+                                                <div class="col-md-4 ms-4">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">Título: <b> {{ $galery->title }}</b></li>
+                                                        <li class="list-group-item">Data: {{ $galery->updated_at->format('d M, Y') }}</li>
+                                                        <li class="list-group-item">Descrição: {{ $galery->description }}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Fechar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- fim do modal --}}
                         @empty
                             <div class="col-12 text-center my-5">
                                 <p class="alert alert-warning fs-5 py-4 px-5">
@@ -47,39 +81,6 @@
                                 </p>
                             </div>
                         @endforelse
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-4 ms-4">
-                                                @if($galery)
-                                                    <img src="{{ asset('img/galeries/' . $galery->image) }}" alt="">
-                                                @endif
-                                            </div>
-                                            <div class="col-md-4 ms-4">
-                                                <ul class="nxl-has-children">
-                                                    <li class="nxl-item">Título: {{$galery->title}}</li>
-                                                    <li class="nxl-item">Descrição: {{$galery->description}}</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Fechar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     {{-- Botão "Ver Mais" só aparece se houver galerias --}}
@@ -137,7 +138,7 @@
                                         </div>
                                         <div class="media-body">
                                             <h4 class="post-title">
-                                                <a class="hover-line" href="blog-details.html">{{ $recents->title }}</a>
+                                                <a class="hover-line" id="modallink" href="blog-details.html">{{ $recents->title }}</a>
                                             </h4>
                                             <div class="recent-post-meta">
                                                 <a href="blog.html"><i
@@ -145,54 +146,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{-- <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg"
-                                                alt="Blog Image" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title">
-                                            <a class="hover-line" href="blog-details.html">Embrace the game Ignite your
-                                                sporting</a>
-                                        </h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>22 June,
-                                                2025</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-3.jpg"
-                                                alt="Blog Image" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title">
-                                            <a class="hover-line" href="blog-details.html">Revolutionizing lives Through
-                                                technology</a>
-                                        </h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>23 June,
-                                                2025</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-4.jpg"
-                                                alt="Blog Image" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title">
-                                            <a class="hover-line" href="blog-details.html">Enjoy the Virtual Reality
-                                                embrace the</a>
-                                        </h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>25 June,
-                                                2025</a>
-                                        </div>
-                                    </div>
-                                </div> --}}
                                 </div>
                             @empty
                         </div>
@@ -205,8 +158,9 @@
                         @endforelse
                         {{-- Fim de Sesssão dos Postes Recentes --}}
                         <div class="widget">
-                            <div class="widget-ads"><a href="../../../../themeforest.net/user/themeholy/portfolio.html"><img
-                                        class="w-100" src="assets/img/ads/siderbar_ads_1.jpg" alt="ads"></a></div>
+                            <div class="widget-ads"><a
+                                    href="../../../../themeforest.net/user/themeholy/portfolio.html"><img class="w-100"
+                                        src="assets/img/ads/siderbar_ads_1.jpg" alt="ads"></a></div>
                         </div>
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Tags Populares</h3>

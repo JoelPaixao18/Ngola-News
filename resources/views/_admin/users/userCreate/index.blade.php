@@ -1,6 +1,6 @@
 @extends('_admin.layout.main')
 
-@section('title', 'Ngola News - Criar Autor')
+@section('title', 'Ngola News - Criar Utilizador')
 
 @section('content')
     <!-- [ Craete Form ] -->
@@ -9,7 +9,7 @@
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
                 <div class="page-header-title">
-                    <h5 class="m-b-10">Autor</h5>
+                    <h5 class="m-b-10">Utilizador</h5>
                 </div>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -29,7 +29,7 @@
                             <i class="feather-layers me-2"></i>
                             <span>Save as Draft</span>
                         </a> --}}
-                        <a href="{{ route('admin.news.index') }}" class="btn btn-danger">
+                        <a href="{{ route('admin.user.index') }}" class="btn btn-danger">
                             <i class="feather-chevron-left me-2"></i>
                             <span>Visualizar</span>
                         </a>
@@ -51,38 +51,70 @@
                         <div class="card-body lead-status">
                             <div class="mb-5 d-flex align-items-center justify-content-between">
                                 <h5 class="fw-bold mb-0 me-4">
-                                    <span class="d-block mb-2">Author Status :</span>
-                                    <span class="fs-12 fw-normal text-muted text-truncate-1-line">Typically refers to
-                                        adding a new potential customer or sales prospect</span>
+                                    <span class="d-block mb-2">Informações do Utilizador:</span>
+                                    <span class="fs-12 fw-normal text-muted text-truncate-1-line">Normalmente se refere a
+                                        adicionar um novo cliente potencial ou jornalista.</span>
                                 </h5>
-                                <a href="{{ route('admin.author.index') }}" class="btn btn-sm btn-light-brand">Listar
-                                    Autor</a>
+                                <a href="{{ route('admin.user.index') }}" class="btn btn-sm btn-light-brand">Listar
+                                    Utilizador</a>
                             </div>
-                            <form action="{{ route('admin.author.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('POST')
 
                                 <div class="row">
 
-                                    {{-- Autor --}}
+                                    {{-- Utilizador --}}
                                     <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Nome do Autor</label>
+                                        <label class="form-label">Nome </label>
                                         <input type="text" name="name" class="form-control"
-                                            value="{{ old('name') }}" placeholder="Ex: INFOSI ou João Silva">
+                                            value="{{ old('name') }}" placeholder="Digite o nome completo...">
+                                    </div>
+
+                                    {{-- E-mail --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">E-mail</label>
+                                        <input type="email" name="email" class="form-control"
+                                            value="{{ old('email') }}" placeholder="Digite o seu e-mail...">
+                                    </div>
+
+                                    {{-- Password --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Password</label>
+                                        <input type="password" name="password" class="form-control"
+                                            value="{{ old('password') }}" placeholder="Digite a password...">
+                                    </div>
+                                    {{-- Password Confirm--}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Confirmar Password</label>
+                                        <input type="password" name="password" class="form-control"
+                                            value="{{ old('password') }}" placeholder="Digite a password...">
                                     </div>
 
                                     {{-- Image --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Foto de Perfil</label>
-                                        <input type="file" name="foto" class="form-control">
+                                        <input type="file" name="image" class="form-control">
                                         <small class="text-muted">Formatos suportados: jpg, jpeg, png, gif</small>
                                     </div>
 
+                                     {{-- Nivel de acesso --}}
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Nivel de Acesso</label>
+                                       <select name="access_level" id="access_level" class="form-control">
+                                        <option value="" selected>--Selecion um nivel de acesso--</option>
+                                        <option value="Assinate">Assinate</option>
+                                        <option value="Jornalista">Jornalista</option>
+                                        <option value="Editor">Editor</option>
+                                        <option value="Admin">Admin</option>
+                                       </select>
+                                    </div>
+
                                     {{-- Biography --}}
-                                    <div class="col-12 mb-4">
+                                    {{-- <div class="col-12 mb-4">
                                         <label class="form-label">Biográfia</label>
                                         <textarea name="biography" class="form-control" rows="4" placeholder="Escreve a sua biográfia...">{{ old('biography') }}</textarea>
-                                    </div>
+                                    </div> --}}
 
                                     {{-- Botão de Enviar --}}
                                     <div class="col-12">
