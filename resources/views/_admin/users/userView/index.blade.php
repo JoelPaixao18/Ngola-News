@@ -74,7 +74,7 @@
                                 <div class="mb-4 text-center">
                                     <div class="wd-150 ht-150 mx-auto mb-3 position-relative">
                                         <div class="avatar-image wd-150 ht-150 border border-5 border-gray-3">
-                                            <img src="{{ asset('img/users/' . $user->foto) }}" alt="{{ $user->foto }}"
+                                            <img src="{{ asset('img/users/'. $user->image) }}" alt="foto de {{ $user->name }}"
                                                 class="img-fluid">
                                         </div>
                                         <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle"

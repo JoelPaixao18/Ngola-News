@@ -1,10 +1,6 @@
 @extends('_admin.layout.main')
 
-<<<<<<< HEAD:resources/views/_admin/users/userCreate/index.blade.php
-@section('title', 'Ngola News - Criar Utilizador')
-=======
-@section('title', 'Assessorarte- Criar Autor')
->>>>>>> joel:resources/views/_admin/authors/authorCreate/index.blade.php
+@section('title', 'Assessorarte- Criar Utilizador')
 
 @section('content')
     <!-- [ Craete Form ] -->
