@@ -293,7 +293,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="hstack gap-3">
-                                                        <span class="text-truncate-1-line">{{ $user->access_level }}</span>
+                                                        <span class="text-truncate-1-line">{{ $user->role }}</span>
                                                     </div>
                                                 </td>
                                                 <td>

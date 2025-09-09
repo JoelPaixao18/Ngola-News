@@ -59,7 +59,7 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
-            'access_level' => ['required', 'string'],
+            'role' => ['required', 'string'],
             'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png'],
 
         ], [
@@ -67,7 +67,7 @@ class UserController extends Controller
             'email.required' => 'E-mail obrigatório.',
             'email.unique:users' => 'E-mail já esxistente.',
             'password.required' => 'Password obrigatório.',
-            'access_level.required' => 'Nivel de acesso obrigatório.',
+            'role.required' => 'Nivel de acesso obrigatório.',
             'image.image' => 'Precisa ser uma imagem válida',
             'image.mimes' => 'Imagem válida é nos seguintes formatos: jpg, jpeg, png.',
         ]);
@@ -106,14 +106,14 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8'],
-            'access_level' => ['required', 'string'],
+            'role' => ['required', 'string'],
             'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png']
         ], [
             'name.required' => 'Nome obrigatório',
             'email.required' => 'E-mail obrigatório.',
             'email.unique:users' => 'E-mail já esxistente.',
             'password.required' => 'Password obrigatório.',
-            'access_level.required' => 'Nivel de acesso obrigatório.',
+            'role.required' => 'Nivel de acesso obrigatório.',
             'image.image' => 'Precisa ser uma imagem válida',
             'image.mimes' => 'Imagem válida é nos seguintes formatos: jpg, jpeg, png.'
         ]);

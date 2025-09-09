@@ -134,8 +134,8 @@
                                     </div> --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Nivel de Acesso</label>
-                                        <select class="form-control" name="access_level" id="access_level">
-                                            <option value="{{ $user->access_level}}" selected>{{$user->access_level}}</option>
+                                        <select class="form-control" name="role" id="role">
+                                            <option value="{{ $user->role}}" selected>{{$user->role}}</option>
                                             <option value="Assinate">Assinate</option>
                                             <option value="Jornalista">Jornalista</option>
                                             <option value="Editor">Editor</option>

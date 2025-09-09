@@ -101,7 +101,7 @@
                                      {{-- Nivel de acesso --}}
                                     <div class="col-lg-4 mb-4">
                                         <label class="form-label">Nivel de Acesso</label>
-                                       <select name="access_level" id="access_level" class="form-control">
+                                       <select name="role" id="role" class="form-control">
                                         <option value="" selected>--Selecion um nivel de acesso--</option>
                                         <option value="Assinate">Assinate</option>
                                         <option value="Jornalista">Jornalista</option>
