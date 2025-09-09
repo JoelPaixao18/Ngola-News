@@ -74,13 +74,8 @@
                             </div>
                         </form>
                         <div class="mt-5 text-muted">
-<<<<<<< HEAD
-                            <span>Already have an account?</span>
-                            <a href="{{ route('login') }}" class="fw-bold">Login</a>
-=======
                             <span>Já tens uma conta?</span>
                             <a href="/login" class="fw-bold">Entrar</a>
->>>>>>> 6436e6fe3f4378a55dbb0508e8cdaa8d0bc1ee68
                         </div>
                     </div>
                 </div>
