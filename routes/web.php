@@ -164,7 +164,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
     });
 });
 /* Routas Jornalista*/
-Route::group(['middleware' => ['auth', 'role:jornalista']], function () {
+Route::group(['middleware' => ['auth', 'role:admin,editor,jornalista']], function () {
   
     /* news routes */
     Route::prefix('_admin.news')->name('admin.')->group(function () {
