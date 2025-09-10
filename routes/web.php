@@ -25,7 +25,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 
 Route::redirect('/', 'site/home');
 /* Route::get('admin/', function () {
-    return view('_admin.index');
+    return view('admin.index');
 }); */
 
 Route::get('site/home', [SiteController::class, 'home'])->name('site.home');
@@ -69,7 +69,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
     
     /*Category routes*/
-    Route::prefix('_admin.categories')->name('admin.')->group(function () {
+    Route::prefix('admin.categories')->name('admin.')->group(function () {
         Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
         Route::get('categoryCreate', [CategoryController::class, 'create'])->name('category.create');
         Route::post('categories', [CategoryController::class, 'store'])->name('categories.store');
@@ -80,7 +80,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
     });
 
     /* news routes */
-    Route::prefix('_admin.news')->name('admin.')->group(function () {
+    Route::prefix('admin.news')->name('admin.')->group(function () {
         Route::get('news', [NewsController::class, 'index'])->name('news.index');
         Route::get('newsCreate', [NewsController::class, 'create'])->name('news.create');
         Route::post('newsStore', [NewsController::class, 'store'])->name('news.store');
@@ -92,7 +92,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
     });
 
     /* comments routes */
-    Route::prefix('_admin/comments')->name('admin.')->group(function () {
+    Route::prefix('admin/comments')->name('admin.')->group(function () {
         Route::get('comment', [CommentController::class, 'index'])->name('comments.index');
         Route::get('commentCreate', [CommentController::class, 'create'])->name('comment.create');
         Route::post('commentStore', [CommentController::class, 'store'])->name('comment.store');
@@ -102,7 +102,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
         Route::get('commentDelete/{comment}', [CommentController::class, 'destroy'])->name('comment.delete');
     });
     /* tags routes */
-    Route::prefix('_admin.tags')->name('admin.')->group(function () {
+    Route::prefix('admin.tags')->name('admin.')->group(function () {
         Route::get('tags', [TagController::class, 'index'])->name('tags.index');
         Route::get('tagCreate', [TagController::class, 'create'])->name('tag.create');
         Route::post('tagStore', [TagController::class, 'store'])->name('tag.store');
@@ -113,7 +113,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
     });
 
     /* typeCategory routes */
-    Route::prefix('_admin.typeCategories')->name('admin.')->group(function () {
+    Route::prefix('admin.typeCategories')->name('admin.')->group(function () {
         Route::get('typeCategory', [TypeCategoryController::class, 'index'])->name('typeCategories.index');
         Route::get('typeCategoryCreate', [TypeCategoryController::class, 'create'])->name('typeCategory.create');
         Route::post('typeCategories', [TypeCategoryController::class, 'store'])->name('typeCategories.store');
@@ -123,7 +123,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
         Route::get('typeCategoryDelete/{typeCategory}', [TypeCategoryController::class, 'destroy'])->name('typeCategory.delete');
     });
     /* publications routes */
-    Route::prefix('_admin/publications')->name('admin.')->group(function () {
+    Route::prefix('admin/publications')->name('admin.')->group(function () {
         Route::get('publication', [PublicationController::class, 'index'])->name('publication.index');
         Route::get('publicationCreate', [PublicationController::class, 'create'])->name('publication.create');
         Route::post('publicationStore', [PublicationController::class, 'store'])->name('publication.store');
@@ -133,7 +133,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
         Route::get('publicationDelete/{publication}', [PublicationController::class, 'destroy'])->name('publication.delete');
     });
     /* videos routes */
-    Route::prefix('_admin/videos')->name('admin.')->group(function () {
+    Route::prefix('admin/videos')->name('admin.')->group(function () {
         Route::get('video', [VideoController::class, 'index'])->name('video.index');
         Route::get('videoCreate', [VideoController::class, 'create'])->name('video.create');
         Route::post('videoStore', [VideoController::class, 'store'])->name('video.store');
@@ -143,7 +143,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
         Route::get('videoDelete/{video}', [videoController::class, 'destroy'])->name('video.delete');
     });
     /* galery routes */
-    Route::prefix('_admin/galeries')->name('admin.')->group(function () {
+    Route::prefix('admin/galeries')->name('admin.')->group(function () {
         Route::get('galery', [GaleryController::class, 'index'])->name('galery.index');
         Route::get('galeryCreate', [GaleryController::class, 'create'])->name('galery.create');
         Route::post('galeryStore', [GaleryController::class, 'store'])->name('galery.store');
@@ -153,7 +153,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
         Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
     });
     /* users routes */
-    Route::prefix('_admin.users')->name('admin.')->group(function () {
+    Route::prefix('admin.users')->name('admin.')->group(function () {
         Route::get('user', [UserController::class, 'index'])->name('user.index');
         Route::get('userCreate', [UserController::class, 'create'])->name('user.create');
         Route::post('userStore', [UserController::class, 'store'])->name('user.store');
@@ -167,7 +167,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
 Route::group(['middleware' => ['auth', 'role:admin,editor,jornalista']], function () {
   
     /* news routes */
-    Route::prefix('_admin.news')->name('admin.')->group(function () {
+    Route::prefix('admin.news')->name('admin.')->group(function () {
         Route::get('news', [NewsController::class, 'index'])->name('news.index');
         Route::get('newsCreate', [NewsController::class, 'create'])->name('news.create');
         Route::post('newsStore', [NewsController::class, 'store'])->name('news.store');
@@ -178,7 +178,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor,jornalista']], functio
         Route::resource('tags', TagController::class);
     });
     /* comments routes */
-    Route::prefix('_admin/comments')->name('admin.')->group(function () {
+    Route::prefix('admin/comments')->name('admin.')->group(function () {
         Route::get('comment', [CommentController::class, 'index'])->name('comments.index');
         Route::get('commentCreate', [CommentController::class, 'create'])->name('comment.create');
         Route::post('commentStore', [CommentController::class, 'store'])->name('comment.store');
@@ -188,7 +188,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor,jornalista']], functio
         Route::get('commentDelete/{comment}', [CommentController::class, 'destroy'])->name('comment.delete');
     });
     /* publications routes */
-    Route::prefix('_admin/publications')->name('admin.')->group(function () {
+    Route::prefix('admin/publications')->name('admin.')->group(function () {
         Route::get('publication', [PublicationController::class, 'index'])->name('publication.index');
         Route::get('publicationCreate', [PublicationController::class, 'create'])->name('publication.create');
         Route::post('publicationStore', [PublicationController::class, 'store'])->name('publication.store');
@@ -198,7 +198,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor,jornalista']], functio
         Route::get('publicationDelete/{publication}', [PublicationController::class, 'destroy'])->name('publication.delete');
     });
     /* videos routes */
-    Route::prefix('_admin/videos')->name('admin.')->group(function () {
+    Route::prefix('admin/videos')->name('admin.')->group(function () {
         Route::get('video', [VideoController::class, 'index'])->name('video.index');
         Route::get('videoCreate', [VideoController::class, 'create'])->name('video.create');
         Route::post('videoStore', [VideoController::class, 'store'])->name('video.store');
@@ -208,7 +208,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor,jornalista']], functio
         Route::get('videoDelete/{video}', [videoController::class, 'destroy'])->name('video.delete');
     });
     /* galery routes */
-    Route::prefix('_admin/galeries')->name('admin.')->group(function () {
+    Route::prefix('admin/galeries')->name('admin.')->group(function () {
         Route::get('galery', [GaleryController::class, 'index'])->name('galery.index');
         Route::get('galeryCreate', [GaleryController::class, 'create'])->name('galery.create');
         Route::post('galeryStore', [GaleryController::class, 'store'])->name('galery.store');
@@ -226,13 +226,13 @@ Route::group(['middleware' => ['auth', 'role:assinante']], function () {
                     Dashboard routes
 -------------------------------------------------------*/
 /* Route::get('admin/dashboard', function () {
-    return view('_admin.dashboard.crm.index');
+    return view('admin.dashboard.crm.index');
 })->middleware(['auth', 'role:admin']); */
 /*-------------------------------------------------------
                     Category routes
 -------------------------------------------------------*/
 
-/* Route::prefix('_admin.categories')->name('admin.')->group(function () {
+/* Route::prefix('admin.categories')->name('admin.')->group(function () {
     Route::get('categories', [CategoryController::class, 'index'])->name('categories.index')->middleware('auth');
     Route::get('categoryCreate', [CategoryController::class, 'create'])->name('category.create')->middleware('auth');
     Route::post('categories', [CategoryController::class, 'store'])->name('categories.store')->middleware('auth');
@@ -245,7 +245,7 @@ Route::group(['middleware' => ['auth', 'role:assinante']], function () {
                     Author routes
 -------------------------------------------------------*/
 /* 
-Route::prefix('_admin.authors')->name('admin.')->group(function () {
+Route::prefix('admin.authors')->name('admin.')->group(function () {
     Route::get('author', [AuthorController::class, 'index'])->name('author.index')->middleware('auth');
     Route::get('authorCreate', [AuthorController::class, 'create'])->name('author.create')->middleware('auth');
     Route::post('authorStore', [AuthorController::class, 'store'])->name('author.store')->middleware('auth');
@@ -259,7 +259,7 @@ Route::prefix('_admin.authors')->name('admin.')->group(function () {
 /*-------------------------------------------------------
                     News routes
 -------------------------------------------------------*/
-/* Route::prefix('_admin.news')->name('admin.')->group(function () {
+/* Route::prefix('admin.news')->name('admin.')->group(function () {
     Route::get('news', [NewsController::class, 'index'])->name('news.index')->middleware('auth');
     Route::get('newsCreate', [NewsController::class, 'create'])->name('news.create')->middleware('auth');
     Route::post('newsStore', [NewsController::class, 'store'])->name('news.store')->middleware('auth');
@@ -274,7 +274,7 @@ Route::prefix('_admin.authors')->name('admin.')->group(function () {
 /* -----------------------------------------------
                     Event Routes
 --------------------------------------------------*/
-/* Route::prefix('_admin/events')->name('admin.')->group(function () {
+/* Route::prefix('admin/events')->name('admin.')->group(function () {
     Route::get('event', [EventController::class, 'index'])->name('event.index')->middleware('auth');
     Route::get('eventCreate', [EventController::class, 'create'])->name('event.create')->middleware('auth');
     Route::post('eventStore', [EventController::class, 'store'])->name('event.store')->middleware('auth');
@@ -289,7 +289,7 @@ Route::prefix('_admin.authors')->name('admin.')->group(function () {
                     Comment Routes
 -------------------------------------------------------*/
 
-/* Route::prefix('_admin/comments')->name('admin.')->group(function () {
+/* Route::prefix('admin/comments')->name('admin.')->group(function () {
     Route::get('comment', [CommentController::class, 'index'])->name('comments.index')->middleware('auth');
     Route::get('commentCreate', [CommentController::class, 'create'])->name('comment.create')->middleware('auth');
     Route::post('commentStore', [CommentController::class, 'store'])->name('comment.store')->middleware('auth');
@@ -303,7 +303,7 @@ Route::prefix('_admin.authors')->name('admin.')->group(function () {
                     Tags Routes
 -------------------------------------------------------*/
 
-/* Route::prefix('_admin.tags')->name('admin.')->group(function () {
+/* Route::prefix('admin.tags')->name('admin.')->group(function () {
     Route::get('tags', [TagController::class, 'index'])->name('tags.index')->middleware('auth');
     Route::get('tagCreate', [TagController::class, 'create'])->name('tag.create')->middleware('auth');
     Route::post('tagStore', [TagController::class, 'store'])->name('tag.store')->middleware('auth');
@@ -317,7 +317,7 @@ Route::prefix('_admin.authors')->name('admin.')->group(function () {
                TypeCategory Routes
 -------------------------------------------------------*/
 
-/* Route::prefix('_admin.typeCategories')->name('admin.')->group(function () {
+/* Route::prefix('admin.typeCategories')->name('admin.')->group(function () {
     Route::get('typeCategory', [TypeCategoryController::class, 'index'])->name('typeCategories.index')->middleware('auth');
     Route::get('typeCategoryCreate', [TypeCategoryController::class, 'create'])->name('typeCategory.create')->middleware('auth');
     Route::post('typeCategories', [TypeCategoryController::class, 'store'])->name('typeCategories.store')->middleware('auth');
@@ -330,7 +330,7 @@ Route::prefix('_admin.authors')->name('admin.')->group(function () {
 /* -----------------------------------------------
                     publication Routes
 --------------------------------------------------*/
-/* Route::prefix('_admin/publications')->name('admin.')->group(function () {
+/* Route::prefix('admin/publications')->name('admin.')->group(function () {
     Route::get('publication', [PublicationController::class, 'index'])->name('publication.index')->middleware('auth');
     Route::get('publicationCreate', [PublicationController::class, 'create'])->name('publication.create')->middleware('auth');
     Route::post('publicationStore', [PublicationController::class, 'store'])->name('publication.store')->middleware('auth');
@@ -342,7 +342,7 @@ Route::prefix('_admin.authors')->name('admin.')->group(function () {
 /* -----------------------------------------------
                     video Routes
 --------------------------------------------------*/
-/* Route::prefix('_admin/videos')->name('admin.')->group(function () {
+/* Route::prefix('admin/videos')->name('admin.')->group(function () {
     Route::get('video', [VideoController::class, 'index'])->name('video.index')->middleware('auth');
     Route::get('videoCreate', [VideoController::class, 'create'])->name('video.create')->middleware('auth');
     Route::post('videoStore', [VideoController::class, 'store'])->name('video.store')->middleware('auth');
@@ -354,7 +354,7 @@ Route::prefix('_admin.authors')->name('admin.')->group(function () {
 /* -----------------------------------------------
                     galery Routes
 --------------------------------------------------*/
-/* Route::prefix('_admin/galeries')->name('admin.')->group(function () {
+/* Route::prefix('admin/galeries')->name('admin.')->group(function () {
     Route::get('galery', [GaleryController::class, 'index'])->name('galery.index')->middleware('auth');
     Route::get('galeryCreate', [GaleryController::class, 'create'])->name('galery.create')->middleware('auth');
     Route::post('galeryStore', [GaleryController::class, 'store'])->name('galery.store')->middleware('auth');
@@ -368,7 +368,7 @@ Route::prefix('_admin.authors')->name('admin.')->group(function () {
                     Ads routes
 -------------------------------------------------------*/
 
-Route::prefix('_admin.ads')->name('admin.')->group(function () {
+Route::prefix('admin.ads')->name('admin.')->group(function () {
     Route::get('ads', [AdvertisementController::class, 'index'])->name('ads.index')->middleware('auth');
     Route::get('adsCreate', [AdvertisementController::class, 'create'])->name('ads.create')->middleware('auth');
     Route::post('ads', [AdvertisementController::class, 'store'])->name('ads.store')->middleware('auth');
@@ -381,7 +381,7 @@ Route::prefix('_admin.ads')->name('admin.')->group(function () {
                         User routes
     -------------------------------------------------------*/
 
-/* Route::prefix('_admin.users')->name('admin.')->group(function () {
+/* Route::prefix('admin.users')->name('admin.')->group(function () {
     Route::get('user', [UserController::class, 'index'])->name('user.index')->middleware('auth');
     Route::get('userCreate', [UserController::class, 'create'])->name('user.create')->middleware('auth');
     Route::post('userStore', [UserController::class, 'store'])->name('user.store')->middleware('auth');

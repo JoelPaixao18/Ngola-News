@@ -16,7 +16,7 @@
                 <li class="nxl-item nxl-caption">
                     <label>Menu</label>
                 </li>
-
+                @can('is-admin')
                 {{-- Menu Dashboard --}}
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
@@ -31,7 +31,8 @@
                         {{-- <li class="nxl-item"><a class="nxl-link" href="/analytics">Analytics</a></li> --}}
                     </ul>
                 </li>
-
+                @endcan
+                @can('is-editor')
                 {{-- Menu Types Categories --}}
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
@@ -108,7 +109,7 @@
                         </li>
                     </ul>
                 </li>
-
+                @endcan
                 {{-- Menu News --}}
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">

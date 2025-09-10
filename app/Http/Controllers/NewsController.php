@@ -9,44 +9,22 @@ use App\Models\Category;
 use App\Models\Advertisement;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class NewsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     * @return \Illuminate\Contracts\View\View
-     */
     public function index()
     {
-        //
         $news = News::orderByDesc('id')->get();
         return view('_admin.news.news.index', compact('news'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     * @return \Illuminate\Contracts\View\View
-     */
     public function create()
     {
-        //
         //trazendo as categorias
         $categories = Category::all();
         $tags = Tag::all();
         return view('_admin.news.newsCreate.index', compact('categories', 'tags'));
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -102,45 +80,17 @@ class NewsController extends Controller
         return redirect()->route('admin.news.index')->with('success', 'Notícia criado com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Notícia!');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     * @return \Illuminate\Contracts\View\View
-     */
     public function show(News $news)
     {
-        //
-
         return view('_admin.news.newsViews.index', ['news' => $news]);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     * @return \Illuminate\Contracts\View\View
-     */
     public function edit(News $news)
     {
-        //
         $categories = Category::all(); // Or any other query to fetch categories
         $tags = Tag::all();
 
         return view('_admin.news.newsEdit.index', ['news' => $news], compact('categories', 'tags'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function update(Request $request, News $news)
     {
         $request->validate([
@@ -196,7 +146,7 @@ class NewsController extends Controller
         //$news->update($request->all());
         $news->update($data);
 
-         // Associar tags se fornecidas
+        // Associar tags se fornecidas
         if ($request->has('tags')) {
             $news->tags()->sync($request->tags);
         } else {
@@ -206,19 +156,13 @@ class NewsController extends Controller
         return redirect()->route('admin.news.index')->with('success', 'Notícia atualizada com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Notícia!');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function destroy(News $news)
     {
-        //
+        $user = Auth::user(); // ou request()->user();
+        if (!$user->isEditor()) {
+            abort(403, 'Você não tem permissão para deletar esta notícia.');
+        }
         $news->delete();
-
         return redirect()->route('admin.news.index')
             ->with('success', 'Notícia eliminado com sucesso');
     }

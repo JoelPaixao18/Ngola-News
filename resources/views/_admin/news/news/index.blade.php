@@ -281,13 +281,16 @@
                                                                 </a>
                                                                 </li>
                                                                 <li class="dropdown-divider"></li>
-                                                                <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="{{ route('admin.news.delete', ['news' => $news]) }}">
-                                                                        <i class="feather feather-trash-2 me-3"></i>
-                                                                        <span>Delete</span>
-                                                                    </a>
-                                                                </li>
+                                                                @can('is-editor')
+                                                                    <li>
+                                                                        <a class="dropdown-item"
+                                                                            href="{{ route('admin.news.delete', ['news' => $news]) }}">
+                                                                            <i class="feather feather-trash-2 me-3"></i>
+                                                                            <span>Delete</span>
+                                                                        </a>
+                                                                    </li>
+                                                                @endcan
+
                                                             </ul>
                                                         </div>
                                                     </div>

@@ -23,18 +23,25 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    /* protected $redirectTo = RouteServiceProvider::HOME; */
+    /* protected function redirectTo()
+    {
+        $role = Auth::user()->role;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+        switch ($role) {
+            case 'admin':
+                return '/admin';
+            case 'editor':
+                return '/admin.news/news';
+            case 'jornalista':
+                return '/admin.news/news';
+            case 'assinante':
+                return '/';
+            default:
+                return '/login'; // fallback se algo estiver errado
+        }
+    } */
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -52,6 +59,20 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        return redirect()->intended('/admin/dashboard')->with('success', 'Login feito com sucesso. Bem-vindo, ' . $user->name . '!');
+         $role = Auth::user()->role;
+
+        switch ($role) {
+            case 'admin':
+                return redirect()->intended('/admin/dashboard')->with('success', 'Login feito com sucesso. Bem-vindo, ' . $user->name . '!');;
+            case 'editor':
+                return redirect()->intended('/admin.news/news')->with('success', 'Login feito com sucesso. Bem-vindo, ' . $user->name . '!');;
+            case 'jornalista':
+                return redirect()->intended('/admin.news/news')->with('success', 'Login feito com sucesso. Bem-vindo, ' . $user->name . '!');;
+            case 'assinante':
+                return redirect()->intended('/')->with('success', 'Login feito com sucesso. Bem-vindo, ' . $user->name . '!');;
+            default:
+                return '/login'; // fallback se algo estiver errado
+        }
+       /*  return redirect()->intended('/admin/dashboard')->with('success', 'Login feito com sucesso. Bem-vindo, ' . $user->name . '!'); */
     }
 }
