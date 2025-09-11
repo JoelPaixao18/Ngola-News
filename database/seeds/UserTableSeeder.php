@@ -2,14 +2,10 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         DB::table('users')->delete();
@@ -21,10 +17,39 @@ class UserTableSeeder extends Seeder
                 'name' => 'Infosi',
                 'email' => 'admin@infosi.com',
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$u/wQCq/pvkdXQJOA48xDLe.o/KNhFZWbH7ZpeGn2AJdbTJjZePQ6G',
+                'password' => Hash::make('admin123'),
+                'role' => 'admin',
                 'remember_token' => NULL,
-                'created_at' => '2025-09-05 08:53:48',
-                'updated_at' => '2025-09-05 08:53:48',
+            ),
+            1 =>
+            array (
+                'id' => 2,
+                'name' => 'editor',
+                'email' => 'admin@editor.com',
+                'email_verified_at' => NULL,
+                'password' => Hash::make('admin123'),
+                'role' => 'editor',
+                'remember_token' => NULL,
+            ),
+            2 =>
+            array (
+                'id' => 3,
+                'name' => 'Jornalista',
+                'email' => 'admin@Jornalista.com',
+                'email_verified_at' => NULL,
+                'password' => Hash::make('admin123'),
+                'role' => 'jornalista',
+                'remember_token' => NULL,
+            ),
+            3 =>
+            array (
+                'id' => 4,
+                'name' => 'Assinante',
+                'email' => 'admin@Assinante.com',
+                'email_verified_at' => NULL,
+                'password' => Hash::make('admin123'),
+                'role' => 'assinante',
+                'remember_token' => NULL,
             ),
         ));
     }

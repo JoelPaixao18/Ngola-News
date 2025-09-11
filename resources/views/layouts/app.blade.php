@@ -119,7 +119,7 @@
  --}}
         <main class="auth-minimal-wrapper">
             {{-- Alerts --}}
-            @include('_admin.layout.alerts')
+            @include('layouts._admin.alerts')
 
             @yield('content')
         </main>

@@ -1,4 +1,4 @@
-@extends('site.layout.main')
+@extends('layouts._site.main')
 @section('title', 'News Category')
 @section('content')
     <div class="breadcumb-wrapper">
