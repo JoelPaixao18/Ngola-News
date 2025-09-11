@@ -61,125 +61,20 @@
                             <form action="{{ route('admin.news.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('POST')
-
-                                <div class="row">
-
-                                    {{-- Name of Tag --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Tags</label>
-                                        <select class="form-control" name="tags[]">
-                                            <option value="">-- Selecione uma categoria --</option>
-                                            @foreach ($tags as $tag)
-                                                <option value="{{ $tag->id }}"
-                                                    {{ isset($news) && $news->tags->contains($tag->id) ? 'selected' : '' }}>
-                                                    {{ $tag->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-
-                                    {{-- Categoria --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Categoria da Notícia</label>
-                                        <select class="form-control" name="category_id" data-select2-selector="category">
-                                            <option value="">-- Selecione uma categoria --</option>
-                                            @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}"
-                                                    {{ old('category_id', $news->category_id ?? '') == $category->id ? 'selected' : '' }}>
-                                                    {{ $category->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    {{-- Titlo --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Titlo da Notícia</label>
-                                        <input type="text" name="title" class="form-control"
-                                            value="{{ old('title') }}" placeholder="Ex: INFOSI recebe novos estagiarios">
-                                    </div>
-
-                                    {{-- Subtitlo --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Subtitlo da Notícia</label>
-                                        <input type="text" name="subtitle" class="form-control"
-                                            value="{{ old('subtitle', $news->subtitle ?? '') }}"
-                                            placeholder="Ex: Estão a desenvolver um projeto">
-                                    </div>
-
-                                    {{-- Destaque --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Destaque</label>
-                                        <select class="form-control" name="detach" data-select2-selector="detach">
-                                            <option value="" disabled selected>-- Selecione o destaque --</option>
-                                            <option value="normal"> Normal</option>
-                                            <option value="destaque"> Destaque</option>
-                                            <option value="urgente"> Urgente</option>
-                                        </select>
-                                    </div>
-
-                                    {{-- Status --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Status</label>
-                                        <select class="form-control" name="status" data-select2-selector="status">
-                                            <option value="" disabled selected>-- Selecione o status --</option>
-                                            <option value="draft" data-bg="bg-success"> Rascunho</option>
-                                            <option value="published" data-bg="bg-danger"> Publicado</option>
-                                            <option value="filed" data-bg="bg-warning"> Arquivado</option>
-                                        </select>
-                                    </div>
-
-                                    {{-- Image --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Imagem da Notícia</label>
-                                        <input type="file" name="image" class="form-control">
-                                        <small class="text-muted">Formatos suportados: jpg, jpeg, png, gif</small>
-                                    </div>
-
-                                    {{-- Date --}}
-                                    <div class="col-lg-4 mb-4">
-                                        <label class="form-label">Data de Publicação</label>
-                                        <input type="date" name="date" class="form-control"
-                                            value="{{ old('date', $news->date ?? date('Y-m-d')) }}">
-                                    </div>
-
-                                    {{-- Descrição --}}
-                                    <div class="col-lg-12 mb-4">
-                                        <div class="main-container">
-                                            <div class="editor-container editor-container_classic-editor editor-container_include-outline editor-container_include-block-toolbar"
-                                                id="editor-container">
-                                                <div class="editor-container__editor-wrappe">
-                                                    <div class="editor-container__sidebar" id="editor-outline">
-                                                    </div>
-                                                    <div class="editor-container__editor">
-                                                        <label for="descriptionInput" class="form-label">Descrição:
-                                                        </label>
-                                                        <textarea id="editor" name="description">{{ old('description') }}</textarea>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{--  <label for="descriptionInput" class="form-label">Descrição: </label>
-                                                <textarea class="form-control" id="editor" name="description" cols="30" rows="5"
-                                                    placeholder="Description">{{ old('description') }}</textarea> --}}
-                                    </div>
-                                    <div class="col-lg-4 mb-4"> <button type="submit" class="btn btn-danger">
-                                            Salvar
-                                            <i class="feather-save ms-2"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                                {{-- Aqui o formulário --}}
+                                @include('form._news.index')
+                                {{-- end formulario --}}
+                            </form>
                         </div>
                     </div>
                 </div>
+
             </div>
 
+            </form>
+
         </div>
-
-        </form>
-
-    </div>
-    <!-- [ Main Content ] end -->
+        <!-- [ Main Content ] end -->
     </div>
 
     <!-- [ Main Content ] end -->

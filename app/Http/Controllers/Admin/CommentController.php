@@ -82,7 +82,7 @@ class CommentController extends Controller
     public function show(Comment $comment)
     {
         //
-        return view('_admin.comments.details.index', ['comment' => $comment]);
+        return view('_admin.comments.details.index', compact('comment'));
     }
 
     /**
@@ -93,8 +93,8 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-        //
-        return view('_admin.comments.edit.index', ['comment' => $comment]);
+        $news = News::all();
+        return view('_admin.comments.edit.index', compact('comment', 'news'));
     }
 
     /**
@@ -121,7 +121,7 @@ class CommentController extends Controller
         ]);
 
         $comment->update([
-            'text_comment' => $request->trait_exists,
+            'text_comment' => $request->input('text_comment'),
             'author_comment' => $request->author_comment,
             'date' => $request->date,
             'news_id' => $request->news_id,
