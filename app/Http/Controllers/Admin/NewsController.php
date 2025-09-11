@@ -17,14 +17,14 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::orderByDesc('id')->get();
-        return view('_admin.news.news.index', compact('news'));
+        return view('_admin.news.list.index', compact('news'));
     }
     public function create()
     {
         //trazendo as categorias
         $categories = Category::all();
         $tags = Tag::all();
-        return view('_admin.news.newsCreate.index', compact('categories', 'tags'));
+        return view('_admin.news.create.index', compact('categories', 'tags'));
     }
     public function store(Request $request)
     {
@@ -83,14 +83,14 @@ class NewsController extends Controller
     }
     public function show(News $news)
     {
-        return view('_admin.news.newsViews.index', ['news' => $news]);
+        return view('_admin.news.details.index', ['news' => $news]);
     }
     public function edit(News $news)
     {
         $categories = Category::all(); // Or any other query to fetch categories
         $tags = Tag::all();
 
-        return view('_admin.news.newsEdit.index', ['news' => $news], compact('categories', 'tags'));
+        return view('_admin.news.edit.index', ['news' => $news], compact('categories', 'tags'));
     }
     public function update(Request $request, News $news)
     {

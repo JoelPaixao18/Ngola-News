@@ -8,7 +8,7 @@ git remote set-head origin -a
 ===============================================================================
 codigo que preciso guardar
 ===============================================================================
-@extends('site.layout.main')
+@extends('layouts._site.main')
 @section('title', 'Videos')
 @section('content-videos')
 

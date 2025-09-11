@@ -11,11 +11,11 @@ class PublicationController extends Controller
     public function index()
     {
         $publications = Publication::orderByDesc('id')->get();
-        return view('_admin.publications.publication.index', compact('publications'));
+        return view('_admin.publications.list.index', compact('publications'));
     }
     public function create()
     {
-        return view('_admin.publications.publicationCreate.index');
+        return view('_admin.publications.create.index');
     }
 
     public function store(Request $request)
@@ -68,12 +68,12 @@ class PublicationController extends Controller
 
     public function show(Publication $publication)
     {
-        return view('_admin.publications.publicationView.index', compact('publication'));
+        return view('_admin.publications.details.index', compact('publication'));
     }
 
     public function edit(Publication $publication)
     {
-        return view('_admin.publications.publicationEdit.index', compact('publication'));
+        return view('_admin.publications.edit.index', compact('publication'));
     }
 
     public function update(Request $request, Publication $publication)

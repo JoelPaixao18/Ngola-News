@@ -11,11 +11,11 @@ class VideoController extends Controller
     public function index()
     {
         $videos = Video::orderByDesc('id')->get();
-        return view('_admin.videos.video.index', compact('videos'));
+        return view('_admin.videos.list.index', compact('videos'));
     }
     public function create()
     {
-        return view('_admin.videos.videoCreate.index');
+        return view('_admin.videos.create.index');
     }
     public function store(Request $request)
     {
@@ -37,11 +37,11 @@ class VideoController extends Controller
     }
     public function show(Video $video)
     {
-        return view('_admin.videos.videoView.index', compact('video'));
+        return view('_admin.videos.details.index', compact('video'));
     }
     public function edit(Video $video)
     {
-        return view('_admin.videos.videoEdit.index', compact('video'));
+        return view('_admin.videos.edit.index', compact('video'));
     }
     public function update(Request $request, Video $video)
     {

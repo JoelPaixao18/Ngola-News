@@ -11,11 +11,11 @@ class GaleryController extends Controller
     public function index()
     {
         $galeries = Galery::orderByDesc('id')->get();
-        return view('_admin.galeries.galery.index', compact('galeries'));
+        return view('_admin.galeries.list.index', compact('galeries'));
     }
     public function create()
     {
-        return view('_admin.galeries.galeryCreate.index');
+        return view('_admin.galeries.create.index');
     }
     public function store(Request $request)
     {
@@ -44,11 +44,11 @@ class GaleryController extends Controller
     }
     public function show(Galery $galery)
     {
-        return view('_admin.galeries.galeryView.index', compact('galery'));
+        return view('_admin.galeries.details.index', compact('galery'));
     }
     public function edit(Galery $galery)
     {
-        return view('_admin.galeries.galeryEdit.index', compact('galery'));
+        return view('_admin.galeries.edit.index', compact('galery'));
     }
     public function update(Request $request, Galery $galery)
     {

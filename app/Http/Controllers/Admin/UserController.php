@@ -17,11 +17,11 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('_admin.users.user.index', compact('users'));
+        return view('_admin.users.list.index', compact('users'));
     }
     public function create()
     {
-        return view('_admin.users.userCreate.index');
+        return view('_admin.users.create.index');
     }
     /* 
     {
@@ -94,11 +94,11 @@ class UserController extends Controller
     }
     public function show(User $user)
     {
-        return view('_admin.users.userView.index', compact('user'));
+        return view('_admin.users.details.index', compact('user'));
     }
     public function edit(User $user)
     {
-        return view('_admin.users.userEdit.index', compact('user'));
+        return view('_admin.users.edit.index', compact('user'));
     }
     public function update(Request $request, User $user)
     {

@@ -40,23 +40,23 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
     
     /*Category routes*/
     Route::prefix('admin.categories')->name('admin.')->group(function () {
-        Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
-        Route::get('categoryCreate', [CategoryController::class, 'create'])->name('category.create');
-        Route::post('categories', [CategoryController::class, 'store'])->name('categories.store');
-        Route::get('categoryView/{category}', [CategoryController::class, 'show'])->name('category.show');
-        Route::get('categoryEdit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
-        Route::put('categoryUpdate/{category}', [CategoryController::class, 'update'])->name('category.update');
-        Route::get('categoryDelete/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
+        Route::get('list', [CategoryController::class, 'index'])->name('categories.index');
+        Route::get('create', [CategoryController::class, 'create'])->name('category.create');
+        Route::post('store', [CategoryController::class, 'store'])->name('categories.store');
+        Route::get('details/{category}', [CategoryController::class, 'show'])->name('category.show');
+        Route::get('edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
+        Route::put('update/{category}', [CategoryController::class, 'update'])->name('category.update');
+        Route::get('delete/{category}', [CategoryController::class, 'destroy'])->name('category.delete');
     });
 
     /* news routes */
     Route::prefix('admin.news')->name('admin.')->group(function () {
         Route::get('news', [NewsController::class, 'index'])->name('news.index');
-        Route::get('newsCreate', [NewsController::class, 'create'])->name('news.create');
+        Route::get('create', [NewsController::class, 'create'])->name('news.create');
         Route::post('newsStore', [NewsController::class, 'store'])->name('news.store');
-        Route::get('newsEdit/{news}', [NewsController::class, 'edit'])->name('news.edit');
+        Route::get('edit/{news}', [NewsController::class, 'edit'])->name('news.edit');
         Route::put('newsUpdate/{news}', [NewsController::class, 'update'])->name('news.update');
-        Route::get('newsViews/{news}', [NewsController::class, 'show'])->name('news.view');
+        Route::get('details/{news}', [NewsController::class, 'show'])->name('news.view');
         Route::get('newsDelete/{news}', [NewsController::class, 'destroy'])->name('news.delete');
         Route::resource('tags', TagController::class);
     });
@@ -64,19 +64,20 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
     /* comments routes */
     Route::prefix('admin/comments')->name('admin.')->group(function () {
         Route::get('comment', [CommentController::class, 'index'])->name('comments.index');
-        Route::get('commentCreate', [CommentController::class, 'create'])->name('comment.create');
+        Route::get('create', [CommentController::class, 'create'])->name('comment.create');
         Route::post('commentStore', [CommentController::class, 'store'])->name('comment.store');
-        Route::get('commentEdit/{comment}', [CommentController::class, 'edit'])->name('comment.edit');
+        Route::get('edit/{comment}', [CommentController::class, 'edit'])->name('comment.edit');
         Route::put('commentUpdate/{comment}', [CommentController::class, 'update'])->name('comment.update');
-        Route::get('commentView/{comment}', [CommentController::class, 'show'])->name('comment.view');
+        Route::get('details/{comment}', [CommentController::class, 'show'])->name('comment.view');
         Route::get('commentDelete/{comment}', [CommentController::class, 'destroy'])->name('comment.delete');
     });
     /* tags routes */
     Route::prefix('admin.tags')->name('admin.')->group(function () {
         Route::get('tags', [TagController::class, 'index'])->name('tags.index');
-        Route::get('tagCreate', [TagController::class, 'create'])->name('tag.create');
+        Route::get('create', [TagController::class, 'create'])->name('tag.create');
         Route::post('tagStore', [TagController::class, 'store'])->name('tag.store');
-        Route::get('tagEdit/{tag}', [TagController::class, 'edit'])->name('tag.edit');
+        Route::get('edit
+/{tag}', [TagController::class, 'edit'])->name('tag.edit');
         Route::put('tagUpdate/{tag}', [TagController::class, 'update'])->name('tag.update');
         Route::get('tagView/{tag}', [TagController::class, 'show'])->name('tag.view');
         Route::get('tagDelete/{tag}', [TagController::class, 'destroy'])->name('tag.delete');
@@ -85,50 +86,50 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
     /* typeCategory routes */
     Route::prefix('admin.typeCategories')->name('admin.')->group(function () {
         Route::get('typeCategory', [TypeCategoryController::class, 'index'])->name('typeCategories.index');
-        Route::get('typeCategoryCreate', [TypeCategoryController::class, 'create'])->name('typeCategory.create');
+        Route::get('create', [TypeCategoryController::class, 'create'])->name('typeCategory.create');
         Route::post('typeCategories', [TypeCategoryController::class, 'store'])->name('typeCategories.store');
-        Route::get('typeCategoryView/{typeCategory}', [TypeCategoryController::class, 'show'])->name('typeCategory.show');
-        Route::get('typeCategoryEdit/{typeCategory}', [TypeCategoryController::class, 'edit'])->name('typeCategory.edit');
+        Route::get('typeview/{typeCategory}', [TypeCategoryController::class, 'show'])->name('typeCategory.show');
+        Route::get('typeedit/{typeCategory}', [TypeCategoryController::class, 'edit'])->name('typeCategory.edit');
         Route::put('typeCategoryUpdate/{typeCategory}', [TypeCategoryController::class, 'update'])->name('typeCategory.update');
         Route::get('typeCategoryDelete/{typeCategory}', [TypeCategoryController::class, 'destroy'])->name('typeCategory.delete');
     });
     /* publications routes */
     Route::prefix('admin/publications')->name('admin.')->group(function () {
         Route::get('publication', [PublicationController::class, 'index'])->name('publication.index');
-        Route::get('publicationCreate', [PublicationController::class, 'create'])->name('publication.create');
+        Route::get('create', [PublicationController::class, 'create'])->name('publication.create');
         Route::post('publicationStore', [PublicationController::class, 'store'])->name('publication.store');
-        Route::get('publicationEdit/{publication}', [PublicationController::class, 'edit'])->name('publication.edit');
+        Route::get('edit/{publication}', [PublicationController::class, 'edit'])->name('publication.edit');
         Route::put('publicationUpdate/{publication}', [PublicationController::class, 'update'])->name('publication.update');
-        Route::get('publicationView/{publication}', [PublicationController::class, 'show'])->name('publication.view');
+        Route::get('details/{publication}', [PublicationController::class, 'show'])->name('publication.view');
         Route::get('publicationDelete/{publication}', [PublicationController::class, 'destroy'])->name('publication.delete');
     });
     /* videos routes */
     Route::prefix('admin/videos')->name('admin.')->group(function () {
         Route::get('video', [VideoController::class, 'index'])->name('video.index');
-        Route::get('videoCreate', [VideoController::class, 'create'])->name('video.create');
+        Route::get('create', [VideoController::class, 'create'])->name('video.create');
         Route::post('videoStore', [VideoController::class, 'store'])->name('video.store');
-        Route::get('videoEdit/{video}', [videoController::class, 'edit'])->name('video.edit');
+        Route::get('edit/{video}', [videoController::class, 'edit'])->name('video.edit');
         Route::put('videoUpdate/{video}', [videoController::class, 'update'])->name('video.update');
-        Route::get('videoView/{video}', [videoController::class, 'show'])->name('video.view');
+        Route::get('details/{video}', [videoController::class, 'show'])->name('video.view');
         Route::get('videoDelete/{video}', [videoController::class, 'destroy'])->name('video.delete');
     });
     /* galery routes */
     Route::prefix('admin/galeries')->name('admin.')->group(function () {
         Route::get('galery', [GaleryController::class, 'index'])->name('galery.index');
-        Route::get('galeryCreate', [GaleryController::class, 'create'])->name('galery.create');
+        Route::get('create', [GaleryController::class, 'create'])->name('galery.create');
         Route::post('galeryStore', [GaleryController::class, 'store'])->name('galery.store');
-        Route::get('galeryEdit/{galery}', [GaleryController::class, 'edit'])->name('galery.edit');
+        Route::get('edit/{galery}', [GaleryController::class, 'edit'])->name('galery.edit');
         Route::put('galeryUpdate/{galery}', [GaleryController::class, 'update'])->name('galery.update');
-        Route::get('galeryView/{galery}', [GaleryController::class, 'show'])->name('galery.view');
+        Route::get('details/{galery}', [GaleryController::class, 'show'])->name('galery.view');
         Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
     });
     /* users routes */
     Route::prefix('admin.users')->name('admin.')->group(function () {
         Route::get('user', [UserController::class, 'index'])->name('user.index');
-        Route::get('userCreate', [UserController::class, 'create'])->name('user.create');
+        Route::get('create', [UserController::class, 'create'])->name('user.create');
         Route::post('userStore', [UserController::class, 'store'])->name('user.store');
-        Route::get('userView/{user}', [UserController::class, 'show'])->name('user.show');
-        Route::get('userEdit/{user}', [UserController::class, 'edit'])->name('user.edit');
+        Route::get('details/{user}', [UserController::class, 'show'])->name('user.show');
+        Route::get('edit/{user}', [UserController::class, 'edit'])->name('user.edit');
         Route::put('userUpdate/{user}', [UserController::class, 'update'])->name('user.update');
         Route::get('userDelete/{user}', [UserController::class, 'destroy'])->name('user.delete');
     });
@@ -139,52 +140,52 @@ Route::group(['middleware' => ['auth', 'role:admin,editor,jornalista']], functio
     /* news routes */
     Route::prefix('admin.news')->name('admin.')->group(function () {
         Route::get('news', [NewsController::class, 'index'])->name('news.index');
-        Route::get('newsCreate', [NewsController::class, 'create'])->name('news.create');
+        Route::get('create', [NewsController::class, 'create'])->name('news.create');
         Route::post('newsStore', [NewsController::class, 'store'])->name('news.store');
-        Route::get('newsEdit/{news}', [NewsController::class, 'edit'])->name('news.edit');
+        Route::get('edit/{news}', [NewsController::class, 'edit'])->name('news.edit');
         Route::put('newsUpdate/{news}', [NewsController::class, 'update'])->name('news.update');
-        Route::get('newsViews/{news}', [NewsController::class, 'show'])->name('news.view');
+        Route::get('details/{news}', [NewsController::class, 'show'])->name('news.view');
         Route::get('newsDelete/{news}', [NewsController::class, 'destroy'])->name('news.delete');
         Route::resource('tags', TagController::class);
     });
     /* comments routes */
     Route::prefix('admin/comments')->name('admin.')->group(function () {
         Route::get('comment', [CommentController::class, 'index'])->name('comments.index');
-        Route::get('commentCreate', [CommentController::class, 'create'])->name('comment.create');
+        Route::get('create', [CommentController::class, 'create'])->name('comment.create');
         Route::post('commentStore', [CommentController::class, 'store'])->name('comment.store');
-        Route::get('commentEdit/{comment}', [CommentController::class, 'edit'])->name('comment.edit');
+        Route::get('edit/{comment}', [CommentController::class, 'edit'])->name('comment.edit');
         Route::put('commentUpdate/{comment}', [CommentController::class, 'update'])->name('comment.update');
-        Route::get('commentView/{comment}', [CommentController::class, 'show'])->name('comment.view');
+        Route::get('details/{comment}', [CommentController::class, 'show'])->name('comment.view');
         Route::get('commentDelete/{comment}', [CommentController::class, 'destroy'])->name('comment.delete');
     });
     /* publications routes */
     Route::prefix('admin/publications')->name('admin.')->group(function () {
         Route::get('publication', [PublicationController::class, 'index'])->name('publication.index');
-        Route::get('publicationCreate', [PublicationController::class, 'create'])->name('publication.create');
+        Route::get('create', [PublicationController::class, 'create'])->name('publication.create');
         Route::post('publicationStore', [PublicationController::class, 'store'])->name('publication.store');
-        Route::get('publicationEdit/{publication}', [PublicationController::class, 'edit'])->name('publication.edit');
+        Route::get('edit/{publication}', [PublicationController::class, 'edit'])->name('publication.edit');
         Route::put('publicationUpdate/{publication}', [PublicationController::class, 'update'])->name('publication.update');
-        Route::get('publicationView/{publication}', [PublicationController::class, 'show'])->name('publication.view');
+        Route::get('details/{publication}', [PublicationController::class, 'show'])->name('publication.view');
         Route::get('publicationDelete/{publication}', [PublicationController::class, 'destroy'])->name('publication.delete');
     });
     /* videos routes */
     Route::prefix('admin/videos')->name('admin.')->group(function () {
         Route::get('video', [VideoController::class, 'index'])->name('video.index');
-        Route::get('videoCreate', [VideoController::class, 'create'])->name('video.create');
+        Route::get('create', [VideoController::class, 'create'])->name('video.create');
         Route::post('videoStore', [VideoController::class, 'store'])->name('video.store');
-        Route::get('videoEdit/{video}', [videoController::class, 'edit'])->name('video.edit');
+        Route::get('edit/{video}', [videoController::class, 'edit'])->name('video.edit');
         Route::put('videoUpdate/{video}', [videoController::class, 'update'])->name('video.update');
-        Route::get('videoView/{video}', [videoController::class, 'show'])->name('video.view');
+        Route::get('details/{video}', [videoController::class, 'show'])->name('video.view');
         Route::get('videoDelete/{video}', [videoController::class, 'destroy'])->name('video.delete');
     });
     /* galery routes */
     Route::prefix('admin/galeries')->name('admin.')->group(function () {
         Route::get('galery', [GaleryController::class, 'index'])->name('galery.index');
-        Route::get('galeryCreate', [GaleryController::class, 'create'])->name('galery.create');
+        Route::get('create', [GaleryController::class, 'create'])->name('galery.create');
         Route::post('galeryStore', [GaleryController::class, 'store'])->name('galery.store');
-        Route::get('galeryEdit/{galery}', [GaleryController::class, 'edit'])->name('galery.edit');
+        Route::get('edit/{galery}', [GaleryController::class, 'edit'])->name('galery.edit');
         Route::put('galeryUpdate/{galery}', [GaleryController::class, 'update'])->name('galery.update');
-        Route::get('galeryView/{galery}', [GaleryController::class, 'show'])->name('galery.view');
+        Route::get('details/{galery}', [GaleryController::class, 'show'])->name('galery.view');
         Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
     });
 });
@@ -206,8 +207,8 @@ Route::group(['middleware' => ['auth', 'role:assinante']], function () {
     Route::get('categories', [CategoryController::class, 'index'])->name('categories.index')->middleware('auth');
     Route::get('categoryCreate', [CategoryController::class, 'create'])->name('category.create')->middleware('auth');
     Route::post('categories', [CategoryController::class, 'store'])->name('categories.store')->middleware('auth');
-    Route::get('categoryView/{category}', [CategoryController::class, 'show'])->name('category.show')->middleware('auth');
-    Route::get('categoryEdit/{category}', [CategoryController::class, 'edit'])->name('category.edit')->middleware('auth');
+    Route::get('view/{category}', [CategoryController::class, 'show'])->name('category.show')->middleware('auth');
+    Route::get('edit/{category}', [CategoryController::class, 'edit'])->name('category.edit')->middleware('auth');
     Route::put('categoryUpdate/{category}', [CategoryController::class, 'update'])->name('category.update')->middleware('auth');
     Route::get('categoryDelete/{category}', [CategoryController::class, 'destroy'])->name('category.delete')->middleware('auth');
 }); */
@@ -231,11 +232,11 @@ Route::prefix('admin.authors')->name('admin.')->group(function () {
 -------------------------------------------------------*/
 /* Route::prefix('admin.news')->name('admin.')->group(function () {
     Route::get('news', [NewsController::class, 'index'])->name('news.index')->middleware('auth');
-    Route::get('newsCreate', [NewsController::class, 'create'])->name('news.create')->middleware('auth');
+    Route::get('create', [NewsController::class, 'create'])->name('news.create')->middleware('auth');
     Route::post('newsStore', [NewsController::class, 'store'])->name('news.store')->middleware('auth');
-    Route::get('newsEdit/{news}', [NewsController::class, 'edit'])->name('news.edit')->middleware('auth');
+    Route::get('edit/{news}', [NewsController::class, 'edit'])->name('news.edit')->middleware('auth');
     Route::put('newsUpdate/{news}', [NewsController::class, 'update'])->name('news.update')->middleware('auth');
-    Route::get('newsViews/{news}', [NewsController::class, 'show'])->name('news.view')->middleware('auth');
+    Route::get('details/{news}', [NewsController::class, 'show'])->name('news.view')->middleware('auth');
     Route::get('newsDelete/{news}', [NewsController::class, 'destroy'])->name('news.delete')->middleware('auth');
     Route::resource('tags', TagController::class);
 }); */
@@ -261,11 +262,11 @@ Route::prefix('admin.authors')->name('admin.')->group(function () {
 
 /* Route::prefix('admin/comments')->name('admin.')->group(function () {
     Route::get('comment', [CommentController::class, 'index'])->name('comments.index')->middleware('auth');
-    Route::get('commentCreate', [CommentController::class, 'create'])->name('comment.create')->middleware('auth');
+    Route::get('create', [CommentController::class, 'create'])->name('comment.create')->middleware('auth');
     Route::post('commentStore', [CommentController::class, 'store'])->name('comment.store')->middleware('auth');
-    Route::get('commentEdit/{comment}', [CommentController::class, 'edit'])->name('comment.edit')->middleware('auth');
+    Route::get('edit/{comment}', [CommentController::class, 'edit'])->name('comment.edit')->middleware('auth');
     Route::put('commentUpdate/{comment}', [CommentController::class, 'update'])->name('comment.update')->middleware('auth');
-    Route::get('commentView/{comment}', [CommentController::class, 'show'])->name('comment.view')->middleware('auth');
+    Route::get('details/{comment}', [CommentController::class, 'show'])->name('comment.view')->middleware('auth');
     Route::get('commentDelete/{comment}', [CommentController::class, 'destroy'])->name('comment.delete')->middleware('auth');
 }); */
 
@@ -275,9 +276,10 @@ Route::prefix('admin.authors')->name('admin.')->group(function () {
 
 /* Route::prefix('admin.tags')->name('admin.')->group(function () {
     Route::get('tags', [TagController::class, 'index'])->name('tags.index')->middleware('auth');
-    Route::get('tagCreate', [TagController::class, 'create'])->name('tag.create')->middleware('auth');
+    Route::get('create', [TagController::class, 'create'])->name('tag.create')->middleware('auth');
     Route::post('tagStore', [TagController::class, 'store'])->name('tag.store')->middleware('auth');
-    Route::get('tagEdit/{tag}', [TagController::class, 'edit'])->name('tag.edit')->middleware('auth');
+    Route::get('edit
+/{tag}', [TagController::class, 'edit'])->name('tag.edit')->middleware('auth');
     Route::put('tagUpdate/{tag}', [TagController::class, 'update'])->name('tag.update')->middleware('auth');
     Route::get('tagView/{tag}', [TagController::class, 'show'])->name('tag.view')->middleware('auth');
     Route::get('tagDelete/{tag}', [TagController::class, 'destroy'])->name('tag.delete')->middleware('auth');
@@ -289,10 +291,10 @@ Route::prefix('admin.authors')->name('admin.')->group(function () {
 
 /* Route::prefix('admin.typeCategories')->name('admin.')->group(function () {
     Route::get('typeCategory', [TypeCategoryController::class, 'index'])->name('typeCategories.index')->middleware('auth');
-    Route::get('typeCategoryCreate', [TypeCategoryController::class, 'create'])->name('typeCategory.create')->middleware('auth');
+    Route::get('create', [TypeCategoryController::class, 'create'])->name('typeCategory.create')->middleware('auth');
     Route::post('typeCategories', [TypeCategoryController::class, 'store'])->name('typeCategories.store')->middleware('auth');
-    Route::get('typeCategoryView/{typeCategory}', [TypeCategoryController::class, 'show'])->name('typeCategory.show')->middleware('auth');
-    Route::get('typeCategoryEdit/{typeCategory}', [TypeCategoryController::class, 'edit'])->name('typeCategory.edit')->middleware('auth');
+    Route::get('typeview/{typeCategory}', [TypeCategoryController::class, 'show'])->name('typeCategory.show')->middleware('auth');
+    Route::get('typeedit/{typeCategory}', [TypeCategoryController::class, 'edit'])->name('typeCategory.edit')->middleware('auth');
     Route::put('typeCategoryUpdate/{typeCategory}', [TypeCategoryController::class, 'update'])->name('typeCategory.update')->middleware('auth');
     Route::get('typeCategoryDelete/{typeCategory}', [TypeCategoryController::class, 'destroy'])->name('typeCategory.delete')->middleware('auth');
 }); */
@@ -302,11 +304,11 @@ Route::prefix('admin.authors')->name('admin.')->group(function () {
 --------------------------------------------------*/
 /* Route::prefix('admin/publications')->name('admin.')->group(function () {
     Route::get('publication', [PublicationController::class, 'index'])->name('publication.index')->middleware('auth');
-    Route::get('publicationCreate', [PublicationController::class, 'create'])->name('publication.create')->middleware('auth');
+    Route::get('create', [PublicationController::class, 'create'])->name('publication.create')->middleware('auth');
     Route::post('publicationStore', [PublicationController::class, 'store'])->name('publication.store')->middleware('auth');
-    Route::get('publicationEdit/{publication}', [PublicationController::class, 'edit'])->name('publication.edit')->middleware('auth');
+    Route::get('edit/{publication}', [PublicationController::class, 'edit'])->name('publication.edit')->middleware('auth');
     Route::put('publicationUpdate/{publication}', [PublicationController::class, 'update'])->name('publication.update')->middleware('auth');
-    Route::get('publicationView/{publication}', [PublicationController::class, 'show'])->name('publication.view')->middleware('auth');
+    Route::get('details/{publication}', [PublicationController::class, 'show'])->name('publication.view')->middleware('auth');
     Route::get('publicationDelete/{publication}', [PublicationController::class, 'destroy'])->name('publication.delete')->middleware('auth');
 }); */
 /* -----------------------------------------------
@@ -314,11 +316,11 @@ Route::prefix('admin.authors')->name('admin.')->group(function () {
 --------------------------------------------------*/
 /* Route::prefix('admin/videos')->name('admin.')->group(function () {
     Route::get('video', [VideoController::class, 'index'])->name('video.index')->middleware('auth');
-    Route::get('videoCreate', [VideoController::class, 'create'])->name('video.create')->middleware('auth');
+    Route::get('create', [VideoController::class, 'create'])->name('video.create')->middleware('auth');
     Route::post('videoStore', [VideoController::class, 'store'])->name('video.store')->middleware('auth');
-    Route::get('videoEdit/{video}', [videoController::class, 'edit'])->name('video.edit')->middleware('auth');
+    Route::get('edit/{video}', [videoController::class, 'edit'])->name('video.edit')->middleware('auth');
     Route::put('videoUpdate/{video}', [videoController::class, 'update'])->name('video.update')->middleware('auth');
-    Route::get('videoView/{video}', [videoController::class, 'show'])->name('video.view')->middleware('auth');
+    Route::get('details/{video}', [videoController::class, 'show'])->name('video.view')->middleware('auth');
     Route::get('videoDelete/{video}', [videoController::class, 'destroy'])->name('video.delete')->middleware('auth');
 }); */
 /* -----------------------------------------------
@@ -326,11 +328,11 @@ Route::prefix('admin.authors')->name('admin.')->group(function () {
 --------------------------------------------------*/
 /* Route::prefix('admin/galeries')->name('admin.')->group(function () {
     Route::get('galery', [GaleryController::class, 'index'])->name('galery.index')->middleware('auth');
-    Route::get('galeryCreate', [GaleryController::class, 'create'])->name('galery.create')->middleware('auth');
+    Route::get('create', [GaleryController::class, 'create'])->name('galery.create')->middleware('auth');
     Route::post('galeryStore', [GaleryController::class, 'store'])->name('galery.store')->middleware('auth');
-    Route::get('galeryEdit/{galery}', [GaleryController::class, 'edit'])->name('galery.edit')->middleware('auth');
+    Route::get('edit/{galery}', [GaleryController::class, 'edit'])->name('galery.edit')->middleware('auth');
     Route::put('galeryUpdate/{galery}', [GaleryController::class, 'update'])->name('galery.update')->middleware('auth');
-    Route::get('galeryView/{galery}', [GaleryController::class, 'show'])->name('galery.view')->middleware('auth');
+    Route::get('details/{galery}', [GaleryController::class, 'show'])->name('galery.view')->middleware('auth');
     Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete')->middleware('auth');
 }); */
 
@@ -340,10 +342,10 @@ Route::prefix('admin.authors')->name('admin.')->group(function () {
 
 Route::prefix('admin.ads')->name('admin.')->group(function () {
     Route::get('ads', [AdvertisementController::class, 'index'])->name('ads.index')->middleware('auth');
-    Route::get('adsCreate', [AdvertisementController::class, 'create'])->name('ads.create')->middleware('auth');
+    Route::get('create', [AdvertisementController::class, 'create'])->name('ads.create')->middleware('auth');
     Route::post('ads', [AdvertisementController::class, 'store'])->name('ads.store')->middleware('auth');
-    /* Route::get('categoryView/{category}', [AdvertisementController::class, 'show'])->name('category.show');
-    Route::get('categoryEdit/{category}', [AdvertisementController::class, 'edit'])->name('category.edit');
+    /* Route::get('view/{category}', [AdvertisementController::class, 'show'])->name('category.show');
+    Route::get('edit/{category}', [AdvertisementController::class, 'edit'])->name('category.edit');
     Route::put('categoryUpdate/{category}', [AdvertisementController::class, 'update'])->name('category.update');
     Route::get('categoryDelete/{category}', [AdvertisementController::class, 'destroy'])->name('category.delete'); */
 });
@@ -353,10 +355,10 @@ Route::prefix('admin.ads')->name('admin.')->group(function () {
 
 /* Route::prefix('admin.users')->name('admin.')->group(function () {
     Route::get('user', [UserController::class, 'index'])->name('user.index')->middleware('auth');
-    Route::get('userCreate', [UserController::class, 'create'])->name('user.create')->middleware('auth');
+    Route::get('create', [UserController::class, 'create'])->name('user.create')->middleware('auth');
     Route::post('userStore', [UserController::class, 'store'])->name('user.store')->middleware('auth');
-    Route::get('userView/{user}', [UserController::class, 'show'])->name('user.show')->middleware('auth');
-    Route::get('userEdit/{user}', [UserController::class, 'edit'])->name('user.edit')->middleware('auth');
+    Route::get('details/{user}', [UserController::class, 'show'])->name('user.show')->middleware('auth');
+    Route::get('edit/{user}', [UserController::class, 'edit'])->name('user.edit')->middleware('auth');
     Route::put('userUpdate/{user}', [UserController::class, 'update'])->name('user.update')->middleware('auth');
     Route::get('userDelete/{user}', [UserController::class, 'destroy'])->name('user.delete')->middleware('auth');
 }); */

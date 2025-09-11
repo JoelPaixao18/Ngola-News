@@ -19,7 +19,7 @@ class TypeCategoryController extends Controller
         //
         // This method can be used to return a list of type categories.
         $typeCategories = TypeCategory::orderByDesc('id')->get();
-        return view('_admin.typeCategories.typeCategory.index', compact('typeCategories'));
+        return view('_admin.typeCategories.list.index', compact('typeCategories'));
     }
 
     /**
@@ -31,7 +31,7 @@ class TypeCategoryController extends Controller
     {
         //
         // This method can be used to return a view for creating a new type category.
-        return view('_admin.typeCategories.typeCategoryCreate.index');
+        return view('_admin.typeCategories.create.index');
     }
 
     /**
@@ -79,7 +79,7 @@ class TypeCategoryController extends Controller
     {
         //
         // This method can be used to show a specific type category.
-        return view('_admin.typeCategories.typeCategoryView.index', ['typeCategory' => $typeCategory]);
+        return view('_admin.typeCategories.details.index', ['typeCategory' => $typeCategory]);
     }
 
     /**
@@ -92,7 +92,7 @@ class TypeCategoryController extends Controller
     {
         //
         // This method can be used to return a view for editing a specific type category.
-        return view('_admin.typeCategories.typeCategoryEdit.index', ['typeCategory' => $typeCategory]);
+        return view('_admin.typeCategories.edit.index', ['typeCategory' => $typeCategory]);
     }
 
     /**
