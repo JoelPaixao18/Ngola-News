@@ -1,4 +1,4 @@
-@extends('site.layout.main')
+@extends('layouts._site.main')
 @section('title', 'Galeria de Fotos')
 @section('content')
     <div class="breadcumb-wrapper">

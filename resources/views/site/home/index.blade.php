@@ -1,4 +1,4 @@
-@extends('site.layout.main')
+@extends('layouts._site.main')
 @section('title', 'Assessorarte- Home')
 @section('content')
     {{-- Sessão dos noticias da categoria Politica com mais destaque e as mais recentes --}}
