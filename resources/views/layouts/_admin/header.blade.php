@@ -2372,18 +2372,18 @@
                             @endif
                         @else
                             <div class="dropdown nxl-h-item">
-                                @if(Auth::user()->image)
-                                <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button"
-                                    data-bs-auto-close="outside">
-                                    <img src="{{ url('img/users/'. Auth::user()->image) }}" alt="user-image"
-                                        class="img-fluid user-avtar me-0">
-                                </a>
+                                @if (Auth::user()->image)
+                                    <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button"
+                                        data-bs-auto-close="outside">
+                                        <img src="{{ url('img/users/' . Auth::user()->image) }}" alt="user-image"
+                                            class="img-fluid user-avtar me-0">
+                                    </a>
                                 @else
-                                <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button"
-                                    data-bs-auto-close="outside">
-                                    <img src="{{ url('assets/images/user.png') }}" alt="user-image"
-                                        class="img-fluid user-avtar me-0">
-                                </a>
+                                    <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button"
+                                        data-bs-auto-close="outside">
+                                        <img src="{{ url('assets/images/user.png') }}" alt="user-image"
+                                            class="img-fluid user-avtar me-0">
+                                    </a>
                                 @endif
                                 <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-user-dropdown">
                                     <div class="dropdown-header">
@@ -2395,9 +2395,7 @@
                                         </div>
                                         <p class="fs-11 text-muted mb-0">{{ Auth::user()->email }}</p>
                                     </div>
-                                    <div class="dropdown-item">
-                                        <a href="/">Website</a>
-                                    </div>
+                                    <a class="dropdown-item" href="/">Website</a>
                                     <a class="dropdown-item" href="/login"
                                         onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -2414,7 +2412,7 @@
                     </li>
                 </div>
             @endguest
-            </ul>  
+            </ul>
         </div>
         </div>
         <!--! [End] Header Right !-->
