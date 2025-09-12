@@ -104,7 +104,7 @@
                         @csrf
                         @method('PUT')
                         {{-- form --}}
-                        @include('form._videos.index')
+                        @include('form._formVideos.index')
                         {{-- end form --}}
                 </div>
                 </form>

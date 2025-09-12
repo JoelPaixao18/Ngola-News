@@ -274,11 +274,12 @@
                                                                 <i class="feather feather-more-horizontal"></i>
                                                             </a>
                                                             <ul class="dropdown-menu">
-                                                                <a class="dropdown-item"
-                                                                    href="{{ route('admin.news.edit', ['news' => $news]) }}">
-                                                                    <i class="feather feather-edit-3 me-3"></i>
-                                                                    <span>Edit</span>
-                                                                </a>
+                                                                <li>
+                                                                    <a class="dropdown-item"
+                                                                        href="{{ route('admin.news.edit', ['news' => $news]) }}">
+                                                                        <i class="feather feather-edit-3 me-3"></i>
+                                                                        <span>Edit</span>
+                                                                    </a>
                                                                 </li>
                                                                 <li class="dropdown-divider"></li>
                                                                 @can('is-editor')

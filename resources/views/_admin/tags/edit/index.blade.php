@@ -61,7 +61,7 @@
                                 @csrf
                                 @method('PUT')
                                 {{-- form --}}
-                                @include('form._tags.index')
+                                @include('form._formTags.index')
                                 {{-- end form --}}
                             </form>
                         </div>

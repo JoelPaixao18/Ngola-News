@@ -103,7 +103,7 @@
                         enctype="multipart/form-data">
                         @csrf
                         {{-- form --}}
-                        @include('form._videos.index')
+                        @include('form._formVideos.index')
                         {{-- end form --}}
                 </div>
             </div>

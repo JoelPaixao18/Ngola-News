@@ -1,7 +1,7 @@
 @extends('layouts._admin.main')
 @section('title', 'Galeria')
 @section('content')
-     <div class="nxl-content">
+    <div class="nxl-content">
         <!-- [ page-header ] start -->
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
@@ -299,11 +299,13 @@
 
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="{{ route('admin.galery.delete', ['galery' => $galery]) }}">
-                                                                        <i class="feather feather-trash-2 me-3"></i>
-                                                                        <span>Deletar</span>
-                                                                    </a>
+                                                                    @can('is-editor')
+                                                                        <a class="dropdown-item"
+                                                                            href="{{ route('admin.galery.delete', ['galery' => $galery]) }}">
+                                                                            <i class="feather feather-trash-2 me-3"></i>
+                                                                            <span>Delete</span>
+                                                                        </a>
+                                                                    @endcan
                                                                 </li>
                                                             </ul>
                                                         </div>

@@ -103,7 +103,7 @@
                         enctype="multipart/form-data">
                         @csrf
                         {{-- formulário --}}
-                        @include('form._publications.index')
+                        @include('form._formPublications.index')
                         {{-- end formulário --}}
                 </div>
 

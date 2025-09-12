@@ -128,6 +128,7 @@ class PublicationController extends Controller
 
     public function destroy(Publication $publication)
     {
+        
         $publication->delete();
         return redirect()->route('admin.publication.index')->with('success', 'Publicação excluída com sucesso!');
     }

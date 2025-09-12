@@ -18,7 +18,7 @@
     <div class="col-lg-4 mb-4">
         <label class="form-label">Texto do Comentário</label>
         <input type="text" name="text_comment" class="form-control"
-            value="{{ old('text_comment') ?? $comment->text_comment }}" placeholder="Ex: Será que é verdade...">
+            value="{{ old('text_comment', $comment->text_comment ?? '')   }}" placeholder="Ex: Será que é verdade...">
     </div>
 
     {{-- Slug --}}
@@ -32,7 +32,7 @@
     <div class="col-lg-4 mb-4">
         <label class="form-label">Autor do Comentário</label>
         <input type="text" name="author_comment" class="form-control"
-            value="{{ old('author_comment') ?? $comment->author_comment }}" placeholder="Ex: Ana Maria...">
+            value="{{ old('author_comment',$comment->author_comment ?? '')   }}" placeholder="Ex: Ana Maria...">
     </div>
 
     {{-- Status --}}

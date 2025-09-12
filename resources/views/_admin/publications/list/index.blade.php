@@ -288,11 +288,13 @@
 
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="{{ route('admin.publication.delete', ['publication' => $publication]) }}">
-                                                                        <i class="feather feather-trash-2 me-3"></i>
-                                                                        <span>Delete</span>
-                                                                    </a>
+                                                                    @can('is-editor')
+                                                                        <a class="dropdown-item"
+                                                                            href="{{ route('admin.publication.delete', ['publication' => $publication]) }}">
+                                                                            <i class="feather feather-trash-2 me-3"></i>
+                                                                            <span>Delete</span>
+                                                                        </a>
+                                                                    @endcan
                                                                 </li>
                                                             </ul>
                                                         </div>

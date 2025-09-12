@@ -104,7 +104,7 @@
                         @csrf
                         @method('PUT')
                         {{-- formulário --}}
-                        @include('form._publications.index')
+                        @include('form._formPublications.index')
                         {{-- end formulário --}}
                 </div>
 
