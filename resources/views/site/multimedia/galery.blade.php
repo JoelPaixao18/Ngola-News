@@ -59,9 +59,12 @@
                                                 </div>
                                                 <div class="col-md-4 ms-4">
                                                     <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item">Título: <b> {{ $galery->title }}</b></li>
-                                                        <li class="list-group-item">Data: {{ $galery->updated_at->format('d M, Y') }}</li>
-                                                        <li class="list-group-item">Descrição: {{ $galery->description }}</li>
+                                                        <li class="list-group-item">Título: <b> {{ $galery->title }}</b>
+                                                        </li>
+                                                        <li class="list-group-item">Data:
+                                                            {{ $galery->updated_at->format('d M, Y') }}</li>
+                                                        <li class="list-group-item">Descrição: {{ $galery->description }}
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -131,14 +134,15 @@
                             @forelse ($RecentPost as $recents)
                                 <div class="recent-post-wrap">
                                     <div class="recent-post">
-                                        <div class="media-img">
+                                        <div class="media-img img-footer">
                                             <a href="blog-details.html"><img
                                                     src="{{ asset('img/news/' . $recents->image) }}"
                                                     alt="Blog Image" /></a>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="post-title">
-                                                <a class="hover-line" id="modallink" href="blog-details.html">{{ $recents->title }}</a>
+                                                <a class="hover-line" id="modallink"
+                                                    href="blog-details.html">{{ $recents->title }}</a>
                                             </h4>
                                             <div class="recent-post-meta">
                                                 <a href="blog.html"><i
