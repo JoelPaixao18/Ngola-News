@@ -254,14 +254,15 @@
                             @forelse ($RecentPost as $recents)
                                 <div class="recent-post-wrap">
                                     <div class="recent-post">
-                                        <div class="media-img">
+                                        <div class="media-img img-footer">
                                             <a href="blog-details.html"><img
                                                     src="{{ asset('img/news/' . $recents->image) }}"
                                                     alt="Blog Image" /></a>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="post-title">
-                                                <a class="hover-line" href="blog-details.html">{{ $recents->title }}</a>
+                                                <a class="hover-line"
+                                                    href="blog-details.html">{{ Str::limit($recents->title, 50) }}</a>
                                             </h4>
                                             <div class="recent-post-meta">
                                                 <a href="blog.html"><i
@@ -329,6 +330,8 @@
                         @endforelse
                         {{-- Fim de Sesssão dos Postes Recentes --}}
                         {{-- Publicidades --}}
+                        <br>
+                        {{-- Publicidades --}}
                         @foreach ($ads as $ad)
                             <div class="widget">
                                 <div class="widget-ads">
@@ -338,6 +341,7 @@
                                 </div>
                             </div>
                         @endforeach
+                        {{-- Fim das Publicidades --}}
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Tags Populares</h3>
                             <div class="tagcloud">

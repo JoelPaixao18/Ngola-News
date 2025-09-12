@@ -37,17 +37,15 @@
                         <div class="menu-all-pages-container">
                             <ul class="menu">
                                 @foreach ($footerCategory as $dados)
-                                    <li><a href="#">{{ $dados->name }}</a></li>
+                                    <li><a
+                                            href="#">{{ $dados->name }}</a>
+                                    </li>
                                 @endforeach
-                                {{-- <li><a href="blog.html">Business</a></li>
-                    <li><a href="blog.html">Health</a></li>
-                    <li><a href="blog.html">Technology</a></li>
-                    <li><a href="blog.html">Sports</a></li>
-                    <li><a href="blog.html">Entertainment</a></li> --}}
                             </ul>
                         </div>
                     </div>
                 </div>
+                {{-- Links mais usados - Menu --}}
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget widget_nav_menu footer-widget">
                         <h3 class="widget_title">links Usados</h3>
@@ -55,14 +53,16 @@
                             <ul class="menu">
                                 <li><a href="/">Home</a></li>
                                 {{-- <li><a href="{{ 'site.' }}">About Us</a></li> --}}
-                                <li><a href="#">Políticas</a></li>
-                                <li><a href="#">Sociedade</a></li>
-                                <li><a href="#">Economia & Negócio</a></li>
-                                <li><a href="#">Artes & Cultura</a></li>
+                                <li><a href="{{ route('site.policy') }}">Políticas</a></li>
+                                <li><a href="{{ route('site.society') }}">Sociedade</a></li>
+                                <li><a href="{{ route('site.economic') }}">Economia & Negócio</a></li>
+                                <li><a href="{{ route('site.culture') }}">Artes & Cultura</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                {{-- Fim de Linkes mais usados - Menu --}}
+                {{-- Postagens recentes --}}
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget footer-widget">
                         <h3 class="widget_title">Posts Recentes</h3>
@@ -109,6 +109,7 @@
                         </div>
                     </div>
                 </div>
+                {{-- Fim de postagem Recentes --}}
             </div>
         </div>
     </div>

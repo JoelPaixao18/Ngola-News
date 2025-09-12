@@ -53,7 +53,7 @@
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog modal-xl">
-                                <div class="modal-content" >
+                                <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -65,10 +65,12 @@
                                             onclick="openFlipbook('{{ asset('files/publication/' . $publication->file) }}')">Abrir
                                             {{ $publication->title }}</button>
                                         <div id="book"></div>
-                                        <input type="text" id="page-number" style="background-color: #0909096f; color:#fff; width:140px;">
-                                        <span id="number-pages" style="background-color: #0909096f; color:#fff; width:140px; padding:15px 50px; border-radius:5px" ><br>
-                                        <span class="btn btn-warning" id="prev-page">Anterior</span>
-                                        <span class="btn btn-dark" id="next-page">Próxima</span>
+                                        <input type="text" id="page-number"
+                                            style="background-color: #0909096f; color:#fff; width:140px;">
+                                        <span id="number-pages"
+                                            style="background-color: #0909096f; color:#fff; width:140px; padding:15px 50px; border-radius:5px"><br>
+                                            <span class="btn btn-warning" id="prev-page">Anterior</span>
+                                            <span class="btn btn-dark" id="next-page">Próxima</span>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -125,14 +127,15 @@
                             @forelse ($RecentPost as $recents)
                                 <div class="recent-post-wrap">
                                     <div class="recent-post">
-                                        <div class="media-img">
+                                        <div class="media-img img-footer">
                                             <a href="blog-details.html"><img
                                                     src="{{ asset('img/news/' . $recents->image) }}"
                                                     alt="Blog Image" /></a>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="post-title">
-                                                <a class="hover-line" href="blog-details.html">{{ $recents->title }}</a>
+                                                <a class="hover-line"
+                                                    href="blog-details.html">{{ Str::limit($recents->title, 50) }}</a>
                                             </h4>
                                             <div class="recent-post-meta">
                                                 <a href="blog.html"><i
@@ -152,9 +155,8 @@
                         @endforelse
                         {{-- Fim de Sesssão dos Postes Recentes --}}
                         <div class="widget">
-                            <div class="widget-ads"><a
-                                    href="../../../../themeforest.net/user/themeholy/portfolio.html"><img class="w-100"
-                                        src="assets/img/ads/siderbar_ads_1.jpg" alt="ads"></a></div>
+                            <div class="widget-ads"><a href="../../../../themeforest.net/user/themeholy/portfolio.html"><img
+                                        class="w-100" src="assets/img/ads/siderbar_ads_1.jpg" alt="ads"></a></div>
                         </div>
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Tags Populares</h3>
@@ -177,7 +179,7 @@
                 height: 600,
                 autoCenter: true
             });
-        
+
 
             function openPublicationModal(title, img, description, date) {
                 document.getElementById('PublicationModalLabel').textContent = title;
