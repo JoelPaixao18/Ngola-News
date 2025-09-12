@@ -62,7 +62,7 @@
                                 @csrf
                                 @method('POST')
                                 {{-- Aqui o formulário --}}
-                                @include('form._news.index')
+                                @include('form._formNews.index')
                                 {{-- end formulario --}}
                             </form>
                         </div>

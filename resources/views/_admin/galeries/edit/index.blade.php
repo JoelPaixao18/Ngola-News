@@ -59,7 +59,7 @@
                                 @csrf
                                 @method('Put')
                                 {{-- aqui o formulário --}}
-                                @include('form._galeries.index')
+                                @include('form._formGaleries.index')
                                 {{-- fim do formulário --}}
                             </form>
 

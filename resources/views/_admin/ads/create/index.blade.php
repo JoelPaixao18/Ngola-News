@@ -60,7 +60,7 @@
                             <form action="{{ route('admin.ads.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('POST')
-                                @include('form._ads.index')
+                                @include('form._formAds.index')
                             </form>
 
                         </div>

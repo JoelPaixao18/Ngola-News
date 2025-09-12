@@ -61,7 +61,7 @@
                                 @csrf
                                 @method('POST')
                                 {{-- aqui o formulário --}}
-                                @include('form._categories.index')
+                                @include('form._formCategories.index')
                                 {{-- fim do formulário --}}
                             </form>
                         </div>

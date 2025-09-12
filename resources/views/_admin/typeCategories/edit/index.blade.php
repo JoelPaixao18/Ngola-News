@@ -63,7 +63,7 @@
                                 @csrf
                                 @method('PUT')
                                 {{-- form --}}
-                                @include('form._typeCategories.index')
+                                @include('form._formTypeCategories.index')
                                 {{-- end form --}}
                             </form>
                         </div>

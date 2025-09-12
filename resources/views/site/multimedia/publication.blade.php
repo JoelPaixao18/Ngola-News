@@ -155,8 +155,9 @@
                         @endforelse
                         {{-- Fim de Sesssão dos Postes Recentes --}}
                         <div class="widget">
-                            <div class="widget-ads"><a href="../../../../themeforest.net/user/themeholy/portfolio.html"><img
-                                        class="w-100" src="assets/img/ads/siderbar_ads_1.jpg" alt="ads"></a></div>
+                            <div class="widget-ads"><a
+                                    href="../../../../themeforest.net/user/themeholy/portfolio.html"><img class="w-100"
+                                        src="assets/img/ads/siderbar_formAds_1.jpg" alt="ads"></a></div>
                         </div>
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Tags Populares</h3>

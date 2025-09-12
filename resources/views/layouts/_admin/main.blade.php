@@ -19,7 +19,7 @@
     {{-- Alerts Link --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <!--! BEGIN: Favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/images/2-Photoroom.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/images/lillogo.png') }}">
     <!--! END: Favicon-->
     <!--! BEGIN: Bootstrap CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/bootstrap.min.css') }}">
@@ -89,7 +89,7 @@
 
         {{-- Buscando todos os conteudos --}}
         @yield('content')
-        
+
         {{-- Footer --}}
         @include('layouts._admin.footer')
     </main>

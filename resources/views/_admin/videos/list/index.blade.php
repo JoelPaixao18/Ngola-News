@@ -2,7 +2,7 @@
 @section('title', 'Gerenciar Vídeos')
 @section('content')
 
- <div class="nxl-content">
+    <div class="nxl-content">
         <!-- [ page-header ] start -->
         <div class="page-header">
             <div class="page-header-left d-flex align-items-center">
@@ -249,7 +249,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                               {{--  <td>
+                                                {{--  <td>
                                                     <div class="hstack gap-2">
 
                                                         <div class="avatar-image avatar-md">
@@ -265,10 +265,10 @@
 
                                                     </div>
                                                 </td> --}}
-                                                <td>{{  Str::limit($video->title, 20, '...') }}</td>
+                                                <td>{{ Str::limit($video->title, 20, '...') }}</td>
                                                 <td>{{ Str::limit($video->description, 20, '...') }}</td>
                                                 <td>{{ Str::limit($video->url, 20, '...') }}</td>
-                                               {{--  <td>{{ $video->date }}</td> --}}
+                                                {{--  <td>{{ $video->date }}</td> --}}
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">
                                                         <a href="{{ route('admin.video.view', ['video' => $video]) }}"
@@ -291,11 +291,13 @@
 
                                                                 <li class="dropdown-divider"></li>
                                                                 <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="{{ route('admin.video.delete', ['video' => $video]) }}">
-                                                                        <i class="feather feather-trash-2 me-3"></i>
-                                                                        <span>Delete</span>
-                                                                    </a>
+                                                                    @can('is-editor')
+                                                                        <a class="dropdown-item"
+                                                                            href="{{ route('admin.video.delete', ['video' => $video]) }}">
+                                                                            <i class="feather feather-trash-2 me-3"></i>
+                                                                            <span>Delete</span>
+                                                                        </a>
+                                                                    @endcan
                                                                 </li>
                                                             </ul>
                                                         </div>
