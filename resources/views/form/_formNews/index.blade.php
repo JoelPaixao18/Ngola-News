@@ -45,8 +45,8 @@
     <div class="col-lg-4 mb-4">
         <label class="form-label">Destaque</label>
         <select class="form-control" name="detach">
-            <option value="{{ old('detach', $news->detach ?? '') }}" disabled selected>
-                Selecione o destaque
+            <option value="{{ old('', $news->detach ?? '') }}" selected>
+                {{ $news->detach ?? 'Selecione' }}
             </option>
             <option value="normal">Normal</option>
             <option value="destaque">Destaque</option>
@@ -58,11 +58,11 @@
     <div class="col-lg-4 mb-4">
         <label class="form-label">Status</label>
         <select class="form-control" name="status" data-select2-selector="status">
-            <option value="{{ old('status', $news->status ?? '') }}" disabled selected>
-                Selecione o status
+            <option value="{{ old('', $news->status ?? '') }}" selected>
+                {{ $news->status ?? 'Selecione' }}
             </option>
-            <option value="draft" data-bg="bg-success"> Rascunho</option>
-            <option value="published" data-bg="bg-danger"> Publicado</option>
+            <option value="draft" data-bg="bg-danger"> Rascunho</option>
+            <option value="published" data-bg="bg-success"> Publicado</option>
             <option value="filed" data-bg="bg-warning"> Arquivado</option>
         </select>
     </div>
@@ -70,8 +70,7 @@
     {{-- Image --}}
     <div class="col-lg-4 mb-4">
         <label class="form-label">Imagem da Notícia</label>
-        <input type="file" name="image" class="form-control" value="{{ old('image', $news->image ?? '') }}"
-            accept="image/*">
+        <input type="file" name="image" class="form-control" accept="image/*">
         <small class="text-muted">Formatos suportados: jpg, jpeg, png, gif</small>
     </div>
 
@@ -83,16 +82,19 @@
     </div>
 
     {{-- @if ($news->image)
-                                        <div class="col-lg-4 mb-4">
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="remove_image" name="remove_image">
-                                                <label class="form-check-label text-danger" for="remove_image">Remover imagem atual</label>
-                                            </div>
-                                            <div class="mt-2">
-                                                <img src="{{ asset('storage/' . $news->image) }}" alt="Imagem atual" class="img-thumbnail" style="max-width: 200px;">
-                                            </div>
-                                        </div>
-                                     @endif --}}
+        <div class="col-lg-4 mb-4">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="remove_image" name="remove_image">
+                <label class="form-check-label text-danger" for="remove_image">Remover imagem atual</label>
+            </div>
+
+            <div class="mt-2">
+
+                <img src="{{ asset('storage/' . $news->image) }}" alt="Imagem atual" class="img-thumbnail"
+                    style="max-width: 200px;">
+            </div>
+        </div>
+    @endif --}}
 
     {{-- Descrição --}}
     <div class="col-12 mb-4">

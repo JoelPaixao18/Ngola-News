@@ -16,6 +16,9 @@ use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\GaleryController;
 use App\Http\Controllers\Admin\AdvertisementController;
 /* end admin controllers */
+/* model news */
+use App\Models\News;
+/* end model news */
 
 /* auth controllers */
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +34,10 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     /* dasboard */
     Route::get('/admin', 'HomeController@index')->name('home');
     Route::get('admin/dashboard', function () {
-        return view('_admin.dashboard.crm.index');
+        $publicNews = count(News::where('status', 'published')->get());
+        $qtdNews = count(News::all());
+        $pecentagemNews = number_format((100 * $publicNews)/$qtdNews,1);
+        return view('_admin.dashboard.crm.index',compact('qtdNews', 'publicNews', 'pecentagemNews'));
     });
 
 });

@@ -206,10 +206,10 @@
                                             <th>ID</th>
                                             <th>Imagem</th>
                                             <th>Título da Notícia</th>
-                                            <th>Slug</th>
-                                            <th>Subtítulo da Notícia</th>
-                                            {{-- <th>Destaque</th> --}}
-                                            {{-- <th>Status</th> --}}
+                                            {{-- <th>Slug</th> --}}
+                                            {{-- <th>Subtítulo da Notícia</th> --}}
+                                            <th>Destaque</th>
+                                            <th>Status</th>
                                             <th>Data de Públicação</th>
                                             {{-- <th>Descrição</th> --}}
                                             <th class="text-end">Ação</th>
@@ -246,16 +246,16 @@
                                                     </a>
                                                 </td>
                                                 <td>{{ Str::limit($news->title, 20, '...') }}</td>
-                                                <td>
+                                                {{-- <td>
                                                     <div class="hstack gap-2">
                                                         {{ Str::limit($news->slug, 20, '...') }}
                                                     </div>
-                                                </td>
-                                                <td>{{ Str::limit($news->subtitle, 20, '...') }}</td>
-                                                {{-- <td>{{ $news->detach }}</td> --}}
-                                                {{--  <td>
-                                                    {{ $news->status }}
                                                 </td> --}}
+                                                {{-- <td>{{ Str::limit($news->subtitle, 20, '...') }}</td> --}}
+                                                <td>{{ $news->detach }}</td>
+                                                 <td>
+                                                    {{ $news->status }}
+                                                </td>
                                                 <td>
                                                     {{ $news->date }}
                                                 </td>
