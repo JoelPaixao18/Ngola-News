@@ -31,6 +31,21 @@
                         {{-- <li class="nxl-item"><a class="nxl-link" href="/analytics">Analytics</a></li> --}}
                     </ul>
                 </li>
+                {{-- Menu users --}}
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="javascript:void(0);" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-user"></i></span>
+                        <span class="nxl-mtext">Utilizador</span><span class="nxl-arrow"><i
+                                class="feather-chevron-right"></i></span>
+                    </a>
+                    <ul class="nxl-submenu">
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.user.index') }}">Lista de
+                                Utilizadores</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.user.create') }}">Novo
+                                Utilizador</a>
+                        </li>
+                    </ul>
+                </li>
                 @endcan
                 @can('is-editor')
                 {{-- Menu Types Categories --}}
@@ -79,23 +94,6 @@
                         <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                     </ul>
                 </li> --}}
-
-                {{-- Menu users --}}
-                <li class="nxl-item nxl-hasmenu">
-                    <a href="javascript:void(0);" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-user"></i></span>
-                        <span class="nxl-mtext">Utilizador</span><span class="nxl-arrow"><i
-                                class="feather-chevron-right"></i></span>
-                    </a>
-                    <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.user.index') }}">Lista de
-                                Utilizadores</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.user.create') }}">Novo
-                                Utilizador</a>
-                        </li>
-                    </ul>
-                </li>
-
                 {{-- Menu Tags --}}
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
