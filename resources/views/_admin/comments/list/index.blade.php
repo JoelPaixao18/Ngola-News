@@ -225,16 +225,9 @@
                                                 <td><a href="javascript:void(0);" class="fw-bold">{{ $comment->id }}</a>
                                                 </td>
                                                 <td>
-                                                    <a href="javascript:void(0)" class="hstack gap-3">
-                                                        <div>
-                                                            <span
-                                                                class="text-truncate-1-line">{{ $comment->text_comment }}</span>
-                                                            {{-- <small
-                                                                class="fs-12 fw-normal text-muted">alex.della@outlook.com</small> --}}
-                                                        </div>
-                                                    </a>
+                                                    {{ $comment->text_comment }}
                                                 </td>
-                                                <td class="fw-bold text-dark">{{ $comment->author_comment }}</td>
+                                                <td>{{ $comment->user->name }}</td>
                                                 <td>{{ $comment->date }}</td>
                                                 <td>
                                                     <div class="hstack gap-2 justify-content-end">

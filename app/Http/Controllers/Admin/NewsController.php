@@ -8,6 +8,7 @@ use App\Models\News;
 use App\Models\Tag;
 use App\Models\Category;
 use App\Models\Advertisement;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -19,13 +20,16 @@ class NewsController extends Controller
         $news = News::orderByDesc('id')->get();
         return view('_admin.news.list.index', compact('news'));
     }
+
     public function create()
     {
         //trazendo as categorias
         $categories = Category::all();
         $tags = Tag::all();
-        return view('_admin.news.create.index', compact('categories', 'tags'));
+        $users = User::all(); // ou request()->user();
+        return view('_admin.news.create.index', compact('categories', 'tags', 'users'));
     }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -39,59 +43,42 @@ class NewsController extends Controller
             'category_id' => 'required|exists:categories,id',
             'tags' => 'array',
             'tags.*' => 'exists:tags,id'
-        ], [
-            'title.required' => 'O título é obrigatório.',
-            'subtitle.required' => 'O subtítulo é obrigatório.',
-            'status.required' => 'Obrigatório selecionar um status.',
-            'description.max' => 'O campo descrição não pode ter mais de 10000 caracteres.',
-            'image.image' => 'O arquivo deve ser uma imagem.',
-            'image.mimes' => 'A imagem deve ser do tipo: jpeg, png, jpg ou gif.',
-            'image.max' => 'A imagem não pode ter mais de 5MB.',
-            'date.required' => 'A data é obrigatória.',
-            'date.date' => 'Informe uma data válida.',
-            'date.after_or_equal' => 'A data não pode ser anterior à data atual.',
-            'detach.required' => 'O campo destaque é obrigatório.',
-            'detach.in' => 'O valor do destaque é inválido.',
-            'category_id.required' => 'A categoria é obrigatória.',
-            'category_id.exists' => 'A categoria selecionada é inválida.',
         ]);
 
-        /* $news = News::create($request->all()); */
         $data = $request->except('_token');
 
         // Upload da imagem
-        $imageName = null;
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $image = $request->file('image');
             $extension = $image->extension();
             $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
             $image->move(public_path('img/news'), $imageName);
-            $data['image'] = $imageName; // Adiciona o nome da imagem ao array de dados
+            $data['image'] = $imageName;
         }
 
         $news = News::create($data);
 
-        // Associar tags se fornecidas
-        if ($request->has('tags')) {
-            $news->tags()->sync($request->tags);
-        } else {
-            $news->tags()->sync([]); // Se não enviar nenhuma tag, remove todas
-        }
+        // Tags
+        $news->tags()->sync($request->tags ?? []);
 
-        return redirect()->route('admin.news.index')->with('success', 'Notícia criado com sucesso!');
-        return redirect()->back()->with('error', 'Ocorreu um erro ao salvar Notícia!');
+        return redirect()->route('admin.news.index')->with('success', 'Notícia criada com sucesso!');
     }
+
+
     public function show(News $news)
     {
         return view('_admin.news.details.index', ['news' => $news]);
     }
+
     public function edit(News $news)
     {
         $categories = Category::all(); // Or any other query to fetch categories
         $tags = Tag::all();
+        $users = User::all(); // ou request()->user();
 
-        return view('_admin.news.edit.index', ['news' => $news], compact('categories', 'tags'));
+        return view('_admin.news.edit.index', ['news' => $news], compact('categories', 'tags', 'users'));
     }
+
     public function update(Request $request, News $news)
     {
         $request->validate([
@@ -103,6 +90,7 @@ class NewsController extends Controller
             'date' => 'required|date|after_or_equal:today',
             'detach' => 'nullable|in:normal,destaque,urgente',
             'category_id' => 'required|exists:categories,id',
+            'user_id' => 'required|exists:users,id',
             'tags' => 'array',
             'tags.*' => 'exists:tags,id'
         ], [
@@ -118,6 +106,8 @@ class NewsController extends Controller
             'date.after_or_equal' => 'A data não pode ser anterior à data atual.',
             'detach.required' => 'O campo destaque é obrigatório.',
             'detach.in' => 'O valor do destaque é inválido.',
+            'user_id.required' => 'O autor é obrigatório.',
+            'user_id.exists' => 'O autor selecionado é inválido.',
             'category_id.required' => 'A categoria é obrigatória.',
             'category_id.exists' => 'A categoria selecionada é inválida.',
         ]);
@@ -157,6 +147,7 @@ class NewsController extends Controller
         return redirect()->route('admin.news.index')->with('success', 'Notícia atualizada com sucesso!');
         return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Notícia!');
     }
+
     public function destroy(News $news)
     {
         $user = Auth::user(); // ou request()->user();

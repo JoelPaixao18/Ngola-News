@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\News;
+use App\Models\Comment;
 
 class User extends Authenticatable
 {
@@ -37,5 +39,15 @@ class User extends Authenticatable
     public function isJornalista()
     {
         return in_array($this->role, ['admin', 'editor', 'jornalista']);
+    }
+
+     public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function news()
+    {
+        return $this->hasMany(News::class);
     }
 }

@@ -57,13 +57,13 @@
                                     <h6 class="title">Etiqueta relacionada :</h6>
                                     <div class="tagcloud"><a href="blog.html">Sports</a> <a
                                             href="{{ route('site.policy') }}">Políticas</a>
-                                        <a href="blog.html">Business</a>
+                                        <a href="{{ route('site.tech') }}">Tecnologia</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="blog-navigation">
+                    {{-- <div class="blog-navigation">
                         <div class="nav-btn prev">
                             <div class="img"><img src="assets/img/blog/blog-nav-1.jpg" alt="blog img" class="nav-img">
                             </div>
@@ -107,61 +107,73 @@
                                 stories and a camera in hand, she takes her readers on exhilarating journeys around the
                                 world.</p>
                         </div>
-                    </div>
+                    </div> --}}
+                    {{-- Comentários --}}
                     <div class="th-comments-wrap">
-                        <h2 class="blog-inner-title h3">Comentários (03)</h2>
+                        <h2 class="blog-inner-title h3">
+                            Comentários {{-- ({{ $news->comments->count() }}) --}}
+                        </h2>
+
                         <ul class="comment-list">
-                            <li class="th-comment-item">
-                                <div class="th-post-comment">
-                                    <div class="comment-avater"><img src="assets/img/blog/comment-author-1.jpg"
-                                            alt="Comment Author"></div>
-                                    <div class="comment-content"><span class="commented-on"><i
-                                                class="fas fa-calendar-alt"></i>14 Março, 2023</span>
-                                        <h3 class="name">Brooklyn Simmons</h3>
-                                        <p class="text">Your sport blog is simply fantastic! The in-depth analysis,
-                                            engaging writing style, and up-to-date coverage of various sports newss
-                                            make it a must-visit for any sports enthusiast.</p>
-                                        <div class="reply_and_edit"><a href="blog-details.html" class="reply-btn"><i
-                                                    class="fas fa-reply"></i>Responder</a></div>
-                                    </div>
-                                </div>
-                                <ul class="children">
-                                    <li class="th-comment-item">
-                                        <div class="th-post-comment">
-                                            <div class="comment-avater"><img src="assets/img/blog/comment-author-2.jpg"
-                                                    alt="Comment Author"></div>
-                                            <div class="comment-content"><span class="commented-on"><i
-                                                        class="fas fa-calendar-alt"></i>15 Março, 2023</span>
-                                                <h3 class="name">Marvin McKinney</h3>
-                                                <p class="text">Whether it's breaking news, expert opinions, or
-                                                    inspiring athlete profiles, your blog delivers a winning combination
-                                                    of excitement and information that keeps.</p>
-                                                <div class="reply_and_edit"><a href="blog-details.html"
-                                                        class="reply-btn"><i class="fas fa-reply"></i>Responder</a></div>
-                                            </div>
+                            @foreach ($news->comments->where('parent_id', null) as $comment)
+                                <li class="th-comment-item">
+                                    <div class="th-post-comment">
+                                        <div class="comment-avater">
+                                            <img src="{{ url('img/users/' . $comment->user->image) }}" alt="Foto do Autor">
                                         </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="th-comment-item">
-                                <div class="th-post-comment">
-                                    <div class="comment-avater"><img src="assets/img/blog/comment-author-3.jpg"
-                                            alt="Comment Author"></div>
-                                    <div class="comment-content"><span class="commented-on"><i
-                                                class="fas fa-calendar-alt"></i>16 Março, 2023</span>
-                                        <h3 class="name">Ronald Richards</h3>
-                                        <p class="text">The way you seamlessly blend statistical insights with
-                                            compelling storytelling creates an immersive and captivating reading
-                                            experience. Whether it's the latest match updates, behind-the-scenes
-                                            glimpses.</p>
-                                        <div class="reply_and_edit"><a href="blog-details.html" class="reply-btn"><i
-                                                    class="fas fa-reply"></i>Responder</a></div>
+                                        <div class="comment-content">
+                                            <span class="commented-on">
+                                                <i class="fas fa-calendar-alt"></i>
+                                                {{ $comment->created_at->format('d M, Y') }}
+                                            </span>
+                                            <h3 class="name">{{ $comment->user->name }}</h3>
+                                            <p class="text">{{ $comment->text_comment }}</p>
+
+                                            <!-- Botão de responder -->
+                                            @auth
+                                                <form action="{{ route('admin.comment.store', $news->id) }}" method="POST"
+                                                    class="mt-2">
+                                                    @csrf
+                                                    <input type="hidden" name="parent_id" value="{{ $comment->id }}">
+                                                    <textarea name="text_comment" class="form-control mb-2" rows="2" placeholder="Responder..." required></textarea>
+                                                    <button type="submit" class="btn btn-sm btn-secondary">Responder</button>
+                                                </form>
+                                            @endauth
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+
+                                    <!-- Respostas -->
+                                    @if ($comment->replies->count())
+                                        <ul class="children">
+                                            @foreach ($comment->replies as $reply)
+                                                <li class="th-comment-item">
+                                                    <div class="th-post-comment">
+                                                        <div class="comment-avater">
+                                                            <img src="{{ url('img/users/' . $reply->user->image) }}"
+                                                                alt="Foto do Autor">
+                                                        </div>
+                                                        <div class="comment-content">
+                                                            <span class="commented-on">
+                                                                <i class="fas fa-calendar-alt"></i>
+                                                                {{ $reply->created_at->format('d M, Y') }}
+                                                            </span>
+                                                            <h3 class="name">{{ $reply->user->name }}</h3>
+                                                            <p class="text">{{ $reply->text_comment }}</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </li>
+                            @endforeach
                         </ul>
+
                     </div>
-                    <div class="th-comment-form">
+                    {{-- Fim de Comentários --}}
+
+                    {{-- form de Comentários --}}
+                    {{-- <div class="th-comment-form">
                         <div class="form-title">
                             <h3 class="blog-inner-title mb-2">Deixe um comentário</h3>
                             <p class="form-text">Your email address will not be published. Required fields are marked *
@@ -179,7 +191,10 @@
                             </div>
                             <div class="col-12 form-group mb-0"><button class="th-btn">Poste o Comentário</button></div>
                         </div>
-                    </div>
+                    </div> --}}
+                    {{-- Fim de form dos Comentários --}}
+
+                    {{-- Postes Relacionados a categoria --}}
                     <div class="related-post-wrapper pt-30 mb-30">
                         <div class="row align-items-center">
                             <div class="col">
@@ -235,8 +250,10 @@
                             @endforelse
                         </div>
                     </div>
+                    {{-- Fim de Postes Relacionados a categoria --}}
 
                 </div>
+                {{-- Sessão de Postes Recentes & Tags Populatres --}}
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">
                     <aside class="sidebar-area">
                         <div class="widget widget_search">
@@ -244,7 +261,6 @@
                                     type="submit"><i class="far fa-search"></i></button></form>
                         </div>
                         {{-- Sessão dos Posts Recentes --}}
-
                         <div class="widget">
                             <h3 class="widget_title">Posts Recentes</h3>
                             @forelse ($RecentPost as $recents)
@@ -266,54 +282,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{-- <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg"
-                                                alt="Blog Image" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title">
-                                            <a class="hover-line" href="blog-details.html">Embrace the game Ignite your
-                                                sporting</a>
-                                        </h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>22 June,
-                                                2025</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-3.jpg"
-                                                alt="Blog Image" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title">
-                                            <a class="hover-line" href="blog-details.html">Revolutionizing lives Through
-                                                technology</a>
-                                        </h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>23 June,
-                                                2025</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-4.jpg"
-                                                alt="Blog Image" /></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title">
-                                            <a class="hover-line" href="blog-details.html">Enjoy the Virtual Reality
-                                                embrace the</a>
-                                        </h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>25 June,
-                                                2025</a>
-                                        </div>
-                                    </div>
-                                </div> --}}
                                 </div>
                             @empty
                         </div>
@@ -325,11 +293,13 @@
                         </div>
                         @endforelse
                         {{-- Fim de Sesssão dos Postes Recentes --}}
-                        <div class="widget">
-                            <div class="widget-ads"><a
-                                    href="../../../../themeforest.net/user/themeholy/portfolio.html"><img class="w-100"
-                                        src="assets/img/ads/siderbar_formAds_1.jpg" alt="ads"></a></div>
-                        </div>
+                        <br>
+                        @foreach ($ads as $ad)
+                            <div class="widget">
+                                <div class="widget-ads"><a href="{{ $ad->link }}"><img class="w-100"
+                                            src="{{ url('img/ads/' . $ad->image) }}" alt="ads"></a></div>
+                            </div>
+                        @endforeach
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Tags Populares</h3>
                             <div class="tagcloud">
@@ -341,6 +311,7 @@
                         </div>
                     </aside>
                 </div>
+                {{-- Fim Sessão de Postes Recentes & Tags Populatres --}}
             </div>
         </div>
     </section>

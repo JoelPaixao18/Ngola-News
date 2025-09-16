@@ -80,7 +80,16 @@
                             <div class="col-lg-2 fw-medium">Autor do Comentário</div>
                             <div class="col-lg-10 hstack gap-1">
                                 <a href="javascript:void(0);" class="hstack gap-2">
-                                    <span>{{ $comment->author_comment }}</span>
+                                    <span>{{ $comment->user->name }}</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-lg-2 fw-medium">Comentário Associado</div>
+                            <div class="col-lg-10 hstack gap-1">
+                                <a href="javascript:void(0);" class="hstack gap-2">
+                                    <span>{{ $comment->news->title }}</span>
                                 </a>
                             </div>
                         </div>
