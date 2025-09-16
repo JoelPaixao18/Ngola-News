@@ -14,7 +14,7 @@
 
     {{-- Botão de atualizar as alterações --}}
     <div class="col-12">
-        <button type="submit" class="btn btn-danger"> Atualizar
+        <button type="submit" class="btn btn-danger"> Salvar
             <i class="feather-save ms-2"></i>
         </button>
     </div>

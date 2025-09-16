@@ -23,10 +23,10 @@
                         </a>
                     </div>
                     <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
-                        <div id="reportrange" class="reportrange-picker d-flex align-items-center">
+                        {{-- <div id="reportrange" class="reportrange-picker d-flex align-items-center">
                             <span class="reportrange-picker-field"></span>
-                        </div>
-                        <div class="dropdown filter-dropdown">
+                        </div> --}}
+                        {{--  <div class="dropdown filter-dropdown">
                             <a class="btn btn-md btn-light-brand" data-bs-toggle="dropdown" data-bs-offset="0, 10"
                                 data-bs-auto-close="outside">
                                 <i class="feather-filter me-2"></i>
@@ -79,7 +79,7 @@
                                     <span>Manage Filter</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="d-md-none d-flex align-items-center">
@@ -93,18 +93,19 @@
         <!-- [ Main Content ] start -->
         <div class="main-content">
             <div class="row">
-                <!-- [Invoices Awaiting Payment] start -->
+                <!-- [Notícias Publicadas] start -->
                 <div class="col-xxl-3 col-md-6">
                     <div class="card stretch stretch-full">
                         <div class="card-body">
                             <div class="d-flex align-items-start justify-content-between mb-4">
                                 <div class="d-flex gap-4 align-items-center">
                                     <div class="avatar-text avatar-lg bg-gray-200">
-                                        <i class="feather-send"></i>
+                                        <i class="feather-share"></i>
                                     </div>
                                     <div>
-                                        <div class="fs-4 fw-bold text-dark"><span class="counter">{{$publicNews}}</span>/<span
-                                                class="counter">{{$qtdNews}}</span></div>
+                                        <div class="fs-4 fw-bold text-dark"><span
+                                                class="counter">{{ $publicNews ?? '' }}</span>/<span
+                                                class="counter">{{ $qtdNews ?? '' }}</span></div>
                                         <h3 class="fs-13 fw-semibold text-truncate-1-line">Notícias Publicadas</h3>
                                     </div>
                                 </div>
@@ -115,33 +116,35 @@
                             <div class="pt-4">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <a href="javascript:void(0);"
-                                        class="fs-12 fw-medium text-muted text-truncate-1-line">Invoices Awaiting </a>
+                                        class="fs-12 fw-medium text-muted text-truncate-1-line">Notícias Publicadas </a>
                                     <div class="w-100 text-end">
-                                        <span class="fs-12 text-dark">$5,569</span>
-                                        <span class="fs-11 text-muted">({{$pecentagemNews}}%)</span>
+                                        <span class="fs-12 text-dark">{{ $publicNews ?? '' }} Completadas</span>
+                                        <span class="fs-11 text-muted">({{ $publicNewsPrecent ?? '10' }}%)</span>
                                     </div>
                                 </div>
                                 <div class="progress mt-2 ht-3">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: {{$pecentagemNews}}%"></div>
+                                    <div class="progress-bar bg-primary" role="progressbar"
+                                        style="width: {{ $publicNewsPrecent ?? '10' }}%"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- [Invoices Awaiting Payment] end -->
-                <!-- [Converted Leads] start -->
+                <!-- [Notícias Publicadas] end -->
+                <!-- [Notícias Arquivadas] start -->
                 <div class="col-xxl-3 col-md-6">
                     <div class="card stretch stretch-full">
                         <div class="card-body">
                             <div class="d-flex align-items-start justify-content-between mb-4">
                                 <div class="d-flex gap-4 align-items-center">
                                     <div class="avatar-text avatar-lg bg-gray-200">
-                                        <i class="feather-cast"></i>
+                                        <i class="feather-archive"></i>
                                     </div>
                                     <div>
-                                        <div class="fs-4 fw-bold text-dark"><span class="counter">48</span>/<span
-                                                class="counter">86</span></div>
-                                        <h3 class="fs-13 fw-semibold text-truncate-1-line">Notícias Pendentes</h3>
+                                        <div class="fs-4 fw-bold text-dark"><span
+                                                class="counter">{{ $filedNews ?? '' }}</span>/<span
+                                                class="counter">{{ $qtdNews ?? '' }}</span></div>
+                                        <h3 class="fs-13 fw-semibold text-truncate-1-line">Notícias Arquivadas</h3>
                                     </div>
                                 </div>
                                 <a href="javascript:void(0);" class="">
@@ -151,22 +154,23 @@
                             <div class="pt-4">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <a href="javascript:void(0);"
-                                        class="fs-12 fw-medium text-muted text-truncate-1-line">Converted Leads </a>
+                                        class="fs-12 fw-medium text-muted text-truncate-1-line">Notícias Arquivadas </a>
                                     <div class="w-100 text-end">
-                                        <span class="fs-12 text-dark">52 Completed</span>
-                                        <span class="fs-11 text-muted">(63%)</span>
+                                        <span class="fs-12 text-dark">{{ $filedNews ?? '' }} Completadas</span>
+                                        <span class="fs-11 text-muted">({{ $filedNewsPrecent ?? '' }}%)</span>
                                     </div>
                                 </div>
                                 <div class="progress mt-2 ht-3">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 63%"></div>
+                                    <div class="progress-bar bg-warning" role="progressbar"
+                                        style="width: {{ $filedNewsPrecent ?? '63' }}%"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- [Converted Leads] end -->
+                <!-- [Notícias Arquivadas] end -->
                 <!-- [Projects In Progress] start -->
-                <div class="col-xxl-3 col-md-6">
+               {{--  <div class="col-xxl-3 col-md-6">
                     <div class="card stretch stretch-full">
                         <div class="card-body">
                             <div class="d-flex align-items-start justify-content-between mb-4">
@@ -199,10 +203,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- [Projects In Progress] end -->
                 <!-- [Conversion Rate] start -->
-                <div class="col-xxl-3 col-md-6">
+                {{-- <div class="col-xxl-3 col-md-6">
                     <div class="card stretch stretch-full">
                         <div class="card-body">
                             <div class="d-flex align-items-start justify-content-between mb-4">
@@ -234,13 +238,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- [Conversion Rate] end -->
-                <!-- [Payment Records] start -->
+                <!-- [Notícias Por Categoria] start -->
                 <div class="col-xxl-8">
                     <div class="card stretch stretch-full">
                         <div class="card-header">
-                            <h5 class="card-title">Payment Record</h5>
+                            <h5 class="card-title">Notícias Por Categoria</h5>
                             <div class="card-header-action">
                                 <div class="card-header-btn">
                                     <div data-bs-toggle="tooltip" title="Delete">
@@ -263,7 +267,7 @@
                                             <i class="feather-more-vertical"></i>
                                         </div>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-end">
+                                    {{-- <div class="dropdown-menu dropdown-menu-end">
                                         <a href="javascript:void(0);" class="dropdown-item"><i
                                                 class="feather-at-sign"></i>New</a>
                                         <a href="javascript:void(0);" class="dropdown-item"><i
@@ -277,7 +281,7 @@
                                                 class="feather-settings"></i>Settings</a>
                                         <a href="javascript:void(0);" class="dropdown-item"><i
                                                 class="feather-life-buoy"></i>Tips & Tricks</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -288,40 +292,50 @@
                             <div class="row g-4">
                                 <div class="col-lg-3">
                                     <div class="p-3 border border-dashed rounded">
-                                        <div class="fs-12 text-muted mb-1">Awaiting</div>
-                                        <h6 class="fw-bold text-dark">$5,486</h6>
+                                        <div class="fs-12 text-muted mb-1">Economia</div>
+                                        <h6 class="fw-bold text-dark">{{ $economicNews ?? '10' }}</h6>
                                         <div class="progress mt-2 ht-3">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 81%">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: {{ $economicNewsPercent ?? 10 }}%">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="p-3 border border-dashed rounded">
-                                        <div class="fs-12 text-muted mb-1">Completed</div>
-                                        <h6 class="fw-bold text-dark">$9,275</h6>
+                                        <div class="fs-12 text-muted mb-1">Política</div>
+                                        <h6 class="fw-bold text-dark">{{ $politicsNews ?? '10' }}</h6>
                                         <div class="progress mt-2 ht-3">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 82%">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: {{ $politicsNewsPercent ?? 10 }}%">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="p-3 border border-dashed rounded">
-                                        <div class="fs-12 text-muted mb-1">Rejected</div>
-                                        <h6 class="fw-bold text-dark">$3,868</h6>
+                                        <div class="fs-12 text-muted mb-1">Sociedade</div>
+                                        <h6 class="fw-bold text-dark">{{ $socialNews ?? '10' }}</h6>
                                         <div class="progress mt-2 ht-3">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 68%">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: {{ $socialNewsPercent ?? 10 }}%">
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>{{-- 
                                 <div class="col-lg-3">
                                     <div class="p-3 border border-dashed rounded">
-                                        <div class="fs-12 text-muted mb-1">Revenue</div>
+                                        <div class="fs-12 text-muted mb-1">Desporto</div>
                                         <h6 class="fw-bold text-dark">$50,668</h6>
                                         <div class="progress mt-2 ht-3">
                                             <div class="progress-bar bg-dark" role="progressbar" style="width: 75%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                                <div class="col-lg-3">
+                                    <div class="p-3 border border-dashed rounded">
+                                        <div class="fs-12 text-muted mb-1">Arte e Cultura</div>
+                                        <h6 class="fw-bold text-dark">{{ $cultureNews ?? '10' }}</h6>
+                                        <div class="progress mt-2 ht-3">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: {{ $cultureNewsPercent ?? 10 }}%">
                                             </div>
                                         </div>
                                     </div>
@@ -330,16 +344,17 @@
                         </div>
                     </div>
                 </div>
-                <!-- [Payment Records] end -->
+                <!-- [Notícias Por Categoria] end -->
+
                 <!-- [Total Sales] start -->
-                <div class="col-xxl-4">
+                {{-- <div class="col-xxl-4">
                     <div class="card stretch stretch-full overflow-hidden">
                         <div class="bg-primary text-white">
                             <div class="p-4">
                                 <span class="badge bg-light text-primary text-dark float-end">12%</span>
                                 <div class="text-start">
                                     <h4 class="text-reset">30,569</h4>
-                                    <p class="text-reset m-0">Total Sales</p>
+                                    <p class="text-reset m-0">Artigos Publicados</p>
                                 </div>
                             </div>
                             <div id="total-sales-color-graph"></div>
@@ -399,10 +414,10 @@
                         <a href="javascript:void(0);"
                             class="card-footer fs-11 fw-bold text-uppercase text-center py-4">Full Details</a>
                     </div>
-                </div>
+                </div> --}}
                 <!-- [Total Sales] end !-->
                 <!-- [Mini] start -->
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <div class="card mb-4 stretch stretch-full">
                         <div class="card-header d-flex align-items-center justify-content-between">
                             <div class="d-flex gap-3 align-items-center">
@@ -470,10 +485,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- [Mini] end !-->
                 <!-- [Leads Overview] start -->
-                <div class="col-xxl-4">
+                {{-- <div class="col-xxl-4">
                     <div class="card stretch stretch-full">
                         <div class="card-header">
                             <h5 class="card-title">Leads Overview</h5>
@@ -595,13 +610,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- [Leads Overview] end -->
-                <!-- [Latest Leads] start -->
+                <!-- [Utilizadores ] start -->
                 <div class="col-xxl-8">
                     <div class="card stretch stretch-full">
                         <div class="card-header">
-                            <h5 class="card-title">Latest Leads</h5>
+                            <h5 class="card-title">Utilizadores do Sistema</h5>
                             <div class="card-header-action">
                                 <div class="card-header-btn">
                                     <div data-bs-toggle="tooltip" title="Delete">
@@ -647,163 +662,65 @@
                                 <table class="table table-hover mb-0">
                                     <thead>
                                         <tr class="border-b">
-                                            <th scope="row">Users</th>
-                                            <th>Proposal</th>
-                                            <th>Date</th>
-                                            <th>Status</th>
-                                            <th class="text-end">Actions</th>
+                                            <th scope="row">Utilizadores</th>
+                                            <th>Função</th>
+                                            <th class="text-end">Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-3">
-                                                    <div class="avatar-image">
-                                                        <img src="{{ url('assets/images/avatar/2.png') }}" alt=""
-                                                            class="img-fluid" />
+                                        @forelse ($users as $user)
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <div class="avatar-image">
+                                                            <img src="{{ url('img/users/' . $user->image) }}"
+                                                                alt=" User-Img" class="img-fluid" />
+                                                        </div>
+                                                        <a href="javascript:void(0);">
+                                                            <span class="d-block">{{ $user->name }}</span>
+                                                            <span
+                                                                class="fs-12 d-block fw-normal text-muted">{{ $user->email }}</span>
+                                                        </a>
                                                     </div>
-                                                    <a href="javascript:void(0);">
-                                                        <span class="d-block">Archie Cantones</span>
-                                                        <span
-                                                            class="fs-12 d-block fw-normal text-muted">arcie.tones@gmail.com</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-gray-200 text-dark">{{ $user->role }}</span>
+                                                </td>
+                                                </td>
+                                                <td class="text-end">
+                                                    <a class="dropdown" data-bs-toggle="dropdown">
+                                                        <i class="feather-more-vertical"></i>
                                                     </a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-gray-200 text-dark">Sent</span>
-                                            </td>
-                                            <td>11/06/2023 10:53</td>
-                                            <td>
-                                                <span class="badge bg-soft-success text-success">Completed</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="javascript:void(0);"><i class="feather-more-vertical"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-3">
-                                                    <div class="avatar-image">
-                                                        <img src="{{ url('assets/images/avatar/3.png') }}" alt=""
-                                                            class="img-fluid" />
-                                                    </div>
-                                                    <a href="javascript:void(0);">
-                                                        <span class="d-block">Holmes Cherryman</span>
-                                                        <span
-                                                            class="fs-12 d-block fw-normal text-muted">golms.chan@gmail.com</span>
+                                                    <ul class="dropdown-menu">
+                                                        <li class="dropdown-item"><a
+                                                                href="{{ route('admin.user.edit', ['user' => $user]) }}"><i
+                                                                    class="feather-edit"></i> Editar</a></li>
+                                                        <li class="dropdown-item"><a
+                                                                href="{{ route('admin.user.delete', ['user' => $user]) }}"><i
+                                                                    class="feather-trash-2"></i> Deletar</a></li>
+                                                    </ul>
                                                     </a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-gray-200 text-dark">New</span>
-                                            </td>
-                                            <td>11/06/2023 10:53</td>
-                                            <td>
-                                                <span class="badge bg-soft-primary text-primary">In Progress </span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="javascript:void(0);"><i class="feather-more-vertical"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-3">
-                                                    <div class="avatar-image">
-                                                        <img src="{{ url('assets/images/avatar/4.png') }}" alt=""
-                                                            class="img-fluid" />
-                                                    </div>
-                                                    <a href="javascript:void(0);">
-                                                        <span class="d-block">Malanie Hanvey</span>
-                                                        <span
-                                                            class="fs-12 d-block fw-normal text-muted">lanie.nveyn@gmail.com</span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-gray-200 text-dark">Sent</span>
-                                            </td>
-                                            <td>11/06/2023 10:53</td>
-                                            <td>
-                                                <span class="badge bg-soft-success text-success">Completed</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="javascript:void(0);"><i class="feather-more-vertical"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-3">
-                                                    <div class="avatar-image">
-                                                        <img src="{{ url('assets/images/avatar/5.png') }}" alt=""
-                                                            class="img-fluid" />
-                                                    </div>
-                                                    <a href="javascript:void(0);">
-                                                        <span class="d-block">Kenneth Hune</span>
-                                                        <span
-                                                            class="fs-12 d-block fw-normal text-muted">nneth.une@gmail.com</span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-gray-200 text-dark">Returning</span>
-                                            </td>
-                                            <td>11/06/2023 10:53</td>
-                                            <td>
-                                                <span class="badge bg-soft-warning text-warning">Not Interested</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="javascript:void(0);"><i class="feather-more-vertical"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-3">
-                                                    <div class="avatar-image">
-                                                        <img src="{{ url('assets/images/avatar/6.png') }}" alt=""
-                                                            class="img-fluid" />
-                                                    </div>
-                                                    <a href="javascript:void(0);">
-                                                        <span class="d-block">Valentine Maton</span>
-                                                        <span
-                                                            class="fs-12 d-block fw-normal text-muted">alenine.aton@gmail.com</span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-gray-200 text-dark">Sent</span>
-                                            </td>
-                                            <td>11/06/2023 10:53</td>
-                                            <td>
-                                                <span class="badge bg-soft-success text-success">Completed</span>
-                                            </td>
-                                            <td class="text-end">
-                                                <a href="javascript:void(0);"><i class="feather-more-vertical"></i></a>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="3" class="text-center">Nenhum utilizador encontrado.</td>
+                                            </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <ul class="list-unstyled d-flex align-items-center gap-2 mb-0 pagination-common-style">
-                                <li>
-                                    <a href="javascript:void(0);"><i class="bi bi-arrow-left"></i></a>
-                                </li>
-                                <li><a href="javascript:void(0);" class="active">1</a></li>
-                                <li><a href="javascript:void(0);">2</a></li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="bi bi-dot"></i></a>
-                                </li>
-                                <li><a href="javascript:void(0);">8</a></li>
-                                <li><a href="javascript:void(0);">9</a></li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="bi bi-arrow-right"></i></a>
-                                </li>
-                            </ul>
+                            {{-- Paginação --}}
+                            <div class="list-unstyled d-flex align-items-center gap-2 mb-0 pagination-common-style">
+                                {{ $users->links('vendor.dashPaginatio.index') }}
+                            </div>
+                            {{-- Fim de Paginação --}}
                         </div>
                     </div>
                 </div>
-                <!-- [Latest Leads] end -->
+                <!-- [Utilizadores ] end -->
                 <!--! BEGIN: [Upcoming Schedule] !-->
                 <div class="col-xxl-4">
                     <div class="card stretch stretch-full">
@@ -1181,10 +1098,10 @@
                 </div>
                 <!--! END: [Project Status] !-->
                 <!--! BEGIN: [Team Progress] !-->
-                <div class="col-xxl-4">
+                {{-- <div class="col-xxl-4">
                     <div class="card stretch stretch-full">
                         <div class="card-header">
-                            <h5 class="card-title">Team Progress</h5>
+                            <h5 class="card-title">Progresso dos Editores</h5>
                             <div class="card-header-action">
                                 <div class="card-header-btn">
                                     <div data-bs-toggle="tooltip" title="Delete">
@@ -1201,8 +1118,8 @@
                                     </div>
                                 </div>
                                 <div class="dropdown">
-                                    <a href="javascript:void(0);" class="avatar-text avatar-sm"
-                                        data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                                    <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown"
+                                        data-bs-offset="25, 25">
                                         <div data-bs-toggle="tooltip" title="Options">
                                             <i class="feather-more-vertical"></i>
                                         </div>
@@ -1279,10 +1196,10 @@
                                 <div class="team-progress-4"></div>
                             </div>
                         </div>
-                        <a href="javascript:void(0);"
-                            class="card-footer fs-11 fw-bold text-uppercase text-center">Update 30 Min Ago</a>
+                        <a href="javascript:void(0);" class="card-footer fs-11 fw-bold text-uppercase text-center">Update
+                            30 Min Ago</a>
                     </div>
-                </div>
+                </div> --}}
                 <!--! END: [Team Progress] !-->
             </div>
         </div>

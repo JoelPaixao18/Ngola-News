@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\AdvertisementController;
 /* end admin controllers */
 /* model news */
 use App\Models\News;
+use App\Models\User;
 /* end model news */
 
 /* auth controllers */
@@ -32,13 +33,71 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
     /* dasboard */
-    Route::get('/admin', 'HomeController@index')->name('home');
+    /* Route::get('/admin', 'HomeController@index')->name('home'); */
+    Route::redirect('/admin', 'admin/dashboard');
     Route::get('admin/dashboard', function () {
-        $publicNews = count(News::where('status', 'published')->get());
-        $qtdNews = count(News::all());
-        $pecentagemNews = number_format((100 * $publicNews)/$qtdNews,1);
-        return view('_admin.dashboard.crm.index',compact('qtdNews', 'publicNews', 'pecentagemNews'));
+        
+        $publicNews = count(News::where('status', 'published')->get());//número de noticias publicadas
+        $filedNews = count(News::where('status', 'filed')->get());//número de notícias arquivadas
+        $qtdNews = count(News::all());//número total de notícias
+        $publicNewsPrecent = number_format((100 * $publicNews)/$qtdNews,1);//porcentagem de notícias publicadas
+        $filedNewsPrecent = number_format((100 * $filedNews)/$qtdNews,1);//porcentagem de notícias arquivadas
+        $users = User::paginate(5);//bucando ustilizadores
+
+        //número de notícias por categoria
+        $economicNews = count( News::whereHas('category', function ($query) {
+            $query->where('name', ['Política', 'Políticas']);
+        })->orderByDesc('id')->get());
+        $economicNewsPercent = number_format((100 * $economicNews)/$qtdNews,1);//porcentagem de notícias econômicas
+        $politicsNews = count(News::whereHas('category', function ($query) {
+            $query->where('name', 'Política');
+        })->get());
+        $politicsNewsPercent = number_format((100 * $politicsNews)/$qtdNews,1);//porcentagem de notícias políticas
+        $cultureNews = count(News::whereHas('category', function ($query) {
+            $query->where('name', 'Cultura');
+        })->get());
+        $cultureNewsPercent = number_format((100 * $cultureNews)/$qtdNews,1);//porcentagem de notícias culturais
+        $technologyNews = count(News::whereHas('category', function ($query) {
+            $query->where('name', 'Tecnologia');
+        })->get());
+        $technologyNewsPercent = number_format((100 * $technologyNews)/$qtdNews,1);//porcentagem de notícias tecnológicas
+        $socialNews = count(News::whereHas('category', function ($query) {
+            $query->where('name', 'Sociedade');
+        })->get());
+        $socialNewsPercent = number_format((100 * $socialNews)/$qtdNews,1);//porcentagem de notícias sociais
+        //fim número de notícias por categoria
+        return view('_admin.dashboard.crm.index',compact(
+            'qtdNews',
+            'publicNews', 
+            'publicNewsPrecent', 
+            'filedNews',
+            'filedNewsPrecent',
+            'economicNews',
+            'economicNewsPercent',
+            'politicsNews',
+            'politicsNewsPercent',
+            'cultureNews',
+            'cultureNewsPercent',
+            'technologyNews',
+            'technologyNewsPercent',
+            'socialNews',
+            'socialNewsPercent',
+            'users'
+        ));
     });
+    /* end dasboard */
+
+    /* users routes */
+    Route::prefix('admin.users')->name('admin.')->group(function () {
+        Route::get('user', [UserController::class, 'index'])->name('user.index');
+        Route::get('create', [UserController::class, 'create'])->name('user.create');
+        Route::post('userStore', [UserController::class, 'store'])->name('user.store');
+        Route::get('details/{user}', [UserController::class, 'show'])->name('user.show');
+        Route::get('edit/{user}', [UserController::class, 'edit'])->name('user.edit');
+        Route::put('userUpdate/{user}', [UserController::class, 'update'])->name('user.update');
+        Route::get('userDelete/{user}', [UserController::class, 'destroy'])->name('user.delete');
+    });
+    /* end users routes */
 
 });
 /* Routas Editor */
@@ -129,16 +188,7 @@ Route::group(['middleware' => ['auth', 'role:admin,editor']], function () {
         Route::get('details/{galery}', [GaleryController::class, 'show'])->name('galery.view');
         Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
     });
-    /* users routes */
-    Route::prefix('admin.users')->name('admin.')->group(function () {
-        Route::get('user', [UserController::class, 'index'])->name('user.index');
-        Route::get('create', [UserController::class, 'create'])->name('user.create');
-        Route::post('userStore', [UserController::class, 'store'])->name('user.store');
-        Route::get('details/{user}', [UserController::class, 'show'])->name('user.show');
-        Route::get('edit/{user}', [UserController::class, 'edit'])->name('user.edit');
-        Route::put('userUpdate/{user}', [UserController::class, 'update'])->name('user.update');
-        Route::get('userDelete/{user}', [UserController::class, 'destroy'])->name('user.delete');
-    });
+    
 });
 /* Routas Jornalista*/
 Route::group(['middleware' => ['auth', 'role:admin,editor,jornalista']], function () {

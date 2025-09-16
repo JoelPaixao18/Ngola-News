@@ -269,7 +269,7 @@
                                                 <td>
                                                     <div class="hstack gap-3">
                                                         <div class="avatar-image ">
-                                                            @if ($user->foto)
+                                                            @if ($user->image)
                                                                 <a
                                                                     href="{{ route('admin.user.show', ['user' => $user]) }}"><img
                                                                         src="{{ asset('img/users/'. $user->image)}}"
