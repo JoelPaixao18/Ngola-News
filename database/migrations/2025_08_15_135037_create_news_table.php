@@ -19,7 +19,7 @@ class CreateNewsTable extends Migration
             $table->string('title', 255);
             $table->string('slug');
             $table->string('subtitle', 10000);
-            $table->string('detach')->default('normal');
+            $table->enum('detach', ['normal', 'destaque', 'premium'])->default('normal');
             $table->enum('status', ['draft', 'published', 'filed'])->default('filed');
             $table->text('description', 65500)->nullable();
             $table->date('date');

@@ -25,8 +25,7 @@ class News extends Model
         'status',
         'date',
         'category_id',
-        'description',
-        'user_id'
+        'description'
     ];
 
     /* função para criar o relacionamento 1:N entre notícias e comentários */
@@ -72,6 +71,4 @@ class News extends Model
     {
         return $this->belongsToMany(Tag::class, 'news_tags');
     }
-
-
 }

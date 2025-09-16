@@ -7,7 +7,7 @@
             <div class="th-widget-about">
                 <div class="about-logo">
                     <a href="home-newspaper.html">
-                        <img class="light-img" src="assets/img/logo-footer-black.svg" alt="Tnews">
+                        <img class="light-img" src="assets/img/3-Photoroom.png" alt="Tnews">
                     </a>
                     <a href="home-newspaper.html">
                         <img class="dark-img" src="assets/img/1-Photoroom.png" alt="Tnews">
@@ -35,25 +35,26 @@
         <div class="widget">
             <h3 class="widget_title">Postagens Recentes</h3>
             <div class="recent-post-wrap">
-                <div class="recent-post">
-                    <div class="media-img">
-                        <a href="blog-details.html">
-                            <img src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="post-title">
-                            <a class="hover-line" href="blog-details.html">Fitness: Your journey to Better,
-                                stronger
-                                you.</a>
-                        </h4>
-                        <div class="recent-post-meta">
-                            <a href="blog.html">
-                                <i class="fal fa-calendar-days"></i>21 June, 2025
+                @foreach ($Recent as $dados)
+                    <div class="recent-post">
+                        <div class="media-img img-footer">
+                            <a href="blog-details.html">
+                                <img src="{{ asset('img/news/' . $dados->image) }}" alt="Blog Image">
                             </a>
                         </div>
+                        <div class="media-body">
+                            <h4 class="post-title">
+                                <a class="hover-line"
+                                    href="blog-details.html">{{ Str::limit($dados->title, 45, '...') }}</a>
+                            </h4>
+                            <div class="recent-post-meta">
+                                <a href="blog.html">
+                                    <i class="fal fa-calendar-days"></i>{{ $dados->created_at->format('d M, Y') }}
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                @endforeach
                 {{-- <div class="recent-post">
                     <div class="media-img">
                         <a href="blog-details.html">
