@@ -1,6 +1,8 @@
 @extends('layouts._site.main')
 @section('title', 'Galeria de Fotos')
 @section('content')
+    <link rel="stylesheet" href="{{ url('flipbook/assets/style.css') }}">
+
     <div class="breadcumb-wrapper">
         <div class="container">
             <ul class="breadcumb-menu">
@@ -58,7 +60,7 @@
                                                         alt="">
                                                 </div>
                                                 <div class="col-md-4 ms-4">
-                                                    <ul class="list-group list-group-flush">
+                                                    <ul class="list-group list-group-flush" style="background: ">
                                                         <li class="list-group-item">Título: <b> {{ $galery->title }}</b>
                                                         </li>
                                                         <li class="list-group-item">Data:

@@ -90,7 +90,7 @@ class NewsController extends Controller
             'date' => 'required|date|after_or_equal:today',
             'detach' => 'nullable|in:normal,destaque,urgente',
             'category_id' => 'required|exists:categories,id',
-            'user_id' => 'required|exists:users,id',
+            /* 'user_id' => 'required|exists:users,id', */
             'tags' => 'array',
             'tags.*' => 'exists:tags,id'
         ], [
@@ -106,8 +106,8 @@ class NewsController extends Controller
             'date.after_or_equal' => 'A data não pode ser anterior à data atual.',
             'detach.required' => 'O campo destaque é obrigatório.',
             'detach.in' => 'O valor do destaque é inválido.',
-            'user_id.required' => 'O autor é obrigatório.',
-            'user_id.exists' => 'O autor selecionado é inválido.',
+           /*  'user_id.required' => 'O autor é obrigatório.',
+            'user_id.exists' => 'O autor selecionado é inválido.', */
             'category_id.required' => 'A categoria é obrigatória.',
             'category_id.exists' => 'A categoria selecionada é inválida.',
         ]);

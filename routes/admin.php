@@ -28,7 +28,9 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 /* end auth controllers */
 
 
-
+route::get('/analytics', function () {
+    return view('_admin.dashboard.analytics.index');
+}); 
 /* Routas de admin */
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
@@ -39,9 +41,11 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
         
         $publicNews = count(News::where('status', 'published')->get());//número de noticias publicadas
         $filedNews = count(News::where('status', 'filed')->get());//número de notícias arquivadas
+        $draftNews = count(News::where('status', 'draft')->get());//número de notícias em rascunho
         $qtdNews = count(News::all());//número total de notícias
         $publicNewsPrecent = number_format((100 * $publicNews)/$qtdNews,1);//porcentagem de notícias publicadas
         $filedNewsPrecent = number_format((100 * $filedNews)/$qtdNews,1);//porcentagem de notícias arquivadas
+        $draftNewsPrecent = number_format((100 * $draftNews)/$qtdNews,1);//porcentagem de notícias em rascunho
         $users = User::paginate(5);//bucando ustilizadores
 
         //número de notícias por categoria
@@ -72,6 +76,8 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
             'publicNewsPrecent', 
             'filedNews',
             'filedNewsPrecent',
+            'draftNews',
+            'draftNewsPrecent',
             'economicNews',
             'economicNewsPercent',
             'politicsNews',

@@ -1,3 +1,4 @@
+{{-- @extends('._admin.dashboard.crm.graficos') --}}
 @extends('layouts._admin.main')
 @section('title', 'Assessorarte- Visão Geral')
 @section('content')
@@ -169,8 +170,8 @@
                     </div>
                 </div>
                 <!-- [Notícias Arquivadas] end -->
-                <!-- [Projects In Progress] start -->
-               {{--  <div class="col-xxl-3 col-md-6">
+                <!-- [Notícias em Rascunho] start -->
+                <div class="col-xxl-3 col-md-6">
                     <div class="card stretch stretch-full">
                         <div class="card-body">
                             <div class="d-flex align-items-start justify-content-between mb-4">
@@ -179,9 +180,9 @@
                                         <i class="feather-briefcase"></i>
                                     </div>
                                     <div>
-                                        <div class="fs-4 fw-bold text-dark"><span class="counter">16</span>/<span
-                                                class="counter">20</span></div>
-                                        <h3 class="fs-13 fw-semibold text-truncate-1-line">Projects In Progress</h3>
+                                        <div class="fs-4 fw-bold text-dark"><span class="counter">{{$draftNews ?? ''}}</span>/<span
+                                                class="counter">{{$qtdNews ?? ''}}</span></div>
+                                        <h3 class="fs-13 fw-semibold text-truncate-1-line">Notícias em Rascunho</h3>
                                     </div>
                                 </div>
                                 <a href="javascript:void(0);" class="">
@@ -191,22 +192,22 @@
                             <div class="pt-4">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <a href="javascript:void(0);"
-                                        class="fs-12 fw-medium text-muted text-truncate-1-line">Projects In Progress </a>
+                                        class="fs-12 fw-medium text-muted text-truncate-1-line">Notícias em Rascunho</a>
                                     <div class="w-100 text-end">
-                                        <span class="fs-12 text-dark">16 Completed</span>
-                                        <span class="fs-11 text-muted">(78%)</span>
+                                        <span class="fs-12 text-dark">{{$draftNews ?? ''}} Completadas</span>
+                                        <span class="fs-11 text-muted">({{$draftNewsPrecent ?? ''}}%)</span>
                                     </div>
                                 </div>
                                 <div class="progress mt-2 ht-3">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 78%"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: {{$draftNewsPrecent ?? ''}}%"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> --}}
-                <!-- [Projects In Progress] end -->
+                </div>
+                <!-- [Notícias em Rascunho] end -->
                 <!-- [Conversion Rate] start -->
-                {{-- <div class="col-xxl-3 col-md-6">
+                <div class="col-xxl-3 col-md-6">
                     <div class="card stretch stretch-full">
                         <div class="card-body">
                             <div class="d-flex align-items-start justify-content-between mb-4">
@@ -238,7 +239,7 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
                 <!-- [Conversion Rate] end -->
                 <!-- [Notícias Por Categoria] start -->
                 <div class="col-xxl-8">
@@ -285,9 +286,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body custom-card-action p-0">
-                            <div id="payment-records-chart"></div>
-                        </div>
                         <div class="card-footer">
                             <div class="row g-4">
                                 <div class="col-lg-3">
@@ -319,17 +317,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>{{-- 
-                                <div class="col-lg-3">
-                                    <div class="p-3 border border-dashed rounded">
-                                        <div class="fs-12 text-muted mb-1">Desporto</div>
-                                        <h6 class="fw-bold text-dark">$50,668</h6>
-                                        <div class="progress mt-2 ht-3">
-                                            <div class="progress-bar bg-dark" role="progressbar" style="width: 75%">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
+                                </div>
                                 <div class="col-lg-3">
                                     <div class="p-3 border border-dashed rounded">
                                         <div class="fs-12 text-muted mb-1">Arte e Cultura</div>
@@ -346,7 +334,7 @@
                 </div>
                 <!-- [Notícias Por Categoria] end -->
 
-                <!-- [Total Sales] start -->
+                <!-- [Total utilizadores] start -->
                 {{-- <div class="col-xxl-4">
                     <div class="card stretch stretch-full overflow-hidden">
                         <div class="bg-primary text-white">
@@ -357,7 +345,7 @@
                                     <p class="text-reset m-0">Artigos Publicados</p>
                                 </div>
                             </div>
-                            <div id="total-sales-color-graph"></div>
+                            <div id="total-utilizadores-color-graph"></div>
                         </div>
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-between">
@@ -415,7 +403,7 @@
                             class="card-footer fs-11 fw-bold text-uppercase text-center py-4">Full Details</a>
                     </div>
                 </div> --}}
-                <!-- [Total Sales] end !-->
+                <!-- [Total utilizadores] end !-->
                 <!-- [Mini] start -->
                 {{-- <div class="col-lg-4">
                     <div class="card mb-4 stretch stretch-full">
@@ -639,7 +627,7 @@
                                             <i class="feather-more-vertical"></i>
                                         </div>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-end">
+                                    {{-- <div class="dropdown-menu dropdown-menu-end">
                                         <a href="javascript:void(0);" class="dropdown-item"><i
                                                 class="feather-at-sign"></i>New</a>
                                         <a href="javascript:void(0);" class="dropdown-item"><i
@@ -653,7 +641,7 @@
                                                 class="feather-settings"></i>Settings</a>
                                         <a href="javascript:void(0);" class="dropdown-item"><i
                                                 class="feather-life-buoy"></i>Tips & Tricks</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -722,7 +710,7 @@
                 </div>
                 <!-- [Utilizadores ] end -->
                 <!--! BEGIN: [Upcoming Schedule] !-->
-                <div class="col-xxl-4">
+                {{-- <div class="col-xxl-4">
                     <div class="card stretch stretch-full">
                         <div class="card-header">
                             <h5 class="card-title">Upcoming Schedule</h5>
@@ -947,10 +935,10 @@
                         <a href="javascript:void(0);"
                             class="card-footer fs-11 fw-bold text-uppercase text-center py-4">Upcomming Schedule</a>
                     </div>
-                </div>
+                </div> --}}
                 <!--! END: [Upcoming Schedule] !-->
                 <!--! BEGIN: [Project Status] !-->
-                <div class="col-xxl-4">
+                {{-- <div class="col-xxl-4">
                     <div class="card stretch stretch-full">
                         <div class="card-header">
                             <h5 class="card-title">Project Status</h5>
@@ -1095,7 +1083,7 @@
                         <a href="javascript:void(0);"
                             class="card-footer fs-11 fw-bold text-uppercase text-center">Upcomming Projects</a>
                     </div>
-                </div>
+                </div> --}}
                 <!--! END: [Project Status] !-->
                 <!--! BEGIN: [Team Progress] !-->
                 {{-- <div class="col-xxl-4">

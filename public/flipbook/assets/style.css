@@ -154,6 +154,14 @@
 /* Torna o fundo do modal transparente */
 .modal-content{
     background-color: #0909096f;
+    color: #fff;
+}
+.list-group-item{
+    background: #09090928;
+    color: #fff;
+}
+.modal-title{
+    color: #fff;
 }
 
 
