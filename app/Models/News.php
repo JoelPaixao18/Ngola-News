@@ -25,7 +25,12 @@ class News extends Model
         'status',
         'date',
         'category_id',
+<<<<<<< HEAD
         'description'
+=======
+        'description',
+        /* 'user_id' */
+>>>>>>> 0447bb0c2899e1dc73fc691e54769c8ec28ed971
     ];
 
     /* função para criar o relacionamento 1:N entre notícias e comentários */

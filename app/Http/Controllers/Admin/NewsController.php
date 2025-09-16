@@ -90,6 +90,10 @@ class NewsController extends Controller
             'date' => 'required|date|after_or_equal:today',
             'detach' => 'nullable|in:normal,destaque,premium',
             'category_id' => 'required|exists:categories,id',
+<<<<<<< HEAD
+=======
+            /* 'user_id' => 'required|exists:users,id', */
+>>>>>>> 0447bb0c2899e1dc73fc691e54769c8ec28ed971
             'tags' => 'array',
             'tags.*' => 'exists:tags,id'
         ], [
@@ -105,6 +109,11 @@ class NewsController extends Controller
             'date.after_or_equal' => 'A data não pode ser anterior à data atual.',
             'detach.required' => 'O campo destaque é obrigatório.',
             'detach.in' => 'O valor do destaque é inválido.',
+<<<<<<< HEAD
+=======
+           /*  'user_id.required' => 'O autor é obrigatório.',
+            'user_id.exists' => 'O autor selecionado é inválido.', */
+>>>>>>> 0447bb0c2899e1dc73fc691e54769c8ec28ed971
             'category_id.required' => 'A categoria é obrigatória.',
             'category_id.exists' => 'A categoria selecionada é inválida.',
         ]);

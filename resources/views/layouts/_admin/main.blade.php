@@ -26,12 +26,15 @@
     <!--! END: Bootstrap CSS-->
     <!--! BEGIN: Vendors CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/vendors.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/daterangepicker.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/jquery-jvectormap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/dataTables.bs5.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/tagify.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/tagify-data.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/quill.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2-theme.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/jquery.time-to.min.css') }}">
     <!--! END: Vendors CSS-->
     <!--! BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/theme.min.css') }}">
@@ -98,6 +101,9 @@
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ url('assets/vendors/js/vendors.min.js') }}"></script>
     <!-- vendors.min.js {always must need to be top} -->
+    <script src="{{ url('assets/vendors/js/daterangepicker.min.js') }}"></script>
+    <script src="{{ url('assets/vendors/js/apexcharts.min.js') }}"></script>
+    <script src="{{ url('assets/vendors/js/jquery.time-to.min.js') }}"></script>
     <script src="{{ url('assets/vendors/js/circle-progress.min.js') }}"></script>
     <script src="{{ url('assets/vendors/js/dataTables.min.js') }}"></script>
     <script src="{{ url('assets/vendors/js/dataTables.bs5.min.js') }}"></script>
@@ -109,9 +115,11 @@
 
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
-    <script src="{{ url('assets/js/common-init.min.js') }}"></script>
-    <script src="{{ url('assets/js/leads-init.min.js') }}"></script>
-    <script src="{{ url('assets/js/proposal-init.min.js') }}"></script>
+     <script src="{{ url('assets/js/common-init.min.js') }}"></script>
+   <script src="{{ url('assets/js/analytics-init.min.js') }}"></script>
+    {{-- <script src="{{ url('assets/js/leads-init.min.js') }}"></script>
+    <script src="{{ url('assets/js/proposal-init.min.js') }}"></script> --}}
+    <script src="assets/js/dashboard-init.min.js"></script>
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
     <script src="{{ url('assets/js/theme-customizer-init.min.js') }}"></script>

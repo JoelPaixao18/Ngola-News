@@ -74,9 +74,9 @@
                             <div class="col-auto">
                                 <nav class="main-menu d-none d-lg-inline-block">
                                     <ul>
-                                        {{-- <li>
+                                        <li>
                                             <a href="/">Home</a>
-                                        </li> --}}
+                                        </li>
                                         <li><a href="{{ route('site.policy') }}">Política</a></li>
                                         <li><a href="{{ route('site.society') }}">Sociedade</a></li>
                                         <li><a href="{{ route('site.economic') }}">Economia</a></li>
@@ -100,7 +100,7 @@
                                                 <li><a href="/site/galery">Imagens</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Entrar</a></li>
+                                        {{-- <li><a href="#">Entrar</a></li> --}}
                                     </ul>
                                 </nav>
                             </div>
