@@ -31,11 +31,11 @@ class NewsController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'subtitle' => 'required|string|max:10000',
-            'status' => 'required|in:draft,published,filed',
+            'status' => 'nullable|in:draft,published,filed',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
             'date' => 'required|date|after_or_equal:today',
-            'detach' => 'required|in:normal,destaque,urgente',
+            'detach' => 'nullable|in:normal,destaque,urgente',
             'category_id' => 'required|exists:categories,id',
             'tags' => 'array',
             'tags.*' => 'exists:tags,id'
@@ -97,11 +97,11 @@ class NewsController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'subtitle' => 'required|string|max:10000',
-            'status' => 'required|in:draft,published,filed',
+            'status' => 'nullable|in:draft,published,filed',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'date' => 'required|date|after_or_equal:today',
-            'detach' => 'required|in:normal,destaque,urgente',
+            'detach' => 'nullable|in:normal,destaque,urgente',
             'category_id' => 'required|exists:categories,id',
             'tags' => 'array',
             'tags.*' => 'exists:tags,id'

@@ -33,7 +33,8 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
     /* dasboard */
-    Route::get('/admin', 'HomeController@index')->name('home');
+    /* Route::get('/admin', 'HomeController@index')->name('home'); */
+    Route::redirect('/admin', 'admin/dashboard');
     Route::get('admin/dashboard', function () {
         
         $publicNews = count(News::where('status', 'published')->get());//número de noticias publicadas

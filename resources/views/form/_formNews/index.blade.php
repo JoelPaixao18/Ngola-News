@@ -40,7 +40,9 @@
         <input type="text" name="subtitle" class="form-control" value="{{ old('subtitle', $news->subtitle ?? '') }}"
             placeholder="Ex: Estão a desenvolver um projeto">
     </div>
-
+    {{-- Autor --}}
+    @can('is-editor')
+    
     {{-- Destaque --}}
     <div class="col-lg-4 mb-4">
         <label class="form-label">Destaque</label>
@@ -66,7 +68,9 @@
             <option value="filed" data-bg="bg-warning"> Arquivado</option>
         </select>
     </div>
+    @endcan
 
+    {{-- Fonte --}}
     {{-- Image --}}
     <div class="col-lg-4 mb-4">
         <label class="form-label">Imagem da Notícia</label>
@@ -104,7 +108,7 @@
 
     {{-- Botão de Enviar --}}
     <div class="col-12">
-        <button type="submit" class="btn btn-danger"> Atualizar
+        <button type="submit" class="btn btn-danger"> Salvar
             <i class="feather-save ms-2"></i>
         </button>
     </div>
