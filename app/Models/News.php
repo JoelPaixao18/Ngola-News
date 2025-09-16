@@ -26,7 +26,7 @@ class News extends Model
         'date',
         'category_id',
         'description',
-        'user_id'
+        /* 'user_id' */
     ];
 
     /* função para criar o relacionamento 1:N entre notícias e comentários */
