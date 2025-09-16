@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\News;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
 class CommentController extends Controller
@@ -30,8 +31,10 @@ class CommentController extends Controller
     public function create()
     {
         //
+        $comment = new Comment();
         $news = News::all(); // Busca todas as notícias cadastradas
-        return view('_admin.comments.create.index', compact('news'));
+        $users = User::all();
+        return view('_admin.comments.create.index', compact('comment', 'news', 'users'));
     }
 
     /**
@@ -45,28 +48,28 @@ class CommentController extends Controller
         //
         $request->validate([
             'text_comment' => 'required|string|max:1000',
-            'author_comment' => 'required|string|max:255',
             'date' => 'required|date|after_or_equal:today',
             'news_id' => 'required|exists:news,id',
+            'user_id' => 'required|exists:users,id',
+            'parent_id' => 'nullable|exists:comments,id',
         ], [
             'text_comment.required' => 'O conteúdo é obrigatório.',
-            'author_comment.required' => 'O autor é obrigatório.',
             'text_comment.max' => 'O campo comentário não pode ter mais de 1000 caracteres.',
-            'author_comment.max' => 'O campo autor não pode ter mais de 255 caracteres.',
             'news_id.exists' => 'A notícia selecionada não existe.',
+            'user_id.exists' => 'O usuário selecionado não existe.',
         ]);
 
         Comment::create([
             'text_comment' => $request->text_comment,
-            'author_comment' => $request->author_comment,
             'date' => $request->date,
             'news_id' => $request->news_id,
+            'user_id' => $request->user_id,
+            'parent_id' => $request->parent_id,
         ], [
             'text_comment.required' => 'O conteúdo é obrigatório.',
-            'author_comment.required' => 'O autor é obrigatório.',
             'text_comment.max' => 'O campo comentário não pode ter mais de 1000 caracteres.',
-            'author_comment.max' => 'O campo autor não pode ter mais de 255 caracteres.',
-            /* 'news_id.exists' => 'A notícia selecionada não existe.', */
+            'news_id.exists' => 'A notícia selecionada não existe.',
+            'user_id.exists' => 'O usuário selecionado não existe.',
         ]);
 
         return redirect()->route('admin.comments.index')->with('success', 'Comentário criado com sucesso.');
@@ -93,8 +96,10 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
+        $comment = Comment::findOrFail($comment->id);
         $news = News::all();
-        return view('_admin.comments.edit.index', compact('comment', 'news'));
+        $users = User::all();
+        return view('_admin.comments.edit.index', compact('comment', 'news', 'users'));
     }
 
     /**
@@ -109,22 +114,21 @@ class CommentController extends Controller
         //
         $request->validate([
             'text_comment' => 'required|string|max:1000',
-            'author_comment' => 'required|string|max:255',
             'date' => 'required|date|after_or_equal:today',
-            /* 'news_id' => 'required|exists:news,id', */
+            'news_id' => 'required|exists:news,id',
+            'user_id' => 'required|exists:users,id',
         ], [
             'text_comment.required' => 'O conteúdo é obrigatório.',
-            'author_comment.required' => 'O autor é obrigatório.',
             'text_comment.max' => 'O campo comentário não pode ter mais de 1000 caracteres.',
-            'author_comment.max' => 'O campo autor não pode ter mais de 255 caracteres.',
-            /* 'news_id.exists' => 'A notícia selecionada não existe.', */
+            'news_id.exists' => 'A notícia selecionada não existe.',
+            'user_id.exists' => 'O usuário selecionado não existe.',
         ]);
 
         $comment->update([
             'text_comment' => $request->input('text_comment'),
-            'author_comment' => $request->author_comment,
             'date' => $request->date,
             'news_id' => $request->news_id,
+            'user_id' => $request->user_id,
         ]);
 
         return redirect()->route('admin.comments.index')->with('success', 'Comentário atualizado com sucesso.');
