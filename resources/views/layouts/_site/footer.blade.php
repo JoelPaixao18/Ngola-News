@@ -87,24 +87,6 @@
                                     </div>
                                 </div>
                             @endforeach
-                            {{-- <div class="recent-post">
-                                <div class="media-img">
-                                    <a href="blog-details.html">
-                                        <img src="assets/img/blog/recent-post-2-2.jpg" alt="Blog Image">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="post-title">
-                                        <a class="hover-line" href="blog-details.html">Key eyes on
-                                            the latest update of technology</a>
-                                    </h4>
-                                    <div class="recent-post-meta">
-                                        <a href="blog.html">
-                                            <i class="fal fa-calendar-days"></i>22 June, 2025
-                                        </a>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -116,14 +98,16 @@
         <div class="container">
             <div class="row jusity-content-between align-items-center">
                 <div class="col-lg-5">
-                    <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2025 <a
-                            href="home-newspaper.html">Tnews</a>. All Rights Reserved.</p>
+                    <p class="copyright-text">Copyright
+                        <i class="fal fa-copyright"></i> 2025 <a href="/">Assessorarte</a>. Todos os
+                        Direitos Reservados.
+                    </p>
                 </div>
                 <div class="col-lg-auto ms-auto d-none d-lg-block">
                     <div class="footer-links">
                         <ul>
-                            <li><a href="about.html">Privacy Policy</a></li>
-                            <li><a href="about.html">Terms & Conditions</a></li>
+                            <li><a href="about.html">Política de Privacidade</a></li>
+                            <li><a href="about.html">Termos & Condições</a></li>
                         </ul>
                     </div>
                 </div>
