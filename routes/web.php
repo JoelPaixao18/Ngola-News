@@ -44,3 +44,7 @@ Route::get('site/newsView/{news}', [NewsController::class, 'newsView'])->name('s
 Route::get('site/publication', [PublicationController::class, 'publication'])->name('site.publication');
 Route::get('site/videos', [VideoController::class, 'videos'])->name('site.videos');
 Route::get('site/galery', [GaleryController::class, 'galery'])->name('site.galery');
+
+/* search routes */
+Route::get('/pesquisa', [NewsController::class, 'search'])->name('news.search');
+

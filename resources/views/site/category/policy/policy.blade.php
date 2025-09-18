@@ -59,15 +59,17 @@
                 {{-- Fim da listagem  --}}
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">
                     <aside class="sidebar-area">
+                        {{-- Pesquisa por Tag(Etiquetas)/Palavras-chaves --}}
                         <div class="widget widget_search">
                             <form class="search-form" action="{{ route('news.search') }}" method="GET">
-                                <input type="text" name="q" placeholder="Enter Keyword"
+                                <input type="text" name="q" placeholder="Palavra-chave/Tag(Etiqueta)"
                                     value="{{ request('q') }}" />
                                 <button type="submit">
                                     <i class="far fa-search"></i>
                                 </button>
                             </form>
                         </div>
+                        {{-- Fim da div de pesquisa --}}
 
                         {{-- Categorias --}}
                         <div class="widget widget_categories">

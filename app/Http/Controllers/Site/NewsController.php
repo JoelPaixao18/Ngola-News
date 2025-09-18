@@ -15,10 +15,13 @@ class NewsController extends Controller
     public function newsView(News $news)
     {
         // Busca a notícia atual
-        $news = News::with(['category', 'comments.user', 'comments.replies.user'])->findOrFail($news->id);
+        $news = News::where('status', 'published')
+            ->with(['category', 'comments.user', 'comments.replies.user'])
+            ->findOrFail($news->id);
 
         // Busca notícias relacionadas pela categoria
-        $Related = News::where('category_id', $news->category_id)
+        $Related = News::where('status', 'published')
+            ->where('category_id', $news->category_id)
             ->where('id', '!=', $news->id) // exclui a própria notícia
             ->latest()
             ->get()
@@ -28,7 +31,11 @@ class NewsController extends Controller
         $comments = Comment::all();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
-        $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $breaknews = News::where('status', 'published')
+            ->where('detach', 'destaque')
+            ->orderByDesc('id')
+            ->take(3)
+            ->get();
 
         /* Subscrição - mostrando um  modal com a imagem da noticia mais recentes */
         $subscription = News::where('status', 'published')
@@ -80,4 +87,54 @@ class NewsController extends Controller
             'users'
         ));
     }
+
+     // Função de busca
+    public function search(Request $request)
+    {
+        $query = $request->input('q');
+
+        $news = News::where('status', 'published')->with(['category.typeCategory', 'tags'])
+            ->where('title', 'like', "%{$query}%")
+            ->orWhereHas('category', function ($q1) use ($query) {
+                $q1->where('status', 'published')->where('name', 'like', "%{$query}%");
+            })
+            ->orWhereHas('category.typeCategory', function ($q2) use ($query) {
+                $q2->where('status', 'published')->where('name', 'like', "%{$query}%");
+            })
+            ->orWhereHas('tags', function ($q3) use ($query) {
+                $q3->where('status', 'published')->where('name', 'like', "%{$query}%");
+            })
+            ->get();
+
+        $categories = Category::where('name')->get();
+
+        $breaknews = News::where('status', 'published')->where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
+
+        $subscription = News::where('status', 'published')->where('detach', 'destaque')->orderByDesc('id')->first();
+
+        $footerCategory = Category::select('name')
+            ->distinct()
+            ->get()
+            ->take(5);
+
+        $Recent = News::where('status', 'published')->orderBy('updated_at', 'desc')->get()->take(2);
+
+        $RecentPost = News::where('status', 'published')->orderBy('updated_at', 'desc')->get()->take(4);
+
+        $ads = Advertisement::orderByDesc('id')->take(1)->get();
+
+        return view('site.search-results.search', compact(
+            'news',
+            'query',
+            'categories',
+            'breaknews',
+            'footerCategory',
+            'subscription',
+            'Recent',
+            'RecentPost',
+            'ads'
+        ));
+
+    }
+
 }

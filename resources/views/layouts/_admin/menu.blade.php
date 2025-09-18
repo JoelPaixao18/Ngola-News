@@ -17,70 +17,70 @@
                     <label>Menu</label>
                 </li>
                 @can('is-admin')
-                {{-- Menu Dashboard --}}
-                <li class="nxl-item nxl-hasmenu">
-                    <a href="javascript:void(0);" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-airplay"></i></span>
-                        <span class="nxl-mtext">Visão geral</span><span class="nxl-arrow"><i
-                                class="feather-chevron-right"></i></span>
-                    </a>
-                    <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="/admin/dashboard">Gestão de
-                                contatos</a>
-                        </li>
-                        {{-- <li class="nxl-item"><a class="nxl-link" href="/analytics">Analytics</a></li> --}}
-                    </ul>
-                </li>
-                {{-- Menu users --}}
-                <li class="nxl-item nxl-hasmenu">
-                    <a href="javascript:void(0);" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-user"></i></span>
-                        <span class="nxl-mtext">Utilizador</span><span class="nxl-arrow"><i
-                                class="feather-chevron-right"></i></span>
-                    </a>
-                    <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.user.index') }}">Lista de
-                                Utilizadores</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.user.create') }}">Novo
-                                Utilizador</a>
-                        </li>
-                    </ul>
-                </li>
+                    {{-- Menu Dashboard --}}
+                    <li class="nxl-item nxl-hasmenu">
+                        <a href="javascript:void(0);" class="nxl-link">
+                            <span class="nxl-micon"><i class="feather-airplay"></i></span>
+                            <span class="nxl-mtext">Visão geral</span><span class="nxl-arrow"><i
+                                    class="feather-chevron-right"></i></span>
+                        </a>
+                        <ul class="nxl-submenu">
+                            <li class="nxl-item"><a class="nxl-link" href="/admin/dashboard">Gestão de
+                                    contatos</a>
+                            </li>
+                            {{-- <li class="nxl-item"><a class="nxl-link" href="/analytics">Analytics</a></li> --}}
+                        </ul>
+                    </li>
+                    {{-- Menu users --}}
+                    <li class="nxl-item nxl-hasmenu">
+                        <a href="javascript:void(0);" class="nxl-link">
+                            <span class="nxl-micon"><i class="feather-user"></i></span>
+                            <span class="nxl-mtext">Utilizador</span><span class="nxl-arrow"><i
+                                    class="feather-chevron-right"></i></span>
+                        </a>
+                        <ul class="nxl-submenu">
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.user.index') }}">Lista de
+                                    Utilizadores</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.user.create') }}">Novo
+                                    Utilizador</a>
+                            </li>
+                        </ul>
+                    </li>
                 @endcan
                 @can('is-editor')
-                {{-- Menu Types Categories --}}
-                <li class="nxl-item nxl-hasmenu">
-                    <a href="javascript:void(0);" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-list"></i></span>
-                        <span class="nxl-mtext">Tipos de Categorias</span><span class="nxl-arrow"><i
-                                class="feather-chevron-right"></i></span>
-                    </a>
-                    <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.typeCategories.index') }}">Lista
-                                de Tipos de Categorias</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.typeCategory.create') }}">Novo
-                                Tipo de Categoria</a></li>
-                    </ul>
-                </li>
+                    {{-- Menu Types Categories --}}
+                    <li class="nxl-item nxl-hasmenu">
+                        <a href="javascript:void(0);" class="nxl-link">
+                            <span class="nxl-micon"><i class="feather-list"></i></span>
+                            <span class="nxl-mtext">Tipos de Categorias</span><span class="nxl-arrow"><i
+                                    class="feather-chevron-right"></i></span>
+                        </a>
+                        <ul class="nxl-submenu">
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.typeCategories.index') }}">Lista
+                                    de Tipos de Categorias</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.typeCategory.create') }}">Novo
+                                    Tipo de Categoria</a></li>
+                        </ul>
+                    </li>
 
-                {{-- Menu Category --}}
-                <li class="nxl-item nxl-hasmenu">
-                    <a href="javascript:void(0);" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-at-sign"></i></span>
-                        <span class="nxl-mtext">Categorias</span><span class="nxl-arrow"><i
-                                class="feather-chevron-right"></i></span>
-                    </a>
-                    <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link"
-                                href="{{ route('admin.categories.index') }}">Categoria</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Criar
-                                Categoria</a>
-                        </li>
-                    </ul>
-                </li>
+                    {{-- Menu Category --}}
+                    <li class="nxl-item nxl-hasmenu">
+                        <a href="javascript:void(0);" class="nxl-link">
+                            <span class="nxl-micon"><i class="feather-at-sign"></i></span>
+                            <span class="nxl-mtext">Categorias</span><span class="nxl-arrow"><i
+                                    class="feather-chevron-right"></i></span>
+                        </a>
+                        <ul class="nxl-submenu">
+                            <li class="nxl-item"><a class="nxl-link"
+                                    href="{{ route('admin.categories.index') }}">Categoria</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.category.create') }}">Criar
+                                    Categoria</a>
+                            </li>
+                        </ul>
+                    </li>
 
-                {{-- Menu Events --}}
-                {{-- <li class="nxl-item nxl-hasmenu">
+                    {{-- Menu Events --}}
+                    {{-- <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-cast"></i></span>
                         <span class="nxl-mtext">Eventos</span><span class="nxl-arrow"><i
@@ -94,19 +94,19 @@
                         <!-- <li class="nxl-item"><a class="nxl-link" href="/events/eventsTimesheets">Timesheets Report</a></li> -->
                     </ul>
                 </li> --}}
-                {{-- Menu Tags --}}
-                <li class="nxl-item nxl-hasmenu">
-                    <a href="javascript:void(0);" class="nxl-link">
-                        <span class="nxl-micon"><i class="feather-tag"></i></span>
-                        <span class="nxl-mtext">Tags</span><span class="nxl-arrow"><i
-                                class="feather-chevron-right"></i></span>
-                    </a>
-                    <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.tags.index') }}">Tag</a></li>
-                        <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.tag.create') }}">Nova Tag</a>
-                        </li>
-                    </ul>
-                </li>
+                    {{-- Menu Tags --}}
+                    <li class="nxl-item nxl-hasmenu">
+                        <a href="javascript:void(0);" class="nxl-link">
+                            <span class="nxl-micon"><i class="feather-tag"></i></span>
+                            <span class="nxl-mtext">Tags</span><span class="nxl-arrow"><i
+                                    class="feather-chevron-right"></i></span>
+                        </a>
+                        <ul class="nxl-submenu">
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.tags.index') }}">Tag</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="{{ route('admin.tag.create') }}">Nova Tag</a>
+                            </li>
+                        </ul>
+                    </li>
                 @endcan
                 {{-- Menu News --}}
                 <li class="nxl-item nxl-hasmenu">
