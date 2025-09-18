@@ -15,7 +15,7 @@ class HomeController extends Controller
     {
 
         /* Noticia da Categoria Politica com mais destaques */
-        $newsDetach = News::where('status', 'published')->where('detach', 'destaque') // apenas notícias destaque
+        $newsDetach = News::where('status', 'publicado')->where('detach', 'destaque') // apenas notícias destaque
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', [
                     'Politica',
@@ -28,11 +28,11 @@ class HomeController extends Controller
         /* fim */
 
         /* Sessão Noticia por Categoria - Puxando a noticia mais recente de cada categoria */
-        $news = News::where('status', 'published')
+        $news = News::where('status', 'publicado')
             ->whereIn('id', function ($query) {
                 $query->selectRaw('MAX(id)')
                     ->from('news')
-                    ->where('status', 'published')
+                    ->where('status', 'publicado')
                     ->groupBy('category_id');
             })
             ->orderBy('created_at', 'desc')
@@ -43,27 +43,27 @@ class HomeController extends Controller
         $categories = Category::all();
 
         /* Sessão das Noticias de Hoje */
-        $today = News::where('status', 'published')->orderBy('created_at', 'desc')->take(2)->get();
-        $today1 = News::where('status', 'published')->where('detach', 'destaque')->orderByDesc('id')->first();
-        $breaknews = News::where('status', 'published')->where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
-        $subscription = News::where('status', 'published')->where('detach', 'destaque')->orderByDesc('id')->first();
+        $today = News::where('status', 'publicado')->orderBy('created_at', 'desc')->take(2)->get();
+        $today1 = News::where('status', 'publicado')->where('detach', 'destaque')->orderByDesc('id')->first();
+        $breaknews = News::where('status', 'publicado')->where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        $subscription = News::where('status', 'publicado')->where('detach', 'destaque')->orderByDesc('id')->first();
 
         /* --------- Sessão da Categoria de Notícias (algumas categorias) ----------------- */
 
         /* Noticias da categoria Politicas */
-        $newsPolicy = News::where('status', 'published')
+        $newsPolicy = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', ['Política', 'Politícas'])->take(6);
             })->get();
 
         /* Noticias da categoria Culturas */
-        $newsCulture = News::where('status', 'published')
+        $newsCulture = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', ['Cultura', 'Culturas'])->take(6);
             })->get();
 
         /* Noticias de Categoria Desportos */
-        $newsSports = News::where('status', 'published')
+        $newsSports = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', ['Desporto', 'Desportos'])->take(6);
             })->get();
@@ -71,7 +71,7 @@ class HomeController extends Controller
         /* --------- Sessão Ciências e Tecnologia */
 
         /* exibindo a mais recente e destacada */
-        $newsTech1 = News::where('status', 'published')
+        $newsTech1 = News::where('status', 'publicado')
             ->where('detach', 'destaque') // apenas notícias destaque
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', [
@@ -86,19 +86,19 @@ class HomeController extends Controller
 
 
         /* exibindo as 4 primeiras mais recentas */
-        $newsTech = News::where('status', 'published')
+        $newsTech = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
             $query->whereIn('name', ['Tecnologia', 'Tecnologia'])->orderByDesc('id')->take(4);
         })->get();
 
         /* Sessão de Economia e Negocio */
-        $Economic = News::where('status', 'published')
+        $Economic = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
             $query->whereIn('name', ['Economia', 'Economias'])->orderByDesc('id')->take(5);
         })->get();
 
         /* Sessão de Sociedade */
-        $Society = News::where('status', 'published')
+        $Society = News::where('status', 'publicado')
         ->whereHas('category', function ($query) {
             $query->whereIn('name', ['Sociedade', 'Sociedades'])->orderByDesc('id')->take(5);
         })->get();
@@ -114,7 +114,7 @@ class HomeController extends Controller
         $videos = Video::where('detach', 'destaque')->orderByDesc('id')->first();
 
         /* Posts Recentes no Footer */
-        $Recent = News::where('status', 'published')->orderBy('updated_at', 'desc')->take(2)->get();
+        $Recent = News::where('status', 'publicado')->orderBy('updated_at', 'desc')->take(2)->get();
 
         $ads = Advertisement::orderByDesc('id')->take(1)->get();
 

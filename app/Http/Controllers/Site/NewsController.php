@@ -15,12 +15,12 @@ class NewsController extends Controller
     public function newsView(News $news)
     {
         // Busca a notícia atual
-        $news = News::where('status', 'published')
+        $news = News::where('status', 'publicado')
             ->with(['category', 'comments.user', 'comments.replies.user'])
             ->findOrFail($news->id);
 
         // Busca notícias relacionadas pela categoria
-        $Related = News::where('status', 'published')
+        $Related = News::where('status', 'publicado')
             ->where('category_id', $news->category_id)
             ->where('id', '!=', $news->id) // exclui a própria notícia
             ->latest()
@@ -31,14 +31,14 @@ class NewsController extends Controller
         $comments = Comment::all();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
-        $breaknews = News::where('status', 'published')
+        $breaknews = News::where('status', 'publicado')
             ->where('detach', 'destaque')
             ->orderByDesc('id')
             ->take(3)
             ->get();
 
         /* Subscrição - mostrando um  modal com a imagem da noticia mais recentes */
-        $subscription = News::where('status', 'published')
+        $subscription = News::where('status', 'publicado')
             ->where('detach', 'destaque')
             ->orderByDesc('id')
             ->first();
@@ -49,12 +49,12 @@ class NewsController extends Controller
             ->take(5)
             ->get();
 
-        $Recent = News::where('status', 'published')
+        $Recent = News::where('status', 'publicado')
             ->orderBy('updated_at', 'desc')
             ->get()
             ->take(2);
 
-        $RecentPost = News::where('status', 'published')
+        $RecentPost = News::where('status', 'publicado')
             ->orderBy('updated_at', 'desc')
             ->get()
             ->take(4);
@@ -93,33 +93,33 @@ class NewsController extends Controller
     {
         $query = $request->input('q');
 
-        $news = News::where('status', 'published')->with(['category.typeCategory', 'tags'])
+        $news = News::where('status', 'publicado')->with(['category.typeCategory', 'tags'])
             ->where('title', 'like', "%{$query}%")
             ->orWhereHas('category', function ($q1) use ($query) {
-                $q1->where('status', 'published')->where('name', 'like', "%{$query}%");
+                $q1->where('status', 'publicado')->where('name', 'like', "%{$query}%");
             })
             ->orWhereHas('category.typeCategory', function ($q2) use ($query) {
-                $q2->where('status', 'published')->where('name', 'like', "%{$query}%");
+                $q2->where('status', 'publicado')->where('name', 'like', "%{$query}%");
             })
             ->orWhereHas('tags', function ($q3) use ($query) {
-                $q3->where('status', 'published')->where('name', 'like', "%{$query}%");
+                $q3->where('status', 'publicado')->where('name', 'like', "%{$query}%");
             })
             ->get();
 
         $categories = Category::where('name')->get();
 
-        $breaknews = News::where('status', 'published')->where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
+        $breaknews = News::where('status', 'publicado')->where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 
-        $subscription = News::where('status', 'published')->where('detach', 'destaque')->orderByDesc('id')->first();
+        $subscription = News::where('status', 'publicado')->where('detach', 'destaque')->orderByDesc('id')->first();
 
         $footerCategory = Category::select('name')
             ->distinct()
             ->get()
             ->take(5);
 
-        $Recent = News::where('status', 'published')->orderBy('updated_at', 'desc')->get()->take(2);
+        $Recent = News::where('status', 'publicado')->orderBy('updated_at', 'desc')->get()->take(2);
 
-        $RecentPost = News::where('status', 'published')->orderBy('updated_at', 'desc')->get()->take(4);
+        $RecentPost = News::where('status', 'publicado')->orderBy('updated_at', 'desc')->get()->take(4);
 
         $ads = Advertisement::orderByDesc('id')->take(1)->get();
 

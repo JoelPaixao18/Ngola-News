@@ -12,9 +12,9 @@ class dashController extends Controller
     //
     public function management()
     {
-        $publicNews = count(News::where('status', 'published')->get());//número de noticias publicadas
-        $filedNews = count(News::where('status', 'filed')->get());//número de notícias arquivadas
-        $draftNews = count(News::where('status', 'draft')->get());//número de notícias em rascunho
+        $publicNews = count(News::where('status', 'publicado')->get());//número de noticias publicadas
+        $filedNews = count(News::where('status', 'arquivado')->get());//número de notícias arquivadas
+        $draftNews = count(News::where('status', 'rascunho')->get());//número de notícias em rascunho
         $qtdNews = count(News::all());//número total de notícias
         $publicNewsPrecent = number_format((100 * $publicNews)/$qtdNews,1);//porcentagem de notícias publicadas
         $filedNewsPrecent = number_format((100 * $filedNews)/$qtdNews,1);//porcentagem de notícias arquivadas

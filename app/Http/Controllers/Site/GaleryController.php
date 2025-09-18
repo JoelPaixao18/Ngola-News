@@ -14,13 +14,13 @@ class GaleryController extends Controller
     public function galery()
     {
         $galeries = Galery::orderByDesc('id')->get();
-        $breaknews = News::where('status', 'published')
+        $breaknews = News::where('status', 'publicado')
             ->where('detach', 'destaque')
             ->orderByDesc('id')
             ->get()
             ->take(3);
 
-        $subscription = News::where('status', 'published')
+        $subscription = News::where('status', 'publicado')
             ->where('detach', 'destaque')
             ->orderByDesc('id')
             ->first();
@@ -30,12 +30,12 @@ class GaleryController extends Controller
             ->get()
             ->take(5);
 
-        $Recent = News::where('status', 'published')
+        $Recent = News::where('status', 'publicado')
             ->orderBy('updated_at', 'desc')
             ->get()
             ->take(2);
 
-        $RecentPost = News::where('status', 'published')
+        $RecentPost = News::where('status', 'publicado')
             ->orderBy('updated_at', 'desc')
             ->get()->take(4);
 

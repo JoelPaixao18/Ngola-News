@@ -109,11 +109,11 @@
                         <div class="info-item">
                             <div class="info-label">Estado:</div>
                             <div class="info-value">
-                                @if ($news->status == 'draft')
+                                @if ($news->status == 'rascunho')
                                     <span class="badge bg-warning">Rascunho</span>
-                                @elseif($news->status == 'published')
+                                @elseif($news->status == 'publicado')
                                     <span class="badge bg-success">Publicado</span>
-                                @elseif($news->status == 'filed')
+                                @elseif($news->status == 'arquivado')
                                     <span class="badge bg-info">Arquivado</span>
                                 @else
                                     <span class="badge bg-secondary">Desconhecido</span>

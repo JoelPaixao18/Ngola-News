@@ -12,7 +12,7 @@ class EconomicController extends Controller
 {
     public function economic()
     {
-        $news = News::where('status', 'published')
+        $news = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', ['Economia', 'Economias']);
             })->orderByDesc('id')->paginate(6);
@@ -20,14 +20,14 @@ class EconomicController extends Controller
         $categories = Category::where('name')->get();
 
         /* Ultimas noticias - Trás as 3 ultimas noticias*/
-        $breaknews = News::where('status', 'published')
+        $breaknews = News::where('status', 'publicado')
             ->where('detach', 'destaque')
             ->orderByDesc('id')
             ->get()
             ->take(3);
 
         /* Subscrição - mostrando um  modal com a imagem da noticia mais recentes */
-        $subscription = News::where('status', 'published')
+        $subscription = News::where('status', 'publicado')
             ->where('detach', 'destaque')
             ->orderByDesc('id')
             ->first();
@@ -39,12 +39,12 @@ class EconomicController extends Controller
             ->take(5);
 
 
-        $Recent = News::where('status', 'published')
+        $Recent = News::where('status', 'publicado')
             ->orderBy('updated_at', 'desc')
             ->get()
             ->take(2);
 
-        $RecentPost = News::where('status', 'published')
+        $RecentPost = News::where('status', 'publicado')
             ->orderBy('updated_at', 'desc')
             ->get()
             ->take(4);

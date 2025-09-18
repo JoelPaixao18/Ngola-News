@@ -35,7 +35,7 @@ class NewsController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'subtitle' => 'required|string|max:10000',
-            'status' => 'nullable|in:draft,published,filed',
+            'status' => 'nullable|in:rascunho,publicado,arquivado',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
             'date' => 'required|date|after_or_equal:today',
@@ -84,7 +84,7 @@ class NewsController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'subtitle' => 'required|string|max:10000',
-            'status' => 'nullable|in:draft,published,filed',
+            'status' => 'nullable|in:rascunho,publicado,arquivado',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'date' => 'required|date|after_or_equal:today',

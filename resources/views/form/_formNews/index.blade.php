@@ -42,32 +42,31 @@
     </div>
     {{-- Autor --}}
     @can('is-editor')
-    
-    {{-- Destaque --}}
-    <div class="col-lg-4 mb-4">
-        <label class="form-label">Destaque</label>
-        <select class="form-control" name="detach">
-            <option value="{{ old('', $news->detach ?? '') }}" selected>
-                {{ $news->detach ?? 'Selecione' }}
-            </option>
-            <option value="normal">Normal</option>
-            <option value="destaque">Destaque</option>
-            <option value="premium">Premium</option>
-        </select>
-    </div>
+        {{-- Destaque --}}
+        <div class="col-lg-4 mb-4">
+            <label class="form-label">Destaque</label>
+            <select class="form-control" name="detach">
+                <option value="{{ old('', $news->detach ?? '') }}" selected>
+                    {{ $news->detach ?? 'Selecione' }}
+                </option>
+                <option value="normal">Normal</option>
+                <option value="destaque">Destaque</option>
+                <option value="premium">Premium</option>
+            </select>
+        </div>
 
-    {{-- Status --}}
-    <div class="col-lg-4 mb-4">
-        <label class="form-label">Status</label>
-        <select class="form-control" name="status" data-select2-selector="status">
-            <option value="{{ old('', $news->status ?? '') }}" selected>
-                {{ $news->status ?? 'Selecione' }}
-            </option>
-            <option value="draft" data-bg="bg-danger"> Rascunho</option>
-            <option value="published" data-bg="bg-success"> Publicado</option>
-            <option value="filed" data-bg="bg-warning"> Arquivado</option>
-        </select>
-    </div>
+        {{-- Status --}}
+        <div class="col-lg-4 mb-4">
+            <label class="form-label">Status</label>
+            <select class="form-control" name="status" data-select2-selector="status">
+                <option value="{{ old('', $news->status ?? '') }}" selected>
+                    {{ $news->status ?? 'Selecione' }}
+                </option>
+                <option value="rascunho" data-bg="bg-danger"> Rascunho</option>
+                <option value="publicado" data-bg="bg-success"> Publicado</option>
+                <option value="arquivado" data-bg="bg-warning"> Arquivado</option>
+            </select>
+        </div>
     @endcan
 
     {{-- Fonte --}}

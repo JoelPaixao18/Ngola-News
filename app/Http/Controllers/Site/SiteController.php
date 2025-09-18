@@ -19,7 +19,7 @@ class SiteController extends Controller
     {
 
         /* Noticia da Categoria Politica com mais destaques */
-        $newsDetach = News::whereRaw('status', 'published')  //apenas notícias publicadas
+        $newsDetach = News::where('status', 'publicado')  //apenas notícias publicadas
             ->where('detach', 'destaque') //apenas notícias destaque
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', [
@@ -33,11 +33,11 @@ class SiteController extends Controller
         /* fim */
 
         /* Sessão Noticia por Categoria - Puxando a noticia mais recente de cada categoria */
-        $news = News::where('status', 'published') // apenas publicadas
+        $news = News::where('status', 'publicado') // apenas publicadas
             ->whereIn('id', function ($query) {
                 $query->selectRaw('MAX(id)')
                     ->from('news')
-                    ->where('status', 'published') // garante que só pegue publicadas no subselect também
+                    ->where('status', 'publicado') // garante que só pegue publicadas no subselect também
                     ->groupBy('category_id');
             })
             ->orderBy('created_at', 'desc')
@@ -48,15 +48,15 @@ class SiteController extends Controller
         /* $categories = Category::all(); */
 
         /* Sessão das Noticias de Hoje */
-        $today = News::where('status', 'published')->orderBy('created_at', 'desc')->take(2)->get();
-        $today1 = News::where('detach', 'destaque')->where('status', 'published')->orderByDesc('id')->first();
-        $breaknews = News::where('detach', 'destaque')->where('status', 'published')->orderByDesc('id')->take(3)->get();
-        $subscription = News::where('detach', 'destaque')->where('status', 'published')->orderByDesc('id')->first();
+        $today = News::where('status', 'publicado')->orderBy('created_at', 'desc')->take(2)->get();
+        $today1 = News::where('detach', 'destaque')->where('status', 'publicado')->orderByDesc('id')->first();
+        $breaknews = News::where('detach', 'destaque')->where('status', 'publicado')->orderByDesc('id')->take(3)->get();
+        $subscription = News::where('detach', 'destaque')->where('status', 'publicado')->orderByDesc('id')->first();
 
         /* --------- Sessão da Categoria de Notícias (algumas categorias) ----------------- */
 
         /* Noticias da categoria Politicas */
-        $newsPolicy = News::where('status', 'published') // apenas publicadas
+        $newsPolicy = News::where('status', 'publicado') // apenas publicadas
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', ['Política', 'Politícas']);
             })
@@ -66,7 +66,7 @@ class SiteController extends Controller
         /* fim */
 
         /* Noticias da categoria Culturas */
-        $newsCulture = News::where('status', 'published')
+        $newsCulture = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', ['Cultura', 'Culturas']);
             })
@@ -76,7 +76,7 @@ class SiteController extends Controller
         /* fim */
 
         /* Noticias de Categoria Desportos */
-        $newsSports = News::where('status', 'published')
+        $newsSports = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', ['Desporto', 'Desportos']);
             })
@@ -88,7 +88,7 @@ class SiteController extends Controller
 
         /* exibindo a mais recente e destacada */
         $newsTech1 = News::where('detach', 'destaque') // apenas notícias destaque
-            ->where('status', 'published') // apenas notícias publicadas
+            ->where('status', 'publicado') // apenas notícias publicadas
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', [
                     'Tecnologia',
@@ -102,7 +102,7 @@ class SiteController extends Controller
 
 
         /* exibindo as 4 primeiras mais recentas */
-        $newsTech = News::where('status', 'published')
+        $newsTech = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', ['Tecnologia', 'Tecnologia']);
             })
@@ -112,7 +112,7 @@ class SiteController extends Controller
         /* fim */
 
         /* Sessão de Economia e Negocio */
-        $Economic = News::where('status', 'published')
+        $Economic = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', ['Economia', 'Economias']);
             })
@@ -122,7 +122,7 @@ class SiteController extends Controller
         /* fim */
 
         /* Sessão de Sociedade */
-        $Society = News::where('status', 'published')
+        $Society = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', ['Sociedade', 'Sociedades']);
             })
@@ -131,9 +131,9 @@ class SiteController extends Controller
             ->get();
         /* fim */
 
-        /* $categories = Category::where('status', 'published')->get(); */
+        /* $categories = Category::where('status', 'publicado')->get(); */
 
-        $footerCategory = Category::where('status', 'published')->select('name')
+        $footerCategory = Category::where('status', 'publicado')->select('name')
             ->distinct()
             ->take(5)
             ->get();
@@ -142,7 +142,7 @@ class SiteController extends Controller
         $videos = Video::where('detach', 'destaque')->orderByDesc('id')->first();
 
         /* Posts Recentes no Footer */
-        $Recent = News::where('status', 'published')->orderBy('updated_at', 'desc')->take(2)->get();
+        $Recent = News::where('status', 'publicado')->orderBy('updated_at', 'desc')->take(2)->get();
 
         $ads = Advertisement::orderByDesc('id')->take(1)->get();
 

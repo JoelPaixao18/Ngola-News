@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             PublicationTableSeeder::class,
             AdvertisementsTableSeeder::class,
             UserTableSeeder::class,
+            TagsTableSeeder::class,
         ]);
     }
 }
