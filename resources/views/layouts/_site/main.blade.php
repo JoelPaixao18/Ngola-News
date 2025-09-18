@@ -20,14 +20,10 @@
     <link rel="apple-touch-icon" sizes="152x152" href="{{ url('site/assets/img/2-Photoroom.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url('site/assets/img/2-Photoroom.png') }}">
     <link rel="apple-touch-icon" sizes="144x144" href="{{ url('site/assets/img/2-Photoroom.png') }}">
-    <link rel="icon" type="image/png" sizes="192x192"
-        href="{{ url('site/assets/img/2-Photoroom.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="{{ url('site/assets/img/2-Photoroom.png') }}">
-    <link rel="icon" type="image/png" sizes="96x96"
-        href="{{ url('site/assets/img/2-Photoroom.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ url('site/assets/img/2-Photoroom.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('site/assets/img/2-Photoroom.png') }}">
     <link rel="manifest" href="{{ url('site/assets/img/2-Photoroom.png') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ url('site/assets/img/favicons/ms-icon-144x144.png') }}">
@@ -41,7 +37,20 @@
     <link rel="stylesheet" href="{{ url('site/assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ url('site/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ url('site/assets/css/newStyle.css') }}">
-    
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1XKM4ZK2W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-B1XKM4ZK2W');
+    </script>
+
 </head>
 
 <body>
@@ -54,7 +63,7 @@
 
     {{-- pegando todos os conteudos --}}
     @yield('content')
-    {{-- fim  pegando todos os conteudos--}}
+    {{-- fim  pegando todos os conteudos --}}
     @include('layouts._site.mobileMenu')
     @include('layouts._site.footer')
     <div class="scroll-top">
@@ -64,7 +73,7 @@
             </path>
         </svg>
     </div>
-    
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
     {{-- <script type="text/javascript" src="{{ url('flipbook/assets/turn.min.js') }}"></script> --}}

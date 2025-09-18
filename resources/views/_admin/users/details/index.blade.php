@@ -9,7 +9,7 @@
                     <h5 class="m-b-10">users</h5>
                 </div>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                     <li class="breadcrumb-item">View</li>
                 </ul>
             </div>
@@ -74,8 +74,8 @@
                                 <div class="mb-4 text-center">
                                     <div class="wd-150 ht-150 mx-auto mb-3 position-relative">
                                         <div class="avatar-image wd-150 ht-150 border border-5 border-gray-3">
-                                            <img src="{{ asset('img/users/'. $user->image) }}" alt="foto de {{ $user->name }}"
-                                                class="img-fluid">
+                                            <img src="{{ asset('img/users/' . $user->image) }}"
+                                                alt="foto de {{ $user->name }}" class="img-fluid">
                                         </div>
                                         <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle"
                                             style="top: 76%; right: 10px">
@@ -127,8 +127,7 @@
                                         <i class="feather-trash-2 me-2"></i>
                                         <span>Deletar</span>
                                     </a>
-                                    <a href="{{ route('admin.user.edit', ['user' => $user]) }}"
-                                        class="w-50 btn btn-danger">
+                                    <a href="{{ route('admin.user.edit', ['user' => $user]) }}" class="w-50 btn btn-danger">
                                         <i class="feather-edit me-2"></i>
                                         <span>Editar Perfil</span>
                                     </a>

@@ -223,7 +223,7 @@
                                         <div class="blog-img">
                                             <img src="{{ url('img/news/' . $related->image) }}" alt="blog image">
                                             <a data-theme-color="#00D084"
-                                                href="{{ route('site.newsView', $related->category->id) }}"
+                                                href="{{ route('site.newsView', $related->id) }}"
                                                 class="category">
                                                 {{ $related->category->name }}
                                             </a>

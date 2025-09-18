@@ -26,8 +26,8 @@
     <!--! END: Bootstrap CSS-->
     <!--! BEGIN: Vendors CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/vendors.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/daterangepicker.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/jquery-jvectormap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/daterangepicker.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/jquery-jvectormap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/dataTables.bs5.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/tagify.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/tagify-data.min.css') }}">
@@ -80,6 +80,17 @@
     <link rel="stylesheet"
         href="https://cdn.ckeditor.com/ckeditor5-premium-features/46.0.2/ckeditor5-premium-features.css" crossorigin>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1XKM4ZK2W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-B1XKM4ZK2W');
+    </script>
 </head>
 
 <body>
@@ -115,8 +126,8 @@
 
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
-     <script src="{{ url('assets/js/common-init.min.js') }}"></script>
-   <script src="{{ url('assets/js/analytics-init.min.js') }}"></script>
+    <script src="{{ url('assets/js/common-init.min.js') }}"></script>
+    <script src="{{ url('assets/js/analytics-init.min.js') }}"></script>
     {{-- <script src="{{ url('assets/js/leads-init.min.js') }}"></script>
     <script src="{{ url('assets/js/proposal-init.min.js') }}"></script> --}}
     <script src="assets/js/dashboard-init.min.js"></script>

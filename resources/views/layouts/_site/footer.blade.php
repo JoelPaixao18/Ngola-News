@@ -37,8 +37,7 @@
                         <div class="menu-all-pages-container">
                             <ul class="menu">
                                 @foreach ($footerCategory as $dados)
-                                    <li><a
-                                            href="#">{{ $dados->name }}</a>
+                                    <li><a href="#">{{ $dados->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -77,7 +76,7 @@
                                     <div class="media-body">
                                         <h4 class="post-title">
                                             <a class="hover-line"
-                                                href="blog-details.html">{{ Str::limit($recent->title, 45) }}</a>
+                                                href="{{ route('site.newsView', ['news' => $recent->id]) }}">{{ Str::limit($recent->title, 45) }}</a>
                                         </h4>
                                         <div class="recent-post-meta">
                                             <a href="blog.html">

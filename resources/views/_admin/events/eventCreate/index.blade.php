@@ -12,7 +12,7 @@
                     <h5 class="m-b-10">Evento</h5>
                 </div>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                     <li class="breadcrumb-item">Criar</li>
                 </ul>
             </div>
@@ -97,8 +97,8 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                      Criando Formulario Event Create
-                       _______________________________________________________________-->
+                                              Criando Formulario Event Create
+                               _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="eventForm" action="{{ route('admin.event.store') }}" method="post"

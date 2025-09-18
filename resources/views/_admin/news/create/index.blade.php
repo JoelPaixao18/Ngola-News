@@ -12,7 +12,7 @@
                     <h5 class="m-b-10">Notícias</h5>
                 </div>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                     <li class="breadcrumb-item">Criar</li>
                 </ul>
             </div>

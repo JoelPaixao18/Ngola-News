@@ -11,7 +11,7 @@
                     <h5 class="m-b-10">Visão Geral</h5>
                 </div>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                     <li class="breadcrumb-item">Visão Geral</li>
                 </ul>
             </div>
@@ -180,8 +180,9 @@
                                         <i class="feather-briefcase"></i>
                                     </div>
                                     <div>
-                                        <div class="fs-4 fw-bold text-dark"><span class="counter">{{$draftNews ?? ''}}</span>/<span
-                                                class="counter">{{$qtdNews ?? ''}}</span></div>
+                                        <div class="fs-4 fw-bold text-dark"><span
+                                                class="counter">{{ $draftNews ?? '' }}</span>/<span
+                                                class="counter">{{ $qtdNews ?? '' }}</span></div>
                                         <h3 class="fs-13 fw-semibold text-truncate-1-line">Notícias em Rascunho</h3>
                                     </div>
                                 </div>
@@ -194,12 +195,13 @@
                                     <a href="javascript:void(0);"
                                         class="fs-12 fw-medium text-muted text-truncate-1-line">Notícias em Rascunho</a>
                                     <div class="w-100 text-end">
-                                        <span class="fs-12 text-dark">{{$draftNews ?? ''}} Completadas</span>
-                                        <span class="fs-11 text-muted">({{$draftNewsPrecent ?? ''}}%)</span>
+                                        <span class="fs-12 text-dark">{{ $draftNews ?? '' }} Completadas</span>
+                                        <span class="fs-11 text-muted">({{ $draftNewsPrecent ?? '' }}%)</span>
                                     </div>
                                 </div>
                                 <div class="progress mt-2 ht-3">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: {{$draftNewsPrecent ?? ''}}%"></div>
+                                    <div class="progress-bar bg-success" role="progressbar"
+                                        style="width: {{ $draftNewsPrecent ?? '' }}%"></div>
                                 </div>
                             </div>
                         </div>
@@ -293,7 +295,8 @@
                                         <div class="fs-12 text-muted mb-1">Economia</div>
                                         <h6 class="fw-bold text-dark">{{ $economicNews ?? '10' }}</h6>
                                         <div class="progress mt-2 ht-3">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: {{ $economicNewsPercent ?? 10 }}%">
+                                            <div class="progress-bar bg-primary" role="progressbar"
+                                                style="width: {{ $economicNewsPercent ?? 10 }}%">
                                             </div>
                                         </div>
                                     </div>
@@ -303,7 +306,8 @@
                                         <div class="fs-12 text-muted mb-1">Política</div>
                                         <h6 class="fw-bold text-dark">{{ $politicsNews ?? '10' }}</h6>
                                         <div class="progress mt-2 ht-3">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: {{ $politicsNewsPercent ?? 10 }}%">
+                                            <div class="progress-bar bg-success" role="progressbar"
+                                                style="width: {{ $politicsNewsPercent ?? 10 }}%">
                                             </div>
                                         </div>
                                     </div>
@@ -313,7 +317,8 @@
                                         <div class="fs-12 text-muted mb-1">Sociedade</div>
                                         <h6 class="fw-bold text-dark">{{ $socialNews ?? '10' }}</h6>
                                         <div class="progress mt-2 ht-3">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: {{ $socialNewsPercent ?? 10 }}%">
+                                            <div class="progress-bar bg-danger" role="progressbar"
+                                                style="width: {{ $socialNewsPercent ?? 10 }}%">
                                             </div>
                                         </div>
                                     </div>
@@ -323,7 +328,8 @@
                                         <div class="fs-12 text-muted mb-1">Arte e Cultura</div>
                                         <h6 class="fw-bold text-dark">{{ $cultureNews ?? '10' }}</h6>
                                         <div class="progress mt-2 ht-3">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: {{ $cultureNewsPercent ?? 10 }}%">
+                                            <div class="progress-bar bg-primary" role="progressbar"
+                                                style="width: {{ $cultureNewsPercent ?? 10 }}%">
                                             </div>
                                         </div>
                                     </div>

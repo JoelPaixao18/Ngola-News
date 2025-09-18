@@ -10,7 +10,7 @@
                     <h5 class="m-b-10">Video</h5>
                 </div>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                     <li class="breadcrumb-item">Criar</li>
                 </ul>
             </div>
@@ -95,8 +95,8 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                              Criando Formulario video Create
-                               _______________________________________________________________-->
+                                                      Criando Formulario video Create
+                                       _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="videoForm" action="{{ route('admin.video.store') }}" method="post"

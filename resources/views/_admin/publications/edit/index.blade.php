@@ -10,7 +10,7 @@
                     <h5 class="m-b-10">Publicação</h5>
                 </div>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                     <li class="breadcrumb-item">Editar</li>
                 </ul>
             </div>
@@ -95,11 +95,12 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                      Criando Formulario publication Create
-                       _______________________________________________________________-->
+                                              Criando Formulario publication Create
+                               _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
-                    <form id="publicationForm" action="{{ route('admin.publication.update', ['publication' => $publication]) }}" method="post"
+                    <form id="publicationForm"
+                        action="{{ route('admin.publication.update', ['publication' => $publication]) }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')

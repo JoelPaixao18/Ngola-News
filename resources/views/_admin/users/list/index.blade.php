@@ -10,7 +10,7 @@
                     <h5 class="m-b-10">Utilizadores</h5>
                 </div>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                     <li class="breadcrumb-item">Utilizadores</li>
                 </ul>
             </div>
@@ -213,7 +213,7 @@
         <!-- [ Main Content ] start -->
         <div class="main-content">
 
-           {{--  <!-- Este bloco pode ser removido se já estiver no layout principal -->
+            {{--  <!-- Este bloco pode ser removido se já estiver no layout principal -->
             @if (session('success'))
                 <!-- Mantenha este apenas como fallback -->
                 <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
@@ -272,7 +272,7 @@
                                                             @if ($user->image)
                                                                 <a
                                                                     href="{{ route('admin.user.show', ['user' => $user]) }}"><img
-                                                                        src="{{ asset('img/users/'. $user->image)}}"
+                                                                        src="{{ asset('img/users/' . $user->image) }}"
                                                                         alt="user Image" class="img-thumbnail"
                                                                         style="max-width: 50px; max-height: 50px;"></a>
                                                             @else

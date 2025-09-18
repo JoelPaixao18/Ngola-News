@@ -9,7 +9,7 @@
                     <h5 class="m-b-10">Notícias</h5>
                 </div>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                     <li class="breadcrumb-item">View</li>
                 </ul>
             </div>
@@ -154,21 +154,21 @@
                 {{--  <div class="col-md-6 mb-4">
                     <div class="info-card">
                         <h5><i class="fas fa-link me-2"></i>Informações Adicionais</h5>
-                        
+
                         <div class="info-item">
                             <div class="info-label">Slug:</div>
                             <div class="info-value text-break">
                                 {{ $news->slug }}
                             </div>
                         </div>
-                        
+
                         <div class="info-item">
                             <div class="info-label">Imagem:</div>
                             <div class="info-value text-break">
                                 {{ $news->image }}
                             </div>
                         </div>
-                        
+
                         <div class="info-item">
                             <div class="info-label">ID da Categoria:</div>
                             <div class="info-value">

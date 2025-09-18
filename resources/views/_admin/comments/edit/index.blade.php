@@ -11,7 +11,7 @@
                     <h5 class="m-b-10">Comments</h5>
                 </div>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                     <li class="breadcrumb-item">Edit</li>
                 </ul>
             </div>
@@ -60,7 +60,7 @@
                             <form action="{{ route('admin.comment.update', ['comment' => $comment]) }}" method="POST">
                                 @csrf
                                 @method('PUT')
-{{-- aqui o formulário --}}
+                                {{-- aqui o formulário --}}
                                 @include('form._formComments.index')
                                 {{-- fim do formulário --}}
                             </form>
