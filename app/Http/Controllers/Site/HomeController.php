@@ -53,20 +53,26 @@ class HomeController extends Controller
         /* Noticias da categoria Politicas */
         $newsPolicy = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
-                $query->whereIn('name', ['Política', 'Politícas'])->take(6);
-            })->get();
+                $query->whereIn('name', ['Política', 'Politícas']);
+            })
+            ->take(6)
+            ->get();
 
         /* Noticias da categoria Culturas */
         $newsCulture = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
-                $query->whereIn('name', ['Cultura', 'Culturas'])->take(6);
-            })->get();
+                $query->whereIn('name', ['Cultura', 'Culturas']);
+            })
+            ->take(6)
+            ->get();
 
         /* Noticias de Categoria Desportos */
         $newsSports = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
-                $query->whereIn('name', ['Desporto', 'Desportos'])->take(6);
-            })->get();
+                $query->whereIn('name', ['Desporto', 'Desportos']);
+            })
+            ->take(6)
+            ->get();
 
         /* --------- Sessão Ciências e Tecnologia */
 
@@ -88,20 +94,26 @@ class HomeController extends Controller
         /* exibindo as 4 primeiras mais recentas */
         $newsTech = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
-            $query->whereIn('name', ['Tecnologia', 'Tecnologia'])->orderByDesc('id')->take(4);
-        })->get();
+            $query->whereIn('name', ['Tecnologia', 'Tecnologia'])->orderByDesc('id');
+        })
+        ->take(4)
+        ->get();
 
         /* Sessão de Economia e Negocio */
         $Economic = News::where('status', 'publicado')
             ->whereHas('category', function ($query) {
-            $query->whereIn('name', ['Economia', 'Economias'])->orderByDesc('id')->take(5);
-        })->get();
+            $query->whereIn('name', ['Economia', 'Economias'])->orderByDesc('id');
+        })
+        ->take(5)
+        ->get();
 
         /* Sessão de Sociedade */
         $Society = News::where('status', 'publicado')
         ->whereHas('category', function ($query) {
-            $query->whereIn('name', ['Sociedade', 'Sociedades'])->orderByDesc('id')->take(5);
-        })->get();
+            $query->whereIn('name', ['Sociedade', 'Sociedades'])->orderByDesc('id');
+        })
+        ->take(5)
+        ->get();
 
         $categories = Category::where('name')->get();
 

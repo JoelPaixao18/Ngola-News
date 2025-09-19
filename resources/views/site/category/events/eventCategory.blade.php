@@ -217,14 +217,17 @@
                 </div>
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">
                     <aside class="sidebar-area">
+                        {{-- Pesquisa por Tag(Etiquetas)/Palavras-chaves --}}
                         <div class="widget widget_search">
-                            <form class="search-form">
-                                <input type="text" placeholder="Enter Keyword" />
+                            <form class="search-form" action="{{ route('news.search') }}" method="GET">
+                                <input type="text" name="q" placeholder="Palavra-chave/Tag(Etiqueta)"
+                                    value="{{ request('q') }}" />
                                 <button type="submit">
                                     <i class="far fa-search"></i>
                                 </button>
                             </form>
                         </div>
+                        {{-- Fim da div de pesquisa --}}
                         <div class="widget widget_categories">
                             <h3 class="widget_title">Categorias</h3>
                             <ul>
@@ -337,7 +340,7 @@
                         {{-- Publicidades --}}
                         @foreach ($ads as $ad)
                             <div class="widget">
-                                <div class="widget-ads">
+                                <div class="widget-ads img-ads2">
                                     <a href="{{ $ad->link }}">
                                         <img class="w-100" src="{{ url('img/ads/' . $ad->image) }}" alt="ads" />
                                     </a>

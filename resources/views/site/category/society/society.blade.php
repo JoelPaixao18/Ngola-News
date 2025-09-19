@@ -49,169 +49,6 @@
                         @else
                             <p>Nenhuma notícia encontrada em Política.</p>
                         @endif
-
-                        {{-- <div class="border-blog2">
-                            <div class="blog-style4">
-                                <div class="blog-img w-386">
-                                    <img src="assets/img/blog/blog_6_4_1.jpg" alt="blog image" />
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#FF9500" href="blog.html" class="category">Politics</a>
-                                    <h3 class="box-title-30">
-                                        <a class="hover-line" href="blog-details.html">Politics matters Let your voice shape
-                                            the
-                                            future.</a>
-                                    </h3>
-                                    <p class="blog-text">
-                                        Encapsulates the belief that embracing diversity
-                                        and engaging in Constructive dialogue are
-                                        fundamental to the growth
-                                    </p>
-                                    <div class="blog-meta">
-                                        <a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>13 Mar,
-                                            2025</a>
-                                    </div>
-                                    <a href="blog-details.html" class="th-btn style2">Read More<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-blog2">
-                            <div class="blog-style4">
-                                <div class="blog-img w-386">
-                                    <img src="assets/img/blog/blog_6_4_2.jpg" alt="blog image" />
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#FF9500" href="blog.html" class="category">Politics</a>
-                                    <h3 class="box-title-30">
-                                        <a class="hover-line" href="blog-details.html">Where voices merge, solutions emerge,
-                                            and
-                                            progress prevails.</a>
-                                    </h3>
-                                    <p class="blog-text">
-                                        Encapsulates the belief that embracing diversity
-                                        and engaging in Constructive dialogue are
-                                        fundamental to the growth
-                                    </p>
-                                    <div class="blog-meta">
-                                        <a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>28 Mar,
-                                            2025</a>
-                                    </div>
-                                    <a href="blog-details.html" class="th-btn style2">Read More<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-blog2">
-                            <div class="blog-style4">
-                                <div class="blog-img w-386">
-                                    <img src="assets/img/blog/blog_6_4_3.jpg" alt="blog image" />
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#FF9500" href="blog.html" class="category">Politics</a>
-                                    <h3 class="box-title-30">
-                                        <a class="hover-line" href="blog-details.html">Vote for unity, progress, and the
-                                            betterment
-                                            of our society.</a>
-                                    </h3>
-                                    <p class="blog-text">
-                                        Encapsulates the belief that embracing diversity
-                                        and engaging in Constructive dialogue are
-                                        fundamental to the growth
-                                    </p>
-                                    <div class="blog-meta">
-                                        <a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>17 Mar,
-                                            2025</a>
-                                    </div>
-                                    <a href="blog-details.html" class="th-btn style2">Read More<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-blog2">
-                            <div class="blog-style4">
-                                <div class="blog-img w-386">
-                                    <img src="assets/img/blog/blog_6_4_4.jpg" alt="blog image" />
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#FF9500" href="blog.html" class="category">Politics</a>
-                                    <h3 class="box-title-30">
-                                        <a class="hover-line" href="blog-details.html">Politics fuels progress, ignites
-                                            societal
-                                            transformation</a>
-                                    </h3>
-                                    <p class="blog-text">
-                                        Encapsulates the belief that embracing diversity
-                                        and engaging in Constructive dialogue are
-                                        fundamental to the growth
-                                    </p>
-                                    <div class="blog-meta">
-                                        <a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>18 Mar,
-                                            2025</a>
-                                    </div>
-                                    <a href="blog-details.html" class="th-btn style2">Read More<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-blog2">
-                            <div class="blog-style4">
-                                <div class="blog-img w-386">
-                                    <img src="assets/img/blog/blog_6_4_5.jpg" alt="blog image" />
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#FF9500" href="blog.html" class="category">Politics</a>
-                                    <h3 class="box-title-30">
-                                        <a class="hover-line" href="blog-details.html">Empower voices, shape the future &
-                                            forge
-                                            collective change.</a>
-                                    </h3>
-                                    <p class="blog-text">
-                                        Encapsulates the belief that embracing diversity
-                                        and engaging in Constructive dialogue are
-                                        fundamental to the growth
-                                    </p>
-                                    <div class="blog-meta">
-                                        <a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>27 Mar,
-                                            2025</a>
-                                    </div>
-                                    <a href="blog-details.html" class="th-btn style2">Read More<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-blog2">
-                            <div class="blog-style4">
-                                <div class="blog-img w-386">
-                                    <img src="assets/img/blog/blog_6_4_6.jpg" alt="blog image" />
-                                </div>
-                                <div class="blog-content">
-                                    <a data-theme-color="#FF9500" href="blog.html" class="category">Politics</a>
-                                    <h3 class="box-title-30">
-                                        <a class="hover-line" href="blog-details.html">Diversity and dialogue build a
-                                            stronger nation
-                                            together.</a>
-                                    </h3>
-                                    <p class="blog-text">
-                                        Encapsulates the belief that embracing diversity
-                                        and engaging in Constructive dialogue are
-                                        fundamental to the growth
-                                    </p>
-                                    <div class="blog-meta">
-                                        <a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>28 Mar,
-                                            2025</a>
-                                    </div>
-                                    <a href="blog-details.html" class="th-btn style2">Read More<i
-                                            class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                     {{-- Paginação --}}
                     <div class="th-pagination mt-40">
@@ -222,14 +59,17 @@
                 {{-- Fim da listagem  --}}
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">
                     <aside class="sidebar-area">
+                        {{-- Pesquisa por Tag(Etiquetas)/Palavras-chaves --}}
                         <div class="widget widget_search">
-                            <form class="search-form">
-                                <input type="text" placeholder="Enter Keyword" />
+                            <form class="search-form" action="{{ route('news.search') }}" method="GET">
+                                <input type="text" name="q" placeholder="Palavra-chave/Tag(Etiqueta)"
+                                    value="{{ request('q') }}" />
                                 <button type="submit">
                                     <i class="far fa-search"></i>
                                 </button>
                             </form>
                         </div>
+                        {{-- Fim da div de pesquisa --}}
                         <div class="widget widget_categories">
                             <h3 class="widget_title">Categorias</h3>
                             <ul>
@@ -341,7 +181,7 @@
                         {{-- Publicidades --}}
                         @foreach ($ads as $ad)
                             <div class="widget">
-                                <div class="widget-ads">
+                                <div class="widget-ads img-ads2">
                                     <a href="{{ $ad->link }}">
                                         <img class="w-100" src="{{ url('img/ads/' . $ad->image) }}" alt="ads" />
                                     </a>

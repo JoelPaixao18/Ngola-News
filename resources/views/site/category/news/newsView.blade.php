@@ -21,10 +21,10 @@
                     <div class="blog-meta"><a class="author" href="#"><i class="far fa-user"></i>By -
                             Tnews</a> <a href="#"><i
                                 class="fal fa-calendar-days"></i>{{ $news->updated_at->format('d M, Y') }}</a> <a
-                            href="#"><i class="far fa-comments"></i>Comments (3)</a> <span><i
-                                class="far fa-book-open"></i>5 Mins Read</span></div>
-                    <div class="blog-img mb-40"><img src="{{ asset('/img/news/' . $news->image) }}" alt="Blog Image"
-                            class="fixed-img">
+                            href="#"><i class="far fa-comments"></i>Comments (3)</a> {{-- <span><i
+                                class="far fa-book-open"></i>5 Mins Read</span> --}}</div>
+                    <div class="blog-img mb-40 img-view">
+                        <img src="{{ asset('/img/news/' . $news->image) }}" alt="Blog Image" class="fixed-img">
                     </div>
                 </div>
                 <div class="col-xxl-9 col-lg-8">
@@ -44,20 +44,22 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <div class="blog-info-wrap"><button class="blog-info print_btn">Imprimir : <i
-                                            class="fas fa-print"></i></button> <a class="blog-info" href="mailto:">Email
+                                <div class="blog-info-wrap"><button class="blog-info print_btn">Imprimir :
+                                        <i class="fas fa-print"></i></button> {{-- <a class="blog-info" href="mailto:">Email
                                         : <i class="fas fa-envelope"></i> </a><button class="blog-info ms-sm-auto">15k
                                         <i class="fas fa-thumbs-up"></i></button> <span class="blog-info">126k <i
                                             class="fas fa-eye"></i></span> <span class="blog-info">12k <i
-                                            class="fas fa-share-nodes"></i></span></div>
+                                            class="fas fa-share-nodes"></i></span> --}}
+                                </div>
                                 <div class="content">
                                     {!! $news->description !!}
                                 </div>
                                 <div class="blog-tag">
                                     <h6 class="title">Etiqueta relacionada :</h6>
-                                    <div class="tagcloud"><a href="blog.html">Sports</a> <a
-                                            href="{{ route('site.policy') }}">Políticas</a>
-                                        <a href="{{ route('site.tech') }}">Tecnologia</a>
+                                    <div class="tagcloud">
+                                        @foreach ($tags1 as $tag)
+                                            <a href="blog.html">{{ $tag->name }}</a>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -223,14 +225,13 @@
                                         <div class="blog-img">
                                             <img src="{{ url('img/news/' . $related->image) }}" alt="blog image">
                                             <a data-theme-color="#00D084"
-                                                href="{{ route('site.newsView', $related->id) }}"
-                                                class="category">
+                                                href="{{ route('site.newsView', $related->id) }}" class="category">
                                                 {{ $related->category->name }}
                                             </a>
                                         </div>
                                         <h3 class="box-title-22">
                                             <a class="hover-line" href="{{ route('site.newsView', $related->id) }}">
-                                                {{ Str::limit($related->title, 50) }}
+                                                {{ Str::limit($related->title, 30, '...') }}
                                             </a>
                                         </h3>
                                         <div class="blog-meta">
@@ -256,10 +257,10 @@
                 {{-- Sessão de Postes Recentes & Tags Populatres --}}
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">
                     <aside class="sidebar-area">
-                        <div class="widget widget_search">
+                        {{-- <div class="widget widget_search">
                             <form class="search-form"><input type="text" placeholder="Enter Keyword"> <button
                                     type="submit"><i class="far fa-search"></i></button></form>
-                        </div>
+                        </div> --}}
                         {{-- Sessão dos Posts Recentes --}}
                         <div class="widget">
                             <h3 class="widget_title">Posts Recentes</h3>
@@ -303,10 +304,9 @@
                         <div class="widget widget_tag_cloud">
                             <h3 class="widget_title">Tags Populares</h3>
                             <div class="tagcloud">
-                                <a href="{{ route('site.policy') }}">Politicas</a>
-                                <a href="{{ route('site.economic') }}">Economia</a>
-                                <a href="{{ route('site.tech') }}">Tecnologia</a>
-                                <a href="{{ route('site.society') }}">sociedade</a>
+                                @foreach ($tags as $tag)
+                                    <a href="blog.html">{{ $tag->name }}</a>
+                                @endforeach
                             </div>
                         </div>
                     </aside>

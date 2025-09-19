@@ -81,6 +81,7 @@
     <script type="text/javascript" src="{{ url('flipbook/assets/script.js') }}"></script>
     <script type="text/javascript" src="{{ url('site/assets/js/app.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('site/assets/js/main.js') }}"></script>
+    <script type="text/javascript" src="{{ url('site/assets/js/video.js') }}"></script>
 </body>
 
 </html>

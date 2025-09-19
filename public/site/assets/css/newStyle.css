@@ -51,9 +51,9 @@
 }
 
 /* tratamento das imagens na listagem das categorias do tipo categoria */
-.img-card-policy {
+.img-view {
     width: 100%;
-    height: 18rem;
+    height: 30rem;
     overflow: hidden;
 }
 
@@ -139,17 +139,11 @@
 /* Tratamento dos videos */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%;
-    /* proporção 16:9 */
-    height: 0;
-    overflow: hidden;
     width: 100%;
-    max-width: 100%;
+    height: 19.5rem;
+    /* ocupa altura total da tela */
+    overflow: hidden;
     background: #000;
-    border-radius: 12px;
-    /* bordas suaves */
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-    /* destaque elegante */
 }
 
 .video-container iframe {
@@ -160,6 +154,7 @@
     height: 100%;
     border: 0;
 }
+
 
 /* Tratamento de imagem da Subscriçãio */
 .img-sub {
@@ -190,11 +185,37 @@
 /* Tratamento de imagem na sessão dos anúncios */
 .img-ads {
     width: 100%;
-    height: 13.5rem;
+    height: 19.5rem;
     overflow: hidden;
 }
 
 .img-ads img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* anúncio acima da sessão de economia */
+.img-ads1 {
+    width: 100%;
+    height: 17.9rem;
+    overflow: hidden;
+}
+
+.img-ads1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* anúncio acima da sessão de sociedade */
+.img-ads2 {
+    width: 100%;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.img-ads2 img {
     width: 100%;
     height: 100%;
     object-fit: cover;

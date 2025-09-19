@@ -9,6 +9,7 @@ use App\Models\Comment;
 use App\Models\Category;
 use App\Models\News;
 use App\Models\User;
+use App\Models\Tag;
 
 class NewsController extends Controller
 {
@@ -42,6 +43,17 @@ class NewsController extends Controller
             ->where('detach', 'destaque')
             ->orderByDesc('id')
             ->first();
+
+        /* Pegando as tags(etiquetas) mais recentas nas Views */
+        $tags = Tag::select('name')
+            ->distinct()
+            ->take(6)
+            ->get();
+
+        $tags1 = Tag::select('name')
+            ->distinct()
+            ->take(3)
+            ->get();
 
         /* Footer - trazendo os primeiros 5 nomes das categorias sem repetir nenhum e trás tmbm as duas ultimas noticias*/
         $footerCategory = Category::select('name')
@@ -84,7 +96,9 @@ class NewsController extends Controller
             'categories',
             'ads',
             'comments',
-            'users'
+            'users',
+            'tags',
+            'tags1'
         ));
     }
 

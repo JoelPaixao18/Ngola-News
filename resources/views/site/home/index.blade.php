@@ -37,6 +37,7 @@
                 </div>
             @endforeach
         </div>
+        {{-- Carrossel de Imagens --}}
         <div class="hero-tab-area">
             <div class="container">
                 <div class="hero-tab" data-asnavfor=".hero-slider-1">
@@ -48,6 +49,7 @@
                 </div>
             </div>
         </div>
+        {{-- Fim de Carrossel de Imagem --}}
     </div>
     {{-- Fim de Sessão dos noticias da categoria Politica com mais destaque e as mais recentes --}}
     <!-- ==================== noticias por categoria  ==================== -->
@@ -191,14 +193,14 @@
     </section>
     {{-- Fim das Noticia de Hoje --}}
     {{-- =================== Video de exposição ==================== --}}
-    <section class="bg-fixed dark-theme" data-bg-src="{{ url('site/assets/img/blog/blog_full_1.jpg') }}"
-        data-overlay="black" data-opacity="7">
-        <div class="container">
-            <div class="row justify-content-center">
+    <section id="video-section" class="bg-fixed dark-theme"
+        data-bg-src="{{ url('site/assets/img/blog/blog_full_1.jpg') }}" data-overlay="black" data-opacity="7">
+        <div class="container-fluid px-0">
+            <div class="row justify-content-center gx-0">
                 @isset($videos)
-                    <div class="col-lg-10 col-md-12">
-                        <div class="video-container mt-4">
-                            <iframe src="{{ $videos->embed_url }}"
+                    <div class="col-12">
+                        <div class="video-container">
+                            <iframe id="video-frame" src="{{ $videos->embed_url }}?mute=1&autoplay=0&enablejsapi=1"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen>
                             </iframe>
@@ -208,6 +210,8 @@
             </div>
         </div>
     </section>
+
+    {{-- ================= Fim de Video de exposição =============== --}}
 
     <!-- ==================== Algumas Categorias ==================== -->
     <section class="space">
@@ -393,6 +397,8 @@
                             </div>
                         </div>
                     @endif
+                    {{-- Fim de Noticia de Ciências e Tecnologia com destaque --}}
+
                     {{-- Noticia de Ciências e Tecnologia exibindo as 4 mais recentes --}}
                     <div class="row gy-4">
                         @foreach ($newsTech as $newstech)
@@ -423,11 +429,11 @@
                             </div>
                         @endforeach
                     </div>
-                    {{-- Fim de Noticias de Ciencias e Tecnologia --}}
+                    {{-- Fim de Noticias de Ciencias e Tecnologia exibindo as 4 mais recentes --}}
 
-                    {{-- Publicidade --}}
+                    {{-- Publicidade - está acima da sessão de categoria de Economia --}}
                     @foreach ($ads as $ad)
-                        <div class="space mt-40 mb-40 img-ads">
+                        <div class="space mt-40 mb-40 img-ads1">
                             <a href="{{ $ad->link }}" target="_blank" class="ads-style1">
                                 <img class="w-100 light-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
                                 <img class="w-100 dark-img" src="{{ asset('img/ads/' . $ad->image) }}" alt="ads">
@@ -475,9 +481,9 @@
                 </div>
                 <div class="col-xl-4 mt-35 mt-xl-0 sidebar-wrap mb-10">
                     <div class="sidebar-area">
-                        {{-- Publicidade --}}
+                        {{-- Publicidade ; está acima da sessão de categoria de sociedade --}}
                         @foreach ($ads as $ad)
-                            <div class="widget mb-40 img-ads">
+                            <div class="widget mb-40 img-ads2">
                                 <div class="widget-ads">
                                     <a href="{{ $ad->link }}" target="_blank" class="ads-style1">
                                         <img class="w-100 light-img" src="{{ asset('img/ads/' . $ad->image) }}"
