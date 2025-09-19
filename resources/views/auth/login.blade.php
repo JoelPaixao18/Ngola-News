@@ -58,18 +58,18 @@
                                 class="small py-1 px-3 text-uppercase text-muted bg-white position-absolute translate-middle">ou</span>
                         </div>
                         <div class="d-flex align-items-center justify-content-center gap-2">
-                            <a href="javascript:void(0);" class="btn btn-light-brand flex-fill" data-bs-toggle="tooltip"
-                                data-bs-trigger="hover" title="Login with Facebook">
-                                <i class="feather-facebook"></i>
+                            <a href="{{ route('google.redirect') }}" class="btn btn-light-brand flex-fill"
+                                data-bs-toggle="tooltip" data-bs-trigger="hover" title="Login com Google">
+                                <i class="feather-google"></i>
                             </a>
-                            <a href="javascript:void(0);" class="btn btn-light-brand flex-fill" data-bs-toggle="tooltip"
-                                data-bs-trigger="hover" title="Login with Twitter">
-                                <i class="feather-twitter"></i>
+                            <a href="{{ url('auth/microsoft') }}" class="btn btn-light-brand flex-fill"
+                                data-bs-toggle="tooltip" data-bs-trigger="hover" title="Login com Microsoft">
+                                <i class="feather-windows"></i>
                             </a>
-                            <a href="javascript:void(0);" class="btn btn-light-brand flex-fill" data-bs-toggle="tooltip"
+                            {{-- <a href="javascript:void(0);" class="btn btn-light-brand flex-fill" data-bs-toggle="tooltip"
                                 data-bs-trigger="hover" title="Login with Github">
                                 <i class="feather-github text"></i>
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
                     <div class="mt-5 text-muted">

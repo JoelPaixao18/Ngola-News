@@ -14,6 +14,7 @@ use App\Http\Controllers\Site\PublicationController;
 use App\Http\Controllers\Site\SocietyController;
 use App\Http\Controllers\Site\TechnologyController;
 use App\Http\Controllers\Site\VideoController;
+use App\Http\Controllers\Auth\SocialAuthController;
 /* end site controllers */
 /*-------------------------------------------------------
                     Site Routes
@@ -47,4 +48,13 @@ Route::get('site/galery', [GaleryController::class, 'galery'])->name('site.galer
 
 /* search routes */
 Route::get('/pesquisa', [NewsController::class, 'search'])->name('news.search');
+
+/* Rotas de Autenticação Social */
+
+// Google
+Route::get('auth/{provider}', [SocialAuthController::class, 'redirect']);
+Route::get('auth/google/redirect', [SocialAuthController::class, 'redirectToGoogle'])->name('google.redirect');
+Route::get('auth/google/callback', [SocialAuthController::class, 'handleGoogleCallback'])->name('google.callback');
+/* MicroSoft */
+Route::get('auth/{provider}/callback', [SocialAuthController::class, 'callback']);
 
