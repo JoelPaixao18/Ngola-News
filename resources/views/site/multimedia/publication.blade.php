@@ -21,13 +21,20 @@
                             @foreach ($publications as $publication)
                                 <div class="filter-item col-xl-4 col-sm-6">
                                     <div class="blog-style1">
-                                        <div class="blog-img img-size"><img
+                                        <div class="blog-img img-size">
+                                            <a class="hover-line" id="modallink" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">
+                                                <img
                                                 @if ($publication->cover) src="{{ asset('img/publication/' . $publication->cover) }}"
                                             @else
                                                 src="{{ asset('img/publication/pdfimg.png') }}" @endif
-                                                alt="blog image"></div>
-                                        <h3 class="box-title-20"><a class="hover-line" id="modallink" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">{{ $publication->title }}</a></h3>
+                                                alt="blog image">
+                                            </a>
+                                        </div>
+                                        <h3 class="box-title-20">
+                                            <a class="hover-line" id="modallink" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">{{ $publication->title }}</a>
+                                        </h3>
                                         <div class="blog-meta">
                                             @if ($publication->file && file_exists(public_path('files/publication/' . $publication->file)))
                                                 <a href="{{ asset('files/publication/' . $publication->file) }}" download>

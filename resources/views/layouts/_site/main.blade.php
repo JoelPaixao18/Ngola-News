@@ -59,7 +59,7 @@
     @include('layouts._site.sidemenu')
     @include('layouts._site.search')
     @include('layouts._site.switcher')
-    @include('layouts._site.popupSubscribe')
+    {{-- @include('layouts._site.popupSubscribe') --}}
 
     {{-- pegando todos os conteudos --}}
     @yield('content')

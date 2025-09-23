@@ -36,6 +36,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/select2-theme.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('assets/vendors/css/jquery.time-to.min.css') }}">
     <!--! END: Vendors CSS-->
+    {{-- Font de Icon --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/fonts/feather-font/css/iconfont.css') }}">
+    {{-- Fim da font de Icon --}}
     <!--! BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ url('assets/css/theme.min.css') }}">
     <!--! END: Custom CSS-->

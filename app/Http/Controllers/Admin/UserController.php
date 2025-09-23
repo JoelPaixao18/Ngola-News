@@ -23,7 +23,7 @@ class UserController extends Controller
     {
         return view('_admin.users.create.index');
     }
-    /* 
+    /*
     {
         // Validação dos campos
         $validated = $request->validate([
@@ -60,7 +60,7 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
-            'role' => ['required', 'string'],
+            'role' => ['required', 'in:assinante,editor,jornalista,admin'],
             'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png'],
 
         ], [
@@ -107,7 +107,7 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8'],
-            'role' => ['required', 'string'],
+            'role' => ['required', 'in:assinante,editor,jornalista,admin'],
             'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png']
         ], [
             'name.required' => 'Nome obrigatório',

@@ -60,11 +60,11 @@
                         <div class="d-flex align-items-center justify-content-center gap-2">
                             <a href="{{ route('google.redirect') }}" class="btn btn-light-brand flex-fill"
                                 data-bs-toggle="tooltip" data-bs-trigger="hover" title="Login com Google">
-                                <i class="feather-google"></i>
+                                <i class="fab fa-google"></i>
                             </a>
-                            <a href="{{ url('auth/microsoft') }}" class="btn btn-light-brand flex-fill"
+                            <a href="#" class="btn btn-light-brand flex-fill"
                                 data-bs-toggle="tooltip" data-bs-trigger="hover" title="Login com Microsoft">
-                                <i class="feather-windows"></i>
+                                <i class="fab fa-windows text"></i>
                             </a>
                             {{-- <a href="javascript:void(0);" class="btn btn-light-brand flex-fill" data-bs-toggle="tooltip"
                                 data-bs-trigger="hover" title="Login with Github">

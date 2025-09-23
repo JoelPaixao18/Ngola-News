@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Exception;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class SocialAuthController extends Controller
 {
@@ -41,6 +44,8 @@ class SocialAuthController extends Controller
     public function redirectToGoogle()
     {
         return Socialite::driver('google')->redirect();
+
+        /* Fazendo o teste para verificar o URL */
         /* $url = Socialite::driver('google')->redirect()->getTargetUrl();
         dd($url); */
         /* return redirect($url); */
@@ -50,22 +55,37 @@ class SocialAuthController extends Controller
     public function handleGoogleCallback()
     {
         try {
-            $googleUser = Socialite::driver('google')->user();
+            $social = Socialite::driver('google')->user();
 
-            // Procura ou cria usuário
-            $user = User::updateOrCreate(
-                ['email' => $googleUser->getEmail()],
-                [
-                    'name' => $googleUser->getName(),
-                    'password' => bcrypt(uniqid()), // senha fake, pq vai logar só com Google
-                ]
-            );
+            $user = User::where('provider', 'google')
+                ->where('provider_id', $social->getId())
+                ->orWhere('email', $social->getEmail())
+                ->first();
 
-            Auth::login($user);
+            if (! $user) {
+                $user = User::create([
+                    'name' => $social->getName() ?? $social->getNickname(),
+                    'email' => $social->getEmail(),
+                    'provider' => 'google',
+                    'provider_id' => $social->getId(),
+                    'image' => $social->getAvatar(),
+                    'email_verified_at' => now(),
+                    'password' => bcrypt(uniqid()),
+                ]);
+            } else {
+                $user->update([
+                    'provider' => 'google',
+                    'provider_id' => $social->getId(),
+                    'image' => $social->getAvatar(),
+                ]);
+            }
 
-            return redirect()->route('admin.dashboard'); // ajusta para tua rota de dashboard
-        } catch (Exception $e) {
-            return redirect('/login')->withErrors(['msg' => 'Falha ao autenticar com Google.']);
+            Auth::login($user, true);
+            dd(Auth::user());
+            return redirect()->route('admin.dashboard');
+        } catch (\Exception $e) {
+            Log::error('Google login error: '.$e->getMessage());
+            return redirect()->route('login')->withErrors(['msg' => 'Falha ao autenticar com Google.']);
         }
     }
 }

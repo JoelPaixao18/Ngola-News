@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\GaleryController;
 use App\Http\Controllers\Admin\AdvertisementController;
 use App\Http\Controllers\Admin\dashController;
+use App\Http\Controllers\Auth\SocialAuthController;
 /* end admin controllers */
 
 /* auth controllers */
@@ -33,7 +34,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
     /* dasboard */
     /* Route::get('/admin', 'HomeController@index')->name('home'); */
-    Route::redirect('/admin', 'admin/dashboard');
+    Route::redirect('/admin', 'admin/dashboard')->name('dashboard');
     /* Route::get('admin/dashboard', function () { */
 
     Route::get('/admin/dashboard', [dashController::class, 'management'])->name('admin.dashboard');
@@ -227,3 +228,12 @@ Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestF
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+/* Rotas de Autenticação Social */
+
+// Google
+Route::get('auth/{provider}', [SocialAuthController::class, 'redirect']);
+Route::get('auth/google/redirect', [SocialAuthController::class, 'redirectToGoogle'])->name('google.redirect');
+Route::get('auth/google/callback', [SocialAuthController::class, 'handleGoogleCallback'])->name('google.callback');
+/* MicroSoft */
+Route::get('auth/{provider}/callback', [SocialAuthController::class, 'callback']);

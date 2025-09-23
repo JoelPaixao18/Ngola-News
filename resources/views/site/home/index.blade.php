@@ -1,3 +1,4 @@
+@extends('layouts._site.popupSubscribe')
 @extends('layouts._site.main')
 @section('title', 'Assessorarte- Home')
 @section('content')
@@ -459,7 +460,8 @@
                                             @endif
                                         @endforeach
                                         <h3 class="box-title-22">
-                                            <a class="hover-line" href="blog-details.html">{{ $economic->title }}</a>
+                                            <a class="hover-line"
+                                                href="{{ route('site.newsView', ['news' => $economic->id]) }}">{{ $economic->title }}</a>
                                         </h3>
                                         <div class="blog-meta">
                                             <a href="author.html">
@@ -515,7 +517,7 @@
                                                 @endforeach
                                                 <h3 class="box-title-20">
                                                     <a class="hover-line"
-                                                        href="blog-details.html">{{ Str::limit($society->title, 50) }}</a>
+                                                        href="{{ route('site.newsView', ['news' => $society->id]) }}">{{ Str::limit($society->title, 50) }}</a>
                                                 </h3>
                                                 <div class="blog-meta">
                                                     <a href="blog.html">

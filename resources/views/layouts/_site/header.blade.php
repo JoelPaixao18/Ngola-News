@@ -95,7 +95,7 @@
                                         <li class="menu-item-has-children">
                                             <a href="#">Multimídia</a>
                                             <ul class="sub-menu">
-                                                <li><a href="/site/publication">Publicação</a></li>
+                                                <li><a href="/site/publication">Publicações</a></li>
                                                 <li><a href="/site/videos">Vídeos</a></li>
                                                 <li><a href="/site/galery">Imagens</a></li>
                                             </ul>

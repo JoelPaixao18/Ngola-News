@@ -30,9 +30,9 @@
                         <option value="{{ old('role', $user->role ?? '') }}" selected>{{ 'Selecione' ?? $user->role }}
                         </option>
                         <option value="assinante">Assinante</option>
-                        <option value="Jornalista">Jornalista</option>
-                        <option value="Editor">Editor</option>
-                        <option value="Admin">Admin</option>
+                        <option value="jornalista">Jornalista</option>
+                        <option value="editor">Editor</option>
+                        <option value="admin">Admin</option>
                     </select>
                 </div>
                 <div class="col-lg-4 mb-4">

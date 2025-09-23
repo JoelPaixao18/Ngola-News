@@ -6,13 +6,13 @@
             <!--! [Start] Header Left !-->
             <div class="header-left d-flex align-items-center gap-4">
                 <!--! [Start] nxl-head-mobile-toggler !-->
-                <a href="javascript:void(0);" class="nxl-head-mobile-toggler" id="mobile-collapse">
+                {{-- <a href="javascript:void(0);" class="nxl-head-mobile-toggler" id="mobile-collapse">
                     <div class="hamburger hamburger--arrowturn">
                         <div class="hamburger-box">
                             <div class="hamburger-inner"></div>
                         </div>
                     </div>
-                </a>
+                </a> --}}
                 <!--! [Start] nxl-head-mobile-toggler !-->
                 <!--! [Start] nxl-navigation-toggle !-->
                 <div class="nxl-navigation-toggle">
@@ -42,7 +42,9 @@
                     <!--! [Start] nxl-lavel-mega-menu-wrapper !-->
                     <div class="nxl-lavel-mega-menu-wrapper d-flex gap-3">
                         <!--! [Start] nxl-lavel-menu !-->
-                        <div class="dropdown nxl-h-item nxl-lavel-menu">
+
+                        {{-- Adicionar - o botão de mais --}}
+                        {{-- <div class="dropdown nxl-h-item nxl-lavel-menu">
                             <a href="javascript:void(0);" class="avatar-text avatar-md bg-danger text-white"
                                 data-bs-toggle="dropdown" data-bs-auto-close="outside">
                                 <i class="feather-plus"></i>
@@ -412,10 +414,12 @@
                                     <span>Add New Items</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
+                        {{-- Fim --}}
+
                         <!--! [End] nxl-lavel-menu !-->
                         <!--! [Start] nxl-h-item nxl-mega-menu !-->
-                        <div class="dropdown nxl-h-item nxl-mega-menu">
+                        {{-- <div class="dropdown nxl-h-item nxl-mega-menu">
                             <a href="javascript:void(0);" class="btn btn-light-brand" data-bs-toggle="dropdown"
                                 data-bs-auto-close="outside"> Mega Menu </a>
                             <div class="dropdown-menu nxl-h-dropdown" id="mega-menu-dropdown">
@@ -1852,7 +1856,7 @@
                                     <!--! [End] nxl-mega-menu-tabs-content !-->
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!--! [End] nxl-h-item nxl-mega-menu !-->
                     </div>
                     <!--! [End] nxl-lavel-mega-menu-wrapper !-->
@@ -1864,24 +1868,24 @@
             <div class="header-right ms-auto">
                 <div class="d-flex align-items-center">
                     <div class="dropdown nxl-h-item nxl-header-search">
-                        <a href="javascript:void(0);" class="nxl-head-link me-0" data-bs-toggle="dropdown"
+                        {{-- <a href="javascript:void(0);" class="nxl-head-link me-0" data-bs-toggle="dropdown"
                             data-bs-auto-close="outside">
                             <i class="feather-search"></i>
-                        </a>
+                        </a> --}}
                         <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-search-dropdown">
-                            <div class="input-group search-form">
+                            {{-- <div class="input-group search-form">
                                 <span class="input-group-text">
                                     <i class="feather-search fs-6 text-muted"></i>
                                 </span>
-                                <input type="text" class="form-control search-input-field"
-                                    placeholder="Search....">
+                                <input type="text" class="form-control search-input-field" placeholder="Search....">
                                 <span class="input-group-text">
                                     <button type="button" class="btn-close"></button>
                                 </span>
-                            </div>
-                            <div class="dropdown-divider mt-0"></div>
+                            </div> --}}
+                            {{-- <div class="dropdown-divider mt-0"></div> --}}
                             <div class="search-items-wrapper">
-                                <div class="searching-for px-4 py-2">
+                                {{-- Pesquisando por --}}
+                                {{-- <div class="searching-for px-4 py-2">
                                     <p class="fs-11 fw-medium text-muted">I'm searching for...</p>
                                     <div class="d-flex flex-wrap gap-1">
                                         <a href="javascript:void(0);"
@@ -1907,9 +1911,9 @@
                                         <a href="javascript:void(0);"
                                             class="flex-fill border rounded py-1 px-2 text-center fs-11 fw-semibold">Calendar</a>
                                     </div>
-                                </div>
-                                <div class="dropdown-divider"></div>
-                                <div class="recent-result px-4 py-2">
+                                </div> --}}
+                                {{-- <div class="dropdown-divider"></div> --}}
+                                {{--  <div class="recent-result px-4 py-2">
                                     <h4 class="fs-13 fw-normal text-gray-600 mb-3">Recnet <span
                                             class="badge small bg-gray-200 rounded ms-1 text-dark">3</span></h4>
                                     <div class="d-flex align-items-center justify-content-between mb-4">
@@ -1918,8 +1922,8 @@
                                                 <i class="feather-airplay"></i>
                                             </div>
                                             <div>
-                                                <a href="javascript:void(0);"
-                                                    class="font-body fw-bold d-block mb-1">CRM dashboard redesign</a>
+                                                <a href="javascript:void(0);" class="font-body fw-bold d-block mb-1">CRM
+                                                    dashboard redesign</a>
                                                 <p class="fs-11 text-muted mb-0">Home / project / crm</p>
                                             </div>
                                         </div>
@@ -1961,9 +1965,9 @@
                                                 /<i class="feather-command ms-1 fs-10"></i></a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="dropdown-divider my-3"></div>
-                                <div class="users-result px-4 py-2">
+                                </div> --}}
+                                {{-- <div class="dropdown-divider my-3"></div> --}}
+                                {{-- <div class="users-result px-4 py-2">
                                     <h4 class="fs-13 fw-normal text-gray-600 mb-3">Users <span
                                             class="badge small bg-gray-200 rounded ms-1 text-dark">5</span></h4>
                                     <div class="d-flex align-items-center justify-content-between mb-4">
@@ -2046,9 +2050,9 @@
                                             <i class="feather-chevron-right"></i>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="dropdown-divider my-3"></div>
-                                <div class="file-result px-4 py-2">
+                                </div> --}}
+                                {{-- <div class="dropdown-divider my-3"></div> --}}
+                                {{-- <div class="file-result px-4 py-2">
                                     <h4 class="fs-13 fw-normal text-gray-600 mb-3">Files <span
                                             class="badge small bg-gray-200 rounded ms-1 text-dark">3</span></h4>
                                     <div class="d-flex align-items-center justify-content-between mb-4">
@@ -2099,20 +2103,20 @@
                                             <i class="feather-download"></i>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="dropdown-divider mt-3 mb-0"></div>
+                                </div> --}}
+                                {{-- <div class="dropdown-divider mt-3 mb-0"></div>
                                 <a href="javascript:void(0);"
-                                    class="p-3 fs-10 fw-bold text-uppercase text-center d-block">Loar More</a>
+                                    class="p-3 fs-10 fw-bold text-uppercase text-center d-block">Loar More</a> --}}
                             </div>
                         </div>
                     </div>
                     <div class="dropdown nxl-h-item nxl-header-language d-none d-sm-flex">
-                        <a href="javascript:void(0);" class="nxl-head-link me-0 nxl-language-link"
+                        {{-- <a href="javascript:void(0);" class="nxl-head-link me-0 nxl-language-link"
                             data-bs-toggle="dropdown" data-bs-auto-close="outside">
                             <img src="{{ url('assets/vendors/img/flags/4x3/us.svg') }}" alt=""
                                 class="img-fluid wd-20">
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-language-dropdown">
+                        </a> --}}
+                        {{-- <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-language-dropdown">
                             <div class="dropdown-divider mt-0"></div>
                             <div class="language-items-wrapper">
                                 <div class="select-language px-4 py-2 hstack justify-content-between gap-4">
@@ -2225,7 +2229,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="nxl-h-item d-none d-sm-flex">
                         <div class="full-screen-switcher">
@@ -2240,12 +2244,11 @@
                         <a href="javascript:void(0);" class="nxl-head-link me-0 dark-button">
                             <i class="feather-moon"></i>
                         </a>
-                        <a href="javascript:void(0);" class="nxl-head-link me-0 light-button"
-                            style="display: none">
+                        <a href="javascript:void(0);" class="nxl-head-link me-0 light-button" style="display: none">
                             <i class="feather-sun"></i>
                         </a>
                     </div>
-                    <div class="dropdown nxl-h-item">
+                    {{-- <div class="dropdown nxl-h-item">
                         <a href="javascript:void(0);" class="nxl-head-link me-0" data-bs-toggle="dropdown"
                             role="button" data-bs-auto-close="outside">
                             <i class="feather-clock"></i>
@@ -2260,8 +2263,7 @@
                                     <span>3 Upcomming</span>
                                 </a>
                             </div>
-                            <div
-                                class="d-flex justify-content-between align-items-center flex-column timesheets-body">
+                            <div class="d-flex justify-content-between align-items-center flex-column timesheets-body">
                                 <i class="feather-clock fs-1 mb-4"></i>
                                 <p class="text-muted">No started timers found yes!</p>
                                 <a href="javascript:void(0);" class="btn btn-sm btn-primary">Started Timer</a>
@@ -2271,7 +2273,7 @@
                                     Timesheets</a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="dropdown nxl-h-item">
                         <a class="nxl-head-link me-3" data-bs-toggle="dropdown" href="#" role="button"
                             data-bs-auto-close="outside">
@@ -2402,8 +2404,7 @@
                                         {{ __('Termirar Sessão') }}
                                     </a>
                                 </div>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
                             </div>
