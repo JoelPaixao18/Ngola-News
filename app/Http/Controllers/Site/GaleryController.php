@@ -13,7 +13,7 @@ class GaleryController extends Controller
 {
     public function galery()
     {
-        $galeries = Galery::orderByDesc('id')->get();
+        $galeries = Galery::orderByDesc('id')->paginate(12);
         $breaknews = News::where('status', 'publicado')
             ->where('detach', 'destaque')
             ->orderByDesc('id')

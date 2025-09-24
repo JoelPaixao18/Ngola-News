@@ -8,9 +8,10 @@ use Illuminate\Notifications\Notifiable;
 use App\Models\News;
 use App\Models\Comment;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
+    
     protected $fillable = [
         'name',
         'email',

@@ -24,11 +24,10 @@
                                         <div class="blog-img img-size">
                                             <a class="hover-line" id="modallink" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal">
-                                                <img
-                                                @if ($publication->cover) src="{{ asset('img/publication/' . $publication->cover) }}"
+                                                <img @if ($publication->cover) src="{{ asset('img/publication/' . $publication->cover) }}"
                                             @else
                                                 src="{{ asset('img/publication/pdfimg.png') }}" @endif
-                                                alt="blog image">
+                                                    alt="blog image">
                                             </a>
                                         </div>
                                         <h3 class="box-title-20">

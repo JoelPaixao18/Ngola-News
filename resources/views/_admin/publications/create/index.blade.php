@@ -95,8 +95,8 @@
         <div class="main-content">
             <div class="row">
                 <!-- __________________________________________________
-                                              Criando Formulario publication Create
-                               _______________________________________________________________-->
+                                                  Criando Formulario publication Create
+                                   _______________________________________________________________-->
                 <!-- [ Main Content ] start -->
                 <div class="main-content">
                     <form id="publicationForm" action="{{ route('admin.publication.store') }}" method="post"
@@ -105,10 +105,8 @@
                         {{-- formulário --}}
                         @include('form._formPublications.index')
                         {{-- end formulário --}}
+                    </form>
                 </div>
-
-                </form>
-
             </div>
             <!-- [ Main Content ] end -->
         </div>

@@ -14,6 +14,8 @@ class VideoController extends Controller
     public function videos()
     {
         $videos = Video::where('detach', 'destaque')->orderByDesc('id')->get();
+        $videosExpo = Video::orderBy('updated_at', 'desc')->paginate(12);
+
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 
         $subscription = News::where('detach', 'destaque')->orderByDesc('id')->first();
@@ -36,7 +38,8 @@ class VideoController extends Controller
             'subscription',
             'Recent',
             'RecentPost',
-            'ads'
+            'ads',
+            'videosExpo'
         ));
     }
 }

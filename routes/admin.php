@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\GaleryController;
 use App\Http\Controllers\Admin\AdvertisementController;
 use App\Http\Controllers\Admin\dashController;
 use App\Http\Controllers\Auth\SocialAuthController;
+use App\Http\Controllers\Auth\VerificationController;
 /* end admin controllers */
 
 /* auth controllers */
@@ -29,6 +30,10 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 route::get('/analytics', function () {
     return view('_admin.dashboard.analytics.index');
 });
+
+/* Rota de verificação de e-mail */
+Auth::routes(['verify' => true]);
+
 /* Routas de admin */
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
 

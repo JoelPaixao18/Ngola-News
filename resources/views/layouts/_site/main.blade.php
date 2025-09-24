@@ -3,9 +3,11 @@
 <!-- Mirrored from themeholy.com/html/tnews/demo/home-gadget.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Aug 2025 11:51:41 GMT -->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@yield('title')</title>
+
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="author" content="Tnews">
     <meta name="description" content="Tnews - News & Magazine HTML Template">
     <meta name="keywords" content="Tnews - News & Magazine HTML Template">
@@ -82,6 +84,9 @@
     <script type="text/javascript" src="{{ url('site/assets/js/app.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('site/assets/js/main.js') }}"></script>
     <script type="text/javascript" src="{{ url('site/assets/js/video.js') }}"></script>
+    <script type="text/javascript" src="{{ url('site/assets/js/subscription.js') }}"></script>
+    {{-- Link do Jquery Google CDN --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
 
 </html>

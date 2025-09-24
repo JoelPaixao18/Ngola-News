@@ -14,7 +14,7 @@ class PublicationController extends Controller
     public function publication()
     {
 
-        $publications = Publication::orderBy('updated_at', 'desc')->paginate(18);
+        $publications = Publication::orderBy('updated_at', 'desc')->paginate(12);
 
         $breaknews = News::where('detach', 'destaque')->orderByDesc('id')->get()->take(3);
 

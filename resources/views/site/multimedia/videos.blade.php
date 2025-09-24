@@ -17,7 +17,7 @@
                 <div class="col-xxl-9 col-lg-8">
                     <div class="row gy-30 filter-active">
                         {{-- Loop de vídeos com fallback --}}
-                        @forelse ($videos as $video)
+                        @forelse ($videosExpo as $video)
                             <div class="filter-item col-xl-4 col-sm-6">
                                 <div class="blog-style1">
                                     <div class="blog-img">
@@ -69,12 +69,10 @@
                         @endforelse
                     </div>
 
-                    {{-- Botão Load More só aparece se houver vídeos --}}
-                    @if ($videos->count() > 0)
-                        <div class="mt-40 mb-30 text-center">
-                            <a href="blog-masonary.html" class="th-btn">Load More</a>
-                        </div>
-                    @endif
+                    {{-- Botão "Ver Mais" só aparece se houver publicações --}}
+                    <div class="th-pagination mt-40">
+                        {{ $videosExpo->links('vendor.pagination.custom') }}
+                    </div>
                 </div>
 
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">

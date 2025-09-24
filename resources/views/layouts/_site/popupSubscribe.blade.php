@@ -1,3 +1,4 @@
+@if (!request()->cookie('subscribed'))
 <div class="popup-subscribe-area">
     <div class="container">
         <div class="popup-subscribe ">
@@ -12,13 +13,15 @@
                 </button>
                 <div class="widget newsletter-widget footer-widget">
                     <h3 class="widget_title">Subscrição</h3>
-                    <p class="footer-text">Cadastre-se para receber atualizações sobre nós. Não tenha pressa, seu e-mail está seguro.</p>
-                    <form class="newsletter-form">
-                        <input class="form-control" type="email" placeholder="Enter Email" required>
-                        <button type="submit" class="icon-btn">
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </button>
+                    <p class="footer-text">Faça a sua subscrição para receber atualizações das notícias em destaque.</p>
+
+                    <form id="subscribeForm" class="newsletter-form"
+                          data-action="{{ route('subscribe.store') }}">
+                        @csrf
+                        @include('form._formSubscription.index')
                     </form>
+
+                    <div id="subscribeMessage" class="mt-2"></div>
                     <div class="mt-30">
                         <input type="checkbox" id="destroyPopup">
                         <label for="destroyPopup">Não quero ver esse pop-up novamente.</label>
@@ -28,3 +31,4 @@
         </div>
     </div>
 </div>
+@endif

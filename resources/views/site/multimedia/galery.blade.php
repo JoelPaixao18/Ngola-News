@@ -88,12 +88,10 @@
                         @endforelse
                     </div>
 
-                    {{-- Botão "Ver Mais" só aparece se houver galerias --}}
-                    @if ($galeries->count() > 0)
-                        <div class="mt-40 mb-30 text-center">
-                            <a href="blog-masonary.html" class="th-btn">Ver Mais</a>
-                        </div>
-                    @endif
+                    {{-- Botão "Ver Mais" só aparece se houver imagens --}}
+                    <div class="th-pagination mt-40">
+                        {{ $galeries->links('vendor.pagination.custom') }}
+                    </div>
                 </div>
 
                 <div class="col-xxl-3 col-lg-4 sidebar-wrap">

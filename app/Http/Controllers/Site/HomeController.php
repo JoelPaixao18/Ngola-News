@@ -46,6 +46,8 @@ class HomeController extends Controller
         $today = News::where('status', 'publicado')->orderBy('created_at', 'desc')->take(2)->get();
         $today1 = News::where('status', 'publicado')->where('detach', 'destaque')->orderByDesc('id')->first();
         $breaknews = News::where('status', 'publicado')->where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
+        
+        /* Modal de Subscrição */
         $subscription = News::where('status', 'publicado')->where('detach', 'destaque')->orderByDesc('id')->first();
 
         /* --------- Sessão da Categoria de Notícias (algumas categorias) ----------------- */

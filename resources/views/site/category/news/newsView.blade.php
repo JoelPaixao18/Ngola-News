@@ -58,7 +58,7 @@
                                     <h6 class="title">Etiqueta relacionada :</h6>
                                     <div class="tagcloud">
                                         @foreach ($tags1 as $tag)
-                                            <a href="blog.html">{{ $tag->name }}</a>
+                                            <a href="#">{{ $tag->name }}</a>
                                         @endforeach
                                     </div>
                                 </div>
