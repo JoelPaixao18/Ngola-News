@@ -1,3 +1,32 @@
+:root {
+    --theme-color: #FF1D50;
+    --theme-color2: #3D72FC;
+    --title-color: #080809;
+    --title-dark: #080809;
+    --body-color: #54595F;
+    --smoke-color: #F5F5F5;
+    --smoke-color2: #EFF3FA;
+    --black-color: #000000;
+    --black-color2: #080E1C;
+    --gray-color: #B5B5B5;
+    --white-color: #ffffff;
+    --light-color: #bdbdbd;
+    --body-bg: #fff;
+    --yellow-color: #FFB539;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --border-color: #EFEFEF;
+    --title-font: "League Spartan", sans-serif;
+    --body-font: "Poppins", sans-serif;
+    --icon-font: "Font Awesome 6 Pro";
+    --main-container: 1224px;
+    --container-gutters: 24px;
+    --section-space: 60px;
+    --section-space-mobile: 60px;
+    --section-title-space: 40px;
+    --ripple-ani-duration: 5s
+}
+
 /* Tratamento de imagem na Noticia da Categoria Politica com mais destaques */
 .img-detach {
     width: 100%;
@@ -261,6 +290,17 @@
     margin-bottom: 8px;
 }
 
+.comment-textarea {
+    resize: none;
+    /* não deixa o usuário arrastar e aumentar */
+    min-height: 40px;
+    max-height: 80px;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
 .reply-form textarea {
     width: 100%;
     min-height: 60px;
@@ -295,4 +335,31 @@
 .comment.reply {
     background: #f9f9f9;
     border-left: 3px solid #007bff;
+}
+
+/* tratamento nos comentarios */
+.avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--theme-color);
+    /* rosa/vermelho */
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: var(--title-font);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+}
+
+.avatar-placeholder.alt {
+    background: var(--theme-color2);
+    /* azul */
+}
+
+.email-alinhado {
+    margin: 1rem;
 }

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\User;
 use App\Models\News;
+use App\Models\Subscription;
 
 class Comment extends Model
 {
@@ -15,15 +16,20 @@ class Comment extends Model
 
     protected $fillable = [
         'text_comment',
-        'date',
         'news_id',
         'user_id',
         'parent_id',
+        'subscribed_id'
     ];
 
     public function news()
     {
         return $this->belongsTo(News::class, 'news_id');
+    }
+
+    public function subscription()
+    {
+        return $this->belongsTo(Subscription::class, 'subscribed_id');
     }
 
     public function user()

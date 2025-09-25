@@ -22,6 +22,6 @@ class SubscriptionController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Obrigado por subscrever! Você receberá notícias em destaque.'
-        ])->cookie('subscribed', true, 525600); // 525600 minutos = 1 ano
+        ])->cookie('subscribed', $request->email, 525600); // 525600 minutos = 1 ano
     }
 }

@@ -48,7 +48,6 @@ class CommentController extends Controller
         //
         $request->validate([
             'text_comment' => 'required|string|max:1000',
-            'date' => 'required|date|after_or_equal:today',
             'news_id' => 'required|exists:news,id',
             'user_id' => 'required|exists:users,id',
             'parent_id' => 'nullable|exists:comments,id',
@@ -61,7 +60,6 @@ class CommentController extends Controller
 
         Comment::create([
             'text_comment' => $request->text_comment,
-            'date' => $request->date,
             'news_id' => $request->news_id,
             'user_id' => $request->user_id,
             'parent_id' => $request->parent_id,
@@ -114,7 +112,6 @@ class CommentController extends Controller
         //
         $request->validate([
             'text_comment' => 'required|string|max:1000',
-            'date' => 'required|date|after_or_equal:today',
             'news_id' => 'required|exists:news,id',
             'user_id' => 'required|exists:users,id',
         ], [
@@ -126,7 +123,6 @@ class CommentController extends Controller
 
         $comment->update([
             'text_comment' => $request->input('text_comment'),
-            'date' => $request->date,
             'news_id' => $request->news_id,
             'user_id' => $request->user_id,
         ]);

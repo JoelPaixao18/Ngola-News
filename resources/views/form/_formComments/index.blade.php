@@ -37,11 +37,11 @@
             value="{{ old('text_comment', $comment->text_comment ?? '') }}" placeholder="Ex: Será que é verdade...">
     </div>
 
-    <div class="col-lg-4 mb-4">
+    {{-- <div class="col-lg-4 mb-4">
         <label class="form-label">Data de Publicação</label>
         <input type="date" name="date" class="form-control"
             value="{{ old('date', $comment->date ?? date('Y-m-d')) }}">
-    </div>
+    </div> --}}
 
     {{-- Botão de Enviar --}}
     <div class="col-12">

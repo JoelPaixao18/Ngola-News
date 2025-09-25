@@ -21,7 +21,8 @@
                     <div class="blog-meta"><a class="author" href="#"><i class="far fa-user"></i>By -
                             Tnews</a> <a href="#"><i
                                 class="fal fa-calendar-days"></i>{{ $news->updated_at->format('d M, Y') }}</a> <a
-                            href="#"><i class="far fa-comments"></i>Comments (3)</a> {{-- <span><i
+                            href="#"><i class="far fa-comments"></i>Comments ({{ $news->comments->count() }})</a>
+                        {{-- <span><i
                                 class="far fa-book-open"></i>5 Mins Read</span> --}}</div>
                     <div class="blog-img mb-40 img-view">
                         <img src="{{ asset('/img/news/' . $news->image) }}" alt="Blog Image" class="fixed-img">
@@ -110,91 +111,130 @@
                                 world.</p>
                         </div>
                     </div> --}}
+
+
                     {{-- Comentários --}}
-                    <div class="th-comments-wrap">
-                        <h2 class="blog-inner-title h3">
-                            Comentários {{-- ({{ $news->comments->count() }}) --}}
-                        </h2>
+                    @if (request()->cookie('subscribed'))
+                        <div class="th-comments-wrap">
+                            <h2 class="blog-inner-title h3">
+                                {{ $news->comments->count() }} Comentário(s)
+                            </h2>
 
-                        <ul class="comment-list">
-                            @foreach ($news->comments->where('parent_id', null) as $comment)
-                                <li class="th-comment-item">
-                                    <div class="th-post-comment">
-                                        <div class="comment-avater">
-                                            <img src="{{ url('img/users/' . $comment->user->image) }}" alt="Foto do Autor">
-                                        </div>
-                                        <div class="comment-content">
-                                            <span class="commented-on">
-                                                <i class="fas fa-calendar-alt"></i>
-                                                {{ $comment->created_at->format('d M, Y') }}
-                                            </span>
-                                            <h3 class="name">{{ $comment->user->name }}</h3>
-                                            <p class="text">{{ $comment->text_comment }}</p>
+                            {{-- Novo Comentário --}}
+                            <div class="comment-form-wrap mb-4">
+                                <form action="{{ route('site.comment.store', $news->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="parent_id" value=""> {{-- comentário principal --}}
 
-                                            <!-- Botão de responder -->
-                                            @auth
-                                                <form action="{{ route('admin.comment.store', $news->id) }}" method="POST"
-                                                    class="mt-2">
+                                    <div class="mb-2 ">
+                                        <textarea name="text_comment" class="form-control comment-textarea" rows="1"
+                                            placeholder="Adicione um comentário..." required></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-sm">Comentar</button>
+                                </form>
+                            </div>
+
+                            {{-- Lista de comentários --}}
+                            <ul class="comment-list">
+                                @foreach ($news->comments->where('parent_id', null) as $comment)
+                                    <li class="th-comment-item mb-3">
+                                        <div class="th-post-comment">
+                                            <div class="avatar-placeholder">
+                                                @if ($comment->image)
+                                                    <img src="{{ url('img/users/' . $comment->image) }}" alt="Foto do Autor"
+                                                        class="img-fluid user-avtar me-0">
+                                                @else
+                                                    <div class="avatar-placeholder {{ rand(0, 1) ? 'alt' : '' }}">
+                                                        {{ strtoupper(substr($comment->email, 0, 1)) }}
+                                                    </div>
+                                                @endif
+                                            </div>
+                                            <div class="comment-content email-alinhado">
+                                                <h3 class="name">
+                                                    @if ($comment->subscription)
+                                                        {{ $comment->subscription->email }}
+                                                    @else
+                                                        Email não disponível
+                                                    @endif
+                                                    <span class="commented-on">
+                                                        {{ $comment->created_at->diffForHumans() }}
+                                                    </span>
+                                                </h3>
+                                                <p class="text">{{ $comment->text_comment }}</p>
+                                                <!-- Botão para abrir resposta -->
+                                                <button class="btn btn-link btn-sm reply-toggle"
+                                                    data-id="{{ $comment->id }}">
+                                                    Responder
+                                                </button>
+
+                                                <!-- Formulário de resposta (escondido por padrão) -->
+                                                <form action="{{ route('site.comment.store', $news->id) }}" method="POST"
+                                                    class="mt-2 reply-form d-none" id="reply-form-{{ $comment->id }}">
                                                     @csrf
                                                     <input type="hidden" name="parent_id" value="{{ $comment->id }}">
                                                     <textarea name="text_comment" class="form-control mb-2" rows="2" placeholder="Responder..." required></textarea>
-                                                    <button type="submit" class="btn btn-sm btn-secondary">Responder</button>
+                                                    <button type="submit" class="btn btn-sm btn-secondary">Responder
+                                                    </button>
                                                 </form>
-                                            @endauth
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Respostas -->
-                                    @if ($comment->replies->count())
-                                        <ul class="children">
-                                            @foreach ($comment->replies as $reply)
-                                                <li class="th-comment-item">
-                                                    <div class="th-post-comment">
-                                                        <div class="comment-avater">
-                                                            <img src="{{ url('img/users/' . $reply->user->image) }}"
-                                                                alt="Foto do Autor">
+                                        <!-- Respostas -->
+                                        @if ($comment->replies->count())
+                                            <button class="btn btn-link btn-sm toggle-replies"
+                                                data-id="{{ $comment->id }}">
+                                                Ver {{ $comment->replies->count() }} resposta(s)
+                                            </button>
+                                            <ul class="children d-none" id="replies-{{ $comment->id }}">
+                                                @foreach ($comment->replies as $reply)
+                                                    <li class="th-comment-item">
+                                                        <br>
+                                                        <div class="th-post-comment">
+                                                            <div class="avatar-placeholder">
+                                                                @if ($comment->image)
+                                                                    <img src="{{ url('img/users/' . $comment->image) }}"
+                                                                        alt="Foto do Autor"
+                                                                        class="img-fluid user-avtar me-0">
+                                                                @else
+                                                                    <div
+                                                                        class="avatar-placeholder {{ rand(0, 1) ? 'alt' : '' }}">
+                                                                        {{ strtoupper(substr($comment->email, 0, 1)) }}
+                                                                    </div>
+                                                                @endif
+                                                            </div>
+
+                                                            <div class="comment-content email-alinhado">
+                                                                <h3 class="name">
+                                                                    @if ($reply->subscription)
+                                                                        {{ $reply->subscription->email }}
+                                                                    @else
+                                                                        Email não disponível
+                                                                    @endif
+                                                                </h3>
+
+                                                                <p class="text">{{ $reply->text_comment }}</p>
+                                                                <span class="commented-on">
+                                                                    {{ $reply->created_at->diffForHumans() }}
+                                                                </span>
+                                                            </div>
                                                         </div>
-                                                        <div class="comment-content">
-                                                            <span class="commented-on">
-                                                                <i class="fas fa-calendar-alt"></i>
-                                                                {{ $reply->created_at->format('d M, Y') }}
-                                                            </span>
-                                                            <h3 class="name">{{ $reply->user->name }}</h3>
-                                                            <p class="text">{{ $reply->text_comment }}</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
-                                </li>
-                            @endforeach
-                        </ul>
-
-                    </div>
-                    {{-- Fim de Comentários --}}
-
-                    {{-- form de Comentários --}}
-                    {{-- <div class="th-comment-form">
-                        <div class="form-title">
-                            <h3 class="blog-inner-title mb-2">Deixe um comentário</h3>
-                            <p class="form-text">Your email address will not be published. Required fields are marked *
-                            </p>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 form-group"><input type="text" placeholder="Seu Nome*"
-                                    class="form-control"> <i class="far fa-user"></i></div>
-                            <div class="col-md-6 form-group"><input type="text" placeholder="Seu Email*"
-                                    class="form-control"> <i class="far fa-envelope"></i></div>
-                            <div class="col-12 form-group"><input type="text" placeholder="Website"
-                                    class="form-control"> <i class="far fa-globe"></i></div>
-                            <div class="col-12 form-group">
-                                <textarea placeholder="Escreva um comentário*" class="form-control"></textarea> <i class="far fa-pencil"></i>
-                            </div>
-                            <div class="col-12 form-group mb-0"><button class="th-btn">Poste o Comentário</button></div>
+                    @else
+                        <div class="alert alert-warning mt-4">
+                            Apenas <strong>subscritos</strong> podem ver e participar dos comentários.
+                            <br>
+                            <a href="#" class="btn btn-sm btn-primary mt-2 open-subscribe">Fazer Subscrição</a>
                         </div>
-                    </div> --}}
-                    {{-- Fim de form dos Comentários --}}
+                    @endif
+                    {{-- fim de comentários --}}
 
                     {{-- Postes Relacionados a categoria --}}
                     <div class="related-post-wrapper pt-30 mb-30">

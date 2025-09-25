@@ -10,15 +10,16 @@ use App\Models\Category;
 use App\Models\News;
 use App\Models\User;
 use App\Models\Tag;
+use App\Models\Subscription;
 
 class NewsController extends Controller
 {
     public function newsView(News $news)
     {
-        // Busca a notícia atual
+        // Carregar a notícia com os comentários e suas respectivas subscriptions
         $news = News::where('status', 'publicado')
-            ->with(['category', 'comments.user', 'comments.replies.user'])
-            ->findOrFail($news->id);
+        ->with(['category', 'comments.subscription', 'comments.replies.subscription'])  // Carregar as subscriptions corretamente
+        ->findOrFail($news->id);
 
         // Busca notícias relacionadas pela categoria
         $Related = News::where('status', 'publicado')

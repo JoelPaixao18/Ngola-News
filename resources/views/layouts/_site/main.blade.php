@@ -84,7 +84,9 @@
     <script type="text/javascript" src="{{ url('site/assets/js/app.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('site/assets/js/main.js') }}"></script>
     <script type="text/javascript" src="{{ url('site/assets/js/video.js') }}"></script>
+    {{-- Link para o modal de subscrição e para o processo de comentários --}}
     <script type="text/javascript" src="{{ url('site/assets/js/subscription.js') }}"></script>
+    <script type="text/javascript" src="{{ url('site/assets/js/comments.js') }}"></script>
     {{-- Link do Jquery Google CDN --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>

@@ -15,6 +15,7 @@ use App\Http\Controllers\Site\SocietyController;
 use App\Http\Controllers\Site\TechnologyController;
 use App\Http\Controllers\Site\VideoController;
 use App\Http\Controllers\Site\SubscriptionController;
+use App\Http\Controllers\Site\CommentController;
 
 /* end site controllers */
 /*-------------------------------------------------------
@@ -52,6 +53,11 @@ Route::get('/pesquisa', [NewsController::class, 'search'])->name('news.search');
 
 /* Rota de subscrição */
 Route::post('/subscribe', [SubscriptionController::class, 'store'])->name('subscribe.store');
+
+/* Rota de Comentarios */
+// routes/web.php
+Route::post('/comment/store/{news}', [CommentController::class, 'store'])->name('site.comment.store');
+
 
 
 
