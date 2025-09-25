@@ -146,7 +146,12 @@
                                                         class="img-fluid user-avtar me-0">
                                                 @else
                                                     <div class="avatar-placeholder {{ rand(0, 1) ? 'alt' : '' }}">
-                                                        {{ strtoupper(substr($comment->email, 0, 1)) }}
+                                                        @if ($comment->subscription)
+                                                            {{ strtoupper(substr($comment->subscription->email, 0, 1)) }}
+                                                        @else
+                                                            <img src="{{ url('img/users/' . $comment->subscription->image) }}"
+                                                                alt="Foto do Autor" class="img-fluid user-avtar me-0">
+                                                        @endif
                                                     </div>
                                                 @endif
                                             </div>
@@ -199,7 +204,13 @@
                                                                 @else
                                                                     <div
                                                                         class="avatar-placeholder {{ rand(0, 1) ? 'alt' : '' }}">
-                                                                        {{ strtoupper(substr($comment->email, 0, 1)) }}
+                                                                        @if ($reply->subscription)
+                                                                            {{ strtoupper(substr($reply->subscription->email, 0, 1)) }}
+                                                                        @else
+                                                                            <img src="{{ url('img/users/' . $comment->subscription->image) }}"
+                                                                                alt="Foto do Autor"
+                                                                                class="img-fluid user-avtar me-0">
+                                                                        @endif
                                                                     </div>
                                                                 @endif
                                                             </div>
