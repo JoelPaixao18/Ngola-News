@@ -114,13 +114,13 @@
 
 
                     {{-- Comentários --}}
-                    @if (request()->cookie('subscribed'))
-                        <div class="th-comments-wrap">
-                            <h2 class="blog-inner-title h3">
-                                {{ $news->comments->count() }} Comentário(s)
-                            </h2>
+                    <div class="th-comments-wrap">
+                        <h2 class="blog-inner-title h3">
+                            {{ $news->comments->count() }} Comentário(s)
+                        </h2>
 
-                            {{-- Novo Comentário --}}
+                        {{-- Novo Comentário --}}
+                        @if (request()->cookie('subscribed'))
                             <div class="comment-form-wrap mb-4">
                                 <form action="{{ route('site.comment.store', $news->id) }}" method="POST">
                                     @csrf
@@ -134,40 +134,42 @@
                                     <button type="submit" class="btn btn-primary btn-sm">Comentar</button>
                                 </form>
                             </div>
+                        @endif
 
-                            {{-- Lista de comentários --}}
-                            <ul class="comment-list">
-                                @foreach ($news->comments->where('parent_id', null) as $comment)
-                                    <li class="th-comment-item mb-3">
-                                        <div class="th-post-comment">
-                                            <div class="avatar-placeholder">
-                                                @if ($comment->image)
-                                                    <img src="{{ url('img/users/' . $comment->image) }}" alt="Foto do Autor"
-                                                        class="img-fluid user-avtar me-0">
-                                                @else
-                                                    <div class="avatar-placeholder {{ rand(0, 1) ? 'alt' : '' }}">
-                                                        @if ($comment->subscription)
-                                                            {{ strtoupper(substr($comment->subscription->email, 0, 1)) }}
-                                                        @else
-                                                            <img src="{{ url('img/users/' . $comment->subscription->image) }}"
-                                                                alt="Foto do Autor" class="img-fluid user-avtar me-0">
-                                                        @endif
-                                                    </div>
-                                                @endif
-                                            </div>
-                                            <div class="comment-content email-alinhado">
-                                                <h3 class="name">
+                        {{-- Lista de comentários --}}
+                        <ul class="comment-list">
+                            @foreach ($news->comments->where('parent_id', null) as $comment)
+                                <li class="th-comment-item mb-3">
+                                    <div class="th-post-comment">
+                                        <div class="avatar-placeholder">
+                                            @if ($comment->image)
+                                                <img src="{{ url('img/users/' . $comment->image) }}" alt="Foto do Autor"
+                                                    class="img-fluid user-avtar me-0">
+                                            @else
+                                                <div class="avatar-placeholder {{ rand(0, 1) ? 'alt' : '' }}">
                                                     @if ($comment->subscription)
-                                                        {{ $comment->subscription->email }}
+                                                        {{ strtoupper(substr($comment->subscription->email, 0, 1)) }}
                                                     @else
-                                                        Email não disponível
+                                                        <img src="{{ url('img/users/' . $comment->subscription->image) }}"
+                                                            alt="Foto do Autor" class="img-fluid user-avtar me-0">
                                                     @endif
-                                                    <span class="commented-on">
-                                                        {{ $comment->created_at->diffForHumans() }}
-                                                    </span>
-                                                </h3>
-                                                <p class="text">{{ $comment->text_comment }}</p>
-                                                <!-- Botão para abrir resposta -->
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="comment-content email-alinhado">
+                                            <h3 class="name">
+                                                @if ($comment->subscription)
+                                                    {{ $comment->subscription->email }}
+                                                @else
+                                                    Email não disponível
+                                                @endif
+                                                <span class="commented-on">
+                                                    {{ $comment->created_at->diffForHumans() }}
+                                                </span>
+                                            </h3>
+                                            <p class="text">{{ $comment->text_comment }}</p>
+                                            <!-- Botão para abrir resposta -->
+                                            @if (request()->cookie('subscribed'))
                                                 <button class="btn btn-link btn-sm reply-toggle"
                                                     data-id="{{ $comment->id }}">
                                                     Responder
@@ -179,73 +181,77 @@
                                                     @csrf
                                                     <input type="hidden" name="parent_id" value="{{ $comment->id }}">
                                                     <textarea name="text_comment" class="form-control mb-2" rows="2" placeholder="Responder..." required></textarea>
-                                                    <button type="submit" class="btn btn-sm btn-secondary">Responder
-                                                    </button>
+                                                    <button type="submit"
+                                                        class="btn btn-sm btn-secondary">Responder</button>
                                                 </form>
-                                            </div>
+                                            
+                                            @endif
                                         </div>
+                                    </div>
 
-                                        <!-- Respostas -->
-                                        @if ($comment->replies->count())
-                                            <button class="btn btn-link btn-sm toggle-replies"
-                                                data-id="{{ $comment->id }}">
-                                                Ver {{ $comment->replies->count() }} resposta(s)
-                                            </button>
-                                            <ul class="children d-none" id="replies-{{ $comment->id }}">
-                                                @foreach ($comment->replies as $reply)
-                                                    <li class="th-comment-item">
-                                                        <br>
-                                                        <div class="th-post-comment">
-                                                            <div class="avatar-placeholder">
-                                                                @if ($comment->image)
-                                                                    <img src="{{ url('img/users/' . $comment->image) }}"
-                                                                        alt="Foto do Autor"
-                                                                        class="img-fluid user-avtar me-0">
-                                                                @else
-                                                                    <div
-                                                                        class="avatar-placeholder {{ rand(0, 1) ? 'alt' : '' }}">
-                                                                        @if ($reply->subscription)
-                                                                            {{ strtoupper(substr($reply->subscription->email, 0, 1)) }}
-                                                                        @else
-                                                                            <img src="{{ url('img/users/' . $comment->subscription->image) }}"
-                                                                                alt="Foto do Autor"
-                                                                                class="img-fluid user-avtar me-0">
-                                                                        @endif
-                                                                    </div>
-                                                                @endif
-                                                            </div>
-
-                                                            <div class="comment-content email-alinhado">
-                                                                <h3 class="name">
+                                    <!-- Respostas -->
+                                    @if ($comment->replies->count())
+                                        <button class="btn btn-link btn-sm toggle-replies" data-id="{{ $comment->id }}">
+                                            Ver {{ $comment->replies->count() }} resposta(s)
+                                        </button>
+                                        <ul class="children d-none" id="replies-{{ $comment->id }}">
+                                            @foreach ($comment->replies as $reply)
+                                                <li class="th-comment-item">
+                                                    <br>
+                                                    <div class="th-post-comment">
+                                                        <div class="avatar-placeholder">
+                                                            @if ($comment->image)
+                                                                <img src="{{ url('img/users/' . $comment->image) }}"
+                                                                    alt="Foto do Autor" class="img-fluid user-avtar me-0">
+                                                            @else
+                                                                <div
+                                                                    class="avatar-placeholder {{ rand(0, 1) ? 'alt' : '' }}">
                                                                     @if ($reply->subscription)
-                                                                        {{ $reply->subscription->email }}
+                                                                        {{ strtoupper(substr($reply->subscription->email, 0, 1)) }}
                                                                     @else
-                                                                        Email não disponível
+                                                                        <img src="{{ url('img/users/' . $reply->subscription->image) }}"
+                                                                            alt="Foto do Autor"
+                                                                            class="img-fluid user-avtar me-0">
                                                                     @endif
-                                                                </h3>
-
-                                                                <p class="text">{{ $reply->text_comment }}</p>
-                                                                <span class="commented-on">
-                                                                    {{ $reply->created_at->diffForHumans() }}
-                                                                </span>
-                                                            </div>
+                                                                </div>
+                                                            @endif
                                                         </div>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        @endif
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @else
-                        <div class="alert alert-warning mt-4">
-                            Apenas <strong>subscritos</strong> podem ver e participar dos comentários.
-                            <br>
-                            <a href="#" class="btn btn-sm btn-primary mt-2 open-subscribe">Fazer Subscrição</a>
-                        </div>
-                    @endif
-                    {{-- fim de comentários --}}
+
+                                                        <div class="comment-content email-alinhado">
+                                                            <h3 class="name">
+                                                                @if ($reply->subscription)
+                                                                    {{ $reply->subscription->email }}
+                                                                @else
+                                                                    Email não disponível
+                                                                @endif
+                                                            </h3>
+
+                                                            <p class="text">{{ $reply->text_comment }}</p>
+                                                            <span class="commented-on">
+                                                                {{ $reply->created_at->diffForHumans() }}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
+
+                        @if (!request()->cookie('subscribed'))
+                            <div class="alert alert-info mt-4">
+                                Apenas <strong>subscritos</strong> podem comentar ou responder aos comentários.
+                                <br>
+                                <a href="#" class="btn btn-sm btn-primary mt-2 open-subscribe">Fazer Subscrição</a>
+                            </div>
+                        @endif
+                    </div>
+
+                    {{-- Fim de comentários --}}
+
+
 
                     {{-- Postes Relacionados a categoria --}}
                     <div class="related-post-wrapper pt-30 mb-30">
