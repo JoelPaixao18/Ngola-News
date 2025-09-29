@@ -16,6 +16,9 @@
             <div class="row">
                 <div class="col-12"><a data-theme-color="#019D9E" href="#"
                         class="category">{{ $news->category->name }}</a>
+                    @if ($news->detach === 'premium')
+                        <a data-theme-color="#DAA520" href="#" class="category">{{ $news->detach }}</a>
+                    @endif
                     <h2 class="blog-title">{{ $news->title }}.</h2>
                     <h6>{{ $news->subtitle }}</h6>
                     <div class="blog-meta"><a class="author" href="#"><i class="far fa-user"></i>By -
@@ -52,9 +55,46 @@
                                             class="fas fa-eye"></i></span> <span class="blog-info">12k <i
                                             class="fas fa-share-nodes"></i></span> --}}
                                 </div>
+
+                                {{-- Corpo da notícia --}}
+                                @php
+                                    use Illuminate\Support\Str;
+
+                                    $fullHtml = $news->description ?? '';
+                                    if (preg_match('/<p\b[^>]*>(.*?)<\/p>/is', $fullHtml, $m)) {
+                                        $sampleHtml = $m[0];
+                                    } else {
+                                        $sampleHtml = nl2br(e(Str::limit(strip_tags($fullHtml), 400, '...')));
+                                    }
+                                @endphp
+
                                 <div class="content">
-                                    {!! $news->description !!}
+                                    @if ($news->detach === 'premium' && !request()->cookie('subscribed'))
+                                        {{-- Parte inicial com leve transparência --}}
+                                        <div class="premium-sample">
+                                            {!! $sampleHtml !!}
+                                        </div>
+
+                                        {{-- Mensagem de alerta logo abaixo --}}
+                                        <div class="premium-alert text-center mt-3 p-3">
+                                            <h5 class="mb-2">Conteúdo Premium</h5>
+                                            <p class="mb-2">
+                                                Para ler este artigo tem de ter uma <strong>subscrição</strong>.
+                                            </p>
+                                            {{-- <div class="d-flex justify-content-center gap-2">
+                                                <a href="{{ route('subscribe') }}" class="btn btn-danger btn-sm">Assinar</a>
+                                                <a href="{{ route('login') }}"
+                                                    class="btn btn-outline-secondary btn-sm">Fazer login</a>
+                                            </div> --}}
+                                        </div>
+                                    @else
+                                        {{-- Conteúdo completo --}}
+                                        {!! $news->description !!}
+                                    @endif
                                 </div>
+
+                                {{-- Fim de corte de notícia --}}
+
                                 <div class="blog-tag">
                                     <h6 class="title">Etiqueta relacionada :</h6>
                                     <div class="tagcloud">
@@ -131,7 +171,7 @@
                                             placeholder="Adicione um comentário..." required></textarea>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary btn-sm">Comentar</button>
+                                    <button type="submit" class="btn btn-comment btn-sm p-2">Comentar</button>
                                 </form>
                             </div>
                         @endif
@@ -182,9 +222,8 @@
                                                     <input type="hidden" name="parent_id" value="{{ $comment->id }}">
                                                     <textarea name="text_comment" class="form-control mb-2" rows="2" placeholder="Responder..." required></textarea>
                                                     <button type="submit"
-                                                        class="btn btn-sm btn-secondary">Responder</button>
+                                                        class="btn btn-comment btn-sm">Responder</button>
                                                 </form>
-                                            
                                             @endif
                                         </div>
                                     </div>
@@ -241,10 +280,10 @@
                         </ul>
 
                         @if (!request()->cookie('subscribed'))
-                            <div class="alert alert-info mt-4">
+                            <div class="alert alert-warning mt-4">
                                 Apenas <strong>subscritos</strong> podem comentar ou responder aos comentários.
                                 <br>
-                                <a href="#" class="btn btn-sm btn-primary mt-2 open-subscribe">Fazer Subscrição</a>
+                                {{--  <a href="#" class="btn btn-comment mt-2 open-subscribe">Fazer Subscrição</a> --}}
                             </div>
                         @endif
                     </div>
@@ -366,6 +405,24 @@
                                 @endforeach
                             </div>
                         </div>
+                        {{-- Subscrição --}}
+                        @if (!request()->cookie('subscribed'))
+                            <div class="widget newsletter-widget3"
+                                data-bg-src="{{ url('site/assets/img/bg/line_bg_1.png') }}">
+                                <div class="mb-4">
+                                    <img src="{{ url('site/assets/img/bg/newsletter_img_2.png') }}" alt="Icon">
+                                </div>
+                                <h3 class="box-title-24 mb-20">Subscreve Agora</h3>
+                                <form id="subscribeForm" class="newsletter-form"
+                                    data-action="{{ route('subscribe.store') }}">
+                                    @csrf
+                                    @include('form._formSubscription.index')
+                                </form>
+
+                                <div id="subscribeMessage" class="mt-2"></div>
+                            </div>
+                        @endif
+                        {{-- Fim de Subscrição --}}
                     </aside>
                 </div>
                 {{-- Fim Sessão de Postes Recentes & Tags Populatres --}}

@@ -358,6 +358,7 @@
         </div>
     </section>
     <!-- ==================== Fim de Algumas Categorias ==================== -->
+
     {{-- =================== Sessão de Tecnologia, Economia e Sociedade ================== --}}
     <section class="space-bottom">
         <div class="container">
@@ -532,6 +533,7 @@
                             </div>
                         </div>
                         {{-- Fim da sessão de Sociedade --}}
+
                         {{-- Subscrição --}}
                         @if (!request()->cookie('subscribed'))
                             <div class="widget newsletter-widget3"
