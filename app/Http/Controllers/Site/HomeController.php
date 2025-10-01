@@ -15,7 +15,8 @@ class HomeController extends Controller
     {
 
         /* Noticia da Categoria Politica com mais destaques */
-        $newsDetach = News::where('status', 'publicado')->where('detach', 'destaque') // apenas notícias destaque
+        $newsDetach = News::where('status', 'publicado')
+            ->whereIn('detach', ['destaque','premium']) // apenas notícias destaque
             ->whereHas('category', function ($query) {
                 $query->whereIn('name', [
                     'Politica',
@@ -46,7 +47,7 @@ class HomeController extends Controller
         $today = News::where('status', 'publicado')->orderBy('created_at', 'desc')->take(2)->get();
         $today1 = News::where('status', 'publicado')->where('detach', 'destaque')->orderByDesc('id')->first();
         $breaknews = News::where('status', 'publicado')->where('detach', 'destaque')->orderByDesc('id')->take(3)->get();
-        
+
         /* Modal de Subscrição */
         $subscription = News::where('status', 'publicado')->where('detach', 'destaque')->orderByDesc('id')->first();
 

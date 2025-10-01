@@ -12,6 +12,9 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Subscription;
+use App\Mail\HighlightNewsNotificationMail;
+use Illuminate\Support\Facades\Mail;
 
 class NewsController extends Controller
 {
@@ -61,6 +64,14 @@ class NewsController extends Controller
         // Tags
         $news->tags()->sync($request->tags ?? []);
 
+        // Enviar notificação se for destaque e publicado
+        if ($news->status === 'publicado' && $news->detach === 'destaque') {
+            $subscribers = Subscription::all();
+            foreach ($subscribers as $subscriber) {
+                Mail::to($subscriber->email)->queue(new HighlightNewsNotificationMail($news));
+            }
+        }
+
         return redirect()->route('admin.news.index')->with('success', 'Notícia criada com sucesso!');
     }
 
@@ -90,7 +101,6 @@ class NewsController extends Controller
             'date' => 'required|date|after_or_equal:today',
             'detach' => 'nullable|in:normal,destaque,premium',
             'category_id' => 'required|exists:categories,id',
-            /* 'user_id' => 'required|exists:users,id', */
             'tags' => 'array',
             'tags.*' => 'exists:tags,id'
         ], [
@@ -106,8 +116,6 @@ class NewsController extends Controller
             'date.after_or_equal' => 'A data não pode ser anterior à data atual.',
             'detach.required' => 'O campo destaque é obrigatório.',
             'detach.in' => 'O valor do destaque é inválido.',
-           /*  'user_id.required' => 'O autor é obrigatório.',
-            'user_id.exists' => 'O autor selecionado é inválido.', */
             'category_id.required' => 'A categoria é obrigatória.',
             'category_id.exists' => 'A categoria selecionada é inválida.',
         ]);
@@ -133,20 +141,27 @@ class NewsController extends Controller
             $data['image'] = $imageName;
         }
 
-        // Atualiza todos os campos de uma vez
-        //$news->update($request->all());
+        // Atualiza todos os campos
         $news->update($data);
 
-        // Associar tags se fornecidas
+        // Tags
         if ($request->has('tags')) {
             $news->tags()->sync($request->tags);
         } else {
-            $news->tags()->sync([]); // Se não enviar nenhuma tag, remove todas
+            $news->tags()->sync([]);
+        }
+
+        //  Enviar notificação se agora for destaque e publicado
+        if ($news->status === 'publicado' && $news->detach === 'destaque') {
+            $subscribers = Subscription::all();
+            foreach ($subscribers as $subscriber) {
+                Mail::to($subscriber->email)->queue(new HighlightNewsNotificationMail($news));
+            }
         }
 
         return redirect()->route('admin.news.index')->with('success', 'Notícia atualizada com sucesso!');
-        return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Notícia!');
     }
+
 
     public function destroy(News $news)
     {

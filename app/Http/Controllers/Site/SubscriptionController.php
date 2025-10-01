@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Subscription;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 use App\Mail\SubscriptionNotificationMail;
 
 class SubscriptionController extends Controller
@@ -23,7 +24,13 @@ class SubscriptionController extends Controller
         ]);
 
         // enviar email de confirmação
-        Mail::to($subscription->email)->send(new SubscriptionNotificationMail($subscription->email));
+        try {
+            //code...
+            Mail::to($subscription->email)->queue(new SubscriptionNotificationMail($subscription->email));
+        } catch (\Exception $e) {
+            //throw $th;
+            Log::error('Erro ao enviar email' . $e->getMessage());
+        }
 
         // resposta em JSON + cookie
         return response()->json([
