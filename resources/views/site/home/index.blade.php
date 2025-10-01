@@ -541,12 +541,12 @@
                                 <div class="mb-4">
                                     <img src="{{ url('site/assets/img/bg/newsletter_img_2.png') }}" alt="Icon">
                                 </div>
-                                <h3 class="box-title-24 mb-20">Subscreve Agora</h3>
-                                <form id="subscribeForm" class="newsletter-form"
+                                <h3 class="box-title-24 mb-20">Subscreve-se para receberes as atualizações das notícia em dastaque direitamente no seu email.</h3>
+                                {{-- <form id="subscribeForm" class="newsletter-form"
                                     data-action="{{ route('subscribe.store') }}">
                                     @csrf
                                     @include('form._formSubscription.index')
-                                </form>
+                                </form> --}}
 
                                 <div id="subscribeMessage" class="mt-2"></div>
                             </div>
