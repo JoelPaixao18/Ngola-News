@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Subscription;
 use App\Mail\HighlightNewsNotificationMail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class NewsController extends Controller
 {
@@ -68,7 +69,13 @@ class NewsController extends Controller
         if ($news->status === 'publicado' && $news->detach === 'destaque') {
             $subscribers = Subscription::all();
             foreach ($subscribers as $subscriber) {
-                Mail::to($subscriber->email)->queue(new HighlightNewsNotificationMail($news));
+                try {
+                    //code...
+                    Mail::to($subscriber->email)->queue(new HighlightNewsNotificationMail($news));
+                } catch (\Exception $e) {
+                    //throw $th;
+                    Log::error('Erro ao enviar email' . $e->getMessage());
+                }
             }
         }
 
@@ -155,7 +162,13 @@ class NewsController extends Controller
         if ($news->status === 'publicado' && $news->detach === 'destaque') {
             $subscribers = Subscription::all();
             foreach ($subscribers as $subscriber) {
-                Mail::to($subscriber->email)->queue(new HighlightNewsNotificationMail($news));
+                try {
+                    //code...
+                    Mail::to($subscriber->email)->queue(new HighlightNewsNotificationMail($news));
+                } catch (\Exception $e) {
+                    //throw $th;
+                    Log::error('Erro ao enviar email' . $e->getMessage());
+                }
             }
         }
 

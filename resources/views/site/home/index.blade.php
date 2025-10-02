@@ -506,7 +506,7 @@
                                 @foreach ($Society as $society)
                                     <div class="col-xl-12 col-md-6">
                                         <div class="blog-style2">
-                                            <div class="blog-img img-big">
+                                            <div class="blog-img img-society">
                                                 <img src="{{ asset('img/news/' . $society->image) }}" alt="blog image">
                                             </div>
                                             <div class="blog-content">

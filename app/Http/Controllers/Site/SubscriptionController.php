@@ -8,34 +8,44 @@ use App\Models\Subscription;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 use App\Mail\SubscriptionNotificationMail;
+use Illuminate\Support\Facades\DB;
 
 class SubscriptionController extends Controller
 {
     public function store(Request $request)
     {
-        // validação do email
+        // validação básica do email (sem unique aqui!)
         $request->validate([
-            'email' => 'required|email|unique:subscriptions,email',
+            'email' => 'required|email',
         ]);
 
-        // salvar no banco
+        // Verificar se já existe na BD
+        $subscription = Subscription::where('email', $request->email)->first();
+
+        if ($subscription) {
+            // 🔥 Já existe, não cria de novo
+            return response()->json([
+                'status' => 'subscribed',
+                'message' => 'Este email já está subscrito!'
+            ])->cookie('subscribed', $request->email, 525600); // renova cookie (1 ano)
+        }
+
+        // Criar nova subscrição
         $subscription = Subscription::create([
             'email' => $request->email,
         ]);
 
         // enviar email de confirmação
         try {
-            //code...
             Mail::to($subscription->email)->queue(new SubscriptionNotificationMail($subscription->email));
         } catch (\Exception $e) {
-            //throw $th;
-            Log::error('Erro ao enviar email' . $e->getMessage());
+            Log::error('Erro ao enviar email: ' . $e->getMessage());
         }
 
-        // resposta em JSON + cookie
         return response()->json([
             'success' => true,
             'message' => 'Obrigado por subscrever! Você receberá notícias em destaque.'
-        ])->cookie('subscribed', $request->email, 525600); // 525600 minutos = 1 ano
+        ])->cookie('subscribed', $request->email, 525600);
     }
+
 }

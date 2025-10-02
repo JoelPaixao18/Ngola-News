@@ -1,4 +1,14 @@
-@if (!request()->cookie('subscribed'))
+@php
+    $alreadySubscribed = false;
+    if(request()->cookie('subscribed')) {
+        $alreadySubscribed = true;
+    } elseif(auth()->check()) {
+        // Se tiver autenticação de usuário, pode usar:
+        $alreadySubscribed = \App\Models\Subscription::where('email', auth()->user()->email)->exists();
+    }
+@endphp
+
+@if (!$alreadySubscribed)
 <div class="popup-subscribe-area">
     <div class="container">
         <div class="popup-subscribe ">

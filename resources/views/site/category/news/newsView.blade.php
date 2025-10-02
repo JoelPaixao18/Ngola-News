@@ -259,16 +259,15 @@
                                                         <div class="comment-content email-alinhado">
                                                             <h3 class="name">
                                                                 @if ($reply->subscription)
-                                                                    {{ $reply->subscription->email }}
+                                                                    {{ $reply->subscription->email }} <span class="commented-on">
+                                                                {{ $reply->created_at->diffForHumans() }}
+                                                            </span>
                                                                 @else
                                                                     Email não disponível
                                                                 @endif
                                                             </h3>
 
                                                             <p class="text">{{ $reply->text_comment }}</p>
-                                                            <span class="commented-on">
-                                                                {{ $reply->created_at->diffForHumans() }}
-                                                            </span>
                                                         </div>
                                                     </div>
                                                 </li>

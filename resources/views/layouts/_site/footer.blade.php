@@ -11,9 +11,12 @@
                                     <img src="assets/img/1-Photoroom.png" alt="Tnews">
                                 </a>
                             </div>
-                            <p class="about-text">As revistas abrangem uma ampla gama de assuntos, incluindo, entre
-                                outros, moda, estilo de vida,
-                                política, negócios, entretenimento, desportos, ciência...</p>
+                            <p class="about-text">
+                                O projeto Assessorarte consiste no desenvolvimento
+                                de um portal de notícias digital,
+                                voltado para a divulgação de informações de forma clara,
+                                acessível e dinâmica
+                            </p>
                             <div class="th-social style-black">
                                 <a href="https://www.facebook.com">
                                     <i class="fab fa-facebook-f"></i>

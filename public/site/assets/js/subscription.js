@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             try {
                 let response = await fetch(url, {
                     method: "POST",
-                    credentials: "same-origin", // 🔥 importante para gravar cookie
+                    credentials: "same-origin",
                     body: formData
                 });
 
@@ -21,16 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (data.success) {
                     messageBox.innerHTML = `<span style="color: green">${data.message}</span>`;
-
-                    // 🔥 Fecha o modal logo após a subscrição
-                    setTimeout(() => {
-                        if (popup) {
-                            popup.style.display = "none";
-                        }
-                    }, 1500); // espera 1,5s para o usuário ver a mensagem
+                } else if (data.status === "subscribed") {
+                    messageBox.innerHTML = `<span style="color: blue">${data.message}</span>`;
                 } else {
                     messageBox.innerHTML = `<span style="color: red">${data.message}</span>`;
                 }
+
+                // Fecha popup após mensagem
+                setTimeout(() => {
+                    if (popup) popup.style.display = "none";
+                }, 1500);
+
             } catch (error) {
                 console.error("Erro:", error);
                 messageBox.innerHTML = `<span style="color: red">Ocorreu um erro, tente novamente.</span>`;
